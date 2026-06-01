@@ -60,8 +60,8 @@ But I'm already gone
 Vole-tek online
 Human offline
 
-Running through the noise
-Trying to survive
+I'm running out of signal
+I'm running out of time
 
 Everybody sees me active
 But nobody looks inside
@@ -146,6 +146,7 @@ Now every time I look inside myself
 I stand closer to the brink
 
 Something in the static started watching back
+And I didn't look away
 
 [Final Chorus - Corrupted Release]
 [Massive cinematic drums] [Heavy sub bass]
@@ -169,6 +170,7 @@ I'm scared of what I'm becoming
 
 Ghost in the system
 Buried in the system
+Signal where my soul should be
 
 [Outro - Instrumental Fade]
 [Static degradation] [Synth corruption]

@@ -59,6 +59,7 @@ Lights bend into shapes like veins
 Under someone else's skin
 
 Something's crawling underneath the floor
+The floor is breathing back
 (was I ever here)
 
 [Pre-Chorus]
@@ -107,6 +108,7 @@ I was just
 No — I was never there
 
 [Robotic voice, glitching] Location unresolved.
+[Robotic voice, glitching] Body scan... incomplete.
 
 [Verse 2 - Body Horror / Transformation]
 [Colder piano] [Soft mechanical percussion] [Warped distant horns]
@@ -148,6 +150,10 @@ Am I dying
 
 [Robotic voice, failing] Consciousness extraction — in progress
 Eryndor synchronization — active.
+
+I was pulled across the veil
+I built the world inside the vault
+Now it's pulling pieces out of me
 
 [Final Chorus - Full Fracture]
 [Full chaotic industrial force] [Glitched choir] [War horns distant]

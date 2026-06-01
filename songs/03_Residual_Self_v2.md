@@ -83,8 +83,8 @@ I was here
 A kitchen table — someone's hand on mine
 A feeling loading half a second behind
 
-Laughter from a room I can't get back to
-Sunlight on a floor that might be real
+Laughter from a room that won't reload
+Sunlight on a floor I can't download
 
 My daughter's voice — or was it just the wind
 Through speakers in a house I may have lived in
@@ -144,7 +144,9 @@ Who am I — who am I
 
 I was HERE
 I was REAL
+I had a name
 I had a name before the static
+Find me — find me
 
 (who was I)
 
@@ -159,6 +161,9 @@ who am I
 who am I
 
 (no results found)
+
+(whispered) I can't find the file
+But I remember what it felt like
 
 ---
 

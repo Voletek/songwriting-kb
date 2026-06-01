@@ -130,6 +130,8 @@ I remember no goodbye
 I remember reaching outward
 As the room fell from my eyes
 
+[Thunder memory fades — cave silence returns]
+
 Now something ancient breathes beside me
 And the dark responds to where I turn
 Every stone I touch remembers fingers
@@ -259,6 +261,8 @@ Rikan
 
 The broken parts still breathe
 
+[War horns sustain — choir holds — one beat of silence]
+
 I was Draeven in the thunder
 I was human in the rain
 Now the mark is burning through me
@@ -286,7 +290,7 @@ I don't know where I'm going
 I don't know what waits for me
 
 But the name inside the darkness
-Is the first thing I can feel
+Is the first real thing I feel
 
 Rikan...
 

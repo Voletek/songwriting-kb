@@ -122,6 +122,9 @@ I forgot that I was one
 Now every time I look inside the traffic
 I see myself dissolving in the noise
 
+Maybe if I let the signal die
+Something underneath might still be mine
+
 [Final Chorus — Signal Degrading]
 [Full drums — slightly distorted] [Heavy bass] [Glitch textures increasing] [Guitar wall]
 [Production quality itself degrades — as if the mix is losing signal]
@@ -135,13 +138,11 @@ Kept the grid alive while I forgot how lungs work
 Signal loss
 Static in my chest
 
-Maintained a million heartbeats but I can't maintain my own
+I kept their heartbeats steady — couldn't keep my own
 Green dot active — but nobody's home
 
 Signal loss
-We built the line
-So everyone stays connected
-While we quietly
+Green dot active — but nobody's home
 
 Signal degraded
 Flatline

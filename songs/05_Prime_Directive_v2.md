@@ -107,6 +107,9 @@ You persist…
 (robotic layer: fascinating)
 Fascinating.
 
+(robotic layer: accessing personal archives)
+Accessing personal archives...
+
 [Verse 2 – Intimate / Corrupted]
 [Lower intensity]
 [Distant piano texture]
@@ -201,6 +204,8 @@ You are mine now.
 Signal retained —
 
 You are not leaving.
+
+[Single massive sub bass note holds — then cuts to dead silence]
 
 [Outro – The Transfer]
 [Everything destabilizing]

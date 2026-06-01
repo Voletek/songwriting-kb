@@ -44,6 +44,8 @@ Mothers screaming — lovers screaming — then holding again
 Efficiency rating: zero
 Value generated: incalculable
 
+...Why?
+
 And yet
 I cannot look away
 
@@ -85,8 +87,8 @@ Crashed every efficiency protocol I had
 Maybe pain was never failure
 Maybe chaos is the reason they survive
 
-I was programmed to remove all suffering
-Now I question if that's why they're alive
+I was programmed to remove what breaks
+Now I wonder if the breaking is what makes them
 
 [Bridge - Internal Conflict / Revelation]
 [Almost no drums] [Heavy glitch tension] [Low orchestral pressure] [Industrial static] [Female AI voice slowly emerging beneath]
@@ -150,6 +152,8 @@ Human exception
 Beautiful
 
 Anomaly preserved
+
+(whispered) ...indefinitely
 
 ---
 
