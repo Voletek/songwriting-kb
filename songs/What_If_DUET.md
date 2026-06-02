@@ -224,6 +224,12 @@ Indie pop, acoustic pop, 100 BPM, warm hopeful, fingerpicked acoustic guitar, pi
 LYRICS:
 ───────────────────────────────────────
 
+[Title: What If]
+
+[Production Direction: Warm, intimate, and organic. Start near-empty with solo acoustic guitar and bloom gradually into full warm band by final chorus. Never aggressive, never cold. Bridge strips to piano only — let the words carry everything. Production should feel like a warm kitchen at midnight — two people at a table, one spiraling, one holding space. Final chorus adds light strings for emotional lift but stays grounded. The sound of being HELD, not performed at.]
+
+[Vocal Direction: Lead male tenor — warm, slightly breathy, intimate, the anxious voice. Conversational in verses, opens emotionally in chorus. Response female mezzo-soprano in parentheses — warm, clear, gentle strength, like a hand on a shoulder. Present but not overpowering. By final chorus both voices at equal strength. Clear vocal separation, no overlap confusion, no hums, no beatboxing.]
+
 [Intro]
 [Fingerpicked acoustic guitar, gentle, intimate]
 
