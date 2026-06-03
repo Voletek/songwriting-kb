@@ -10,7 +10,7 @@ A hook must be:
 - Memorable after ONE listen
 - Singable a cappella
 - Textable to a friend
-- Within 7-15 seconds of song start
+- Within 15 seconds of first sung vocal
 - The emotional peak of the chorus
 
 ## Lyric Rules

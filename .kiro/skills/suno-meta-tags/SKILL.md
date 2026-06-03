@@ -1,6 +1,6 @@
 ---
 name: suno-meta-tags
-description: Complete Suno AI meta-tag reference covering all confirmed tags for v4.0-v5.0, formatting rules, character limits, pipe notation, global control tags, dynamics tags, vocal delivery tags, and the full optimized template. Use when preparing songs for Suno rendering, optimizing tag usage, checking character counts, or troubleshooting Suno output issues.
+description: Comprehensive Suno AI meta-tag reference covering confirmed tags for v4.0-v5.0, formatting rules, character limits, creative sliders, pipe notation, global control tags, dynamics tags, vocal delivery tags, and the full optimized template. Use when preparing songs for Suno rendering, optimizing tag usage, checking character counts, or troubleshooting Suno output issues.
 ---
 
 # Suno Meta-Tags Skill

@@ -37,6 +37,8 @@ Priority order when hitting 1000 char limit:
 | `[track: ...]` | Global defaults (genre, mood, length, instruments) | `[track: genre: dark cinematic rock, mood: haunted, length: 270]` |
 | `[control: ...]` | Behavioral directives | `[control: no-repeat, dynamic transitions]` |
 | `[length: XXX]` | Target duration in seconds | `[length: 270]` |
+
+**Note:** `[length:]` can be embedded inside `[track:]` OR used standalone. Do NOT use both — pick one placement.
 | `[sequence: ...]` | Explicit section ordering | `[sequence: intro, verse, pre-chorus, chorus, verse, chorus, bridge, final chorus, outro]` |
 | `[end]` | Song termination signal | `[end]` (at very bottom) |
 

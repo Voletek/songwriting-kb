@@ -55,7 +55,7 @@ Failure to do this creates cascading continuity errors that compound with each n
 - **Alaric:** Deep spoken male, reverbed, ancient (T11, T15 ghost)
 - **Lyra:** NEVER voiced — absence is her presence (T12 death, T16 space)
 - **Shadow Weaver:** Never voiced — choir whispers name (T13)
-- **AI/Prime Directive:** Female contralto + robotic (T4-5 ONLY — not in Act 2)
+- **AI/Prime Directive:** Female contralto + robotic (T4-5, echoes in T6 — NOT in Act 2)
 
 ## Key Motifs to Track
 

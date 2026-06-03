@@ -138,7 +138,7 @@ Apply this BEFORE scoring:
 6. **GENRE MAPPING** — Fabbri's 5 rules satisfied? Fusion balanced (70/30)?
 7. **ARRANGEMENT** — Growth pattern, contrast pairs, negative space, repetition calibration
 8. **PRODUCTION** — Timbre palette, harmonic choices, mix decisions as meaning
-9. **COMMERCIAL** — Audience, platform, length, sync readiness, 7-second rule, versioning
+9. **COMMERCIAL** — Audience, platform, length, sync readiness, 7-second rule (listener decides stay/skip within 7s — ensure sonic interest from bar 1), versioning
 
 ---
 

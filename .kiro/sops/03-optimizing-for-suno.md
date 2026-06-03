@@ -9,7 +9,7 @@
 
 - A complete song (lyrics + style concept + production notes)
 - Song has been through critique/revision (don't optimize a first draft)
-- Know your target Suno model version (v4.5, v5.0, v5.5)
+- Know your target Suno model version (v4.5 or v5.0)
 
 ---
 

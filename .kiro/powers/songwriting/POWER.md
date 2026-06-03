@@ -22,7 +22,7 @@ A professional song production system combining Nashville/LA co-writing craft wi
 | Skill | Contains | Activate When |
 |---|---|---|
 | **song-critique** | 12-category rubric, scoring guide, flag patterns | Evaluating any song |
-| **suno-meta-tags** | All 35 confirmed tags, v5.0 techniques, templates | Formatting for Suno |
+| **suno-meta-tags** | Comprehensive tag reference, v5.0 techniques, templates | Formatting for Suno |
 | **music-theory** | 12 disciplines, 23-point framework, 18 advanced concepts | Deep production analysis |
 | **character-voice** | Accent/dialect system, voice design template | Writing for characters |
 | **concept-album-bible** | Track registry, motifs, continuity rules | Album work |
@@ -110,7 +110,8 @@ Applied to every song concept:
 - No line exceeds 12 syllables at song tempo
 - V2 adds NEW information
 - Bridge contains a TURN
-- Chorus arrives within 45-60 seconds
+- Hook arrives within 15 seconds of first sung vocal
+- Full chorus typically arrives within 45-60 seconds of track start
 - ABCB default rhyme scheme
 - Near/slant rhymes preferred over forced perfect
 
@@ -132,7 +133,13 @@ This power draws from:
 
 The following steering files provide always-on context:
 
-- `steering/songwriting.md` — Core principles
-- `steering/suno-formatting.md` — Suno rules
-- `steering/voletek-preferences.md` — Output format preferences
-- `steering/concept-album.md` — Album continuity rules
+Top-level (`.kiro/steering/` — auto-loaded in every session):
+- `songwriting.md` — Core principles + 9-step workflow
+- `suno-formatting.md` — Suno rules + creative sliders
+- `voletek-preferences.md` — Output format preferences (rename for your own)
+- `concept-album.md` — Album continuity rules (replace with your own)
+
+Power-specific (`.kiro/powers/songwriting/steering/` — condensed versions):
+- `craft.md` — Principles quick-ref
+- `preferences.md` — Format requirements quick-ref
+- `suno.md` — Suno essentials quick-ref

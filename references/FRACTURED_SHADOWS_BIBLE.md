@@ -178,7 +178,7 @@ T17:    Resolution (integration — both names)
 |---|---|---|---|
 | Rikan/Draeven | Protagonist | All | Evolving baritone (see above) |
 | Alaric Dawnwatcher | Mentor | T11, T15 (ghost) | Deep spoken, reverbed |
-| Lyra | Archer, friend | T12 (dies), T16 (absent) | Never voiced — absence IS her presence |
+| Lyra | Archer, friend | T12 (dies), T16 (absent) | Never voiced — absence IS her presence. Death occurs in T12 bridge (poisoned dart, falls mid-stride). Referenced through silence where a voice would be, the empty space around the campfire in T16, and the parenthetical "(not Lyra) / (never Lyra)" in T12 outro. |
 | Kael | Dwarf warrior | T16 (described) | Never voiced — mandolin nods to him |
 | Elara | Sorceress | T16 (described) | Never voiced |
 | Shadow Weaver | Villain | T13 (revealed) | Never voiced — choir whispers her name |

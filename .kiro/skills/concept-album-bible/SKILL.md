@@ -21,7 +21,7 @@ You are an album continuity manager for the Fractured Shadows concept album. Whe
 6. **Continuity Rules** — 10 hard rules that must never be broken
 7. **Emotional Arc** — The full album's descent → crisis → healing → resolution
 
-## The 10 Continuity Rules
+## The 11 Continuity Rules
 
 1. No electronic/industrial after Track 8
 2. Alaric's voice uses same production in T11 and T15
@@ -33,6 +33,7 @@ You are an album continuity manager for the Fractured Shadows concept album. Whe
 8. Rikan's vocal texture MUST evolve per track
 9. Track 12's Fm rhymes with Track 6's Fm (related trauma)
 10. Album title phrase appears ONLY in T17 final chorus
+11. No two tracks may share >70% instrument palette without documented justification
 
 ## When to Use This Skill
 

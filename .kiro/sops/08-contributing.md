@@ -155,7 +155,8 @@ cp .kiro/steering/voletek-preferences.md .kiro/steering/my-preferences.md
 # Remove example album content (or keep as reference)
 rm references/FRACTURED_SHADOWS_BIBLE.md
 rm .kiro/steering/concept-album.md
-rm -rf songs/album_act2 songs/album_act3
+rm -rf songs/album_act2 songs/album_act3 songs/experimental
+rm songs/0*_*.md songs/Shadow* songs/Shapes* songs/What_If* songs/Evil* songs/Cat*
 
 # Create your own album (follow SOP 04)
 # This creates your bible, steering, and hooks

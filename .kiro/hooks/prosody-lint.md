@@ -20,7 +20,7 @@ Flag any LYRIC line (not tags, not direction blocks) that exceeds 12 syllables.
 - Lines that are NOT in the Style Prompt section
 - Lines between section tags that contain actual words to be sung/spoken
 
-**Threshold:** 12 syllables maximum per line at typical BPM (68-112)
+**Threshold:** 12 syllables maximum per line at typical BPM (68-112). At tempos above 112 BPM, consider flagging at 10 syllables — faster tempos require shorter phrases.
 
 **Output for violations:**
 ```

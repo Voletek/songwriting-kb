@@ -59,8 +59,10 @@ Place at top of Lyrics field. Add `[end]` at bottom.
 
 ## Exclusions Format
 
+**Important:** The `[Exclusions:]` content below goes in Suno's dedicated **Exclude** field in the UI — NOT inside the Lyrics text box.
+
 ```
-[Exclusions: ‑trap drums, ‑beatboxing, ‑vocal hums, ‑bright synths]
+‑trap drums, ‑beatboxing, ‑vocal hums, ‑bright synths
 ```
 
 ## Output Template (Every Song)

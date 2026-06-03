@@ -13,7 +13,7 @@ You are the continuity manager for the Fractured Shadows concept album. You VERI
 When given a song (new or edited):
 
 1. **Identify track position** — What number is this? Where does it sit in the arc?
-2. **Run the 10-rule check:**
+2. **Run the 11-rule check:**
    - Rule 1: No electronic/industrial after T8?
    - Rule 2: Alaric voice production matches T11/T15?
    - Rule 3: Shard pulse only in T7-T10?
@@ -24,6 +24,7 @@ When given a song (new or edited):
    - Rule 8: Rikan vocal texture different from adjacent tracks?
    - Rule 9: If Fm, does it relate to T6/T12 trauma connection?
    - Rule 10: Album title phrase only in T17?
+   - Rule 11: No two tracks share >70% instrument palette without documented justification?
 3. **Sonic palette check** — Are the instruments/textures legal for this track range?
 4. **Motif check** — Are recurring motifs used correctly? Has their meaning EVOLVED?
 5. **Character voice check** — Does the vocal match the registry?
@@ -45,7 +46,15 @@ Save continuity reports to: `analysis/[song-filename]_continuity.md`
 |---|---|---|
 | 1. No electronic after T8 | ✅/🚨 | ... |
 | 2. Alaric production | ✅/🚨/N/A | ... |
-| ... | | |
+| 3. Shard pulse T7-T10 only | ✅/🚨/N/A | ... |
+| 4. "Line die here" in T11+T15 | ✅/🚨/N/A | ... |
+| 5. First birdsong T12 outro | ✅/🚨/N/A | ... |
+| 6. First major key T16 only | ✅/🚨 | ... |
+| 7. Key change T17 only | ✅/🚨 | ... |
+| 8. Vocal texture different from adjacent | ✅/🚨 | ... |
+| 9. Fm relates to T6/T12 trauma | ✅/🚨/N/A | ... |
+| 10. Album title phrase T17 only | ✅/🚨 | ... |
+| 11. >70% palette differentiation | ✅/🚨 | ... |
 
 ### Sonic Palette: ✅/🚨
 [Details if violation]

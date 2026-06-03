@@ -2,14 +2,16 @@
 title: Album Continuity Check
 description: Verifies album continuity rules when song files in the album directories are saved — checks sonic palette, key relationships, and forbidden elements
 event: file_save
-path: songs/album_act2/**/*.md
+path: songs/album_*/**/*.md
 ---
 
 # Album Continuity Check
 
-When any song in `songs/album_act2/` is saved, verify it doesn't violate the 10 continuity rules.
+When any song in `songs/album_*/` directories is saved, verify it doesn't violate the 11 continuity rules.
 
-## Checks to Run
+## Checks to Run (5 Critical Rules — Automated)
+
+> Note: This hook checks 5 of the 11 hard rules that are automatable via text scanning. For full 11-rule verification, invoke the album-continuity agent.
 
 ### 1. Sonic Palette Violation
 Based on the track number (extracted from filename `XX_Title.md`):
