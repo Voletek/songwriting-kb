@@ -1,7 +1,12 @@
 # Suno AI — Power Steering
 
 ## Limits
-- Style: 1000 chars | Lyrics: 5000 chars | Overflow → Advanced box
+- Style: 1000 chars | Lyrics: 5000 chars | Exclude field: negatives/exclusions ONLY
+
+## Creative Sliders (UI Settings)
+- **Weirdness:** 50-55% for our songs (Safe↔Chaos, default 50%)
+- **Style Influence:** 50-60% for our songs (how much Style Prompt steers)
+- **Audio Influence:** 45% if using Inspo (how much reference affects output)
 
 ## Always Include
 ```

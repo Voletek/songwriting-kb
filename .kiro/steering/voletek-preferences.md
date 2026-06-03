@@ -45,9 +45,9 @@ Keep per-section tags like `[Sparse piano, room ambience]` — these guide instr
 
 ## Character Limit Strategy
 
-- Style 1000 chars → positives and core vocal rules FIRST, negatives to Advanced if needed
-- Lyrics 5000 chars → core content first, overflow direction to Advanced
-- Advanced box = extension for BOTH fields
+- Style 1000 chars → positives and core vocal rules FIRST
+- Lyrics 5000 chars → must fit within limit (trim if needed)
+- Exclude field = ONLY for negative prompts / exclusions (not overflow)
 
 ## Hit Formula Awareness
 

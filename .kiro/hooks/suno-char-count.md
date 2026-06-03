@@ -28,8 +28,8 @@ When a song file in `songs/` is saved, check character counts against Suno's lim
 
 If OVER limit:
 ```
-🚨 STYLE PROMPT: XXX/1000 chars (OVER by XX) — Move negatives/exclusions to Advanced box
-🚨 LYRICS: XXXX/5000 chars (OVER by XXX) — Move direction blocks to Advanced box or trim
+🚨 STYLE PROMPT: XXX/1000 chars (OVER by XX) — Move negatives to Exclude field
+🚨 LYRICS: XXXX/5000 chars (OVER by XXX) — Trim direction blocks or reduce section tags
 ```
 
 If UNDER limit:

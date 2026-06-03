@@ -140,7 +140,7 @@ Battle-tested Suno prompt engineering with 5 formatting modes + 35 confirmed met
 ### Key Suno Rules
 - Style Prompt: ≤1000 characters
 - Lyrics field: ≤5000 characters
-- Overflow → Advanced box
+- Exclude field for negative prompts only
 - Section tags on own lines
 - 4-8 lines per section, no end punctuation
 - Each line = one melodic phrase (7-12 syllables)

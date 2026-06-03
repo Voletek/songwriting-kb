@@ -8,8 +8,17 @@
 
 | Field | Limit | Overflow To |
 |---|---|---|
-| Style of Music | 1000 chars | Advanced box |
-| Lyrics | 5000 chars | Advanced box |
+| Style of Music | 1000 chars | Exclude field (negatives only) |
+| Lyrics | 5000 chars | Trim (no overflow — must fit) |
+| Exclude | Dedicated field | Negative prompts / exclusions ONLY |
+
+## Creative Sliders (UI — not text fields)
+
+| Slider | Default | Our Songs | Effect |
+|---|---|---|---|
+| Weirdness | 50% | 50-55% | Creative latitude (Safe↔Chaos) |
+| Style Influence | 50% | 50-60% | How much Style Prompt steers output |
+| Audio Influence | ~45% | 45% (if Inspo) | How much reference track affects output |
 
 ## Style Prompt Formula
 

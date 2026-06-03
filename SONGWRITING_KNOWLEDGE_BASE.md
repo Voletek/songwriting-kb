@@ -258,7 +258,21 @@ Performance: [Soft] [Powerful] [Whispered] [Belting] [Crescendo] [Intimate]
 
 ### 12.7 Negatives: `‑trap drums, ‑beatboxing, ‑vocal hums` (genre fencing)
 
-### 12.8 Limits: Style 1000 chars, Lyrics 5000 chars → overflow to Advanced box
+### 12.8 Limits: Style 1000 chars, Lyrics 5000 chars, Exclude field for negatives only
+
+### 12.8.1 Creative Sliders (UI Settings)
+Three sliders in Suno's interface control generation behavior:
+
+**Weirdness** (Safe 0% ↔ Chaos 100%) — Default 50%. Controls creative latitude.
+- 35-45% = predictable/radio | 50-55% = balanced (our songs) | 60-75% = experimental | 75%+ = chaos
+
+**Style Influence** (0-100%) — Default 50%. How much Style Prompt text steers the output.
+- 40% = loose | 50-60% = balanced (our songs) | 65-80% = strict adherence
+
+**Audio Influence** (0-100%) — Only with Inspo/reference. Default ~45%.
+- 30-40% = light flavor | 45-55% = match the vibe | 60-70% = closely replicate
+
+**Our concept album preset:** Weirdness 50-55% | Style 50-60% | Audio 45% (if used)
 
 ### 12.9 Advanced: Concept continuity, custom rules, vocal range notation, key modulation, cultural references, progressive degradation, em dashes, multiple vocal modes
 

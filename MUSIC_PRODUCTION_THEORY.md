@@ -688,7 +688,7 @@ Extract TRAITS, not copy:
 - Place strongest hook early
 - Avoid formatting that confuses male/female parts
 - Use concise but specific style language
-- 1000 char style limit / 5000 char lyrics limit → Advanced overflow
+- 1000 char style limit / 5000 char lyrics limit / Exclude field for negatives only
 
 ---
 
