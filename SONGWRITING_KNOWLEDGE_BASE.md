@@ -254,6 +254,19 @@ Performance: [Soft] [Powerful] [Whispered] [Belting] [Crescendo] [Intimate]
 - **Mode B:** Main voice + `()` response, declared in style prompt (efficient)
 - **Mode C:** Custom layers `(robotic layer:)` + stacked tags (theatrical)
 
+### 12.5.1 Parenthetical Layers (Inline Vocal Effects)
+Text in `()` inside lyrics = secondary vocal layer (background, response, whisper, ad-lib).
+
+**Layer Types:**
+- `(whispered) text` — delivery cue: changes how the next line is performed
+- `(robotic layer: text)` — named layer: secondary vocal identity (must declare in Style Prompt)
+- `(response text)` — backup/response vocal: softer/background voice or duet partner
+- `(non-word sound)` — vocalization/texture
+
+**Key rule:** Named layers MUST be declared in Style Prompt (e.g., "low-register AI voice layered during system sections"). Plain backup `()` works best when Style declares who sings them.
+
+Full reference: `references/SUNO_TAGS_REFERENCE.md` → "Parenthetical Layers" section.
+
 ### 12.6 Rules: 4-8 lines/section, no end punctuation, tags on own line, 5000 char limit
 
 ### 12.7 Negatives: `‑trap drums, ‑beatboxing, ‑vocal hums` (genre fencing)

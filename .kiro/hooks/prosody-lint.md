@@ -52,7 +52,8 @@ Flag cases where a sentence clearly spans across two lines without an em-dash or
 - Production tags in brackets
 - Spoken/whispered sections (tagged as `[Spoken]` or `[Whispered]`) — these have looser prosody rules
 - Lines explicitly tagged as `[narrator]` or `[spoken word]`
-- Lines in parentheses (backup vocals — often shorter fragments)
+- Lines in parentheses — these are backup vocals, delivery cues, or named layers (e.g., `(whispered) text`, `(robotic layer: text)`, `(response text)`) — often shorter fragments with looser prosody rules
+- Named layer declarations (e.g., `(robotic layer: Prime Directive initializing)`) — these are spoken/processed, not melodic
 
 ## Summary Output
 

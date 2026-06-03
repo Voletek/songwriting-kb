@@ -40,8 +40,16 @@ Keep per-section tags like `[Sparse piano, room ambience]` — these guide instr
 
 - `[Male Vocal]` / `[Female Vocal]` — capitalized, standardized
 - Duet: give-and-take alternating (Male then Female per exchange)
-- Backup vocals in `()` — works only if Style declares who sings them
 - Target 4 exchanges per section (8 lines) but flexible
+
+## Parenthetical Layers (Inline Vocal Effects)
+
+- **Backup/response vocals:** plain `(text)` — works when Style declares who sings them
+- **Delivery cues:** `(whispered) text` / `(spoken) text` — changes performance of next line
+- **Named layers:** `(robotic layer: text)` / `(echo layer: text)` / `(whisper layer: text)` — creates a distinct secondary vocal identity. MUST be declared in Style Prompt.
+- **Whisper Rule pattern:** Declare at top of lyrics: `[Whisper Rule: Lyrics in parentheses are whispered intrusive thoughts, close and breathy.]`
+- **Echo/Layer treatment notation:** `[deep echo layer]` or `[distant burr echo]` after parenthetical lines to specify production treatment of those layers
+- Always include `‑vocal overlap confusion` in negatives when using layers
 
 ## Character Limit Strategy
 

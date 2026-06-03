@@ -30,6 +30,15 @@
 - `[chant]` — repeated hook/mantra
 - `[end]` — always at bottom
 
+## Parenthetical Layers — `()` in Lyrics
+- `(whispered) text` — delivery cue (works alone)
+- `(spoken) text` — speech delivery (works alone)
+- `(robotic layer: text)` — named secondary voice (**Style must declare**)
+- `(echo layer: text)` — echo treatment (**Style must declare**)
+- `(whisper layer: text)` — whisper texture (**Style must declare**)
+- `(response text)` — backup vocal / duet response (best with Style declaration)
+- Always add `‑vocal overlap confusion` to exclusions when using layers
+
 ## Exclusions
 ```
 [Exclusions: ‑beatboxing, ‑vocal hums, ‑trap drums, ...]

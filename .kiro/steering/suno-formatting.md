@@ -57,6 +57,23 @@ Place at top of Lyrics field. Add `[end]` at bottom.
 - **Mode B:** Main + `()` response, declared in Style (efficient)
 - **Mode C:** Custom layers + stacked tags (theatrical)
 
+## Parenthetical Layers — `()` in Lyrics
+
+Text in parentheses = secondary vocal layer. Suno treats it differently from main lyrics.
+
+| Pattern | Effect | Style Prompt Needed? |
+|---|---|---|
+| `(whispered) text` | Delivery cue — whispers next text | Usually works alone |
+| `(spoken) text` | Spoken not sung | Usually works alone |
+| `(robotic layer: text)` | Named secondary voice (AI/machine) | **YES** — must declare |
+| `(echo layer: text)` | Delayed/echo treatment | **YES** — must declare |
+| `(whisper layer: text)` | Background whisper texture | **YES** — must declare |
+| `(response text)` | Backup vocal / duet response | Best with declaration |
+
+**Key rule:** Named layers (`X layer: text`) require the Style Prompt to declare: e.g., "low-register AI voice layered during system sections." Without this, Suno may just sing parenthetical content normally.
+
+**Full reference:** `references/SUNO_TAGS_REFERENCE.md` → "Parenthetical Layers" section.
+
 ## Exclusions Format
 
 **Important:** The `[Exclusions:]` content below goes in Suno's dedicated **Exclude** field in the UI — NOT inside the Lyrics text box.
