@@ -20,6 +20,16 @@
 | Style Influence | 50% | 50-60% | How much Style Prompt steers output |
 | Audio Influence | ~45% | 45% (if Inspo) | How much reference track affects output |
 
+## v5.5 Features (UI — not text tags)
+
+- **Personas/Voices:** Lock a consistent vocal identity across all generations. Select from voice menu before generating. Use one Persona per album character.
+- **Stems:** Extract up to 12 individual tracks (vocals, drums, bass, etc.) from renders. Use for DAW mixing/mastering and album-level consistency.
+- **Custom Models:** Train Suno on your completed tracks to learn your sound. Pro/Premier only.
+
+## Era Tags (in Style Prompt)
+
+Era decade tags ("1980s", "1970s") now aggressively bias PRODUCTION style (recording technique, mix character), not just instruments. To get a retro instrument with modern production, be explicit: "modern production, vintage 1970s guitar tone" — separate the era from the mix.
+
 ## Style Prompt Formula
 
 ```

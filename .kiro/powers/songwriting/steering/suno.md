@@ -8,6 +8,14 @@
 - **Style Influence:** 50-60% for our songs (how much Style Prompt steers)
 - **Audio Influence:** 45% if using Inspo (how much reference affects output)
 
+## v5.5 Features (UI, not text tags)
+- **Personas:** Lock vocal identity per character. Select before generating.
+- **Stems:** Extract 12-track splits for DAW mixing. Use for album consistency.
+- **Custom Models:** Train on your tracks to learn your style (Pro/Premier).
+
+## Era Tags (Style Prompt)
+Decade tags ("1980s") aggressively bias production style. To get vintage instruments with modern production: "modern production, vintage 1970s guitar tone" — separate era from mix.
+
 ## Always Include
 ```
 [track: genre: X, mood: X, length: 270]

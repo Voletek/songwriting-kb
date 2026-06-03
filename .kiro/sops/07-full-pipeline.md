@@ -143,13 +143,17 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 
 **Human action** (not agent):
 1. Open Suno (Custom Mode)
-2. Paste Style Prompt into "Style of Music" field
-3. Paste Exclusions into "Exclude" field
-4. Paste Lyrics (from `[track:]` through `[end]`) into "Lyrics" field
-5. Set Creative Sliders per recommendations
-6. Generate 3-4 versions
-7. Evaluate renders against the Production Notes vision
-8. Select best render OR identify what to adjust and re-render
+2. **Select Persona** (if using v5.5 Voices): Choose the character's vocal model for album consistency
+3. Paste Style Prompt into "Style of Music" field
+4. Paste Exclusions into "Exclude" field
+5. Paste Lyrics (from `[track:]` through `[end]`) into "Lyrics" field
+6. Set Creative Sliders per recommendations
+7. Generate 3-4 versions
+8. Evaluate renders against the Production Notes vision
+9. Select best render OR identify what to adjust and re-render
+10. **Extract Stems** (if using v5.5): Get 12-track stems from best render for DAW mixing/mastering
+
+**Album consistency tip:** For concept albums, extract stems from all tracks and do final mixing/mastering in a DAW. This lets you level-match, apply consistent reverb, and ensure the album sounds cohesive even if individual Suno renders have different production characteristics.
 
 ---
 

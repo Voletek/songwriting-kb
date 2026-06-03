@@ -287,6 +287,18 @@ Three sliders in Suno's interface control generation behavior:
 
 **Our concept album preset:** Weirdness 50-55% | Style 50-60% | Audio 45% (if used)
 
+### 12.8.2 v5.5 Features (UI, not tags)
+- **Personas/Voices:** Persistent vocal identity from your own samples. Lock one voice per album character for consistency.
+- **Stems:** 12-track extraction from renders (vocals, drums, bass, guitar, keys, strings, synth, brass, percussion, backing vocals, FX, other). Enables DAW mixing for album-level cohesion.
+- **Custom Models:** Train Suno on your completed songs to learn your style (Pro/Premier).
+- **My Taste:** AI adapts to your preferences over time.
+
+### 12.8.3 Era Tags (Production Modifier)
+Decade tags ("1980s", "1970s") aggressively bias PRODUCTION STYLE (recording technique, mix character, sonic era) — not just instruments. To get vintage instruments with modern production, separate explicitly: "modern production, vintage 1970s guitar tone."
+
+### 12.8.4 The Specificity Principle
+The more prompt dimensions you specify (genre, tempo, mood, vocal, instruments, space, key), the less Suno fills gaps with statistical averages. Our SOP system produces 7-dimension "precise" prompts by design — this is WHY detailed Style Prompts outperform casual usage.
+
 ### 12.9 Advanced: Concept continuity, custom rules, vocal range notation, key modulation, cultural references, progressive degradation, em dashes, multiple vocal modes
 
 ### 12.10 Production Notes (always include):

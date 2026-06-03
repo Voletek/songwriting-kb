@@ -212,6 +212,189 @@ Tags embedded in natural language sentences now parse correctly in v5.0.
 
 ---
 
+## SUNO v5.5 CAPABILITIES (March 2026)
+
+### Voices / Personas — Consistent Voice Across Songs
+
+Suno v5.5 introduces **Personas** — persistent voice profiles trained from your own vocal samples. Instead of getting a random AI singer each generation, you can lock a specific vocal identity.
+
+**How it works:**
+1. Record or upload a voice sample (singing or speaking, ~30-60 seconds)
+2. Suno builds a vocal model capturing timbral qualities, resonance, and texture
+3. Select that Persona when generating — every song uses YOUR vocal characteristics
+
+**Album workflow impact:**
+- Use a single Persona for all tracks featuring the same character (e.g., Maren across all 8 Keeper tracks)
+- Create separate Personas for different characters (if you have multiple singers)
+- Eliminates the "every render sounds like a different person" problem
+
+**Limitations:**
+- The model captures vocal CHARACTER, not perfect reproduction
+- Emotional range may be narrower than prompt-only generation
+- Works best with clean, isolated vocal samples (no background music)
+
+**Where to specify:** In Suno's UI, select your Persona from the voice menu before generating. This is a UI setting, NOT a text tag in the lyrics/style fields.
+
+---
+
+### Stems — Post-Production Stem Extraction
+
+Suno can now split generated songs into individual stems for external mixing/mastering.
+
+**Available stems (up to 12-track):**
+| Stem | Contents |
+|---|---|
+| Vocals | Lead vocal track |
+| Backing Vocals | Harmonies, backup, parenthetical layers |
+| Drums | Full drum kit |
+| Bass | Bass instruments |
+| Guitar | All guitar parts |
+| Piano/Keys | Piano, organ, synth pads |
+| Strings | Orchestral strings |
+| Synth | Synthesizer leads/textures |
+| Brass/Woodwind | Horns, flutes, etc. |
+| Percussion | Non-drum-kit percussion |
+| Effects/Ambience | Sound design, atmospheric layers |
+| Other | Everything else |
+
+**How to access:** Hover over a generated song → "Get Stems" → choose "Extract Stems" or the 12-track option. Downloads as WAV or MP3.
+
+**Album workflow impact:**
+- Extract vocals from your best render → mix with better instruments in a DAW
+- Isolate the parenthetical layers (backing vocals stem) for independent mixing
+- Combine stems from different renders to create a "best of" composite
+- Level-match tracks across an album by processing stems consistently
+- Apply consistent reverb/mastering across all album tracks externally
+
+**Our recommendation:** Generate 3-4 renders per song, extract stems from the best one, then do final mixing in a DAW for album-quality consistency. The Suno render is the starting point, not the final master.
+
+---
+
+### Custom Models — Train on Your Own Music
+
+Upload your completed tracks to train Suno on YOUR sound. The model learns your compositional tendencies, arrangement patterns, and production style.
+
+**Use cases:**
+- Train on your best 5-10 songs → generate new tracks that "sound like you"
+- Create an album-specific model trained on existing tracks for consistent sonic palette
+- Fine-tune genre adherence beyond what Style Prompts alone can achieve
+
+**Limitations:**
+- Requires Pro/Premier subscription
+- Training takes time — not instant
+- Results improve with more training data (more songs = better model)
+- The model learns TENDENCIES, not exact reproduction
+
+---
+
+### My Taste — Preference Learning
+
+Suno learns your musical preferences over time based on your generations, likes, and listening patterns. Affects default suggestions and generation tendencies when prompts are ambiguous.
+
+**Practical impact:** Over time, Suno's "default" output drifts toward your style. Less relevant for us (we use detailed prompts that override defaults) but useful for quick ideation sessions.
+
+---
+
+## ERA TAGS — Production Style Modifiers
+
+> Era decade tags in the Style Prompt now AGGRESSIVELY bias production style in v5+. Understanding this interaction is critical for getting the sound you want.
+
+### How Era Tags Work
+
+Adding a decade tag (e.g., "1980s", "1970s", "1960s") to your Style Prompt tells Suno to apply the PRODUCTION AESTHETICS of that era — not just the instruments but the recording techniques, mixing style, and sonic character.
+
+### Era → Production Mapping
+
+| Era Tag | Production Characteristics Applied |
+|---|---|
+| `1960s` | Mono/narrow stereo, tape saturation, limited EQ, room mics, AM radio warmth |
+| `1970s` | Analog warmth, wide stereo experiments, tape compression, live-room bleed, warm reverb |
+| `1980s` | Gated reverb drums, synth textures, bright digital clarity, big stereo width, layered production |
+| `1990s` | Grunge compression, lo-fi textures, raw/unpolished, alternative mixing, vinyl crackle aesthetic |
+| `2000s` | Loudness war compression, auto-tune artifacts, digital precision, maximized levels |
+| `2010s` | Sparse/minimal, trap-influenced bass, reverb-heavy atmospherics, lo-fi beats |
+
+### The Separation Principle
+
+**Problem:** If you want a vintage INSTRUMENT SOUND but modern PRODUCTION, just adding "1970s" will make the WHOLE MIX sound vintage (lo-fi, tape-saturated, narrow stereo).
+
+**Solution:** Separate the era from the production explicitly:
+
+```
+❌ "1970s folk rock, acoustic guitar, warm"
+   → Everything sounds like a 1970s recording (narrow, tape-saturated)
+
+✅ "Modern production, vintage 1970s guitar tone, acoustic warmth, wide stereo, clean mix"
+   → Modern clarity with retro instrument character
+```
+
+### Using Era Tags Intentionally
+
+**For our concept albums:**
+- Keeper of the Light (folk-horror): Consider "handmade, analog warmth, room recording" rather than a decade tag — we want the FEELING of crafted music without locking into a specific era's production artifacts
+- Fractured Shadows (cinematic): "Modern cinematic production" keeps it contemporary. Era tags would add unwanted vintage coloring
+
+**When ERA tags ARE useful:**
+- Intentional nostalgia: "1980s synth-pop" for that specific Stranger-Things sound
+- Genre-period accuracy: "1990s grunge rock" if you want THAT production character
+- Lo-fi aesthetics: "1960s garage rock recording quality" for deliberate rawness
+
+### Combining Era + Genre (Interaction Effects)
+
+| Combo | What Suno Does |
+|---|---|
+| `1980s` + `trap` | Gated reverb drums + synth textures applied to trap patterns (hybrid) |
+| `1970s` + `indie folk` | Analog tape warmth + room recording + folk instruments (authentic vintage folk) |
+| `1990s` + `electronic` | Early rave/acid textures + analog synths + raw mastering |
+| `2010s` + `orchestral` | Modern film scoring approach — wide, clean, dramatic, spatial |
+
+**Rule:** The era tag affects PRODUCTION STYLE more than instrumentation. "1980s acoustic guitar" gives you an acoustic guitar recorded/mixed like the 1980s — not a different instrument.
+
+---
+
+## THE SPECIFICITY PRINCIPLE
+
+> The more dimensions you specify in your prompt, the less Suno "invents" from its statistical averages. Vague prompts produce generic output. Specific prompts produce intentional output.
+
+### Why This Matters
+
+Suno is a predictive model. When your prompt is ambiguous on any dimension, it fills the gap with the most statistically common option for that genre. This is why "upbeat pop song" sounds like elevator music — Suno picks the AVERAGE of every dimension you didn't specify.
+
+### The 7 Dimensions of a Complete Prompt
+
+Every Style Prompt should address these 7 dimensions (in priority order):
+
+| # | Dimension | What It Controls | Example |
+|---|---|---|---|
+| 1 | **Genre** | Arrangement DNA, chord expectations, song structure | "Dark cinematic rock" |
+| 2 | **Tempo/Feel** | Speed, groove, rhythmic character | "86 BPM, mechanical pulse" |
+| 3 | **Mood/Energy** | Emotional tone, intensity level | "Cold, vast, inevitable" |
+| 4 | **Vocal Character** | Voice type, delivery style, mic treatment | "Female mezzo, close-mic, raspy" |
+| 5 | **Instrumentation** | What plays (top 3-5 instruments by prominence) | "Concertina lead, bodhran, acoustic guitar" |
+| 6 | **Space/Production** | Reverb, width, production era, mix character | "Room reverb, intimate, handmade" |
+| 7 | **Key/Harmony** | Tonal center, mode, harmonic color | "D Mixolydian" |
+
+### Specificity Levels & Results
+
+| Level | Dimensions Specified | Typical Result |
+|---|---|---|
+| **Vague** (1-2) | Genre + mood only | Generic, could-be-anything, statistical average |
+| **Basic** (3-4) | + tempo + vocal | Recognizable genre, some character, still some guesswork |
+| **Good** (5-6) | + instruments + space | Distinctive, intentional, most elements controlled |
+| **Precise** (all 7) | Everything specified | Highly specific output — what our system produces |
+
+### How This Connects to Our System
+
+Our SOPs produce Precise-level prompts by design:
+- SOP 01 Step 9 forces you to decide key, BPM, audience, target length
+- SOP 01 Steps 6-7 force voice + genre decisions
+- SOP 01 Step 8 forces arrangement/instrumentation choices
+- The Style Prompt formula (Section 2 of this doc) addresses all 7 dimensions
+
+**This is WHY our detailed prompts outperform casual Suno usage.** We're not leaving any dimension to statistical chance.
+
+---
+
 ## CREATIVE SLIDERS (UI Settings)
 
 Suno's interface provides three sliders that affect generation behavior. These are NOT text fields — they're percentage-based controls in the UI.
