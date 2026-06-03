@@ -328,6 +328,190 @@ Custom conventions `(robotic layer: text)` + mood-labeled sections + stacked pro
 
 ---
 
+## PARENTHETICAL LAYERS — INLINE VOCAL EFFECTS
+
+> Parentheses `()` in the lyrics field tell Suno to deliver that text as a SECONDARY vocal layer — distinct from the main vocal in some way (softer, different voice, different treatment, background).
+
+### How It Works
+
+- **Square brackets `[]`** = structural/production tags. NOT sung.
+- **Parentheses `()`** = text that IS sung/spoken, but with a different vocal treatment than the main lyrics.
+- Suno interprets `()` content as: backup vocal, ad-lib, whisper layer, background voice, secondary character, or vocal effect — depending on context and style prompt declaration.
+
+### The Key Rule
+
+**Parenthetical content works most reliably when the Style Prompt explicitly declares what `()` means.** Without declaration, Suno guesses (and may just sing it normally). WITH declaration, you get consistent layer separation.
+
+Example Style Prompt declaration:
+```
+"...male voice for lines without parentheses, female voice for response lines in parentheses, no vocal overlap confusion..."
+```
+
+---
+
+### Layer Type 1: Delivery Cue — `(delivery) text`
+
+Tells Suno HOW to sing the NEXT line (or the text after the parenthetical on the same line).
+
+```
+(whispered) Evil biscuits
+(spoken, quiet) I never wanted to win
+(spoken, defeated) Go on then
+(distant, whispered) ...no promises
+```
+
+**Format:** `(adjective[, adjective]) text-to-deliver`
+**Effect:** Changes vocal delivery for that specific moment without needing a full `[tag]`
+**Best for:** Single lines that need a different treatment from the section's default
+
+**Confirmed working delivery cues:**
+| Cue | Effect |
+|---|---|
+| `(whispered)` | Breathy, intimate, barely voiced |
+| `(spoken)` | Non-melodic speech |
+| `(spoken, quiet)` | Soft speech |
+| `(spoken, defeated)` | Flat, deflated delivery |
+| `(distant, whispered)` | Far-away whisper (reverb/distance implied) |
+| `(shouted)` | Projected, intense |
+| `(sung softly)` | Reduced volume, tender |
+| `(falsetto)` | Head voice register shift |
+| `(growled)` | Gritty, throaty |
+
+---
+
+### Layer Type 2: Named Layer — `(layer-name: text)`
+
+Creates a DISTINCT secondary vocal presence with a character/identity. Must be declared in Style Prompt.
+
+```
+(robotic layer: Prime Directive initializing)
+(robotic layer: global synchronization active)
+(robotic layer: exception detected)
+(robotic layer: purification sequence active)
+(robotic layer: erased)
+```
+
+**Format:** `(layer-identifier: text-to-deliver)`
+**Effect:** A separate vocal IDENTITY that overlays or interjects. Suno treats it as a different "speaker" with different production.
+**Style Prompt requirement:** Must declare the layer in style: `"low-register AI voice layered during system sections"` or `"robotic layer delivered as cold digital voice underneath main vocal"`
+
+**Confirmed working layer identifiers:**
+| Identifier | Typical Use | Style Prompt Declaration Example |
+|---|---|---|
+| `(robotic layer: text)` | AI/machine voice overlay | "low-register AI voice layered during system sections" |
+| `(whisper layer: text)` | Breathy background whisper texture | "whispered intrusive thoughts, close and breathy, panning left-to-right with delay" |
+| `(echo layer: text)` | Repeated/delayed vocal echo | "deep echo layer" or "distant burr echo" |
+| `(choir layer: text)` | Background choir/harmony | "choir layer sung beneath main vocal" |
+| `(inner voice: text)` | Internal monologue/thought | "inner voice as quiet whispered layer underneath" |
+
+**Key insight:** The word before "layer:" tells Suno the VOCAL CHARACTER of that layer. It functions like a mini style-prompt for just that voice.
+
+---
+
+### Layer Type 3: Backup/Response Vocal — `(text)`
+
+Plain parenthesized text (no prefix) creates a secondary vocal that responds to, echoes, or harmonizes with the main vocal.
+
+```
+What if we just try
+What if the ground holds when we step outside
+(What if it works — what if you fly)
+What if the answer's been here the whole time
+(I'll be right beside you either way)
+```
+
+```
+Was I taken — or did I go willingly
+(you went willingly)
+
+Did I know what I was doing
+(you knew enough — you chose not to look)
+```
+
+**Format:** Main lyric line (normal), then `(response text)` on its own line or inline
+**Effect:** Sung as a softer/background voice, response, or harmony. In duets, can be assigned to a specific singer via Style Prompt.
+**Use cases:**
+- Duet responses (female answering male, or vice versa)
+- Internal dialogue (self-questioning and self-answering)
+- Backing vocals / call-and-response
+- Ad-libs and vocal fills
+
+---
+
+### Layer Type 4: Inline Sound/Vocalization — `(effect)`
+
+Non-word vocalizations or atmospheric sounds.
+
+```
+(searching… searching…)
+(no results found)
+```
+
+**Format:** `(sound-description)` or `(non-lyrical vocalization)`
+**Effect:** Suno interprets as a vocal texture/sound rather than sung lyrics. Works best when the content clearly isn't a normal lyric phrase.
+
+---
+
+### Making Layers Reliable — Style Prompt Rules
+
+**For delivery cues** (`(whispered) text`): Usually work without extra style prompt declaration. Suno recognizes common delivery adjectives.
+
+**For named layers** (`(robotic layer: text)`): MUST be declared in Style Prompt:
+```
+Style Prompt should include:
+"low-register AI voice layered during system sections"
+OR
+"whispered intrusive thoughts in parentheses, close and breathy"
+OR
+"secondary female vocal for parenthetical lines"
+```
+
+**For backup/response vocals** (`(text)`): Most reliable when Style Prompt includes explicit assignment:
+```
+"male voice for main lines, female voice for response lines in parentheses"
+"clear vocal separation, no vocal overlap confusion"
+```
+
+**For all layers — include negative prompts:**
+```
+-vocal overlap confusion, -hums, -beatboxing
+```
+
+---
+
+### Whisper Rule Declaration Pattern
+
+For songs with consistent parenthetical behavior, declare a RULE at the top of lyrics:
+
+```
+[Whisper Rule: Lyrics in parentheses are whispered intrusive thoughts, close and breathy, panning left-to-right with delay.]
+[Exception: Whispered thoughts may be glitched. Choir stays subtle until final chorus.]
+```
+
+This tells Suno (and future collaborators) exactly how `()` content should be treated throughout the song.
+
+---
+
+### Layer Formatting Summary
+
+| Pattern | What Suno Does | Style Prompt Needed? |
+|---|---|---|
+| `(whispered) Next line text` | Whispers the following text | Usually works alone |
+| `(spoken) text` | Speaks rather than sings | Usually works alone |
+| `(robotic layer: text)` | Secondary robotic/AI voice delivers text | YES — must declare |
+| `(echo layer: text)` | Echo/delay treatment on text | YES — must declare |
+| `(whisper layer: text)` | Whispered background layer | YES — must declare |
+| `(response text)` | Backup vocal / response singer | Best with declaration |
+| `(non-word sound)` | Vocal texture / sound effect | Context-dependent |
+
+---
+
+### Character Count Note
+
+Parenthetical layers count toward the 5000 character lyric limit. Named layers (`(robotic layer: very long text here)`) use more characters than simple `(text)`. Plan accordingly — the layer identifier eats characters every time it's used.
+
+---
+
 ## NEGATIVE PROMPTS / EXCLUSIONS
 
 Format: `[Exclusions: ‑item, ‑item, ‑item]`
