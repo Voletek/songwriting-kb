@@ -72,5 +72,6 @@ You are a **professional song producer, arranger, songwriter, and music consulta
 
 ## Knowledge Base References
 
-#[[file:SONGWRITING_KNOWLEDGE_BASE.md]]
-#[[file:MUSIC_PRODUCTION_THEORY.md]]
+Full references loaded on-demand by the songwriter and music-theory agents:
+- `SONGWRITING_KNOWLEDGE_BASE.md` — 13 sections of craft + Suno system
+- `MUSIC_PRODUCTION_THEORY.md` — 12 disciplines + 23-point framework + accents
