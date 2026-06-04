@@ -1,3 +1,7 @@
+---
+inclusion: auto
+---
+
 # Output & Format Preferences
 
 > Auto-loaded. Recommended output format for all song files.

@@ -1,3 +1,7 @@
+---
+inclusion: auto
+---
+
 # Concept Album — Continuity System
 
 > Auto-loaded. Provides the framework for managing concept album continuity.

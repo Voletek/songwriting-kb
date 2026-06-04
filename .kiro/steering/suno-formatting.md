@@ -1,3 +1,7 @@
+---
+inclusion: auto
+---
+
 # Suno AI Formatting Rules
 
 > Auto-loaded. Quick-reference for Suno formatting. Full tag details in the suno-meta-tags skill.

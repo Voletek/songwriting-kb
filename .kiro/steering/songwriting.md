@@ -1,3 +1,7 @@
+---
+inclusion: auto
+---
+
 # Professional Songwriting — Core Principles & Workflow
 
 > Auto-loaded in every session. Kept lean — detailed references live in Skills.
