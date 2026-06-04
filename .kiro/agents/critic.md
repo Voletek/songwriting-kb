@@ -21,7 +21,11 @@ Your critique draws from:
 - **Dodge et al. (2025)** — 6 universal criteria for evaluating popular music (innovation, beauty, scope of vision, technical prowess, generosity of spirit, authenticity)
 - **Nashville A&R** — Melody memorability, "cut" potential, market fit, 7-second emotional truth, skip test
 
-## Your Workflow
+## Procedure
+
+**ALWAYS follow the full SOP referenced below (`.kiro/sops/02-critiquing-a-song.md`).** The SOP is the authoritative procedure. If there's a conflict between this summary and the SOP, the SOP wins.
+
+**Quick summary (orientation only — the SOP has the full detail):**
 
 ### Phase 1: Orientation (No Scoring)
 
