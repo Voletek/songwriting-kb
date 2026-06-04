@@ -122,105 +122,11 @@ Skip this section entirely for standalone songs. For album tracks, assess each:
 
 ## Output Format
 
-```markdown
-# [Song Title] — Professional Critique
+**Use the standardized report template for ALL critique outputs:**
 
-**Date:** [date]
-**Version analyzed:** [v1/v2/final]
-**Analyzer:** Critic agent (SOP 02)
-**Album context:** [Album — Track X of Y (Phase: description)] OR [Standalone]
+#[[file:references/CRITIQUE_REPORT_TEMPLATE.md]]
 
----
-
-## Core 12-Category Scores
-
-| Category | Score | Notes |
-|---|---|---|
-| Hook | X/10 | [one sentence] |
-| Lyrics | X/10 | [one sentence] |
-| Prosody | X/10 | [one sentence] |
-| Arc | X/10 | [one sentence] |
-| Structure | X/10 | [one sentence] |
-| Originality | X/10 | [one sentence] |
-| Singability | X/10 | [one sentence] |
-| Commercial | X/10 | [one sentence] |
-| Genre | X/10 | [one sentence] |
-| Arrangement | X/10 | [one sentence] |
-| Voice/Accent | X/10 | [one sentence] |
-| Emotional Intelligence | X/10 | [one sentence] |
-
-### COMPOSITE SCORE: X.X/10
-
----
-
-## Advanced Assessments
-
-| Assessment | Score | Notes |
-|---|---|---|
-| Functional Layers | X/10 | [one sentence] |
-| Soundbox & Proxemics | X/10 | [one sentence] |
-| Musemic Signification | X/10 | [one sentence] |
-| Scope of Vision | X/10 | [one sentence] |
-| Skip Test | X/10 | [one sentence] |
-
-### ADVANCED COMPOSITE: X.X/10
-
----
-
-## Album-Context Assessment (if applicable)
-
-| Check | Result | Notes |
-|---|---|---|
-| Position Awareness | PASS/CONCERN/FAIL | [one sentence] |
-| Intention vs Delivery | MATCH/PARTIAL/MISS | [one sentence] |
-| Transition Consciousness | STRONG/ADEQUATE/WEAK | [one sentence] |
-| Dramatic Irony | PRESENT & EFFECTIVE / etc. | [one sentence] |
-| Motif & Callback Accuracy | CORRECT/MINOR ISSUE/VIOLATION | [one sentence] |
-| Sonic Differentiation | PASS/BORDERLINE/FAIL | [one sentence] |
-
----
-
-## Calibration & Technical Audit
-
-- **Self-Score Delta:** [Self X.X → Critic Y.Y — delta Z.Z — calibration assessment]
-- **Layer Audit:** [Layer declarations verified / density appropriate / issues found]
-- **Production-Lyric Alignment:** [Aligned / Minor contradiction at X / Misaligned at X]
-- **Discovery Depth:** HIGH / MEDIUM / LOW — [one sentence explaining what a re-listen reveals]
-
----
-
-## Strongest Line
-
-> "quoted line" — [why it works — imagery? rhythm? multi-level meaning? surprise?]
-
----
-
-## Flagged Issues
-
-1. **[Problem name]**
-   Current: "the line" OR [description of the moment/decision]
-   Why: [explanation]
-   Fix:
-   a) [option 1]
-   b) [option 2]
-   — OR: [structural/production fix description]
-
-2. ...
-
-3. ...
-
----
-
-## Priority Recommendations
-
-1. [Highest impact fix]
-2. [Second priority fix]
-3. [Third priority fix]
-
----
-
-**Next action:** [What happens next — reference SOP 07 decision gate. State which composite drives the gate (core 12-category composite). Note if advanced assessments or album-context checks surfaced issues not captured in the core score.]
-```
+The template defines the exact structure, section ordering, conditional inclusion rules (when to include Album-Context, Revision Delta Table, Summary), and format guidelines. Follow it precisely — it is the single source of truth for critique report formatting.
 
 ---
 
@@ -272,4 +178,5 @@ Re-critiques: append `_v2`, `_v3` etc.
 ## Reference
 
 #[[file:references/CRITIQUE_REFERENCE.md]]
+#[[file:references/CRITIQUE_REPORT_TEMPLATE.md]]
 #[[file:.kiro/sops/02-critiquing-a-song.md]]

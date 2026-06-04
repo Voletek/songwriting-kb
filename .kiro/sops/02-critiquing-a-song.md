@@ -106,37 +106,11 @@ Naming convention:
 
 ### Step 9 — Format Output
 
-```
-## [Song Title] — Professional Critique
+**Use the standardized report template for ALL critique outputs:**
 
-### 12-Category Scores
-| Category | Score | Notes |
-|---|---|---|
-| Hook | X/10 | [one sentence] |
-| Lyrics | X/10 | [one sentence] |
-| ... | | |
+#[[file:references/CRITIQUE_REPORT_TEMPLATE.md]]
 
-### COMPOSITE SCORE: X.X/10
-
-### Strongest Line
-> "quoted line" — [why it works]
-
-### Flagged Issues
-1. **[Problem name]**
-   Current: "the line" OR [description of the moment/decision]
-   Why: [explanation]
-   Fix:
-   a) "option 1" (for lyric fixes)
-   b) "option 2"
-   — OR: [structural/production fix description]
-
-2. ...
-
-### Priority Recommendations
-1. [Highest impact fix]
-2. [Second priority fix]
-3. [Third priority fix]
-```
+The template defines the exact structure, section ordering, conditional inclusion rules (when to include Album-Context, Revision Delta Table, Summary), and format guidelines. Follow it precisely — it is the single source of truth for critique report formatting.
 
 ---
 

@@ -47,6 +47,7 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 - [ ] Composite score calculated
 - [ ] All issues flagged with alternatives
 - [ ] Priority recommendations given (all issues, ordered by impact)
+- [ ] Report formatted per `references/CRITIQUE_REPORT_TEMPLATE.md`
 - [ ] Report saved to `analysis/[song-filename]_critique.md`
 
 **Decision gate:**
