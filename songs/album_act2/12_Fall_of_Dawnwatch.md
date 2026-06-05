@@ -1,4 +1,4 @@
-# Fall of Dawnwatch — Album Track 12 (v3)
+# Fall of Dawnwatch — Album Track 12 (v4 — Universalized)
 
 > Song Thesis: *You can train for years and still watch everything burn in a single night —
 > survival isn't victory, it's just not dying yet.*
@@ -34,9 +34,9 @@ They came from everywhere at once
 The sky turned black with wings I couldn't count
 The ground shook with a thousand charging feet
 Not a horde — an army with a plan
-Riftborn with our weapons in their hands
+Monsters with our weapons in their hands
 
-I watched the tower of the Nexus crack
+I watched the tower of the city crack
 A sound like bone — like something sacred splitting
 The fires climbed — the crystal shattered
 The city I had loved was being ripped apart
@@ -63,7 +63,7 @@ Dawnwatch is burning
 And we are never coming back
 
 Everything we built — swallowed in a night
-I trained to be a Custodian of balance
+I trained to be a guardian of balance
 But there's no balance when the whole world's alight
 
 Dawnwatch is falling — and all I can do is run
@@ -107,7 +107,7 @@ Dawnwatch is burning
 Somewhere behind us in the dark
 
 Everything we lost — swallowed by a night
-I trained to be a Custodian of balance
+I trained to be a guardian of balance
 Now I'm a refugee with blood on both my hands
 
 Surviving isn't winning
@@ -119,7 +119,7 @@ Surviving's just — not dying yet
 We washed up in a valley — green and quiet
 Exhausted — broken — but breathing
 
-The Mark still burning on my chest
+The purpose still burning on my chest
 
 (not Lyra)
 (never Lyra)

@@ -1,4 +1,4 @@
-# The Sword Remembers — Album Track 15 (v3)
+# The Sword Remembers — Album Track 15 (v4 — Universalized)
 
 > Song Thesis: *Grief isn't the weight of someone's absence — it's the weight of
 > everything they gave you that you now have to carry alone.*
@@ -74,7 +74,7 @@ He told me once — the night before the breach
 "Trust the people standing next to you"
 
 I didn't understand then — I was focused
-On the training — on the Mark — the fight
+On the training — on the purpose — the fight
 But standing here with nothing left of him
 I understand — the trust was his last gift
 
@@ -93,7 +93,7 @@ When every one still sounds like hope
 [Everything drops — wind + single piano note]
 
 [Spoken — Alaric, ghostly, echoing]
-"The sword is but an extension of the heart, Rikan"
+"The sword is but an extension of the heart"
 
 [Whispered — speaking to Alaric]
 I hear you — in the stone — in the wind

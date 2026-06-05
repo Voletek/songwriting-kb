@@ -1,4 +1,4 @@
-# Both Names — Album Track 17 / Finale (v3)
+# Both Names — Album Track 17 / Finale (v4 — Universalized)
 
 > Song Thesis: *You don't become whole by choosing one self over another —
 > you become whole by letting both names answer when the world calls.*
@@ -45,9 +45,9 @@ The silence after war
 [Verse 2 - The Pieces]
 [Piano enters — warm] [Guitar continues]
 
-Draeven knew the code — the architecture
+The man I was knew the code — the architecture
 The reason every river finds its place
-Rikan knows the weight — the instinct
+The one I am knows the weight — the instinct
 The world felt through the skin — not through a screen
 
 One knows the map — the other knows the road
@@ -67,12 +67,12 @@ I am both — and both are not afraid
 [Drums enter — steady] [Full acoustic + piano + strings]
 
 Both names answer when the world calls out
-Draeven in the knowing — Rikan in the fight
+The past in the knowing — the present in the fight
 I carry every scar from every life
 And none of them are wrong
 
 Both names live inside this chest
-The coder and the Custodian — the wound and what it taught
+The coder and the guardian — the wound and what it taught
 I am not what happened to me
 I am what I chose to build from the remains
 
@@ -82,8 +82,8 @@ Is finally peace
 [Bridge - What's Ahead]
 [Full band — warm, settled]
 
-The Shadow Weaver waits beyond the hills
-The Rift still bleeds — the Riftborn still suffer
+The enemy still waits beyond the hills
+The wound still bleeds — the broken still suffer
 I don't know if I'll survive what's coming
 But I'm walking toward it whole
 
@@ -104,7 +104,7 @@ That the breaking was the making — of the heart
 [FULL ORCHESTRA] [Choir enters] [Drums powerful] [Key lifts — EARNED]
 
 Both names answer when the dawn arrives
-Draeven in the memory — Rikan in the light
+The memory and the muscle — married in the light
 I carry everything that brought me here
 And set it down — not as weight — but as a right
 

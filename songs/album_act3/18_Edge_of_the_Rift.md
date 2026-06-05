@@ -7,7 +7,7 @@
 ## 9-STEP ANALYSIS
 
 ### 1. SEMANTIC
-Rikan stands at the continental edge overlooking the Riftlands — a corrupted expanse he must cross to reach the first Nexus fragment. He is whole (Track 17 resolved his identity), alone again, facing an impossible distance. This is the "setting out" moment: the calm after integration, the inhale before the next ordeal.
+The protagonist stands at the continental edge overlooking the corrupted lands — a vast expanse he must cross to reach the first fragment. He is whole (Track 17 resolved his identity), alone again, facing an impossible distance. This is the "setting out" moment: the calm after integration, the inhale before the next ordeal.
 
 ### 2. EMOTIONAL
 Central affect: **Resolute hope tempered by awe at scale.** Not fear — he's past fear. Not confidence — the land is too vast for that. It's the quiet certainty of someone who has already survived what should have killed him, facing a new unknown with open eyes.
@@ -15,7 +15,7 @@ Central affect: **Resolute hope tempered by awe at scale.** Not fear — he's pa
 BRECVEMA mechanisms:
 - **Expectancy** — building forward momentum (something is coming)
 - **Evaluative Conditioning** — callbacks to T17's resolution create warmth
-- **Musical Surprise** — the Riftlands' corruption should bleed sonically into the arrangement (dissonance beneath hope)
+- **Musical Surprise** — the corrupted land should bleed sonically into the arrangement (dissonance beneath hope)
 
 ### 3. PROSODIC
 - Target: 8-11 syllables per line (walking pace — literal journey)
@@ -28,12 +28,12 @@ BRECVEMA mechanisms:
 Arc type: **Threshold crossing** (Campbell's departure).
 - V1: Standing at the edge, seeing the scale of what's ahead
 - Chorus: Declaration of forward motion despite enormity ("I will cross")
-- V2: NEW INFO — What the Riftlands actually are (corruption, danger specifics) + reflection on what T17 gave him
+- V2: NEW INFO — What the corrupted lands actually are (corruption, danger specifics) + reflection on what T17 gave him
 - Bridge: THE TURN — Realization that being whole doesn't make the road shorter, but it makes each step real
 - Final Chorus: Same words, new meaning — "I will cross" becomes not just promise but identity
 
 ### 5. VOICE
-Rikan post-integration. Per Rule 8: vocal texture MUST differ from T17's "steady/integrated."
+Post-integration protagonist. Per Rule 8: vocal texture MUST differ from T17's "steady/integrated."
 - **T18 voice:** Weathered calm — the steadiness of T17 now tested against open sky. Road-worn + resolved. Think: a traveler who packs light because he knows what weight means.
 - Register: Baritone A2-D4, centered in chest voice, rarely reaching high
 - Delivery: Measured, unhurried, narrative. Closest analog in album = T10's "road-worn storytelling" but with the internal peace of T17 layered underneath.
@@ -61,7 +61,7 @@ Growth pattern: **Horizonal expansion** — starts intimate (single guitar + voi
 - Timbre palette: Warm acoustic steel-string, solo cello, orchestral strings (not chamber — big), grand piano (sparse), kit drums (organic, room-mic'd), bass guitar
 - Harmonic center: E minor (callbacks to T9, T3 — journey keys)
 - Space: Wide stereo in choruses, intimate/centered in verses
-- The Riftlands' corruption = subtle dissonant string harmonics under V2 and bridge (not ugly — unsettling)
+- The corrupted land = subtle dissonant string harmonics under V2 and bridge (not ugly — unsettling)
 - Reverb: Medium plate on vocals, longer on strings (landscape width)
 
 ### 9. COMMERCIAL
@@ -78,13 +78,13 @@ Growth pattern: **Horizonal expansion** — starts intimate (single guitar + voi
 | # | Rule | Status for T18 | Application |
 |---|---|---|---|
 | 1 | No electronic/industrial after T8 | ✅ ENFORCED | Zero synths, zero electronic. Fully organic palette. |
-| 2 | Alaric's voice = same production T11/T15 | ✅ N/A | Alaric does not appear in T18. His legacy lives in Rikan's resolve. |
+| 2 | Alaric's voice = same production T11/T15 | ✅ N/A | Alaric does not appear in T18. His legacy lives in the protagonist's resolve. |
 | 3 | Obsidian shard pulse T7-T10, then absorbed | ✅ ENFORCED | Pulse was absorbed by T11. Does NOT appear in T18. |
 | 4 | "I won't let the line die here" in T11 & T15 | ✅ HONORED | Phrase completed its arc. Does not appear in T18 but is echoed thematically. |
 | 5 | First natural sound (birdsong) = T12 outro | ✅ ENFORCED | T18 uses wind ambience (not birdsong as first instance — that was T12). |
 | 6 | First major key = T16 (D major) | ✅ COMPATIBLE | T18 is E minor — we can use major keys now (T16 earned them) but this track's emotion warrants minor with major-tinged moments. |
 | 7 | Key change in T17 = ONLY key change | ⚠️ CAREFUL | T18 does NOT modulate key. Stays in Em throughout. Bridge dissonance is harmonic color, not key change. |
-| 8 | Rikan's vocal texture evolves EVERY track | ✅ ENFORCED | T18 = "weathered calm" — distinct from T17's "steady/integrated." Still centered but now tested against open sky. Road-worn + resolved. |
+| 8 | Vocal texture evolves EVERY track | ✅ ENFORCED | T18 = "weathered calm" — distinct from T17's "steady/integrated." Still centered but now tested against open sky. Road-worn + resolved. |
 | 9 | T12 Fm rhymes with T6 Fm | ✅ N/A | Historical relationship preserved. T18 Em relates to T3/T9 (journey keys). |
 | 10 | Album title phrase ONLY in T17 final chorus | ✅ ENFORCED | "The fracture made the shadows / But the shadows made the dawn" does NOT appear in T18. |
 
@@ -135,7 +135,7 @@ Cinematic folk-rock, 92 BPM, E minor, weathered male baritone vocal, driving fin
 
 [verse 1 | vulnerable vocals, close-mic, cello enters low]
 The continent ends where the red earth cracks
-And the Riftlands open like a wound
+And the broken lands open like a wound
 I count the miles in shattered glass
 Beneath a bruise-coloured moon
 The air tastes wrong — like copper and ash
@@ -154,12 +154,12 @@ I was fractured once — I remember it
 But I carry the dawn I was born from
 
 [verse 2 | close-mic, add piano, dissonant string harmonics underneath]
-They say the Rift eats memory whole
+They say the land eats memory whole
 Turns your purpose into dust
-The Nexus fragment calls like a coal
+The fragment calls me like a coal
 Burning somewhere past the rust
-I am not the ghost who fell through code
-Not the boy who built the vault
+I am not the ghost who lost his way
+Not the boy who built the walls
 I'm the one who chose to bear the road
 With every scar and fault
 
@@ -201,7 +201,7 @@ One breath further — that's the road
 ## PRODUCTION NOTES
 
 ### Key & Tempo
-- **Key:** E minor — callbacks to T3 ("Residual Self") and T9 ("The Shard"), both identity/journey tracks. Em is Rikan's searching key turned purposeful.
+- **Key:** E minor — callbacks to T3 ("Residual Self") and T9 ("The Shard"), both identity/journey tracks. Em is the protagonist's searching key turned purposeful.
 - **Tempo:** 92 BPM — walking pace, matches T4's tempo territory but fully organic. Steady, unhurried, forward-moving.
 - **Time Signature:** 4/4
 
@@ -290,7 +290,7 @@ Rhyme types: Mix of perfect ("cracks/glass" — near), slant ("old/hold"), and t
 | Prosody | 8/10 | All lines 7-11 syllables. Open vowels on holds ("rift," "torn," "born," "road"). Breath points natural. One potential stuff: "I am not the ghost who fell through code" = 10 syllables, dense but singable at 92 BPM. |
 | Arc | 9/10 | Clear escalation V1→V2 (landscape → what it does + who he is now). Bridge contains genuine turn ("Being whole won't shrink the distance... but every step lands with both feet now"). Final chorus variation ("fractured — and I survived it") reframes from memory to triumph. |
 | Structure | 8/10 | Appropriate length (~4:15). Good contrast between sparse and full. Bridge silence is effective. Could argue the two builds are predictable — but the concept demands horizontal expansion which this serves. |
-| Originality | 7/10 | "Setting out on a journey" is well-worn territory. Fresh elements: the specific Riftlands imagery, the "both feet" turn, the post-integration calm as starting energy (not the usual "fired up" quest opener). The corruption-as-sensory-detail (copper, ash, hum) elevates. |
+| Originality | 7/10 | "Setting out on a journey" is well-worn territory. Fresh elements: the specific corrupted-land imagery, the "both feet" turn, the post-integration calm as starting energy (not the usual "fired up" quest opener). The corruption-as-sensory-detail (copper, ash, hum) elevates. |
 | Singability | 8/10 | Consistent phrase lengths, open vowels on sustained notes, natural breath points. Every line sits in baritone range. The chorus melody implied by the text rhythm is hummable. Bridge lines slightly prose-adjacent but the sparse arrangement gives room. |
 | Commercial Viability | 7/10 | Works perfectly for concept album context. Chorus could excerpt for trailer sync. Not a standalone single — requires album context for emotional weight. This is correct for Track 18 of a concept album. |
 | Genre Alignment | 9/10 | Cinematic folk-rock perfectly executed. Driving acoustic + cello + strings + organic drums = genre-correct. The orchestral elements don't overwhelm the folk foundation. Walking-pace tempo honors the journey convention. |
@@ -304,7 +304,7 @@ Rhyme types: Mix of perfect ("cracks/glass" — near), slant ("old/hold"), and t
 > "Being whole won't shrink the distance" — This is the bridge turn in a single image. It refuses false comfort. It acknowledges that resolution (T17) didn't make the world smaller or easier. It just made the steps real. This is the kind of line that makes someone pause.
 
 ### Runner-up
-> "I am not the ghost who fell through code / Not the boy who built the vault" — Perfect V2 escalation. References T1 ("Ghost in the System") and the vault/digital world without being heavy-handed. Shows growth by naming what he's NOT.
+> "I am not the ghost who lost his way / Not the boy who built the walls" — Perfect V2 escalation. References T1 ("Ghost in the System") and the past life without being heavy-handed. Shows growth by naming what he's NOT.
 
 ### Flagged Issues
 
@@ -341,8 +341,8 @@ Rhyme types: Mix of perfect ("cracks/glass" — near), slant ("old/hold"), and t
 ## CONTINUITY NOTES FOR FUTURE TRACKS
 
 - T18 establishes E minor as Act 3's "journey key" — consider whether T19+ should stay in this territory or move
-- The Riftlands' corruption (dissonant harmonics) is introduced here as a sonic motif — should it recur/intensify?
-- The Nexus fragment is named but not reached — its "call" (coal burning) could become a motif
+- The corrupted lands (dissonant harmonics) are introduced here as a sonic motif — should it recur/intensify?
+- The fragment is named but not reached — its "call" (coal burning) could become a motif
 - "Both my names" is referenced once (V1) — this threads back to T17 without overstating
 - The low choir hum in the final chorus could seed a larger choral presence as Act 3 builds
-- Rikan is ALONE in T18 — when do companions appear in Act 3?
+- The protagonist is ALONE in T18 — when do companions appear in Act 3?

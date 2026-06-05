@@ -1,4 +1,4 @@
-# First Blood — Album Track 8 (v3)
+# First Blood — Album Track 8 (v4 — Universalized)
 
 > Song Thesis: *The first time you discover what your new body can do, you realize
 > you're no longer the person who would have flinched.*
@@ -17,7 +17,7 @@ Dark aggressive cinematic rock, primal combat energy, male baritone A2-E4, key B
 [Title: First Blood]
 
 [Production Direction:
-Continues from Track 7's cave ambience. Verse 1 is near-silent: breath, heartbeat, distant scrabbling. Goblins trigger a shift — primal drums enter, distorted bass, the cave becomes a weapon. Chorus explodes with aggressive energy but stays CONTAINED — discovery, not triumph. Bridge drops to aftermath silence. Final chorus is darker, conflicted. Production should feel like discovering a machine inside yourself.]
+Continues from cave ambience. Verse 1 is near-silent: breath, heartbeat, distant scrabbling. Creatures trigger a shift — primal drums enter, distorted bass, the cave becomes a weapon. Chorus explodes with aggressive energy but stays CONTAINED — discovery, not triumph. Bridge drops to aftermath silence. Final chorus is darker, conflicted. Production should feel like discovering a machine inside yourself.]
 
 [Vocal Direction:
 Male baritone — whispered and terrified in intro/verse 1. As instinct takes over, voice hardens, becomes predatory. Chorus: powerful but strained — a man discovering lethal precision. Bridge: near-spoken, hollow, staring at his hands. Final chorus: conflicted strength acknowledged with unease.]
@@ -119,8 +119,8 @@ And the worst part is how natural it felt
 
 First blood on my claws tonight
 Something woke that won't go back to sleep
-I was Draeven at a keyboard once
-Now I'm whatever this world needs to be
+I was someone else at a keyboard once
+Now I'm whatever this world needs me to be
 
 First blood — and the guilt tastes copper
 First blood — and my body knows
@@ -134,11 +134,11 @@ The cave remembers what I did
 And so do I
 
 [Outro - Moving Deeper]
-[Cave ambience returns] [Heartbeat steadies] [Obsidian shard pulse]
+[Cave ambience returns] [Heartbeat steadies] [Distant pulse]
 
 Forward — deeper — into the dark
 
-The shard against my chest
+Something against my chest
 Is pulling me somewhere
 
 And I follow
@@ -158,7 +158,7 @@ And I follow
   Final Chorus: i – VII – VI – v (Bm – A – G – F#m) [descending = gravity, weight]
 • Vocal: Male baritone (A2–E4), terrified whisper → hardening → predatory → hollow → conflicted
 • Instruments: Cave ambience, heartbeat percussion, heavy tribal drums, distorted bass, staccato guitar riff, industrial undertones (fading), low resonant hum
-• Dynamics: Near-silence (intro) → whispered tension (V1) → drums enter (PC) → explosive (C) → silence (post-C) → driving (V2) → total drop (bridge) → dark power (FC) → shard pulse (outro)
+• Dynamics: Near-silence (intro) → whispered tension (V1) → drums enter (PC) → explosive (C) → silence (post-C) → driving (V2) → total drop (bridge) → dark power (FC) → pulse (outro)
 • Hook Type: Title hook "First blood" + identity claim "the cave knows my name"
 • Rhyme Scheme: V=ABCB, PC=ABAB, C=ABCB, Bridge=Free
 • Emotional Arc: Terror → instinct → violence as discovery → exhilaration → horror → guilt → resigned acceptance → forward

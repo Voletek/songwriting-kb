@@ -1,4 +1,4 @@
-# Campfire — Album Track 16 (v3)
+# Campfire — Album Track 16 (v4 — Universalized)
 
 > Song Thesis: *You don't choose your family by blood — you choose them by
 > who's still sitting next to you when the fire burns low.*
@@ -101,7 +101,7 @@ The world outside is vast and wants to end us
 But it hasn't yet — because of this
 
 Here around the fire — I'm not alone
-For the first time since the transfer took my life
+For the first time since the world I knew collapsed
 I have people — scarred and stubborn people
 Who would walk into the dark if I asked twice
 
