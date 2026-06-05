@@ -80,7 +80,7 @@ I didn't hesitate
 Circled in the shadows — found the gap
 Claws against a throat before it screamed
 The second fell mid-lunge — I caught its weight
-And turned its force against itself
+And felt its spine give way beneath my grip
 
 Three bodies on the stone — the silence after
 Three lives I ended with a stranger's hands
@@ -93,8 +93,8 @@ I understand before I understand
 These aren't programmed reflexes
 This is what I've become
 
-The code became the muscle
-And the muscle drew the blood
+These hands remember what to do
+Before my mind can draw the blood
 
 [Bridge - Aftermath]
 [Everything drops] [Single drip] [Near-spoken vocal]
@@ -119,8 +119,8 @@ And the worst part is how natural it felt
 
 First blood on my claws tonight
 Something woke that won't go back to sleep
-I was someone else at a keyboard once
-Now I'm whatever this world needs me to be
+I built things once — with light and clean design
+Now I build nothing — I just end what moves
 
 First blood — and the guilt tastes copper
 First blood — and my body knows
