@@ -1,15 +1,17 @@
 # SOP 02: Critiquing a Song
 
-> Step-by-step procedure for evaluating any song using the 3-layer critique model
-> (Core 12-category craft rubric + 5 Advanced Assessments + Album-Context Module).
-> Academic sources: Moore, Tagg, Lacasse, Moylan, Pattison, Fabbri, Juslin, Dodge et al.
+> Step-by-step procedure for evaluating any song using the multi-layer critique model
+> (Core 12-category craft rubric + 5 Advanced Assessments + Suno Optimization Assessment + Album-Context Module).
+> Academic sources: Moore, Tagg, Lacasse, Moylan, Pattison, Fabbri, Juslin, Schubart, Dodge et al.
+> Suno sources: Community-tested prompt science (2025-2026), era anchoring, genre-first principle.
 
 ---
 
 ## Prerequisites
 
 - A complete song (lyrics + production notes, or at minimum lyrics + genre/tempo info)
-- Access to the Critique Reference (`references/CRITIQUE_REFERENCE.md`) — this contains the full 3-layer scoring framework (Core 12 rubric definitions + Advanced 5 assessment scales + Album-Context checks). Required for consistent scoring.
+- Access to the Critique Reference (`references/CRITIQUE_REFERENCE.md`) — this contains the full multi-layer scoring framework (Core 12 rubric definitions + Advanced 5 assessment scales + Suno Optimization methodology + Album-Context checks). Required for consistent scoring.
+- Access to the Style & Genre Reference (`references/SUNO_STYLE_GENRE_REFERENCE.md`) — required for evaluating genre/key/BPM/instrument choices against emotional content and providing Style Prompt alternatives.
 - If album track: access to the Album Bible for this track's intended role, emotion, and palette
 - If the song has an existing self-score: note it but do NOT let it anchor your assessment. Self-critiques inflate by ~1.0 point on average.
 
@@ -63,11 +65,52 @@ Score using the rubric definitions in `references/CRITIQUE_REFERENCE.md` — the
 
 Average all 12 scores. This is the composite.
 
-### Step 5 — Identify Strongest Line
+### Step 5 — Suno Optimization Assessment
+
+Evaluate whether the Style Prompt and tag choices are OPTIMAL for the song's emotional content. Use `references/SUNO_STYLE_GENRE_REFERENCE.md` as the evaluation reference.
+
+**5a. 7-Point Dimensional Check:**
+
+For each dimension, assess CORRECT / SUBOPTIMAL / WRONG:
+
+| # | Dimension | Check Against |
+|---|---|---|
+| 1 | Genre | Fabbri's 5 rules — does this genre SIGNIFY what the lyrics express? |
+| 2 | Key | Juslin's cue hierarchy — mode is #1 emotional cue. Does key character match dominant emotion? |
+| 3 | BPM | Genre convention table + BPM-Emotion mapping. Correct for BOTH? |
+| 4 | Instruments | Tagg musemes — does each instrument carry the correct cultural connotation? |
+| 5 | Vocal style | Moore persona + Fabbri behavioral — delivery matches genre AND lyric arc? |
+| 6 | Era/Production | Would era anchoring improve specificity? Is era separated from instrumentation? |
+| 7 | Space/Mood | Atmospheric descriptors aligned, non-contradictory, ≤3 total? |
+
+**5b. Section-Level Tag Check:**
+- Does each section's production cue tag signify correctly for THAT section's content? (Tagg applied)
+- Do tags contrast between adjacent sections?
+- Are tags ≤3 per section?
+
+**5c. Compliance Checklist:**
+- Required elements present? (`[Title:]`, `[Production Direction:]`, `[Vocal Direction:]`, `[end]`)
+- Character limits respected? (Style ≤1000, Lyrics ≤5000)
+- Genre first in Style Prompt? Tag count 5-8? No contradictions?
+- Named `()` layers declared? Exclusions in Exclude field?
+
+**5d. Overall Verdict:**
+- **OPTIMAL** — All dimensions correct. No changes needed.
+- **COULD IMPROVE** — 1-3 dimensions suboptimal. Provide 2 alternative Style Prompts.
+- **MISMATCHED** — 1+ dimensions wrong OR 4+ suboptimal. Revision strongly recommended.
+
+**5e. Style Alternatives (if not OPTIMAL):**
+Provide 2 complete alternative Style Prompts (ready to paste into Suno) with:
+- Full rewritten prompt text
+- Reasoning (why this serves the emotional content better)
+- Expected improvement in render quality
+- Slider recommendation (Weirdness % / Style Influence % / Audio Influence %)
+
+### Step 6 — Identify Strongest Line
 
 Find the ONE line you'd build the whole song around. Quote it. Explain in 1-2 sentences WHY it works (imagery? rhythm? meaning? surprise?).
 
-### Step 6 — Flag ALL Issues
+### Step 7 — Flag ALL Issues
 
 For each issue found (do not limit to a fixed number — report everything that needs fixing):
 1. Name the problem (specific — not "could be better")
@@ -80,7 +123,7 @@ For each issue found (do not limit to a fixed number — report everything that 
 
 **Rule:** Alternatives/fixes must SOLVE THE STATED PROBLEM while maintaining the song's thesis and voice — not just be different for difference's sake.
 
-### Step 7 — Write Priority Recommendations
+### Step 8 — Write Priority Recommendations
 
 ALL identified issues, ordered by impact (biggest improvement first). Each recommendation should target a different LEVEL of the song where possible (one lyric-level, one structural/arrangement, one polish) — but if the song's problems cluster at one level, that's fine. Impact ordering takes precedence over category diversity.
 
@@ -88,7 +131,7 @@ ALL identified issues, ordered by impact (biggest improvement first). Each recom
 2. The second-highest-impact fix
 3. The third-highest-impact fix
 
-### Step 8 — Save the Report
+### Step 9 — Save the Report
 
 Save the critique to `analysis/[song-filename]_critique.md`
 
@@ -104,7 +147,7 @@ Naming convention:
 
 **Re-critiques:** If critiquing a revised version (post-SOP 07 revision cycle), append `_v2` to the filename: `analysis/KOTL_01_The_Keepers_Morning_critique_v2.md`. Keep the original for comparison.
 
-### Step 9 — Format Output
+### Step 10 — Format Output
 
 **Use the standardized report template for ALL critique outputs:**
 
@@ -132,7 +175,8 @@ The template defines the exact structure, section ordering, conditional inclusio
 | Read completely | 2-3 min |
 | 9-step analysis | 5-7 min |
 | Score 12 categories | 10-15 min |
+| Suno Optimization Assessment | 5-10 min |
 | Strongest line + flags | 5-7 min |
 | Recommendations + format | 5 min |
-| **Total (standalone song)** | **30-35 min** |
-| **Total (concept album track with production notes)** | **40-50 min** |
+| **Total (standalone song)** | **35-45 min** |
+| **Total (concept album track with production notes)** | **45-55 min** |

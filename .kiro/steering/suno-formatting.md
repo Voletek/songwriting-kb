@@ -1,11 +1,13 @@
 ---
 inclusion: auto
-description: Suno AI field limits, section tags, pipe notation, creative sliders, v5.5 features, era tags, parenthetical layers, and formatting rules.
+description: Suno AI field limits, section tags, pipe notation, creative sliders, v5.5 features, era tags, parenthetical layers, formatting rules, and genre/style optimization principles.
 ---
 
 # Suno AI Formatting Rules
 
 > Auto-loaded. Quick-reference for Suno formatting. Full tag details in the suno-meta-tags skill.
+> For comprehensive genre theory, key-emotion mapping, BPM ranges, and style optimization:
+> see `references/SUNO_STYLE_GENRE_REFERENCE.md`
 
 ---
 
@@ -38,8 +40,20 @@ Era decade tags ("1980s", "1970s") now aggressively bias PRODUCTION style (recor
 ## Style Prompt Formula
 
 ```
-Genre, BPM, Mood, Instruments, Vocal Style, Production Direction
+Genre, BPM, Mood, Instruments, Vocal Style, Era/Production, Direction
 ```
+
+**7-Dimension Rule:** Every Style Prompt should specify all 7 dimensions for maximum control. Missing any dimension = Suno guesses (fills with statistical averages).
+
+**Genre-First Principle:** Genre MUST be the first element — it anchors everything else.
+
+**5-8 Tag Sweet Spot:** Comma-separated descriptors. Past 10 tags, signals conflict and Suno defaults to generic. Keep focused and non-contradictory.
+
+**Era Anchoring:** Time references ("early 2000s garage rock") outperform genre labels ("indie rock") because they give Suno a specific sonic PERIOD, not just a category.
+
+**70/30 Genre Combination:** One dominant genre (70%) + one flavor (30%). 50/50 splits confuse Suno. Use `+` to combine.
+
+**Full genre/key/BPM/instrument reference:** `references/SUNO_STYLE_GENRE_REFERENCE.md`
 
 ## Essential Tags (Use in every song)
 
@@ -100,3 +114,14 @@ Text in parentheses = secondary vocal layer. Suno treats it differently from mai
 ## Output Template (Every Song)
 
 Always include: Style Prompt + Exclusions + Title tag + Production Direction + Vocal Direction + Lyrics with section tags + Production Notes block (Key, Tempo, Time Sig, Chords Nashville+actual, Vocal, Instruments, Dynamics, Hook Type, Rhyme Scheme, Emotional Arc)
+
+## Genre & Style Optimization
+
+When writing or revising songs, evaluate Style Prompt choices against the emotional content:
+
+- **Key is the #1 emotional cue** (Juslin) — choose key for emotional character, not just instrument convenience
+- **BPM serves two masters** — must satisfy genre convention AND emotional pacing
+- **Instruments carry cultural meaning** (Tagg) — piano ≠ guitar ≠ synth even playing the same notes
+- **Section tags = per-section musemic signification** — each tag should carry the correct connotation for THAT section's content
+
+The Critic agent's Suno Optimization Assessment evaluates all of this. Full methodology: `references/SUNO_STYLE_GENRE_REFERENCE.md`

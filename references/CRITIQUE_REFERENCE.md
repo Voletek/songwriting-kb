@@ -459,6 +459,85 @@ The **Core 12-category composite** drives the pipeline decision:
 
 ---
 
+## SUNO OPTIMIZATION ASSESSMENT
+
+> Added to every critique. Evaluates whether the Style Prompt, tags, and production choices are
+> the BEST creative match for the song's emotional content — not just technically compliant.
+> Full reference: `references/SUNO_STYLE_GENRE_REFERENCE.md`
+
+### Purpose
+
+The Suno Optimization Assessment answers: **"Will Suno render this song at its best?"**
+
+It evaluates two things:
+1. **Creative optimization** — Are the genre, key, BPM, instruments, and vocal choices the BEST options for this song's emotional content? Could alternatives serve better?
+2. **Technical compliance** — Are all required tags present, limits respected, declarations made?
+
+### The 7-Point Dimensional Evaluation
+
+Evaluate each dimension of the Style Prompt against the song's emotional content:
+
+| # | Dimension | Framework Applied | What to Check |
+|---|---|---|---|
+| 1 | **Genre** | Fabbri (5 rules) | Does the genre container satisfy all 5 rules for this song's content? Is it the BEST emotional container? |
+| 2 | **Key** | Juslin (cue hierarchy) | Mode is the #1 emotional cue. Does this key carry the correct character for the lyric content? |
+| 3 | **BPM** | Genre conventions + emotion mapping | Is tempo correct for BOTH the genre conventions AND the emotional pacing of the lyrics? |
+| 4 | **Instruments** | Tagg (musemes) | Does every instrument signify the correct cultural connotation? Any that fight the lyric meaning? |
+| 5 | **Vocal style** | Moore (persona) + Fabbri (behavioral) | Does the vocal delivery match genre expectations AND serve the lyrics' emotional arc? |
+| 6 | **Era/Production** | Suno era-anchoring science | Is a specific sonic period being invoked? Would era anchoring IMPROVE specificity? |
+| 7 | **Space/Mood** | Tagg + Lacasse | Are atmospheric descriptors aligned, non-contradictory, and ≤3 total? |
+
+### Assessment Results
+
+Each dimension gets one of three ratings:
+- **CORRECT** — This choice serves the emotional content optimally
+- **SUBOPTIMAL** — Fundamentally sound but a better option exists
+- **WRONG** — This choice fights the lyric content or violates genre rules
+
+### Overall Verdict
+
+- **OPTIMAL** — All 7 dimensions are CORRECT. No changes needed.
+- **COULD IMPROVE** — 1-3 dimensions are SUBOPTIMAL. Alternatives provided.
+- **MISMATCHED** — 1+ dimensions are WRONG, or 4+ are SUBOPTIMAL. Revision strongly recommended.
+
+### When to Provide Style Alternatives
+
+If verdict is COULD IMPROVE or MISMATCHED:
+- Provide 2 complete alternative Style Prompts (ready to paste into Suno)
+- Each with reasoning (why it serves the emotion better) and expected improvement
+- Include slider recommendations (Weirdness/Style Influence/Audio Influence)
+
+### Section-Level Tag Evaluation
+
+Beyond the Style Prompt, evaluate per-section production cue tags:
+- Does each section's tag signify the correct emotion for that section's lyric content? (Tagg)
+- Do tags contrast between adjacent sections? (Variety prevents monotony)
+- Are tags ≤3 per section? (Suno parsing sweet spot)
+- Do tags support the proxemic arc? (Sparse = intimate, full = public)
+
+### Technical Compliance Checklist
+
+Binary pass/fail checks:
+- Required elements present (`[Title:]`, `[Production Direction:]`, `[Vocal Direction:]`, `[end]`)
+- Character limits respected (Style ≤1000, Lyrics ≤5000)
+- Structural rules followed (section tags on own lines, genre first in Style)
+- Declarations made (named `()` layers declared in Style Prompt)
+- Tag count in range (5-8 optimal, never >10)
+- No contradictory tags present
+- Exclusions in correct field
+
+### Key Evaluation Principles
+
+1. **Genre-Emotion Alignment** — The genre must SIGNIFY what the lyrics express. Dark lyrics in an upbeat genre = semiotic violation (Fabbri Rule 2).
+2. **Key is King** — Mode is the #1 emotional cue (Juslin). Wrong key = wrong emotion at the deepest level.
+3. **BPM serves TWO masters** — Must satisfy genre convention AND emotional pacing simultaneously.
+4. **Instruments carry meaning** — Every instrument signifies independently of melody (Tagg). Piano ≠ guitar ≠ synth even playing the same notes.
+5. **Era anchoring is more powerful than genre labeling** — Time references give Suno specific sonic periods. "1995 trip-hop" > "dark electronic."
+6. **The 70/30 Rule** — Genre combinations: one dominant (70%) + one flavor (30%). 50/50 splits confuse Suno.
+7. **5-8 tags maximum** — Past 10, signals conflict and Suno defaults to generic.
+
+---
+
 ## THEORETICAL SOURCES
 
 | Scholar/System | Contribution to This Framework |
@@ -474,6 +553,9 @@ The **Core 12-category composite** drives the pipeline decision:
 | **Nashville A&R** (industry practice) | Melody memorability, "cut" potential, market fit, 7-second emotional truth test, "would I skip?" test |
 | **Dockwray & Moore** (2010) | Establishment of virtual performance space in rock, the "diagonal mix" as norm |
 | **Megan Lavengood** (2020, 2021) | Cultural significance of timbre analysis, novelty layer semiotic significance |
+| **Juslin & Gabrielsson** (emotional cue research) | Emotional cue hierarchy: mode > tempo > register > dynamics > articulation > timbre. Linearity and additivity of primary cues |
+| **Christian Schubart** (1806) | Key characteristics and emotional associations — historical foundation for key-emotion mapping |
+| **Suno community research** (2025-2026) | Prompt formula (genre-first, 5-8 tags), era anchoring, genre combination rules, slider behavior, v5 parsing |
 
 ---
 
@@ -484,3 +566,7 @@ The **Core 12-category composite** drives the pipeline decision:
 #[[file:references/CRITIQUE_REPORT_TEMPLATE.md]]
 
 The template defines the exact structure, section ordering, conditional inclusion rules, and format guidelines for every critique report. Follow it precisely — it is the single source of truth for output formatting.
+
+For Suno Optimization Assessment methodology and genre/key/BPM reference data:
+
+#[[file:references/SUNO_STYLE_GENRE_REFERENCE.md]]

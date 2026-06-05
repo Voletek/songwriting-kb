@@ -65,6 +65,90 @@
 
 ---
 
+## Suno Optimization Assessment
+
+> Evaluates whether the Style Prompt, tags, and production choices are OPTIMAL for the song's
+> emotional content — not just technically compliant but creatively best-suited.
+> Reference: `references/SUNO_STYLE_GENRE_REFERENCE.md`
+
+```markdown
+## Suno Optimization Assessment
+
+**Current Style approach:** [One sentence summarizing the genre/key/BPM/vocal specified]
+**Compliance:** PASS / ISSUES — [list any missing required elements]
+**Optimization verdict:** OPTIMAL / COULD IMPROVE / MISMATCHED
+
+### 7-Point Dimensional Check
+
+| # | Dimension | Current Choice | Assessment | Notes |
+|---|---|---|---|---|
+| 1 | Genre | [what's specified] | CORRECT / SUBOPTIMAL / WRONG | [Does this genre serve the emotional content? Fabbri's 5 rules satisfied?] |
+| 2 | Key | [key specified] | CORRECT / SUBOPTIMAL / WRONG | [Does the key carry the correct emotional weight? Mode = #1 emotional cue] |
+| 3 | BPM | [tempo specified] | CORRECT / SUBOPTIMAL / WRONG | [Is tempo in the right range for genre AND emotion?] |
+| 4 | Instruments | [main instruments] | CORRECT / SUBOPTIMAL / WRONG | [Do instruments signify correctly? (Tagg) Cultural connotation aligned?] |
+| 5 | Vocal Style | [vocal specified] | CORRECT / SUBOPTIMAL / WRONG | [Does delivery match genre expectations AND lyric content?] |
+| 6 | Era/Production | [era if specified] | CORRECT / SUBOPTIMAL / N/A | [Is the production aesthetic serving or fighting the content?] |
+| 7 | Space/Mood | [mood descriptors] | CORRECT / SUBOPTIMAL / WRONG | [Are atmospheric descriptors aligned and non-contradictory?] |
+
+### Section-Level Tag Assessment
+
+| Section | Current Tags | Signification Check | Recommendation |
+|---|---|---|---|
+| [Intro] | [current tags] | ALIGNED / MISMATCHED | [Any changes needed?] |
+| [Verse] | [current tags] | ALIGNED / MISMATCHED | [Any changes needed?] |
+| [Chorus] | [current tags] | ALIGNED / MISMATCHED | [Any changes needed?] |
+| [Bridge] | [current tags] | ALIGNED / MISMATCHED | [Any changes needed?] |
+| ... | ... | ... | ... |
+
+### Style Alternatives (if verdict is not OPTIMAL)
+
+**Option A:**
+```
+[Complete rewritten Style Prompt — full text ready to paste into Suno]
+```
+Reasoning: [Why this genre/key/BPM combination serves the emotional content better]
+Expected improvement: [What changes in the Suno render — be specific]
+Slider recommendation: Weirdness X% / Style Influence X% / Audio Influence X%
+
+**Option B:**
+```
+[Complete rewritten Style Prompt — different angle]
+```
+Reasoning: [What this prioritizes differently]
+Expected improvement: [What this optimizes for]
+Slider recommendation: Weirdness X% / Style Influence X% / Audio Influence X%
+
+### Compliance Checklist
+
+| Check | Status | Notes |
+|---|---|---|
+| `[Title:]` present above intro | ✅/❌ | |
+| `[Production Direction:]` present | ✅/❌ | |
+| `[Vocal Direction:]` present | ✅/❌ | |
+| Style Prompt ≤1000 chars | ✅/❌ | [actual count if close/over] |
+| Lyrics ≤5000 chars (with tags) | ✅/❌ | [actual count if close/over] |
+| `[end]` at bottom | ✅/❌ | |
+| Section tags on own lines | ✅/❌ | |
+| Named `()` layers declared in Style | ✅/❌ | [list any undeclared] |
+| Exclusions in Exclude field (not lyrics) | ✅/❌ | |
+| Genre is FIRST in Style Prompt | ✅/❌ | |
+| Tag count 5-8 (not >10) | ✅/❌ | [actual count] |
+| No contradictory tags | ✅/❌ | [flag any conflicts] |
+| BPM/tempo specified | ✅/❌ | |
+| Per-section tags ≤3 per section | ✅/❌ | [flag any over-tagged sections] |
+```
+
+**Optimization verdict meanings:**
+- **OPTIMAL** — Genre, key, BPM, instruments, vocal, and tags all serve the emotional content perfectly. No changes recommended.
+- **COULD IMPROVE** — Fundamentally sound but specific dimensions could be stronger. Alternatives provided.
+- **MISMATCHED** — The Style Prompt is fighting the lyric content. Genre/key/BPM don't serve the emotion. Revision strongly recommended.
+
+**When to include Style Alternatives:**
+- Always include if verdict is COULD IMPROVE or MISMATCHED
+- Omit if verdict is OPTIMAL (just confirm why it works)
+
+---
+
 ## Layer 3: Album-Context Assessment [CONDITIONAL]
 
 > Include ONLY for concept album tracks. Omit entirely for standalone songs.
@@ -234,6 +318,7 @@ For 3+ versions, extend columns: `| v1 | v2 | v3 | Δ(v1→v3) |`
 | Header | Always | Always | Always |
 | Core 12 Scores | Always | Always | Always |
 | Advanced 5 Scores | Always | Always | Always |
+| Suno Optimization | Always | Always | Always |
 | Album-Context | If album track | If album track | If album track |
 | Calibration | Always | Always | Always |
 | Strongest Line | Always | Always | Always |
