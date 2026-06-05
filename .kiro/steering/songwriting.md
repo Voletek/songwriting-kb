@@ -1,5 +1,6 @@
 ---
 inclusion: auto
+description: Core songwriting principles, 9-step workflow, quality gates, and output locations. The foundational craft rules applied to every task.
 ---
 
 # Professional Songwriting — Core Principles & Workflow

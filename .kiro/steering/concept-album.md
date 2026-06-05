@@ -1,5 +1,6 @@
 ---
 inclusion: auto
+description: Framework for managing concept album continuity — how to set up album bibles, conditional steering, continuity hooks, and universal album rules.
 ---
 
 # Concept Album — Continuity System

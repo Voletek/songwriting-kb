@@ -1,5 +1,6 @@
 ---
 inclusion: auto
+description: Song output format conventions — Production Notes block, direction blocks, parenthetical layers, duet formatting, hit formulas, and song thesis requirement.
 ---
 
 # Output & Format Preferences

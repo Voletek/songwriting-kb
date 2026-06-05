@@ -1,5 +1,6 @@
 ---
 inclusion: auto
+description: Suno AI field limits, section tags, pipe notation, creative sliders, v5.5 features, era tags, parenthetical layers, and formatting rules.
 ---
 
 # Suno AI Formatting Rules
