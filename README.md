@@ -36,7 +36,7 @@ songwriting-kb/
 │   ├── powers/songwriting/    1 power — activatable master bundle
 │   └── sops/                  8 SOPs — step-by-step procedures
 ├── examples/                  Reference implementations (albums, preferences)
-├── references/                5 companion docs (critique, tags, voice, 2 example bibles)
+├── references/                7 companion docs (critique, template, style/genre, tags, voice, 2 bibles)
 ├── songs/                     Album tracks + experimental + standalone
 ├── analysis/                  Stress test reports + critique outputs
 ├── SONGWRITING_KNOWLEDGE_BASE.md    Master craft reference (13 sections)
@@ -52,7 +52,7 @@ The procedural layer — step-by-step HOW for every workflow:
 | # | SOP | What It Covers | Time |
 |---|---|---|---|
 | **01** | [Writing a Song](/.kiro/sops/01-writing-a-song.md) | 27 steps: concept → analysis → writing → QA → formatting | 50-75 min |
-| **02** | [Critiquing a Song](/.kiro/sops/02-critiquing-a-song.md) | 9 steps: read → 9-step analysis → score → flag → recommend | 30-50 min |
+| **02** | [Critiquing a Song](/.kiro/sops/02-critiquing-a-song.md) | 10 steps: read → 9-step analysis → score → Suno optimization → flag → recommend | 35-55 min |
 | **03** | [Optimizing for Suno](/.kiro/sops/03-optimizing-for-suno.md) | 12 steps: char audit → tags → validate → dynamics → sliders | 15-20 min |
 | **04** | [Setting Up a Concept Album](/.kiro/sops/04-setting-up-concept-album.md) | 12 steps: concept → registry → rules → motifs → documentation | 2.5-3.5 hrs |
 | **05** | [Extending an Album](/.kiro/sops/05-extending-an-album.md) | 12 steps: evaluate → scope → update bible → verify → write | 1-2 hrs |
@@ -75,7 +75,7 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 | Agent | What It Does | Invoke With |
 |---|---|---|
 | **songwriter** | Creates complete songs from concepts using Nashville method, outputs Suno-ready format with Production Notes | "Write a song about X" |
-| **critic** | Scores songs on 12 categories (1-10), identifies strongest line, flags issues with alternatives | "Critique this" / "Score this song" |
+| **critic** | Scores songs on 12 craft categories (1-10) + 5 advanced assessments + Suno optimization (genre/key/BPM/instrument evaluation with alternative Style Prompts), identifies strongest line, flags issues with alternatives | "Critique this" / "Score this song" |
 | **suno-optimizer** | Adds meta-tags, checks char counts, validates pipe params, verifies parenthetical layers, converts to v5.5 format | "Make this Suno-ready" |
 | **album-continuity** | Runs hard rules, verifies sonic palette, motifs, character voices, key relationships | "Check continuity" |
 
@@ -85,7 +85,7 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 
 | Skill | Contains | Activate When |
 |---|---|---|
-| **song-critique** | 12-category rubric, scoring examples, flag patterns | Evaluating any song |
+| **song-critique** | 12-category rubric, 5 advanced assessments, Suno optimization (7-point dimensional check + style alternatives), flag patterns | Evaluating any song |
 | **suno-meta-tags** | 35+ confirmed tags, v5.5 features, layers, sliders, era tags | Formatting for Suno |
 | **music-theory** | 12 disciplines, 23-point framework, 18 advanced concepts | Deep production analysis |
 | **character-voice** | Accent/dialect system, voice design template (vocal + non-vocal), instrumentation maps | Writing for characters |
@@ -157,6 +157,19 @@ Decade tags in Style Prompt aggressively bias production style:
 
 ### The Specificity Principle
 The more dimensions you specify (genre, tempo, mood, vocal, instruments, space, key), the less Suno fills gaps with statistical averages. Our SOP system produces 7-dimension "precise" prompts by design.
+
+### Genre-Emotion Alignment (Critic Evaluates This)
+The critic's **Suno Optimization Assessment** evaluates whether the Style Prompt's genre, key, BPM, and instrument choices are the BEST match for the song's emotional content — and provides complete alternative Style Prompts when they aren't. Key principles:
+
+- **Key is the #1 emotional cue** (Juslin) — wrong key = wrong emotion at the deepest level
+- **Genre must SIGNIFY what the lyrics express** (Fabbri) — dark lyrics in an upbeat genre = semiotic violation
+- **BPM serves two masters** — must satisfy genre convention AND emotional pacing
+- **Instruments carry cultural meaning** (Tagg) — piano ≠ guitar ≠ synth even playing the same notes
+- **Era anchoring > genre labeling** — time references give Suno specific sonic periods
+- **70/30 Rule** — genre combinations: one dominant (70%) + one flavor (30%)
+- **5-8 tags maximum** — past 10, signals conflict and Suno defaults to generic
+
+Full reference: `references/SUNO_STYLE_GENRE_REFERENCE.md` (600+ lines covering key-emotion mapping, BPM ranges, 30+ instrument significations, genre conventions, and Suno prompt science)
 
 ### 5 Formatting Modes
 | Mode | Use Case |
@@ -316,13 +329,18 @@ cd songwriting-kb
 ## Sources
 
 - Berklee Online, Pat Pattison (Berklee Professor)
-- Franco Fabbri (genre theory), Philip Tagg (music semiotics)
-- Patrik Juslin (BRECVEMA emotion psychology)
+- Franco Fabbri (genre theory — 5 rules of genre membership)
+- Philip Tagg (music semiotics — musemes, cultural connotation of timbres)
+- Patrik Juslin (BRECVEMA emotion psychology, emotional cue hierarchy)
+- Allan F. Moore (functional texture layers, soundbox theory, style vs genre)
+- Serge Lacasse (vocal staging, proxemic distance)
+- Christian Schubart (key characteristics and emotional associations)
+- Dodge et al. 2025 (6 universal evaluation criteria for popular music)
 - stayen/suno-reference (November 2025 — v5.0 meta-tags)
-- Suno AI official documentation + community testing
+- Suno AI official documentation + community testing (2025-2026)
+- Suno community research: prompt formula (genre-first, 5-8 tags), era anchoring, genre combinations (70/30 rule), slider behavior, v5.5 features
 - Battle-tested prompt engineering (real Suno playlist prompts)
 - iZotope, The Song Foundry, American Songwriter, Nashville Guitar Studios
-- Community research: era tag production biases, parenthetical layer techniques, specificity principle
 
 ---
 
