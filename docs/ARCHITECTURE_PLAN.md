@@ -6,6 +6,23 @@
 
 ---
 
+## Credits & Acknowledgments
+
+This restructuring was catalyzed by **Brian Smith Clark** ([@multi-lang](https://github.com/multi-lang)) who forked the repo, conducted a thorough methodology review, and submitted [PR #3](https://github.com/multi-lang/songwriting-kb/pull/3) proposing platform generalization. While our final implementation differs from his PR's approach, the core insights that drove this refactor came directly from his work:
+
+- **The fragmented source-of-truth problem** — Brian identified that the same methodology was duplicated across agents, SOPs, skills, and steering with no single canonical source. This is the central problem this refactor solves.
+- **The platform-neutral methodology concept** — The principle that songwriting knowledge should exist independently of any tool's config format originated from his review.
+- **Suno version-dating** — His observation that Suno-specific claims are mixed across versions without clear labels directly led to our version status table approach.
+- **Deterministic validation tooling** — His `tools/count-suno-fields.py` script demonstrated that character counting and format validation should be code, not AI interpretation. Our `tools/validate-song.py` will be built from this foundation.
+- **Experiment logging for Suno** — His `experiments/suno/` structure (README + TEMPLATE) is being adopted with minor simplifications.
+- **Context packet concept** — The file-path-per-workflow lists in his `README_PLATFORM_SUPPORT.md` are the direct basis for our `docs/context-packets/` design.
+
+The review document itself (`RESEARCH_METHODOLOGY_REVIEW_AND_GENERALIZATION_PLAN.md`) is the most thorough external assessment this system has received. It validated the methodology's strengths ("creatively sophisticated and operationally useful") while honestly identifying gaps we're now addressing.
+
+Brian's work pushed this project forward. Credit where it's due.
+
+---
+
 ## The Problem
 
 The methodology currently lives fragmented across multiple layers:
