@@ -14,16 +14,17 @@
                 ▼                 ▼              ▼              ▼
 ┌───────────────────┐ ┌──────────────┐ ┌──────────────┐ ┌──────────────────┐
 │   SONGWRITER      │ │   CRITIC     │ │ SUNO-        │ │ ALBUM-           │
-│   AGENT           │ │   AGENT      │ │ OPTIMIZER    │ │ CONTINUITY       │
-│                   │ │              │ │ AGENT        │ │ AGENT            │
-│ Follows SOP 01    │ │ Follows      │ │ Follows      │ │ Follows SOP 05   │
-│ (27 steps)        │ │ SOP 02       │ │ SOP 03       │ │ (verification)   │
-│                   │ │ (9 steps)    │ │ (12 steps)   │ │                  │
+│   AGENT (thin)    │ │   AGENT      │ │ OPTIMIZER    │ │ CONTINUITY       │
+│                   │ │   (thin)     │ │ (thin)       │ │ (thin)           │
+│ Loads:            │ │ Loads:       │ │ Loads:       │ │ Loads:           │
+│ core/methodology/ │ │ core/method- │ │ core/method- │ │ core/method-     │
+│ songwriting.md    │ │ ology/       │ │ ology/suno-  │ │ ology/album-     │
+│                   │ │ critique.md  │ │ optimization │ │ continuity.md    │
 └────────┬──────────┘ └──────┬───────┘ └──────┬───────┘ └────────┬─────────┘
          │                   │                │                   │
-         │ Loads:            │ Loads:         │ Loads:            │ Loads:
+         │ Also refs:        │ Also refs:     │ Also refs:        │ Also refs:
          │ • KB files        │ • CRITIQUE_REF │ • SUNO_TAGS_REF   │ • ALBUM_BIBLE
-         │ • SOP 01          │ • SOP 02       │ • SOP 03          │ • SOP 05
+         │ • MUSIC_THEORY    │ • STYLE_GENRE  │ • STYLE_GENRE     │
          │                   │                │                   │
          ▼                   ▼                ▼                   ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -115,10 +116,10 @@ PHASE 3: QUALITY CHECK (Steps 17-19)       PHASE 4: FORMATTING (Steps 20-26)
 └─────────────┘   └─────────────┘   └─────────────────┘   └──────┬───────┘
                                                                   │
 ┌─────────────┐   ┌─────────────┐   ┌─────────────────┐          │
-│ Step 7:     │   │ Step 6:     │   │ Step 5:         │          │
-│ 3 PRIORITY  │◀──│ FLAG 2-3    │◀──│ STRONGEST       │◀─────────┘
-│ RECOMMEN-   │   │ ISSUES      │   │ LINE            │
-│ DATIONS     │   │ (with fixes)│   │                 │
+│ Step 8:     │   │ Step 7:     │   │ Step 5:         │          │
+│ PRIORITY    │◀──│ FLAG ALL    │◀──│ SUNO            │◀─────────┘
+│ RECOMMEN-   │   │ ISSUES      │   │ OPTIMIZATION    │
+│ DATIONS     │   │ (with fixes)│   │ ASSESSMENT      │
 └──────┬──────┘   └─────────────┘   └─────────────────┘
        │
        ▼
@@ -127,6 +128,7 @@ PHASE 3: QUALITY CHECK (Steps 17-19)       PHASE 4: FORMATTING (Steps 20-26)
 │                                         │
 │ Layer 1: Core 12 categories ──── Quick  │
 │ Layer 2: + Advanced 5 ────────── Full   │
+│ Layer 2.5: + Suno Optimization ── Suno  │
 │ Layer 3: + Album-Context 6 ──── Album   │
 │ + Calibration audit ─────────── Always  │
 └─────────────────────────────────────────┘
@@ -155,21 +157,27 @@ SESSION START
      │             │             │
      ▼             ▼             ▼
 ┌─────────┐  ┌─────────┐  ┌─────────┐
-│Songwriter│  │ Critic  │  │Optimizer│     ◀── ON INVOKE (+ SOP + reference docs)
-│ +40k    │  │ +12k    │  │ +14k    │
+│Songwriter│  │ Critic  │  │Optimizer│     ◀── ON INVOKE (thin wrapper loads core/)
+│ loads:   │  │ loads:  │  │ loads:  │
+│ core/    │  │ core/   │  │ core/   │
+│ method-  │  │ method- │  │ method- │
+│ ology/   │  │ ology/  │  │ ology/  │
+│ song-    │  │ crit-   │  │ suno-   │
+│ writing  │  │ ique    │  │ opt     │
 └────┬────┘  └────┬────┘  └────┬────┘
      │             │             │
-     │       Agent needs deeper knowledge
+     │       Agent needs deeper data
      │             │
      ▼             ▼
 ┌─────────────────────────────┐
-│ SKILLS (on demand)          │           ◀── WHEN ACTIVATED
+│ REFERENCES (on demand)      │           ◀── WHEN NEEDED (deep data tables)
 │                             │
-│ • music-theory (+15k)       │
-│ • character-voice (+5k)     │
-│ • suno-meta-tags (+10k)     │
-│ • song-critique (+8k)       │
-│ • concept-album-bible (var) │
+│ • CRITIQUE_REFERENCE (+15k) │
+│ • SUNO_STYLE_GENRE (+12k)   │
+│ • SUNO_TAGS_REFERENCE (+10k)│
+│ • CHARACTER_VOICE (+5k)     │
+│ • MUSIC_PRODUCTION (+15k)   │
+│ • SONGWRITING_KB (+15k)     │
 └─────────────────────────────┘
 ```
 
@@ -195,27 +203,40 @@ SESSION START
 ## File Authority Hierarchy
 
 ```
-     SOP wins (authoritative procedure)
+     core/methodology/ wins (SINGLE SOURCE OF TRUTH)
          │
-         │  Agent follows SOP, provides orientation summary
-         │
-         ▼
-     AGENT (invoked on request)
-         │
-         │  Agent's summary defers to SOP on conflicts
-         │  Agent loads reference docs via #[[file:]]
+         │  Complete, self-contained methods
+         │  Update HERE — everything downstream inherits
          │
          ▼
-     STEERING (always-on principles)
+     AGENT (thin wrapper — loads core/ via #[[file:]])
          │
-         │  Provides quality gates, workflow overview
+         │  Defines persona + loads methodology
+         │  Does NOT duplicate content
+         │
+         ▼
+     STEERING (always-on principles — derived subset)
+         │
+         │  Quick-reference rules for every session
          │  Does NOT load large reference docs
          │
          ▼
-     SKILLS (deepest knowledge, on demand)
+     SKILLS (on-demand deep knowledge)
          │
+         │  References core/ + references/
          │  Activated by agents when needed
-         │  Largest docs live here
+         │
+         ▼
+     REFERENCES (deep data tables)
+         │
+         │  Scoring rubrics, genre maps, tag lists
+         │  REFERENCED BY core/methodology/ — not the source
+         │
+         ▼
+     TOOLS (deterministic validation)
+         │
+         │  tools/validate-song.py — format + char checks
+         │  No AI interpretation needed
          │
          ▼
      HOOKS (automated quality enforcement)
