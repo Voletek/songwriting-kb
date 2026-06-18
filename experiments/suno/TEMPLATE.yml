@@ -1,0 +1,60 @@
+# Suno Experiment Log
+# Copy this file and rename: YYYY-MM-DD-experiment-name.yml
+
+experiment_name: ""
+date: "YYYY-MM-DD"
+experimenter: ""
+suno_version: "v5.5"
+
+# What are you testing?
+claim_under_test: ""
+# Example: "Era tags in Style Prompt bias production style more than instrumentation"
+
+hypothesis: ""
+# What do you expect to happen?
+
+# Settings used for all renders in this experiment
+settings:
+  style_prompt: ""
+  exclude: ""
+  weirdness: 50
+  style_influence: 50
+  audio_influence: 0
+  persona_or_voice: ""
+  custom_model: ""
+
+# Variable being changed (if A/B testing)
+variable: ""
+# Example: "Style Prompt with '1980s' vs without"
+
+# Record each render
+renders:
+  - render_id: ""
+    song_used: ""
+    timestamp: ""
+    observations: ""
+    supports_claim: ""  # yes / no / partial
+    notes: ""
+  - render_id: ""
+    song_used: ""
+    timestamp: ""
+    observations: ""
+    supports_claim: ""
+    notes: ""
+  - render_id: ""
+    song_used: ""
+    timestamp: ""
+    observations: ""
+    supports_claim: ""
+    notes: ""
+
+# Your conclusion after all renders
+conclusion: ""
+# Supported / Not Supported / Partially Supported / Inconclusive
+
+confidence: ""  # High / Medium / Low
+retest_by: ""   # YYYY-MM-DD (Suno updates frequently)
+
+# If promoted to methodology, note where:
+promoted_to: ""
+# Example: "core/methodology/suno-optimization.md, section 'Era Anchoring'"

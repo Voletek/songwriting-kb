@@ -538,3 +538,23 @@ Each section's production cue tags should:
 ---
 
 *Reference document for the Suno Optimization Assessment module of the Critic agent.*
+
+---
+
+## 11. SUNO VERSION STATUS
+
+> Track which Suno-specific claims have been verified and when they need retesting.
+> Suno updates frequently - guidance that worked in v4.5 may not apply to v5.5.
+> See `experiments/suno/` for detailed test logs.
+
+| Claim | Verified On | Suno Version | Confidence | Retest By |
+|---|---|---|---|---|
+| Style Prompt limit is 1000 chars | June 2026 | v5.5 | High | Sept 2026 |
+| Lyrics field limit is 5000 chars | June 2026 | v5.5 | High | Sept 2026 |
+| `[control: no-repeat]` prevents line looping | June 2026 | v5.5 | Medium | Sept 2026 |
+| Pipe notation `[section | params]` parsed correctly | June 2026 | v5.5 | High | Dec 2026 |
+| Era tags bias production style (not just instruments) | June 2026 | v5.5 | High | Dec 2026 |
+| Genre must be first element in Style Prompt | June 2026 | v5.5 | High | Dec 2026 |
+| 5-8 tags optimal (>10 causes signal conflict) | June 2026 | v5.5 | Medium | Sept 2026 |
+| Named `()` layers require Style Prompt declaration | June 2026 | v5.5 | High | Dec 2026 |
+| Personas maintain vocal identity across generations | June 2026 | v5.5 | Medium | Sept 2026 |

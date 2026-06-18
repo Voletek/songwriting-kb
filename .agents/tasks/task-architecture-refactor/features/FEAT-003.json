@@ -1,0 +1,28 @@
+{
+  "id": "FEAT-003",
+  "type": "feat",
+  "description": "Phase 3: Add cherry-picked tools and experiments from Brian's PR concept. Create tools/validate-song.py, experiments/suno/ structure, add Suno Version Status table to references, and update README.md with 'Using Without Kiro' section.",
+  "status": "in_progress",
+  "steps": [
+    "Create tools/validate-song.py - an enhanced version of Brian's count-suno-fields.py concept. Python script with argparse that: (1) counts Style Prompt characters (must be <=1000), (2) counts Lyrics field characters including tags (must be <=5000), (3) checks for required elements ([Title:], [Production Direction:], [Vocal Direction:], [end]), (4) verifies genre is first in Style Prompt, (5) checks tag count is 5-8, (6) verifies named () layers are declared in Style Prompt, (7) outputs results as text or JSON (--json flag), (8) exits with code 1 on any failure. Use regex to parse our song format (## STYLE PROMPT: and ## LYRICS: headers). Handle [Exclusions:] block correctly (excluded from lyrics count).",
+    "Create experiments/suno/README.md - explains how to log Suno experiments: (1) copy TEMPLATE.yml, (2) fill in settings and observations, (3) record per-render results, (4) conclude whether the claim is supported. Include the promotion rule: don't promote to universal guidance without evidence from 3+ renders across different songs.",
+    "Create experiments/suno/TEMPLATE.yml - structured experiment log with fields: experiment_name, date, suno_version, claim_under_test (plain text description), settings (style_prompt, exclude, sliders), renders (array with: render_id, song_used, observations, supports_claim: yes/no/partial), conclusion, retest_by_date.",
+    "Add a 'Suno Version Status' table to references/SUNO_STYLE_GENRE_REFERENCE.md (at the end of the file, as a new section 11). A simple markdown table with columns: Claim, Verified On, Suno Version, Confidence, Retest By. Include 6 initial claims from the architecture plan.",
+    "Update README.md to add a 'Using Without Kiro' section after the 'Community Use' section. Include: (1) explanation that core/methodology/ files are readable by any AI assistant, (2) per-workflow file lists (for critique: load core/methodology/critique.md + references/CRITIQUE_REFERENCE.md + references/SUNO_STYLE_GENRE_REFERENCE.md; for songwriting: load core/methodology/songwriting.md + SONGWRITING_KNOWLEDGE_BASE.md; for Suno optimization: load core/methodology/suno-optimization.md + references/SUNO_TAGS_REFERENCE.md; for album work: load core/methodology/album-continuity.md + your album bible), (3) mention tools/validate-song.py for deterministic validation."
+  ],
+  "acceptance_criteria": [
+    "tools/validate-song.py exists, runs with python3, handles test input correctly",
+    "experiments/suno/README.md exists with clear experiment workflow",
+    "experiments/suno/TEMPLATE.yml exists with all required fields",
+    "references/SUNO_STYLE_GENRE_REFERENCE.md contains a 'Suno Version Status' section with the version table",
+    "README.md contains a 'Using Without Kiro' section with per-workflow file lists"
+  ],
+  "verification": [
+    "Run: python3 tools/validate-song.py --help and verify it prints usage information",
+    "Run: python3 -c \"import ast; ast.parse(open('tools/validate-song.py').read())\" to verify valid Python syntax",
+    "Run: grep -c 'Suno Version Status' references/SUNO_STYLE_GENRE_REFERENCE.md and verify it returns 1",
+    "Run: grep -c 'Using Without Kiro' README.md and verify it returns at least 1"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}

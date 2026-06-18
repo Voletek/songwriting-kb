@@ -326,6 +326,61 @@ cd songwriting-kb
 
 ---
 
+## Using Without Kiro
+
+The methodology in this repository works with **any AI assistant** - not just Kiro. The `core/methodology/` files are the complete, self-contained methods.
+
+### Quick Start (Any AI)
+
+Load the relevant methodology file(s) into your AI's context, then ask it to follow the procedure:
+
+| Workflow | Load These Files |
+|---|---|
+| **Critique a song** | `core/methodology/critique.md` + `references/CRITIQUE_REFERENCE.md` + `references/SUNO_STYLE_GENRE_REFERENCE.md` |
+| **Write a song** | `core/methodology/songwriting.md` + `SONGWRITING_KNOWLEDGE_BASE.md` |
+| **Optimize for Suno** | `core/methodology/suno-optimization.md` + `references/SUNO_TAGS_REFERENCE.md` |
+| **Album continuity** | `core/methodology/album-continuity.md` + your album bible |
+| **Character voice** | `core/methodology/character-voice.md` + `references/CHARACTER_VOICE_REFERENCE.md` |
+
+### Example Prompts
+
+**For ChatGPT/Claude/etc:**
+```
+I've loaded the critique methodology. Please critique the following song 
+using the full 3-layer model (Core 12 + Advanced 5 + Suno Optimization).
+Score each category 1-10 with one-sentence justification.
+
+[paste your song here]
+```
+
+```
+I've loaded the songwriting methodology. Write a song about [topic]. 
+Follow the Nashville Method (chorus first) and output in full Suno-ready format.
+```
+
+### Deterministic Validation
+
+For format checks that don't need AI judgment, use the validation script:
+
+```bash
+python3 tools/validate-song.py songs/my_song.md
+python3 tools/validate-song.py --json songs/*.md
+```
+
+This checks character counts, required elements, tag compliance, and formatting rules.
+
+### How This Differs from Kiro
+
+| Aspect | With Kiro | Without Kiro |
+|---|---|---|
+| Methodology loading | Automatic via agents | Manual file loading |
+| Format validation | Hooks fire on save | Run `tools/validate-song.py` manually |
+| Album continuity | Agent checks on edit | Load methodology + bible, ask AI to check |
+| Steering rules | Always-on context | Include in your system prompt |
+| Skills | Activated on demand | Load the relevant methodology file |
+
+---
+
 ## Sources
 
 - Berklee Online, Pat Pattison (Berklee Professor)
