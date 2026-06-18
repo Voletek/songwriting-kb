@@ -208,10 +208,144 @@ Appreciate the work. Even where the final implementation differs from your PR, t
 
 ---
 
+---
+
+## Cherry-Pick Assessment: multi-lang/songwriting-kb PR #3
+
+Detailed evaluation of each file from Brian's PR for adoption into our restructuring.
+
+### ✅ ADOPT: `tools/count-suno-fields.py` (with enhancements)
+
+**What's good:**
+- Clean Python, well-structured, proper argparse
+- JSON output mode (useful for CI or hook integration)
+- WARN threshold at 90% (catches "you're close" before you're over)
+- Exit code 1 on failure (works in pipelines)
+- Handles multiple files at once
+
+**What needs fixing for OUR format:**
+- Regex patterns assume `## STYLE PROMPT:` / `## LYRICS:` headers — our songs use inconsistent formats
+- Doesn't account for `[Exclusions:]` block (should be EXCLUDED from lyrics count since it goes in Suno's Exclude field)
+- Doesn't check for required tags (`[Title:]`, `[Production Direction:]`, `[Vocal Direction:]`)
+- Doesn't separate Style Prompt from exclusions line
+
+**Plan:** Adopt the structure, rewrite detection logic for our format. Expand into `tools/validate-song.py` — broader than just char counting. Add required-tag checks.
+
+---
+
+### ✅ ADOPT: `experiments/suno/README.md` (minor path edits)
+
+**What's good:**
+- Clear promotion rule (don't promote to universal guidance without evidence)
+- Simple workflow (copy template → fill in → record → conclude)
+
+**Changes needed:**
+- Remove reference to `core/claims/claim-registry.yml` (not adopting)
+- Update path references to our methodology file locations
+- Otherwise adopt as-is
+
+---
+
+### ✅ ADOPT: `experiments/suno/TEMPLATE.yml` (simplify)
+
+**What's good:**
+- Structured fields: date, model version, settings, expected behavior, observations, conclusion
+- Per-render observations with `supports_claim: yes/no/partial`
+- Retest date forces revisiting
+
+**Simplifications:**
+- Remove `claim_under_test.claim_id` (assumes formal registry we don't have) — replace with plain description
+- Consider converting from JSON-in-.yml to actual YAML
+- Keep `persona_or_voice` and `custom_model` fields (forward-thinking for v5.5)
+
+---
+
+### ❌ REJECT: `core/claims/claim-registry.yml`
+
+**Concept is useful, implementation is overkill:**
+- 90 lines of YAML for 5 claims = absurd overhead
+- CRAFT-001 and CRAFT-002 are established Pattison/Berklee practice, not volatile claims needing a registry
+- PLATFORM-001 is their own PR thesis encoded as a "claim" — advocacy disguised as evidence
+- Assumes a claims-management workflow nobody will maintain
+
+**What to do instead:** Add a simple version-date table to `references/SUNO_STYLE_GENRE_REFERENCE.md`:
+
+```markdown
+## Suno Version Status
+
+| Claim | Verified On | Suno Version | Confidence | Retest By |
+|---|---|---|---|---|
+| Style Prompt ≤1000 chars | June 2026 | v5.5 | High | Sept 2026 |
+| [control: no-repeat] works | June 2026 | v5.5 | Medium | Sept 2026 |
+| Pipe notation parsed | June 2026 | v5.5 | High | Dec 2026 |
+| Era tags bias production | June 2026 | v5.5 | High | Dec 2026 |
+| Genre must be first | June 2026 | v5.5 | High | Dec 2026 |
+| 5-8 tags optimal | June 2026 | v5.5 | Medium | Sept 2026 |
+```
+
+10 lines instead of 90. Same purpose. No maintenance nightmare.
+
+---
+
+### ❌ REJECT: `core/claims/source-bibliography.md`
+
+**Why:** Just maps internal file paths to source IDs. Our methodology files will cite sources inline. This adds indirection without value.
+
+---
+
+### 🔄 SAVE FOR LATER: `README_PLATFORM_SUPPORT.md` (content useful, file format wrong)
+
+**What's useful:**
+- The per-workflow file path lists are essentially context packets pre-written:
+  - Critique: `.kiro/sops/02`, `.kiro/agents/critic.md`, `references/CRITIQUE_REFERENCE.md`
+  - Songwriting: `.kiro/sops/01`, `.kiro/agents/songwriter.md`, `SONGWRITING_KNOWLEDGE_BASE.md`
+  - Suno: `.kiro/sops/03`, `tools/count-suno-fields.py`, `references/SUNO_TAGS_REFERENCE.md`
+- The "Reading order by use case" (full automation / assistant use / manual) is clean thinking
+- Three-path approach matches our context packet concept exactly
+
+**What's wrong:**
+- Separate file will drift from README
+- References files that don't exist yet
+- Claims hooks that may not exist in our repo
+
+**Plan:** Don't create this as a separate file now. Use the file-path-per-workflow concept as the basis for our `docs/context-packets/` in Phase 3. The matrix content gets integrated into the README "Using Without Kiro" section.
+
+---
+
+### ❌ REJECT: `core/methodology/*.md` (5 thin pointer files)
+
+**Already discussed.** Our methodology files will be FAT (complete, self-contained methods), not thin pointers back to `.kiro/` SOPs. These 5 files are the wrong implementation of the right idea.
+
+---
+
+### ❌ REJECT: `docs/PLATFORM_GENERALIZATION_IMPLEMENTATION_PLAN.md`
+
+**Why:** Their project management doc for their own PR. Not useful to us.
+
+---
+
+### ❌ REJECT: `docs/RESEARCH_METHODOLOGY_REVIEW_AND_GENERALIZATION_PLAN.md`
+
+**Why:** Interesting read, surfaced real gaps, but not actionable as a repo file. The insights that matter are already captured in our architecture plan.
+
+---
+
+## Implementation Priority (Cherry-Picks)
+
+When we reach Phase 3 of the migration, cherry-pick in this order:
+
+1. **`tools/count-suno-fields.py`** → Rewrite as `tools/validate-song.py` with our format detection
+2. **`experiments/suno/TEMPLATE.yml`** → Simplify and adopt
+3. **`experiments/suno/README.md`** → Edit paths and adopt
+4. **Suno version table** → Add to `references/SUNO_STYLE_GENRE_REFERENCE.md` (not a separate registry)
+5. **Context packet file lists** → Derived from their platform support matrix, built during Phase 3
+
+---
+
 ## Notes for Implementation
 
 - This branch (`refactor/methodology-as-source-of-truth`) is the staging area
 - Phase 1 is the heavy lift — writing the fat methodology files
 - Phase 2 is the rewiring — making `.kiro/` thin
-- Phase 3 is the accessibility layer — context packets + tools
+- Phase 3 is the accessibility layer — context packets + tools + experiments
 - Don't merge to main until Phase 1 + 2 are complete and tested
