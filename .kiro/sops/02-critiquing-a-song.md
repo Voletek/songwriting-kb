@@ -5,6 +5,10 @@
 > Academic sources: Moore, Tagg, Lacasse, Moylan, Pattison, Fabbri, Juslin, Schubart, Dodge et al.
 > Suno sources: Community-tested prompt science (2025-2026), era anchoring, genre-first principle.
 
+> **Note:** The canonical methodology for this workflow now lives in `core/methodology/critique.md`.
+> This SOP is retained for Kiro-specific step formatting but the methodology file is the authoritative source.
+> If content diverges, `core/methodology/` wins.
+
 ---
 
 ## Prerequisites

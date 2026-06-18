@@ -1,7 +1,7 @@
 # Architecture Refactor Plan: Methodology as Source of Truth
 
 **Date:** June 2026
-**Status:** Planning — not yet implemented
+**Status:** Phases 1-3 implemented (June 2026)
 **Triggered by:** multi-lang/songwriting-kb PR #3 review + internal discussion
 
 ---

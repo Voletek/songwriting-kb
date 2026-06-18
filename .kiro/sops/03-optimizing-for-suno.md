@@ -1,7 +1,11 @@
 # SOP 03: Optimizing a Song for Suno
 
 > Step-by-step procedure for taking a finished song and preparing it for Suno rendering.
-> This does NOT change creative content — it adds technical formatting only.
+> This does NOT change creative content -- it adds technical formatting only.
+
+> **Note:** The canonical methodology for this workflow now lives in `core/methodology/suno-optimization.md`.
+> This SOP is retained for Kiro-specific step formatting but the methodology file is the authoritative source.
+> If content diverges, `core/methodology/` wins.
 
 ---
 

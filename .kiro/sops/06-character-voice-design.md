@@ -3,6 +3,10 @@
 > Step-by-step procedure for creating a complete vocal identity for a character,
 > from accent through instrumentation through mode selection.
 
+> **Note:** The canonical methodology for this workflow now lives in `core/methodology/character-voice.md`.
+> This SOP is retained for Kiro-specific step formatting but the methodology file is the authoritative source.
+> If content diverges, `core/methodology/` wins.
+
 ---
 
 ## Prerequisites

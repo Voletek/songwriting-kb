@@ -115,8 +115,7 @@ def check_genre_first(style_prompt):
     # Get the first item (before first comma)
     first_item = text.split(",")[0].strip()
 
-    # Genre descriptors typically contain genre-related words or are short descriptive phrases
-    # We check that it looks like a genre descriptor (not a technical parameter)
+    # Reject technical parameters that should never be first
     technical_patterns = [
         r"^(tempo|key|bpm|\d+\s*bpm|vocal range)",
     ]
@@ -124,9 +123,27 @@ def check_genre_first(style_prompt):
         if re.match(pattern, first_item, re.IGNORECASE):
             return "FAIL", first_item
 
-    # If it's a short phrase that could be a genre, PASS
+    # Known genre terms/fragments - if the first element contains any of these, PASS
+    genre_keywords = {
+        "rock", "pop", "folk", "jazz", "blues", "metal", "punk", "indie",
+        "electronic", "ambient", "cinematic", "orchestral", "classical",
+        "country", "soul", "r&b", "hip-hop", "rap", "dance", "house",
+        "techno", "dark", "alternative", "post", "neo", "synthwave",
+        "lo-fi", "acoustic", "industrial", "tribal", "chant", "gothic",
+        "doom", "grunge", "funk", "disco", "reggae", "ska", "latin",
+        "world", "celtic", "nordic", "experimental", "noise", "drone",
+        "shoegaze", "trip-hop", "psychedelic", "emo", "hardcore",
+        "progressive", "art", "chamber", "baroque", "romantic", "epic",
+    }
+
+    first_lower = first_item.lower()
+    for keyword in genre_keywords:
+        if keyword in first_lower:
+            return "PASS", first_item
+
+    # No genre keyword found - warn (not fail) since it may be a valid genre we don't recognize
     if first_item and len(first_item) < 100:
-        return "PASS", first_item
+        return "WARN", f"{first_item} (first element may not be a genre)"
     else:
         return "FAIL", first_item
 
@@ -304,6 +321,8 @@ def validate_file(filepath):
         })
         if status == "FAIL":
             failures += 1
+        elif status == "WARN":
+            warnings += 1
     else:
         checks.append({
             "name": "Genre First",

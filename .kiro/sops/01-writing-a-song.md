@@ -2,6 +2,10 @@
 
 > Complete step-by-step procedure from concept to finished Suno-ready output.
 
+> **Note:** The canonical methodology for this workflow now lives in `core/methodology/songwriting.md`.
+> This SOP is retained for Kiro-specific step formatting but the methodology file is the authoritative source.
+> If content diverges, `core/methodology/` wins.
+
 ---
 
 ## Prerequisites

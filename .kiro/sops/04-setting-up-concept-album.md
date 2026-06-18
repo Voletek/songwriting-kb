@@ -3,6 +3,10 @@
 > Step-by-step procedure for planning a multi-track concept album from scratch.
 > Creates all documentation needed BEFORE writing any songs.
 
+> **Note:** The canonical methodology for this workflow now lives in `core/methodology/album-continuity.md`.
+> This SOP is retained for Kiro-specific step formatting but the methodology file is the authoritative source.
+> If content diverges, `core/methodology/` wins.
+
 ---
 
 ## Prerequisites
