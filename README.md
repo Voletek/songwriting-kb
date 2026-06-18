@@ -1,26 +1,49 @@
 # Songwriting Knowledge Base
 
-A professional song production system combining Nashville/LA co-writing craft, academic music theory (12 disciplines), Suno AI v5.5 formatting expertise, and concept album continuity management — packaged as a complete Kiro IDE ecosystem with step-by-step SOPs for every workflow.
+A professional song production system combining Nashville/LA co-writing craft, academic music theory (12 disciplines), Suno AI v5.5 formatting expertise, and concept album continuity management — with a complete Kiro IDE automation layer and platform-neutral methodology usable by any AI assistant.
+
+---
+
+## Architecture
+
+The system's methodology lives in `core/methodology/` as the **single source of truth**. Everything else consumes it:
+
+```
+core/methodology/  ← THE METHOD (complete, self-contained, canonical)
+       ↓ loaded by
+.kiro/agents/      ← Kiro automation (thin wiring — persona + #[[file:]] load)
+       ↓ also readable by
+Any AI assistant   ← Just paste core/methodology/X.md into your assistant's context
+       ↓ validated by
+tools/             ← Deterministic checks (Python, no AI needed)
+```
+
+When the method changes, you update ONE place (`core/methodology/`). Kiro agents inherit automatically. Non-Kiro users read the same source.
 
 ---
 
 ## Quick Start
 
-Clone this repo. The `.kiro/` directory auto-configures Kiro with agents, skills, hooks, power, steering, and SOPs.
+Clone this repo. Kiro users get automatic agent/skill/hook wiring. Non-Kiro users read `core/methodology/` directly.
 
 ```bash
 git clone https://github.com/Voletek/songwriting-kb.git
 ```
 
-Then just talk:
+**Kiro users** — just talk:
 ```
 "Write a song about..."       → Songwriter agent activates
-"Critique this song"          → Critic agent scores (12 categories)
+"Critique this song"          → Critic agent scores (12 categories + Suno optimization)
 "Make this Suno-ready"        → Suno-optimizer adds meta-tags
 "Check album continuity"      → Album-continuity verifies rules
 ```
 
-For step-by-step guidance, see the **SOPs** (`.kiro/sops/`).
+**Non-Kiro users** — see [Using Without Kiro](#using-without-kiro) below.
+
+**CLI validation** (any platform):
+```bash
+python3 tools/validate-song.py songs/my_song.md
+```
 
 ---
 
@@ -28,17 +51,24 @@ For step-by-step guidance, see the **SOPs** (`.kiro/sops/`).
 
 ```
 songwriting-kb/
+├── core/
+│   └── methodology/           5 canonical method files (SINGLE SOURCE OF TRUTH)
 ├── .kiro/
 │   ├── steering/              4 files — auto-loaded every session
-│   ├── skills/                5 skills — loaded on demand
-│   ├── hooks/                 3 universal hooks — format, char-count, prosody
-│   ├── agents/                4 agents — invocable specialized roles
+│   ├── agents/                4 thin agents — load core/methodology/ via #[[file:]]
+│   ├── skills/                5 skills — reference core/methodology/
+│   ├── hooks/                 5 hooks — format, char-count, prosody, score, pipeline
 │   ├── powers/songwriting/    1 power — activatable master bundle
-│   └── sops/                  8 SOPs — step-by-step procedures
-├── examples/                  Reference implementations (albums, preferences)
+│   └── sops/                  8 SOPs — step-by-step procedures (point to core/)
+├── tools/
+│   └── validate-song.py       Deterministic song validator (char counts, tags, format)
+├── experiments/
+│   └── suno/                  Suno experiment logs (version-dated prompt tests)
+├── docs/                      Architecture plans, implementation docs
 ├── references/                7 companion docs (critique, template, style/genre, tags, voice, 2 bibles)
+├── examples/                  Reference implementations (albums, preferences)
 ├── songs/                     Album tracks + experimental + standalone
-├── analysis/                  Stress test reports + critique outputs
+├── analysis/                  Critique reports + stress test outputs
 ├── SONGWRITING_KNOWLEDGE_BASE.md    Master craft reference (13 sections)
 └── MUSIC_PRODUCTION_THEORY.md       Academic framework (12 disciplines)
 ```
@@ -74,10 +104,10 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 
 | Agent | What It Does | Invoke With |
 |---|---|---|
-| **songwriter** | Creates complete songs from concepts using Nashville method, outputs Suno-ready format with Production Notes | "Write a song about X" |
-| **critic** | Scores songs on 12 craft categories (1-10) + 5 advanced assessments + Suno optimization (genre/key/BPM/instrument evaluation with alternative Style Prompts), identifies strongest line, flags issues with alternatives | "Critique this" / "Score this song" |
-| **suno-optimizer** | Adds meta-tags, checks char counts, validates pipe params, verifies parenthetical layers, converts to v5.5 format | "Make this Suno-ready" |
-| **album-continuity** | Runs hard rules, verifies sonic palette, motifs, character voices, key relationships | "Check continuity" |
+| **songwriter** | Creates complete songs from concepts using Nashville method, outputs Suno-ready format with Production Notes. Loads `core/methodology/songwriting.md` | "Write a song about X" |
+| **critic** | Scores songs on 12 craft categories (1-10) + 5 advanced assessments + Suno optimization (genre/key/BPM/instrument evaluation with alternative Style Prompts). Loads `core/methodology/critique.md` | "Critique this" / "Score this song" |
+| **suno-optimizer** | Adds meta-tags, checks char counts, validates formatting, verifies parenthetical layers. Loads `core/methodology/suno-optimization.md` | "Make this Suno-ready" |
+| **album-continuity** | Runs hard rules, verifies sonic palette, motifs, character voices, key relationships. Loads `core/methodology/album-continuity.md` | "Check continuity" |
 
 ---
 
@@ -100,7 +130,10 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 | **song-format-check** | File create in `songs/` | Required sections present |
 | **suno-char-count** | File save in `songs/` | Style ≤1000, Lyrics ≤5000 |
 | **prosody-lint** | File save in `songs/` | Lines >12 syllables, stuffed phrases, weak endings |
-| **continuity-check** | File save in album dirs | Sonic palette, key rules, phrase protection, layer declarations |
+| **quick-score** | On request | Fast 12-category scoring pass |
+| **full-pipeline** | On request | Complete write→critique→revise→optimize→verify flow |
+
+**CLI alternative:** Run `python3 tools/validate-song.py songs/your_song.md` for deterministic format/char validation without hooks.
 
 ---
 

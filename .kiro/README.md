@@ -1,6 +1,22 @@
-# .kiro/ — System Configuration
+# .kiro/ — Kiro Automation Layer
 
-> This directory configures the Kiro IDE (or kiro-cli) with agents, skills, hooks, steering, SOPs, and powers for professional songwriting.
+> This directory is the **Kiro IDE automation adapter** for the songwriting methodology.
+> The canonical methodology lives in `core/methodology/` — this directory wires it into Kiro's agent/skill/hook system.
+> Agents here are THIN: they define persona + load the methodology via `#[[file:]]` references.
+
+---
+
+## Architecture
+
+```
+core/methodology/  ← Source of truth (complete methods)
+       ↓
+.kiro/agents/      ← Thin loaders (persona + #[[file:core/methodology/X.md]])
+.kiro/steering/    ← Quick-reference rules (always-on subset)
+.kiro/skills/      ← On-demand activation (loads core/ + references/)
+.kiro/hooks/       ← Automated checks on file events
+.kiro/sops/        ← Step-by-step procedures (point to core/ as canonical)
+```
 
 ---
 
@@ -9,10 +25,10 @@
 | Directory | Purpose | Loads When |
 |---|---|---|
 | `steering/` | Always-on context injected into every session | Automatically (every chat) |
-| `agents/` | Specialized AI roles invocable by name | On request ("write a song", "critique this") |
-| `skills/` | On-demand knowledge sets (large reference docs) | When agent activates them or user requests |
+| `agents/` | Thin wrappers that load `core/methodology/` files | On request ("write a song", "critique this") |
+| `skills/` | On-demand knowledge (references core/ + references/) | When agent activates them or user requests |
 | `hooks/` | Automated checks triggered by file events | On file create/save in matching patterns |
-| `sops/` | Step-by-step procedures (tool-agnostic) | When user follows a workflow |
+| `sops/` | Step-by-step procedures (canonical source is `core/methodology/`) | When user follows a workflow |
 | `powers/` | Bundled capability packages | When activated via power system |
 
 ---
@@ -30,26 +46,30 @@
 
 ---
 
-## Agents (4 Roles)
+## Agents (4 Thin Wrappers)
 
-| Agent | Invoke With | Does |
+Each agent defines WHO it is and loads the methodology from `core/methodology/`:
+
+| Agent | Invoke With | Loads |
 |---|---|---|
-| `songwriter` | "Write a song about X" | Creates complete songs from concepts |
-| `critic` | "Critique this" / "Score this" | Multi-layer evaluation (12 + 5 + album) |
-| `suno-optimizer` | "Make this Suno-ready" | Adds meta-tags, checks limits, validates format |
-| `album-continuity` | "Check continuity" | Verifies album rules (**configure for YOUR album**) |
+| `songwriter` | "Write a song about X" | `core/methodology/songwriting.md` |
+| `critic` | "Critique this" / "Score this" | `core/methodology/critique.md` |
+| `suno-optimizer` | "Make this Suno-ready" | `core/methodology/suno-optimization.md` |
+| `album-continuity` | "Check continuity" | `core/methodology/album-continuity.md` (**configure for YOUR album**) |
 
 ---
 
-## Hooks (3 Universal)
+## Hooks (5 Automated Checks)
 
 | Hook | Triggers On | Checks |
 |---|---|---|
-| `song-format-check.json` | New file in `songs/` | All required sections present |
-| `suno-char-count.json` | Save in `songs/` | Style ≤1000, Lyrics ≤5000 |
-| `prosody-lint.json` | Save in `songs/` | Lines >12 syllables, stuffed phrases |
+| `song-format-check.hook.json` | New file in `songs/` | All required sections present |
+| `suno-char-count.hook.json` | Save in `songs/` | Style ≤1000, Lyrics ≤5000 |
+| `prosody-lint.hook.json` | Save in `songs/` | Lines >12 syllables, stuffed phrases |
+| `quick-score.hook.json` | On request | Fast 12-category scoring pass |
+| `full-pipeline.hook.json` | On request | Complete pipeline flow |
 
-**To add album continuity hooks:** Copy the pattern from `examples/albums/*/continuity-hook.json` into this directory.
+**CLI alternative:** `python3 tools/validate-song.py songs/*.md` for deterministic checks without hooks.
 
 ---
 
@@ -92,7 +112,8 @@ This system works identically in kiro-cli (headless mode). The steering files lo
 
 If you're new, customize in this order:
 1. `steering/output-preferences.md` — Your format conventions
-2. `agents/album-continuity.md` — Your album rules (if applicable)
-3. `skills/concept-album-bible/SKILL.md` — Point at your bible
-4. Add a conditional steering file for your album (use `examples/` as template)
-5. Add a continuity hook for your album
+2. `agents/album-continuity.md` — Point `#[[file:]]` at YOUR album bible
+3. Add a conditional steering file for your album (use `examples/` as template)
+4. Add a continuity hook for your album
+
+**To modify methodology:** Edit files in `core/methodology/` — agents will pick up changes automatically via `#[[file:]]` references.
