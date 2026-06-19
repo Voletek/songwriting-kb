@@ -240,32 +240,71 @@ def check_section_tag_isolation(lyrics_text):
         return "PASS", violations
 
 
-def check_artist_references(style_prompt):
-    """Check for artist/band name references in Style Prompt.
+def check_artist_references(style_prompt, lyrics_text=None):
+    """Check for artist/band name references in Style Prompt, Production Direction,
+    and Vocal Direction.
 
     Artist names should be converted to descriptive production language
     before final output. Returns WARN (not FAIL) since detection may
     have false positives.
     """
-    text = get_style_prompt_without_exclusions(style_prompt)
-    if not text:
+    # Collect all text segments to scan
+    segments = []
+
+    # (a) Style Prompt text
+    style_text = get_style_prompt_without_exclusions(style_prompt)
+    if style_text:
+        segments.append(style_text)
+
+    # (b) Production Direction and Vocal Direction from lyrics
+    if lyrics_text:
+        prod_matches = re.findall(
+            r"\[Production Direction:\s*(.*?)\]", lyrics_text, re.IGNORECASE
+        )
+        for m in prod_matches:
+            segments.append(m.strip())
+
+        vocal_matches = re.findall(
+            r"\[Vocal Direction:\s*(.*?)\]", lyrics_text, re.IGNORECASE
+        )
+        for m in vocal_matches:
+            segments.append(m.strip())
+
+    combined_text = "\n".join(segments)
+    if not combined_text:
         return "PASS", []
 
     found = []
 
+    # Stopword list: common words that follow "like" in non-artist contexts
+    like_stopwords = {
+        "the", "a", "an", "every", "pure", "raw", "glass", "fire", "water",
+        "thunder", "gold", "silver", "ice", "stone", "wind", "rain", "smoke",
+        "velvet", "silk", "honey", "iron", "steel", "dark", "light", "soft",
+        "hard",
+    }
+
     # Check for common indicator patterns
     indicator_patterns = [
         r"in the style of\s+[A-Z]",
-        r"like\s+[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?",
         r"inspired by\s+[A-Z]",
         r"[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?\s+vibes",
         r"[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?\s+feel\b",
     ]
 
     for pattern in indicator_patterns:
-        matches = re.findall(pattern, text)
+        matches = re.findall(pattern, combined_text)
         for match in matches:
             found.append(match.strip())
+
+    # Handle "like" pattern separately with stopword exclusion
+    like_matches = re.finditer(
+        r"like\s+([A-Z][a-z]+)(?:\s+[A-Z][a-z]+)?", combined_text
+    )
+    for match in like_matches:
+        first_word = match.group(1)
+        if first_word.lower() not in like_stopwords:
+            found.append(match.group(0).strip())
 
     # Check for well-known artist/band names
     artist_names = [
@@ -277,7 +316,7 @@ def check_artist_references(style_prompt):
     ]
 
     for artist in artist_names:
-        if re.search(r"\b" + re.escape(artist) + r"\b", text, re.IGNORECASE):
+        if re.search(r"\b" + re.escape(artist) + r"\b", combined_text, re.IGNORECASE):
             found.append(artist)
 
     if found:
@@ -454,7 +493,7 @@ def validate_file(filepath):
 
     # 8. Artist reference check
     if style_prompt is not None:
-        status, found = check_artist_references(style_prompt)
+        status, found = check_artist_references(style_prompt, lyrics_text)
         detail = "no artist references" if not found else f"found: {', '.join(found[:3])}"
         checks.append({
             "name": "Artist References",
