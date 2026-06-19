@@ -6,10 +6,10 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                            USER REQUEST                                      │
+│                            USER REQUEST                                     │
 │                                                                             │
-│  "Write a song about..."  "Critique this"  "Optimize"  "Check continuity"  │
-└───────────────┬─────────────────┬──────────────┬──────────────┬────────────┘
+│  "Write a song about..."  "Critique this"  "Optimize"  "Check continuity"   │
+└───────────────┬─────────────────┬──────────────┬──────────────┬─────────────┘
                 │                 │              │              │
                 ▼                 ▼              ▼              ▼
 ┌───────────────────┐ ┌──────────────┐ ┌──────────────┐ ┌──────────────────┐
@@ -21,20 +21,20 @@
 │ songwriting.md    │ │ ology/       │ │ ology/suno-  │ │ ology/album-     │
 │                   │ │ critique.md  │ │ optimization │ │ continuity.md    │
 └────────┬──────────┘ └──────┬───────┘ └──────┬───────┘ └────────┬─────────┘
-         │                   │                │                   │
-         │ Also refs:        │ Also refs:     │ Also refs:        │ Also refs:
-         │ • KB files        │ • CRITIQUE_REF │ • SUNO_TAGS_REF   │ • ALBUM_BIBLE
-         │ • MUSIC_THEORY    │ • STYLE_GENRE  │ • STYLE_GENRE     │
-         │                   │                │                   │
-         ▼                   ▼                ▼                   ▼
+         │                   │                │                  │
+         │ Also refs:        │ Also refs:     │ Also refs:       │ Also refs:
+         │ • KB files        │ • CRITIQUE_REF │ • SUNO_TAGS_REF  │ • ALBUM_BIBLE
+         │ • MUSIC_THEORY    │ • STYLE_GENRE  │ • STYLE_GENRE    │
+         │                   │                │                  │
+         ▼                   ▼                ▼                  ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         OUTPUT: songs/*.md                                    │
+│                         OUTPUT: songs/*.md                                  │
 │                                                                             │
 │  Triggers hooks on save:                                                    │
-│  • prosody-lint.json ─── flags lines >12 syllables                         │
-│  • suno-char-count.json ─── checks Style ≤1000, Lyrics ≤5000              │
-│  • song-format-check.json ─── validates required sections (on create)      │
-│  • [album]-continuity.json ─── checks hard rules (if configured)           │
+│  • prosody-lint.json ─── flags lines >12 syllables                          │
+│  • suno-char-count.json ─── checks Style ≤1000, Lyrics ≤5000                │
+│  • song-format-check.json ─── validates required sections (on create)       │
+│  • [album]-continuity.json ─── checks hard rules (if configured)            │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -43,10 +43,10 @@
 ## The Full Pipeline (SOP 07)
 
 ```
-┌──────────┐     ┌──────────┐     ┌──────────┐     ┌──────────┐     ┌──────────┐
-│  WRITE   │────▶│ CRITIQUE │────▶│  REVISE  │────▶│ OPTIMIZE │────▶│  VERIFY  │
-│  SOP 01  │     │  SOP 02  │     │          │     │  SOP 03  │     │ Continuity│
-└──────────┘     └─────┬────┘     └──────────┘     └──────────┘     └──────────┘
+┌──────────┐      ┌──────────┐      ┌──────────┐      ┌──────────┐     ┌───────────┐
+│  WRITE   │────▶│ CRITIQUE  │────▶│  REVISE  │────▶│ OPTIMIZE │────▶│  VERIFY   │
+│  SOP 01  │      │  SOP 02  │      │          │      │  SOP 03  │     │ Continuity│
+└──────────┘      └─────┬────┘      └──────────┘      └──────────┘     └───────────┘
                        │
                        ▼
               ┌─────────────────┐
@@ -109,14 +109,14 @@ PHASE 3: QUALITY CHECK (Steps 17-19)       PHASE 4: FORMATTING (Steps 20-26)
 ## SOP 02: Critiquing a Song (Critic Agent)
 
 ```
-┌─────────────┐   ┌─────────────┐   ┌─────────────────┐   ┌──────────────┐
-│ Step 1:     │   │ Step 2:     │   │ Step 3:         │   │ Step 4:      │
+┌─────────────┐    ┌─────────────┐   ┌─────────────────┐    ┌──────────────┐
+│ Step 1:     │    │ Step 2:     │   │ Step 3:         │    │ Step 4:      │
 │ READ        │──▶│ 9-STEP      │──▶│ SCORE 12        │──▶│ CALCULATE    │
-│ (no scoring)│   │ ANALYSIS    │   │ CATEGORIES      │   │ COMPOSITE    │
-└─────────────┘   └─────────────┘   └─────────────────┘   └──────┬───────┘
-                                                                  │
-┌─────────────┐   ┌─────────────┐   ┌─────────────────┐          │
-│ Step 8:     │   │ Step 7:     │   │ Step 5:         │          │
+│ (no scoring)│    │ ANALYSIS    │   │ CATEGORIES      │    │ COMPOSITE    │
+└─────────────┘    └─────────────┘   └─────────────────┘    └──────┬───────┘
+                                                                   │
+┌─────────────┐   ┌─────────────┐   ┌─────────────────┐            │
+│ Step 8:     │   │ Step 7:     │   │ Step 5:         │            │
 │ PRIORITY    │◀──│ FLAG ALL    │◀──│ SUNO            │◀─────────┘
 │ RECOMMEN-   │   │ ISSUES      │   │ OPTIMIZATION    │
 │ DATIONS     │   │ (with fixes)│   │ ASSESSMENT      │
@@ -156,7 +156,7 @@ SESSION START
      ┌─────────────┼─────────────┐
      │             │             │
      ▼             ▼             ▼
-┌─────────┐  ┌─────────┐  ┌─────────┐
+┌─────────┐   ┌─────────┐  ┌─────────┐
 │Songwriter│  │ Critic  │  │Optimizer│     ◀── ON INVOKE (thin wrapper loads core/)
 │ loads:   │  │ loads:  │  │ loads:  │
 │ core/    │  │ core/   │  │ core/   │
@@ -164,8 +164,8 @@ SESSION START
 │ ology/   │  │ ology/  │  │ ology/  │
 │ song-    │  │ crit-   │  │ suno-   │
 │ writing  │  │ ique    │  │ opt     │
-└────┬────┘  └────┬────┘  └────┬────┘
-     │             │             │
+└────┬────┘   └────┬────┘  └────┬────┘
+     │             │            │
      │       Agent needs deeper data
      │             │
      ▼             ▼
