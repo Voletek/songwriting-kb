@@ -19,3 +19,4 @@ node_modules/
 # Personal working files (don't commit drafts)
 drafts/
 scratch/
+tools/__pycache__/

@@ -66,8 +66,11 @@ songwriting-kb/
 │   └── suno/                  Suno experiment logs (version-dated prompt tests)
 ├── docs/                      Architecture plans, implementation docs
 ├── references/                7 companion docs (critique, template, style/genre, tags, voice, 2 bibles)
-├── examples/                  Reference implementations (albums, preferences)
-├── songs/                     Album tracks + experimental + standalone
+├── examples/
+│   ├── songs/                 Developer's example songs (concept albums, standalones)
+│   ├── albums/                Album configuration examples
+│   └── preferences/           Output preference examples
+├── songs/                     YOUR songs go here (empty — your workspace)
 ├── analysis/                  Critique reports + stress test outputs
 ├── SONGWRITING_KNOWLEDGE_BASE.md    Master craft reference (13 sections)
 └── MUSIC_PRODUCTION_THEORY.md       Academic framework (12 disciplines)

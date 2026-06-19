@@ -1,0 +1,28 @@
+{
+  "id": "FEAT-002",
+  "type": "refactor",
+  "description": "Phase 2: Rewire .kiro/ agents to be THIN - just persona + #[[file:]] references to the methodology files. Update the skill file to reference core/ instead of duplicating.",
+  "status": "completed",
+  "steps": [
+    "Rewrite .kiro/agents/critic.md to be thin: keep the YAML frontmatter (name, description, tools), keep a 2-3 line persona description, replace ALL methodology content with #[[file:core/methodology/critique.md]] reference. Remove duplicated procedure, scoring tables, decision gates etc. Keep the reference to CRITIQUE_REPORT_TEMPLATE.md for output format.",
+    "Rewrite .kiro/agents/songwriter.md to be thin: keep frontmatter, 2-3 line persona, replace content with #[[file:core/methodology/songwriting.md]] reference.",
+    "Rewrite .kiro/agents/suno-optimizer.md to be thin: keep frontmatter, 2-3 line persona, replace content with #[[file:core/methodology/suno-optimization.md]] reference.",
+    "Rewrite .kiro/agents/album-continuity.md to be thin: keep frontmatter, 2-3 line persona describing it as the continuity manager, replace content with #[[file:core/methodology/album-continuity.md]] reference. Keep the configurable album bible reference.",
+    "Update .kiro/skills/song-critique/SKILL.md to reference core/methodology/critique.md instead of duplicating the methodology inline. Keep skill frontmatter and a brief description, add #[[file:core/methodology/critique.md]] reference."
+  ],
+  "acceptance_criteria": [
+    ".kiro/agents/critic.md is under 30 lines (thin wrapper)",
+    ".kiro/agents/songwriter.md is under 25 lines (thin wrapper)",
+    ".kiro/agents/suno-optimizer.md is under 25 lines (thin wrapper)",
+    ".kiro/agents/album-continuity.md is under 30 lines (thin wrapper)",
+    ".kiro/skills/song-critique/SKILL.md references core/methodology/critique.md via #[[file:]] syntax",
+    "Each agent file retains its YAML frontmatter (name, description, tools)",
+    "Each agent file includes the #[[file:core/methodology/X.md]] reference"
+  ],
+  "verification": [
+    "Run: wc -l .kiro/agents/*.md and verify all are under 30 lines",
+    "Run: grep '#\\[\\[file:core/methodology' .kiro/agents/*.md .kiro/skills/song-critique/SKILL.md and verify references exist"
+  ],
+  "blocked_reason": null,
+  "findings": "All 5 files rewritten as thin wrappers. Line counts: critic.md=22, songwriter.md=18, suno-optimizer.md=18, album-continuity.md=19, SKILL.md=18. All well under 30-line acceptance criteria. All contain #[[file:core/methodology/...]] references. Net reduction: 544 lines removed, 29 added. No build/test needed (documentation-only repo)."
+}
