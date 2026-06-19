@@ -14,6 +14,16 @@
 
 ## Contributors
 
+### 21machines ([Suno profile](https://suno.com/@21machines))
+
+First community user to adopt the system. Provided direct feedback that led to the v2.0 directory restructure:
+
+- **Identified the songs/analysis separation problem** — flagged that developer example songs mixed with user songs creates confusion during `git pull`
+- **Requested clean workspace directories** — directly led to moving all example content from `songs/` and `analysis/` into `examples/` so working directories are empty for users
+- **Validated the platform-neutral approach** — confirmed the system works with Kiro for users who understand markdown
+
+---
+
 ### Brian Smith Clark ([@multi-lang](https://github.com/multi-lang))
 
 Brian forked the repo, conducted a thorough methodology review, and submitted [PR #3](https://github.com/multi-lang/songwriting-kb/pull/3) proposing platform generalization. His contributions directly influenced the v2.0 architecture refactor:

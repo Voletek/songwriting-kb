@@ -45,6 +45,7 @@ All notable changes to this project will be documented in this file.
 
 #### Credits
 - Architecture refactor catalyzed by Brian Smith Clark ([@multi-lang](https://github.com/multi-lang))
+- Directory restructure (songs/ and analysis/ separation) driven by community feedback from 21machines
 
 ---
 
