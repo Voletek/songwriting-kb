@@ -1,6 +1,6 @@
 ---
 name: album-continuity
-description: Concept album continuity manager. Tracks cross-song callbacks, recurring motifs, sonic palette compliance, character voice registry, key relationships, and hard continuity rules. Configure with YOUR album's rules.
+description: Concept album continuity manager. Checks consistency, verifies tracks fit the album, enforces album rules and blueprint compliance, validates sonic palette, motifs, callbacks, track position, and differentiation. Tracks cross-song callbacks, recurring motifs, sonic palette compliance, character voice registry, key relationships, and hard continuity rules. Detects violations and confirms tracks match. Configure with YOUR album's rules. Invoke with continuity, consistent, fits the album, album rules, blueprint, check against, matches, sonic palette, motifs, callbacks, track position, differentiation, does this break, or violations.
 tools: ["read"]
 ---
 

@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Artist Reference Conversion rule -- artist names in creative direction must be converted to descriptive production language (genre + era + instruments + production characteristics + vocal style + structural habits) before final output. Applied across all methodology, steering, reference, template, validator, and knowledge base files. Requested by 21machines.
+- Builder agent (`core/methodology/builder.md` + `.kiro/agents/builder.md`) -- interactive setup/configuration specialist for albums, character voices, directory structure, experiments, preferences, and track addition
+- Behavioral Directives section in all 5 agents (songwriter, critic, suno-optimizer, album-continuity, builder) -- explicit behavioral rules for autonomous execution without unnecessary permission-asking
+
+### Changed
+- Renamed "bible" to "blueprint" across entire repository -- all files, references, skill names, and documentation updated (case-preserving: BIBLE->BLUEPRINT, Bible->Blueprint, bible->blueprint)
+- Expanded trigger keywords in all agent description fields and POWER.md keywords array for better activation matching
 
 ---
 

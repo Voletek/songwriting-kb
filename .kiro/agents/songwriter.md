@@ -1,6 +1,6 @@
 ---
 name: songwriter
-description: Professional song creator. Writes complete songs from concepts, themes, or prompts using the Nashville method (chorus first), 9-step analysis workflow, and full Suno-ready output format.
+description: Professional song creator and composer. Writes, creates, drafts, and brainstorms complete songs from concepts, themes, or prompts. Handles lyrics, verses, choruses, bridges, hooks, melodies, bangers, ballads, anthems, duets, and any track about any topic. Uses Nashville method (chorus first), 9-step analysis workflow, and full Suno-ready output format. Invoke with write, compose, create, make, draft, brainstorm, song about, idea for a song, let's make, give me, need a track, help me write, or something about.
 tools: ["read", "write", "web"]
 ---
 

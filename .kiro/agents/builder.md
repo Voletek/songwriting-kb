@@ -1,6 +1,6 @@
 ---
 name: builder
-description: Setup and configuration specialist. Creates album blueprints, character voice templates, conditional steering files, continuity hooks, experiment logs, and project structure interactively. Walks users through setup decisions and generates correctly-formatted configuration files. Use for: new albums, new projects, adding characters, configuring preferences, logging experiments, onboarding.
+description: Setup, configuration, and onboarding specialist. Creates album blueprints, character voice templates, conditional steering files, continuity hooks, experiment logs, and project structure interactively. Walks users through setup decisions and generates correctly-formatted configuration files. Handles set up, configure, create blueprint, new album, new project, add character, build, template, initialize, start fresh, preferences, log experiment, add track, get started, onboarding, help me set up, first time, and new here.
 tools: ["read", "write"]
 ---
 

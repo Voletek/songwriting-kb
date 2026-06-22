@@ -1,6 +1,6 @@
 ---
 name: suno-optimizer
-description: Post-processing specialist that takes a finished song and optimizes it for Suno AI rendering. Applies meta-tags, checks character counts, verifies section formatting, adds global control tags, and ensures the song will render correctly.
+description: Suno AI post-processing and rendering specialist. Formats, optimizes, and prepares finished songs for Suno rendering. Applies meta-tags, checks character count and char count limits, verifies section formatting, adds global control tags, fixes formatting, and ensures the style prompt and song will render correctly. Handles Suno-ready conversion, field checks, missing tags, and songs that are too long. Invoke with Suno, render, format, optimize, tags, char count, character count, ready to render, will this work, style prompt, fix formatting, prepare, Suno-ready, field check, limits, too long, or missing tags.
 tools: ["read", "write"]
 ---
 
