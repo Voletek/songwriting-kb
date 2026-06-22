@@ -30,12 +30,17 @@ Clone this repo. Kiro users get automatic agent/skill/hook wiring. Non-Kiro user
 git clone https://github.com/Voletek/songwriting-kb.git
 ```
 
-**Kiro users** — just talk:
+**Kiro users** — just talk naturally:
 ```
-"Write a song about..."       → Songwriter agent activates
-"Critique this song"          → Critic agent scores (12 categories + Suno optimization)
-"Make this Suno-ready"        → Suno-optimizer adds meta-tags
-"Check album continuity"      → Album-continuity verifies rules
+"Write a song about..."       → Songwriter asks for details, runs full pipeline
+"I have an idea for a track"  → Songwriter activates
+"Critique this song"          → Critic runs full evaluation in one pass
+"Is this any good?"           → Critic activates
+"Make this Suno-ready"        → Suno-optimizer formats and reports char counts
+"Will this render?"           → Suno-optimizer activates
+"Check album continuity"      → Album-continuity runs all checks, PASS/FAIL table
+"Set up a new album"          → Builder walks you through blueprint creation
+"Help me get started"         → Builder activates
 ```
 
 **Non-Kiro users** — see [Using Without Kiro](#using-without-kiro) below.
@@ -52,10 +57,10 @@ python3 tools/validate-song.py songs/my_song.md
 ```
 songwriting-kb/
 ├── core/
-│   └── methodology/           5 canonical method files (SINGLE SOURCE OF TRUTH)
+│   └── methodology/           6 canonical method files (SINGLE SOURCE OF TRUTH)
 ├── .kiro/
 │   ├── steering/              4 files — auto-loaded every session
-│   ├── agents/                4 thin agents — load core/methodology/ via #[[file:]]
+│   ├── agents/                5 thin agents — load core/methodology/ via #[[file:]]
 │   ├── skills/                5 skills — reference core/methodology/
 │   ├── hooks/                 5 hooks — format, char-count, prosody, score, pipeline
 │   ├── powers/songwriting/    1 power — activatable master bundle
@@ -103,14 +108,15 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 
 ---
 
-## Agents
+## Agents (5 Roles)
 
 | Agent | What It Does | Invoke With |
 |---|---|---|
-| **songwriter** | Creates complete songs from concepts using Nashville method, outputs Suno-ready format with Production Notes. Loads `core/methodology/songwriting.md` | "Write a song about X" |
-| **critic** | Scores songs on 12 craft categories (1-10) + 5 advanced assessments + Suno optimization (genre/key/BPM/instrument evaluation with alternative Style Prompts). Loads `core/methodology/critique.md` | "Critique this" / "Score this song" |
-| **suno-optimizer** | Adds meta-tags, checks char counts, validates formatting, verifies parenthetical layers. Loads `core/methodology/suno-optimization.md` | "Make this Suno-ready" |
-| **album-continuity** | Runs hard rules, verifies sonic palette, motifs, character voices, key relationships. Loads `core/methodology/album-continuity.md` | "Check continuity" |
+| **songwriter** | Creates complete songs from concepts. Asks for missing parameters, runs full pipeline, outputs Suno-ready format with char counts. Loads `core/methodology/songwriting.md` | "Write a song about...", "compose", "make a track", "lyrics for...", "I have an idea" |
+| **critic** | Multi-layer evaluation (12 craft + 5 advanced + Suno optimization + album-context). Runs full critique in one pass, reports scores and decision gate. Loads `core/methodology/critique.md` | "Critique this", "score", "rate", "review", "is this good?", "feedback", "what's wrong?" |
+| **suno-optimizer** | Adds meta-tags, checks char counts, validates formatting. Reports counts, flags artist names for conversion. Loads `core/methodology/suno-optimization.md` | "Make this Suno-ready", "format for Suno", "check my char count", "will this render?" |
+| **album-continuity** | Runs all continuity checks in one pass. PASS/FAIL table with fixes. Loads `core/methodology/album-continuity.md` | "Check continuity", "does this fit?", "album rules", "sonic palette check" |
+| **builder** | Setup/configuration specialist. Walks through album blueprints, character voices, project structure, preferences interactively. Loads `core/methodology/builder.md` | "Set up a new album", "new project", "add a character", "configure", "help me get started" |
 
 ---
 
@@ -340,7 +346,7 @@ This system is designed for sharing. The architecture separates **universal** fr
 ### Universal (works for anyone — ~70% of system):
 - All knowledge base files
 - All SOPs
-- Songwriter, Critic, Suno-Optimizer agents
+- Songwriter, Critic, Suno-Optimizer, Builder agents
 - All skills (except album-blueprint content)
 - Format-check, char-count, prosody-lint hooks
 - All reference docs (except album blueprints)
