@@ -341,7 +341,7 @@ How temporal/spatial cues in lyrics create listener positioning -- the intersect
 | Scholar/Source | Contribution |
 |---|---|
 | **Peter Stockwell** (*Cognitive Poetics*, 2002) | Temporal deixis, deictic shift theory, deictic centre -- how language creates "you are here" orientation (Ch.4) |
-| **Joanna Gavins** (*Text World Theory*) | Temporal parameters as world-building elements. Lyric example: "Watch the clock for half an hour" |
+| **Joanna Gavins** (*Text World Theory: An Introduction*, 2007) | Temporal parameters as world-building elements. Lyric example: "Watch the clock for half an hour" |
 | **Voice & Whiteley** | Multimodal cognitive analysis of deixis in song -- time cues work on THREE levels: discourse-world anchoring + meter/prosody interaction + attention competition against melody/groove |
 | **Werner** (register analysis) | Pop lyrics simulate immediacy (conversational features) while being planned/performed/distant. A time cue creates a "believable deictic frame" |
 | **Tim Murphey** (1989, 1992) | Corpus findings: 94% no time of enunciation, 80% no place, ZERO precise dates. Vagueness = "appropriability" |

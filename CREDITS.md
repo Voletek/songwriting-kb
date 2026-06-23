@@ -52,18 +52,18 @@ Brian forked the repo, conducted a thorough methodology review, and submitted [P
 | **Christian Schubart** (1806) | Key characteristics and emotional associations |
 | **Dodge et al.** (2025) | 6 universal evaluation criteria for popular music |
 | **Gabrielsson & Lindstrom** (2010) | Emotional expression linearity in primary musical cues |
-| **Janiszewski & Uy** (precision anchoring) | Precise numbers anchor more strongly due to finer-resolution scale |
-| **Joanna Gavins** (*Text World Theory*) | Temporal parameters as world-building elements |
-| **Jack Perricone** (*Great Songwriting Techniques*, 2018) | Scenario development -- time grounds scene, prosodic interaction |
-| **Kreyer & Mukherjee** (corpus linguistics) | Pop lyrics on boundary between speech and writing |
-| **Mason, Lee, Wiley, Ames** | Precise offers perceived as more informed -- precision signals expertise |
-| **NSAI** (Nashville Songwriters Association) | "Be descriptive, but not so specific that your audience cannot relate" |
-| **Peter Stockwell** (*Cognitive Poetics*, 2002) | Temporal deixis, deictic shift theory, deictic centre |
+| **Tim Murphey** (1989, 1992) | Pop lyric corpus analysis -- temporal vagueness and "appropriability" |
 | **Rebecca Wilson** (PhD, Queen's University Belfast, 2025) | 1291-song corpus stylistics, imaginative deixis in popular lyrics |
 | **SD Jenkins** (Research Master, 2018) | Form, content, craft -- verse/chorus as rearrangement of time/space |
-| **Tim Murphey** (1989, 1992) | Pop lyric corpus analysis -- temporal vagueness and "appropriability" |
-| **Voice & Whiteley** | Multimodal cognitive analysis of deixis in song |
+| **Kreyer & Mukherjee** (corpus linguistics) | Pop lyrics on boundary between speech and writing |
 | **Werner** (register analysis) | Pop lyrics as simulated immediacy -- planned performance of conversational register |
+| **Peter Stockwell** (*Cognitive Poetics*, 2002) | Temporal deixis, deictic shift theory, deictic centre |
+| **Joanna Gavins** (*Text World Theory: An Introduction*, 2007) | Temporal parameters as world-building elements |
+| **Voice & Whiteley** | Multimodal cognitive analysis of deixis in song |
+| **Janiszewski & Uy** (precision anchoring) | Precise numbers anchor more strongly due to finer-resolution scale |
+| **Mason, Lee, Wiley, Ames** | Precise offers perceived as more informed -- precision signals expertise |
+| **Jack Perricone** (*Great Songwriting Techniques*, 2018) | Scenario development -- time grounds scene, prosodic interaction |
+| **NSAI** (Nashville Songwriters Association) | "Be descriptive, but not so specific that your audience cannot relate" |
 
 ---
 
