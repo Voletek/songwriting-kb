@@ -377,7 +377,7 @@ Evidence basis: 21machines' acid house experiment (June 2026) demonstrated that 
 - **Inline tag:** `[drop | massive detuned supersaw, wide stereo spread, euphoric]`
 
 ### Moog Bass
-- **Full:** deep growling Moog-style bass with ladder filter resonance and sub weight (73 chars)
+- **Full:** deep growling ladder-filter bass with warm resonance and sub weight (67 chars)
 - **Compressed:** deep growling synth bass, filter resonance (42 chars)
 - **Minimum:** growling synth bass (19 chars)
 - **Inline tag:** `[verse | deep growling synth bass, filter resonance, dark groove]`

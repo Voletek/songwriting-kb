@@ -358,6 +358,11 @@ def check_gear_names(style_prompt, lyrics_text=None):
     if not combined_text:
         return "PASS", []
 
+    # Strip parenthetical content before scanning -- methodology Step 9b
+    # recommends retaining gear names as parenthetical suffixes for
+    # future-proofing, so those should not trigger warnings.
+    combined_text = re.sub(r'\([^)]*\)', '', combined_text)
+
     found = []
 
     # Common gear/model names to detect
@@ -379,7 +384,7 @@ def check_gear_names(style_prompt, lyrics_text=None):
         r"\bGibson\b",
         r"\bFender\b",
         r"\bMarshall\b",
-        r"\bVox\b",
+        r"\bVox\s*AC",
         r"\bHammond\b",
         r"\bWurlitzer\b",
         r"\bRhodes\b",

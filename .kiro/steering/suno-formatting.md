@@ -55,7 +55,7 @@ Genre, BPM, Mood, Instruments, Vocal Style, Era/Production, Direction
 
 **Artist Reference Conversion:** Never include artist names in the Style Prompt. Convert "in the style of X" to descriptive production language (genre + era + instruments + production characteristics + vocal style + structural habits). No artist names in final output.
 
-**Instrument Naming:** Describe instruments by their SOUND, not their model name. 'Squelching acid bass' > 'Roland TB-303'. Use compressed descriptors (~20 chars each) to preserve character budget. Full vocabulary: `references/INSTRUMENT_SOUND_REFERENCE.md`
+**Instrument Naming:** Describe instruments by their SOUND, not their model name. 'Squelching acid bass' > 'Roland TB-303'. Use minimum descriptors (~20 chars each) for tight budgets or compressed (~35 chars each) as default. Full vocabulary: `references/INSTRUMENT_SOUND_REFERENCE.md`
 
 **Full genre/key/BPM/instrument reference:** `references/SUNO_STYLE_GENRE_REFERENCE.md`
 
