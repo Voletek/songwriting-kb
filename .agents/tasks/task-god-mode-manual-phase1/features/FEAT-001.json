@@ -2,7 +2,7 @@
   "id": "FEAT-001",
   "type": "feat",
   "description": "Integrate 6 items from Omnisona's Suno AI God Mode Manual v3.0 (March 2026) into the songwriting-kb. All labeled [Tier 3: Community heuristic]. Items: (1) Lyric Formatting Symbols / Performance Notation, (2) Anti-Pairs (genre combos that don't work), (3) Groove/Time-Feel Descriptors (8th dimension), (4) Call-and-Response Instrument Technique, (5) Environmental/Ambient SFX Tags, (6) Probabilistic Generation Framing. Then update CHANGELOG.md and CREDITS.md.",
-  "status": "in_progress",
+  "status": "completed",
   "steps": [
     "STEP 1 - references/SUNO_TAGS_REFERENCE.md: Add THREE new sections BEFORE the 'COMPLETE TEMPLATE' section at the end: (A) '## PERFORMANCE NOTATION SYMBOLS (Inline Lyric Formatting)' -- table of 7 symbols (parentheses, brackets, tilde, dash, ALL CAPS, quotation marks, long ellipsis) with 'What Suno Does' and 'Example' columns. Add CRITICAL note that () are SUNG/PERFORMED. [Tier 3]. Credit: Omnisona. (B) '## CALL-AND-RESPONSE INSTRUMENT TECHNIQUE' -- brief subsection explaining vocal-line > [instrumental break X] > vocal > instrument 'answers' pattern. List instruments (saxophone, guitar, violin, trumpet, harmonica). [Tier 3]. Credit: Omnisona. (C) '## ENVIRONMENTAL / AMBIENT SFX TAGS' -- list the 9 tags ([Rain], [Thunder], [Birds chirping], [Wind], [Ocean waves], [City ambience], [Fire crackling], [Static], [Record scratch]) with brief usage note. [Tier 3]. Credit: Omnisona.",
     "STEP 2 - references/SUNO_STYLE_GENRE_REFERENCE.md: Add TWO new subsections. (A) After Section 5.5 'Common Suno Prompt Failures', add '### 5.7 Anti-Pairs (Genre Combinations That Do NOT Work)' -- table with Genre A, Genre B, Why columns for Cinematic+Dark, Opera+Melodic, Drum and Bass+Funk. [Tier 3]. Credit: Omnisona. (B) After Section 3 (BPM-GENRE-EMOTION MAPPING) near the BPM reference, add '### 3.4 Groove / Time-Feel Descriptors' -- table with Descriptor, Feel, Best For columns for 8 groove types (medium swing, laid-back shuffle, straight eighth notes, half-time feel, double-time feel, triplet feel, four-on-the-floor, syncopated). Note this as '8th dimension' beyond the 7-dimension formula. [Tier 3]. Credit: Omnisona.",
@@ -35,5 +35,5 @@
     "Verify no unintended deletions by checking git diff --stat shows only additions/modifications, no file deletions"
   ],
   "blocked_reason": null,
-  "findings": ""
+  "findings": "Existing Section 13 already had subsections numbered 13.9-13.12, so new call-and-response and SFX content was added as 13.13 and 13.14 rather than conflicting with existing numbering. The SUNO_STYLE_GENRE_REFERENCE.md anti-pairs section was numbered 5.7 (after existing 5.6). All 10 files modified successfully with no conflicts."
 }
