@@ -278,6 +278,8 @@ Genre, BPM, Mood, Instruments, Vocal Style, Era/Production, Space/Direction
 
 **Missing any dimension = Suno guesses (fills with statistical averages).**
 
+**8th Dimension: Groove/Time-Feel (Optional):** For additional rhythmic specificity beyond BPM, add a groove descriptor (e.g., "medium swing", "four-on-the-floor", "syncopated", "laid-back shuffle"). Not required for every song, but useful when the groove character is essential to the feel. [Tier 3: Community heuristic] Credit: Omnisona (Suno AI God Mode Manual v3.0, March 2026)
+
 ---
 
 ## Genre Combination Rules
@@ -285,6 +287,7 @@ Genre, BPM, Mood, Instruments, Vocal Style, Era/Production, Space/Direction
 - **Genre-First Principle:** Genre MUST be the first element -- it anchors everything else. [Tier 3: community practice, not official. v4.5+ allows conversational prompts.]
 - **5-8 Tag Sweet Spot:** Comma-separated descriptors. Past 10 tags, signals conflict and Suno defaults to generic. [Tier 3: Suno v4.5+ docs encourage more descriptive prompting. Test by version.]
 - **70/30 Rule:** One dominant genre (70%) + one flavor (30%). 50/50 splits confuse Suno. Use `+` to combine
+- **Anti-Pairs:** Certain genre combinations have near-zero compatibility -- Cinematic+Dark, Opera+Melodic, Drum and Bass+Funk. These pairings produce averaged mush. Replace one genre or use a compatible alternative. [Tier 3: Community heuristic] Credit: Omnisona (Suno AI God Mode Manual v3.0, March 2026)
 - **Era Anchoring:** Time references ("early 2000s garage rock") outperform genre labels ("indie rock") because they give Suno a specific sonic PERIOD. [Tier 3: promising but not A/B tested.]
 - **The Separation Principle:** Era tags aggressively bias PRODUCTION style (recording technique, mix character). To get a retro instrument with modern production: "modern production, vintage 1970s guitar tone" -- separate the era from the mix
 
@@ -497,6 +500,21 @@ Controls how much a reference audio track affects the output.
 | **Allan F. Moore** | Soundbox theory -- spatial tag design |
 | **Serge Lacasse** | Proxemic distance -- reverb/space as emotional signal |
 | **Suno community research** (2025-2026) | Era anchoring, genre-first, 5-8 sweet spot, slider behavior, v5 parsing rules |
+
+---
+
+## Render Strategy
+
+> [Tier 3: Community heuristic]
+> Credit: Omnisona (Suno AI God Mode Manual v3.0, March 2026)
+
+Suno is a probabilistic generation system. Tags and prompts shape probability distributions -- they do not guarantee specific outcomes. Key principles:
+
+1. **Tags shape probability, not certainty.** A well-crafted prompt increases the LIKELIHOOD of the desired output but cannot force it. Accept that some renders will miss the mark.
+2. **Generate 3-4 versions per song.** Multiple renders allow you to select the best interpretation. This is not failure -- it is the intended workflow for a probabilistic system.
+3. **Treat Suno as collaborator, not vending machine.** The model contributes musical ideas you did not explicitly request. The best renders often include happy accidents that a rigid system would never produce.
+
+This framing reduces frustration and improves outcomes. Budget time for multiple renders in your production schedule.
 
 ---
 

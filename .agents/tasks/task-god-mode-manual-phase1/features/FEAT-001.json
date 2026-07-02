@@ -1,0 +1,39 @@
+{
+  "id": "FEAT-001",
+  "type": "feat",
+  "description": "Integrate 6 items from Omnisona's Suno AI God Mode Manual v3.0 (March 2026) into the songwriting-kb. All labeled [Tier 3: Community heuristic]. Items: (1) Lyric Formatting Symbols / Performance Notation, (2) Anti-Pairs (genre combos that don't work), (3) Groove/Time-Feel Descriptors (8th dimension), (4) Call-and-Response Instrument Technique, (5) Environmental/Ambient SFX Tags, (6) Probabilistic Generation Framing. Then update CHANGELOG.md and CREDITS.md.",
+  "status": "in_progress",
+  "steps": [
+    "STEP 1 - references/SUNO_TAGS_REFERENCE.md: Add THREE new sections BEFORE the 'COMPLETE TEMPLATE' section at the end: (A) '## PERFORMANCE NOTATION SYMBOLS (Inline Lyric Formatting)' -- table of 7 symbols (parentheses, brackets, tilde, dash, ALL CAPS, quotation marks, long ellipsis) with 'What Suno Does' and 'Example' columns. Add CRITICAL note that () are SUNG/PERFORMED. [Tier 3]. Credit: Omnisona. (B) '## CALL-AND-RESPONSE INSTRUMENT TECHNIQUE' -- brief subsection explaining vocal-line > [instrumental break X] > vocal > instrument 'answers' pattern. List instruments (saxophone, guitar, violin, trumpet, harmonica). [Tier 3]. Credit: Omnisona. (C) '## ENVIRONMENTAL / AMBIENT SFX TAGS' -- list the 9 tags ([Rain], [Thunder], [Birds chirping], [Wind], [Ocean waves], [City ambience], [Fire crackling], [Static], [Record scratch]) with brief usage note. [Tier 3]. Credit: Omnisona.",
+    "STEP 2 - references/SUNO_STYLE_GENRE_REFERENCE.md: Add TWO new subsections. (A) After Section 5.5 'Common Suno Prompt Failures', add '### 5.7 Anti-Pairs (Genre Combinations That Do NOT Work)' -- table with Genre A, Genre B, Why columns for Cinematic+Dark, Opera+Melodic, Drum and Bass+Funk. [Tier 3]. Credit: Omnisona. (B) After Section 3 (BPM-GENRE-EMOTION MAPPING) near the BPM reference, add '### 3.4 Groove / Time-Feel Descriptors' -- table with Descriptor, Feel, Best For columns for 8 groove types (medium swing, laid-back shuffle, straight eighth notes, half-time feel, double-time feel, triplet feel, four-on-the-floor, syncopated). Note this as '8th dimension' beyond the 7-dimension formula. [Tier 3]. Credit: Omnisona.",
+    "STEP 3 - SONGWRITING_KNOWLEDGE_BASE.md: Add brief content in Sections 12 and 13. (A) In Section 12 after 12.5.1, add '### 12.5.2 Performance Notation Symbols (Inline)' -- compact table (symbol, effect) for the 7 symbols. Add note: 'CRITICAL: () are SUNG/PERFORMED -- never put production instructions inside parentheses.' [Tier 3]. Credit: Omnisona. (B) At end of Section 13, add '### 13.9 Call-and-Response Instrument Technique' -- 2-3 lines explaining the pattern. [Tier 3]. Credit: Omnisona. (C) After 13.9, add '### 13.10 Environmental / Ambient SFX Tags' -- one-line summary + list. [Tier 3]. Credit: Omnisona.",
+    "STEP 4 - core/methodology/suno-optimization.md: Add THREE items. (A) In the '7-Dimension Style Prompt Formula' section, add a note about '8th Dimension: Groove/Time-Feel' mentioning descriptors like 'medium swing', 'four-on-the-floor' etc as optional additional specificity. [Tier 3]. Credit: Omnisona. (B) In 'Genre Combination Rules' section, add a bullet about Anti-Pairs: certain genre combos have near-zero compatibility (Cinematic+Dark, Opera+Melodic, Drum and Bass+Funk). [Tier 3]. Credit: Omnisona. (C) At end of the file before 'References', add a new section '## Render Strategy' with the probabilistic generation framing principle: tags shape probability, not guarantees; recommend generating 3-4 versions per song; treat Suno as collaborator not vending machine. [Tier 3]. Credit: Omnisona.",
+    "STEP 5 - core/methodology/critique.md: In the 'Common Flag Patterns' table near end of file, add a new row for 'Anti-pair genre combo' with flag description 'Genre A + Genre B in Style Prompt are known incompatible (Cinematic+Dark, Opera+Melodic, D&B+Funk)' and fix 'Replace one genre or use compatible combination'. [Tier 3]. Credit: Omnisona.",
+    "STEP 6 - core/methodology/songwriting.md: In Step 25 'Write Production Notes' template, add '- Groove/Time-Feel: [descriptor -- e.g., straight eighth notes, laid-back shuffle]' after the Tempo line. This makes groove an explicit part of the output format.",
+    "STEP 7 - .kiro/steering/suno-formatting.md: Add THREE one-liners. (A) In the 'Style Prompt Formula' section, add: '**Groove/Time-Feel (Optional 8th Dimension):** Add a groove descriptor (medium swing, four-on-the-floor, syncopated, etc.) for rhythmic specificity beyond BPM. [Tier 3]' (B) After the 'Parenthetical Layers' section, add: '**Performance Notation:** Inline symbols (~, -, ALL CAPS, ..., quotes) affect vocal delivery inside lyrics. See `references/SUNO_TAGS_REFERENCE.md` -> Performance Notation.' (C) Under or after the 'Genre & Style Optimization' section, add: '**Probabilistic Rendering:** Tags shape probability -- they do not guarantee outcomes. Generate 3-4 versions of each song and select the best render. [Tier 3]'",
+    "STEP 8 - .kiro/agents/songwriter.md: In 'Execution Rules (Both Modes)' section, add a bullet: '- Recommend generating 3-4 renders per song for best results (tags shape probability, not guarantees) [Tier 3: Omnisona]'",
+    "STEP 9 - CHANGELOG.md: Add entries under [Unreleased] > Added for all 6 items. Mention Omnisona credit and Tier 3 for each.",
+    "STEP 10 - CREDITS.md: Add an 'Omnisona' section under Contributors with credit for Suno AI God Mode Manual v3.0 (March 2026). List the 6 contributions: performance notation symbols, anti-pairs, groove/time-feel descriptors, call-and-response instrument technique, environmental SFX tags, probabilistic generation framing."
+  ],
+  "acceptance_criteria": [
+    "All 6 items from the God Mode Manual are integrated into their specified target files",
+    "Every new claim carries [Tier 3: Community heuristic] label",
+    "Every addition credits Omnisona (Suno AI God Mode Manual v3.0, March 2026)",
+    "CHANGELOG.md [Unreleased] section lists all 6 additions",
+    "CREDITS.md has an Omnisona contributor section",
+    "No existing content is broken or removed -- only additions",
+    "Formatting matches the existing style of each target file (tables, headers, etc.)",
+    "The groove/time-feel descriptor appears in the songwriting.md output format template",
+    "The anti-pair pattern appears in critique.md Common Flag Patterns",
+    "The probabilistic framing appears in suno-optimization.md and songwriter agent behavioral directives"
+  ],
+  "verification": [
+    "Run grep -c 'Omnisona' across all modified files to confirm attribution is present",
+    "Run grep -c 'Tier 3' on each modified file to confirm tier labels are added",
+    "Visually inspect that the markdown renders correctly (no broken tables, headers, or links)",
+    "Verify CHANGELOG.md has an [Unreleased] heading with the new entries",
+    "Verify no unintended deletions by checking git diff --stat shows only additions/modifications, no file deletions"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}

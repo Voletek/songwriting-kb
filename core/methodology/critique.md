@@ -450,6 +450,7 @@ The **core 12-category composite** drives the pipeline decision:
 | Soundbox static | Same spatial depth entire song | Vary proxemic distance per section |
 | Layer missing | No harmonic filler or bass presence | Add mid-range texture or bass foundation |
 | Musemic contradiction | Bright sounds on dark lyrics | Align timbral connotation to content |
+| Anti-pair genre combo | Genre A + Genre B in Style Prompt are known incompatible (Cinematic+Dark, Opera+Melodic, D&B+Funk) [Tier 3: Omnisona] | Replace one genre or use compatible combination |
 | Dead zone | 15+ seconds with no new information | Add contrast, cut length, or introduce variation |
 | Proxemic mismatch | Intimate lyrics at public distance | Match reverb/mic treatment to emotional content |
 

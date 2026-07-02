@@ -39,6 +39,21 @@ Brian forked the repo, conducted a thorough methodology review, and submitted [P
 
 ---
 
+### Omnisona ([Suno AI God Mode Manual v3.0](https://omnisona.com), March 2026)
+
+Author of the comprehensive Suno AI God Mode Manual. Six contributions integrated into the knowledge base:
+
+- **Performance Notation Symbols** -- 7 inline lyric formatting characters (~, -, ALL CAPS, ..., quotes, (), []) that affect vocal delivery
+- **Anti-Pairs** -- genre combinations with near-zero compatibility (Cinematic+Dark, Opera+Melodic, D&B+Funk)
+- **Groove/Time-Feel Descriptors** -- optional 8th dimension for rhythmic specificity (medium swing, four-on-the-floor, syncopated, etc.)
+- **Call-and-Response Instrument Technique** -- vocal/instrument conversational pattern using [instrumental break X] tags
+- **Environmental/Ambient SFX Tags** -- 9 atmosphere tags ([Rain], [Thunder], [Birds chirping], [Wind], [Ocean waves], [City ambience], [Fire crackling], [Static], [Record scratch])
+- **Probabilistic Generation Framing** -- tags shape probability not guarantees; generate 3-4 versions; treat Suno as collaborator
+
+All contributions labeled [Tier 3: Community heuristic].
+
+---
+
 ## Academic Sources
 
 | Scholar/Source | Contribution |

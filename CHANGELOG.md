@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- Performance Notation Symbols (inline lyric formatting) integrated into tags reference and knowledge base -- 7 symbols that affect Suno vocal delivery. [Tier 3: Community heuristic] Credit: Omnisona (Suno AI God Mode Manual v3.0, March 2026)
+- Anti-Pairs (genre combinations that do NOT work) added to style/genre reference, suno-optimization, and critique flag patterns -- Cinematic+Dark, Opera+Melodic, D&B+Funk. [Tier 3: Community heuristic] Credit: Omnisona
+- Groove/Time-Feel Descriptors (optional 8th dimension) added to style/genre reference, suno-optimization, songwriting production notes template, and steering -- 8 groove types for rhythmic specificity beyond BPM. [Tier 3: Community heuristic] Credit: Omnisona
+- Call-and-Response Instrument Technique added to tags reference and knowledge base -- vocal/instrument conversational pattern. [Tier 3: Community heuristic] Credit: Omnisona
+- Environmental/Ambient SFX Tags added to tags reference and knowledge base -- 9 atmosphere tags ([Rain], [Thunder], etc.). [Tier 3: Community heuristic] Credit: Omnisona
+- Probabilistic Generation Framing (Render Strategy) added to suno-optimization, steering, and songwriter agent -- tags shape probability, generate 3-4 versions, treat Suno as collaborator. [Tier 3: Community heuristic] Credit: Omnisona
 - Instrument Sound Reference added (`references/INSTRUMENT_SOUND_REFERENCE.md`) -- gear-to-sound translation table with 3 compression levels, character budget guidance. Gear-name detection added to validator. Tier 3, evidence from 21machines' acid house experiment.
 - Temporal Specificity guideline (times, dates, numbers in lyrics) added to songwriting methodology, knowledge base, production theory, critique reference, and Suno rendering guide -- backed by 13 academic/professional sources (Pattison, Murphey, Werner, Perricone, Wilson, Jenkins, Stockwell, Gavins, Voice & Whiteley, Janiszewski & Uy, Mason et al., Kreyer & Mukherjee, NSAI)
 - `core/tenets.md` — 7 creative decision-making principles with academic basis (Pattison, Juslin, Dodge, Fabbri, Moore, Nashville A&R). Priority-ordered for resolving conflicts when methodology rules fight each other or artistic intent. Wired into songwriter + critic agents.

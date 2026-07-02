@@ -53,6 +53,8 @@ Genre, BPM, Mood, Instruments, Vocal Style, Era/Production, Direction
 
 **70/30 Genre Combination:** One dominant genre (70%) + one flavor (30%). 50/50 splits confuse Suno. Use `+` to combine.
 
+**Groove/Time-Feel (Optional 8th Dimension):** Add a groove descriptor (medium swing, four-on-the-floor, syncopated, etc.) for rhythmic specificity beyond BPM. [Tier 3]
+
 **Artist Reference Conversion:** Never include artist names in the Style Prompt. Convert "in the style of X" to descriptive production language (genre + era + instruments + production characteristics + vocal style + structural habits). No artist names in final output.
 
 **Instrument Naming:** Describe instruments by their SOUND, not their model name. 'Squelching acid bass' > 'Roland TB-303'. Use minimum descriptors (~20 chars each) for tight budgets or compressed (~35 chars each) as default. Full vocabulary: `references/INSTRUMENT_SOUND_REFERENCE.md`
@@ -105,6 +107,8 @@ Text in parentheses = secondary vocal layer. Suno treats it differently from mai
 
 **Key rule:** Named layers (`X layer: text`) require the Style Prompt to declare: e.g., "low-register AI voice layered during system sections." Without this, Suno may just sing parenthetical content normally.
 
+**Performance Notation:** Inline symbols (~, -, ALL CAPS, ..., quotes) affect vocal delivery inside lyrics. See `references/SUNO_TAGS_REFERENCE.md` -> Performance Notation.
+
 **Full reference:** `references/SUNO_TAGS_REFERENCE.md` → "Parenthetical Layers" section.
 
 ## Exclusions Format
@@ -129,3 +133,5 @@ When writing or revising songs, evaluate Style Prompt choices against the emotio
 - **Section tags = per-section musemic signification** — each tag should carry the correct connotation for THAT section's content
 
 The Critic agent's Suno Optimization Assessment evaluates all of this. Full methodology: `references/SUNO_STYLE_GENRE_REFERENCE.md`
+
+**Probabilistic Rendering:** Tags shape probability -- they do not guarantee outcomes. Generate 3-4 versions of each song and select the best render. [Tier 3]

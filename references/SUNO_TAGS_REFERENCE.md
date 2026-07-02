@@ -721,6 +721,77 @@ Common exclusions by genre:
 
 ---
 
+## PERFORMANCE NOTATION SYMBOLS (Inline Lyric Formatting)
+
+> [Tier 3: Community heuristic]
+> Credit: Omnisona (Suno AI God Mode Manual v3.0, March 2026)
+
+Certain characters inside lyrics affect vocal delivery in Suno. These are NOT tags -- they are inline text formatting that shapes how the AI sings.
+
+| Symbol | What Suno Does | Example |
+|---|---|---|
+| `( )` | SUNG/PERFORMED as secondary vocal layer (backup, response, whisper) | `(I was always here)` |
+| `[ ]` | Structural/production tag -- NOT sung | `[Verse 1]` |
+| `~` | Adds vocal vibrato or wavering delivery | `I'm still waiting~` |
+| `-` (mid-word) | Syllable stretch / melisma -- extends the note | `Fa-a-all from grace` |
+| `ALL CAPS` | Emphasis -- louder, more forceful delivery | `I said NEVER again` |
+| `" "` (quotation marks) | Slightly different vocal color -- as if quoting someone | `She said "don't look back"` |
+| `...` (long ellipsis) | Trailing off -- vocal fades or hesitates | `Maybe I should just...` |
+
+**CRITICAL:** Parentheses `()` are SUNG/PERFORMED -- never put production instructions inside parentheses. Use square brackets `[]` for production/structural directions.
+
+---
+
+## CALL-AND-RESPONSE INSTRUMENT TECHNIQUE
+
+> [Tier 3: Community heuristic]
+> Credit: Omnisona (Suno AI God Mode Manual v3.0, March 2026)
+
+Suno can produce a call-and-response pattern between vocals and instruments. The vocal line "calls" and an instrument "answers" in the gap.
+
+**Pattern:** Vocal line > `[instrumental break X]` > Vocal line > instrument answers
+
+**Instruments that respond well:**
+- Saxophone
+- Guitar (electric, clean or overdriven)
+- Violin
+- Trumpet
+- Harmonica
+
+**Example in lyrics:**
+```
+I can't hold on anymore
+[instrumental break saxophone]
+Tell me where we lost the thread
+[instrumental break saxophone]
+```
+
+The instrument fill occupies the space between vocal phrases, creating a conversational dynamic.
+
+---
+
+## ENVIRONMENTAL / AMBIENT SFX TAGS
+
+> [Tier 3: Community heuristic]
+> Credit: Omnisona (Suno AI God Mode Manual v3.0, March 2026)
+
+Suno can render environmental sound effects when placed as tags in the lyrics field. These add atmosphere without occupying vocal space.
+
+**Confirmed working SFX tags:**
+- `[Rain]`
+- `[Thunder]`
+- `[Birds chirping]`
+- `[Wind]`
+- `[Ocean waves]`
+- `[City ambience]`
+- `[Fire crackling]`
+- `[Static]`
+- `[Record scratch]`
+
+**Usage note:** Place at the start of a section or between vocal lines. Best used sparingly -- 1-2 per song maximum. Overuse may confuse rendering. These work best in intros, outros, and bridge sections where atmospheric space exists.
+
+---
+
 ## COMPLETE TEMPLATE (v5.0 Optimized)
 
 ```

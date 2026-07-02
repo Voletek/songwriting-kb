@@ -338,6 +338,7 @@ Include ALL of the following:
 Production Notes:
 - Key: [Key] -- [reasoning]
 - Tempo: [X] BPM -- [justification]
+- Groove/Time-Feel: [descriptor -- e.g., straight eighth notes, laid-back shuffle]
 - Time Signature: [4/4 or 3/4 or 6/8]
 - Chord Progression: [Nashville numbers] / [actual chords in key]
   (Different progressions for Verse, Pre-Chorus, Chorus, Bridge, Final Chorus)

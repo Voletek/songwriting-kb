@@ -168,6 +168,28 @@ When evaluating a song's BPM:
 4. Does the BPM serve the HOOK timing? (faster BPM = hook arrives sooner in seconds)
 5. Is the BPM consistent with ADJACENT TRACKS in the album? (variety needed)
 
+### 3.4 Groove / Time-Feel Descriptors
+
+> [Tier 3: Community heuristic]
+> Credit: Omnisona (Suno AI God Mode Manual v3.0, March 2026)
+
+Beyond BPM, groove descriptors add an 8th dimension of specificity to the Style Prompt -- telling Suno HOW the rhythm feels, not just how fast it is.
+
+| Descriptor | Feel | Best For |
+|---|---|---|
+| Medium swing | Relaxed jazz bounce, triplet-based | Jazz, blues, swing revival, soul |
+| Laid-back shuffle | Behind-the-beat groove, relaxed drag | Blues, southern rock, chill R&B |
+| Straight eighth notes | Even, mechanical, precise | Pop-rock, punk, EDM, industrial |
+| Half-time feel | Halved pulse, heavy and spacious | Ballad choruses, trap, cinematic builds |
+| Double-time feel | Doubled pulse, urgent and driving | Punk breakdowns, drum fills, transitions |
+| Triplet feel | Three-note groupings, rolling | Gospel, 6/8 ballads, waltz-adjacent |
+| Four-on-the-floor | Steady kick on every beat | Disco, house, dance-pop, EDM |
+| Syncopated | Off-beat accents, unpredictable | Funk, Latin, progressive, neo-soul |
+
+**Usage in Style Prompt:** Add the groove descriptor after BPM: `"Dark indie rock, 92 BPM, syncopated, melancholic..."`
+
+**Note:** This functions as an optional 8th dimension beyond the standard 7-dimension formula. Not required for every song, but adds rhythmic specificity when the groove character matters.
+
 ---
 
 ## 4. INSTRUMENT-GENRE CONVENTIONS (Tagg Applied)
@@ -344,6 +366,21 @@ brooding, uplifting, bittersweet, nostalgic, futuristic, ancient
 | "No" negation works in Style Prompt | "No drums" in Style field is effective (but Exclude field is cleaner) |
 | Pipe notation is parsed efficiently | `[chorus | powerful, wide, choir swell]` = one-line control |
 | 48kHz output available | Use `[Hyper-Realistic]` tag for maximum quality (v5) |
+
+### 5.7 Anti-Pairs (Genre Combinations That Do NOT Work)
+
+> [Tier 3: Community heuristic]
+> Credit: Omnisona (Suno AI God Mode Manual v3.0, March 2026)
+
+Certain genre combinations have near-zero compatibility in Suno. These pairings consistently produce averaged mush rather than meaningful fusion:
+
+| Genre A | Genre B | Why |
+|---|---|---|
+| Cinematic | Dark | Both claim the same atmospheric space -- Suno cannot differentiate intent, produces generic dark ambient |
+| Opera | Melodic | Opera IS melodic by definition -- the combination is redundant and confuses the model |
+| Drum and Bass | Funk | D&B's mechanical precision conflicts with funk's human groove -- Suno cannot reconcile the rhythmic DNA |
+
+**Fix:** Replace one genre with a compatible alternative, or restructure as a 70/30 split where one genre clearly dominates.
 
 ---
 
