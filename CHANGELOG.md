@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Performance Notation Symbols (inline lyric formatting) integrated into tags reference and knowledge base -- 7 symbols that affect Suno vocal delivery. [Tier 3: Community heuristic] Credit: Omnisona (Suno AI God Mode Manual v3.0, March 2026)
-- Anti-Pairs (genre combinations that do NOT work) added to style/genre reference, suno-optimization, and critique flag patterns -- Cinematic+Dark, Opera+Melodic, D&B+Funk. [Tier 3: Community heuristic] Credit: Omnisona
+- Anti-Pairs (genre combinations that do NOT work) added to style/genre reference, suno-optimization, and critique flag patterns -- Gregorian Chant+Trap, Classical Baroque+Lo-fi Bedroom Pop, Opera+Mumble Rap. [Tier 3: Community heuristic] Credit: Omnisona
 - Groove/Time-Feel Descriptors (optional 8th dimension) added to style/genre reference, suno-optimization, songwriting production notes template, and steering -- 8 groove types for rhythmic specificity beyond BPM. [Tier 3: Community heuristic] Credit: Omnisona
 - Call-and-Response Instrument Technique added to tags reference and knowledge base -- vocal/instrument conversational pattern. [Tier 3: Community heuristic] Credit: Omnisona
 - Environmental/Ambient SFX Tags added to tags reference and knowledge base -- 9 atmosphere tags ([Rain], [Thunder], etc.). [Tier 3: Community heuristic] Credit: Omnisona

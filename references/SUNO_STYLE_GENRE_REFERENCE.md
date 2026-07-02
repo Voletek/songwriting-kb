@@ -372,13 +372,15 @@ brooding, uplifting, bittersweet, nostalgic, futuristic, ancient
 > [Tier 3: Community heuristic]
 > Credit: Omnisona (Suno AI God Mode Manual v3.0, March 2026)
 
-Certain genre combinations have near-zero compatibility in Suno. These pairings consistently produce averaged mush rather than meaningful fusion:
+Certain genre combinations have near-zero compatibility in Suno. The tags pull vocal delivery, rhythmic framework, or production aesthetic in directly opposing directions, producing averaged mush rather than meaningful fusion:
 
 | Genre A | Genre B | Why |
 |---|---|---|
-| Cinematic | Dark | Both claim the same atmospheric space -- Suno cannot differentiate intent, produces generic dark ambient |
-| Opera | Melodic | Opera IS melodic by definition -- the combination is redundant and confuses the model |
-| Drum and Bass | Funk | D&B's mechanical precision conflicts with funk's human groove -- Suno cannot reconcile the rhythmic DNA |
+| Gregorian Chant | Trap | Monophonic sacred vocal tradition vs. 808 sub-bass and hi-hat rolls -- incompatible vocal register, rhythmic framework, and production aesthetic |
+| Classical Baroque | Lo-fi Bedroom Pop | Ornate counterpoint and formal harpsichord structure vs. deliberately degraded production and simple chord loops -- contradictory production intent |
+| Opera | Mumble Rap | Bel canto projection and vibrato vs. understated, relaxed delivery with heavy processing -- directly contradictory vocal instructions |
+
+**Note:** Genre pairs that share vocabulary (e.g., "dark" + "cinematic") are modifiers of each other, not anti-pairs. "Dark cinematic rock" is a valid compound genre. Anti-pairs are combinations where the core production or performance demands genuinely conflict.
 
 **Fix:** Replace one genre with a compatible alternative, or restructure as a 70/30 split where one genre clearly dominates.
 

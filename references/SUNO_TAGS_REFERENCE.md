@@ -730,8 +730,8 @@ Certain characters inside lyrics affect vocal delivery in Suno. These are NOT ta
 
 | Symbol | What Suno Does | Example |
 |---|---|---|
-| `( )` | SUNG/PERFORMED as secondary vocal layer (backup, response, whisper) | `(I was always here)` |
-| `[ ]` | Structural/production tag -- NOT sung | `[Verse 1]` |
+| `( )` | SUNG/PERFORMED as secondary vocal layer (backup, response, whisper) -- see PARENTHETICAL LAYERS section above for full details | `(I was always here)` |
+| `[ ]` | Structural/production tag -- NOT sung -- see SECTION TAGS section above for full details | `[Verse 1]` |
 | `~` | Adds vocal vibrato or wavering delivery | `I'm still waiting~` |
 | `-` (mid-word) | Syllable stretch / melisma -- extends the note | `Fa-a-all from grace` |
 | `ALL CAPS` | Emphasis -- louder, more forceful delivery | `I said NEVER again` |
@@ -739,6 +739,8 @@ Certain characters inside lyrics affect vocal delivery in Suno. These are NOT ta
 | `...` (long ellipsis) | Trailing off -- vocal fades or hesitates | `Maybe I should just...` |
 
 **CRITICAL:** Parentheses `()` are SUNG/PERFORMED -- never put production instructions inside parentheses. Use square brackets `[]` for production/structural directions.
+
+**Note:** Effects of `~`, `-`, ALL CAPS, quotation marks, and ellipsis are community-observed patterns. Results vary by Suno version and are not guaranteed. The `()` and `[]` behaviors are well-established; see the PARENTHETICAL LAYERS and SECTION TAGS sections above for comprehensive documentation.
 
 ---
 

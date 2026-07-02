@@ -319,6 +319,8 @@ Inline text formatting that affects vocal delivery:
 
 **CRITICAL:** Parentheses `()` are SUNG/PERFORMED -- never put production instructions inside parentheses.
 
+**Note:** Effects of `~`, `-`, ALL CAPS, quotation marks, and ellipsis are community-observed patterns. Results vary by Suno version and are not guaranteed.
+
 Full reference: `references/SUNO_TAGS_REFERENCE.md` → "Performance Notation Symbols" section.
 
 ### 12.6 Rules: 4-8 lines/section, no end punctuation, tags on own line, 5000 char limit

@@ -1,0 +1,30 @@
+{
+  "id": "FEAT-002",
+  "type": "fix",
+  "description": "Address critical issues identified in the semantic review: (1) Replace contradictory anti-pairs with defensible examples grounded in music production theory, (2) Add verification qualifiers to performance notation symbols, (3) Add cross-reference notes for duplicated () and [] rows in performance notation table.",
+  "status": "in_progress",
+  "steps": [
+    "STEP 1 - Replace anti-pairs in references/SUNO_STYLE_GENRE_REFERENCE.md section 5.7 with non-contradictory examples: Gregorian Chant+Trap, Classical Baroque+Lo-fi Bedroom Pop, Opera+Mumble Rap",
+    "STEP 2 - Update anti-pairs bullet in core/methodology/suno-optimization.md to match the new examples",
+    "STEP 3 - Update anti-pair row in core/methodology/critique.md Common Flag Patterns table",
+    "STEP 4 - Add verification qualifier after performance notation table in references/SUNO_TAGS_REFERENCE.md",
+    "STEP 5 - Add verification qualifier after performance notation table in SONGWRITING_KNOWLEDGE_BASE.md section 12.5.2",
+    "STEP 6 - Add cross-reference note to () and [] rows in SUNO_TAGS_REFERENCE.md performance notation table pointing to PARENTHETICAL LAYERS section"
+  ],
+  "acceptance_criteria": [
+    "No anti-pair example contradicts existing KB genre recommendations",
+    "All three replacement anti-pairs are grounded in genuine music-theory incompatibility",
+    "Performance notation tables include explicit 'results may vary' qualifier",
+    "() and [] rows reference the PARENTHETICAL LAYERS section for full details",
+    "Omnisona credit and [Tier 3] labels remain intact",
+    "No unrelated content is modified"
+  ],
+  "verification": [
+    "grep for 'Cinematic+Dark' or 'Cinematic | Dark' to confirm removal",
+    "grep for 'D&B+Funk' or 'Drum and Bass | Funk' to confirm removal",
+    "grep for 'results vary' or 'may vary' to confirm qualifiers added",
+    "grep for 'PARENTHETICAL LAYERS' in performance notation section"
+  ],
+  "blocked_reason": null,
+  "findings": null
+}

@@ -44,7 +44,7 @@ Brian forked the repo, conducted a thorough methodology review, and submitted [P
 Author of the comprehensive Suno AI God Mode Manual. Six contributions integrated into the knowledge base:
 
 - **Performance Notation Symbols** -- 7 inline lyric formatting characters (~, -, ALL CAPS, ..., quotes, (), []) that affect vocal delivery
-- **Anti-Pairs** -- genre combinations with near-zero compatibility (Cinematic+Dark, Opera+Melodic, D&B+Funk)
+- **Anti-Pairs** -- genre combinations with near-zero compatibility (Gregorian Chant+Trap, Classical Baroque+Lo-fi Bedroom Pop, Opera+Mumble Rap)
 - **Groove/Time-Feel Descriptors** -- optional 8th dimension for rhythmic specificity (medium swing, four-on-the-floor, syncopated, etc.)
 - **Call-and-Response Instrument Technique** -- vocal/instrument conversational pattern using [instrumental break X] tags
 - **Environmental/Ambient SFX Tags** -- 9 atmosphere tags ([Rain], [Thunder], [Birds chirping], [Wind], [Ocean waves], [City ambience], [Fire crackling], [Static], [Record scratch])
