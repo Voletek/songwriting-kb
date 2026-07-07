@@ -334,3 +334,44 @@ When we reach Phase 3 of the migration, cherry-pick in this order:
 - Phase 2 is the rewiring — making `.kiro/` thin
 - Phase 3 is the accessibility layer — context packets + tools + experiments
 - Don't merge to main until Phase 1 + 2 are complete and tested
+
+---
+
+## Future Improvements
+
+### Audio Render Analysis Tool (`tools/analyze-render.py`)
+
+**Status:** Planned — not yet implemented
+
+**Purpose:** Quantitative verification of Suno renders against Production Notes. Closes the loop between what we asked for and what Suno actually produced.
+
+**What it would measure:**
+
+| Measurement | Library | What It Verifies |
+|---|---|---|
+| Actual BPM vs requested | librosa.beat.beat_track | Tempo accuracy |
+| Actual key vs requested | librosa.feature.chroma_cqt | Key/harmony compliance |
+| Dynamic range per section | librosa.feature.rms | Arrangement arc matches Production Direction |
+| Functional layers present | Demucs (source separation) | Moore's 4 layers: drums/bass/harmony/melody |
+| Hook timing | Self-similarity matrix + onset detection | When does the first repeated phrase appear |
+| Vocal presence per section | Source separation → vocal energy | Confirms instrumental sections are actually instrumental |
+| Song length vs requested | librosa.get_duration | Duration compliance |
+| Spectral genre fingerprint | Spectral centroid + MFCCs | Genre alignment verification |
+| Section contrast ratio | RMS energy between adjacent sections | Bridge actually stripped? Chorus actually bigger? |
+| ALL CAPS = louder (verified) | Compare RMS of marked sections | Quantify the emphasis effect |
+
+**Critic categories it could partially automate:**
+
+- Hook (timing of first repeated melodic phrase)
+- Arc (dynamic energy curve over time)
+- Structure (section boundary detection via novelty)
+- Genre (spectral fingerprint comparison)
+- Arrangement (layer presence/absence, contrast ratios)
+- Functional Layers - Moore (via Demucs source separation)
+- Soundbox/Proxemics (reverb estimation, stereo width, vocal level)
+
+**Dependencies:** Python 3.9+, librosa, numpy, matplotlib, Demucs (for separation), CREPE (for pitch)
+
+**Integration:** Would accept an mp3/wav + the song's Production Notes (as JSON). Reports MATCH/MISMATCH for each parameter. Could feed into the critic's Suno Optimization Assessment.
+
+**Prerequisite:** Needs local execution (GPU recommended for Demucs). Cannot run in Kiro Web sandbox.

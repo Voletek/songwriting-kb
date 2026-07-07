@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- Documented future improvement: audio render analysis tool for quantitative Suno render verification
 - Performance notation symbols user-tested on Suno v5.5: ALL CAPS confirmed working (louder/forceful delivery); tilde unreliable; quotes no effect; dash = word separator not syllable stretcher; ellipsis marginal (reinforces existing behavior only). Updated across all reference files with tested status and warnings. Experiment log: `experiments/suno/2026-07-02-performance-notation-symbols.yml`
 - Performance Notation Symbols (inline lyric formatting) integrated into tags reference and knowledge base -- 7 symbols that affect Suno vocal delivery. [Tier 3: Community heuristic] Credit: Omnisona (Suno AI God Mode Manual v3.0, March 2026)
 - Anti-Pairs (genre combinations that do NOT work) added to style/genre reference, suno-optimization, and critique flag patterns -- Gregorian Chant+Trap, Classical Baroque+Lo-fi Bedroom Pop, Opera+Mumble Rap. [Tier 3: Community heuristic] Credit: Omnisona
