@@ -89,6 +89,7 @@ The relationship between language rhythm, syllable stress, emotional meaning, an
 4. Do harsh consonants support aggression?
 5. Do open vowels sit on long/high notes?
 6. Does the rhyme scheme reinforce the song's structure?
+7. Does the METER choice match the intended section energy? [Tier 3: Experimental]
 
 **Prosody Alignment Table:**
 
@@ -104,6 +105,115 @@ The relationship between language rhythm, syllable stress, emotional meaning, an
 
 **Pat Pattison's Core Principle:**
 > Match stressed notes with stressed syllables, unstressed with unstressed.
+
+#### Poetic Meter as Musical Steering
+
+> [Tier 3: Community heuristic — MasterofSFL, 2026. EXPERIMENTAL — pending verification]
+>
+> The claim: lyrical stress patterns (meter) are the PRIMARY mechanism by which Suno determines
+> musical delivery. The meter IS the rhythmic road the music travels on.
+
+**Poetic Feet — The Rhythmic Units:**
+
+| Foot | Pattern | Notation | Sound | Musical Effect (Claimed) |
+|---|---|---|---|---|
+| **Iamb** | unstressed-STRESSED | uS | da-DUM | Natural speech, conversational, gravity. Most common in English. |
+| **Trochee** | STRESSED-unstressed | Su | DUM-da | Lighter, buoyant, can be dark/melancholic. Opposite of iamb. |
+| **Spondee** | STRESSED-STRESSED | SS | DUM-DUM | Heavy, emphatic, urgent. Slows the line. Drives aggressive delivery. |
+| **Pyrrhic** | unstressed-unstressed | uu | da-da | Light, flowing, subtle. Creates breathing room. |
+| **Anapest** | unstressed-unstressed-STRESSED | uuS | da-da-DUM | Fast, galloping, forward energy. Drives fast/building delivery. |
+| **Dactyl** | STRESSED-unstressed-unstressed | Suu | DUM-da-da | Energetic, militaristic, formal/grandiose. |
+| **Amphibrach** | unstressed-STRESSED-unstressed | uSu | da-DUM-da | Flowing, balanced, waltz-like. |
+| **Amphimacer** | STRESSED-unstressed-STRESSED | SuS | DUM-da-DUM | Strong, driving, bookended emphasis. |
+
+**Meterlines — Feet Per Line:**
+
+| Name | Feet | Syllables (approx) | Effect | Example |
+|---|---|---|---|---|
+| Monometer | 1 | 2-3 | Punchy, staccato, single impact | "Thus I." |
+| Dimeter | 2 | 4-6 | Short, urgent, fragmented | "Workers earn it." |
+| Trimeter | 3 | 6-9 | Focused, intense, contained | "As I came to the edge" |
+| Tetrameter | 4 | 8-12 | Standard, balanced, most common | "The grave's a fine and quiet place" |
+| Pentameter | 5 | 10-15 | Full, flowing, classic (Shakespeare) | "Shall I compare thee to a summer's day?" |
+| Hexameter | 6 | 12-18 | Epic, expansive, long-line | "This is the forest primeval..." |
+
+**Line Length Effects:**
+
+| Length | Syllables | Effect | Best For |
+|---|---|---|---|
+| Short | 1-4 syl / 2-3 words | Urgent, intense, fragmented | Hip-hop, staccato, emphasis |
+| Medium | 8-10 syl / 4-5 words | Balanced, conversational | Standard verse, pop/folk |
+| Long | 12+ syl / 6+ words | Flowing, expansive, narrative | Ballads, storytelling, prog |
+| Mixed | Variable | Dynamic, unpredictable | Jazz, indie, emotional shifts |
+
+**Meter-to-Genre Alignment (Claimed):**
+
+| Genre Energy | Dominant Meter | Why |
+|---|---|---|
+| Intimate ballad | Iambic Tetrameter/Pentameter | Natural speech = conversational feel |
+| Aggressive rock/metal | Spondee + Dactyl | Heavy stress = heavy music |
+| Galloping/driving | Anapestic Trimeter | da-da-DUM = forward motion |
+| Light/airy/folk | Trochaic/Pyrrhic | Unstressed = lighter production |
+| Epic/cinematic | Dactylic Hexameter | Long, formal = expansive sound |
+| Rap/spoken word | Mixed/Irregular | Syncopation against expected meter |
+| Ambient/drone | Pyrrhic dominant | Minimal stress = minimal rhythm |
+
+**The Staggering Technique:**
+
+Deliberately alternating meters between lines creates rhythmic texture (question-and-answer within a single section):
+
+```
+Anapestic Trimeter    — line 1 (galloping, forward)
+Trochaic Tetrameter   — line 2 (grounded, weighted)
+Anapestic Trimeter    — line 3 (galloping again)
+Trochaic Tetra + Spondee — line 4 (grounded + emphatic punch)
+```
+
+This creates the "By 2s" flow common in Western music — pairs of contrasting rhythmic elements.
+
+**Rhyme Types and Their Meter Relationships:**
+
+| Rhyme Type | Definition | Best With | Effect |
+|---|---|---|---|
+| **Perfect (True)** | Identical sounds after initial consonant | Any meter | Strong, resolved, certain |
+| **Slant (Half/Near)** | Similar but not identical sounds | Iambic, Pyrrhic | Subtle, unresolved, natural |
+| **Internal** | Rhyming within a line | Anapestic (mid-line landing points) | Density, momentum |
+| **Masculine** | Stress on final syllable | Spondee, strong endings | Direct, emphatic, final |
+| **Feminine** | Stress on penultimate syllable | Trochaic, flowing lines | Complex, playful, trailing |
+| **Semirhyme** | Extra unstressed syllable added | Amphibrach | Softens, trails off |
+
+**Advanced Rhyme Schemas:**
+
+| Schema | Pattern | Effect | Best For |
+|---|---|---|---|
+| ABCB | - rhyme - rhyme | Conversational, unforced | Verses, folk, indie |
+| ABAB | rhyme - rhyme - | Balanced, traditional | Choruses, hymnal |
+| AABB | couplet, couplet | Punchy, direct, resolved | Rap, pop hooks |
+| ABCA | delayed return | Tension through wait | Building sections |
+| ABCCBA | mirror/chiastic | Reflection, reveal | Bridges, turns |
+| ABCABC | triple chain | Complex, flowing | Extended bridges |
+| AABC | front-loaded then free | Surprise, pivot | Transition moments |
+
+**Sound Devices (Reinforce Meter):**
+
+| Device | Definition | Effect |
+|---|---|---|
+| **Alliteration** | Repeated initial consonants | Musicality, emphasis, momentum |
+| **Assonance** | Repeated vowel sounds | Internal rhyme, flow, emotional color |
+| **Consonance** | Repeated consonants (end of syllables) | Rhythm, links words, tension |
+| **Onomatopoeia** | Words that sound like their meaning | Immersion, sensory engagement |
+
+**The Punctuation Effect on Delivery:**
+
+| Mark | Effect on Suno | Use |
+|---|---|---|
+| Period (.) | Subtle pause, affects beat/emphasis | End of thought (avoid on lyric lines) |
+| Comma (,) | Subtle pause, clarifies phrasing | Mid-line breath (avoid at line end) |
+| Em dash (—) | Creates pause/break when wrapping text | Phrasing, breath, dramatic beat |
+| En dash (–) | Shorter pause than em dash | Light separation |
+| Extra blank line | Extended pause, instrumental fill | Major breathing room |
+| ALL CAPS | Louder/more forceful delivery | Emphasis, shouts, power |
+| Parentheses () | Secondary vocal layer (backup, whisper) | Background, response, harmony |
 
 ---
 
@@ -532,6 +642,50 @@ Beyond "male" or "female" — the full vocal design:
 | 90-115 | Anthemic, driving, accessible | Gothic rock, alternative, pop-rock |
 | 115-130 | Urgent, energetic, powerful | Rock, pop-punk, EDM |
 | 130+ | Panic, rebellion, explosion | Punk, metal, fast EDM |
+
+#### Italian Tempo Markings — Full Reference
+
+> [Tier 3: Community heuristic — MasterofSFL testing, 2026]
+>
+> Italian tempo markings are recognized more consistently by Suno/GPT than raw BPM numbers.
+> Use these in Style Prompts and as `[Tempo: Marking]` tags in lyrics.
+
+| Category | Marking | BPM Range | Description | Musical Context |
+|---|---|---|---|---|
+| **Very Slow** | Grave | 20-40 | Very slow, solemn | Funeral, ritual, extreme dread |
+| | Largo | 40-60 | Broadly, slowly | Sacred, processional, vast |
+| | Larghetto | 60-66 | Rather broadly | Dark ballad, ambient, spacious |
+| **Slow** | Lento | 45-60 | Slowly | Atmospheric, grief, intimate |
+| | Adagio | 66-76 | Slowly, at ease | Ballad, cinematic, confession |
+| **Walking** | Andante | 76-108 | Walking pace | Standard ballad, folk, indie |
+| | Andantino | ~80-108 | Slightly faster than Andante | Light movement, warmth |
+| **Moderate** | Moderato | 108-120 | Moderately | Pop, alternative, accessible |
+| | Allegretto | 112-120 | Moderately fast | Upbeat pop, light rock |
+| **Fast** | Allegro moderato | 116-120 | Moderately fast | Driving pop, energetic alt |
+| | Allegro | 120-168 | Fast, bright | Rock, punk, anthemic |
+| | Vivace | 140-176 | Lively, fast | High-energy, thrash, dance |
+| **Very Fast** | Presto | 168-200 | Very fast | Speed metal, punk, hardcore |
+| | Prestissimo | 200+ | As fast as possible | Extreme metal, grindcore |
+
+**Tempo Modification Terms:**
+
+| Term | Effect | Use In Lyrics As |
+|---|---|---|
+| Accelerando | Gradually speeds up | `[accelerando]` or in Production Direction |
+| Ritardando | Gradually slows | `[ritardando]` or `[rit.]` |
+| Rallentando | Broadening/slowing | Bridge endings, emotional weight |
+| Rubato | Flexible, expressive | Intimate bridges, spoken sections |
+| Stringendo | Pressing forward faster | Pre-chorus builds |
+| Con moto | With motion/energy | Maintaining momentum |
+| Sostenuto | Sustained, slow | Emotional emphasis |
+| Tempo primo | Return to original tempo | After a tempo change section |
+| Doppio movimento | Double speed | Sudden energy shift |
+
+**Application to Suno:**
+- In Style Prompt: "Dark cinematic rock, Adagio, E minor..."
+- In Lyrics field: `[Tempo: Adagio]` before sections, or `[Tempo: Allegro]` for energy shifts
+- Both locations simultaneously for maximum reinforcement
+- Use tempo modification terms for mid-song shifts: `[accelerando]` before a pre-chorus build
 
 ---
 
@@ -1191,4 +1345,5 @@ Line break = breath. Em dash = short pause. Standalone short line = dramatic wei
 □ Advanced harmony (secondary dominants? modal interchange? pedal tones?)
 □ Sync readiness (length, clarity, instrumental available?)
 □ Versioning plan (solo, duet, stripped, clip?)
+□ Meter design (stress patterns match intended energy per section?) [Experimental]
 ```

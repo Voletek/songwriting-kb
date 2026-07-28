@@ -74,6 +74,59 @@ Decide before writing:
 - Which vowels work for sustained notes in your key?
 - Default rhyme scheme (ABCB is often useful for a conversational feel; choose intentionally) [Tier 2]
 
+#### Step 4b -- Rhythmic Design (Meter as Steering)
+
+> [Tier 3: Experimental — pending verification via A/B testing]
+> Credit: MasterofSFL (Suno community guide, 2026)
+
+Choose the METER for each section deliberately. This is a PRODUCTION decision — the stress pattern of your lyrics may steer Suno's musical delivery as much as (or more than) your tags and style prompt.
+
+**The principle:** The underlying model predicts tokens based on text patterns. Lyrics written in driving spondaic meter pull toward heavy, aggressive delivery. Lyrics in flowing pyrrhic/iambic meter pull toward lighter, conversational delivery. You are choosing the rhythmic ROAD the music will drive on.
+
+**Per-section meter assignment:**
+
+| Section | Intended Energy | Recommended Meter | Example Feel |
+|---|---|---|---|
+| Intro | Atmospheric, establishing | Iambic or Pyrrhic | Natural speech, floating |
+| Verse (intimate) | Conversational, grounding | Iambic Tetrameter/Pentameter | "I close my EYES and SOMEthing SHIFTS" |
+| Verse (driving) | Building, forward | Anapestic Trimeter/Tetrameter | "In the DEAD of the NIGHT when the COLD starts to BITE" |
+| Pre-Chorus | Rising tension | Anapestic or mixed (staggered) | Forward momentum building |
+| Chorus (powerful) | Maximum impact | Spondaic or Iambic Pentameter | "DARK NIGHT. COLD ROAD." or "Shall I comPARE thee TO a SUMmer's DAY" |
+| Chorus (emotional) | Open, sustained | Iambic with feminine endings | Flowing, room to breathe |
+| Bridge | Contrast/turn | Different meter from verse/chorus | Surprise through rhythm shift |
+| Outro | Resolution/fading | Pyrrhic or Trochaic | Light, settling, dissolving |
+
+**Staggering technique:** Alternate meters between consecutive lines for rhythmic texture:
+```
+Line 1: Anapestic Trimeter (galloping: da-da-DUM da-da-DUM da-da-DUM)
+Line 2: Trochaic Tetrameter (grounded: DUM-da DUM-da DUM-da DUM-da)
+Line 3: Anapestic Trimeter (galloping again)
+Line 4: Trochaic Tetrameter + Spondee (grounded + emphatic: DUM-da DUM-da DUM-DUM)
+```
+
+**The "By 2s" principle:** Most Western music elements come in pairs (question-and-answer). Staggered meters create this call-and-response within a single section.
+
+**How to document:** In your pre-writing plan, note meter choices per section:
+```
+Verse: Iambic Tetrameter (conversational, intimate)
+Pre-Chorus: Anapestic Trimeter (building, forward motion)
+Chorus: Iambic Pentameter (full, powerful, classic)
+Bridge: Amphibrach Trimeter (flowing, reflective — CONTRAST from verse/chorus)
+```
+
+**Rhyme scheme interaction:** Different meters naturally suggest different rhyme approaches:
+- Iambic Pentameter → ABAB or ABCB (classic, resolved)
+- Anapestic → internal rhymes (the galloping rhythm creates mid-line landing points)
+- Spondaic → masculine rhymes (short, hard, emphatic endings)
+- Pyrrhic/Trochaic → feminine rhymes or slant rhymes (soft, trailing endings)
+
+**Advanced rhyme schemas** (beyond AABB/ABAB):
+- ABCA, ABCABC — creates tension through delayed resolution
+- ABCCBA — mirror/chiastic (good for bridges, reveals/turns)
+- ABCDBA — very delayed return (builds anticipation)
+- AABC — front-loaded rhyme, then breaks free (surprise, pivot)
+- Internal rhyme + end rhyme combined — increases density without cluttering line count
+
 ### Step 5 -- Narrative Arc
 
 Choose your arc type:
@@ -130,9 +183,10 @@ Apply this to every songwriting task:
 | 1 | Semantic | What is it literally about? |
 | 2 | Emotional | Central affect? BRECVEMA mechanisms? |
 | 3 | Prosodic | Stresses, breaths, syllable counts (7-12 per line) |
+| 3b | Rhythmic Design | What METER per section? (iambic, anapestic, spondaic?) What rhythmic energy does each section need? |
 | 4 | Narrative | Arc type? Where is the turn? |
 | 5 | Voice | Who speaks? Accent? Register? |
-| 6 | Genre | Fabbri's 5 rules? Fusion ratio (70/30)? |
+| 6 | Genre | Fabbri's 5 rules? Fusion ratio (70/30 or percentage)? |
 | 7 | Arrangement | Growth pattern? Contrast? Negative space? |
 | 8 | Production | Timbre palette? Harmonic choices? Space? |
 | 9 | Commercial | Audience? Platform? Length? Sync? |
@@ -214,6 +268,9 @@ Go line by line:
 - [ ] No stuffed phrases (3+ long words crammed)?
 - [ ] No weak terminal words (the, of, to, in)?
 - [ ] No reversed stresses (weak word on strong beat)?
+- [ ] Meter matches intended section energy? (e.g., not pyrrhic in aggressive section, not spondee in intimate ballad) [Tier 3: Experimental]
+- [ ] Staggered meter creates rhythmic variety between lines? (or: consistent meter creates intentional uniformity?) [Tier 3: Experimental]
+- [ ] Rhyme scheme matches meter choice? (masculine rhymes with spondee, feminine with trochaic, internal with anapestic) [Tier 3: Experimental]
 
 ### Step 18 -- Structure Check
 
@@ -267,7 +324,7 @@ When a line exceeds normal singable density (triggered at >15 syllables):
 
 Write comma-separated descriptors following the 7-Dimension Formula:
 ```
-Genre, BPM, Mood, Instruments, Vocal Style, Era/Production, Space/Direction
+Genre, Tempo, Mood, Instruments, Vocal Style, Era/Production, Space/Direction
 ```
 
 Rules:
@@ -275,7 +332,8 @@ Rules:
 - 5-8 tags total (past 10, signals conflict)
 - Must be <=1000 characters
 - Era anchoring ("early 2000s garage rock") outperforms genre labels ("indie rock")
-- 70/30 genre combination rule for fusion
+- 70/30 genre combination rule for fusion (or use explicit percentage weighting: "Thrash Metal (80%), EDM (20%)")
+- **Tempo:** Use Italian tempo marking ("Adagio") alongside or instead of raw BPM for better Suno recognition. Include BPM in Production Notes for human reference.
 - **Artist Reference Conversion:** Any artist name used as creative shorthand (e.g., "in the style of Radiohead") must be converted to descriptive production language before writing the Style Prompt. Translate the artist's sound into genre + era + instruments + production characteristics + vocal style + structural habits. No artist names in final output.
 
 **Example conversions:**
@@ -337,9 +395,10 @@ Include ALL of the following:
 ```
 Production Notes:
 - Key: [Key] -- [reasoning]
-- Tempo: [X] BPM -- [justification]
+- Tempo: [X] BPM / [Italian marking] -- [justification]
 - Groove/Time-Feel: [descriptor -- e.g., straight eighth notes, laid-back shuffle]
 - Time Signature: [4/4 or 3/4 or 6/8]
+- Meter Design: [per-section meter choices with reasoning]
 - Chord Progression: [Nashville numbers] / [actual chords in key]
   (Different progressions for Verse, Pre-Chorus, Chorus, Bridge, Final Chorus)
 - Vocal: [Type + delivery description]
@@ -351,6 +410,8 @@ Production Notes:
 ```
 
 Chord notation shows BOTH Nashville numbers AND actual chords: `i - VI - III - iv (Em - C - G - Am)`
+
+Tempo notation shows BOTH BPM AND Italian marking: `72 BPM (Adagio) -- intimate pace, allows breath`
 
 ### Step 26 -- Final Character Count
 
@@ -415,8 +476,9 @@ Every finished song file must contain:
 ## PRODUCTION NOTES:
 
 - Key: -- reasoning
-- Tempo: BPM -- reasoning
+- Tempo: BPM / Italian marking -- reasoning
 - Time Signature:
+- Meter Design: per-section choices
 - Chord Progression: Nashville / actual (per section)
 - Vocal:
 - Instruments:
@@ -575,6 +637,7 @@ Irregular numbers (6:14 vs 6:00) signal authenticity because precise anchors sug
 | **Allan F. Moore** | 4 functional texture layers, soundbox theory, persona |
 | **Nashville/LA tradition** | Chorus-first writing, hook discipline, co-writing craft |
 | **Suno community** (2025-2026) | Era anchoring, genre-first, 5-8 tag sweet spot, slider science |
+| **MasterofSFL** (2026) | Meter-as-steering hypothesis, Italian tempo recognition, stress pattern control, iterative refinement method |
 
 ---
 
