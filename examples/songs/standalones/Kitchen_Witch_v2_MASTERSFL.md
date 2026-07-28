@@ -5,7 +5,7 @@
 **Date:** July 2026
 **Version:** v2 — Applying MasterofSFL techniques to v1
 **Context:** Standalone — Southern Gothic blues-rock, dark humor, playful sexuality
-**Changes from v1:** Italian tempo (Andante), Genre Rebuilder slider preset, deliberate meter design (anapestic verses, spondaic chorus), chord progression tags, sandwiching at key transitions, return tag after solo, blank lines for breathing room, reinforced punctuation for delivery
+**Changes from v1:** Italian tempo (Andante), Genre Rebuilder slider preset, deliberate meter design (anapestic verses, spondaic chorus), chord progression tags, sandwiching at key transitions, return tag after solo, blank lines for breathing room, reinforced punctuation for delivery, **Verse 1 completely rewritten** (prosody fixes + imagery upgrade), bridge line tightened
 
 ---
 
@@ -13,10 +13,10 @@
 
 ```
 Intro: Spondee Monometer (boot stomp: DUM. DUM. DUM.)
-Verse 1: Irregular/conversational (intentionally loose — half-spoken storytelling, behind the beat)
+Verse 1: Anapestic Tetrameter (same gallop as V2/V3 — scene-setting with drive, not loose/behind-beat)
 Pre-Chorus: Anapestic Tetrameter (da-da-DUM da-da-DUM — galloping, building momentum)
 Chorus: Spondee + Trochee mix (DUM-da DUM-da DUM DUM — stomping, emphatic, singalong)
-Verse 2: Anapestic Trimeter (tighter than V1 — story picks up energy, couplets gallop)
+Verse 2: Anapestic Trimeter (tight couplets, physical imagery gallops)
 Verse 3: Anapestic Trimeter (same energy as V2 — consistent drive)
 Bridge: Pyrrhic Dimeter → Spondee Monometer (stripped: whispered/light → PUNCH)
 Solo: N/A (instrumental)
@@ -25,9 +25,7 @@ Post-Chorus: Spondee Monometer (chant: "KITCH-en WITCH!" — maximum emphasis)
 Outro: Iambic (returns to natural speech — conversational, comedic punchline delivery)
 ```
 
-**Reasoning:** This song lives or dies on GROOVE. The chorus needs to STOMP — heavy stress on nearly every syllable forces a heavy, emphatic musical delivery. The verses need to feel loose and conversational (irregular meter = half-spoken storytelling). The pre-chorus is the GALLOP that builds into the stomp. The bridge strips everything to create maximum contrast before the solo/final chorus explosion.
-
-The existing lyrics ALREADY align with this naturally — "She's my BITCH, my KITCH-en WITCH" is spondaic. "Little bit of THIS, little bit of THAT" is anapestic. We're REINFORCING the natural stress patterns with formatting, not fighting them.
+**Reasoning:** This song lives or dies on GROOVE. The chorus needs to STOMP — heavy stress on nearly every syllable forces a heavy, emphatic musical delivery. ALL verses now gallop in anapestic meter (V1 was rewritten from loose/irregular to match V2/V3's quality and drive). The pre-chorus is the GALLOP that builds into the stomp. The bridge strips everything to create maximum contrast before the solo/final chorus explosion.
 
 ---
 
@@ -61,17 +59,15 @@ Southern Gothic blues rock (80%), gritty outlaw country (20%), dark swampy barro
 [Verse 1 | half-spoken, loose, conversational, behind the beat]
 [Vocals: Gritty baritone, Southern drawl, storytelling, lazy delivery]
 
-Lights gone dark and you're
-Sitting by the hearth
+House gone dark, just the firelight left
+She's barefoot by the stove in that black cotton dress
+Something bubbling low in a pot I can't name
+Smells like sin and Sunday, tastes about the same
 
-Sweat and seasons glow hot over
-The fire and what I desire
-
-Full belly and this bitch, my
-Kitchen witch
-
-Topping off a feast to make things
-So delight
+Wooden spoon raised like she's casting a hex
+Tongue on her lip, grease burning on her neck
+I'm sitting here stupid with a fork and a grin
+Woman says "It's ready" — Lord, let me begin
 
 [Chord Progression: i-IV-bVII-V (Am-D-G-E7)]
 [Pre-Chorus | building energy, tightening groove, drums pushing]
@@ -163,7 +159,7 @@ A little at a time
 
 [silence: sudden]
 
-If that's what it is —
+Well if that's what's killing me —
 
 Baby, pour me some more
 
@@ -211,7 +207,7 @@ Kitchen witch!
 [Outro | band drops back to opening riff, conversational]
 [Vocals: Deadpan, natural speech, comedic timing]
 
-Lights gone dark
+House gone dark
 Fire burning low
 
 Full belly, full glass
@@ -242,7 +238,7 @@ She looks at me and says,
 | **Instruments** | Dirty overdriven electric guitar (primary), thick blues bass, stomping live drums (emphasis 2&4), smoky Hammond organ (accents, bridge featured), occasional slide guitar (fills), gang vocals (choruses/post-chorus). |
 | **Dynamics** | Intro riff (6) → V1 loose (4) → PC build (6) → C1 explosion (8) → V2 drive (5) → PC build (7) → C2 (8) → V3 (5) → Bridge STRIP (3) → silence (0) → Bridge punch (5) → Solo (9) → FC MAXIMUM (10) → Post-chorus chant (9) → Outro pullback (5) → punchline (4) → Hard chord (10→0) |
 | **Hook Type** | Title-as-chant: "Kitchen Witch" — arrives at chorus (~40s from first vocal). Reinforced by gang vocal repetition in post-chorus. Pass the "text test" — you'd text "She's my bitch, my kitchen witch" to someone. |
-| **Rhyme Scheme** | Verse 1: Irregular/loose (ABCB feel). Verse 2-3: AABB couplets (galloping, masculine endings). Pre-Chorus: AABB (tight couplets, building). Chorus: AABB (strong, resolved, singalong). Bridge: ABAB (delayed resolution → punch). |
+| **Rhyme Scheme** | Verse 1: AABB couplets (galloping, masculine, driving). Verse 2-3: AABB couplets (same). Pre-Chorus: AABB (tight, building). Chorus: AABB (strong, resolved, singalong). Bridge: ABAB → AABB (delayed resolution → emphatic couplet punch). |
 | **Emotional Arc** | Swagger → desire → celebration → more desire → admiration → intimacy → dangerous confession → abandon → maximum celebration → comedy deflation |
 
 ---
@@ -266,10 +262,71 @@ She looks at me and says,
 3. **Chord progression tags:** Before every section — different progressions for verse, pre-chorus, chorus, and bridge (bridge shifts to iv-i for darker modal feel)
 4. **Sandwiching tags:** Bridge and Final Chorus fully sandwiched with `[Mood:]` + `[Instrument:]` + `[Chord Progression:]` before structure, `[Vocals:]` after
 5. **Return tag after solo:** `[Solo ends]` + `[Band syncs]` + `[Return to main riff]` — ensures clean transition back to Final Chorus
-6. **Blank lines in bridge:** 1-2 blank lines between each bridge phrase — forces the intimate, sparse, "each word costs something" delivery. Plus `[silence: sudden]` for the dramatic pause before "If that's what it is —"
+6. **Blank lines in bridge:** 1-2 blank lines between each bridge phrase — forces the intimate, sparse, "each word costs something" delivery. Plus `[silence: sudden]` for the dramatic pause before "Well if that's what's killing me —"
 7. **Updated sliders:** Genre Rebuilder (60/90/30) — strong style lock for this specific genre request
-8. **Meter design documented:** Identifies natural stress patterns already present in lyrics (spondaic chorus, anapestic pre-chorus, irregular conversational verses) and reinforces them through formatting rather than rewriting
-9. **Punctuation reinforced:** Em dashes for breath beats ("If that's what it is —"), ellipsis for comedic timing ("...Shit.")
+8. **Meter design documented:** All verses now share anapestic gallop (V1 rewritten to match V2/V3 quality). Spondaic chorus reinforced. Bridge pyrrhic→spondee documented.
+9. **Punctuation reinforced:** Em dashes for breath beats, ellipsis for comedic timing ("...Shit.")
+
+---
+
+## Lyric Quality Revisions (Phase 3 Pass)
+
+### Verse 1 — COMPLETE REWRITE
+
+**Problems with original V1:**
+- "Sweat and seasons glow hot over / The fire and what I desire" — abstract, forced rhyme, no concrete image
+- "Topping off a feast to make things / So delight" — grammatically broken, prosodically weak terminal
+- Line breaks split phrases mid-thought (phrasing disaster for Suno)
+- Only ~3 concrete images in 8 lines (rest is abstract filler)
+- V2 and V3 were dramatically stronger — V1 read like a rough sketch
+
+**Original V1:**
+```
+Lights gone dark and you're
+Sitting by the hearth
+Sweat and seasons glow hot over
+The fire and what I desire
+Full belly and this bitch, my
+Kitchen witch
+Topping off a feast to make things
+So delight
+```
+
+**New V1:**
+```
+House gone dark, just the firelight left
+She's barefoot by the stove in that black cotton dress
+Something bubbling low in a pot I can't name
+Smells like sin and Sunday, tastes about the same
+
+Wooden spoon raised like she's casting a hex
+Tongue on her lip, grease burning on her neck
+I'm sitting here stupid with a fork and a grin
+Woman says "It's ready" — Lord, let me begin
+```
+
+**Why it's better:**
+- Every line has a PHYSICAL, VISUAL image (barefoot, black dress, pot, tongue on lip, grease on neck, fork, grin)
+- "Smells like sin and Sunday" — synesthesia + cultural code (Sunday = church + dinner)
+- "Casting a hex" — first witch reference is visual action, not stated label
+- "Sitting here stupid" — self-deprecating humor matching the song's tone
+- Prosody: clean AABB couplets, 10-12 syllables per line, no split phrases
+- Meter: anapestic gallop matches V2/V3 (the whole song now drives from the first verse)
+- Sets up the "hex/witch" theme through imagery BEFORE the pre-chorus/chorus names it explicitly
+
+### Bridge — LINE TIGHTENED
+
+**Original:** "If that's what it is —"
+**New:** "Well if that's what's killing me —"
+
+**Why:** "It is" is abstract (what's "it"?). "What's killing me" is physical — connects directly to "poisoning me" in the previous line. The "well" adds Southern vocal flavor (conversational filler that signals "I've thought about this and I don't care"). More syllables also give the line more weight before the em-dash pause.
+
+### Outro — CALLBACK UPDATED
+
+**Original:** "Lights gone dark"
+**New:** "House gone dark"
+
+**Why:** V1 no longer starts with "Lights gone dark" — the new V1 starts with "House gone dark." Outro now callbacks correctly to the opening line, creating bookend structure.
 
 ---
 
@@ -284,7 +341,9 @@ She looks at me and says,
 | Bridge delivery | Tag says "strip" | Full sandwich + blank lines + `[silence: sudden]` + `[diminuendo]` |
 | Sliders | Not specified | Genre Rebuilder: 60/90/30 |
 | Section identity | Pipe notation | Sandwich for key transitions + pipe for standard sections |
-| Verse breathing | Lines packed together | Blank lines between couplets in V1, bridge lines widely spaced |
+| **Verse 1 lyrics** | Abstract, broken prosody, "so delight" | Physical, sensory, AABB couplets, witch-imagery setup |
+| **Bridge pivot line** | "If that's what it is —" (abstract) | "Well if that's what's killing me —" (physical, connects to "poisoning") |
+| **Meter consistency** | V1 irregular, V2/V3 gallop | ALL verses now gallop consistently |
 
 ---
 
