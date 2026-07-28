@@ -33,13 +33,13 @@ Southern Gothic blues rock (80%), gritty outlaw country (20%), dark swampy barro
 [Verse 1 | half-spoken, setting the scene, first layer of innuendo]
 
 House gone dark, just the firelight left
-Barefoot on the tile in that black cotton dress
+Barefoot on the tile in that blue cotton dress
 Something bubbling low in a pot I can't name
 Smells like sin and Sunday — tastes about the same
 
-Wooden spoon raised like she's casting a hex
-Grease on her collarbone, sweat on her neck
-The way she licks that finger clean and slow
+Licks the wooden spoon like she's casting a hex
+Strawberry curls spilling down her neck
+She catches me watching — grins nice and slow
 Woman knows exactly what she's doing — and I know she knows I know
 
 [Pre-Chorus | building, innuendo thickening]
@@ -157,7 +157,7 @@ Both of us on the floor
 Full belly — full everything
 Can't feel my legs no more
 
-She looks over and says —
+She sits by the fire, spoon still in her hand —
 "...Round two? Or you want leftovers?"
 
 [silence: sudden]
@@ -203,7 +203,7 @@ How the song escalates:
 
 | Section | Innuendo Level | Example |
 |---|---|---|
-| V1 | Subtle — physical description, first glances | "The way she licks that finger clean and slow" |
+| V1 | Subtle — physical description, first glances | "Licks the wooden spoon like she's casting a hex" / "catches me watching — grins nice and slow" |
 | PC1 | Double-entendre | "Every time she bends down I forget what I wished" |
 | V2 | Barely a metaphor | "Apron slipping off one shoulder, nothing underneath" |
 | PC2 | Explicitly suggestive | "Then puts 'em somewhere else" |
@@ -219,8 +219,8 @@ The CHORUS stays clean-ish (same hook) — it's the SINGALONG part. The verses d
 
 | Line (Barroom) | Line (Dirty) | What Changed |
 |---|---|---|
-| "steam on her neck" | "sweat on her neck" | Steam → sweat (body heat, not kitchen heat) |
-| "She says 'It's ready'" | "Woman knows exactly what she's doing" | Direct → sexually aware |
+| "steam on her neck" | "Strawberry curls spilling down her neck" | Steam → hair description (matches cover art) |
+| "She says 'It's ready'" | "She catches me watching — grins nice and slow" | Direct → sexually aware, caught looking |
 | "I don't know what spell..." | Same | Kept — works both ways |
 | "I sneak a taste — she smacks my ass" | "She bends across the counter and my jaw just drops" | Comedy → visual lust |
 | "Feeds my soul while she feeds my face" | Same — kept | Already works as innuendo |
