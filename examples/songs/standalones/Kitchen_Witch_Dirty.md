@@ -46,7 +46,7 @@ Woman knows exactly what she's doing — and I know she knows I know
 [build]
 
 Little bit of this, little bit of that
-Black iron skillet and nothing else but that
+Black iron skillet and a crooked black hat
 I don't know what spell she slipped in the dish
 But every time she bends down I forget what I wished
 
