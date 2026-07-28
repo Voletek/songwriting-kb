@@ -49,7 +49,7 @@ Southern Gothic blues rock (80%), gritty outlaw country (20%), dark swampy barro
 [Verse 1 | half-spoken, behind the beat, lazy storytelling]
 
 House gone dark, just the firelight left
-She's barefoot on the tile in that black cotton dress
+Barefoot on the tile in that black cotton dress
 Something bubbling low in a pot I can't name
 Smells like sin and Sunday — tastes about the same
 
