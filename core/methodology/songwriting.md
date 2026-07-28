@@ -74,6 +74,25 @@ Decide before writing:
 - Which vowels work for sustained notes in your key?
 - Default rhyme scheme (ABCB is often useful for a conversational feel; choose intentionally) [Tier 2]
 
+#### Step 4b -- Rhythmic Design (Meter Awareness)
+
+> [Tier 3: Community heuristic — MasterofSFL, 2026]
+
+Consider the METER for each section as a production decision. The stress pattern of your lyrics may influence Suno's delivery — aggressive lyrics with heavy stress patterns (spondee) tend toward heavier musical delivery, while flowing unstressed patterns (pyrrhic/iambic) tend toward lighter delivery.
+
+**Quick reference — meter for energy matching:**
+
+| Section Energy | Recommended Meter | Pattern | Feel |
+|---|---|---|---|
+| Intimate/conversational | Iambic | da-DUM da-DUM | Natural speech |
+| Building/driving | Anapestic | da-da-DUM da-da-DUM | Galloping forward |
+| Maximum power/stomping | Spondaic | DUM-DUM DUM-DUM | Heavy, emphatic |
+| Light/flowing/ambient | Pyrrhic/Trochaic | da-da / DUM-da | Airy, buoyant |
+| Formal/epic | Dactylic | DUM-da-da | Militaristic, grandiose |
+| Reflective/balanced | Amphibrach | da-DUM-da | Flowing, waltz-like |
+
+**Practical use:** You don't need to write in strict meter. But being AWARE that "She's my BITCH, my KITCH-en WITCH" is naturally spondaic (stomping) while "In the dead of the night when the cold starts to bite" is naturally anapestic (galloping) helps you match lyric energy to intended section energy. If a verse feels wrong, check whether the stress pattern matches the intended delivery.
+
 ### Step 5 -- Narrative Arc
 
 Choose your arc type:
@@ -267,15 +286,16 @@ When a line exceeds normal singable density (triggered at >15 syllables):
 
 Write comma-separated descriptors following the 7-Dimension Formula:
 ```
-Genre, BPM, Mood, Instruments, Vocal Style, Era/Production, Space/Direction
+Genre, Tempo, Mood, Instruments, Vocal Style, Era/Production, Space/Direction
 ```
 
 Rules:
 - Genre MUST be first (anchors everything else)
 - 5-8 tags total (past 10, signals conflict)
 - Must be <=1000 characters
+- **Tempo:** Use Italian tempo marking ("Adagio", "Andante", "Allegro") instead of or alongside raw BPM — confirmed more reliable for Suno tempo control
 - Era anchoring ("early 2000s garage rock") outperforms genre labels ("indie rock")
-- 70/30 genre combination rule for fusion
+- 70/30 genre combination rule for fusion (or explicit percentage: "Genre A (80%), Genre B (20%)")
 - **Artist Reference Conversion:** Any artist name used as creative shorthand (e.g., "in the style of Radiohead") must be converted to descriptive production language before writing the Style Prompt. Translate the artist's sound into genre + era + instruments + production characteristics + vocal style + structural habits. No artist names in final output.
 
 **Example conversions:**
@@ -337,11 +357,12 @@ Include ALL of the following:
 ```
 Production Notes:
 - Key: [Key] -- [reasoning]
-- Tempo: [X] BPM -- [justification]
+- Tempo: [X] BPM / [Italian marking] -- [justification]
 - Groove/Time-Feel: [descriptor -- e.g., straight eighth notes, laid-back shuffle]
 - Time Signature: [4/4 or 3/4 or 6/8]
 - Chord Progression: [Nashville numbers] / [actual chords in key]
   (Different progressions for Verse, Pre-Chorus, Chorus, Bridge, Final Chorus)
+- Modulation: [if applicable -- where, direction, target key]
 - Vocal: [Type + delivery description]
 - Instruments: [listed by prominence]
 - Dynamics: [section-by-section energy with arrows]
@@ -351,6 +372,8 @@ Production Notes:
 ```
 
 Chord notation shows BOTH Nashville numbers AND actual chords: `i - VI - III - iv (Em - C - G - Am)`
+
+Tempo notation shows BOTH BPM AND Italian marking: `92 BPM (Andante) -- swagger pace`
 
 ### Step 26 -- Final Character Count
 
@@ -575,6 +598,7 @@ Irregular numbers (6:14 vs 6:00) signal authenticity because precise anchors sug
 | **Allan F. Moore** | 4 functional texture layers, soundbox theory, persona |
 | **Nashville/LA tradition** | Chorus-first writing, hook discipline, co-writing craft |
 | **Suno community** (2025-2026) | Era anchoring, genre-first, 5-8 tag sweet spot, slider science |
+| **MasterofSFL** (2026) | Italian tempo markings, higher slider ranges, return tags, meter-as-steering awareness |
 
 ---
 
