@@ -36,24 +36,17 @@ Southern Gothic blues rock (80%), gritty outlaw country (20%), dark swampy barro
 
 [Title: Kitchen Witch]
 
-[Production Direction: Southern gothic blues-rock with pub-rock swagger. Dirty overdriven guitar drives the riff. Stomping live drums with heavy backbeat — think boot on wooden floor. Thick bass sits in the pocket. Hammond organ accents verses and features in bridge. Verses are loose and conversational — half-spoken, band pulls back. Pre-chorus tightens groove and builds. Chorus EXPLODES — full band, gang vocals on "Kitchen Witch," maximum singalong. Bridge strips to bass, kick, and organ ONLY — intimate and dangerous. Guitar solo is filthy Delta blues with organ call-and-response. Final chorus louder than anything before. Outro pulls back to opening riff for comedy timing. Hard stop on punchline.]
+[Production Direction: Southern gothic blues-rock, pub-rock swagger. Dirty overdriven guitar, stomping drums, thick bass, Hammond organ. Verses loose half-spoken. Chorus EXPLODES with gang vocals. Bridge strips to bass kick organ ONLY. Filthy blues solo. Final chorus maximum power. Hard comedic stop at end.]
+[Vocal Direction: Gritty male baritone, Southern drawl, A2-E4. Half-spoken verses behind the beat. Raspy melodic chorus with rowdy gang vocals on "Kitchen Witch." Bridge whisper to declaration. Outro deadpan comedy. Parenthesized lines are gang vocal responses.]
 
-[Vocal Direction: Gritty male baritone, Southern drawl, A2-E4 range. Verses half-spoken storytelling — loose, behind the beat, like telling a buddy about your woman at the bar. Pre-chorus tightens into raspy melodic. Chorus full chest voice, raspy, powerful — with rowdy male gang vocals backing "Kitchen Witch" and key phrases. Bridge starts close intimate whisper, builds to emphatic declaration. Outro deadpan comedy delivery. Gang vocal rule: parenthesized lines are gang vocal responses.]
-
-[track: genre: southern gothic blues rock, mood: playful dark humor barroom swagger, length: 240]
+[track: genre: southern gothic blues rock, mood: playful dark humor swagger, length: 240]
 [control: no-repeat, dynamic transitions]
 [sequence: intro, verse, pre-chorus, chorus, verse, pre-chorus, chorus, verse, bridge, instrumental, final-chorus, post-chorus, outro]
 
-
 [Tempo: Andante]
-[Chord Progression: i-bVII-IV-V (Am-G-D-E7)]
-[Mood: Dark swagger, barroom heat]
-[Instrument: Dirty overdriven guitar riff, boot stomp]
 [Intro | dirty guitar riff, boot stomp, low chuckle]
 
-[Chord Progression: i-bVII-IV-i (Am-G-D-Am)]
-[Verse 1 | half-spoken, behind the beat, scene-setting]
-[Vocals: Gritty baritone, Southern drawl, lazy storytelling]
+[Verse 1 | half-spoken, behind the beat, lazy storytelling]
 
 House gone dark, just the firelight left
 She's barefoot on the tile in that black cotton dress
@@ -65,8 +58,7 @@ Grease on her collarbone, steam on her neck
 I'm sitting here stupid with a fork and a grin
 She says "It's ready" — Lord, let me begin
 
-[Chord Progression: i-IV-bVII-V (Am-D-G-E7)]
-[Pre-Chorus 1 | building energy, drums tighten, groove locks in]
+[Pre-Chorus | building energy, drums tighten]
 [build]
 
 Little bit of this, little bit of that
@@ -74,12 +66,7 @@ Black iron skillet and a crooked black hat
 I don't know what spell she slipped in the dish
 But damn, woman — I ain't fighting it
 
-
-[Chord Progression: i-bVII-IV-V (Am-G-D-E7)]
-[Mood: Explosive, singalong]
-[Instrument: Full band, gang vocals on hook]
-[Chorus | loud, stomping, maximum singalong, gang vocals]
-[Vocals: Full chest, raspy melodic, gang vocal backup on "Kitchen Witch"]
+[Chorus | loud, stomping, gang vocals on "Kitchen Witch"]
 
 She's my bitch, my kitchen witch
 Got a wooden spoon and a wicked little twitch
@@ -91,9 +78,7 @@ Lord have mercy, she can scratch that itch
 Keep your gold, your heaven, your riches —
 Just leave me here with my kitchen witch
 
-[Chord Progression: i-bVII-IV-i (Am-G-D-Am)]
-[Verse 2 | energy picks up, couplets drive, physical comedy]
-[Vocals: Gritty baritone, faster pace, grinning delivery]
+[Verse 2 | energy picks up, couplets drive, grinning]
 
 Cast iron singing, bacon grease pops
 Something in the pot that'll make your heart stop
@@ -105,8 +90,7 @@ Just a pinch of salt and she raises hell
 Feeds my soul while she feeds my face
 And somehow makes damnation taste like grace
 
-
-[Pre-Chorus 2 | building, cayenne heat rising]
+[Pre-Chorus | building, cayenne heat rising]
 [build]
 
 Little bit of smoke, little cayenne heat
@@ -114,7 +98,6 @@ Something unholy smelling that sweet
 She says "Get your hands out — it ain't done yet"
 I take another bite — worth every threat
 
-[Chord Progression: i-bVII-IV-V (Am-G-D-E7)]
 [Chorus | loud, stomping, gang vocals]
 
 She's my bitch, my kitchen witch
@@ -127,9 +110,7 @@ Lord have mercy, she can scratch that itch
 Keep your gold, your heaven, your riches —
 Just leave me here with my kitchen witch
 
-[Chord Progression: i-bVII-IV-i (Am-G-D-Am)]
-[Verse 3 | admiration, awe, her effortless mastery]
-[Vocals: Gritty baritone, warm, genuinely impressed]
+[Verse 3 | warm, genuinely impressed, awe]
 
 Sunday morning, Saturday night
 She can make leftovers taste just right
@@ -141,47 +122,27 @@ Ain't no measuring cup, ain't no recipe
 And I learned real quick not to question the art
 When the gravy hits the biscuit and it heals your heart
 
-
-[Mood: Stripped, intimate, dangerous]
-[Instrument: Bass, kick drum, Hammond organ only]
-[Chord Progression: iv-i-iv-i (Dm-Am-Dm-Am)]
+[Bridge | strip to bass, kick, organ only — intimate whisper]
 [diminuendo]
-[Bridge | strip to bass, kick, and organ — intimate, dangerous]
-[Vocals: Close whisper building to emphatic declaration]
 
 Maybe it's rosemary
-
 Maybe it's thyme
-
 Maybe she's been poisoning me
-
 A little at a time
 
 [silence: sudden]
 
 Well if that's what's killing me —
-
 Baby, pour me some more
-
 I'll lick the damn cauldron
-
 And die on this floor
 
-[Chord Progression: i-IV-bVII-V (Am-D-G-E7)]
-[Instrument: Filthy blues guitar, organ call-and-response]
-[Instrumental Break | filthy Delta blues guitar solo, organ answering]
-
+[Instrumental Break | filthy blues guitar solo, organ answering]
 [Solo ends]
-[Band syncs]
 [Return to main riff]
 
-
-[Mood: Maximum power, explosive, biggest moment]
-[Instrument: Full band, gang vocals, everything louder than before]
-[Chord Progression: i-bVII-IV-V (Am-G-D-E7)]
-[build]
 [Final Chorus | full band, gang vocals, maximum power]
-[Vocals: Full chest, raspy, gang vocals at maximum, singalong]
+[build]
 
 She's my bitch, my kitchen witch
 Got a wooden spoon and a wicked little twitch
@@ -193,7 +154,7 @@ Lord have mercy, she can scratch that itch
 Keep your gold, your heaven, your riches —
 Just leave me here with my kitchen witch
 
-[Post-Chorus | gang vocal chant, stomping, call-and-response]
+[Post-Chorus | gang vocal chant, stomping]
 
 Kitchen witch!
 (Feed me!)
@@ -202,18 +163,12 @@ Kitchen witch!
 Kitchen witch!
 (One more plate!)
 
-[Mood: Comedy timing, deadpan]
-[Instrument: Opening riff returns, band pulls back]
+[Outro | band drops to opening riff, deadpan]
 [diminuendo]
-[Outro | band drops to opening riff, conversational]
-[Vocals: Deadpan, flat, natural speech, perfect comedy timing]
 
 House gone dark
-
 Fire burning low
-
 Full belly, full glass
-
 Ain't nowhere else I'm gonna go
 
 She looks at me and says —
