@@ -105,6 +105,21 @@ The relationship between language rhythm, syllable stress, emotional meaning, an
 **Pat Pattison's Core Principle:**
 > Match stressed notes with stressed syllables, unstressed with unstressed.
 
+#### Poetic Meter Quick Reference (For Rhythmic Design)
+
+> Understanding meter helps match lyrical rhythm to intended musical energy.
+
+| Foot | Pattern | Sound | Musical Effect |
+|---|---|---|---|
+| **Iamb** | unstressed-STRESSED (da-DUM) | "de-FINE" | Natural speech, conversational |
+| **Trochee** | STRESSED-unstressed (DUM-da) | "PO-et" | Lighter, buoyant, falling |
+| **Spondee** | STRESSED-STRESSED (DUM-DUM) | "DARK NIGHT" | Heavy, emphatic, stomping |
+| **Anapest** | unstressed-unstressed-STRESSED (da-da-DUM) | "in the HEAT" | Galloping, fast, forward drive |
+| **Dactyl** | STRESSED-unstressed-unstressed (DUM-da-da) | "TEL-e-scope" | Militaristic, formal |
+| **Pyrrhic** | unstressed-unstressed (da-da) | "on-to" | Light, flowing, airy |
+
+**Practical application:** A chorus that needs to STOMP wants spondaic stress ("SHE'S my BITCH, my KITCH-en WITCH"). A verse that needs to FLOW wants iambic ("I CLOSE my EYES and SOME-thing SHIFTS"). A pre-chorus that needs to BUILD wants anapestic ("Lit-tle bit of THIS, lit-tle bit of THAT").
+
 ---
 
 ### 4. LYRIC SETTING — Placing Words into Music
@@ -532,6 +547,21 @@ Beyond "male" or "female" — the full vocal design:
 | 90-115 | Anthemic, driving, accessible | Gothic rock, alternative, pop-rock |
 | 115-130 | Urgent, energetic, powerful | Rock, pop-punk, EDM |
 | 130+ | Panic, rebellion, explosion | Punk, metal, fast EDM |
+
+#### Italian Tempo Markings (For Suno — Confirmed Working)
+
+> Use Italian markings in Style Prompts and as `[Tempo: Marking]` tags. More reliable than raw BPM numbers.
+
+| Marking | BPM Range | Feel | Use For |
+|---|---|---|---|
+| Grave | 20-40 | Solemn, funereal | Ritual, extreme dread, drone |
+| Largo | 40-60 | Broad, vast | Sacred, processional |
+| Adagio | 66-76 | Slow, at ease | Intimate ballad, cinematic |
+| Andante | 76-108 | Walking pace | Standard ballad, folk, swagger |
+| Moderato | 108-120 | Moderate | Pop, alt-rock |
+| Allegro | 120-168 | Fast, bright | Rock, punk, driving |
+| Vivace | 140-176 | Lively, fast | High-energy, thrash |
+| Presto | 168-200 | Very fast | Speed metal, punk |
 
 ---
 

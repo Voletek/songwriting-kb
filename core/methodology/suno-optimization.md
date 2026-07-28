@@ -118,18 +118,20 @@ Per-section vocal tags SUPPLEMENT the global Vocal Direction block -- they speci
 
 Dynamics can be standalone tags or pipe parameters:
 
-| Moment | Standalone Tag | Pipe Alternative |
-|---|---|---|
-| Pre-chorus building | `[build]` | `[pre-chorus | building, rising tension]` |
-| Dramatic silence | `[silence: sudden]` | N/A (mid-section event) |
-| Key change | `[modulation: ascending]` or `[modulation: sudden]` | N/A |
-| Volume increasing | `[crescendo]` | `[section | swelling, crescendo]` |
-| Volume decreasing | `[diminuendo]` | `[section | fading, pulling back]` |
-| Rhythm change | `[beat-switch: half-time]` | N/A |
-| Grand ending | `[big finish]` | `[final chorus | powerful, big finish]` |
-| Held note | `[fermata]` | N/A |
+| Moment | Standalone Tag | Pipe Alternative | Status |
+|---|---|---|---|
+| Pre-chorus building | `[build]` | `[pre-chorus | building, rising tension]` | **Confirmed** |
+| Volume decreasing | `[diminuendo]` | `[section | fading, pulling back]` | **Confirmed** |
+| Key change / modulation | `[modulation: ascending]` | `[final chorus | lifted, key change up]` | **Probabilistic** (~50% success) |
+| Volume increasing | `[crescendo]` | `[section | swelling, crescendo]` | Likely works |
+| Rhythm change | `[beat-switch: half-time]` | N/A | Untested |
+| Grand ending | `[big finish]` | `[final chorus | powerful, big finish]` | Likely works |
+| Held note | `[fermata]` | N/A | Untested |
+| Dramatic silence | `[silence: sudden]` | N/A | **UNRELIABLE — does not consistently produce silence** |
 
 Use standalone tags for mid-section dynamic events. Use pipe parameters when the dynamic applies to the entire section.
+
+**Note on `[silence: sudden]`:** Testing shows this tag does NOT reliably produce an audible pause or silence in renders. For dramatic pauses, use a blank line (which creates a natural breath/fill) or rely on the bridge strip approach (stripping instrumentation via Production Direction). Do not depend on this tag for comedic timing or dramatic beats.
 
 ### Step 7 -- Add Termination
 
@@ -209,16 +211,16 @@ Final checklist:
 
 ### Step 11 -- Set Creative Sliders
 
-Recommend slider values based on song type:
+Recommend slider values based on song type (see Named Slider Presets for tested combinations):
 
-| Song Type | Weirdness | Style Influence | Audio Influence (if Inspo) |
-|---|---|---|---|
-| Radio pop/rock | 35-45% | 55-65% | 40-50% |
-| Concept album | 50-55% | 50-60% | 45% |
-| Dark cinematic | 50-60% | 55-65% | 45-55% |
-| Intimate ballad | 45-55% | 50-60% | 40-50% |
-| Epic orchestral | 50-55% | 60-70% | 45-55% |
-| Experimental | 60-75% | 40-50% | 30-40% |
+| Song Type | Weirdness | Style Influence | Audio Influence (if Inspo) | Closest Preset |
+|---|---|---|---|---|
+| Radio pop/rock | 30-40% | 70-80% | 40-50% | Prompt Drive |
+| Concept album | 50-60% | 70-80% | 45% | Genre Rebuilder |
+| Dark cinematic | 55-65% | 75-85% | 45-55% | Genre Rebuilder |
+| Intimate ballad | 40-50% | 65-75% | 40-50% | Prompt Drive |
+| Epic orchestral | 50-60% | 80-90% | 45-55% | Genre Rebuilder |
+| Experimental | 65-80% | 85-95% | 15-30% | Shock Test |
 
 **Album consistency note:** Document slider values per track. If a render captures the intended palette, note settings as baseline for adjacent tracks.
 
@@ -269,7 +271,7 @@ Genre, BPM, Mood, Instruments, Vocal Style, Era/Production, Space/Direction
 | # | Dimension | Purpose | Example |
 |---|---|---|---|
 | 1 | Genre | Cultural container (MUST be first) [Tier 3] | "Progressive dark folk" |
-| 2 | BPM | Tempo anchor | "92 BPM" |
+| 2 | BPM / Tempo | Tempo anchor (Italian markings preferred) | "Andante" or "92 BPM" |
 | 3 | Mood | Emotional direction | "melancholic, haunting" |
 | 4 | Instruments | Timbral palette | "acoustic guitar, cello, distant choir" |
 | 5 | Vocal Style | Delivery character | "deep male baritone, intimate" |
@@ -282,11 +284,38 @@ Genre, BPM, Mood, Instruments, Vocal Style, Era/Production, Space/Direction
 
 ---
 
+## Italian Tempo Markings (Confirmed Working)
+
+> [Tier 3: Confirmed — user-tested July 2026 on Suno v5.5]
+> Credit: MasterofSFL (Suno community guide, 2026)
+
+Italian tempo markings produce MORE CONSISTENT tempo results than raw BPM numbers. Use them in the Style Prompt AND as a `[Tempo: Marking]` tag in the lyrics field for reinforcement.
+
+| Category | Marking | BPM Range | Best For |
+|---|---|---|---|
+| Very Slow | Grave | 20-40 | Funeral, ritual, dread |
+| Very Slow | Largo | 40-60 | Sacred, processional |
+| Slow | Lento | 45-60 | Atmospheric, grief |
+| Slow | Adagio | 66-76 | Intimate ballad, cinematic |
+| Walking | Andante | 76-108 | Standard ballad, folk, swagger |
+| Moderate | Moderato | 108-120 | Pop, alt-rock |
+| Moderate | Allegretto | 112-120 | Upbeat pop, light rock |
+| Fast | Allegro | 120-168 | Rock, punk, driving |
+| Fast | Vivace | 140-176 | High-energy, thrash |
+| Very Fast | Presto | 168-200 | Speed metal, punk |
+| Very Fast | Prestissimo | 200+ | Extreme metal |
+
+**Usage:** Place in Style Prompt ("Dark cinematic rock, Adagio, E minor...") AND as a tag in lyrics (`[Tempo: Adagio]`) for double reinforcement. Include BPM in Production Notes for human reference.
+
+**Tempo modification terms (also recognized):** Accelerando (speeding up), Ritardando (slowing down), Rubato (flexible/expressive), Con moto (with motion), Sostenuto (sustained/slower).
+
+---
+
 ## Genre Combination Rules
 
 - **Genre-First Principle:** Genre MUST be the first element -- it anchors everything else. [Tier 3: community practice, not official. v4.5+ allows conversational prompts.]
 - **5-8 Tag Sweet Spot:** Comma-separated descriptors. Past 10 tags, signals conflict and Suno defaults to generic. [Tier 3: Suno v4.5+ docs encourage more descriptive prompting. Test by version.]
-- **70/30 Rule:** One dominant genre (70%) + one flavor (30%). 50/50 splits confuse Suno. Use `+` to combine
+- **70/30 Rule:** One dominant genre (70%) + one flavor (30%). 50/50 splits confuse Suno. Can also use explicit percentage syntax in style: "Thrash Metal (80%), EDM (20%)"
 - **Anti-Pairs:** Certain genre combinations have near-zero compatibility -- Gregorian Chant+Trap, Classical Baroque+Lo-fi Bedroom Pop, Opera+Mumble Rap. These pairings pull vocal delivery or production aesthetic in directly opposing directions, producing averaged mush. Replace one genre or use a compatible alternative. (Note: shared modifiers like "dark cinematic rock" are compound genres, not anti-pairs.) [Tier 3: Community heuristic] Credit: Omnisona (Suno AI God Mode Manual v3.0, March 2026)
 - **Era Anchoring:** Time references ("early 2000s garage rock") outperform genre labels ("indie rock") because they give Suno a specific sonic PERIOD. [Tier 3: promising but not A/B tested.]
 - **The Separation Principle:** Era tags aggressively bias PRODUCTION style (recording technique, mix character). To get a retro instrument with modern production: "modern production, vintage 1970s guitar tone" -- separate the era from the mix
@@ -349,12 +378,16 @@ Every Suno-ready song MUST have:
 | Wrong voice gender | Unclear vocal assignment | Use `[Male Vocal]`/`[Female Vocal]` explicitly |
 | Song will not end | No termination signal | Add `[end]` after outro |
 | Bridge gets sung not spoken | No delivery tag | Add `[spoken word]` or `[narrator]` |
-| No dynamic contrast | All sections same energy | Add `[build]`, `[silence]`, `[crescendo]` |
+| No dynamic contrast | All sections same energy | Add `[build]` and `[diminuendo]` (confirmed working) |
 | Genre drift mid-song | Conflicting style cues | Use `[track: genre: X]` globally + exclusions |
 | Over character limit | No audit before render | Run character count FIRST (Step 1) |
 | Parenthetical sung normally | Layer not declared | Declare named layers in Style Prompt |
 | Sound too generic | Too many tags/signals conflict | Reduce to 5-8 focused tags, use era anchoring |
 | Render does not match intent | Wrong dimension in Style Prompt | Run the 7-Dimension check |
+| Song drifts after solo/break | No return signal | Add `[Solo ends]` + `[Return to main riff]` (confirmed) |
+| Tempo inconsistent/wrong | BPM number ignored | Use Italian tempo marking (`[Tempo: Andante]`) — confirmed more reliable |
+| Want a key change but doesn't happen | Weak modulation signal | Stack: `[modulation: ascending]` + "lifted" in pipe + Style Prompt mention |
+| `[silence: sudden]` not producing pause | Tag unreliable | Use blank lines or strip instrumentation in Production Direction instead |
 
 ---
 
@@ -386,11 +419,12 @@ No dash prefix needed in the dedicated field. The dash-prefix format (`-item`) i
 When tight on character count, prioritize in this order:
 
 1. `[control]` + `[length]` + `[sequence]` (structural)
-2. Section names with pipe notation (saves chars)
-3. `[modulation]` / `[silence]` / `[beat-switch]` (specific moments)
-4. `[vulnerable vocals]` / `[whisper]` / `[chant]` (vocal delivery)
-5. `[crescendo]` / `[diminuendo]` / `[build]` (dynamics)
-6. `[end]` (termination)
+2. `[Tempo: Italian marking]` (confirmed — tempo control)
+3. Section names with pipe notation (saves chars)
+4. `[modulation]` / `[build]` / `[diminuendo]` (confirmed dynamics)
+5. `[vulnerable vocals]` / `[whisper]` / `[chant]` (vocal delivery)
+6. `[Solo ends]` / `[Return to main riff]` (confirmed — transition control)
+7. `[end]` (termination)
 
 ---
 
@@ -441,6 +475,81 @@ Only ONE inline formatting symbol reliably affects vocal delivery:
 
 ---
 
+## Return Tags After Breaks/Solos (Confirmed Working)
+
+> [Tier 3: Confirmed — user-tested July 2026]
+> Credit: MasterofSFL (Suno community guide, 2026)
+
+After instrumental breaks, solos, or interludes, use return tags to signal the transition back to the main song. Without these, Suno may drift in key, feel, or energy after a break.
+
+**Usage:**
+```
+[Instrumental Break | filthy blues guitar solo, organ answering]
+[Solo ends]
+[Return to main riff]
+
+[Final Chorus | full band, maximum power]
+```
+
+**Available return tag variants:**
+- `[Solo ends]` -- explicit boundary marker
+- `[Return to main riff]` -- brings back the primary pattern
+- `[Return to main song]` -- general reset signal
+- `[Band syncs]` -- full ensemble re-synchronizing (after free-time solos)
+
+**Rules:**
+- Use after: solos, instrumental interludes, breakdowns, extended spoken word sections
+- Place on its own line between the break and the next sung section
+- For short breaks (2-4 bars), `[Solo ends]` alone may suffice
+- For longer breaks (8+ bars), combine: `[Solo ends]` + `[Return to main riff]`
+
+---
+
+## Key Change / Modulation (Probabilistic)
+
+> [Tier 3: Community heuristic — multiple sources, probabilistic results]
+> Credit: Jack Righteous, Suno community, howtopromptsuno.com
+
+Suno CAN produce key changes but it is **probabilistic (~40-60% success rate)**. There is no guaranteed command. Use multiple reinforcing signals to increase the odds.
+
+**Best approach for a single key lift (e.g., Queen-style Final Chorus):**
+
+```
+[modulation: ascending]
+[Final Chorus | bigger, lifted, key change up, maximum power, layered harmonies]
+```
+
+**Reinforcement methods (stack these for higher success):**
+
+| Method | Where | Example |
+|---|---|---|
+| `[modulation: ascending]` tag | Lyrics field, before Final Chorus | Standalone tag on own line |
+| "lifted" in pipe notation | Section tag | `[Final Chorus | lifted, bigger]` |
+| Style Prompt mention | Style field | "dramatic key change for final chorus" |
+| Production Direction | Direction block | "Final chorus modulates up one half step" |
+| Lyrical energy escalation | In the lyrics themselves | More emphatic words, caps, shorter punchy lines |
+
+**What works vs what doesn't:**
+
+| Approach | Success Rate | Notes |
+|---|---|---|
+| `[modulation: ascending]` + "lifted" in pipe | ~50-60% | Best in-Suno approach |
+| Style Prompt "key change up" alone | ~30-40% | Weaker without lyrics-field reinforcement |
+| Specifying exact keys (Am to Bbm) | ~20-30% | Suno rarely executes exact key targets |
+| DAW post-production pitch shift | 100% | Guaranteed — render best version, shift final section in BandLab/DAW |
+
+**For multiple modulations (Queen/Bohemian Rhapsody style):**
+- One modulation per song is achievable with tags
+- Multiple modulations require the Extend/Replace Section workflow (render sections separately) or DAW post-production
+- The most reliable approach: render the full song, then pitch-shift specific sections in a DAW
+
+**When to use modulation:**
+- Final chorus emotional lift (most common — "the key change that makes you cry")
+- Bridge-to-chorus transition (the turn hits harder with a key shift)
+- Anthem climax (Queen, Whitney Houston, Bon Jovi territory)
+
+---
+
 ## Creative Sliders -- Detailed Guidance
 
 The three creative sliders are set in the Suno UI, not in text fields. They interact with each other and with the Style Prompt.
@@ -451,21 +560,23 @@ Controls how much creative latitude Suno takes. Higher values produce more unexp
 
 | Range | Behavior | Best For |
 |---|---|---|
-| 30-40% | Very faithful to prompt, predictable | Radio pop, covers, tight genre adherence |
-| 45-55% | Balanced -- follows prompt with creative additions | Most concept album work |
-| 55-65% | Adventurous -- may surprise with unexpected choices | Dark cinematic, atmospheric |
-| 65-80% | Experimental -- prompt is a suggestion, not a rule | Ambient, experimental, noise |
+| 20-35% | Very faithful to prompt, predictable | Radio pop, covers, tight genre adherence |
+| 35-50% | Balanced -- follows prompt with creative additions | Standard songwriting, intimate ballads |
+| 50-65% | Adventurous -- may surprise with unexpected choices | Dark cinematic, atmospheric, concept albums |
+| 65-80% | Experimental -- prompt is a suggestion, not a rule | Ambient, experimental, noise, radical transformation |
 
 ### Style Influence (Default: 50%)
 
 Controls how much the Style Prompt text steers the output. Higher = more prompt control.
 
+> **CONFIRMED:** Higher Style Influence (70-90%) produces more genre-accurate results than our previous 50-60% recommendation. Multiple sources and user testing confirm this.
+
 | Range | Behavior | Best For |
 |---|---|---|
 | 40-50% | Loose -- Suno interprets freely | Experimental, when you want surprises |
-| 50-60% | Balanced -- prompt guides, Suno fills gaps | Standard songwriting |
-| 60-70% | Strong -- prompt dominates output character | When you need specific genre adherence |
-| 70%+ | Maximum -- very literal prompt following | Matching a specific reference closely |
+| 50-65% | Moderate -- prompt guides, Suno fills gaps | Creative exploration, first drafts |
+| 65-80% | Strong -- prompt dominates output character | Standard songwriting with genre needs |
+| 80-95% | Maximum -- very literal prompt following | Genre recreation, specific sound targets |
 
 ### Audio Influence (Default: ~45%, only if Inspiration Track used)
 
@@ -473,15 +584,33 @@ Controls how much a reference audio track affects the output.
 
 | Range | Behavior | Best For |
 |---|---|---|
-| 30-40% | Subtle -- captures vague feel of reference | When you want slight flavor only |
-| 40-50% | Moderate -- adopts key characteristics | Matching album palette to reference |
-| 50-60% | Strong -- closely mirrors reference character | Recreating a specific sound |
-| 60%+ | Dominant -- output may sound derivative | Rarely recommended |
+| 15-30% | Subtle -- captures vague feel of reference | Radical transformation, slight flavor |
+| 30-50% | Moderate -- adopts key characteristics | Matching album palette to reference |
+| 50-70% | Strong -- closely mirrors reference character | Recreating a specific sound, Persona reinforcement |
+| 70-80% | Dominant -- structure preserved, identity locked | Enhancing with structure preserved |
+
+### Named Slider Presets (Confirmed Working)
+
+> [Tier 3: Confirmed — user-tested July 2026. Credit: MasterofSFL + Jack Righteous]
+
+| Preset Name | Weirdness | Style | Audio | Best For |
+|---|---|---|---|---|
+| **Prompt Drive** | 40% | 80% | 50% | Standard songwriting with strong genre control |
+| **Genre Rebuilder** | 60% | 90% | 30% | Genre fusion, specific sound targets, most songs |
+| **Emotion Engine** | 50% | 60% | 80% | Persona-driven work, emotional dynamics |
+| **The Rebirth** | 80% | 85% | 15% | Radical transformation, reimagining |
+| **Shock Test** | 75% | 95% | 25% | Experimental, pushing boundaries, unusual genres |
+
+**Recommended defaults:**
+- For most songs: **Genre Rebuilder** (60/90/30) — strong genre lock with creative room
+- For Persona-based work: **Emotion Engine** (50/60/80) — reference audio carries identity
+- For experimental: **Shock Test** (75/95/25) — maximum creative latitude with style lock
 
 **Interaction effects:**
 - High Weirdness + High Style Influence = creative within your genre boundaries
 - High Weirdness + Low Style Influence = chaos (sometimes useful for experimental)
 - Low Weirdness + High Style Influence = extremely predictable, genre-locked
+- High Audio Influence = Persona/reference dominates; lower Weirdness preserves it more faithfully
 
 ---
 
@@ -518,6 +647,7 @@ Controls how much a reference audio track affects the output.
 | **Allan F. Moore** | Soundbox theory -- spatial tag design |
 | **Serge Lacasse** | Proxemic distance -- reverb/space as emotional signal |
 | **Suno community research** (2025-2026) | Era anchoring, genre-first, 5-8 sweet spot, slider behavior, v5 parsing rules |
+| **MasterofSFL** (2026) | Italian tempo recognition, higher slider ranges, return tags, stress pattern awareness |
 
 ---
 
