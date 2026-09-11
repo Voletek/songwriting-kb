@@ -1,12 +1,16 @@
 # I Wear It Well — Standalone Single (A Gentleman's Collapse)
 
-> **Song Thesis:** *A man performs Victorian composure like a period-drama role to hide modern burnout, and the more commanding the mask, the more it admits he is falling apart.*
+> **Song Thesis:** *A mountain man performs borrowed Victorian composure like a period-drama role to hide modern burnout, and the more commanding the mask, the more his East Tennessee roots — and his collapse — slip through the cracks.*
 
 ---
 
 ## CONCEPT NOTES
 
-Burnout as a gentleman's collapse. The narrator holds himself together with formal, mannered restraint while he is quietly crumbling. The commanding baritone IS the mask; the cracks underneath are the real song. The engine of the whole piece is CONTRAST — elegant, buttoned-up period language ("I hold my composure," "a gentleman's decline," "I wear it well") crashed against raw modern burnout ("running on empty," "haven't slept," "smiling through it"). Fringe in SOUND (Victorian-bluegrass-EDM hybrid = the "wait, what is this?" scroll-stopper), mainstream in FEELING (everyone knows the exhaustion of performing "I'm fine").
+Burnout as a gentleman's collapse — worn by a man who was never born to that world. The narrator is East Tennessee to the bone, holding himself together with formal, mannered, BORROWED restraint while he quietly crumbles. The commanding baritone IS the mask; the cracks underneath are the real song. The engine of the whole piece is CONTRAST — elegant, buttoned-up period language ("I hold my composure," "a gentleman's decline," "I wear it well") crashed against raw modern burnout ("runnin' on empty," "ain't slept," "smilin' through it"). 
+
+**The accent as the mask slipping:** The performed/formal lines stay crisp — clean diction, the borrowed elegance intact. But the confessional and whispered lines let the Appalachian accent LEAK THROUGH — dropped g's, "ain't," mountain phrasing. The accent itself is a crack in the mask. By the bridge, when the mask fully slips, the mountain man shows all the way through. This is a working-class East Tennessee guy dressing his pain in language he wasn't raised in — and the twang bleeding through the composure is the whole point.
+
+Fringe in SOUND (Victorian-bluegrass-EDM hybrid = the "wait, what is this?" scroll-stopper), mainstream in FEELING (everyone knows the exhaustion of performing "I'm fine").
 
 - **Hook (confession formula):** "I wear it well — I'm not alright." Says it in one breath, wants repeating, passes the "would someone text this?" test.
 - **Clippable moment (15-30s):** the bridge into the final chorus — the mask slips ("Behind the collar and the crown / I am coming quietly undone") then the full band lands on the hook. Stands alone for TikTok/Reels.
@@ -17,7 +21,7 @@ Burnout as a gentleman's collapse. The narrator holds himself together with form
 
 ## STYLE PROMPT:
 
-Alternative rock (70%), Victorian bluegrass-EDM hybrid (30%), Moderato, restrained and composed turning to precise anthemic release, electric bass-led groove, plucked banjo and bowed cello over pulsing four-on-the-floor synth, chamber strings, clean locked modern production with parlor-room warmth, smooth warm commanding male baritone (G2-E4), layered rhythmic textures building additively, restrained instrumental intro to full precise final chorus, instrumental outro fade, elegant restraint cracking under modern exhaustion
+Alternative rock (70%), Victorian bluegrass-EDM hybrid (30%), Moderato, restrained and composed turning to precise anthemic release, electric bass-led groove, plucked banjo and bowed cello over pulsing four-on-the-floor synth, chamber strings, clean locked modern production with parlor-room warmth, smooth warm commanding male baritone (G2-E4) with a slight East Tennessee Appalachian lilt surfacing on the raw lines, soft twang and dropped g's leaking through the formal composure, layered rhythmic textures building additively, restrained instrumental intro to full precise final chorus, instrumental outro fade, elegant restraint cracking under modern exhaustion
 
 [Exclusions: distortion, screaming vocals, trap drums, mumble rap, autotune, aggressive metal guitar, chiptune, vocal overlap confusion, cheerful major-key brightness, lo-fi tape hiss]
 
@@ -29,12 +33,12 @@ Alternative rock (70%), Victorian bluegrass-EDM hybrid (30%), Moderato, restrain
 
 [Production Direction: Restrained instrumental intro — composure intact — plucked banjo and bowed cello over a soft pulsing synth, electric bass leading the groove. Build ADDITIVELY across sections: each part adds one rhythmic layer so the arrangement mirrors the emotional pressure rising under the mask. Clean, locked, modern production with parlor-room warmth. Strip the bridge almost bare — the mask slips here. Final chorus is the biggest, most PRECISE moment, full band four-on-the-floor, chamber strings and banjo locked tight. End on an instrumental outro that fades. Contrast is the engine: elegant restraint against modern burnout.]
 
-[Vocal Direction: Smooth warm commanding male baritone, composed and mannered like a period-drama role — always IN CONTROL on the surface even while admitting collapse. Close-mic, precise diction, no vibrato wobble. Parenthetical lines are whispered intrusive thoughts, close and breathy — the truth under the performance. Bridge is the most vulnerable moment, voice thinning but never breaking. Final chorus is commanding and full, the mask at its most powerful.]
+[Vocal Direction: Smooth warm commanding male baritone, composed and mannered like a period-drama role — always IN CONTROL on the surface even while admitting collapse. Underneath is an East Tennessee man wearing borrowed elegance. On the FORMAL performed lines, diction stays crisp and clean — the mask holds. On the RAW confessional lines and all whispered parentheticals, a slight Appalachian lilt leaks through — soft twang on vowels, dropped g's, mountain phrasing. NOT exaggerated country — just the real man showing through the cracks. Close-mic, no vibrato wobble. Parenthetical lines are whispered intrusive thoughts, close and breathy — the truth under the performance, heaviest accent here. Bridge is the most vulnerable moment, the mask fully slips and the mountain shows all the way through, voice thinning but never breaking. Final chorus is commanding and full, the mask at its most powerful even as the twang bleeds under it.]
 
 [track: genre: alternative rock + Victorian bluegrass-EDM hybrid, mood: composed burnout, elegant collapse, length: 210]
 [control: no-repeat, dynamic transitions]
 [sequence: intro, verse-1, pre-chorus, chorus, verse-2, pre-chorus, chorus, bridge, final-chorus, outro]
-[Whisper Rule: Lyrics in parentheses are whispered intrusive thoughts, close and breathy — the truth under the performance]
+[Whisper Rule: Lyrics in parentheses are whispered intrusive thoughts, close and breathy, with the heaviest East Tennessee accent — the real man under the performance]
 
 [Tempo: Moderato]
 
@@ -42,77 +46,77 @@ Alternative rock (70%), Victorian bluegrass-EDM hybrid (30%), Moderato, restrain
 
 (instrumental — banjo and cello over soft pulsing synth, bass enters late)
 
-[Verse 1 | composed, close-mic, elegant]
+[Verse 1 | composed formal diction, close-mic, elegant]
 
 Good evening — yes I'm keeping fine
 Cufflinks straight and the parting clean
 I hold my composure like a coat
 Buttoned to the throat where it can't be seen
 
-(haven't slept in a week)
+(ain't slept in a week)
 
 I answer every letter that I owe
 And I never let the tremor reach my hand
 
-[Pre-Chorus | building, rising tension]
+[Pre-Chorus | building, rising tension, accent leaking in]
 [build]
 
-But the candle's burning low
-and I'm running on empty for the show
+But the candle's burnin' low
+and I'm runnin' on empty for the show
 
-[Chorus | precise, warm, full band]
+[Chorus | precise, warm, full band, twang under the composure]
 
 I wear it well — I'm not alright
 A gentleman's decline in evening light
 I bow and I smile and I hold the line
-(I'm coming apart)
+(I'm comin' apart)
 I wear it well — I'm not alright
 
-[Verse 2 | composed, layered groove]
+[Verse 2 | composed formal diction, layered groove]
 
 They say a man should carry it with grace
 So I keep the collar high and the jaw set stone
 I toast to your good health across the room
 And I'm the loneliest gentleman you've ever known
 
-(smiling through it)
+(smilin' through it)
 
 I perform the word alright like it's a role
 And nobody claps to see the curtain shake
 
-[Pre-Chorus | building, rising tension]
+[Pre-Chorus | building, rising tension, accent leaking in]
 [build]
 
-Still the candle's burning low
-and I'm running on empty for the show
+Still the candle's burnin' low
+and I'm runnin' on empty for the show
 
-[Chorus | precise, warm, full band]
+[Chorus | precise, warm, full band, twang under the composure]
 
 I wear it well — I'm not alright
 A gentleman's decline in evening light
 I bow and I smile and I hold the line
-(I'm coming apart)
+(I'm comin' apart)
 I wear it well — I'm not alright
 
-[Bridge | stripped, intimate, vulnerable]
+[Bridge | stripped, intimate, mask fully slips, heaviest accent]
 [diminuendo]
 
 Behind the collar and the crown
-I am coming quietly undone
+there's a boy that this town near broke
 Take the medal off my chest
-and you'll find nothing holding on
+and you'll find there ain't a thing holdin' on
 
-(I am so tired)
-(I am so tired of being fine)
+(I'm so tired)
+(I'm so tired of bein' fine)
 
-[Final Chorus | powerful, big, full band, precise]
+[Final Chorus | powerful, big, full band, precise, twang bleeding under]
 [build]
 
 I wear it WELL — I'm not alright
 A gentleman's decline in evening light
 I bow and I smile and I hold the line
-(I'm coming apart)
-The mask is the only thing still holding tight
+(I'm comin' apart)
+The mask is the only thing still holdin' tight
 I wear it well — I'm not alright
 
 [outro | instrumental, fading, reverb tail]
@@ -157,9 +161,13 @@ I wear it well — I'm not alright
   irony intact: he never actually gets better, he just performs harder.
 
 • Vocal: Smooth warm commanding male baritone (G2-E4), composed and mannered,
-  close-mic, precise diction. Parenthetical lines = whispered intrusive thoughts
-  (breathy, close) — the true confession leaking under the performance. Bridge
-  thins to near-whisper but never fully breaks.
+  close-mic, precise diction — but with a slight East Tennessee Appalachian lilt
+  underneath. ACCENT AS THE MASK SLIPPING: formal performed lines stay crisp
+  (mask intact); raw confessional lines and all whispered parentheticals let the
+  twang leak through (dropped g's — burnin', runnin', comin', holdin', smilin',
+  bein'; "ain't" for "haven't/isn't"). Bridge is heaviest accent — the mountain
+  man shows all the way through ("a boy that this town near broke"). The dialect
+  itself is a crack in the borrowed elegance. NOT exaggerated country.
 
 • Instruments (by prominence):
   1. Electric bass (leads the groove throughout)
@@ -196,11 +204,20 @@ I wear it well — I'm not alright
   Final Chorus: same as chorus + one added line ("The mask is the only thing
     still holding tight") = the meaning shifts after the bridge's confession.
 
-• Emotional Arc: From performed composure ("I'm keeping fine") through the strain
-  of the performance ("running on empty for the show") to the mask slipping in
-  private ("I am so tired of being fine") and finally to a commanding final chorus
-  where he performs harder than ever precisely because the mask is now the only
-  thing holding him together.
+• Emotional Arc: From performed composure ("I'm keeping fine," crisp diction) through
+  the strain of the performance ("runnin' on empty for the show," accent leaking) to
+  the mask fully slipping in private ("a boy that this town near broke," "I'm so tired
+  of bein' fine," heaviest twang) and finally to a commanding final chorus where he
+  performs harder than ever — crisp on the surface, mountain bleeding underneath —
+  precisely because the mask is now the only thing holding him together.
+
+• Accent Design: East Tennessee Appalachian lilt used as a structural device, not
+  decoration. Crisp formal diction on the performed lines (the mask); dropped g's,
+  "ain't," and mountain phrasing on the raw/whispered lines (the truth). The accent
+  escalates through the song — barely there in V1's formal opening, leaking by the
+  pre-choruses, fully present in the bridge. The contrast between borrowed elegance
+  and native twang IS the tension: a working-class man dressing his collapse in
+  language he wasn't raised in.
 ```
 
 ---
@@ -217,8 +234,8 @@ Preset: **Genre Rebuilder** (60 / 90 / 30) — the Victorian-bluegrass-EDM fusio
 
 ## CHARACTER COUNT VERIFICATION
 
-- **Style Prompt:** 528 / 1000 characters (positives only; exclusions live in the dedicated Exclude field)
-- **Lyrics field:** 3592 / 5000 characters (counted from `[Title:]` through `[end]`, per repo validator)
+- **Style Prompt:** 666 / 1000 characters (positives only; exclusions live in the dedicated Exclude field)
+- **Lyrics field:** 4302 / 5000 characters (counted from `[Title:]` through `[end]`, per repo validator)
 
 Both within limits.
 
