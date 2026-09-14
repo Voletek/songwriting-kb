@@ -4,23 +4,15 @@
 
 ---
 
-## CONCEPT NOTES
+## NOTE ON TAGS
 
-Comeback anthem in the Empowerment formula (minor-verse grit to major-lift chorus, communal chant hook). A male baritenor lead tells the rock-bottom story with East Tennessee, Knoxville-area Appalachian inflection; a female alto-mezzo answers as a distinct character — grounding, amplifying, and finally rising WITH him. Fringe-flavored sound (Appalachian strings + dark electronic hip-hop under cinematic alt-rock) carrying a mainstream, universal comeback feeling.
-
-**The arc (the improvement engine):** Choruses 1 and 2 carry the defiant early pride — "I climbed," "I'm self-made" — the story he tells himself before he understands he wasn't alone. The bridge reveals the truth ("one good hand reached through the smoke") and turns outward ("take one more step — then take mine"). The Final Chorus pays it off: the self-made claim is replaced with lifted-and-lifting humility, and "I" becomes "we." That evolution IS the song.
-
-- **Hook:** "From the floor to the fire" — alliterative, visual, chantable. Passes the text test.
-- **Clippable moment (15-30s):** the build into final chorus — "You don't need wings, you don't need a sign / Take one more step — then take mine" landing into the dual-vocal key lift.
-- **Duet method:** two-part style (sound design + explicit vocal-arrangement rules). The user's custom inline vocal tags ([Lead], [Female response, ...], [Duet], etc.) drive the give-and-take; the Vocal Direction block declares how to read them.
+The lyric tags below are the **Suno V6 system-generated tags from the original draft** — preserved verbatim. We are NOT applying our older (V4.5/V5-era) pipe-notation or tag conventions to this file, because it is unconfirmed whether those older tags behave correctly under V6. Only the lyric-craft improvements were made (see Revision Notes); the tag structure is left exactly as the V6 system produced it.
 
 ---
 
 ## STYLE PROMPT:
 
-Cinematic alternative rock (60%), Appalachian string textures + dark electronic hip-hop (40%), Moderato half-time pulse with occasional double-time lift, A minor verses lifting toward C major final chorus, intimate piano and bowed cello opening, dry close male baritenor lead (A2-A4) with East Tennessee Knoxville Appalachian inflection and softened final consonants, warm female alto-mezzo (G3-D5) answering with tasteful Southern Appalachian tone as a distinct character, plucked banjo tense counterline, stomp drums, distorted bass, rising synth pressure, choruses expand to wide live drums saturated guitars chamber strings and female call-and-response, stripped piano-and-cello bridge, massive dual-vocal final chorus with key change lift, polished high-fidelity mix, controlled sub, crisp diction, cinematic width, clear vocal separation
-
-[Exclusions: vocal overlap confusion, hums, beatboxing, autotune, trap drums, mumble rap, chiptune, cheerful pop brightness, muddy low end, lo-fi tape hiss]
+cinematic alternative rock fused with Appalachian string textures and dark electronic hip-hop; midtempo half-time pulse with occasional double-time lift; intimate piano and bowed cello opening; dry close male baritenor verses with an East Tennessee, Knoxville-area Appalachian inflection, relaxed mountain vowel shapes, softened final consonants and conversational storytelling; supporting female rock vocal as a distinct character with warm alto-to-mezzo tone, tasteful Southern Appalachian pronunciation, answering selected pre-chorus and chorus lines rather than replacing the lead; plucked banjo as tense rhythmic counterline; stomp drums, distorted bass, rising synth pressure; choruses expand into wide live drums, saturated guitars, chamber strings, female call-and-response, and layered harmonies; bridge strips to piano and cello before a massive dual-vocal final chorus; polished high-fidelity mix, controlled sub, crisp diction, cinematic width
 
 ---
 
@@ -28,20 +20,10 @@ Cinematic alternative rock (60%), Appalachian string textures + dark electronic 
 
 [Title: From the Floor to the Fire]
 
-[Production Direction: Half-time verses, double-time lift into choruses. Build additively from piano/cello intro to wide-drum chamber-string choruses. Bridge strips to piano and cello. Final chorus massive, dual-vocal, key lift.]
+[Intro]
+[Instrumental: sparse piano, bowed cello, distant low pulse]
 
-[Vocal Direction: TWO distinct voices. [Lead] = dry close male baritenor A2-A4, East Tennessee Appalachian inflection. Any [Female ...] tag = warm alto-mezzo G3-D5 answering as a distinct character, never replacing the lead. [Duet] = both in harmony. [Female and lead call-and-response] = alternating. Clear separation, no overlap.]
-
-[track: genre: cinematic alt-rock + Appalachian strings + dark electronic hip-hop, mood: rock-bottom comeback, defiant then communal, length: 255]
-[control: no-repeat, dynamic transitions]
-[sequence: intro, verse, pre-chorus, chorus, post-chorus, verse, pre-chorus, chorus, bridge, build, final-chorus, hook, outro]
-
-[Tempo: Moderato]
-
-[Intro | piano, cello, low pulse]
-
-[Verse 1 | close baritenor, Appalachian, storytelling]
-[Lead]
+[Verse 1]
 I kept the lights off in the rented room
 Countin' loose change by the afternoon
 My best coat hung from a broken chair
@@ -52,8 +34,7 @@ I read it twice, then cleared my throat
 Called my sister from the stairwell floor
 Told her I ain't finished — not anymore
 
-[Pre-Chorus | banjo enters, drums building]
-[build]
+[Pre-Chorus]
 [Lead]
 I had a name that nobody knew
 A little breath and a borrowed truth
@@ -65,7 +46,7 @@ I found one match and carried on
 [Female response, rising]
 Carry on
 
-[Chorus | wide drums, saturated guitars, chamber strings]
+[Chorus]
 [Lead]
 From the floor to the fire, I climbed
 With a cracked-wide heart and a hardened spine
@@ -85,7 +66,7 @@ Burns out
 I didn't rise because the road was kind
 I rose every time they drew the line
 
-[Post-Chorus | driving, anthemic]
+[Post-Chorus]
 [Female lead response]
 Hey — I'm still here
 [Lead]
@@ -94,8 +75,7 @@ Hey — make it clear
 From the floor to the fire
 I'm alive, I'm alive
 
-[Verse 2 | baritenor, Appalachian, grittier]
-[Lead]
+[Verse 2]
 I took night shifts at the freight-yard gate
 Learned real quick not to bargain with fate
 Saved three dollars from every check
@@ -106,8 +86,7 @@ If it breaks today, I'll build it up
 Every no put steel in my name
 Every cold room fed the flame
 
-[Pre-Chorus | banjo tension, synth rising]
-[build]
+[Pre-Chorus]
 [Lead]
 I had a voice that trembled low
 A small-town spark with nowhere to go
@@ -119,7 +98,7 @@ And I found the nerve to make the choice
 [Female response, rising]
 Make the choice
 
-[Chorus | wide drums, saturated guitars, chamber strings]
+[Chorus]
 [Lead]
 From the floor to the fire, I climbed
 With a cracked-wide heart and a hardened spine
@@ -139,8 +118,8 @@ Burns out
 I didn't rise because the road was kind
 I rose every time they drew the line
 
-[Bridge | stripped piano and cello, exposed]
-[diminuendo]
+[Bridge]
+[Stripped: piano, cello harmonics, exposed lead vocal]
 [Lead]
 I still remember that stairwell cold
 The unpaid bill and the hands I held
@@ -150,8 +129,7 @@ The hands I held
 I don't erase what nearly took me down
 I built my strength from that broken ground
 
-[Build | tender to stronger, strings swelling]
-[build]
+[Build]
 [Female lead, tender then stronger]
 If you're hearing this from the bottom tonight
 Keep one small promise, keep one light
@@ -159,8 +137,7 @@ Keep one small promise, keep one light
 You don't need wings, you don't need a sign
 Take one more step — then take mine
 
-[modulation: ascending]
-[Final Chorus | massive dual-vocal, key change up, lifted]
+[Final Chorus]
 [Duet]
 From the floor to the fire, we climbed
 With a cracked-wide heart and a battle-tested spine
@@ -180,156 +157,65 @@ Burns out
 We didn't rise because the road was kind
 We rose together every time they drew the line
 
-[Final Hook | call-and-response, layered harmonies]
+[Final Hook]
 [Female and lead call-and-response]
 From the floor — to the fire
 From the floor — take it higher
 From the floor — to the fire
 Still alive, still alive
 
-[Outro | banjo, cello, piano, choir pads]
+[Outro]
+[Instrumental: banjo fragments, cello, piano, distant choir-like vocal pads]
 [Lead]
 The road remembers every mile
 And I can finally face it with a smile
 
-[fade: layered]
-[end]
+---
+
+## REVISION NOTES (lyric craft only — tags untouched)
+
+Only the LYRICS were improved. The V6 system-generated tag structure is preserved verbatim.
+
+1. **The self-made arc (main fix):** The original contradicted itself — the bridge says he was helped ("one good hand reached through the smoke") and reaches back for others ("take one more step — then take mine"), but the chorus claimed "now I'm self-made." Resolved as an intentional arc:
+   - Choruses 1 & 2 keep "now I'm self-made" — defiant early pride before he understands he wasn't alone
+   - Final Chorus pays it off: "I climbed" → "we climbed", "now I'm self-made" → **"Somebody lifted me — now I'm unafraid"**, "I rose every time they drew the line" → **"We rose together every time they drew the line"**
+
+2. **Triple "borrowed" trimmed:** kept "borrowed truth" in the pre-chorus (the strongest use + female echo); changed the chorus "borrowed spine" → **"hardened spine"**.
+
+3. **"cracked old heart" → "cracked-wide heart":** removes the elderly read (narrator is young/mid — night shifts, small-town spark). The heart is split open by damage, not aged.
+
+4. **Quotes removed (Suno-safety):** "Said, 'I'm not finished — not anymore'" → **"Told her I ain't finished — not anymore"**; the paper-cup promise now reads **"If it breaks today, I'll build it up"** without quotation marks.
+
+5. **East Tennessee dialect** applied lightly to verses ("Countin'", "ain't") to match the style spec's Knoxville-area Appalachian inflection; choruses kept clean for the singalong.
 
 ---
 
-## PRODUCTION NOTES
+## PRODUCTION NOTES (reference)
 
-```
-• Key: A minor verses lifting to C major in the final chorus (relative major).
-  Minor carries the rock-bottom grit; the shift to the relative major on the
-  final chorus is the sonic embodiment of the comeback. Sits the male baritenor
-  (A2-A4) in a strong storytelling-to-belt range and lets the female alto-mezzo
-  (G3-D5) ring on the call-and-response answers.
-
-• Tempo: 94 BPM (Moderato) — midtempo HALF-TIME feel through verses (the drums
-  land on the 3, giving weight and space to the storytelling), with occasional
-  DOUBLE-TIME lifts pushing into the choruses for anthemic energy.
-
-• Time Signature: 4/4. Half-time backbeat in verses/pre-chorus; the double-time
-  lift into choruses doubles the perceived kick/snare activity without changing
-  the tempo.
-
-• Chord Progression (Nashville / actual):
-  Intro:        i – VI (Am – F) — sparse, waiting, unresolved
-  Verse:        i – VI – III – VII (Am – F – C – G) — walking, grounded, grit
-  Pre-Chorus:   iv – VII – VI – i (Dm – G – F – Am) — tension climbing toward release
-  Chorus:       VI – VII – i – III (F – G – Am – C) — big, defiant, the III (C)
-                giving a hopeful glint inside the minor
-  Post-Chorus:  i – VII (Am – G) — driving, chant-ready
-  Bridge:       VI – III – iv – i (F – C – Dm – Am) — stripped, inward, exposed
-  Final Chorus: IV – V – I – vi (F – G – C – Am) in C MAJOR — the same shape now
-                heard in the relative major = the lift. Ends resolving to C.
-
-• Modulation: Final chorus modulates up from A minor into C major (relative major
-  lift). Reinforced with [modulation: ascending] + "lifted / key change up" in the
-  Style Prompt and final-chorus pipe. NOTE: modulation in Suno is probabilistic
-  (~50% hit rate) — may require a few renders, or a DAW pitch-lift on the final
-  section for a guaranteed result.
-
-• Vocal (two distinct characters):
-  LEAD — dry close male baritenor (A2-A4), East Tennessee Knoxville Appalachian
-    inflection: relaxed mountain vowels, softened final consonants (countin',
-    ain't), conversational in verses, opening to a strained belt in choruses.
-  FEMALE — warm alto-mezzo (G3-D5), tasteful Southern Appalachian pronunciation,
-    a distinct answering character. Sings only the [Female ...] tagged lines
-    (echoes, call-and-response, one tender bridge-build lead). Both harmonize on
-    [Duet] lines. Clear separation, no overlap.
-
-• Instruments (by prominence):
-  1. Male + female vocals (the duet is the lead instrument)
-  2. Piano (intimate opening, bridge backbone)
-  3. Bowed cello + chamber strings (Appalachian warmth; swell in choruses/final)
-  4. Plucked banjo (tense rhythmic counterline, enters pre-chorus)
-  5. Stomp drums into wide live drums (half-time verses, double-time choruses)
-  6. Distorted bass + rising synth pressure (dark electronic hip-hop underpulse)
-  7. Distant choir-like vocal pads (outro)
-
-• Dynamics:
-  Intro:        pp — intimate piano and cello ↗
-  Verse 1:      mp — dry, close, storytelling ↗
-  Pre-Chorus:   mp → mf — banjo and drums building ↗↗
-  Chorus:       f — wide, saturated, full band ↗↗↗
-  Post-Chorus:  mf — driving chant ↗
-  Verse 2:      mp — pulled back, grittier underneath ↘↗
-  Pre-Chorus:   mf — rising again ↗↗
-  Chorus:       f ↗↗↗
-  Bridge:       p — stripped to piano and cello, exposed ↘↘↘
-  Build:        mp → mf — tender turning stronger ↗↗
-  Final Chorus: ff — massive dual-vocal, key lift, biggest moment ↗↗↗↗
-  Final Hook:   f — call-and-response chant ↗
-  Outro:        f → pp — instrumental fade ↘↘
-
-• Hook Type: Title/chant hook — "From the floor to the fire." Alliterative,
-  visual, communal, chantable. Anchors every chorus and the final call-and-response
-  hook. Clippable moment: build-into-final-chorus ("Take one more step — then take
-  mine" into the key lift). Passes the a cappella and text tests.
-
-• Rhyme Scheme:
-  Verse: AABB couplets (driving, plain-spoken, lets the storytelling land)
-  Pre-Chorus: AA + female echo (tight, propulsive into the hook)
-  Chorus: AABB with the chant call-and-response bolted on (climbed/spine,
-    made/self-made — slant preferred over forced perfect)
-  Bridge: ABCB loosening (composure/ground) — the reflection opening up
-  Final Chorus: mirrors the chorus but the last couplet shifts to "we"
-    (kind/line) and the payoff line changes self-made -> "somebody lifted me"
-
-• Emotional Arc: From rock-bottom isolation (lights off, loose change) through
-  grinding unglamorous persistence (freight-yard, cardboard desk) to defiant
-  self-made pride (Choruses 1-2) — then the bridge reveals he was HELPED and turns
-  outward ("take one more step, then take mine"), and the final chorus completes
-  the arc: self-made pride becomes lifted-and-lifting humility, "I" becomes "we."
-```
-
----
-
-## THE KEY IMPROVEMENT — THE "SELF-MADE" ARC
-
-The original contradicted itself: the bridge said he was helped ("one good hand reached through the smoke") and reached back for others ("take one more step — then take mine"), but the chorus claimed "now I'm self-made."
-
-Resolution — the contradiction is now the intentional ARC:
-- **Choruses 1 & 2:** keep "now I'm self-made" — this is the story he tells himself early, defiant pride before he fully understands he wasn't alone
-- **Final Chorus:** the payoff — "self-made" becomes **"Somebody lifted me — now I'm unafraid"**, "I climbed" becomes "we climbed," and "I rose every time they drew the line" becomes **"We rose together every time they drew the line"**
-
-The song now EARNS its humility instead of contradicting it.
-
-### Other fixes:
-- **Triple "borrowed" → single:** kept "borrowed truth" in the pre-chorus (+ female echo, the strongest use); changed chorus "borrowed spine" → **"hardened spine"** (grittier, comeback-appropriate)
-- **"cracked old heart" → "cracked-wide heart":** removes the elderly read; the heart is split open by damage, not aged
-- **Quotes removed:** "Said, 'I'm not finished'" → **"Told her I ain't finished — not anymore"**; the paper-cup line now reads **"If it breaks today, I'll build it up"** without quotation marks (delivered as the written promise)
-- **East Tennessee dialect** applied to verses (countin', ain't, softened consonants), choruses kept cleaner for the singalong
+- **Key:** A minor verses lifting toward C major in the final chorus (relative major) — minor grit to major-lift comeback. Male baritenor A2-A4, female alto-mezzo G3-D5.
+- **Tempo:** ~94 BPM, midtempo half-time feel in verses with double-time lifts into choruses.
+- **Time Signature:** 4/4 (half-time backbeat verses; double-time perceived activity in choruses).
+- **Chord Progression (Nashville / actual):**
+  - Verse: i – VI – III – VII (Am – F – C – G)
+  - Pre-Chorus: iv – VII – VI – i (Dm – G – F – Am)
+  - Chorus: VI – VII – i – III (F – G – Am – C)
+  - Bridge: VI – III – iv – i (F – C – Dm – Am)
+  - Final Chorus: IV – V – I – vi (F – G – C – Am) in C major (the lift)
+- **Modulation:** Final chorus lifts A minor → C major. Probabilistic in Suno; may need a few renders or a DAW pitch-lift. (Left OUT of the lyric tags for now since V6 tag behavior is unconfirmed — achieve via Style Prompt intent + take selection.)
+- **Vocal:** Male baritenor lead with East Tennessee Appalachian inflection; female alto-mezzo answering as a distinct character (only the female-tagged lines), harmonizing on the duet lines.
+- **Instruments:** dual vocals, piano, bowed cello + chamber strings, plucked banjo counterline, stomp→wide live drums, distorted bass + synth pressure, choir-like pads (outro).
+- **Dynamics:** intimate intro → storytelling verses → building pre-chorus → full choruses → stripped bridge → tender-to-strong build → massive dual-vocal final chorus → fade outro.
+- **Hook Type:** title/chant hook — "From the floor to the fire" — anchoring every chorus + the final call-and-response.
+- **Rhyme Scheme:** AABB verse/chorus couplets; final chorus shifts to "we" for the payoff.
+- **Emotional Arc:** rock-bottom isolation → grinding persistence → defiant self-made pride → the bridge reveals he was helped → final chorus becomes lifted-and-lifting humility (I → we).
 
 ---
 
 ## SLIDER RECOMMENDATIONS
 
-Preset: **Genre Rebuilder** (60 / 90 / 30) — the three-way fusion (cinematic alt-rock + Appalachian strings + dark electronic hip-hop) plus a two-character duet needs a strong style lock so Suno blends the worlds without averaging them into generic rock, while leaving room for the organic build.
-
-- Weirdness: 60%
-- Style Influence: 90%
-- Audio Influence: 30% (only if an inspiration track is used; otherwise N/A)
-
-Note: for a reliable duet, generate 3-4 takes and select the one with the cleanest male/female separation. If the final-chorus key lift doesn't land, it can be pitched up in a DAW.
-
----
-
-## CHARACTER COUNT VERIFICATION
-
-- **Style Prompt:** 843 / 1000 chars [PASS]
-- **Lyrics field:** 4946 / 5000 chars [PASS — tight; overflow-direction can move to Suno's Advanced box if you edit further]
-- **Validator:** RESULT PASS (0 failures). Two warnings are expected/acceptable: lyrics field near the ceiling, and high tag count (19) — the tag count is high by design because this is a heavily-structured duet with per-line vocal-assignment tags (the user's custom [Lead]/[Female ...]/[Duet] system), which is intentional and necessary for clean two-voice rendering.
-
-### Exclude Field (paste into Suno's dedicated Exclude field):
-
-```
-vocal overlap confusion, hums, beatboxing, autotune, trap drums, mumble rap, chiptune, cheerful pop brightness, muddy low end, lo-fi tape hiss
-```
+Preset: **Genre Rebuilder** (Weirdness 60 / Style 90 / Audio 30) — strong style lock for the three-way fusion and clean duet separation, with room for the organic build. Generate 3-4 takes and pick the one with the cleanest male/female separation.
 
 ---
 
 *Filed: /examples/songs/standalones/From_The_Floor_To_The_Fire.md*
-*Status: First draft — ready for Suno testing*
+*Status: Draft — V6 system tags preserved verbatim; lyric craft improved; ready for Suno testing.*
