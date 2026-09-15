@@ -11,6 +11,22 @@ description: Suno AI field limits, section tags, pipe notation, creative sliders
 
 ---
 
+## ⚡ V6 vs v5.5 — Which Paradigm?
+
+Suno V6 (v6 / v6-wild / v6-mini) is the current default. It uses a DIFFERENT tag paradigm than v5.5.
+
+**For V6 songs (default):**
+- **Style field = the WHAT:** genre, key, tempo, vocal identity, production aesthetic (sets the world)
+- **Lyrics field = the HOW:** section tags + `[Instrument: X In/Out]` + dynamics + delivery + transitions (choreographs the performance)
+- `[Instrument: X In]` / `[Instrument: X Out]` control instrument entrances/exits — USE THEM
+- Do NOT include a `[Tag Vocabulary]` block in final output (not sung, not needed — planning aid only)
+- Master tag list: `references/V6_TAG_REFERENCE.md` · How/why: `references/V6_TAG_DISCOVERY.md`
+- v5.5 mechanics below (Italian tempo preference, slider presets, `[silence: sudden]`, tag-count limits) are NOT assumed to apply to V6 — re-validate.
+
+**For v5.5 and earlier:** the rules below apply as written.
+
+---
+
 ## Field Limits
 
 | Field | Limit | Overflow To |

@@ -5,6 +5,14 @@
 > For the complete tag catalog, see `references/SUNO_TAGS_REFERENCE.md`.
 > For genre/key/BPM tables, see `references/SUNO_STYLE_GENRE_REFERENCE.md`.
 
+> **⚡ V6 PARADIGM (current working model)** -- Suno V6 (v6 / v6-wild / v6-mini) is the current default and divides labor differently than v5.5:
+> **Style field = the WHAT** (genre, key, tempo, vocal identity, production aesthetic -- sets the world) and
+> **Lyrics field = the HOW** (section tags + `[Instrument: X In/Out]` + dynamics + delivery + transitions -- choreographs the performance).
+> `[Instrument: X In]` / `[Instrument: X Out]` are confirmed working V6 controls for instrument entrances/exits.
+> Do NOT include a `[Tag Vocabulary]` block in final output (planning aid only -- not sung).
+> The v5.5-era mechanics below (slider presets, tag-count limits, `[silence: sudden]`, Italian tempo preference) are Tier 3 and version-dependent -- re-validate against V6 where they conflict.
+> V6 master tag list: `references/V6_TAG_REFERENCE.md`. How/why & division of labor: `references/V6_TAG_DISCOVERY.md`.
+
 ---
 
 ## Overview
