@@ -331,6 +331,16 @@ Experiment log: `experiments/suno/2026-07-02-performance-notation-symbols.yml`
 
 ### 12.8 Limits: Style 1000 chars, Lyrics 5000 chars, Exclude field for negatives only
 
+### 12.8.0 Suno V6 (Current Default Model)
+**Suno V6** (models `v6` / `v6-wild` / `v6-mini`) is now the current default model and uses a different tag paradigm than v5.5:
+- **Style field = the WHAT**: genre, key, tempo, vocal identity, production aesthetic (sets the world).
+- **Lyrics field = the HOW**: section tags, `[Instrument: X In]` / `[Instrument: X Out]`, dynamics, delivery, transitions (choreographs the performance).
+- `[Instrument: X In]` / `[Instrument: X Out]` are confirmed working for instrument entrances/exits.
+- Do NOT include a `[Tag Vocabulary]` block in final output; that is planning scaffolding only.
+- The v5.5-era mechanics below (sliders, v5.5 UI features, era tags, performance-notation symbols, tag-count limits) are NOT assumed to carry over to V6 unchanged; re-validate for V6.
+
+Canonical V6 references: `references/V6_TAG_REFERENCE.md` (master de-duplicated V6 tag dictionary) and `references/V6_TAG_DISCOVERY.md` (division of labor, confirmed behaviors).
+
 ### 12.8.1 Creative Sliders (UI Settings)
 Three sliders in Suno's interface control generation behavior:
 
