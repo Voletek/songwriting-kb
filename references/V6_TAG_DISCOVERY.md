@@ -181,6 +181,8 @@ in a cleanup pass, so they are enumerated explicitly and kept expressible in the
     (whispered thoughts) panning left-to-right
     [whispered ad-lib, panned right]
     ```
+    Canonical spelling: `[Vocal: Whispered ad-lib, panned right]` (see the demonstration table
+    in the Canonical V6 Tag Grammar section); the raw forms above are captured as observed.
 
 15. **Key change with the specific modulation named**: the exact interval is stated because it
     carries meaning; reserved for emotional payoffs. Mode: **shared spine (payoff device).**
