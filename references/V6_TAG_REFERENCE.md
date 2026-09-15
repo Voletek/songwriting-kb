@@ -15,6 +15,11 @@
 - **Lyrics field = the HOW (arrangement):** section tags, instrument In/Out, dynamics, delivery, transitions. Choreographs the performance.
 - **DO NOT include a `[Tag Vocabulary]` block in final output** — it does not get sung and is not needed. It is optional planning scaffolding only.
 
+> **See also:** the **V6 Technique Inventory** (every observed technique, common + rare) and the
+> **Canonical V6 Tag Grammar** (the one recommended notation, with a six-dialect migration table)
+> in `references/V6_TAG_DISCOVERY.md`. The syntax guidance in this dictionary follows that canonical
+> grammar.
+
 ---
 
 ## STRUCTURE (15)
@@ -89,15 +94,20 @@ Analog Warmth · Digital Cold
 
 ---
 
-## Tag Syntax Forms Observed (all worked in V6 system output)
+## Tag Syntax Forms (canonical)
 
-| Form | Example |
-|---|---|
-| Categorized bracket | `[Instrument: Banjo In]`, `[Vocal: Belt]`, `[Dynamic: Crescendo]` |
-| Inline delivery detail | `[Male Lead: Whisper, dry close vocal]`, `[Female Lead: Call, lifted alto]` |
-| Compound (bundled) | `[Transition: Crescendo, Snare In, Synth Riser]` |
-| Call/response on own lines | `[Call] Higher!` then `[Response] Higher!` |
-| Compact pipe vocabulary (planning only) | `[VOCABULARY:VOCALS=whisper\|belt\|gang\|...]` |
+These follow the **Canonical V6 Tag Grammar** in `references/V6_TAG_DISCOVERY.md`. Use light-namespaced
+event tags, keep `[Role, inline-adjective]` as a first-class delivery form, and hold to 2-4 tags per
+section (not per line).
+
+| Form | Example | Status |
+|---|---|---|
+| Light-namespaced event tag | `[Instrument: Banjo In]`, `[Vocal: Belt]`, `[Dynamic: Crescendo]` | **Canonical** |
+| `[Role, inline-adjective]` delivery | `[Female response, rising]`, `[Male lead, tender then stronger]` | **Canonical (first-class)** |
+| Inline delivery detail (namespaced) | `[Male Lead: Whisper, dry close vocal]`, `[Female Lead: Call, lifted alto]` | Canonical |
+| Compound (bundled) transition | `[Transition: Crescendo, Snare In, Synth Riser]` | Canonical |
+| Call/response on own lines | `[Call] Higher!` then `[Response] Higher!` | Canonical |
+| Bare / ALL-CAPS / per-line-prefixed / compact-pipe vocabulary | `[Banjo In]`, `[STRUCTURE:VERSE]`, `[VERSE 1][GUITAR:ENTER]`, `[VOCABULARY:VOCALS=whisper\|belt\|...]` | **Not recommended**: migrate to the canonical forms (see the grammar migration table in `V6_TAG_DISCOVERY.md`) |
 
 ---
 
