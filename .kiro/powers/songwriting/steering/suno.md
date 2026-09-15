@@ -1,5 +1,14 @@
 # Suno AI — Power Steering
 
+## ⚡ V6 Paradigm (current default)
+V6 (v6 / v6-wild / v6-mini) uses a DIFFERENT tag paradigm than v5.5:
+- **Style field = the WHAT:** genre, key, tempo, vocal identity, production aesthetic
+- **Lyrics field = the HOW:** section tags + `[Instrument: X In/Out]` + dynamics + delivery + transitions
+- `[Instrument: X In]` / `[Instrument: X Out]` control instrument entrances/exits — USE THEM
+- Do NOT put a `[Tag Vocabulary]` block in final output (planning aid only, not sung)
+- v5.5 sliders/features below are NOT assumed to apply to V6 — re-validate
+- Master tag list: `references/V6_TAG_REFERENCE.md` · How/why: `references/V6_TAG_DISCOVERY.md`
+
 ## Limits
 - Style: 1000 chars | Lyrics: 5000 chars | Exclude field: negatives/exclusions ONLY
 

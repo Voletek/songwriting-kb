@@ -9,11 +9,24 @@
 
 ---
 
+## ⚡ V6 Paradigm Callout (read first)
+
+Suno V6 (v6 / v6-wild / v6-mini) is the current default and uses a DIFFERENT tag paradigm than the v4.5/v5.0 mechanics this SOP was written for:
+
+- **Style field = the WHAT:** genre, key, tempo, vocal identity, production aesthetic (sets the world)
+- **Lyrics field = the HOW:** section tags + `[Instrument: X In/Out]` + dynamics + delivery + transitions (choreographs the performance)
+- `[Instrument: X In]` / `[Instrument: X Out]` are CONFIRMED working V6 arrangement controls for instrument entrances/exits — use them
+- Do NOT include a `[Tag Vocabulary]` block in final output (planning aid only — not sung)
+- The 12 steps below were written for v4.5/v5.0. Where they conflict with V6 (slider presets, tag-count limits, `[silence: sudden]`, obsolete-tag assumptions), re-validate against V6 before applying.
+- Master tag list: `references/V6_TAG_REFERENCE.md` · How/why & division of labor: `references/V6_TAG_DISCOVERY.md`
+
+---
+
 ## Prerequisites
 
 - A complete song (lyrics + style concept + production notes)
 - Song has been through critique/revision (don't optimize a first draft)
-- Know your target Suno model version (v4.5 or v5.0)
+- Know your target Suno model version (V6 is the current default; v4.5/v5.0 for legacy renders — see the V6 Paradigm Callout above)
 - Access to `references/SUNO_TAGS_REFERENCE.md` for tag validation
 
 **Note:** If the song was written with SOP 01 (which includes Phase 4 formatting), this SOP functions as a VERIFICATION pass. Run all steps to confirm compliance — document "no changes needed" or list corrections made.

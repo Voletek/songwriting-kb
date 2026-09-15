@@ -49,9 +49,9 @@ Suno v6 launched ~Sept 8, 2026 — a licensed music model family (Warner/BMG/Bel
 
 All prior models (v5.5 and earlier) are being retired. Official product direction emphasizes
 **plain-language instruction** ("change the chorus so it's sung by a gospel choir") and
-understanding "more of the language and building blocks musicians use." This means our
-v5.5-tested findings (Italian tempo, `[modulation: ascending]`, the `[silence: sudden]`
-failure, slider behavior, tag-count limits) are all UNCONFIRMED under v6.
+understanding "more of the language and building blocks musicians use." The V6 tag findings in
+this doc are the current working model; v5.5-tested findings (Italian tempo, `[modulation: ascending]`,
+the `[silence: sudden]` failure, slider behavior, tag-count limits) should be re-checked under v6.
 
 ---
 
@@ -99,32 +99,19 @@ Bundle simultaneous events: `[Transition: Crescendo, Snare In, Synth Riser]`.
 
 ---
 
-## The Full V6 Tag Taxonomy (mapped from testing)
+## The Full V6 Tag Taxonomy
 
-**Structure:** Intro, Verse, Pre-Chorus, Chorus, Post-Chorus, Bridge, Breakdown, Build,
-Drop, Instrumental Solo, Interlude, Key Change, Outro, Transition, End
+> The complete, de-duplicated master tag dictionary now lives in **`references/V6_TAG_REFERENCE.md`**
+> (copy-paste ready, grouped by Structure / Instrumentation / Dynamics / Feel-Tempo / Vocals /
+> Transitions / Production, plus syntax forms and a minimal song skeleton). Summary below:
 
-**Instrumentation (with In/Out directionality):** Piano, Cello/Bowed Cello, Banjo, Fiddle,
-Slide Guitar, Acoustic Guitar, Electric Guitar, Upright Bass, Distorted Bass, Sub-Bass,
-Drums, Kick, Snare, Toms, Cymbals, Boot Stomp, Hand Claps, Tambourine, Hammond Organ,
-Rhodes, Strings/Chamber Strings, Synth Pad, Synth Lead, Analog Synth, Harmonica, Room Tone,
-Drone, Vocal Chop, FX/Texture
-
-**Dynamics:** pp, p, mp, mf, f, ff (and named: Whisper/Hush, Soft, Full, Fortissimo),
-Crescendo, Diminuendo, Swell, Drop, Fade In, Fade Out, Silence, Full Impact
-
-**Feel / Tempo:** Free Time, Rubato, Straight, Half-Time, Double-Time (Lift), Shuffle,
-Ritardando, Accelerando, Bar Extension; plus explicit BPM and Italian markings
-
-**Vocals:** Male Lead, Female Lead/Counter/Counterline, Whisper, Breathy, Raspy, Belt,
-Growl, Harmony, Gang Vocal, Call, Response, Spoken Word, Ad-Lib, Layered Double, Unison,
-Falsetto, Dry/Close-Mic, Reverb Tail, Vocal Out
-
-**Transitions:** Entrance, Exit, Pickup, Stop-Time, Riser, Turnaround, Drum Fill,
-Reverse Cymbal, Breath, Hit, Key Change Up / Key Lift, Cut, Hard Cut
-
-**Production (observed):** Vinyl Crackle, Tape Hiss, Filtered, Saturated, Detuned,
-Distorted, Stereo Widening, Delay, Reverb, Analog Warmth, Digital Cold
+- **Structure (15):** Intro, Verse, Pre-Chorus, Chorus, Post-Chorus, Bridge, Breakdown, Build, Drop, Instrumental Solo, Interlude, Key Change, Outro, Transition, End
+- **Instrumentation (In/Out each):** Piano, Felt Piano, Rhodes, Hammond Organ, Cello, Bowed Cello, Strings, Chamber Strings, Fiddle, Harmonica, Banjo, Acoustic/Electric/Slide/Muted Guitar, Upright/Distorted/Sub Bass, Drums, Kick, Snare, Toms, Floor Tom, Cymbals, Percussion, Brushes, Boot Stomp, Hand Claps, Tambourine, Synth Pad, Synth Lead, Analog Synth, Arp, Room Tone, Drone, Vocal Chop, FX/Texture
+- **Dynamics:** pp–fff, Whisper/Hush, Soft, Full, Fortissimo, Crescendo, Diminuendo, Swell, Drop, Full Impact, Fade In/Out, Silence, Rest, Accent, Staccato, Sustain
+- **Feel/Tempo:** Free Time, Rubato, Straight, Steady Stomp, Shuffle, Half-Time, Double-Time (Lift), Bar Extension, Ritardando, Accelerando, Push, Hold, + BPM/Italian markings
+- **Vocals:** Male Lead, Female Lead/Counter, Baritone, Tenor Lift, Falsetto, Whisper, Breathy, Dry/Close-Mic, Spoken Word, Half-Spoken, Raspy, Growl, Belt, Full Voice, Harmony, Unison, Layered Double, Gang Vocal, Call, Response, Ad-Lib, Reverb Tail, Vocal Out, Laugh, Breath
+- **Transitions:** Entrance, Exit, Pickup, Turnaround, Riser, Drum Fill, Reverse Cymbal, Cymbal Rise, Stop-Time, Breath, Hit, Cut, Hard Cut, Key Change Up/Key Lift, Filter Open/Close, Glitch Cut
+- **Production/FX:** Vinyl Crackle, Tape Hiss, Room Tone, Filtered, Saturated, Detuned, Distorted, Stereo Widening, Delay, Reverb, Analog Warmth, Digital Cold
 
 ---
 
@@ -205,10 +192,11 @@ Keep identity in the style; keep execution in the inline tags.
 
 ## Relationship to the v5.5 Methodology
 
-- `core/methodology/suno-optimization.md` remains the **v5.5-confirmed** reference.
-- This doc is the **v6 frontier** — unconfirmed until the results log is filled.
-- Once v6 behavior is confirmed, migrate the confirmed findings into the main methodology
-  with a clear v6 version tag, and note which v5.5 findings no longer apply.
+- `core/methodology/suno-optimization.md` is the **v5.5-era** reference (still valid for v5.5 renders).
+- This doc + `references/V6_TAG_REFERENCE.md` are the **V6 working model**.
+- For V6 songs: use the V6 tag reference and the division-of-labor rule (Style = WHAT, inline = HOW).
+- v5.5-specific mechanics (Italian tempo preference, `[silence: sudden]` failure, named slider
+  presets, tag-count sweet spot) are NOT assumed to carry into V6 — re-validate before relying on them.
 
 ---
 
