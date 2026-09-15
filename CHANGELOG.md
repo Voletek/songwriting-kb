@@ -7,6 +7,10 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- Adopted the Suno V6 tag paradigm as the current default model (models v6 / v6-wild / v6-mini): Style field = the WHAT (genre, key, tempo, vocal identity, production aesthetic), Lyrics field = the HOW (section tags, [Instrument: X In]/[Instrument: X Out], dynamics, delivery, transitions). [Instrument: X In/Out] confirmed working for instrument entrances/exits; no [Tag Vocabulary] block in final output (planning scaffolding only). v5.5-era mechanics flagged "re-validate for V6".
+- Three new V6 reference files: `references/V6_TAG_REFERENCE.md` (master de-duplicated V6 tag dictionary), `references/V6_TAG_DISCOVERY.md` (how/why, division of labor, confirmed behaviors), and `references/STYLE_LIBRARY.md` (paired style prompts).
+- Toolkit-wide V6 pointer integration across agents, steering, SOP, and methodology (`.kiro/agents/suno-optimizer.md`, `.kiro/steering/suno-formatting.md`, `.kiro/powers/songwriting/steering/suno.md`, `.kiro/sops/03-optimizing-for-suno.md`, `core/methodology/suno-optimization.md`).
+- Surfaced Suno V6 in user-facing docs (README.md, SONGWRITING_KNOWLEDGE_BASE.md) with links to the canonical V6 references.
 - Documented future improvement: audio render analysis tool for quantitative Suno render verification
 - Performance notation symbols user-tested on Suno v5.5: ALL CAPS confirmed working (louder/forceful delivery); tilde unreliable; quotes no effect; dash = word separator not syllable stretcher; ellipsis marginal (reinforces existing behavior only). Updated across all reference files with tested status and warnings. Experiment log: `experiments/suno/2026-07-02-performance-notation-symbols.yml`
 - Performance Notation Symbols (inline lyric formatting) integrated into tags reference and knowledge base -- 7 symbols that affect Suno vocal delivery. [Tier 3: Community heuristic] Credit: Omnisona (Suno AI God Mode Manual v3.0, March 2026)

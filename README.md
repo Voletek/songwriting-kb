@@ -1,6 +1,6 @@
 # Songwriting Knowledge Base
 
-A professional song production system combining Nashville/LA co-writing craft, academic music theory (12 disciplines), Suno AI v5.5 formatting expertise, and concept album continuity management — with a complete Kiro IDE automation layer and platform-neutral methodology usable by any AI assistant.
+A professional song production system combining Nashville/LA co-writing craft, academic music theory (12 disciplines), Suno AI v6 formatting expertise (v5.5-compatible), and concept album continuity management — with a complete Kiro IDE automation layer and platform-neutral methodology usable by any AI assistant.
 
 ---
 
@@ -72,7 +72,7 @@ songwriting-kb/
 ├── experiments/
 │   └── suno/                  Suno experiment logs (version-dated prompt tests)
 ├── docs/                      Architecture plans, implementation docs
-├── references/                8 companion docs (critique, template, style/genre, tags, voice, instrument sound, 2 blueprints)
+├── references/                12 companion docs (critique, template, style/genre, tags, voice, instrument sound, V6 tag reference, V6 tag discovery, style library, 3 blueprints)
 ├── examples/
 │   ├── songs/                 Developer's example songs (concept albums, standalones)
 │   ├── albums/                Album configuration examples
@@ -127,7 +127,7 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 | Skill | Contains | Activate When |
 |---|---|---|
 | **song-critique** | 12-category rubric, 5 advanced assessments, Suno optimization (7-point dimensional check + style alternatives), flag patterns | Evaluating any song |
-| **suno-meta-tags** | 35+ confirmed tags, v5.5 features, layers, sliders, era tags | Formatting for Suno |
+| **suno-meta-tags** | 35+ confirmed tags, v5.5 features, layers, sliders, era tags + V6 paradigm (Style=WHAT / Lyrics=HOW, `[Instrument: X In/Out]`) | Formatting for Suno |
 | **music-theory** | 12 disciplines, 23-point framework, 18 advanced concepts | Deep production analysis |
 | **character-voice** | Accent/dialect system, voice design template (vocal + non-vocal), instrumentation maps | Writing for characters |
 | **concept-album-blueprint** | Track registry, motifs, continuity rules (template + 2 examples) | Album work |
@@ -153,13 +153,27 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 | File | Purpose |
 |---|---|
 | `songwriting.md` | Core principles + 9-step workflow + quality gates |
-| `suno-formatting.md` | Suno rules, limits, tags, sliders, v5.5 features, era tags, layers |
+| `suno-formatting.md` | Suno rules, limits, tags, sliders, v5.5 features, era tags, layers + V6 paradigm |
 | `output-preferences.md` | Output format, layers, hit formulas (customize for your own) |
 | `concept-album.md` | Album continuity framework + setup guide (universal) |
 
 ---
 
 ## Suno AI Integration
+
+### Suno V6 (current default)
+
+**Suno V6** (models: `v6` / `v6-wild` / `v6-mini`) is now the current default model, and it uses a different tag paradigm than v5.5:
+
+- **Style field = the WHAT**: genre, key, tempo, vocal identity, production aesthetic (sets the world).
+- **Lyrics field = the HOW**: section tags, `[Instrument: X In]` / `[Instrument: X Out]`, dynamics, delivery, and transitions (choreographs the performance).
+- `[Instrument: X In]` / `[Instrument: X Out]` are confirmed working for instrument entrances/exits.
+- Do **not** include a `[Tag Vocabulary]` block in final output; that is planning scaffolding only.
+- The v5.5-era mechanics below (sliders, Personas/Stems, era tags, performance-notation symbols, tag-count limits) are **not assumed to carry over to V6 unchanged**; re-validate for V6.
+
+Canonical V6 references:
+- [`references/V6_TAG_REFERENCE.md`](references/V6_TAG_REFERENCE.md): master de-duplicated V6 tag dictionary.
+- [`references/V6_TAG_DISCOVERY.md`](references/V6_TAG_DISCOVERY.md): how/why, division of labor, confirmed behaviors.
 
 ### Field Limits
 | Field | Limit | Notes |
