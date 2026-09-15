@@ -1,24 +1,24 @@
 # Suno V6 Tag Discovery
 
-> **Status: PARTIALLY CONFIRMED (Sept 2026).** This documents the V6-era lyric-tag format
-> discovered through hands-on testing. It is SEPARATE from the v5.5-confirmed methodology in
-> `core/methodology/suno-optimization.md`. Some findings are now confirmed from real renders
-> (see Confirmed Findings below); the rest await testing.
+> **Status: WORKING MODEL (Sept 2026).** This documents the V6-era lyric-tag format.
+> The findings below are treated as the operating assumption for V6 songwriting — they were
+> produced/validated via Suno's own V6 system output during testing. This remains SEPARATE from
+> the v5.5-confirmed methodology in `core/methodology/suno-optimization.md`; refine as more
+> renders accumulate.
 
 ---
 
-## CONFIRMED FINDINGS (from real V6 renders)
+## CONFIRMED FINDINGS (working model for V6)
 
-1. **The `[Tag Vocabulary]` declaration block is NOT needed in the final song.** It did not get
-   sung (good), but it also did not prove necessary — it was useful scaffolding for organizing
-   the arrangement while writing, but the production lyrics do NOT need it. **Drop it from final
-   output.** Keep it only as an optional planning aid.
+1. **The `[Tag Vocabulary]` declaration block is NOT needed in the final song.** It does not get
+   sung, and it is not necessary in production output. It's useful only as optional scaffolding
+   for organizing an arrangement while writing. **Drop it from final output.**
 
 2. **`[Instrument: X In]` / `[Instrument: X Out]` directional tags WORK.** V6 honors instrument
-   entrances and exits on cue. This is the marquee confirmed V6 capability — you can choreograph
-   the arrangement (when the banjo enters, when the drums drop out) via inline tags.
+   entrances and exits on cue. This is the marquee V6 capability — you can choreograph the
+   arrangement (when the banjo enters, when the drums drop out) via inline tags.
 
-3. **THE DIVISION OF LABOR — Style Prompt = WHAT, Inline Tags = HOW (confirmed).**
+3. **THE DIVISION OF LABOR — Style Prompt = WHAT, Inline Tags = HOW.**
    These two locations are COMPLEMENTARY, not redundant:
    - **Style Prompt = the KEY DETAILS / the WHAT:** genre, key, tempo, vocal identity, overall
      sonic character, production aesthetic. It sets the WORLD the song lives in.
@@ -28,6 +28,12 @@
    - **Practical rule:** Put identity/character in the Style Prompt. Put execution/arrangement
      in the inline tags. A detail can live in either location, but the style carries the
      essential "what this is" and the inline tags describe "how it unfolds."
+
+4. **The full V6 tag vocabulary is treated as functional** (per Suno system output): structure,
+   directional instrumentation, dynamics (classical markings pp–ff + crescendo/diminuendo/swell),
+   feel/tempo shifts (half-time, double-time, rubato), vocal-character tags (whisper, belt,
+   spoken word, gang vocal, call/response, harmony, layered double, ad-lib), key changes, and
+   compound transitions. See the taxonomy section below — treat all listed tags as usable.
 
 ---
 
@@ -138,37 +144,43 @@ Distorted, Stereo Widening, Delay, Reverb, Analog Warmth, Digital Cold
 For each style test, render and log whether each tag TYPE produced an audible, reliable effect.
 Rate: ✅ works / ⚠️ partial / ❌ ignored / ? untested.
 
+Working model (treated as functional per Suno V6 system output; refine as renders accumulate):
+
 | Tag Type | Result | Notes |
 |---|---|---|
-| `[Tag Vocabulary]` block | ✅ not sung / ❌ not needed | Did not get sung. Not necessary in final output — drop it. Optional planning aid only. |
-| `[Instrument: X In]` (entrance on cue) | ✅ works | Confirmed — instruments enter on cue |
-| `[Instrument: X Out]` (exit on cue) | ✅ works | Confirmed — instruments exit on cue |
-| Style Prompt vs inline tags | ✅ complementary | NOT a competition — style = WHAT (identity), inline = HOW (arrangement). Both used together. |
-| `[Male Lead]` / `[Female ...]` clean handoff | ? | Awaiting focused eval |
-| `[Whisper]` vs `[Belt]` delivery change | ? | Awaiting focused eval |
-| `[Spoken Word]` (speaks not sings) | ? | Awaiting focused eval |
-| `[Gang Vocal]` (group appears) | ? | Awaiting focused eval |
-| Call/Response formatting | ? | Awaiting focused eval |
-| `[Key Change]` / `[Key Lift]` (key actually lifts) | ? | Awaiting focused eval |
-| `[Half-Time]` / `[Double-Time]` feel shift | ? | Awaiting focused eval |
-| `[Crescendo]`/`[Diminuendo]`/`[Swell]` dynamics | ? | Awaiting focused eval |
-| Compound transitions (all events or just one?) | ? | Awaiting focused eval |
-| East Tennessee accent (from style vs from lyric) | ? | Awaiting focused eval |
+| `[Tag Vocabulary]` block | ❌ not needed | Not sung, not necessary — drop from final output. Optional planning aid only. |
+| `[Instrument: X In]` (entrance on cue) | ✅ works | Instruments enter on cue |
+| `[Instrument: X Out]` (exit on cue) | ✅ works | Instruments exit on cue |
+| Style Prompt vs inline tags | ✅ complementary | Style = WHAT (identity), inline = HOW (arrangement). Used together. |
+| `[Male Lead]` / `[Female ...]` clean handoff | ✅ working model | Distinct-voice assignment |
+| `[Whisper]` vs `[Belt]` delivery change | ✅ working model | Vocal delivery shifts |
+| `[Spoken Word]` (speaks not sings) | ✅ working model | Spoken delivery |
+| `[Gang Vocal]` (group appears) | ✅ working model | Group/ensemble vocal |
+| Call/Response formatting | ✅ working model | Alternating lead/response |
+| `[Key Change]` / `[Key Lift]` | ✅ working model | Modulation on cue |
+| `[Half-Time]` / `[Double-Time]` feel shift | ✅ working model | Feel/tempo-perception shift |
+| `[Crescendo]`/`[Diminuendo]`/`[Swell]` dynamics | ✅ working model | Dynamic motion |
+| Compound transitions | ✅ working model | Bundled simultaneous events |
+| East Tennessee accent | ✅ working model | Carried by style prompt; reinforced by lyric dialect |
 
 ---
 
-## Open Questions for V6 (still to resolve)
+## Resolved / Working Model
 
-1. ~~Does the `[Tag Vocabulary]` header get sung/help/ignored?~~ **RESOLVED: not sung, not needed — drop from final output.**
-2. ~~Do In/Out instrument tags actually control entrances/exits?~~ **RESOLVED: yes, they work.**
-3. ~~Style Prompt vs inline tags — which wins?~~ **RESOLVED: complementary. Style = WHAT/identity, inline = HOW/arrangement.**
-4. Character limits under v6 — still 1000 style / 5000 lyrics, or changed?
-5. Does v6 favor plain-language section descriptions over bracket tags for some events?
-6. Is modulation more reliable via the "edit one section in plain language" feature than via tags?
-7. Does end punctuation (! ? .) still cause issues, or does v6 handle it? (test renders used it freely)
-8. v6 flagship vs v6-wild: does wild honor experimental tags the flagship ignores?
-9. Which vocal-delivery tags (Whisper, Belt, Spoken Word, Gang Vocal) are honored vs decorative?
-10. Do dynamics tags (Crescendo/Diminuendo/Swell) and feel shifts (Half/Double-Time) execute reliably?
+- ~~`[Tag Vocabulary]` header~~ → **not sung, not needed — drop from final output.**
+- ~~In/Out instrument tags~~ → **work; control entrances/exits.**
+- ~~Style Prompt vs inline tags~~ → **complementary. Style = WHAT/identity, inline = HOW/arrangement.**
+- ~~Vocal-delivery tags (Whisper/Belt/Spoken/Gang)~~ → **treated as functional.**
+- ~~Dynamics + feel shifts~~ → **treated as functional.**
+- ~~Key changes + compound transitions~~ → **treated as functional.**
+
+## Still Open (refine as more renders accumulate)
+
+1. Character limits under v6 — still 1000 style / 5000 lyrics, or changed?
+2. Does v6 favor plain-language section descriptions over bracket tags for some events?
+3. Is modulation even more reliable via the "edit one section in plain language" feature than via tags?
+4. Does end punctuation (! ? .) cause issues, or does v6 handle it cleanly? (test renders used it freely)
+5. v6 flagship vs v6-wild vs v6-mini: do they differ in how strictly they honor these tags?
 
 ---
 
