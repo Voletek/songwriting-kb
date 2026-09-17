@@ -1,9 +1,15 @@
 {
   "task_id": "task-song-planner-guided-mode",
   "task_description": "Add a first-class song-planner agent package (canonical planning methodology + thin agent + SOP 09 + SONG BRIEF template + sample brief) that produces an approvable Song Brief before lyrics, AND a guided/collaborative lyric-writing mode on the existing songwriter+critic (section-by-section propose -> self-flag via critique.md's full 12-category rubric -> confirm). Both framed under one shared 'Collaborative / Guided Mode' concept. Strict constraint: guided modes are a new INTERACTION MODE over existing core/methodology; NO craft logic may be duplicated — everything references core/methodology/songwriting.md and core/methodology/critique.md. Docs (README, CHANGELOG, WORKFLOW_DIAGRAM, SONGWRITING_KNOWLEDGE_BASE) updated. Work on a new branch off main; do not push or open a PR.",
-  "status": "in_progress",
+  "status": "completed",
   "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003"],
   "blocked_reason": null,
+  "review": {
+    "verdict": "APPROVED",
+    "pass": "v1",
+    "artifact": ".agents/tasks/task-song-planner-guided-mode/2026-09-17-021532-review.md",
+    "followup": "Both non-blocking v1 issues fixed in commit bc2ca6b (added Intro/Outro row to guided-mode emphasis table; de-duplicated SOP 01/agent per-section guidance via a pointer to the authoritative agent mapping)."
+  },
   "verification": {
     "build": "pass",
     "tests": "pass",
