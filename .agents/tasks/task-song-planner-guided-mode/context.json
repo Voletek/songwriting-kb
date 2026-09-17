@@ -1,0 +1,30 @@
+{
+  "project_type": "Suno AI songwriting knowledge base — Markdown documentation toolkit with a thin Kiro agent automation layer. NOT a code project; all deliverables are Markdown.",
+  "language": "Markdown (docs). One Python validator (tools/validate-song.py) exists but is OUT OF SCOPE and must not be run for this task (it enforces v5.5 song-file rules irrelevant to toolkit docs).",
+  "build_system": "None. No compile/build. No package manager.",
+  "test_framework": "None applicable. tools/validate-song.py validates SONG files against v5.5 rules; it is NOT a test suite for toolkit docs and must NOT be used here.",
+  "build_command": "N/A (Markdown only)",
+  "test_command": "N/A. Do NOT run tools/validate-song.py. Verification is manual/structural: confirm files exist, YAML frontmatter is well-formed, #[[file:...]] include paths resolve to real files, README/CHANGELOG/WORKFLOW tables are internally consistent.",
+  "verification_instructions": "1) Confirm each new file exists at the specified path. 2) Confirm every #[[file:...]] include in new/edited agents points to an existing file (grep the path). 3) Confirm no craft rule (12 critique categories, prosody thresholds, hook timing, V2-new-info, bridge-turn, 70/30) is REDEFINED in new files — they must reference core/methodology/critique.md and core/methodology/songwriting.md instead. 4) Confirm README Agents table now lists 6 agents incl. song-planner and SOP table lists SOP 09. 5) Confirm CHANGELOG [Unreleased]/Added has bullets for the planner package and guided writing mode. 6) git diff review.",
+  "snapshot_or_generated_files": "None.",
+  "setup_instructions": "None. Work directly on files. Create a new git branch off main before editing; commit at the end. Do NOT push or open a PR.",
+  "environment_constraints": "Do NOT push, do NOT open PRs (orchestrator handles publishing). Do NOT run tools/validate-song.py. Work on a NEW branch off main. Repo path: /projects/sandbox/songwriting-kb, currently on branch main (HEAD = merge of PR #10, contains all V6 work).",
+  "contribution_requirements": "ARCHITECTURE IS THE #1 CONSTRAINT (see core/tenets.md tenet 4 ONE SOURCE OF TRUTH and README Architecture section). core/methodology/*.md is the SINGLE SOURCE OF TRUTH for craft logic. .kiro/agents/*.md are THIN: YAML frontmatter (name, description with trigger phrases, tools) + Behavioral Directives + #[[file:...]] includes that load methodology. Agents contain NO craft logic. .kiro/sops/*.md are step-by-step procedures that POINT TO core/methodology. NEVER fork/duplicate craft definitions; reference the canonical file. Guided modes are a new INTERACTION MODE over EXISTING methodology + critique rubric, never new craft rules.",
+  "key_patterns": "Agent frontmatter pattern (see .kiro/agents/songwriter.md, builder.md): --- name / description (prose listing trigger phrases) / tools: [\"read\",\"write\",\"web\"] --- then # Agent title, ## Behavioral Directives, ## Creative Tenets with #[[file:core/tenets.md]], ## Methodology with #[[file:core/methodology/X.md]], ## Reference Data includes. SOP pattern (see .kiro/sops/01,07): # SOP NN: Title, > blockquote note pointing to canonical methodology, ## Prerequisites, ## Procedure with PHASE/Step structure, ## Output, ## Time Estimate, ## Common Mistakes. Methodology file pattern (see core/methodology/songwriting.md): # The X Method, > CANONICAL blockquote, Three-Tier Evidence Labeling table, phased steps, References section pointing to references/. Songwriter agent already has INTERACTIVE MODE and AUTO-PILOT MODE sections with explicit trigger-phrase lists.",
+  "relevant_files": [
+    "core/methodology/songwriting.md (SOT for craft — Phase 1 Analysis Steps 1-9 to reference, Hit Formula F1/F2, 5-phase pipeline)",
+    "core/methodology/critique.md (SOT for the 12-category rubric + 5 advanced A1-A5 — guided writer must REFERENCE these, not redefine)",
+    "core/tenets.md (conflict-resolution priorities; loaded by agents)",
+    ".kiro/agents/songwriter.md (add GUIDED/COLLABORATIVE MODE section + brief-consumption seam + add critique.md include)",
+    ".kiro/agents/builder.md (pattern for a thin agent)",
+    ".kiro/sops/01-writing-a-song.md (Phase 1 currently holds planning inline; must point to SOP 09 / song-planning.md; add guided walkthrough option)",
+    ".kiro/sops/07-full-pipeline.md (pipeline stages pattern; may reference PLAN stage)",
+    "references/V6_TAG_DISCOVERY.md (V6 Technique Inventory 'mode label' = Default/Roots vs MODE C (Cinematic/Theatrical/Concept) — brief item 9 mode label)",
+    "SONGWRITING_KNOWLEDGE_BASE.md (Genre-Emotion, Key Selection, BPM-Emotion, Hit Formula live here + songwriting.md — reference, don't duplicate)",
+    "README.md (Agents table -> 6 agents; SOP table -> add SOP 09; mention guided mode)",
+    "CHANGELOG.md ([Unreleased]/Added bullets)",
+    "WORKFLOW_DIAGRAM.md (add PLAN->WRITE guided seam)",
+    "examples/songs/standalones/ (where a sample SONGNAME.brief.md convention lives alongside songs)"
+  ],
+  "directory_structure": "core/methodology/ = 6 canonical method files (SOT). core/tenets.md = conflict priorities. .kiro/agents/ = 5 thin agents (song-planner will be 6th). .kiro/sops/ = SOPs 01-08 (SOP 09 to add). .kiro/skills/, .kiro/hooks/, .kiro/steering/ exist. references/ = 12 companion docs incl V6_TAG_DISCOVERY.md, V6_TAG_REFERENCE.md, STYLE_LIBRARY.md. examples/songs/{standalones,fractured_shadows_act1..3,keeper_of_the_light,experimental} = example songs. songs/ = user workspace (empty). Top-level: README.md, CHANGELOG.md (Keep-a-Changelog), WORKFLOW_DIAGRAM.md (ASCII), SONGWRITING_KNOWLEDGE_BASE.md, MUSIC_PRODUCTION_THEORY.md."
+}

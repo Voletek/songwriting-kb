@@ -8,27 +8,31 @@
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                            USER REQUEST                                     │
 │                                                                             │
-│  "Write a song about..."  "Critique this"  "Optimize"  "Check continuity"   │
-└───────────────┬─────────────────┬──────────────┬──────────────┬─────────────┘
-                │                 │              │              │
-                ▼                 ▼              ▼              ▼
-┌───────────────────┐ ┌──────────────┐ ┌──────────────┐ ┌──────────────────┐
-│   SONGWRITER      │ │   CRITIC     │ │ SUNO-        │ │ ALBUM-           │
-│   AGENT (thin)    │ │   AGENT      │ │ OPTIMIZER    │ │ CONTINUITY       │
-│                   │ │   (thin)     │ │ (thin)       │ │ (thin)           │
-│ Loads:            │ │ Loads:       │ │ Loads:       │ │ Loads:           │
-│ core/methodology/ │ │ core/method- │ │ core/method- │ │ core/method-     │
-│ songwriting.md    │ │ ology/       │ │ ology/suno-  │ │ ology/album-     │
-│                   │ │ critique.md  │ │ optimization │ │ continuity.md    │
-└────────┬──────────┘ └──────┬───────┘ └──────┬───────┘ └────────┬─────────┘
-         │                   │                │                  │
-         │ Also refs:        │ Also refs:     │ Also refs:       │ Also refs:
-         │ • KB files        │ • CRITIQUE_REF │ • SUNO_TAGS_REF  │ • ALBUM_BLUEPRINT
-         │ • MUSIC_THEORY    │ • STYLE_GENRE  │ • STYLE_GENRE    │
-         │                   │                │                  │
-         ▼                   ▼                ▼                  ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
+│ "Plan a song..." "Write a song..." "Critique this" "Optimize" "Continuity"  │
+└──────┬───────────────┬─────────────────┬──────────────┬──────────────┬──────┘
+       │               │                 │              │              │
+       ▼               ▼                 ▼              ▼              ▼
+┌──────────────┐┌───────────────────┐ ┌──────────────┐ ┌──────────────┐ ┌──────────────────┐
+│ SONG-PLANNER ││   SONGWRITER      │ │   CRITIC     │ │ SUNO-        │ │ ALBUM-           │
+│ AGENT (thin) ││   AGENT (thin)    │ │   AGENT      │ │ OPTIMIZER    │ │ CONTINUITY       │
+│              ││                   │ │   (thin)     │ │ (thin)       │ │ (thin)           │
+│ Loads:       ││ Loads:            │ │ Loads:       │ │ Loads:       │ │ Loads:           │
+│ core/method- ││ core/methodology/ │ │ core/method- │ │ core/method- │ │ core/method-     │
+│ ology/song-  ││ songwriting.md    │ │ ology/       │ │ ology/suno-  │ │ ology/album-     │
+│ planning.md  ││                   │ │ critique.md  │ │ optimization │ │ continuity.md    │
+└──────┬───────┘└────────┬──────────┘ └──────┬───────┘ └──────┬───────┘ └────────┬─────────┘
+       │                 │                   │                │                  │
+       │ Produces:       │ Also refs:        │ Also refs:     │ Also refs:       │ Also refs:
+       │ [Song Brief,    │ • KB files        │ • CRITIQUE_REF │ • SUNO_TAGS_REF  │ • ALBUM_BLUEPRINT
+       │  user-approved] │ • MUSIC_THEORY    │ • STYLE_GENRE  │ • STYLE_GENRE    │
+       │ SONGNAME.brief  │ • critique.md     │                │                  │
+       │  (feeds writer) │ (per-section      │                │                  │
+       │       └────────▶│  checks)          │                │                  │
+       │                 │                   │                │                  │
+       │                 ▼                   ▼                ▼                  ▼
+┌──────┴──────────────────────────────────────────────────────────────────────┐
 │                         OUTPUT: songs/*.md                                  │
+│  (song-planner also writes SONGNAME.brief.md alongside the song)            │
 │                                                                             │
 │  Triggers hooks on save:                                                    │
 │  • prosody-lint.json ─── flags lines >12 syllables                          │
@@ -43,10 +47,11 @@
 ## The Full Pipeline (SOP 07)
 
 ```
-┌──────────┐      ┌──────────┐      ┌──────────┐      ┌──────────┐     ┌───────────┐
-│  WRITE   │────▶│ CRITIQUE  │────▶│  REVISE  │────▶│ OPTIMIZE │────▶│  VERIFY   │
-│  SOP 01  │      │  SOP 02  │      │          │      │  SOP 03  │     │ Continuity│
-└──────────┘      └─────┬────┘      └──────────┘      └──────────┘     └───────────┘
+┌──────────┐   ┌───────────┐   ┌──────────┐      ┌──────────┐      ┌──────────┐      ┌──────────┐     ┌───────────┐
+│   PLAN   │──▶│ [Song     │──▶│  WRITE   │────▶│ CRITIQUE  │────▶│  REVISE  │────▶│ OPTIMIZE │────▶│  VERIFY   │
+│  SOP 09  │   │  Brief,   │   │ (guided) │      │  SOP 02  │      │          │      │  SOP 03  │     │ Continuity│
+│ (guided) │   │ approved] │   │  SOP 01  │      │          │      │          │      │          │     │           │
+└──────────┘   └───────────┘   └──────────┘      └─────┬────┘      └──────────┘      └──────────┘     └───────────┘
                        │
                        ▼
               ┌─────────────────┐
@@ -59,6 +64,43 @@
               │  Album FAIL ────▶ REVISE regardless of score
               └─────────────────┘
 ```
+
+---
+
+## Guided / Collaborative Mode (PLAN → WRITE seam)
+
+One shared interaction loop drives both the song-planner (brief decisions) and the
+songwriter (lyric sections). It is an INTERACTION MODE over the existing methodology
+and critique rubric — never new craft rules.
+
+```
+   PLANNING (song-planner, SOP 09)              WRITING (songwriter, SOP 01)
+   ─────────────────────────────                ──────────────────────────────
+   For each of the 12 brief sections:           For each lyric section:
+                                                
+   ┌───────────────────────────────┐            ┌───────────────────────────────┐
+   │ 1. SUGGEST a methodology-      │            │ 1. PROPOSE a draft section     │
+   │    backed default              │            │    (seeded by the Song Brief)  │
+   │        │                       │            │        │                       │
+   │        ▼                       │            │        ▼                       │
+   │ 2. SURFACE concerns / options  │            │ 2. SELF-FLAG against           │
+   │    (from song-planning.md)     │            │    critique.md's FULL 12-      │
+   │        │                       │            │    category rubric             │
+   │        ▼                       │            │        │                       │
+   │ 3. USER confirms / overrides   │            │ 3. USER confirms / overrides   │
+   │        │                       │            │        │                       │
+   │        ▼                       │            │        ▼                       │
+   │ 4. NEXT section                │            │ 4. NEXT section                │
+   └───────────────┬───────────────┘            └───────────────┬───────────────┘
+                   │                                             │
+                   ▼                                             ▼
+       [Song Brief, user-approved]  ───────feeds───────▶  Completed lyrics
+       saved as SONGNAME.brief.md                         → CRITIQUE → OPTIMIZE
+       alongside the song
+```
+
+Full pipeline seam:
+`PLAN (guided) → [Song Brief, user approves] → WRITE (guided, per-section critic checks) → CRITIQUE → OPTIMIZE`
 
 ---
 

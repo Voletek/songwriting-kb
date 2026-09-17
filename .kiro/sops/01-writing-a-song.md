@@ -20,6 +20,16 @@
 
 ### PHASE 1: Analysis (Before writing a single word)
 
+> **Planning is now its own workflow.** The authoritative source for Phase 1 planning is SOP 09
+> (`.kiro/sops/09-planning-a-song.md`) and `core/methodology/song-planning.md`, which formalize this
+> analysis into an approvable **Song Brief**. You can do Phase 1 three ways:
+> - **Inline** — walk Steps 1-9 below as part of writing (fastest for simple songs).
+> - **Via the planner** — run SOP 09 / the **song-planner** agent to produce a `SONGNAME.brief.md`
+>   first, then flow into writing.
+> - **Consume an existing brief** — if a `SONGNAME.brief.md` already exists next to the song, use it
+>   directly as the completed Phase 1 plan and skip straight to Phase 2.
+> The steps below remain as the inline reference; they mirror the brief's conceptual sections.
+
 **Step 1 — State the Song Thesis**
 Write ONE sentence that captures the core truth of this song.
 ```
@@ -96,6 +106,17 @@ Decide:
 ---
 
 ### PHASE 2: Writing (Nashville Method)
+
+> **Option — Guided / collaborative section-by-section walkthrough.** Instead of writing all sections
+> in one pass, you can co-write them with the user via the songwriter agent's **GUIDED /
+> COLLABORATIVE MODE** (triggers: "write with me", "guide me", "step through the lyrics", "section by
+> section", "help me write it"). It walks the same Nashville order below and, for EACH section:
+> (1) proposes a draft, (2) self-flags concerns against `core/methodology/critique.md`'s 12-category
+> rubric — surfacing the section-relevant subset first — then (3) WAITS for the user to confirm or
+> override before the next section. The authoritative per-section emphasis mapping lives in the
+> **songwriter** agent's GUIDED / COLLABORATIVE MODE (`.kiro/agents/songwriter.md`), which references
+> `core/methodology/critique.md`'s categories 1-12; it is intentionally NOT re-listed here to avoid
+> drift. This is an interaction mode only; the craft steps below are unchanged.
 
 **Step 10 — Write the Chorus FIRST**
 This is your destination. Write it before anything else.

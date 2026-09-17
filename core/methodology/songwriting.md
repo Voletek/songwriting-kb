@@ -167,6 +167,14 @@ Chorus (destination) -> Pre-Chorus (builds into chorus) -> V1 (sets up) ->
 V2 (new info) -> Bridge (the turn) -> Final Chorus (variation) -> Intro/Outro
 ```
 
+> **Interaction-mode note (not a craft rule):** This Nashville-order writing can be delivered in a
+> **guided / collaborative mode** where the writer proposes each section, self-critiques it against
+> `core/methodology/critique.md`'s checks (surfacing the section-relevant categories first), and
+> WAITS for the user to confirm or override before moving to the next section. This changes only the
+> interaction posture, not any craft rule below. It is the writing half of the shared
+> Collaborative / Guided Mode; the planning half (a Song Brief built decision-by-decision) lives in
+> SOP 09 (`.kiro/sops/09-planning-a-song.md`) and `core/methodology/song-planning.md`.
+
 ### Step 10 -- Write the Chorus FIRST
 
 This is your destination. Write it before anything else.

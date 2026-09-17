@@ -33,6 +33,8 @@ git clone https://github.com/Voletek/songwriting-kb.git
 
 **Kiro users** — just talk naturally:
 ```
+"Plan a song about..."        → Song-planner builds an approvable Song Brief first
+"Help me plan a track"        → Song-planner activates
 "Write a song about..."       → Songwriter asks for details, runs full pipeline
 "I have an idea for a track"  → Songwriter activates
 "Critique this song"          → Critic runs full evaluation in one pass
@@ -43,6 +45,8 @@ git clone https://github.com/Voletek/songwriting-kb.git
 "Set up a new album"          → Builder walks you through blueprint creation
 "Help me get started"         → Builder activates
 ```
+
+**Guided / Collaborative Mode** — plan and write step-by-step, staying in the driver's seat. The song-planner walks the 12-section Song Brief and the songwriter drafts section-by-section; at each step the agent suggests a methodology-backed default, surfaces any concerns (via critique.md's full 12-category rubric during writing), and waits for you to confirm or override before moving on. Same collaborative loop across planning (brief decisions) and writing (lyric sections).
 
 **Non-Kiro users** — see [Using Without Kiro](#using-without-kiro) below.
 
@@ -58,15 +62,15 @@ python3 tools/validate-song.py songs/my_song.md
 ```
 songwriting-kb/
 ├── core/
-│   ├── methodology/           6 canonical method files (SINGLE SOURCE OF TRUTH)
+│   ├── methodology/           7 canonical method files (SINGLE SOURCE OF TRUTH)
 │   └── tenets.md              7 creative decision-making principles (conflict resolution)
 ├── .kiro/
 │   ├── steering/              4 files — auto-loaded every session
-│   ├── agents/                5 thin agents — load core/methodology/ via #[[file:]]
+│   ├── agents/                6 thin agents — load core/methodology/ via #[[file:]]
 │   ├── skills/                5 skills — reference core/methodology/
 │   ├── hooks/                 5 hooks — format, char-count, prosody, score, pipeline
 │   ├── powers/songwriting/    1 power — activatable master bundle
-│   └── sops/                  8 SOPs — step-by-step procedures (point to core/)
+│   └── sops/                  9 SOPs — step-by-step procedures (point to core/)
 ├── tools/
 │   └── validate-song.py       Deterministic song validator (char counts, tags, format)
 ├── experiments/
@@ -99,6 +103,7 @@ The procedural layer — step-by-step HOW for every workflow:
 | **06** | [Character Voice Design](/.kiro/sops/06-character-voice-design.md) | 11 steps: identify → accent → template → instruments → mode | 15-25 min |
 | **07** | [Full Pipeline](/.kiro/sops/07-full-pipeline.md) | 6 stages: Write → Critique → Revise → Optimize → Verify → Render | 2-3 hrs |
 | **08** | [Contributing](/.kiro/sops/08-contributing.md) | Community guide: setup → customize → add albums → submit | Variable |
+| **09** | [Planning a Song](/.kiro/sops/09-planning-a-song.md) | Guided brief creation before writing — step through the 12-section Song Brief, save `SONGNAME.brief.md` alongside the song | 15-30 min |
 
 ### The Full Pipeline (SOP 07):
 
@@ -110,11 +115,12 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 
 ---
 
-## Agents (5 Roles)
+## Agents (6 Roles)
 
 | Agent | What It Does | Invoke With |
 |---|---|---|
-| **songwriter** | Creates complete songs from concepts. Asks for missing parameters, runs full pipeline, outputs Suno-ready format with char counts. Loads `core/methodology/songwriting.md` | "Write a song about...", "compose", "make a track", "lyrics for...", "I have an idea" |
+| **song-planner** | Produces an approvable Song Brief before lyrics via guided planning — steps through the 12-section brief, suggesting methodology-backed defaults and surfacing concerns for your confirmation. Loads `core/methodology/song-planning.md` | "plan a song", "song brief", "outline a track", "help me plan", "plan out a song", "brief for" |
+| **songwriter** | Creates complete songs from concepts. Asks for missing parameters, runs full pipeline, outputs Suno-ready format with char counts. Offers a guided/collaborative mode that drafts section-by-section with per-section critic checks, and consumes an approved Song Brief when one exists. Loads `core/methodology/songwriting.md` | "Write a song about...", "compose", "make a track", "lyrics for...", "I have an idea" |
 | **critic** | Multi-layer evaluation (12 craft + 5 advanced + Suno optimization + album-context). Runs full critique in one pass, reports scores and decision gate. Loads `core/methodology/critique.md` | "Critique this", "score", "rate", "review", "is this good?", "feedback", "what's wrong?" |
 | **suno-optimizer** | Adds meta-tags, checks char counts, validates formatting. Reports counts, flags artist names for conversion. Loads `core/methodology/suno-optimization.md` | "Make this Suno-ready", "format for Suno", "check my char count", "will this render?" |
 | **album-continuity** | Runs all continuity checks in one pass. PASS/FAIL table with fixes. Loads `core/methodology/album-continuity.md` | "Check continuity", "does this fit?", "album rules", "sonic palette check" |
@@ -381,7 +387,7 @@ This system is designed for sharing. The architecture separates **universal** fr
 ### Universal (works for anyone — ~70% of system):
 - All knowledge base files
 - All SOPs
-- Songwriter, Critic, Suno-Optimizer, Builder agents
+- Song-planner, Songwriter, Critic, Suno-Optimizer, Builder agents
 - All skills (except album-blueprint content)
 - Format-check, char-count, prosody-lint hooks
 - All reference docs (except album blueprints)
