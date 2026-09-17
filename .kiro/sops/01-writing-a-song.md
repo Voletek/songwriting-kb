@@ -111,12 +111,12 @@ Decide:
 > in one pass, you can co-write them with the user via the songwriter agent's **GUIDED /
 > COLLABORATIVE MODE** (triggers: "write with me", "guide me", "step through the lyrics", "section by
 > section", "help me write it"). It walks the same Nashville order below and, for EACH section:
-> (1) proposes a draft, (2) self-flags concerns against `core/methodology/critique.md`'s per-section
-> checks (Chorus -> Hook/Prosody/Singability/Originality; Pre-Chorus -> Arc/Structure; Verse 1 ->
-> Lyrics/Prosody; Verse 2 -> Arc "adds new info"; Bridge -> Arc "the turn"; Final Chorus -> Arc
-> meaning-shift + Emotional Intelligence — full 12-category rubric stays available), then (3) WAITS
-> for the user to confirm or override before the next section. This is an interaction mode only; the
-> craft steps below are unchanged.
+> (1) proposes a draft, (2) self-flags concerns against `core/methodology/critique.md`'s 12-category
+> rubric — surfacing the section-relevant subset first — then (3) WAITS for the user to confirm or
+> override before the next section. The authoritative per-section emphasis mapping lives in the
+> **songwriter** agent's GUIDED / COLLABORATIVE MODE (`.kiro/agents/songwriter.md`), which references
+> `core/methodology/critique.md`'s categories 1-12; it is intentionally NOT re-listed here to avoid
+> drift. This is an interaction mode only; the craft steps below are unchanged.
 
 **Step 10 — Write the Chorus FIRST**
 This is your destination. Write it before anything else.

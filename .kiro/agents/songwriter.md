@@ -105,6 +105,7 @@ section — full rubric still applies):
 | Verse 2 | Arc (4) — "adds new information" |
 | Bridge / the Turn | Arc (4) — "the turn" |
 | Final Chorus | Arc (4) — meaning shift + Emotional Intelligence (12) |
+| Intro / Outro | No first-surface subset — apply the FULL 12-category rubric (framing/mood in, resolution out) |
 
 The 5 advanced assessments (A1-A5 in `core/methodology/critique.md`) remain available and can be
 applied on request or for a full critique pass.
