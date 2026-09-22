@@ -73,6 +73,7 @@ songwriting-kb/
 │   └── sops/                  9 SOPs — step-by-step procedures (point to core/)
 ├── tools/
 │   └── validate-song.py       Deterministic song validator (char counts, tags, format)
+├── plugins/                   Suno Studio audio-effect plugins (post-render) + README/AUTHORING
 ├── experiments/
 │   └── suno/                  Suno experiment logs (version-dated prompt tests)
 ├── docs/                      Architecture plans, implementation docs
@@ -245,6 +246,12 @@ Full reference: `references/SUNO_STYLE_GENRE_REFERENCE.md` (600+ lines covering 
 | **C** — Theatrical/Concept | Multi-layer concept albums (named layers) |
 | **D** — Character Performance | Fantasy characters, accents |
 | **E** — Solo Anthem/Intimate | Accessible solo tracks |
+
+### Suno Studio Plugins
+
+The `plugins/` folder holds **post-render audio-effect plugins for Suno Studio**: DSP processors applied to already-rendered audio inside Suno's in-app mixing environment. These are a separate concern from the prompt/lyric pipeline; they are NOT lyric tags and do NOT go in the Style or Lyrics fields. Use them in Suno Studio after a track has rendered, the way you would use effect plugins in a DAW.
+
+Six Tier-1 plugins ship today: Intimate Proximity, De-Esser, Vintage / Lo-Fi Voicer, Digital Degrade / Glitch, Telephone / Radio Band, and Vocal Drive / Edge. They are currently UNVERIFIED (not yet executed in Suno Studio). See [plugins/README.md](plugins/README.md) for details and [plugins/AUTHORING.md](plugins/AUTHORING.md) for the plugin schema.
 
 ---
 
