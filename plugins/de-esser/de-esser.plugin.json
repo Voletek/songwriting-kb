@@ -1,0 +1,75 @@
+{
+  "id": "de-esser",
+  "kind": "effect",
+  "displayName": "De-Esser",
+  "description": "Suno Studio effect. Tames harsh sibilance ('s', 'sh', 't') by isolating the high band, following its envelope, and ducking it when it exceeds a threshold. Apply to rendered vocal audio inside Suno Studio; this is not a lyric tag.",
+  "ports": {
+    "audioIn": { "kind": "audio" },
+    "audioOut": { "kind": "audio" },
+    "extraInputs": [],
+    "extraOutputs": []
+  },
+  "parameters": [
+    { "name": "input gain", "label": "Input", "range": { "min": -24, "max": 24, "step": 0.1 }, "scale": "linear", "default": 0, "unit": "db" },
+    { "name": "frequency", "label": "Freq", "range": { "min": 4000, "max": 12000, "step": 10 }, "scale": "log", "default": 7000, "unit": "hz" },
+    { "name": "threshold", "label": "Thresh", "range": { "min": -60, "max": 0, "step": 0.1 }, "scale": "linear", "default": -30, "unit": "db" },
+    { "name": "reduction", "label": "Reduction", "range": { "min": 0, "max": 100, "step": 1 }, "scale": "linear", "default": 70, "unit": "percent" },
+    { "name": "attack", "label": "Attack", "range": { "min": 0.1, "max": 20, "step": 0.1 }, "scale": "log", "default": 1, "unit": "ms" },
+    { "name": "release", "label": "Release", "range": { "min": 5, "max": 200, "step": 1 }, "scale": "log", "default": 60, "unit": "ms" },
+    { "name": "output gain", "label": "Output", "range": { "min": -24, "max": 24, "step": 0.1 }, "scale": "linear", "default": 0, "unit": "db" },
+    { "name": "bypass", "label": "Bypass", "enumOptions": [ { "value": "off", "label": "Off" }, { "value": "on", "label": "On" } ], "default": "off" }
+  ],
+  "source": {
+    "lang": "js",
+    "metadata": {
+      "displayName": "De-Esser",
+      "kind": "effect",
+      "description": "Suno Studio effect. Tames harsh sibilance by isolating the high band, following its envelope, and ducking it when it exceeds a threshold.",
+      "controls": {
+        "input gain": { "widget": { "type": "knob" }, "description": "Input trim before processing.", "range": { "min": -24, "max": 24, "step": 0.1 }, "scale": "linear", "unit": "db", "label": "Input", "default": 0 },
+        "frequency": { "widget": { "type": "knob" }, "description": "Corner frequency of the sibilant band (highpass split).", "range": { "min": 4000, "max": 12000, "step": 10 }, "scale": "log", "unit": "hz", "label": "Freq", "default": 7000 },
+        "threshold": { "widget": { "type": "knob" }, "description": "Level above which the sibilant band is ducked.", "range": { "min": -60, "max": 0, "step": 0.1 }, "scale": "linear", "unit": "db", "label": "Thresh", "default": -30 },
+        "reduction": { "widget": { "type": "knob" }, "description": "How much of the over-threshold sibilant band is removed.", "range": { "min": 0, "max": 100, "step": 1 }, "scale": "linear", "unit": "percent", "label": "Reduction", "default": 70 },
+        "attack": { "widget": { "type": "knob" }, "description": "Envelope attack time in milliseconds.", "range": { "min": 0.1, "max": 20, "step": 0.1 }, "scale": "log", "unit": "ms", "label": "Attack", "default": 1 },
+        "release": { "widget": { "type": "knob" }, "description": "Envelope release time in milliseconds.", "range": { "min": 5, "max": 200, "step": 1 }, "scale": "log", "unit": "ms", "label": "Release", "default": 60 },
+        "output gain": { "widget": { "type": "knob" }, "description": "Output trim after processing.", "range": { "min": -24, "max": 24, "step": 0.1 }, "scale": "linear", "unit": "db", "label": "Output", "default": 0 },
+        "bypass": { "widget": { "type": "toggle" }, "description": "Pass the dry signal through unprocessed.", "enumOptions": [ { "value": "off", "label": "Off" }, { "value": "on", "label": "On" } ], "label": "Bypass", "default": "off" }
+      },
+      "ui": {
+        "compact": {
+          "unit": "gr",
+          "cols": 12,
+          "rows": 4,
+          "boxes": [
+            { "type": "knob", "paramName": "input gain", "x": 0, "y": 0, "w": 3, "h": 2 },
+            { "type": "knob", "paramName": "frequency", "x": 3, "y": 0, "w": 3, "h": 2 },
+            { "type": "knob", "paramName": "threshold", "x": 6, "y": 0, "w": 3, "h": 2 },
+            { "type": "knob", "paramName": "reduction", "x": 9, "y": 0, "w": 3, "h": 2 },
+            { "type": "knob", "paramName": "attack", "x": 0, "y": 2, "w": 3, "h": 2 },
+            { "type": "knob", "paramName": "release", "x": 3, "y": 2, "w": 3, "h": 2 },
+            { "type": "knob", "paramName": "output gain", "x": 6, "y": 2, "w": 3, "h": 2 },
+            { "type": "toggle", "paramName": "bypass", "x": 9, "y": 2, "w": 3, "h": 2 }
+          ]
+        }
+      }
+    },
+    "code": "// De-Esser — Suno Studio audio effect (applied to rendered audio, not a lyric tag).\n// Signal chain, in order:\n//   1. Input trim: convert 'input gain' dB to linear and scale each channel.\n//   2. Band split: g.biquad highpass at 'frequency' isolates the sibilant band; the low band is (trimmed - sibilant).\n//   3. Envelope: g.asymmetricOnePole tracks g.abs(sibilant). Attack/release coefs are derived from the\n//      'attack'/'release' ms params and config.sampleRate via coef = 1 - 1/(ms/1000 * sampleRate),\n//      approximated with confirmed primitives (no exp available, so a one-pole samples-based coef).\n//   4. Gain compute: threshold dB -> linear via g.dbToLin. g.compareLt(threshold, env) yields 1 when the\n//      envelope is over threshold, else 0. That mask scales the duck amount ('reduction' percent).\n//   5. Duck: subtract (mask * reduction * sibilant) from the sibilant band, then recombine with the low band.\n//   6. Output gain, then g.tanh safety before g.output.\nfunction build(g, config) {\n  var inL = g.input('audioInL');\n  var inR = g.input('audioInR');\n\n  var inGainDb = g.input('input gain');\n  var freq = g.input('frequency');\n  var threshDb = g.input('threshold');\n  var reductionPct = g.input('reduction');\n  var attackMs = g.input('attack');\n  var releaseMs = g.input('release');\n  var outGainDb = g.input('output gain');\n  var bypass = g.input('bypass');\n\n  var inGain = g.dbToLin(inGainDb);\n  var outGain = g.dbToLin(outGainDb);\n  var threshLin = g.dbToLin(threshDb);\n  var reduction = g.clamp(g.div(reductionPct, g.constant(100)), g.zero(), g.constant(1));\n  var sr = g.constant(config.sampleRate);\n\n  // one-pole coef approximation: coef = clamp(1 - 1/(seconds*sr), 0, 0.9999)\n  var attackSec = g.div(attackMs, g.constant(1000));\n  var releaseSec = g.div(releaseMs, g.constant(1000));\n  var attackSamples = g.max(g.mul(attackSec, sr), g.constant(1));\n  var releaseSamples = g.max(g.mul(releaseSec, sr), g.constant(1));\n  var attackCoef = g.clamp(g.sub(g.constant(1), g.div(g.constant(1), attackSamples)), g.zero(), g.constant(0.9999));\n  var releaseCoef = g.clamp(g.sub(g.constant(1), g.div(g.constant(1), releaseSamples)), g.zero(), g.constant(0.9999));\n\n  function chain(x) {\n    var trimmed = g.mul(x, inGain);\n    var sib = g.biquad({ input: trimmed, cutoff: freq, resonance: g.constant(0.707), mode: 'highpass' });\n    var low = g.sub(trimmed, sib);\n    var env = g.asymmetricOnePole({ target: g.abs(sib), attackCoef: attackCoef, releaseCoef: releaseCoef });\n    var over = g.compareLt(threshLin, env);\n    var duckAmt = g.mul(over, reduction);\n    var ducked = g.sub(sib, g.mul(sib, duckAmt));\n    var recombined = g.add(low, ducked);\n    var out = g.mul(recombined, outGain);\n    var active = g.lerp(bypass, out, trimmed);\n    return g.tanh(active);\n  }\n\n  g.output('audioOutL', chain(inL));\n  g.output('audioOutR', chain(inR));\n}\n"
+  },
+  "ui": {
+    "compact": {
+      "unit": "gr",
+      "cols": 12,
+      "rows": 4,
+      "boxes": [
+        { "type": "knob", "paramName": "input gain", "x": 0, "y": 0, "w": 3, "h": 2 },
+        { "type": "knob", "paramName": "frequency", "x": 3, "y": 0, "w": 3, "h": 2 },
+        { "type": "knob", "paramName": "threshold", "x": 6, "y": 0, "w": 3, "h": 2 },
+        { "type": "knob", "paramName": "reduction", "x": 9, "y": 0, "w": 3, "h": 2 },
+        { "type": "knob", "paramName": "attack", "x": 0, "y": 2, "w": 3, "h": 2 },
+        { "type": "knob", "paramName": "release", "x": 3, "y": 2, "w": 3, "h": 2 },
+        { "type": "knob", "paramName": "output gain", "x": 6, "y": 2, "w": 3, "h": 2 },
+        { "type": "toggle", "paramName": "bypass", "x": 9, "y": 2, "w": 3, "h": 2 }
+      ]
+    }
+  }
+}
