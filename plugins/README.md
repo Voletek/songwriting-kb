@@ -41,7 +41,7 @@ plugins/
   intimate-proximity/     intimate-proximity.plugin.json     Close-mic, in-your-ear vocal voicing
   de-esser/               de-esser.plugin.json               Tames harsh sibilance
   vintage-lofi-voicer/    vintage-lofi-voicer.plugin.json    Tilt EQ + tape saturation + band-limit
-  digital-degrade/        digital-degrade.plugin.json        Bitcrush-style corruption and glitch
+  digital-degrade/        digital-degrade.plugin.json        8-level amplitude quantizer + glitch
   telephone-radio-band/   telephone-radio-band.plugin.json   Narrow bandpass telephone/radio tone
   vocal-drive-edge/       vocal-drive-edge.plugin.json       Pre-emphasis + soft-to-hard saturation
 ```
@@ -72,7 +72,7 @@ Each plugin exists to serve specific knowledge-base use-cases and song examples.
 | Intimate Proximity | Close-mic, in-your-ear vocal voicing: air lift, low-mid warmth, presence bump | Intimate close-mic across the vulnerable lane and Three in the Morning |
 | De-Esser | Tames harsh sibilance by ducking the sibilant band | Breathy close-mic vocals prone to sibilance (same vulnerable / intimate lane) |
 | Vintage / Lo-Fi Voicer | Tilt EQ, tape-style saturation, and band-limiting for analog warmth | Lo-fi / vintage: Three in the Morning + lo-fi indie lane (analog warmth / 70s / 90s-Bristol) |
-| Digital Degrade / Glitch | Bitcrush-style amplitude-staircase corruption, drive, and filtered degradation | Fractured Shadows Act 1 (digital degradation / corrupted signal / progressive glitch, MODE C) |
+| Digital Degrade / Glitch | Fixed-depth 8-level amplitude quantizer, drive, and filtered degradation | Fractured Shadows Act 1 (digital degradation / corrupted signal / progressive glitch, MODE C) |
 | Telephone / Radio Band | Narrow bandpass plus drive for a telephone / radio broadcast tone | Shadow Weaver / AI-voice / robotic layers (telephone-filtered, cold-clinical broadcast) |
 | Vocal Drive / Edge | Pre-emphasis into soft-to-hard saturation for rasp and grit | Rikan personas / Maren Storm (rasp, vocal-fry, strained-breaking character) |
 
@@ -105,5 +105,6 @@ The embedded DSP uses only a confirmed set of `g.*` primitives (input, output, z
 add, sub, div, abs, max, min, clamp, lerp, compareLt, dbToLin, tanh, biquad, asymmetricOnePole).
 Effects that would need a primitive outside that set are approximated and the approximation is
 documented in the header comment of that plugin's `source.code`. For example, `digital-degrade` uses
-an amplitude-staircase approximation because a true bit-reduction rounding primitive is not confirmed.
+a fixed 8-level amplitude quantizer (a sum of `g.compareLt` step comparators) because a variable
+bit-depth crush would need a runtime rounding primitive that is not confirmed.
 The full list, with the unconfirmed / forbidden primitives, is documented in [AUTHORING.md](AUTHORING.md).

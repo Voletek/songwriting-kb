@@ -123,7 +123,8 @@ function build(g, config) {
 - Use `config.sampleRate` where a filter or envelope needs the sample rate.
 - START the code string with a header comment (`//` lines) explaining the full signal chain in order.
 - Implement `bypass` by selecting between the dry input and the processed signal with `g.lerp`
-  (or `g.compareLt`) on the bypass control.
+  (or `g.compareLt`) on the bypass control. See the Assumptions section for how the `bypass` enum is
+  assumed to resolve to a `0` / `1` mask and how `g.lerp(mask, a, b)` is assumed to order its args.
 - Convert dB gains with `g.dbToLin`.
 - END every plugin with a `g.tanh` output-safety stage (soft-clip) before `g.output`.
 
@@ -159,6 +160,62 @@ g.biquad({ input, cutoff, resonance, mode })   // mode: 'highpass' | 'lowpass' |
 g.asymmetricOnePole({ target, attackCoef, releaseCoef })
 ```
 
+`config.sampleRate` is also available inside `build(g, config)` for filter and envelope coefficient
+math. It is a plain number, not a `g.*` node.
+
+## Assumptions not yet confirmed from the single example
+
+The one example did not exercise every case the built plugins rely on. The items below are
+ASSUMPTIONS: they are consistent with how the confirmed primitives appear to behave, but they are
+NOT confirmed from the example and MUST be verified in Suno Studio. They are called out here so the
+code and this reference agree rather than depending silently on undocumented behavior.
+
+- **`g.biquad` shelf / peaking gain (`gainDb`).** The confirmed signature is
+  `g.biquad({ input, cutoff, resonance, mode })` with no gain field, yet a `peaking`, `lowshelf`, or
+  `highshelf` filter is meaningless without a gain amount. The `intimate-proximity`,
+  `vintage-lofi-voicer`, and `vocal-drive-edge` plugins therefore pass an extra `gainDb` field
+  (`g.biquad({ input, cutoff, resonance, mode: 'highshelf', gainDb: airDb })`) for those three modes.
+  This `gainDb` field is an ASSUMPTION, not confirmed from the example. If Suno Studio names the gain
+  field differently (or supplies gain another way), the shelf / peaking stages will need to change.
+  The `highpass` / `lowpass` modes do not use `gainDb`.
+- **`g.lerp(mask, a, b)` argument order.** We assume `g.lerp` returns `a` when `mask` is `0` and `b`
+  when `mask` is `1` (a linear interpolation `a + mask * (b - a)`). Every plugin relies on this for
+  its dry/wet mix (`g.lerp(mix, dry, processed)`, so `mix = 0` is fully dry) and for bypass. Confirm
+  this order in Suno Studio; if `g.lerp` is the reverse, swap the `a` / `b` arguments everywhere.
+- **`bypass` enum resolves to a numeric mask.** The `bypass` toggle has string `enumOptions`
+  (`"off"` / `"on"`), and each plugin feeds the `bypass` value straight into `g.lerp` as the mask:
+  `g.lerp(bypass, out, trimmed)`. This ASSUMES the toggle resolves to a number where `"off"` -> `0`
+  and `"on"` -> `1`. Combined with the `g.lerp` order above, `bypass` off (`0`) selects the PROCESSED
+  signal (`out`) and `bypass` on (`1`) selects the DRY / trimmed signal, which is the intended
+  behavior. There is no string-comparison primitive in the confirmed set, so the enum cannot be
+  mapped to `0` / `1` in code; if Suno Studio does not resolve `"off"` to `0`, either the enum
+  `value`s must become numeric (`0` / `1`) or the `g.lerp` arguments must be swapped. Verify in Suno
+  Studio.
+- **Mono `ports` expand to `...L` / `...R` rails.** The `ports` block declares a single
+  `audioIn` / `audioOut` of `kind: "audio"`, but the code reads `g.input('audioInL')` /
+  `g.input('audioInR')` and writes `g.output('audioOutL', ...)` / `g.output('audioOutR', ...)`. This
+  ASSUMES Suno Studio expands one stereo audio port into `L` / `R` channel rails addressed by the
+  `L` / `R` suffix. If instead the ports block must enumerate stereo channels explicitly, all six
+  plugins need the same ports change. It is consistent across all six, so it is right everywhere or
+  wrong everywhere.
+
+## Known DSP limitations of the built plugins
+
+These are honest limitations of the current approximations, not bugs to hide. They are acceptable
+given the UNVERIFIED status, but worth a listen-test and improvement once the primitive set is
+confirmed.
+
+- **`digital-degrade` is a fixed-depth quantizer, not a variable bit crusher.** Because the DSP
+  graph is static and there is no runtime rounding / floor / mod primitive, the `crush` knob cannot
+  change the number of quantization steps. The staircase is a genuine 8-level amplitude quantizer
+  (a sum of 7 `g.compareLt` comparators), and `crush` blends between the clean and quantized signal
+  (lower `crush` = more quantized). It really quantizes; it just does so at a fixed depth.
+- **`de-esser` uses a hard gate, not a soft-knee compressor.** The sibilant duck is driven by a
+  binary `g.compareLt(threshLin, env)` mask (fully ducked or not at all) rather than a smooth
+  gain-reduction curve, because the confirmed set has no `exp` / log to build a proper gain computer.
+  This can produce zipper artifacts / audible switching on the sibilant band. Listen-test before
+  relying on it; a smoother reduction curve would need primitives not yet confirmed.
+
 ### This list is incomplete: derived from ONE example
 
 This confirmed list was derived from a **single** example plugin, so it is almost certainly
@@ -184,7 +241,8 @@ with the confirmed set (and document the approximation), or list the idea under 
 - Start `source.code` with a signal-chain header comment describing the chain in order.
 - Use only the confirmed `g.*` primitives. If an effect would need a primitive outside that set,
   approximate it with the confirmed primitives and document the approximation in the code header
-  comment (as `digital-degrade` does for its amplitude-staircase bitcrush).
+  comment (as `digital-degrade` does for its fixed 8-level amplitude quantizer, since a variable
+  bit-depth crush would need a runtime rounding primitive that is not confirmed).
 - If an idea genuinely needs an unconfirmed primitive and cannot be reasonably approximated, list it
   under Tier 2 in [README.md](README.md) instead of building it.
 - Validate JSON before committing:
