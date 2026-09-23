@@ -1,0 +1,79 @@
+{
+  "id": "backing-vocal-tucker",
+  "kind": "effect",
+  "displayName": "Backing Vocal Tucker",
+  "description": "Suno Studio effect. Band-limits backing vocals, cuts presence and tilts the tone, then applies a static gain reduction so they sit behind the lead. Apply to the rendered BACKING VOCALS stem inside Suno Studio; this is not a lyric tag.",
+  "ports": {
+    "audioIn": { "kind": "audio" },
+    "audioOut": { "kind": "audio" },
+    "extraInputs": [],
+    "extraOutputs": []
+  },
+  "parameters": [
+    { "name": "input gain", "label": "Input", "range": { "min": -24, "max": 24, "step": 0.1 }, "scale": "linear", "default": 0, "unit": "db" },
+    { "name": "tuck", "label": "Tuck", "range": { "min": 0, "max": 18, "step": 0.1 }, "scale": "linear", "default": 4, "unit": "db" },
+    { "name": "hp", "label": "HP", "range": { "min": 60, "max": 500, "step": 1 }, "scale": "log", "default": 150, "unit": "hz" },
+    { "name": "lp", "label": "LP", "range": { "min": 3000, "max": 16000, "step": 10 }, "scale": "log", "default": 9000, "unit": "hz" },
+    { "name": "presence cut", "label": "Pres Cut", "range": { "min": -12, "max": 0, "step": 0.1 }, "scale": "linear", "default": -3, "unit": "db" },
+    { "name": "tilt", "label": "Tilt", "range": { "min": -12, "max": 12, "step": 0.1 }, "scale": "linear", "default": -2, "unit": "db" },
+    { "name": "dry/wet mix", "label": "Mix", "range": { "min": 0, "max": 100, "step": 1 }, "scale": "linear", "default": 100, "unit": "percent" },
+    { "name": "output gain", "label": "Output", "range": { "min": -24, "max": 24, "step": 0.1 }, "scale": "linear", "default": 0, "unit": "db" },
+    { "name": "bypass", "label": "Bypass", "enumOptions": [ { "value": "off", "label": "Off" }, { "value": "on", "label": "On" } ], "default": "off" }
+  ],
+  "source": {
+    "lang": "js",
+    "metadata": {
+      "displayName": "Backing Vocal Tucker",
+      "kind": "effect",
+      "description": "Suno Studio effect. Band-limits backing vocals, cuts presence and tilts the tone, then applies a static gain reduction so they sit behind the lead.",
+      "controls": {
+        "input gain": { "widget": { "type": "knob" }, "description": "Input trim before processing.", "range": { "min": -24, "max": 24, "step": 0.1 }, "scale": "linear", "unit": "db", "label": "Input", "default": 0 },
+        "tuck": { "widget": { "type": "knob" }, "description": "Static gain reduction in dB so the backing vocals sit behind the lead (not a sidechain duck).", "range": { "min": 0, "max": 18, "step": 0.1 }, "scale": "linear", "unit": "db", "label": "Tuck", "default": 4 },
+        "hp": { "widget": { "type": "knob" }, "description": "Highpass corner that pulls the backing vocals out of the lead's low core.", "range": { "min": 60, "max": 500, "step": 1 }, "scale": "log", "unit": "hz", "label": "HP", "default": 150 },
+        "lp": { "widget": { "type": "knob" }, "description": "Lowpass corner that rolls off the top to keep the backing vocals out of the lead's air.", "range": { "min": 3000, "max": 16000, "step": 10 }, "scale": "log", "unit": "hz", "label": "LP", "default": 9000 },
+        "presence cut": { "widget": { "type": "knob" }, "description": "Peaking cut near 3kHz to reduce presence that would compete with the lead.", "range": { "min": -12, "max": 0, "step": 0.1 }, "scale": "linear", "unit": "db", "label": "Pres Cut", "default": -3 },
+        "tilt": { "widget": { "type": "knob" }, "description": "Single tilt control: boosts lows and cuts highs (or the reverse when negative) near 250Hz / 5kHz.", "range": { "min": -12, "max": 12, "step": 0.1 }, "scale": "linear", "unit": "db", "label": "Tilt", "default": -2 },
+        "dry/wet mix": { "widget": { "type": "knob" }, "description": "Blend between dry input and processed signal.", "range": { "min": 0, "max": 100, "step": 1 }, "scale": "linear", "unit": "percent", "label": "Mix", "default": 100 },
+        "output gain": { "widget": { "type": "knob" }, "description": "Output trim after processing.", "range": { "min": -24, "max": 24, "step": 0.1 }, "scale": "linear", "unit": "db", "label": "Output", "default": 0 },
+        "bypass": { "widget": { "type": "toggle" }, "description": "Pass the dry signal through unprocessed.", "enumOptions": [ { "value": "off", "label": "Off" }, { "value": "on", "label": "On" } ], "label": "Bypass", "default": "off" }
+      },
+      "ui": {
+        "compact": {
+          "unit": "gr",
+          "cols": 12,
+          "rows": 4,
+          "boxes": [
+            { "type": "knob", "paramName": "input gain", "x": 0, "y": 0, "w": 2, "h": 2 },
+            { "type": "knob", "paramName": "tuck", "x": 2, "y": 0, "w": 2, "h": 2 },
+            { "type": "knob", "paramName": "hp", "x": 4, "y": 0, "w": 2, "h": 2 },
+            { "type": "knob", "paramName": "lp", "x": 6, "y": 0, "w": 2, "h": 2 },
+            { "type": "knob", "paramName": "presence cut", "x": 8, "y": 0, "w": 2, "h": 2 },
+            { "type": "knob", "paramName": "tilt", "x": 0, "y": 2, "w": 2, "h": 2 },
+            { "type": "knob", "paramName": "dry/wet mix", "x": 2, "y": 2, "w": 2, "h": 2 },
+            { "type": "knob", "paramName": "output gain", "x": 4, "y": 2, "w": 2, "h": 2 },
+            { "type": "toggle", "paramName": "bypass", "x": 6, "y": 2, "w": 2, "h": 2 }
+          ]
+        }
+      }
+    },
+    "code": "// Backing Vocal Tucker: Suno Studio audio effect for the BACKING VOCALS stem (applied to rendered audio, not a lyric tag).\n// TUCK NOTE: the 'tuck' stage is a STATIC gain reduction (a fixed g.dbToLin scale), NOT a lead-driven sidechain\n// duck. No sidechain / lead input is available to these effects, so the tuck simply lowers the backing vocals by\n// a fixed dB amount so they sit behind the lead; it does not respond dynamically to the lead's level.\n// Signal chain, in order:\n//   1. Input trim: convert 'input gain' dB to linear and scale each channel.\n//   2. Band-limit: g.biquad highpass at 'hp' then g.biquad lowpass at 'lp' to pull the backing vocals out of\n//      the lead's core band.\n//   3. Presence cut: g.biquad peaking near 3kHz driven by 'presence cut' (negative gainDb) to reduce competition.\n//   4. Tilt EQ: lowshelf +tilt near 250Hz and highshelf -tilt near 5kHz (opposite via g.mul by -1), one 'tilt' param.\n//   5. Tuck: static attenuation. tuckLin = g.dbToLin(-tuck) so a positive 'tuck' dB lowers level; g.mul the signal.\n//   6. Dry/wet: g.lerp between trimmed dry and processed by 'dry/wet mix'.\n//   7. Output gain, bypass select via g.lerp, then g.tanh safety before g.output.\n// Bypass: g.lerp(bypass, out, trimmed) ASSUMES the 'bypass' enum resolves to 0 ('off') / 1 ('on'), so\n// 'off' passes the PROCESSED signal and 'on' passes the DRY signal (see AUTHORING.md).\n// ASSUMPTION: the shelf/peaking g.biquad stages pass a 'gainDb' field not confirmed from the one example (see AUTHORING.md).\nfunction build(g, config) {\n  var inL = g.input('audioInL');\n  var inR = g.input('audioInR');\n\n  var inGainDb = g.input('input gain');\n  var tuckDb = g.input('tuck');\n  var hp = g.input('hp');\n  var lp = g.input('lp');\n  var presCutDb = g.input('presence cut');\n  var tiltDb = g.input('tilt');\n  var mixPct = g.input('dry/wet mix');\n  var outGainDb = g.input('output gain');\n  var bypass = g.input('bypass');\n\n  var inGain = g.dbToLin(inGainDb);\n  var outGain = g.dbToLin(outGainDb);\n  var tuckLin = g.dbToLin(g.mul(tuckDb, g.constant(-1)));\n  var mix = g.clamp(g.div(mixPct, g.constant(100)), g.zero(), g.constant(1));\n  var negTilt = g.mul(tiltDb, g.constant(-1));\n\n  function chain(x) {\n    var trimmed = g.mul(x, inGain);\n    var hpf = g.biquad({ input: trimmed, cutoff: hp, resonance: g.constant(0.707), mode: 'highpass' });\n    var lpf = g.biquad({ input: hpf, cutoff: lp, resonance: g.constant(0.707), mode: 'lowpass' });\n    var presCut = g.biquad({ input: lpf, cutoff: g.constant(3000), resonance: g.constant(0.9), mode: 'peaking', gainDb: presCutDb });\n    var low = g.biquad({ input: presCut, cutoff: g.constant(250), resonance: g.constant(0.707), mode: 'lowshelf', gainDb: tiltDb });\n    var tilted = g.biquad({ input: low, cutoff: g.constant(5000), resonance: g.constant(0.707), mode: 'highshelf', gainDb: negTilt });\n    var tucked = g.mul(tilted, tuckLin);\n    var wet = g.lerp(mix, trimmed, tucked);\n    var out = g.mul(wet, outGain);\n    var active = g.lerp(bypass, out, trimmed);\n    return g.tanh(active);\n  }\n\n  g.output('audioOutL', chain(inL));\n  g.output('audioOutR', chain(inR));\n}\n"
+  },
+  "ui": {
+    "compact": {
+      "unit": "gr",
+      "cols": 12,
+      "rows": 4,
+      "boxes": [
+        { "type": "knob", "paramName": "input gain", "x": 0, "y": 0, "w": 2, "h": 2 },
+        { "type": "knob", "paramName": "tuck", "x": 2, "y": 0, "w": 2, "h": 2 },
+        { "type": "knob", "paramName": "hp", "x": 4, "y": 0, "w": 2, "h": 2 },
+        { "type": "knob", "paramName": "lp", "x": 6, "y": 0, "w": 2, "h": 2 },
+        { "type": "knob", "paramName": "presence cut", "x": 8, "y": 0, "w": 2, "h": 2 },
+        { "type": "knob", "paramName": "tilt", "x": 0, "y": 2, "w": 2, "h": 2 },
+        { "type": "knob", "paramName": "dry/wet mix", "x": 2, "y": 2, "w": 2, "h": 2 },
+        { "type": "knob", "paramName": "output gain", "x": 4, "y": 2, "w": 2, "h": 2 },
+        { "type": "toggle", "paramName": "bypass", "x": 6, "y": 2, "w": 2, "h": 2 }
+      ]
+    }
+  }
+}

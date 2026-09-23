@@ -11,6 +11,12 @@ of this repo; these plugins are a separate, downstream concern applied to the au
 Do not paste plugin JSON into a prompt. Load these plugins inside Suno Studio and apply them to a
 rendered track.
 
+**Suno Studio splits a rendered song into stems** (vocals, drums, bass, guitar, keys, strings,
+synth, brass, percussion, backing vocals, FX, other). Each plugin here is meant to be dropped onto a
+**specific stem**, not the full mix: the vocal-oriented plugins target the vocals stem, and the
+stem-targeted instrumental plugins each name their intended stem (bass, keys, guitar, strings,
+synth, backing vocals, FX / other). Apply each effect to the stem it is built for.
+
 ## Status: UNVERIFIED, test in Suno Studio before relying on these
 
 The plugin format and the DSP primitive set were reverse-engineered from a single working example.
@@ -44,6 +50,13 @@ plugins/
   digital-degrade/        digital-degrade.plugin.json        8-level amplitude quantizer + glitch
   telephone-radio-band/   telephone-radio-band.plugin.json   Narrow bandpass telephone/radio tone
   vocal-drive-edge/       vocal-drive-edge.plugin.json       Pre-emphasis + soft-to-hard saturation
+  sub-tightener/          sub-tightener.plugin.json          Bass stem: sub-rumble highpass + envelope-tamed low band + warmth
+  warm-keys-voicer/       warm-keys-voicer.plugin.json       Keys stem: attack soften + warm tilt + saturation + air
+  guitar-grit-warmth/     guitar-grit-warmth.plugin.json     Guitar stem: warmth tilt + tanh grit + presence + tone lowpass
+  string-air-size/        string-air-size.plugin.json        Strings stem: air lift + body + size/tilt + saturation
+  synth-cold-glitch/      synth-cold-glitch.plugin.json      Synth stem: cold tilt + bandpass + reused 8-level quantizer + drive
+  backing-vocal-tucker/   backing-vocal-tucker.plugin.json   Backing vocals stem: band-limit + presence cut + tilt + static tuck
+  texture-filter-degrade/ texture-filter-degrade.plugin.json FX/other stem: band-limit + lo-fi tilt + reused 8-level quantizer
 ```
 
 ## Plugin file shape
@@ -75,10 +88,19 @@ Each plugin exists to serve specific knowledge-base use-cases and song examples.
 | Digital Degrade / Glitch | Fixed-depth 8-level amplitude quantizer, drive, and filtered degradation | Fractured Shadows Act 1 (digital degradation / corrupted signal / progressive glitch, MODE C) |
 | Telephone / Radio Band | Narrow bandpass plus drive for a telephone / radio broadcast tone | Shadow Weaver / AI-voice / robotic layers (telephone-filtered, cold-clinical broadcast) |
 | Vocal Drive / Edge | Pre-emphasis into soft-to-hard saturation for rasp and grit | Rikan personas / Maren Storm (rasp, vocal-fry, strained-breaking character) |
+| Sub Tightener | Sub-rumble highpass, envelope-tamed low-band boom, low-shelf warmth, tanh drive | Apply to the bass stem in Suno Studio: deep sub-bass pulse / distorted bass |
+| Warm Keys Voicer | Attack soften, warm tilt EQ, saturation, air lift | Apply to the keys stem in Suno Studio: felt piano / distant Rhodes / intimate ballads |
+| Guitar Grit / Warmth | Warmth tilt, tanh grit, presence bump, tone lowpass | Apply to the guitar stem in Suno Studio: acoustic warmth through distorted / overdriven guitar |
+| String Air / Size | Air lift, body control, size/tilt shelving, gentle saturation | Apply to the strings stem in Suno Studio: cinematic / chamber / distant strings |
+| Synth Cold / Glitch | Cold tilt, bandpass voicing, reused 8-level quantizer, tanh drive | Apply to the synth stem in Suno Studio: Fractured Shadows cold synths / MODE C |
+| Backing Vocal Tucker | Band-limit, presence cut, tilt, static tuck attenuation | Apply to the backing vocals stem in Suno Studio: the () backup-vocal technique |
+| Texture Filter / Degrade | Band-limit highpass/lowpass, lo-fi tilt, reused 8-level quantizer | Apply to the FX stem in Suno Studio: room tone / FX-texture beds (FX / other) |
 
 ## Tier 1 (built) vs Tier 2 (pending API confirmation)
 
-**Tier 1 (built).** The six plugins in this folder, each using only confirmed `g.*` primitives:
+**Tier 1 (built).** The 13 plugins in this folder, each using only confirmed `g.*` primitives. The
+first six target the vocals stem; the last seven are stem-targeted for the instrumental / non-lead
+stems:
 
 1. Intimate Proximity (`intimate-proximity`)
 2. De-Esser (`de-esser`)
@@ -86,6 +108,13 @@ Each plugin exists to serve specific knowledge-base use-cases and song examples.
 4. Digital Degrade / Glitch (`digital-degrade`)
 5. Telephone / Radio Band (`telephone-radio-band`)
 6. Vocal Drive / Edge (`vocal-drive-edge`)
+7. Sub Tightener (`sub-tightener`), bass stem
+8. Warm Keys Voicer (`warm-keys-voicer`), keys stem
+9. Guitar Grit / Warmth (`guitar-grit-warmth`), guitar stem
+10. String Air / Size (`string-air-size`), strings stem
+11. Synth Cold / Glitch (`synth-cold-glitch`), synth stem
+12. Backing Vocal Tucker (`backing-vocal-tucker`), backing vocals stem
+13. Texture Filter / Degrade (`texture-filter-degrade`), FX / other stem
 
 **Tier 2 (pending API confirmation).** Ideas that need primitives we have not confirmed exist in
 Suno Studio, so they are NOT built yet:

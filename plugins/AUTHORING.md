@@ -209,7 +209,10 @@ confirmed.
   graph is static and there is no runtime rounding / floor / mod primitive, the `crush` knob cannot
   change the number of quantization steps. The staircase is a genuine 8-level amplitude quantizer
   (a sum of 7 `g.compareLt` comparators), and `crush` blends between the clean and quantized signal
-  (lower `crush` = more quantized). It really quantizes; it just does so at a fixed depth.
+  (lower `crush` = more quantized). It really quantizes; it just does so at a fixed depth. This same
+  fixed-depth quantizer staircase is now reused verbatim by the `synth-cold-glitch` and
+  `texture-filter-degrade` stem plugins (blended by their `quantize` / `degrade` knobs); it is the
+  one sanctioned degrade technique, so do not invent a new one.
 - **`de-esser` uses a hard gate, not a soft-knee compressor.** The sibilant duck is driven by a
   binary `g.compareLt(threshLin, env)` mask (fully ducked or not at all) rather than a smooth
   gain-reduction curve, because the confirmed set has no `exp` / log to build a proper gain computer.
