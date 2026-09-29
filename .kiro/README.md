@@ -30,6 +30,7 @@ core/methodology/  ← Source of truth (complete methods)
 | `hooks/` | Automated checks triggered by file events | On file create/save in matching patterns |
 | `sops/` | Step-by-step procedures (canonical source is `core/methodology/`) | When user follows a workflow |
 | `powers/` | Bundled capability packages | When activated via power system |
+| `plugins/` | Suno Studio audio-effect plugins (post-render, applied to rendered audio in Suno Studio); not part of the Kiro agent/skill pipeline | Manually in Suno Studio (not by Kiro) |
 
 ---
 

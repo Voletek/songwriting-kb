@@ -1,0 +1,24 @@
+{
+  "project_type": "Markdown songwriting knowledge base (Suno AI song production system) with one Python validator. This task adds a new, separate concern: Suno Studio audio-effect plugins as JSON files with embedded JS DSP.",
+  "language": "Markdown + Python (validator) + JSON files containing embedded JavaScript DSP (the new plugins).",
+  "build_system": "None. No package manager, no Node. Repo is docs + one Python 3 script.",
+  "test_framework": "None applicable to plugins. tools/validate-song.py validates SONG LYRIC files only and MUST NOT be run against plugins.",
+  "build_command": "N/A (no build).",
+  "test_command": "python3 -c \"import json,glob; [json.load(open(f)) for f in glob.glob('plugins/**/*.plugin.json', recursive=True)]\" to confirm every plugin file is valid JSON.",
+  "verification_instructions": "1) Validate JSON: run the test_command above; it must exit 0 with no errors. 2) Structural parity: confirm each plugin has id, kind, displayName, description, ports, parameters, source (lang/metadata/code), and top-level ui. 3) Primitive audit: grep each source.code for g.* calls and confirm ONLY confirmed primitives are used (g.input, g.output, g.zero, g.constant, g.mul, g.add, g.sub, g.div, g.abs, g.max, g.min, g.clamp, g.lerp, g.compareLt, g.dbToLin, g.tanh, g.biquad, g.asymmetricOnePole). 4) Docs framing: grep plugins/README.md, README.md, CHANGELOG.md for 'Suno Studio' and 'post-render' / 'not lyric tags' framing. DO NOT run tools/validate-song.py.",
+  "snapshot_or_generated_files": "None.",
+  "setup_instructions": "No setup. Python 3.9 is available for JSON validation. Node is NOT available (plugins cannot be executed here; treat as UNVERIFIED).",
+  "environment_constraints": "Plugins CANNOT be executed/tested in this sandbox (no Suno Studio, no Node runtime for the DSP builder). All plugins must be labeled UNVERIFIED / needs-in-Suno-testing. The plugin format and g.* primitive list are REVERSE-ENGINEERED from ONE example the user provided (a 'Transient Shaper'); that example is NOT persisted in the repo, so the spec in the feature steps is the sole source of truth. Only the confirmed g.* primitives may be used; delay/reverb/noise/LFO/oscillator/FFT primitives are UNVERIFIED and forbidden.",
+  "contribution_requirements": "Work on a new branch off main. Commit locally. Do NOT push or open a PR (orchestrator publishes). Do NOT alter songwriting methodology, agents, SOPs, or song files. Match existing CHANGELOG bullet style. Never use em dashes in written content.",
+  "key_patterns": "Repo docs use Markdown tables and code blocks. CHANGELOG.md has an [Unreleased]/Added section with dash bullets. README.md has a 'Repository Structure' code block tree. core/README.md and .kiro/README.md have directory-relationship tables.",
+  "relevant_files": [
+    "README.md (Repository Structure block + add Suno Studio Plugins subsection)",
+    "CHANGELOG.md ([Unreleased] Added entries)",
+    "core/README.md (Relationship to Other Directories table)",
+    ".kiro/README.md (Directory Overview table)",
+    "plugins/README.md (CREATE)",
+    "plugins/AUTHORING.md (CREATE)",
+    "plugins/<name>/<name>.plugin.json x6 (CREATE)"
+  ],
+  "directory_structure": "core/methodology = canonical method; .kiro = Kiro automation; tools = python validator; references = data tables; examples = sample songs/albums; songs/analysis = user workspace. NEW: plugins/ = Suno Studio audio-effect plugins (post-render), a separate concern."
+}

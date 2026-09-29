@@ -1,0 +1,20 @@
+{
+  "task_id": "task-suno-studio-instrumental-stems",
+  "task_description": "Extend the existing plugins/ folder (branch feature/suno-studio-plugins) with a full roster of 7 STEM-TARGETED Suno Studio audio-effect plugins for the INSTRUMENTAL / non-lead-vocal stems: Sub Tightener (bass), Warm Keys Voicer (keys), Guitar Grit / Warmth (guitar), String Air / Size (strings), Synth Cold / Glitch (synth, reusing the digital-degrade quantizer), Backing Vocal Tucker (backing vocals), and Texture Filter / Degrade (FX/other). Same format/constraints as the six existing vocal plugins: valid JSON with embedded JS DSP using ONLY confirmed g.* primitives, bypass + in/out gain + dry/wet + signal-chain header comment + terminal g.tanh. Update plugins/README.md (per-stem framing + use-case table + Tier 1 list), plugins/AUTHORING.md only if a new assumption arises, and CHANGELOG.md. No code build/test. Commit onto the existing branch; do not push or open a PR.",
+  "status": "completed",
+  "feature_order": ["FEAT-001", "FEAT-002"],
+  "blocked_reason": null,
+  "review": {
+    "verdict": "APPROVED",
+    "iterations": 1,
+    "artifact": ".agents/tasks/task-suno-studio-instrumental-stems/2026-09-23-134337-review.md",
+    "notes": "v1 APPROVED with 2 non-blocking listen-test findings: (1) warm-keys-voicer attack-soften is per-sample amplitude modulation not a band-limited transient shaper; (2) synth-cold-glitch quantizer runs on a possibly sub-unit-scale post-bandpass signal (same limitation digital-degrade carries). Both are inherent to the confirmed-primitive-only DSP set and consistent with the existing plugins' documented approximations; no code changes required."
+  },
+  "verification": {
+    "build": "pass",
+    "tests": "pass",
+    "test_quality": "pass",
+    "docker_build": "skipped",
+    "summary": "No build system in this repo (Markdown + JSON KB; Python 3.9 only, no Node). All 13 plugins/**/*.plugin.json parse as valid JSON. Primitive audit of the 7 new plugins: every g.* token is in the confirmed set (input,output,zero,constant,mul,add,sub,div,abs,max,min,clamp,lerp,compareLt,dbToLin,tanh,biquad,asymmetricOnePole); the only sampleRate use is config.sampleRate (sub-tightener envelope). No delay/reverb/noise/oscillator/lfo/fft primitive usage. All biquad modes are within the confirmed set (highpass/lowpass/highshelf/lowshelf/peaking). Each new plugin is structurally parallel to the six existing ones (id/kind/displayName/description/ports/parameters/source{lang,metadata{controls,ui.compact},code}/ui.compact), has a bypass toggle default off, input+output gain, dry/wet mix, a signal-chain header comment, and a terminal g.tanh. synth-cold-glitch and texture-filter-degrade reuse the digital-degrade 8-level amplitude quantizer verbatim and document it as a fixed-depth approximation citing AUTHORING.md. backing-vocal-tucker documents its static (non-sidechained) tuck. Docs: plugins/README.md has a per-stem intro note, all 7 in the Layout block, a use-case table row per plugin in the 'Apply to the <stem> stem in Suno Studio' form, and a Tier 1 list of all 13; the UNVERIFIED note and Tier 2 deferrals (reverb/delay/space/noise/SFX/LFO/oscillator/FFT) are unchanged. plugins/AUTHORING.md gained a one-line note that the quantizer is now shared; no new primitives/assumptions. CHANGELOG.md [Unreleased]/Added gained one bullet naming all 7 plugins + stems, no em dashes. Top-level README.md count updated from six to thirteen. No em dashes in any authored content. test_quality: the plugins cannot be executed (no Node/Suno Studio), so they ship UNVERIFIED with honest labeling; verification is JSON-parse + primitive audit + structural parallelism, which is the project's documented verification model for this folder. tools/validate-song.py intentionally NOT run (validates lyrics, not plugins)."
+  }
+}

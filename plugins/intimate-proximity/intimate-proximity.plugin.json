@@ -1,0 +1,71 @@
+{
+  "id": "intimate-proximity",
+  "kind": "effect",
+  "displayName": "Intimate Proximity",
+  "description": "Suno Studio effect. Close-mic 'in your ear' vocal voicing. Adds air, low-mid warmth, and a gentle presence bump, then blends with the dry signal. Apply to rendered vocal audio inside Suno Studio; this is not a lyric tag.",
+  "ports": {
+    "audioIn": { "kind": "audio" },
+    "audioOut": { "kind": "audio" },
+    "extraInputs": [],
+    "extraOutputs": []
+  },
+  "parameters": [
+    { "name": "input gain", "label": "Input", "range": { "min": -24, "max": 24, "step": 0.1 }, "scale": "linear", "default": 0, "unit": "db" },
+    { "name": "air", "label": "Air", "range": { "min": 0, "max": 12, "step": 0.1 }, "scale": "linear", "default": 3, "unit": "db" },
+    { "name": "warmth", "label": "Warmth", "range": { "min": -6, "max": 9, "step": 0.1 }, "scale": "linear", "default": 2, "unit": "db" },
+    { "name": "presence", "label": "Presence", "range": { "min": 0, "max": 9, "step": 0.1 }, "scale": "linear", "default": 2, "unit": "db" },
+    { "name": "dry/wet mix", "label": "Mix", "range": { "min": 0, "max": 100, "step": 1 }, "scale": "linear", "default": 100, "unit": "percent" },
+    { "name": "output gain", "label": "Output", "range": { "min": -24, "max": 24, "step": 0.1 }, "scale": "linear", "default": 0, "unit": "db" },
+    { "name": "bypass", "label": "Bypass", "enumOptions": [ { "value": "off", "label": "Off" }, { "value": "on", "label": "On" } ], "default": "off" }
+  ],
+  "source": {
+    "lang": "js",
+    "metadata": {
+      "displayName": "Intimate Proximity",
+      "kind": "effect",
+      "description": "Suno Studio effect. Close-mic 'in your ear' vocal voicing. Adds air, low-mid warmth, and a gentle presence bump, then blends with the dry signal.",
+      "controls": {
+        "input gain": { "widget": { "type": "knob" }, "description": "Input trim before processing.", "range": { "min": -24, "max": 24, "step": 0.1 }, "scale": "linear", "unit": "db", "label": "Input", "default": 0 },
+        "air": { "widget": { "type": "knob" }, "description": "High-shelf lift near 10kHz for open, breathy top end.", "range": { "min": 0, "max": 12, "step": 0.1 }, "scale": "linear", "unit": "db", "label": "Air", "default": 3 },
+        "warmth": { "widget": { "type": "knob" }, "description": "Low-shelf warmth near 250Hz for body and closeness.", "range": { "min": -6, "max": 9, "step": 0.1 }, "scale": "linear", "unit": "db", "label": "Warmth", "default": 2 },
+        "presence": { "widget": { "type": "knob" }, "description": "Peaking presence bump near 4kHz for forward intelligibility.", "range": { "min": 0, "max": 9, "step": 0.1 }, "scale": "linear", "unit": "db", "label": "Presence", "default": 2 },
+        "dry/wet mix": { "widget": { "type": "knob" }, "description": "Blend between dry input and processed signal.", "range": { "min": 0, "max": 100, "step": 1 }, "scale": "linear", "unit": "percent", "label": "Mix", "default": 100 },
+        "output gain": { "widget": { "type": "knob" }, "description": "Output trim after processing.", "range": { "min": -24, "max": 24, "step": 0.1 }, "scale": "linear", "unit": "db", "label": "Output", "default": 0 },
+        "bypass": { "widget": { "type": "toggle" }, "description": "Pass the dry signal through unprocessed.", "enumOptions": [ { "value": "off", "label": "Off" }, { "value": "on", "label": "On" } ], "label": "Bypass", "default": "off" }
+      },
+      "ui": {
+        "compact": {
+          "unit": "gr",
+          "cols": 12,
+          "rows": 4,
+          "boxes": [
+            { "type": "knob", "paramName": "input gain", "x": 0, "y": 0, "w": 3, "h": 2 },
+            { "type": "knob", "paramName": "air", "x": 3, "y": 0, "w": 3, "h": 2 },
+            { "type": "knob", "paramName": "warmth", "x": 6, "y": 0, "w": 3, "h": 2 },
+            { "type": "knob", "paramName": "presence", "x": 9, "y": 0, "w": 3, "h": 2 },
+            { "type": "knob", "paramName": "dry/wet mix", "x": 3, "y": 2, "w": 3, "h": 2 },
+            { "type": "knob", "paramName": "output gain", "x": 6, "y": 2, "w": 3, "h": 2 },
+            { "type": "toggle", "paramName": "bypass", "x": 0, "y": 2, "w": 3, "h": 2 }
+          ]
+        }
+      }
+    },
+    "code": "// Intimate Proximity: Suno Studio audio effect (applied to rendered audio, not a lyric tag).\n// Signal chain, in order:\n//   1. Input trim: convert 'input gain' dB to linear and scale each channel.\n//   2. Air: high-shelf boost near 10kHz (g.biquad highshelf) driven by 'air' dB.\n//   3. Warmth: low-shelf boost near 250Hz (g.biquad lowshelf) driven by 'warmth' dB.\n//   4. Presence: peaking boost near 4kHz (g.biquad peaking) driven by 'presence' dB.\n//   5. Dry/wet: g.lerp between the trimmed dry signal and the processed signal by 'dry/wet mix'.\n//   6. Output gain: convert 'output gain' dB to linear and scale.\n//   7. Bypass: g.lerp(bypass, processed, dry) selects dry vs processed. ASSUMES the 'bypass' enum resolves\n//      to 0 ('off') / 1 ('on') and g.lerp(mask,a,b) returns a at mask=0, b at mask=1 (see AUTHORING.md).\n//      So bypass 'off' passes the PROCESSED signal and 'on' passes the DRY signal.\n//   8. Safety: g.tanh soft-clip before g.output.\n// ASSUMPTION: shelf/peaking g.biquad stages pass a 'gainDb' field not confirmed from the one example (see AUTHORING.md).\nfunction build(g, config) {\n  var inL = g.input('audioInL');\n  var inR = g.input('audioInR');\n\n  var inGainDb = g.input('input gain');\n  var airDb = g.input('air');\n  var warmthDb = g.input('warmth');\n  var presenceDb = g.input('presence');\n  var mixPct = g.input('dry/wet mix');\n  var outGainDb = g.input('output gain');\n  var bypass = g.input('bypass');\n\n  var inGain = g.dbToLin(inGainDb);\n  var outGain = g.dbToLin(outGainDb);\n  var mix = g.clamp(g.div(mixPct, g.constant(100)), g.zero(), g.constant(1));\n\n  function chain(x) {\n    var trimmed = g.mul(x, inGain);\n    var air = g.biquad({ input: trimmed, cutoff: g.constant(10000), resonance: g.constant(0.707), mode: 'highshelf', gainDb: airDb });\n    var warm = g.biquad({ input: air, cutoff: g.constant(250), resonance: g.constant(0.707), mode: 'lowshelf', gainDb: warmthDb });\n    var pres = g.biquad({ input: warm, cutoff: g.constant(4000), resonance: g.constant(0.9), mode: 'peaking', gainDb: presenceDb });\n    var wet = g.lerp(mix, trimmed, pres);\n    var out = g.mul(wet, outGain);\n    var active = g.lerp(bypass, out, trimmed);\n    return g.tanh(active);\n  }\n\n  g.output('audioOutL', chain(inL));\n  g.output('audioOutR', chain(inR));\n}\n"
+  },
+  "ui": {
+    "compact": {
+      "unit": "gr",
+      "cols": 12,
+      "rows": 4,
+      "boxes": [
+        { "type": "knob", "paramName": "input gain", "x": 0, "y": 0, "w": 3, "h": 2 },
+        { "type": "knob", "paramName": "air", "x": 3, "y": 0, "w": 3, "h": 2 },
+        { "type": "knob", "paramName": "warmth", "x": 6, "y": 0, "w": 3, "h": 2 },
+        { "type": "knob", "paramName": "presence", "x": 9, "y": 0, "w": 3, "h": 2 },
+        { "type": "knob", "paramName": "dry/wet mix", "x": 3, "y": 2, "w": 3, "h": 2 },
+        { "type": "knob", "paramName": "output gain", "x": 6, "y": 2, "w": 3, "h": 2 },
+        { "type": "toggle", "paramName": "bypass", "x": 0, "y": 2, "w": 3, "h": 2 }
+      ]
+    }
+  }
+}

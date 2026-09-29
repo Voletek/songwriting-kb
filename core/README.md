@@ -54,3 +54,4 @@ Read the methodology file as a step-by-step guide. Follow the procedure directly
 | `references/` | Deep data tables (scoring rubrics, genre maps, tag lists) REFERENCED BY core methodology |
 | `tools/` | Deterministic implementations of core methodology rules |
 | `experiments/suno/` | Evidence logs for Suno-specific claims in core methodology |
+| `plugins/` | Suno Studio audio-effect plugins (post-render audio processors), a separate concern from the methodology; not consumed by `core/` |
