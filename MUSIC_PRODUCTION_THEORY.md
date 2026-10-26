@@ -1,11 +1,32 @@
 # Music Production Theory — Academic & Professional Framework
 
-> A comprehensive reference integrating 12 disciplines that inform professional song production,
+> A comprehensive reference integrating 13 disciplines that inform professional song production,
 > arrangement, and creative direction. This document elevates the songwriting practice from
 > craft-only to a theoretically grounded, analytically rigorous production methodology.
 >
 > Sources: Berklee College of Music, Pat Pattison, Patrik Juslin (Uppsala), Philip Tagg,
-> Franco Fabbri, Music Theory Online, arXiv MIR research, Sound on Sound, Springer academic press
+> Franco Fabbri, Music Theory Online, arXiv MIR research, Sound on Sound, Springer academic press.
+> Named works are listed under **Key Sources** below; full credits in `CREDITS.md`.
+>
+> **Evidence tiers:** [Tier 1] scholarship with a primary source · [Tier 2] professional craft
+> heuristic · [Tier 3] community/platform observation, unverified and version-dependent.
+> Unlabelled mapping tables (mood → sound) are craft conventions and working associations, not
+> empirical findings.
+
+---
+
+## KEY SOURCES
+
+- **Pat Pattison**, *Writing Better Lyrics* (2nd ed., 2009) and *Songwriting: Essential Guide to Rhyming* (Berklee Press) -- prosody, stable/unstable sections, the rhyme ladder.
+- **Franco Fabbri** (1982), "A Theory of Musical Genres: Two Applications" -- genre as socially accepted rules of five types.
+- **Philip Tagg**, *Music's Meanings: A Modern Musicology for Non-Musos* (2013) -- musemes, music semiotics.
+- **Patrik N. Juslin** (2013), "From everyday emotions to aesthetic emotions: towards a unified theory of musical emotions", *Physics of Life Reviews* 10(3) -- BRECVEMA.
+- **Tuomas Eerola, Anders Friberg & Roberto Bresin** (2013), "Emotional expression in music: contribution, linearity, and additivity of primary musical cues", *Frontiers in Psychology* 4:487.
+- **Allan F. Moore**, *Song Means: Analysing and Interpreting Recorded Popular Song* (2012) -- persona, soundbox, functional layers.
+- **Serge Lacasse** (2000 PhD thesis on vocal staging; 2010 "The Phonographic Voice") -- vocal staging and proxemics.
+- **C. F. D. Schubart**, *Ideen zu einer Ästhetik der Tonkunst* (written 1784-85, publ. 1806), in English via **Rita Steblin**, *A History of Key Characteristics in the Eighteenth and Early Nineteenth Centuries* (1983; 2nd ed. 2002) -- historical key aesthetics.
+- **William Moylan**, *Understanding and Crafting the Mix: The Art of Recording* (3rd ed., 2014) -- recording analysis, timbral balance, spatial imaging.
+- **Peter Stockwell**, *Cognitive Poetics* (2002); **Joanna Gavins**, *Text World Theory* (2007); **Matthew Voice & Sara Whiteley** (2019), "'Y'all don't wanna hear me, you just wanna dance': A cognitive approach to listener attention in OutKast's 'Hey Ya!'", *Language and Literature* 28(1) -- deixis and listener attention.
 
 ---
 
@@ -19,7 +40,7 @@
 
 ---
 
-## THE 12 DISCIPLINES
+## THE 13 DISCIPLINES
 
 ---
 
@@ -80,6 +101,10 @@ How musical material is invented, developed, varied, repeated, transformed, and 
 
 ### 3. PROSODY — Matching Words to Music
 
+> **See also:** `references/RHYME_AND_LYRIC_CRAFT.md` (rhyme ladder, section stability, musical
+> meter vs poetic meter, singability and vowel modification) and `core/methodology/songwriting.md`
+> → Step 4 (Prosodic Planning). This section is the theory overview; those files hold the working detail.
+
 The relationship between language rhythm, syllable stress, emotional meaning, and musical rhythm/melody.
 
 **The 6 Prosody Questions:**
@@ -107,27 +132,36 @@ The relationship between language rhythm, syllable stress, emotional meaning, an
 
 #### Poetic Meter Quick Reference (For Rhythmic Design)
 
-> Understanding meter helps match lyrical rhythm to intended musical energy.
+> Understanding meter helps match lyrical rhythm to intended musical energy. [Tier 2: the
+> rising/falling character of feet is standard prosody; the energy mapping is a craft heuristic]
 
 | Foot | Pattern | Sound | Musical Effect |
 |---|---|---|---|
-| **Iamb** | unstressed-STRESSED (da-DUM) | "de-FINE" | Natural speech, conversational |
-| **Trochee** | STRESSED-unstressed (DUM-da) | "PO-et" | Lighter, buoyant, falling |
-| **Spondee** | STRESSED-STRESSED (DUM-DUM) | "DARK NIGHT" | Heavy, emphatic, stomping |
-| **Anapest** | unstressed-unstressed-STRESSED (da-da-DUM) | "in the HEAT" | Galloping, fast, forward drive |
-| **Dactyl** | STRESSED-unstressed-unstressed (DUM-da-da) | "TEL-e-scope" | Militaristic, formal |
-| **Pyrrhic** | unstressed-unstressed (da-da) | "on-to" | Light, flowing, airy |
+| **Iamb** | unstressed-STRESSED (da-DUM) | "de-FINE" | Rising; natural speech, conversational |
+| **Trochee** | STRESSED-unstressed (DUM-da) | "PO-et" | Falling; insistent, chant-like |
+| **Anapest** | unstressed-unstressed-STRESSED (da-da-DUM) | "in the HEAT" | Rising triple; galloping, forward drive |
+| **Dactyl** | STRESSED-unstressed-unstressed (DUM-da-da) | "TEL-e-scope" | Falling triple; rolling, waltz-like |
+| **Amphibrach** | unstressed-STRESSED-unstressed (da-DUM-da) | "to-MOR-row" | Lilting |
+| **Spondee** | STRESSED-STRESSED (DUM-DUM) | "DARK NIGHT" | A substitution for emphasis (one or two heavy hits inside another meter), not a sustained meter |
+| **Pyrrhic** | unstressed-unstressed (da-da) | "of the" | A substitution only (light passing syllables), not a sustained meter |
 
-**Practical application:** A chorus that needs to STOMP wants spondaic stress ("SHE'S my BITCH, my KITCH-en WITCH"). A verse that needs to FLOW wants iambic ("I CLOSE my EYES and SOME-thing SHIFTS"). A pre-chorus that needs to BUILD wants anapestic ("Lit-tle bit of THIS, lit-tle bit of THAT").
+**Practical application:** A chorus that needs to STOMP wants insistent trochees, optionally capped with a spondaic hit ("SHE'S my BITCH, my KITCH-en WITCH" is trochaic: DUM-da DUM-da DUM-da DUM). A verse that needs to FLOW wants iambic ("I CLOSE my EYES and SOME-thing SHIFTS"). A pre-chorus that needs to BUILD can gallop on anapests ("in the DEAD of the NIGHT when the COLD starts to BITE").
+
+> **Not duplicated here** (see `references/RHYME_AND_LYRIC_CRAFT.md`): musical meter -- pickups/anacrusis,
+> backbeat, syncopation, 3/4 and 6/8, hip-hop flow -- and singing phonetics -- vowel modification,
+> diphthongs, sibilance (tame harsh "s" in the mix with the `plugins/de-esser/` plugin).
 
 ---
 
 ### 4. LYRIC SETTING — Placing Words into Music
 
+> **See also:** `references/RHYME_AND_LYRIC_CRAFT.md` (power positions, musical meter, singability)
+> and `core/methodology/songwriting.md` → Step 4 (Prosodic Planning).
+
 The technical process of fitting text into musical rhythm while preserving natural speech.
 
 **Critical Rules:**
-- Stressed syllables on strong beats (beats 1, 3)
+- Stressed syllables land on the strong beats of the METER: in square 4/4 usually beats 1 and 3; backbeat and syncopated styles push stresses onto anticipations or onto 2 and 4; in 3/4 and 6/8, the downbeat of each group. Pickups (anacrusis) carry unstressed syllables before the bar.
 - Unstressed syllables on weak beats or offbeats
 - Important words get longer notes or melodic peaks
 - Breath points align with phrase boundaries
@@ -143,7 +177,7 @@ The technical process of fitting text into musical rhythm while preserving natur
 | Breath misplacement | Breath in middle of phrase | Move to punctuation point |
 | Vowel mismatch | Closed "ee" on sustained high note | Choose open vowel |
 
-**For Suno:** Each line = one melodic phrase. Irregular syllable counts cause phrasing problems. Em dashes create natural breath points.
+**For Suno:** Each line = one melodic phrase. Target 7-12 syllables per line [Tier 2]; 13-15 = review stress density and singability at tempo; 16+ = apply the Compression Test (compress, or justify it as intentional). Wildly irregular syllable counts between parallel lines tend to cause phrasing problems [Tier 3]. Em dashes create natural breath points.
 
 ---
 
@@ -214,16 +248,18 @@ The CHARACTER of a sound communicates meaning independent of pitch or rhythm.
 
 ### 7. GENRE THEORY — Why a Song "Belongs" to a Style
 
-> "A musical genre is a set of musical events whose course is governed by a definite set of socially accepted rules." — Franco Fabbri (1982)
+> "A musical genre is a set of musical events (real or possible) whose course is governed by a definite set of socially accepted rules." — Franco Fabbri, "A Theory of Musical Genres: Two Applications" (1982)
 
-Genre is NOT just a sound. It is a system of expectations.
+Genre is NOT just a sound. It is a system of expectations. [Tier 1: Fabbri 1982]
 
 **Fabbri's 5 Types of Genre Rules:**
-1. **Formal/Technical** — Structures, instruments, scales, tempo ranges
-2. **Semiotic** — What sounds MEAN in this genre
-3. **Behavioral** — How artists/audiences act
-4. **Social/Ideological** — Values, identity, community
-5. **Economic/Legal** — Production, distribution, consumption
+1. **Formal and technical** — Structures, instruments, scales, tempo ranges, techniques
+2. **Semiotic** — What sounds MEAN in this genre, how meaning is communicated
+3. **Behavioural** — How performers and audiences act
+4. **Social and ideological** — Values, identity, community
+5. **Economical and juridical** — How the music is produced, owned, distributed, and sold
+
+These are rule TYPES, not a checklist. Their weight varies by genre (some genres are policed mainly by formal/technical rules, others mainly by social/ideological ones), and a song does not have to "satisfy all five". Deliberately juxtaposing lyric and genre (irony, e.g. a dark lyric over a sunny groove) is itself a recognised convention.
 
 **Genre Mapping:**
 
@@ -248,7 +284,7 @@ Genre is NOT just a sound. It is a system of expectations.
 
 ### 8. MUSIC SEMIOTICS — Music as Signs
 
-> "The semiotics of music deals with relations between sounds and what those sounds signify in specific sociocultural contexts." — Philip Tagg
+> Paraphrase of Philip Tagg (*Music's Meanings*, 2013): music semiotics studies the relations between musical sounds and what those sounds signify to people in specific sociocultural contexts.
 
 **Museme:** The smallest unit of musical meaning — a short melodic, rhythmic, or timbral figure carrying cultural meaning.
 
@@ -258,9 +294,11 @@ Genre is NOT just a sound. It is a system of expectations.
 
 ### 9. MUSIC PSYCHOLOGY & EMOTION (BRECVEMA)
 
-**Juslin's 8 Mechanisms of Musical Emotion:**
+**Juslin's 8 Mechanisms of Musical Emotion** [Tier 1: Juslin (2013), "From everyday emotions to aesthetic emotions: towards a unified theory of musical emotions", *Physics of Life Reviews* 10(3)]
 
-| Mechanism | How It Works | Production Use |
+BRECVEMA describes how music INDUCES (felt) emotion in the listener -- not which emotion a piece is perceived to express. There are exactly eight mechanisms; "surprise" is not a separate one (it belongs to Musical Expectancy).
+
+| Mechanism | How It Works | Production Use (repo extrapolation) [Tier 2/3] |
 |---|---|---|
 | Brain Stem Reflex | Sudden sounds trigger alertness | Drum hits, silence, dynamics |
 | Rhythmic Entrainment | Body syncs to pulse | BPM choice = arousal control |
@@ -271,9 +309,9 @@ Genre is NOT just a sound. It is a system of expectations.
 | Musical Expectancy | Confirming/violating expectations | Deceptive cadences, surprise |
 | Aesthetic Judgment | Appreciation of craft | Quality, sophistication |
 
-**Emotional Parameter Mapping:**
+**Emotional Parameter Mapping** (typical cue profiles for PERCEIVED emotion -- tendencies, not rules) [Tier 2: summarises expression research such as Gabrielsson & Lindström 2010 and Eerola, Friberg & Bresin 2013, where mode contributed most overall and tempo mattered most for arousal]:
 
-| Emotion | Tempo | Key | Register | Dynamics | Timbre |
+| Emotion | Tempo | Mode/Harmony | Register | Dynamics | Timbre |
 |---|---|---|---|---|---|
 | Sadness | Slow | Minor | Low | Soft | Warm/dark |
 | Joy | Fast | Major | High | Loud | Bright |
@@ -286,7 +324,7 @@ Genre is NOT just a sound. It is a system of expectations.
 
 ### 10. RECORD PRODUCTION THEORY — Studio as Instrument
 
-> "The record producer has overall creative control and is responsible for the musical, technical and aesthetic decisions." — Paul Thompson
+> Paraphrase (attributed to Paul Thompson; exact source not verified): the record producer carries overall creative responsibility for a record's musical, technical and aesthetic decisions. Thompson's *Creativity in the Recording Studio: Alternative Takes* (2019) frames that creativity as a collaborative system rather than one auteur's work.
 
 The recording IS part of the composition.
 
@@ -324,11 +362,11 @@ The recording IS part of the composition.
 
 | Audience | Expects | Rejects |
 |---|---|---|
-| Men's mental health | Raw imperfection, space | Polish, forced positivity |
+| Mental-health / confessional content | Raw imperfection, space | Polish, forced positivity |
 | Motivation content | Maximum energy, triumph | Subtlety, ambiguity |
 | Indie listeners | Authenticity, unique voice | Generic, over-produced |
 | Gaming/fantasy | Epic scope, world-building | Mundane, simple |
-| Pet/humor content | Relatability, charm | Darkness, complexity |
+| Comedy/novelty content (pets, everyday humor) | Relatability, charm | Darkness, complexity |
 | Sync supervisors | Emotional clarity, versatility | Niche, excessive length |
 
 ---
@@ -337,13 +375,13 @@ The recording IS part of the composition.
 
 How algorithms analyze music — relevant because Suno IS computational.
 
-**What Suno Likely Weights:**
+**What Suno Likely Weights** [Tier 3: inferred from renders; Suno does not publish its conditioning]:
 - Genre keywords → arrangement/tempo/chord tendencies
 - Mood words → key/mode/dynamic selection
 - Vocal descriptors → timbre/delivery model
 - BPM → rhythmic framework
 - Instrument names → timbre palette
-- Negative exclusions → boundary constraints
+- Exclusions (Exclude field) → boundary constraints
 
 ---
 
@@ -357,10 +395,10 @@ How temporal/spatial cues in lyrics create listener positioning -- the intersect
 |---|---|
 | **Peter Stockwell** (*Cognitive Poetics*, 2002) | Temporal deixis, deictic shift theory, deictic centre -- how language creates "you are here" orientation (Ch.4) |
 | **Joanna Gavins** (*Text World Theory: An Introduction*, 2007) | Temporal parameters as world-building elements. Lyric example: "Watch the clock for half an hour" |
-| **Voice & Whiteley** | Multimodal cognitive analysis of deixis in song -- time cues work on THREE levels: discourse-world anchoring + meter/prosody interaction + attention competition against melody/groove |
+| **Voice & Whiteley** (2019, *Language and Literature* 28(1), on OutKast's "Hey Ya!") | Cognitive analysis of listener attention to lyrics in song. Repo summary: time cues work on THREE levels: discourse-world anchoring + meter/prosody interaction + attention competition against melody/groove |
 | **Werner** (register analysis) | Pop lyrics simulate immediacy (conversational features) while being planned/performed/distant. A time cue creates a "believable deictic frame" |
 | **Tim Murphey** (1989, 1992) | Corpus findings: 94% no time of enunciation, 80% no place, ZERO precise dates. Vagueness = "appropriability" |
-| **Rebecca Wilson** (PhD, Queen's University Belfast, 2025) | 1291-song corpus (every UK #1, 1960-2019). Uses Buhler's "deixis am phantasma" / imaginative deixis |
+| **Rebecca Wilson** (PhD, Queen's University Belfast, 2025; citation unverified) | 1291-song corpus (every UK #1, 1960-2019). Uses Buhler's "deixis am phantasma" / imaginative deixis |
 | **Kreyer & Mukherjee** (corpus linguistics) | Pop lyrics sit "uneasily on the boundary between speech and writing" |
 
 **Key Concepts:**
@@ -383,35 +421,44 @@ How temporal/spatial cues in lyrics create listener positioning -- the intersect
 
 ---
 
-## THE 8-STEP PROFESSIONAL ANALYSIS WORKFLOW
+## THE 9-STEP PROFESSIONAL ANALYSIS WORKFLOW
+
+> Same 9 steps as `core/methodology/songwriting.md` → "The 9-Step Analysis Workflow".
 
 ### Step 1: SEMANTIC ANALYSIS
 What is the lyric literally about? (subject, characters, setting, objects, actions)
 
 ### Step 2: EMOTIONAL ANALYSIS
-What is the central affect? (grief, rage, fear, triumph, numbness, longing, joy, horror)
+What is the central affect? (grief, rage, fear, triumph, numbness, longing, joy, horror) Which BRECVEMA mechanisms (Discipline 9) will induce it?
 
 ### Step 3: PROSODIC ANALYSIS
-Where are stresses, breaths, rhymes, strong words, singable vowels?
+Where are stresses, breaths, rhymes, strong words, singable vowels? (Disciplines 3-4; syllable target 7-12 per line)
 
 ### Step 4: NARRATIVE ANALYSIS
-Does the song escalate, collapse, confess, transform, or resolve?
+Does the song escalate, collapse, confess, transform, or resolve? Where is the turn?
 
-### Step 5: GENRE MAPPING
-Which conventions best support the emotional/narrative structure?
+### Step 5: VOICE ANALYSIS
+Who is singing? Register, persona, accent/dialect, emotional state at start vs end. (See Vocal Accents below and `core/methodology/character-voice.md`.)
 
-### Step 6: ARRANGEMENT DESIGN
+### Step 6: GENRE MAPPING
+Which conventions best support the emotional/narrative structure? (Fabbri's rule types, Discipline 7; fusion ratio)
+
+### Step 7: ARRANGEMENT DESIGN
 How should sections grow, strip, explode, or mutate?
 
-### Step 7: PRODUCTION DESIGN
-What sonic world should the listener inhabit?
+### Step 8: PRODUCTION DESIGN
+What sonic world should the listener inhabit? (timbre palette, harmonic choices, space)
 
-### Step 8: AUDIENCE POSITIONING
-Who will understand and respond to this style?
+### Step 9: COMMERCIAL POSITIONING
+Who will understand and respond to this style? Which platform, length, and format (streaming, sync, live, short-form clip)?
 
 ---
 
 ## QUICK-REFERENCE: LYRIC → PRODUCTION
+
+> Working associations [Tier 3]. Specific keys are starting points: listeners without absolute pitch
+> cannot identify a key, so real "key" effects come from mode, vocal tessitura and instrument
+> resonance. See `references/SUNO_STYLE_GENRE_REFERENCE.md` §2 (keys) and §3.1 (canonical BPM table).
 
 | Mood | Key | BPM | Production |
 |---|---|---|---|
@@ -436,7 +483,7 @@ Who will understand and respond to this style?
 ## THE 23-POINT SONG DEVELOPMENT FRAMEWORK
 
 > These concepts sit between the lyric, the listener, the artist, and the market.
-> They are the PRACTICAL APPLICATION of the 12 academic disciplines above.
+> They are the PRACTICAL APPLICATION of the 13 academic disciplines above.
 > A serious producer/arranger/consultant applies these to every song.
 
 ---
@@ -520,7 +567,8 @@ Same lyric, different persona = different genre:
 
 Beyond "male" or "female" — the full vocal design:
 
-**Range:** Baritone (A2-E4), Tenor (C3-A4), Alto (F3-D5), Soprano (C4-C6)
+**Range (classical voice types, approximate)** [Tier 2: standard vocal-pedagogy ranges]: Bass ~E2-E4 · Baritone ~A2-A4 (G2-G4) · Tenor ~C3-C5 · Alto ~F3-F5 · Mezzo-soprano ~A3-A5 · Soprano ~C4-C6.
+Pop tessitura (where a singer sits comfortably) is narrower than these full ranges. Song-specific ranges in style prompts (e.g. "baritone G2-E4") describe the SONG's melody, not the voice type.
 **Weight:** Light, full, gritty, operatic, breathy, raspy
 **Delivery:** Spoken, whispered, belted, chanted, screamed, restrained, talk-sung
 **Character:** Wounded, dangerous, intimate, heroic, unhinged, spiritual, clinical
@@ -540,17 +588,22 @@ Beyond "male" or "female" — the full vocal design:
 
 ### 7. TEMPO & BODILY FEEL
 
-| BPM Range | Feel | Application |
-|---|---|---|
-| 60-75 | Dirge, ritual, grief, darkness | Ballads, cinematic, ambient |
-| 76-90 | Cinematic, emotional confession | Alt-rock, trip-hop, dark indie |
-| 90-115 | Anthemic, driving, accessible | Gothic rock, alternative, pop-rock |
-| 115-130 | Urgent, energetic, powerful | Rock, pop-punk, EDM |
-| 130+ | Panic, rebellion, explosion | Punk, metal, fast EDM |
+> **Canonical BPM-by-genre table:** `references/SUNO_STYLE_GENRE_REFERENCE.md` §3.1 (and §3.2 for
+> BPM-emotion pairings). Not repeated here.
 
-#### Italian Tempo Markings (For Suno — Confirmed Working)
+Tempo is felt in the body before it is heard as genre: through rhythmic entrainment (BRECVEMA, Discipline 9) BPM is the main arousal control, and in perceived-emotion studies tempo matters most for arousal (Eerola, Friberg & Bresin 2013) [Tier 1]. Body-feel shorthand [Tier 2: craft association]:
 
-> Use Italian markings in Style Prompts and as `[Tempo: Marking]` tags. More reliable than raw BPM numbers.
+- **~60-75:** dirge / ritual pulse, breathing-pace grief
+- **~76-90:** confessional, cinematic walk
+- **~90-115:** anthemic, accessible drive
+- **~115-130:** urgent, physical
+- **130+:** panic, rebellion, explosion
+
+Feel also depends on subdivision and groove: a half-time feel at 140 BPM sits like 70 (see 8. Groove & Rhythmic Identity below).
+
+#### Italian Tempo Markings (For Suno) [Tier 3, v5.5-era — re-validate on V6]
+
+> Italian markings can be used in Style Prompts and as `[Tempo: Marking]` tags; on v5.5 they were reported to help alongside (not instead of) a BPM number. BPM ranges per marking vary by source and metronome tradition.
 
 | Marking | BPM Range | Feel | Use For |
 |---|---|---|---|
@@ -708,7 +761,7 @@ Where does the song FEEL like it exists?
 |---|---|
 | Who is the audience? | Determines genre boundaries |
 | Streaming, sync, TikTok, live, game? | Determines length, hook speed, format |
-| Fast hook needed? | Under 3:00 for playlists, compelling hook signal within first 5-30s (genre-dependent) |
+| Fast hook needed? | Hook signal within ~5-30 s of the first SUNG word, genre-dependent [Tier 2]; full chorus typically by ~45-60 s of track time in pitch-ready commercial songs (pop average ~39 s). Under 3:00 often suits playlists [Tier 3] |
 | Cinematic intro acceptable? | Longer format for sync/concept albums |
 | Searchable title? | SEO, discoverability |
 | Too niche or distinctively positioned? | Balance uniqueness with accessibility |
@@ -717,7 +770,7 @@ Where does the song FEEL like it exists?
 
 ### 19. INTERTEXTUAL REFERENCES
 
-Extract TRAITS, not copy:
+Extract TRAITS, not copy. Artist names are for analysis only; in a Style Prompt, convert them to descriptive production language (`references/SUNO_STYLE_GENRE_REFERENCE.md` §11).
 
 | Reference | Traits to Extract |
 |---|---|
@@ -754,7 +807,7 @@ Extract TRAITS, not copy:
 - Place strongest hook early
 - Avoid formatting that confuses male/female parts
 - Use concise but specific style language
-- 1000 char style limit / 5000 char lyrics limit / Exclude field for negatives only
+- 1000 char style limit / 5000 char lyrics limit / Exclude field for negatives only (plain comma-separated, no dash prefix)
 
 ---
 
@@ -811,7 +864,7 @@ Examples:
 
 ---
 
-*This framework integrates with the Songwriting Knowledge Base and the 12 Academic Disciplines above to form a complete professional song development system.*
+*This framework integrates with the Songwriting Knowledge Base and the 13 Academic Disciplines above to form a complete professional song development system.*
 
 
 
@@ -819,209 +872,43 @@ Examples:
 
 ## VOCAL ACCENTS, DIALECT & PHONETICS IN SONGWRITING
 
-> How regional, cultural, and fantasy accents impact vocal delivery, lyric writing,
-> instrumentation choices, and production style. Accent is not just pronunciation —
-> it is a complete cultural-musical system that determines genre, rhythm, imagery, and identity.
+> Theory overview only. The canonical METHOD (11-step procedure, Character Voice Template, worked
+> dwarven example) is `core/methodology/character-voice.md`. The canonical REFERENCE DATA (real-world
+> and fantasy accent tables, vowel and phrasing charts, dialect words, instrumentation and mode maps,
+> Suno accent phrases) is `references/CHARACTER_VOICE_REFERENCE.md`.
 
----
+### Why accent matters
 
-### THE CORE PRINCIPLE
+An accent is not just how words sound -- it is a complete cultural-musical system. Writing for an
+accented voice means writing for an entire ecosystem: which vowels sustain, which rhythms feel
+natural, which instruments "belong", what the audience expects, and how feelings are expressed.
+[Tier 2: craft framing drawing on vocal pedagogy and ethnomusicology]
 
-> An accent is not just how words sound — it's a COMPLETE WORLDVIEW expressed through vowels, consonants, rhythm, and cultural association. When you write for an accented voice, you're writing for an entire musical ecosystem.
+### The phonetic dimensions
 
-**Accent determines:**
-- Vowel placement (which notes sustain well)
-- Consonant weight (which rhythms feel natural)
-- Rhythmic phrasing (how words fall on beats)
-- Cultural instrumentation (what sounds "belong")
-- Genre expectations (what the audience expects)
-- Lyric vocabulary (dialect words, colloquialisms)
-- Emotional register (how feelings are expressed culturally)
-
----
-
-### WHY ACCENTS MATTER FOR AI MUSIC (SUNO)
-
-Suno responds to accent cues in two ways:
-1. **Style prompt:** Describing the accent/region directly ("Scottish burr," "Southern drawl," "Irish lilt")
-2. **Lyric text:** Using phonetic dialect IN the lyrics ("ye," "ain't," "wanna," "lass," "reckon")
-
-Both reinforce each other. If you write "Scottish accent" in the style but use standard English in lyrics, the accent may be inconsistent. Dialect in the lyrics FORCES the vocal model to commit.
-
----
-
-### ACCENT REFERENCE TABLE — REAL WORLD
-
-| Accent/Region | Key Phonetic Features | Vowel Character | Consonant Character | Natural Instrumentation | Genre Home |
-|---|---|---|---|---|---|
-| **Southern US (Country)** | Drawl (elongated vowels), diphthongs widened, "ah" for "I", dropped g's ("runnin'") | Open, warm, long, lazy | Soft, dropped consonants | Acoustic guitar, pedal steel, fiddle, banjo | Country, Southern rock, blues |
-| **Appalachian** | Mountain twang, nasal resonance, "git" for "get", archaic phrasings | High nasal, tight | Clipped, old English remnants | Banjo, dulcimer, fiddle, acoustic | Bluegrass, old-time, folk |
-| **Boston** | Non-rhotic (dropped R: "cah" for "car"), broad A ("pahk"), flat vowels | Broad, flat, dropped R | Hard consonants, clipped | — | Punk, hardcore, hip-hop |
-| **New York** | R-colored in some positions, raised vowels, rapid-fire pacing | Tight, raised, nasal | Sharp, percussive | — | Hip-hop, punk, Broadway |
-| **Irish** | Soft T's, lilting melodic cadence, "th" becomes "t/d", musical intonation | Round, flowing, musical | Soft, melodic | Fiddle, tin whistle, bodhrán, accordion | Celtic folk, Irish punk, trad |
-| **Scottish** | Rolled R's, guttural consonants, "burr," distinct vowel shifts | Round, resonant, deep | Rolled R, guttural | Bagpipes, fiddle, clàrsach, drums | Celtic rock, folk, pipe bands |
-| **Welsh** | Musical pitch variation, elongated vowels, lilting rhythm | Long, singing, lyrical | Soft, flowing | Harp, male voice choir, strings | Choral, folk, hymnal |
-| **English RP (Received)** | Non-rhotic, precise diction, "proper" vowels | Precise, controlled | Crisp, clear | Piano, orchestral, strings | Art music, Britpop, chamber |
-| **Cockney/London** | Glottal stops, H-dropping, "th"→"f", rhyming slang | Short, punchy | Dropped, glottal | — | Punk, grime, ska |
-| **Australian** | Rising terminal intonation, broad "i"→"oi", shortened words | Flat, nasal, rising | Lazy, shortened | — | Indie rock, pub rock, surf |
-| **Caribbean/Jamaican** | Patois rhythm, dropped articles, syncopated speech pattern | Open, rhythmic | Musical, percussive | Steel drums, reggae guitar, bass | Reggae, dancehall, soca |
-| **French** | Nasal vowels, uvular R, liaison between words, musical flow | Nasal, elegant, round | Uvular R, soft | Accordion, strings, piano, chanson guitar | Chanson, French pop, jazz |
-| **German** | Hard consonants, precise rhythm, compound words, guttural | Precise, angular | Hard K, CH, guttural | Industrial sounds, orchestral, electronic | Industrial, metal, classical |
-| **Russian/Slavic** | Dark L, rolled R, reduced unstressed vowels, broad tone | Dark, resonant, deep | Hard, rolling | Balalaikas, choir, orchestral | Folk, choral, darkwave |
-| **Japanese** | Syllable-timed (equal duration per syllable), no stress accent | Equal, precise, light | No consonant clusters | Koto, shamisen, taiko, shakuhachi | J-pop, J-rock, traditional |
-| **Nordic/Scandinavian** | Pitch accent (tonal), clear vowels, soft consonants, melodic speech | Clear, bright, tonal | Soft, precise | Nyckelharpa, hardingfele, drums, chant | Nordic folk, Viking metal |
-| **Middle Eastern/Arabic** | Guttural consonants, long vowels, melismatic vocal tradition | Extended, ornamental | Guttural, emphatic | Oud, darbuka, ney, qanun | Arabic classical, world fusion |
-| **Indian/South Asian** | Dental consonants, aspirated stops, melodic pitch movement | Open, sustained | Dental, aspirated | Sitar, tabla, harmonium, tanpura | Bollywood, raga, classical |
-
----
-
-### ACCENT REFERENCE TABLE — FANTASY LANGUAGES
-
-| Accent/Language | Phonetic Basis | Sound Character | Cultural Signification | Instrumentation | Production Style |
-|---|---|---|---|---|---|
-| **Elvish (Tolkien Quenya)** | Finnish + Latin phonology. Flowing, vowel-rich, no harsh consonants. Long words. Musical quality. | Flowing, ethereal, musical, liquid | Grace, ancient wisdom, immortality, beauty | Harp, strings, flute, choral, bells | Reverb-heavy, airy, wide, spacious |
-| **Elvish (Sindarin)** | Welsh + Celtic basis. More consonant-heavy than Quenya but still melodic. | Melodic, grounded, slightly darker | Ancient but earthly, forest wisdom | Celtic harp, woodland percussion, whistle | Natural reverb, forest ambience |
-| **Dwarvish (Khuzdul)** | Semitic language base (Hebrew/Arabic). Guttural, consonant-heavy, short hard syllables. | Harsh, resonant, deep, percussive | Craftsmanship, stone, stubbornness, ancient | Anvil percussion, deep drums, war horns, stone resonance | Low register, reverb like caverns, heavy |
-| **Orcish/Dark Speech** | Harsh consonants, back vowels, aggressive sound. Designed to sound ugly/threatening. | Aggressive, guttural, ugly, forceful | Rage, destruction, evil, militarism | War drums, distorted horns, industrial | Distorted, compressed, aggressive |
-| **Nordic/Viking (Old Norse)** | Scandinavian phonology with kennings, alliterative verse. Pitch accent. | Ancient, resonant, chant-like, deep | Fate, battle, nature, mythology | Drums, tagelharpa, war horns, chant | Wide, ritualistic, outdoor reverb |
-| **"Dwarven" (User's interpretation)** | Scottish + Nordic + Semitic blend. Rolled R's, guttural stops, short hard vowels + Scottish warmth. | Deep, rough, resonant, gruff yet poetic | Battle-scarred wisdom, forge, stone, loyalty | Bagpipes, anvil, deep drums, acoustic guitar, war horns | Cave reverb, tape warmth, imperfect |
-| **"Volkian" (User custom)** | Could be a custom blend — specify phonetic rules per character/world | Define per project | Define per project | Define per project | Define per project |
-
----
-
-### HOW ACCENT IMPACTS SONGWRITING DECISIONS
-
-#### 1. Vowel Placement & Sustained Notes
-
-| Accent | Best Sustained Vowels | Avoid Sustaining |
-|---|---|---|
-| Southern US | "ah" (I → ah), "ay" (day), "oh" | Short "i" (hit) |
-| Irish | "oh," "ah," "ee" — all round/musical | — |
-| Scottish | "ah," "oh," rolled "r" (can sustain!) | Short vowels |
-| Nordic | Clear "a," "e," "o" — all clean | Nasal vowels |
-| Elvish | All vowels sustain beautifully — language designed for singing | — |
-| Dwarvish | Short vowels — DON'T sustain. Use consonant energy instead | Long flowing vowels |
-| German | "ah," "oh" — precise, controlled | Loose diphthongs |
-
-#### 2. Rhythmic Phrasing by Accent
-
-| Accent | Phrasing Style | Beat Relationship |
-|---|---|---|
-| Southern | Long and lazy — words stretch across beats | Behind the beat (laid back) |
-| Irish | Lilting — words dance around beats | On or slightly ahead |
-| Scottish | Deliberate — words land with weight | On the beat (grounded) |
-| Boston/NY | Rapid — words compressed into beats | On or ahead (urgent) |
-| Nordic | Steady — even, measured, ritual-paced | On the beat (inevitable) |
-| Dwarvish | Percussive — words are HITS | On the beat (like hammering) |
-| Elvish | Flowing — words float across barlines | Free/rubato tendency |
-
-#### 3. Lyric Dialect Words (Phonetic Reinforcement)
-
-| Accent | Dialect Words to Use in Lyrics | Effect |
-|---|---|---|
-| Southern | ain't, gonna, fixin' to, y'all, reckon, hollered | Grounds the vocal in the accent |
-| Irish | aye, lad/lass, grand, craic, eejit, fierce (as intensifier) | Triggers the lilt |
-| Scottish | ye, yer, aye, lass, lad, wee, braw, cannae, dinnae | Forces rolled R's and burr |
-| Appalachian | git, cain't, holler, youngin, porch, creek (crik) | Mountain placement |
-| Cockney | ain't, innit, blimey, mate, nah, 'alf | Glottal stops, rhythm |
-| Australian | mate, reckon, arvo, no worries, heaps | Rising terminal |
-| Dwarvish-inspired | stone, forge, iron, ale, oath, clan, deep | Grounding words |
-| Nordic-inspired | fate, rune, sea, storm, oath, blood, root | Ancient weight |
-
-#### 4. Instrumentation by Accent/Culture
-
-| Accent/Culture | Primary Instruments | Secondary/Atmosphere |
-|---|---|---|
-| Southern US | Acoustic guitar, pedal steel, fiddle | Lap steel, harmonica, upright bass |
-| Irish/Celtic | Fiddle, tin whistle, bodhrán, button accordion | Uilleann pipes, harp, bouzouki |
-| Scottish | Great Highland bagpipe, fiddle, clàrsach | Smallpipes, drums, accordion |
-| Nordic/Viking | Tagelharpa, war drums, Hardanger fiddle, bukkehorn | Nyckelharpa, chant, jaw harp |
-| Appalachian | Banjo, fiddle, dulcimer, acoustic guitar | Mandolin, upright bass |
-| Japanese | Koto, shamisen, taiko drums, shakuhachi | Biwa, temple bells |
-| Middle Eastern | Oud, darbuka, ney, qanun | Riq, frame drum, strings |
-| Dwarvish (fantasy) | Deep drums, anvil strikes, war horns, bagpipes | Stone percussion, chant |
-| Elvish (fantasy) | Harp, flute, strings, bells, choir | Woodland ambience, reverb |
-| Industrial/Cyber | Synths, electronic percussion, sub bass, glitch | Static, machine hum |
-
----
-
-### ACCENT IMPACT ON MODE/SCALE SELECTION
-
-| Accent/Culture | Natural Modes/Scales | Harmonic Feel |
-|---|---|---|
-| Irish/Celtic | Dorian, Mixolydian, Aeolian | Modal, folk, open fifths |
-| Scottish | Pentatonic minor, Aeolian, Dorian | Bagpipe drones + pentatonic melody |
-| Nordic | Aeolian, Phrygian, Locrian | Dark, modal, ancient |
-| Southern US | Mixolydian, major pentatonic | Bluesy, warm, open |
-| Appalachian | Major pentatonic, Mixolydian | Mountain modal, simple |
-| Middle Eastern | Phrygian dominant, Arabic maqam | Exotic, ornamental |
-| Japanese | Pentatonic (Yo/In scales) | Sparse, precise, floating |
-| Elvish | Major modes, Lydian, Ionian | Bright, ethereal, resolved |
-| Dwarvish | Aeolian, natural minor, pedal tones | Heavy, grounded, dark |
-
----
-
-### FOR SUNO STYLE PROMPTS — ACCENT DESCRIPTORS
-
-Use these phrases in style prompts to trigger specific vocal accents:
-
-| Target | Style Prompt Phrasing |
+| Dimension | What it decides in the song |
 |---|---|
-| Scottish | "Scottish burr accent, rolled R's, deep gravelly voice" |
-| Irish | "Irish lilt, soft melodic cadence, warm Celtic tone" |
-| Southern US | "Southern drawl, warm relaxed phrasing, country inflection" |
-| Appalachian | "Appalachian mountain voice, nasal twang, old-time folk" |
-| Nordic | "Nordic vocal style, clear precise vowels, ancient Scandinavian tone" |
-| Cockney | "London cockney, glottal stops, punchy urban delivery" |
-| Australian | "Australian accent, relaxed delivery, rising intonation" |
-| Dwarven (fantasy) | "deep male bass baritone dwarven warrior voice, gravelly rough texture with Scottish Nordic burr accent, thick rolled r's" |
-| Elvish (fantasy) | "ethereal flowing vocal, musical liquid consonants, ancient graceful delivery" |
-| Robotic/AI | "cold clinical delivery, precise articulation, subtle digital artifacts" |
+| Vowels (open/closed, long/short, pure vs diphthong) | Which words can sit on held or high notes |
+| Consonants (rolled/tapped R, glottal stops, gutturals, dropped finals) | Rhythmic bite: percussive vs flowing lines |
+| Timing (stress-, syllable- or mora-timed; behind/on/ahead of the beat) | How words fall on the grid; laid-back vs urgent phrasing |
+| Speech melody (lilt, drawl, rising terminals, pitch accent) | The natural melodic contour of a line |
+| Lexicon (dialect words, contractions) | Commits the singer (or Suno's vocal model) to the accent |
 
----
+### How accent informs instrumentation and mode
 
-### CHARACTER VOICE DESIGN TEMPLATE
+Accent, instrumentation and mode travel together as one cultural signal (Tagg: timbres carry
+connotation independent of the notes played). A Scottish burr implies pipes, drones and
+pentatonic/Aeolian melody; a Southern drawl implies pedal steel, Mixolydian and major pentatonic;
+a fantasy dwarven voice borrows from the same pool (deep drums, war horns, Aeolian over pedal
+tones). Crossing the signals (an Irish lilt over trap hi-hats) can be deliberate fusion, but by
+default all three should point the same way.
 
-When writing for a specific character with an accent, document:
+### For Suno [Tier 3]
 
-```
-CHARACTER VOICE:
-• Name/Identity: [who is speaking]
-• Accent base: [real-world phonetic basis]
-• Vowel character: [open/closed, long/short, warm/cold]
-• Consonant character: [rolled R, glottal stops, soft, hard, etc.]
-• Rhythmic tendency: [behind beat, on beat, ahead, flowing]
-• Register: [bass, baritone, tenor, alto, soprano]
-• Texture: [gravelly, smooth, breathy, raspy, clear]
-• Emotional subtext: [what does the voice FEEL like — wounded? wise? dangerous?]
-• Dialect words to use: [specific vocabulary that reinforces the accent]
-• Instruments that match: [cultural instrumentation]
-• Production space: [where does this voice live — cave, forest, machine, battlefield?]
-• Mode/scale: [what harmonic language matches this culture?]
-```
-
----
-
-### EXAMPLE: Your Dwarven Character (From "Ye Only Want Me When Ye're Steady")
-
-```
-CHARACTER VOICE:
-• Name/Identity: Unnamed dwarven warrior (middle-aged, battle-scarred veteran)
-• Accent base: Scottish + Nordic + Semitic blend
-• Vowel character: Deep, round, resonant — open "ah" and "oh" sustain well
-• Consonant character: Thick rolled R's, slight lilt on vowels, hard stops on "k" and "t"
-• Rhythmic tendency: Deliberate, grounded, ON the beat — like hammer strikes
-• Register: Deep bass-baritone (A2-E4)
-• Texture: Gravelly, rough, weathered — gruff exterior with poetic soul
-• Emotional subtext: World-weary melancholy with stubborn hope. Dry dark humor.
-• Dialect words: ye, yer, aye, lass, lad, wee
-• Instruments: Bagpipes (prominent, mournful), acoustic guitar, electric guitar/strings swell
-• Production space: Stone forge → open highland → battlefield
-• Mode/scale: Aeolian (A minor verses), shift to C major for final chorus lift
-```
-
-
-
+Suno responds to accent cues in two places that reinforce each other: the Style Prompt ("Scottish
+burr", "Southern drawl", "Irish lilt") and dialect IN the lyric text ("ye", "ain't", "lass",
+"reckon"). A style-only accent over standard-English lyrics tends to drift; dialect words in the
+lyrics push the vocal model to commit.
 
 ---
 
@@ -1031,7 +918,7 @@ CHARACTER VOICE:
 
 ### A1. THE 7-SECOND RULE (Listener Attention & First Impression Design)
 
-Streaming listeners decide to skip or stay within 3-7 seconds. TikTok clips are 15-30 seconds. A sync supervisor previews 10 seconds max.
+Streaming listeners are commonly said to decide to skip or stay within 3-7 seconds; TikTok clips run 15-30 seconds; sync supervisors are said to preview ~10 seconds. [Tier 3: industry lore, unsourced; the one documented platform fact is that Spotify counts a stream after 30 s of play]
 
 **First-Impression Strategies:**
 - Hook-first: Title/hook is the FIRST thing heard
@@ -1040,22 +927,22 @@ Streaming listeners decide to skip or stay within 3-7 seconds. TikTok clips are 
 - Curiosity gap: Opens a question the listener needs answered
 - Vocal identity: The VOICE itself is the hook
 
-**Platform Windows:** Spotify 3-7s | TikTok 1-3s | Radio 7s | Sync 10s | Live 15s
+**Platform Windows** [Tier 3: unsourced rules of thumb]: Spotify 3-7s | TikTok 1-3s | Radio 7s | Sync 10s | Live 15s
 
-**Rules:** Compelling hook signal within the first 5-30 seconds (genre-dependent). Intro under 10s for streaming. First vocal moment = emotional thesis.
+**Rules:** Hook signal within ~5-30 s of the first SUNG word, genre-dependent (pop earlier; cinematic/progressive later) [Tier 2]. Separately, the full chorus typically arrives by ~45-60 s of track time in pitch-ready commercial songs (pop average ~39 s) [Tier 2]. Intro under ~10 s for streaming [Tier 2/3]. First vocal moment = emotional thesis.
 
 ---
 
 ### A2. STREAMING MASTERING STANDARDS (LUFS & Dynamics)
 
-| Platform | Target | True Peak |
-|---|---|---|
-| Spotify | -14 LUFS | -1 dBTP |
-| Apple Music | -16 LUFS | -1 dBTP |
-| YouTube | -14 LUFS | -1 dBTP |
-| TikTok | -14 LUFS | -1 dBTP |
+| Platform | Playback normalization target | True Peak | Evidence |
+|---|---|---|---|
+| Spotify | -14 LUFS integrated | -1 dBTP (Spotify suggests -2 dBTP for masters louder than -14 LUFS) | [Tier 1/2: published platform docs] |
+| Apple Music | ~-16 LUFS (Sound Check) | -1 dBTP | [Tier 1/2: published platform guidance] |
+| YouTube | ~-14 LUFS | -1 dBTP (common practice) | [Tier 3: measured by engineers, not a published spec] |
+| TikTok | ~-14 LUFS often quoted | -1 dBTP (common practice) | [Tier 3: NOT an official spec] |
 
-The Loudness War is OVER. Dynamics are your friend — quiet verses / loud choruses sound BETTER on streaming. Over-compressed masters lose punch when normalized down.
+Normalization is applied at playback: platforms turn loud masters DOWN to their target, so extra loudness buys little on streaming. Opinion (not a platform rule): "the Loudness War is over" -- dynamic masters (quiet verses / loud choruses) often sound punchier after normalization than over-compressed ones, though many genres still master loud by convention.
 
 ---
 
@@ -1063,7 +950,7 @@ The Loudness War is OVER. Dynamics are your friend — quiet verses / loud choru
 
 **Sync-Ready Requirements:** Clear ownership, emotional clarity in first 10s, instrumental version available, 2:30-3:30 length, no explicit content (or clean version), universal theme, dynamic sections for editing, metadata complete (ISRC/ISWC registered).
 
-**Fee Ranges:** Indie film $1K-$10K | TV series $5K-$50K | National commercial $25K-$500K | Trailer $50K-$250K | Video game $5K-$50K
+**Fee Ranges** [Tier 3: unsourced; real fees vary widely by term, territory, media, usage, and whether master + sync are both licensed]: Indie film $1K-$10K | TV series $5K-$50K | National commercial $25K-$500K | Trailer $50K-$250K | Video game $5K-$50K
 
 ---
 
@@ -1083,11 +970,13 @@ The Loudness War is OVER. Dynamics are your friend — quiet verses / loud choru
 
 ### A5. SONG LENGTH BY PLATFORM
 
+> [Tier 2/3: industry heuristics, not platform rules; no platform publishes an "optimal" length]
+
 | Platform | Optimal | Why |
 |---|---|---|
 | TikTok (clip) | 15-30s hook | Completion rate |
-| Spotify (playlist) | 2:30-3:15 | Algorithm favors completion |
-| Radio | 3:00-3:30 | Format requirement |
+| Spotify (playlist) | 2:30-3:15 | Completion is believed to help algorithmic placement |
+| Radio | 3:00-3:30 | Format convention |
 | Sync (TV/Film) | 2:30-3:30 | Editor needs |
 | Concept album | 3:30-5:30 | Listener committed |
 | Trailer | 1:30-2:30 | Short, impactful |
@@ -1104,7 +993,7 @@ The Loudness War is OVER. Dynamics are your friend — quiet verses / loud choru
 
 ### A7. REPETITION THEORY
 
-**Optimal Repetitions:** Title/hook 6-12x | Chorus melody 3-4 repeats | Verse melody 2 repeats | Bridge 1 time only.
+**Typical Repetitions** [Tier 2/3: heuristic counts, genre-dependent]: Title/hook 6-12x | Chorus melody 3-4 repeats | Verse melody 2 repeats | Bridge 1 time only.
 
 **Strategies:** Varied repetition (same words, different production). Additive (each repeat adds layer). Transformative (same melody, new meaning after bridge). Degrading (each repeat deteriorates).
 
@@ -1128,7 +1017,7 @@ Verses = close-ups (specific). Choruses = wide shots (universal). Bridge = crane
 
 ### A10. CROSS-GENRE FUSION THEORY
 
-**The 70/30 Rule:** One genre dominant (structure, hooks), one genre flavor (texture, accents). Never 50/50.
+**The 70/30 Rule** [Tier 2/3: craft heuristic]: One genre dominant (structure, hooks), one genre flavor (texture, accents). Avoid 50/50 by default -- it tends to read as neither.
 
 Choose: Which provides STRUCTURE? Which provides TEXTURE? Which provides VOCAL STYLE? Hook belongs to dominant genre. Flavor appears in specific moments.
 
@@ -1144,17 +1033,19 @@ Write the FULL version first. Then create derivatives.
 
 ### A12. AI PROMPT ENGINEERING PRINCIPLES
 
-**Core principles:** Specificity > Generality | Early words carry more weight | Reinforcement strengthens | Negatives prevent drift | Cultural references anchor faster than descriptions | Contradiction = random output | Diminishing returns after ~200 words | Order matters (most important first) | Consistency anchoring (repeat key terms start AND end)
+**Core principles** [Tier 3: community prompt heuristics]: Specificity > Generality | Early words carry more weight | Reinforcement strengthens | Exclusions (Suno's Exclude field, plain comma-separated) prevent drift | Era/scene references ("90s Bristol trip-hop") anchor faster than abstract descriptions -- but artist names do not; convert them (`references/SUNO_STYLE_GENRE_REFERENCE.md` §11) | Contradiction = random output | Diminishing returns: the Style field caps at 1000 characters (~150-170 words), so front-load the essentials rather than filling the cap | Order matters (most important first) | Consistency anchoring (repeat key terms start AND end)
 
 ---
 
 ### A13. MUSIC BUSINESS FUNDAMENTALS
 
-**Revenue:** Mechanical (per stream) | Performance (broadcast/live) | Sync (visual media) | Print (sheet music)
+**Revenue:** Mechanical (reproductions: streams, downloads, physical) | Performance (broadcast, live, streaming) | Sync (visual media) | Print (sheet music)
 
-**Registrations needed:** PRO (ASCAP/BMI/SESAC) | ISRCs (through distributor) | Mechanical rights org | SoundExchange (digital performance)
+**Registrations needed:** PRO (ASCAP/BMI/SESAC/GMR in the US, or your country's society) | ISRCs for recordings (through distributor) | ISWCs for compositions (via your PRO) | Mechanical rights org (in the US, the MLC for streaming mechanicals) | SoundExchange (US digital performance of the master)
 
-**Self-publishing = keep 100%.**
+**Self-publishing** means you keep the publisher's share instead of assigning it to a publisher -- it does NOT mean you automatically collect 100%. You still need PRO membership (writer and publisher accounts), publishing administration (an admin service or your own registrations with each society) to collect worldwide, and in the US the MLC for streaming mechanicals. Unregistered income goes uncollected. [Tier 2, not legal advice]
+
+**AI-generated music:** the US Copyright Office requires human authorship for registration; purely AI-generated elements may not be protectable (human-written lyrics and human selection/arrangement can be). Ownership and commercial-use rights for Suno output depend on your Suno plan and the current terms of service, and distributors have their own AI policies. [Tier 2, not legal advice]
 
 ---
 
@@ -1172,7 +1063,7 @@ Layered vocals → loop pedal or backing tracks. Orchestral → keys/pad. Glitch
 
 ### A16. PHRASING & BREATH DESIGN
 
-**Phrase lengths:** Short 2-4 syl (punchy, urgent) | Medium 5-8 syl (conversational) | Long 9-12 syl (flowing, powerful) | Very long 13+ (breathless, dense — talk-singing only)
+**Phrase lengths:** Short 2-4 syl (punchy, urgent) | Medium 5-8 syl (conversational) | Long 9-12 syl (flowing, powerful) | 13-15 = review stress density and singability at tempo | 16+ = apply the Compression Test (compress, or justify it as intentional -- common in talk-singing and rap). Target band for most sung lines: 7-12 [Tier 2].
 
 Line break = breath. Em dash = short pause. Standalone short line = dramatic weight.
 
@@ -1182,7 +1073,7 @@ Line break = breath. Em dash = short pause. Standalone short line = dramatic wei
 
 **Motif types:** Lyric motif (recurring phrase) | Word motif (single word threads) | Production motif (recurring sound) | Melodic motif (returning melody) | Rhythmic motif (pattern anchors) | Timbral motif (instrument = character)
 
-**Rules:** Introduce early. Recur in different contexts. Transform by the end. 3-5 appearances max across album. Final appearance = most powerful.
+**Rules:** Introduce early. Recur in different contexts. Transform by the end. 3-5 appearances max across album [Tier 2: heuristic]. Final appearance = most powerful.
 
 ---
 
@@ -1192,7 +1083,7 @@ Line break = breath. Em dash = short pause. Standalone short line = dramatic wei
 
 **Guidelines for sensitive subjects:** Express don't glamorize. Include nuance. Bridge offers something (not solution, but shift). Test: could this harm a vulnerable listener? Specificity IS sensitivity. Name it to tame it.
 
-**Your proven approach:** Identify with pain without resolving it falsely. "I don't know what to do" offers companionship ("me too"), not answers. The duet version adds support WITHOUT dismissing. This is the transcendent approach.
+**Worked approach:** Identify with pain without resolving it falsely. Example: the song "I Don't Know What to Do" offers companionship ("me too"), not answers. The duet version adds support WITHOUT dismissing. This is the transcendent approach.
 
 ---
 
@@ -1206,7 +1097,7 @@ Line break = breath. Em dash = short pause. Standalone short line = dramatic wei
 □ Genre code (what style-world?)
 □ Prosody (words on strong beats?)
 □ Vocal direction (range, weight, delivery, character)
-□ Hook (memorable, repeatable, compelling signal within first 5-30 seconds)
+□ Hook (memorable, repeatable, hook signal within ~5-30 s of the first sung word, genre-dependent)
 □ Production space (where does the song live?)
 □ Arrangement arc (build/strip/break/explode)
 □ Audience + platform (who? what length? what format?)

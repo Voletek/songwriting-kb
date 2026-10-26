@@ -1,7 +1,16 @@
-# Suno AI — Complete Tag Reference
+# Suno AI — Legacy v5.x Tag Reference (v4.5–v5.5 era)
 
-> All confirmed meta-tags, formatting rules, and v5.0 techniques for Suno AI song generation.
-> Consolidation of Sections 12 + 13 from the Songwriting Knowledge Base.
+> **LEGACY REFERENCE — v5.x / v5.5-era.** Suno **V6** (`v6` / `v6-wild` / `v6-mini`) is the current default model.
+> For V6, use `references/V6_TAG_REFERENCE.md` (tag dictionary) and `references/V6_TAG_DISCOVERY.md`
+> (division of labor, canonical tag grammar, results log). Everything in this file is **v5.5-era (legacy) —
+> re-validate on V6** before relying on it. V6 lyrics do NOT use global tags (`[track:]` / `[control:]` /
+> `[sequence:]`), pipe notation `[Section | params]`, or a `[Tag Vocabulary]` block.
+
+> Meta-tags, formatting rules and techniques documented for Suno v4.5–v5.5, mostly community-sourced
+> (stayen/suno-reference, Nov 2025; Omnisona God Mode Manual v3.0) and largely untested by us [Tier 3],
+> plus our own v5.5 test results where noted. Tags are documented here, not guaranteed to work.
+> Consolidates the tag material formerly in Sections 12 + 13 of `SONGWRITING_KNOWLEDGE_BASE.md`
+> (KB §13 is now a short summary that points here).
 
 ---
 
@@ -37,10 +46,21 @@ Priority order when hitting 1000 char limit:
 | `[track: ...]` | Global defaults (genre, mood, length, instruments) | `[track: genre: dark cinematic rock, mood: haunted, length: 270]` |
 | `[control: ...]` | Behavioral directives | `[control: no-repeat, dynamic transitions]` |
 | `[length: XXX]` | Target duration in seconds | `[length: 270]` |
-
-**Note:** `[length:]` can be embedded inside `[track:]` OR used standalone. Do NOT use both — pick one placement.
 | `[sequence: ...]` | Explicit section ordering | `[sequence: intro, verse, pre-chorus, chorus, verse, chorus, bridge, final chorus, outro]` |
 | `[end]` | Song termination signal | `[end]` (at very bottom) |
+
+**Note:** `[length:]` can be embedded inside `[track:]` OR used standalone. Do NOT use both — pick one placement.
+
+**Details:**
+- **`[track: ...]`** — sets defaults for the whole song; place at the very top, before any section tags. Individual sections can override these defaults, so you avoid repeating global parameters per section. Example with instruments: `[track: genre: dark cinematic rock, mood: haunted, length: 270, instruments: piano, cello, tribal drums]`
+- **`[control: ...]` directives:**
+  - `no-repeat` — prevents auto-looping/duplicated lines (essential for spoken bridges)
+  - `instrumental` — no vocals at all
+  - `dynamic transitions` — allows tempo, intensity and texture to vary between sections
+  - Combine: `[control: no-repeat, dynamic transitions]`
+- **`[length: XXX]`** — keeps songs from running long or short; place before the section tags. `[length: 180]` = 3:00 (standard) · `[length: 270]` = 4:30 (our typical target) · `[length: 330]` = 5:30 (extended concept tracks)
+- **`[sequence: ...]`** — prevents section confusion; most useful for songs with 7+ sections or unusual concept-track structures.
+- **`[end]`** — signals Suno to stop generating; not 100% reliable: better at preventing new vocals than at cutting instruments. Pair with `[fade: slow]` in the outro, e.g. `[outro: Fading guitar, single sustained chord]` on one line, `[end]` on the next.
 
 ---
 
@@ -62,6 +82,8 @@ Priority order when hitting 1000 char limit:
 
 ## PIPE NOTATION (Inline Parameters)
 
+> v5.5-era (legacy). Not used in V6 output — V6 uses 2-4 separate tags per section (see `references/V6_TAG_REFERENCE.md`).
+
 **Syntax:** `[SectionName | param1, param2, param3]`
 
 ```
@@ -70,7 +92,20 @@ Priority order when hitting 1000 char limit:
 [bridge | stripped, near-silence, spoken delivery]
 ```
 
-Saves characters vs stacking multiple `[tag]` lines. Can combine vocal + production + mood.
+Saves characters vs stacking multiple `[tag]` lines (one line instead of 3-4), states intent more clearly to the parser, and can combine vocal + production + mood. Pipe parameters override the global (`[track:]`) defaults for that section only.
+
+**Can be combined with stacked tags:**
+```
+[Verse 1 | vulnerable vocals, close-mic, sparse]
+[Piano only] [Cave reverb]
+
+Lyrics here...
+```
+
+**Pipe notation vs stacked tags:**
+- **Pipe notation** — when character count is tight or the section needs only 1-2 quick modifiers
+- **Stacked tags** — when you need detailed production cues (Mode C theatrical songs)
+- **Both** — for maximum control on critical sections
 
 ### Valid Pipe Parameters (USE THESE):
 - **Mood/energy:** powerful, soft, intimate, energetic, stripped, atmospheric, dark, bright, warm, cold
@@ -103,6 +138,14 @@ Saves characters vs stacking multiple `[tag]` lines. Can combine vocal + product
 | `[big finish]` | Grand climactic ending | orchestral, rock, electronic, percussive |
 | `[swell]` | Gradual volume rise | orchestral, synth-driven, percussive, dramatic |
 
+**Parameter meanings & examples:**
+- `[crescendo: Slow orchestral build leading into chorus]` · `[crescendo: Layered instruments entering one by one]`
+- `[diminuendo: Instruments falling away one by one after the chorus]` · `[diminuendo: Orchestral swell fading into solo violin]`
+- `[silence: ...]` — more specific than describing silence in a direction block. `short` = ms to ~2 s · `sudden` = immediate cut-off · `gradual` = fade to nothing · `echoed` = reverb tail, then nothing. Example: `[silence: sudden, 4 beats before the bridge vocal enters]`
+- `[power-off drop: ...]` — simulates an electronic system shutting off. `sudden` · `glitchy` = stutter before the silence · `resonant` = slight echo · `percussive` = bass thump, then nothing. Example: `[power-off drop: Sudden, everything cuts before bridge]`
+- `[build]` — marks a pre-chorus/pre-drop section as RISING: `[build | rising tension, more drums, synth layers thickening]`
+- `[big finish]` — maximum intensity for the final moment: `[big finish: Full orchestra, choir, cymbal crashes, dramatic resolution]`
+
 ---
 
 ## TEMPO & RHYTHM TAGS
@@ -114,6 +157,12 @@ Saves characters vs stacking multiple `[tag]` lines. Can combine vocal + product
 | `[accelerando]` | Tempo increase | gradual, sudden, layered |
 | `[ritardando]` | Tempo decrease | gradual, sudden, expressive |
 | `[fermata]` | Held note/chord | sustained, dramatic, subtle |
+
+**Notes & examples:**
+- `[modulation]` — community claim: tagging the key change is more reliable than only describing it in Production Direction. Parameter synonyms: `sudden`/`abrupt`, `ascending`/`rising`, `descending`/`falling`, `gradual`/`smooth`, `chromatic`. Examples: `[modulation: Sudden shift from A minor to C major]` · `[modulation: ascending, gradual from D minor toward F major]`
+- `[beat-switch]` — for moments where the groove fundamentally shifts: `[beat-switch: Sudden shift from battle drums to running rhythm]` · `[beat-switch: half-time, slowed groove for emotional weight]`
+- `[accelerando: Gradual tempo increase building into climax]` · `[ritardando: Gradual orchestral slowdown leading into outro]`
+- `[fermata]` — sustains a moment longer than written: `[fermata: Dramatic hold on final chord before resolution]` · `[fermata: Sustained vocal note at emotional peak]`
 
 ---
 
@@ -127,10 +176,19 @@ Saves characters vs stacking multiple `[tag]` lines. Can combine vocal + product
 | `[spoken word]` | Poetic/rhythmic speech | Bridge monologues, narrative sections |
 | `[narrator]` | Clear storyteller/presenter voice | Alaric quotes, system voices, framing |
 | `[vocalist]` | Voice character description | `[vocalist \| weathered baritone, close-mic]` |
+| `[personae: ...]` | Voice character description (alternative to `[vocalist]`) | `[personae: Gritty male voice with synthetic textures]` |
 | `[chant]` | Repetitive vocal phrase | Hook repetition, name-as-mantra, ritual |
 | `[chant-loop]` | Looped vocal pattern (building) | Background layers, hypnotic sections |
 | `[call-and-response]` | Interaction pattern | Dialogue, duet exchanges, internal argument |
 | `[distorted vocals]` | Gritty/processed voice | Industrial sections, breakdown moments |
+
+**Notes & examples:**
+- `[vulnerable vocals]` invites a softer, more exposed delivery — less belting, more breath, slight shakiness: `[verse | vulnerable vocals, soft, nearly breaking]` · `[bridge | vulnerable vocals, confessional tone]`. Used for Fractured Shadows' confessional/grief tracks (14-16).
+- `[whisper] The secrets only night can hear` (lead) vs `[whispering: eerie background voices, unintelligible, panning]` (texture). `[whisper]` suits intro lines, bridge confessions and intimate moments; `[whispering]` suits background atmosphere, horror/psychological texture and ghost voices.
+- `[spoken word]` / `[narrator]` are more reliable than hoping a vocal-direction description works: `[spoken word | intimate, close-mic, almost whispered]` · `[narrator: deep male voice, ancient measured delivery]`
+- `[vocalist]` / `[personae]` describe the singing character without naming a real artist and are more specific than a Style-only vocal description — they help lock the voice across sections: `[vocalist | soft female voice, indie folk tone]` · `[vocalist | relaxed baritone, storyteller style, weathered]`
+- `[chant: Deep, repetitive vocal phrase — title repeated as mantra]` · `[chant-loop: Layered voices repeating hook phrase, building]` — e.g., name-as-mantra refrains ("Rikan / Rikan", "Ghost in the system", "Both names").
+- `[call-and-response: Male voice asks, female voice answers]` · `[call-and-response: Spoken question, sung response]` — e.g., Track 14's bridge dialogue, Track 11's Alaric quotes.
 
 ---
 
@@ -144,6 +202,13 @@ Saves characters vs stacking multiple `[tag]` lines. Can combine vocal + product
 | `[articulation: X]` | Note style | staccato, legato, marcato |
 | `[tessitura: X]` | Vocal pitch area | low, mid, high |
 
+**Meanings & examples:**
+- `[pedal-point]` — a bass note held constant while the harmony changes above it; creates tension or grounding: `[pedal-point: Low sustained note for gothic atmosphere]` · `[pedal-point: Deep drone beneath shifting chords]`. We use the concept in static bridge chords (Track 14's sustained Cm), Alaric's Nexus hum and cave drones.
+- `[texture: thin]` = sparse, 1-2 elements · `[texture: dense]` = rich, 8+ elements · `[texture: polyphonic]` = independent melodies at once
+- `[aria-rise: Vocals rise into emotional climax, strings swell beneath]` — final-chorus peaks, key-change moments
+- `[articulation: staccato]` = short, detached (e.g., Evil Biscuits pizzicato) · `[articulation: legato]` = smooth, connected (grief-ballad strings)
+- `[tessitura]` — the AVERAGE pitch area, more precise than a range: `low` = intimate, dark · `mid` = comfortable storytelling · `high` = emotional peaks, fragility
+
 ---
 
 ## STRUCTURAL DISTINCTIONS
@@ -153,6 +218,11 @@ Saves characters vs stacking multiple `[tag]` lines. Can combine vocal + product
 | `[breakdown]` | Strip DOWN (subtractive, extended) | `[break]` | Brief PAUSE (transitional) |
 | `[whisper]` | Lead vocal whispered | `[whispering]` | Background whisper texture |
 | `[build]` | Rising intensity section | `[drop]` | Sudden intensity shift (arrival) |
+
+```
+[breakdown: Percussion only, building back toward chorus]
+[break: 2 beats of silence before the drop]
+```
 
 ---
 
@@ -192,27 +262,56 @@ Saves characters vs stacking multiple `[tag]` lines. Can combine vocal + product
 
 ## SUNO v5.0 CAPABILITIES
 
+> v5.0-era community findings (legacy) — re-validate on V6.
+
 ### Genre Mashups (use + to combine)
+v5.0 handles compound genres that v4.x could not: it blends both instead of defaulting to one.
 ```
 [genre: dark cinematic rock + nordic folk]
 [genre: industrial + neoclassical]
+[genre: indie pop + quirky theatrical]
 ```
 
 ### Natural Language Tempo
+v5.0 parses descriptive tempo phrases beyond a plain BPM number:
 ```
 [tempo: slow funeral march, processional weight]
+[tempo: mid-tempo walking pace with purpose]
 [tempo: urgent combat heartbeat, elevated but controlled]
 ```
 
 ### Extended Prompt Parsing
-Tags embedded in natural language sentences now parse correctly in v5.0.
+Tags embedded in natural language sentences now parse correctly in v5.0:
+```
+The [chorus] should hit with [anthemic] vocal harmonies and [big finish] energy
+```
+This is why Production Direction blocks are read as tag-adjacent instructions.
 
 ### Unrecognized Tags = Section Labels
-`[Verse 1 – Cold / Vast]` is parsed as a section. Our mood-labeled sections work.
+Any `[text: description]` Suno does not recognize becomes a section label, so mood-labeled sections work:
+```
+[Verse 1 – Cold / Vast]     → a section named "Verse 1 – Cold / Vast"
+[Bridge – System Failure]   → a section carrying that emotional context
+```
+This is what makes the Mode C labeled-section technique (see DUET MODES) valid.
+
+---
+
+## EXTEND & VERSIONING TAGS
+
+### `[extend-style]` — Controls Song Extensions
+When using Suno's Extend feature to continue a song, this prevents the "new song" problem:
+```
+[extend-style: Seamless continuation with evolving textures]
+[extend-style: Contrasting — introduce new elements]
+[extend-style: Thematic — build upon the main motif]
+```
 
 ---
 
 ## SUNO v5.5 CAPABILITIES (March 2026)
+
+> v5.5-era (legacy) — re-validate on V6. These are documented as v5.5 features; check what your current Suno plan/UI offers.
 
 ### Voices / Personas — Consistent Voice Across Songs
 
@@ -297,7 +396,7 @@ Suno learns your musical preferences over time based on your generations, likes,
 
 ## ERA TAGS — Production Style Modifiers
 
-> Era decade tags in the Style Prompt now AGGRESSIVELY bias production style in v5+. Understanding this interaction is critical for getting the sound you want.
+> **v5.5-era (legacy) — re-validate on V6.** [Tier 3] Community/our v5.x observation: era decade tags in the Style Prompt AGGRESSIVELY bias production style in v5+. Understanding this interaction is critical for getting the sound you want.
 
 ### How Era Tags Work
 
@@ -389,7 +488,7 @@ Our SOPs produce Precise-level prompts by design:
 - SOP 01 Step 9 forces you to decide key, BPM, audience, target length
 - SOP 01 Steps 6-7 force voice + genre decisions
 - SOP 01 Step 8 forces arrangement/instrumentation choices
-- The Style Prompt formula (Section 2 of this doc) addresses all 7 dimensions
+- The Style Prompt formula (STYLE PROMPT FORMULA section, top of this doc) addresses all 7 dimensions
 
 **This is WHY our detailed prompts outperform casual Suno usage.** We're not leaving any dimension to statistical chance.
 
@@ -397,7 +496,9 @@ Our SOPs produce Precise-level prompts by design:
 
 ## CREATIVE SLIDERS (UI Settings)
 
-Suno's interface provides three sliders that affect generation behavior. These are NOT text fields — they're percentage-based controls in the UI.
+> **v5.5-era (legacy) — re-validate on V6.** Optional: use these only if your Suno UI exposes sliders; all values below are v5.5-era starting points, not tested V6 settings.
+
+Suno's v5.5 interface provides three sliders that affect generation behavior. These are NOT text fields — they're percentage-based controls in the UI.
 
 ### Weirdness (Safe ↔ Chaos)
 
@@ -486,15 +587,7 @@ Only active when you provide an audio reference (Inspo feature). Controls how mu
 
 ## BPM REFERENCE
 
-| Range | Feel | Genres |
-|---|---|---|
-| 60-70 | Ballad, ambient, cinematic | Grief, intimate, dirge |
-| 70-85 | R&B, soul, trip-hop | Vulnerability, confession |
-| 85-100 | Hip-hop, neo-soul | Indie, alternative |
-| 100-115 | Pop, indie, folk | Walking pace, accessible |
-| 115-125 | Pop, dance-pop, funk | Energy, dance |
-| 125-135 | Rock, EDM | Driving, aggressive |
-| 135+ | Punk, metal, D&B | Maximum intensity |
+Canonical BPM-by-genre table: `references/SUNO_STYLE_GENRE_REFERENCE.md` §3.1 (BPM-emotion mapping in §3.2). Two placements only this file listed: neo-soul at 85-100 BPM, and cinematic/dirge material at 60-70 BPM.
 
 ---
 
@@ -655,9 +748,9 @@ OR
 "clear vocal separation, no vocal overlap confusion"
 ```
 
-**For all layers — include negative prompts:**
+**For all layers — add these to the Exclude field** (plain comma-separated, no dash prefix — see NEGATIVE PROMPTS / EXCLUSIONS):
 ```
--vocal overlap confusion, -hums, -beatboxing
+vocal overlap confusion, hums, beatboxing
 ```
 
 ---
@@ -697,12 +790,18 @@ Parenthetical layers count toward the 5000 character lyric limit. Named layers (
 
 ## NEGATIVE PROMPTS / EXCLUSIONS
 
-Format: `[Exclusions: ‑item, ‑item, ‑item]`
+**Canonical format:** Suno's dedicated **Exclude** field, plain comma-separated text, NO dash prefix (neither `-` nor `‑`):
+```
+trap drums, beatboxing, vocal hums, bright synths
+```
+In song files, put them in an `## EXCLUSIONS:` section (preferred). A legacy `[Exclusions: ...]` line inside the Style section is still parsed and never counts toward Style chars.
+
+**Legacy note (v5.5-era):** dash-prefixed negatives (`-trap drums`) were a technique for negation INSIDE the Style field. Do not use dash prefixes in the Exclude field.
 
 Common exclusions by genre:
-- **Dark/cinematic:** ‑bright synths, ‑upbeat energy, ‑cheerful melodies, ‑trap drums
-- **Folk/acoustic:** ‑EDM drops, ‑heavy distortion, ‑industrial textures
-- **Always include:** ‑beatboxing, ‑vocal hums (prevents common Suno artifacts)
+- **Dark/cinematic:** bright synths, upbeat energy, cheerful melodies, trap drums
+- **Folk/acoustic:** EDM drops, heavy distortion, industrial textures
+- **Always include:** beatboxing, vocal hums (prevents common Suno artifacts)
 
 ---
 
@@ -714,18 +813,22 @@ Common exclusions by genre:
 | `[key: Am]` | ❌ Ignored | Key in Style Prompt |
 | `[loop]` | ❌ Unsupported | Manual repetition |
 | `[autotune]` | ❌ Deprecated | Describe vocal style |
-| `[mix]`/`[master]` | ❌ Ineffective | Use `[eq]` or describe |
+| `[mix]`/`[master]` | ❌ Ineffective | Use `[eq]` / `[compression]` hints or describe |
 | `[volume]` | ❌ Ineffective | Use dynamics tags |
 | `[filter]` | ❌ Ineffective | Describe in direction |
+| `[panning]` | ❌ Ineffective | Use `[stereo: wide]` if needed |
 | `[section]` | ❌ Redundant | Use specific names |
 
 ---
 
 ## PERFORMANCE NOTATION SYMBOLS (Inline Lyric Formatting)
 
-> [Tier 3: Community heuristic]
+> **v5.5-era (legacy) — re-validate on V6.**
+> [Tier 3: Community heuristic — single-song finding]
 > Credit: Omnisona (Suno AI God Mode Manual v3.0, March 2026)
-> User-tested on Suno v5.5 (July 2026) -- see `experiments/suno/2026-07-02-performance-notation-symbols.yml`
+> User-tested on Suno v5.5 (July 2026) on ONE song -- see `experiments/suno/2026-07-02-performance-notation-symbols.yml`.
+> The promotion rule in `experiments/suno/README.md` requires 3+ different songs before an observation becomes
+> guidance, so every "Tested Status" below is a provisional single-song result, not a confirmed rule.
 
 Certain characters inside lyrics affect vocal delivery in Suno. These are NOT tags -- they are inline text formatting that shapes how the AI sings.
 
@@ -733,7 +836,7 @@ Certain characters inside lyrics affect vocal delivery in Suno. These are NOT ta
 |---|---|---|---|
 | `( )` | SUNG/PERFORMED as secondary vocal layer | CONFIRMED | Use freely -- see PARENTHETICAL LAYERS section |
 | `[ ]` | Structural/production tag -- NOT sung | CONFIRMED | Use freely -- see SECTION TAGS section |
-| `ALL CAPS` | Emphasis -- louder, more forceful delivery | **CONFIRMED WORKING** | **RECOMMENDED** -- only reliable inline notation |
+| `ALL CAPS` | Emphasis -- louder, more forceful delivery | **WORKED (1 song)** | Use for emphasis -- the only symbol that worked in this test |
 | `~` | Vocal vibrato or wavering delivery | NOT RELIABLE -- inconsistent results, works sometimes on slower material | NOT RECOMMENDED for production |
 | `-` (mid-word) | Syllable stretch / melisma | DOES NOT STRETCH -- treats each hyphenated section as a new word (separator, not stretcher) | WORD SEPARATOR only -- do not use for melisma |
 | `" "` (quotation marks) | Different vocal color (quoting) | NO EFFECT -- no noticeable delivery change observed | DOES NOT WORK |
@@ -741,9 +844,9 @@ Certain characters inside lyrics affect vocal delivery in Suno. These are NOT ta
 
 **CRITICAL:** Parentheses `()` are SUNG/PERFORMED -- never put production instructions inside parentheses. Use square brackets `[]` for production/structural directions.
 
-**WARNING (July 2026 testing):** Of the 5 inline formatting symbols from the God Mode Manual (`~`, `-`, ALL CAPS, `" "`, `...`), only **ALL CAPS** reliably produces the claimed effect. The others either do not work, produce unintended results, or only marginally reinforce behavior Suno would produce anyway. Use ALL CAPS for emphasis; rely on section tags and pipe notation for other delivery changes.
+**WARNING (July 2026 testing, one song):** Of the 5 inline formatting symbols from the God Mode Manual (`~`, `-`, ALL CAPS, `" "`, `...`), only **ALL CAPS** produced the claimed effect. The others did not work, produced unintended results, or only marginally reinforced behavior Suno would produce anyway. Use ALL CAPS for emphasis; rely on section-level delivery tags (V6: `[Vocal: ...]`) for other delivery changes.
 
-**Testing details:** All 5 symbols tested on Suno v5.5 renders of "The One Who Stays" (dark cinematic hip hop, 80 BPM, D minor). Full experiment log: `experiments/suno/2026-07-02-performance-notation-symbols.yml`
+**Testing details:** All 5 symbols tested on Suno v5.5 renders of a single song, "The One Who Stays" (dark cinematic hip hop, 80 BPM, D minor). Needs 2+ more songs (and a V6 re-test) before promotion. Full experiment log: `experiments/suno/2026-07-02-performance-notation-symbols.yml`
 
 ---
 
@@ -782,7 +885,7 @@ The instrument fill occupies the space between vocal phrases, creating a convers
 
 Suno can render environmental sound effects when placed as tags in the lyrics field. These add atmosphere without occupying vocal space.
 
-**Confirmed working SFX tags:**
+**SFX tags reported to work** (community list from the source above; not yet logged in `experiments/suno/`):
 - `[Rain]`
 - `[Thunder]`
 - `[Birds chirping]`
@@ -799,6 +902,9 @@ Suno can render environmental sound effects when placed as tags in the lyrics fi
 
 ## COMPLETE TEMPLATE (v5.0 Optimized)
 
+> v5.x legacy template. For V6 songs use the "Minimal V6 Song Skeleton" in `references/V6_TAG_REFERENCE.md`
+> and the PRODUCTION TEMPLATE in `references/V6_TAG_DISCOVERY.md`.
+
 ```
 [track: genre: X, mood: X, length: 270]
 [control: no-repeat, dynamic transitions]
@@ -806,8 +912,10 @@ Suno can render environmental sound effects when placed as tags in the lyrics fi
 
 STYLE PROMPT:
 Genre, BPM, Mood, Instruments, Vocal Style, Production Direction
+(comma-separated descriptors, up to 1000 chars)
 
-[Exclusions: ‑item, ‑item, ‑item]
+EXCLUSIONS (Exclude field):
+item, item, item
 
 LYRICS:
 
@@ -828,12 +936,12 @@ LYRICS:
 [chorus | powerful, wide]
 (chorus — 4-6 lines, hook prominent)
 
-[bridge | stripped]
-[silence: sudden]
-(bridge — 3-4 lines, the turn)
+[bridge | stripped, near-silence]
+[silence: sudden, 2 beats]
+(bridge — 3-6 lines, the turn)
 
-[modulation: ascending to relative major]
-[final chorus | big finish, choir]
+[modulation: ascending shift to relative major]
+[final chorus | big finish, full orchestra, choir]
 (final chorus — 4-6 lines)
 
 [outro]
@@ -842,12 +950,20 @@ LYRICS:
 [end]
 ```
 
+### Priority Order for Tags (when hitting character limits)
+1. `[control]` + `[length]` + `[sequence]` (structural — top of lyrics)
+2. Section names with pipe notation (saves chars vs stacked tags)
+3. `[modulation]` / `[silence]` / `[beat-switch]` (specific moments)
+4. `[vulnerable vocals]` / `[whisper]` / `[chant]` (vocal moments)
+5. `[crescendo]` / `[diminuendo]` / `[build]` (dynamics)
+6. `[end]` (termination — bottom of lyrics)
+
 ---
 
 ## LYRIC RULES
 
 1. Section tags on own line — never same line as lyrics
-2. 4-8 lines per section maximum
+2. Verses/choruses usually 4-8 lines (~8-16 bars); bridge 3-6 lines (up to 8 when the turn needs it)
 3. NO punctuation at end of lines
 4. Each line = one melodic phrase
 5. Total lyrics under 5000 characters

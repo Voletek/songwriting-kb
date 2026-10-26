@@ -1,21 +1,21 @@
 # Suno V6 Tag Discovery
 
-> **Status: WORKING MODEL (Sept 2026).** This documents the V6-era lyric-tag format.
-> The findings below are treated as the operating assumption for V6 songwriting — they were
-> produced/validated via Suno's own V6 system output during testing. This remains SEPARATE from
-> the v5.5-confirmed methodology in `core/methodology/suno-optimization.md`; refine as more
-> renders accumulate.
+> **Status: working model (Sept 2026, user-confirmed); log render evidence in the results log below.**
+> This documents the V6 lyric-tag format. V6 (v6 / v6-wild / v6-mini) is the current default:
+> these findings are the operating assumption for V6 songwriting. `core/methodology/suno-optimization.md`
+> keeps its v5.5-era procedure as LEGACY (re-validate on V6) and carries the V6 workflow in
+> `core/methodology/suno-optimization.md` → V6 Procedure. Refine as more renders accumulate.
 
 ---
 
-## CONFIRMED FINDINGS (working model for V6)
+## WORKING-MODEL FINDINGS (Sept 2026, user-confirmed; log render evidence)
 
 1. **The `[Tag Vocabulary]` declaration block is NOT needed in the final song.** It does not get
    sung, and it is not necessary in production output. It's useful only as optional scaffolding
    for organizing an arrangement while writing. **Drop it from final output.**
 
-2. **`[Instrument: X In]` / `[Instrument: X Out]` directional tags WORK.** V6 honors instrument
-   entrances and exits on cue. This is the marquee V6 capability — you can choreograph the
+2. **`[Instrument: X In]` / `[Instrument: X Out]` directional tags work (working model).** V6 honors instrument
+   entrances and exits on cue in the user's renders so far. This is the marquee V6 capability — you can choreograph the
    arrangement (when the banjo enters, when the drums drop out) via inline tags.
 
 3. **THE DIVISION OF LABOR — Style Prompt = WHAT, Inline Tags = HOW.**
@@ -29,11 +29,12 @@
      in the inline tags. A detail can live in either location, but the style carries the
      essential "what this is" and the inline tags describe "how it unfolds."
 
-4. **The full V6 tag vocabulary is treated as functional** (per Suno system output): structure,
+4. **The full V6 tag vocabulary is the working model** (per Suno system output and user renders): structure,
    directional instrumentation, dynamics (classical markings pp–ff + crescendo/diminuendo/swell),
    feel/tempo shifts (half-time, double-time, rubato), vocal-character tags (whisper, belt,
    spoken word, gang vocal, call/response, harmony, layered double, ad-lib), key changes, and
-   compound transitions. See the taxonomy section below — treat all listed tags as usable.
+   compound transitions. See the taxonomy section below — use the listed tags, and log which ones
+   audibly work in the results log.
 
 ---
 
@@ -84,7 +85,7 @@ These six appear across all or most examples and form the spine that Default/Roo
    [Interlude] ... [Key Change] ... [Final Chorus] ... [Outro]
    ```
 
-2. **Instrument entrance/exit choreography**: bring instruments In and Out on cue (the confirmed
+2. **Instrument entrance/exit choreography**: bring instruments In and Out on cue (the working-model
    marquee V6 capability). Mode: **shared spine.**
    ```
    [Instrument: Banjo In]
@@ -224,7 +225,7 @@ but they are described, not recommended. The `Canonical V6 Tag Grammar` section 
 
 ## Canonical V6 Tag Grammar
 
-> **This is the ONE recommended way to write V6 tags.** It is grounded in the CONFIRMED FINDINGS
+> **This is the ONE recommended way to write V6 tags.** It is grounded in the WORKING-MODEL FINDINGS
 > above and in the best shipped song, *From the Floor to the Fire*. It standardizes HOW techniques
 > are written; it does not remove any technique from the inventory above. Every technique 1-16
 > remains expressible here (see the demonstration below).
@@ -239,7 +240,7 @@ but they are described, not recommended. The `Canonical V6 Tag Grammar` section 
    and the adjective in one tag: `[Female response, rising]`, `[Male lead, tender then stronger]`,
    `[Second voice, calm invasive whisper]`. This is recommended, not a fallback.
 
-3. **NO `[Tag Vocabulary]` block in final output.** Confirmed: it is not sung and not needed.
+3. **NO `[Tag Vocabulary]` block in final output.** Working model: it is not sung and not needed.
    Use it, if at all, only as private planning scaffolding, never ship it.
 
 4. **2-4 tags per SECTION, not per line.** Tag the entrance/dynamic/delivery at the top of a
@@ -326,7 +327,7 @@ techniques you reach for, not HOW you notate them.
 
 > **Historical note, kept for provenance.** This passage records an EARLY experimental format from
 > the first test attempts. Part 1 of it (the `[Tag Vocabulary]` declaration block) is **NOT
-> recommended for final output**. It is not sung and not needed (see CONFIRMED FINDINGS #1 and the
+> recommended for final output**. It is not sung and not needed (see WORKING-MODEL FINDINGS #1 and the
 > RESULTS LOG). For the current recommendation, use the **`Canonical V6 Tag Grammar`** section above.
 > The rest of this passage (directional tags, compound transitions, inline delivery, call/response)
 > is preserved by the canonical grammar.
@@ -397,7 +398,7 @@ Bundle simultaneous events: `[Transition: Crescendo, Snare In, Synth Riser]`.
 |---|---|---|
 | 1 | Simple bracketed labels, one per line | Cleanest, likely parses well. Baseline. |
 | 2 | Verbose pipe-delimited multi-param tags (pan, bar numbers, pp/mf/ff) | Extreme density — likely over-tagged; per-bar micro-control probably ignored/averaged |
-| 3 | `[Tag Vocabulary]` block + inline categorized flow tags | The taxonomy-declaration idea emerges, later dropped (block is not sung; see CONFIRMED FINDINGS #1) |
+| 3 | `[Tag Vocabulary]` block + inline categorized flow tags | The taxonomy-declaration idea emerges, later dropped (block is not sung; see WORKING-MODEL FINDINGS #1) |
 | 4-6 | Refined: vocabulary header + `[Instrument: X In/Out]` + classical dynamics + `[Feel:]` + Entrance/Exit transitions | The converged "best" format. Full arrangement-score control. |
 | now | **`Canonical V6 Tag Grammar`** (light-namespaced event tags, `[Role, inline-adjective]` delivery, 2-4 tags/section, no vocabulary block) | Current recommendation; supersedes the vocabulary-header approach |
 
@@ -408,7 +409,13 @@ Bundle simultaneous events: `[Transition: Crescendo, Snare In, Synth Riser]`.
 For each style test, render and log whether each tag TYPE produced an audible, reliable effect.
 Rate: ✅ works / ⚠️ partial / ❌ ignored / ? untested.
 
-Working model (treated as functional per Suno V6 system output; refine as renders accumulate):
+### Render evidence (one row per render; add newest at the bottom)
+
+| Date | Model (v6/v6-wild/v6-mini) | Tag(s) tested | Render result/ID |
+|---|---|---|---|
+| | | | |
+
+### Tag-type summary (working model, Sept 2026, user-confirmed; update from the render rows above)
 
 | Tag Type | Result | Notes |
 |---|---|---|
@@ -442,9 +449,9 @@ Working model (treated as functional per Suno V6 system output; refine as render
 - ~~`[Tag Vocabulary]` header~~ → **not sung, not needed — drop from final output.**
 - ~~In/Out instrument tags~~ → **work; control entrances/exits.**
 - ~~Style Prompt vs inline tags~~ → **complementary. Style = WHAT/identity, inline = HOW/arrangement.**
-- ~~Vocal-delivery tags (Whisper/Belt/Spoken/Gang)~~ → **treated as functional.**
-- ~~Dynamics + feel shifts~~ → **treated as functional.**
-- ~~Key changes + compound transitions~~ → **treated as functional.**
+- ~~Vocal-delivery tags (Whisper/Belt/Spoken/Gang)~~ → **working model (user-confirmed); log render evidence.**
+- ~~Dynamics + feel shifts~~ → **working model (user-confirmed); log render evidence.**
+- ~~Key changes + compound transitions~~ → **working model (user-confirmed); log render evidence.**
 
 ## Still Open (refine as more renders accumulate)
 
@@ -460,7 +467,7 @@ Working model (treated as functional per Suno V6 system output; refine as render
 
 ---
 
-## PRODUCTION TEMPLATE (based on confirmed findings)
+## PRODUCTION TEMPLATE (based on the working-model findings)
 
 For a V6 song, the working structure is:
 
@@ -469,9 +476,9 @@ For a V6 song, the working structure is:
 - This sets the world.
 
 **Lyrics field (the HOW — arrangement):**
-- NO `[Tag Vocabulary]` block (confirmed unnecessary)
+- NO `[Tag Vocabulary]` block (not needed; working model)
 - Section tags (`[Verse]`, `[Chorus]`, etc.)
-- `[Instrument: X In]` / `[Instrument: X Out]` to choreograph the arrangement (confirmed working)
+- `[Instrument: X In]` / `[Instrument: X Out]` to choreograph the arrangement (working model)
 - Vocal-delivery and dynamics tags inline (pending confirmation on which are honored)
 - The lyrics themselves
 
@@ -481,11 +488,14 @@ Keep identity in the style; keep execution in the inline tags.
 
 ## Relationship to the v5.5 Methodology
 
-- `core/methodology/suno-optimization.md` is the **v5.5-era** reference (still valid for v5.5 renders).
-- This doc + `references/V6_TAG_REFERENCE.md` are the **V6 working model**.
+- V6 is the default. This doc + `references/V6_TAG_REFERENCE.md` are the **V6 working model**, and
+  `core/methodology/suno-optimization.md` → V6 Procedure is the V6 optimization workflow.
+- The v5.5-era procedure in `core/methodology/suno-optimization.md` (Steps 1-13 + 9b) is **legacy**:
+  label anything taken from it "v5.5-era (legacy) - re-validate on V6".
 - For V6 songs: use the V6 tag reference and the division-of-labor rule (Style = WHAT, inline = HOW).
 - v5.5-specific mechanics (Italian tempo preference, `[silence: sudden]` failure, named slider
-  presets, tag-count sweet spot) are NOT assumed to carry into V6 — re-validate before relying on them.
+  presets, the 5-8 tag-count rule, `[track:]`/`[control:]`/`[sequence:]` global tags, pipe notation,
+  performance-notation symbols) are NOT assumed to carry into V6 — re-validate before relying on them.
 
 ---
 

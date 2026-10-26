@@ -4,11 +4,17 @@
 experiment_name: ""
 date: "YYYY-MM-DD"
 experimenter: ""
-suno_version: "v5.5"
+suno_version: "v6"            # v6 is the default; use "v5.5" only for legacy re-checks
+model_variant: "v6"           # v6 | v6-wild | v6-mini
+paradigm: "v6"                # v6 | v5.5-legacy
 
 # What are you testing?
 claim_under_test: ""
 # Example: "Era tags in Style Prompt bias production style more than instrumentation"
+
+# V6 lyric tags under test (if any), in canonical grammar
+lyric_tags_under_test: []
+# Example: ["[Instrument: Banjo In]", "[Dynamic: Crescendo]", "[Vocal: Whisper]"]
 
 hypothesis: ""
 # What do you expect to happen?
@@ -16,9 +22,9 @@ hypothesis: ""
 # Settings used for all renders in this experiment
 settings:
   style_prompt: ""
-  exclude: ""
-  weirdness: 50
-  style_influence: 50
+  exclude: ""             # plain comma-separated, no dash prefix (e.g. "trap drums, beatboxing")
+  weirdness: 50          # only if your Suno UI exposes sliders (v5.5-era control)
+  style_influence: 50    # only if your Suno UI exposes sliders (v5.5-era control)
   audio_influence: 0
   persona_or_voice: ""
   custom_model: ""

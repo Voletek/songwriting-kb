@@ -1,18 +1,29 @@
 # Instrument-to-Sound Translation Reference
 
-> **Evidence Tier:** [Tier 3: Community/platform heuristic] -- Untested against Suno until experiments confirm per-genre. Based on 21machines' acid house experiment (June 2026).
+> **Evidence Tier:** [Tier 3: Community/platform heuristic] -- Untested against Suno until experiments confirm per-genre. Based on 21machines' acid house experiment (June 2026) [Tier 3: external community report, not reproduced in this repo].
+>
+> **Suno version:** descriptor findings come from v5.5 renders (v5.5-era (legacy) - re-validate on V6). The
+> **Inline tag** examples below use v5.5-era pipe notation (`[verse | ...]`), which is NOT part of the V6
+> lyric format. On V6, put the sound descriptors in the Style field and use canonical lyric tags such as
+> `[Instrument: Analog Synth In]` / `[Instrument: Sub-Bass Out]` (see `references/V6_TAG_REFERENCE.md`).
+>
+> **Generic names vs gear:** instrument names that became category names (**Rhodes**, **Hammond organ**,
+> **Wurlitzer**) are acceptable tags as-is (Rhodes and Hammond Organ are in the V6 canonical instrument
+> list). Model numbers and brand-model gear (TB-303, TR-808, Juno-60, DX7, Prophet-5, Minimoog,
+> Telecaster, Les Paul, Marshall stack, Vox AC30) should be translated to sound descriptors -- that is
+> what this file is for.
 
 ## Design Principle
 
 **Suno responds to SOUND DESCRIPTIONS, not equipment names.** Describe what the instrument SOUNDS like, not what it IS. Writing "TB-303" gives Suno nothing actionable. Writing "squelching acid bass, resonant filter sweeps" tells it exactly what timbre to produce.
 
-Evidence basis: 21machines' acid house experiment (June 2026) demonstrated that timbre/scene descriptors outperform gear model names in Suno v5.5 renders.
+Evidence basis: 21machines' acid house experiment (June 2026) reported that timbre/scene descriptors outperform gear model names in Suno v5.5 renders [Tier 3: external community report, not reproduced in this repo; no log in `experiments/suno/`].
 
 ---
 
 ## Character Budget Guidance
 
-- ~120 usable characters in a Style Prompt (after genre and vocal tags)
+- Plan on an instrument budget of roughly ~120 characters within the 1000-character Style Prompt (after genre, vocal, mood and production descriptors) [Tier 3 rule of thumb]
 - ~20 chars per instrument at **minimum** tier / ~35 at **compressed** / ~65 at **full**
 - Most prompts fit 3-4 instruments at compressed tier
 
@@ -44,9 +55,10 @@ Evidence basis: 21machines' acid house experiment (June 2026) demonstrated that 
 
 ### TR-808
 - **Full:** deep booming sub-bass kick with sharp claps and tinny cowbell (61 chars)
-- **Compressed:** booming 808 kick, sharp claps (29 chars)
-- **Minimum:** 808 drums (9 chars)
-- **Inline tag:** `[verse | booming 808 kick, trap hi-hats, dark atmosphere]`
+- **Compressed:** booming sub-bass kick, sharp claps (34 chars)
+- **Minimum:** booming sub kick (16 chars)
+- **Note:** "808" is also widely used as a genre word in trap/hip-hop ("808 bass"); prefer the descriptor, and test before relying on the bare number.
+- **Inline tag:** `[verse | booming sub-bass kick, trap hi-hats, dark atmosphere]`
 
 ### Korg M1
 - **Full:** glassy digital piano with lush orchestral string pads (53 chars)
@@ -161,18 +173,21 @@ Evidence basis: 21machines' acid house experiment (June 2026) demonstrated that 
 - **Inline tag:** `[chorus | weeping steel guitar, lush bends and swells]`
 
 ### Hammond B3
+- **Generic name OK:** "Hammond organ" works as a tag; translate only the model ("B3") into descriptors.
 - **Full:** gritty overdriven rotary organ with percussive key click and drawbar growl (74 chars)
 - **Compressed:** gritty rotary organ, percussive click (37 chars)
 - **Minimum:** gritty organ (12 chars)
 - **Inline tag:** `[verse | gritty rotary organ, percussive click, gospel groove]`
 
 ### Wurlitzer
+- **Generic name OK:** "Wurlitzer" / "Wurlitzer electric piano" is an acceptable category name.
 - **Full:** warm tremolo electric piano with soft bark and reedy midrange (61 chars)
 - **Compressed:** warm tremolo electric piano, reedy bark (39 chars)
 - **Minimum:** warm electric piano (19 chars)
 - **Inline tag:** `[verse | warm tremolo electric piano, laid-back soul groove]`
 
 ### Rhodes
+- **Generic name OK:** "Rhodes" is an acceptable tag (it is in the V6 canonical instrument list).
 - **Full:** smooth bell-like electric piano with gentle tremolo and rounded bass (68 chars)
 - **Compressed:** smooth bell-like electric piano, gentle tremolo (47 chars)
 - **Minimum:** smooth electric piano (21 chars)
@@ -471,7 +486,7 @@ Evidence basis: 21machines' acid house experiment (June 2026) demonstrated that 
 ### Motown Kit
 - **Full:** warm compressed vintage drums with thick snare thwack and muted kick (68 chars)
 - **Compressed:** warm vintage drums, thick snare thwack (38 chars)
-- **Minimum:** vintage Motown drums (20 chars)
+- **Minimum:** vintage soul drums (18 chars)
 - **Inline tag:** `[verse | warm vintage drums, thick snare thwack, soul groove]`
 
 ### Bonham-Style Kit
@@ -497,4 +512,4 @@ Evidence basis: 21machines' acid house experiment (June 2026) demonstrated that 
 
 ## Promotion Criteria
 
-This reference requires per-genre validation experiments before promotion to [Tier 2]. Each genre family needs at least 3 controlled A/B tests comparing gear-name prompts vs sound-descriptor prompts. See `experiments/suno/TEMPLATE.yml` for the testing framework. Current status: [Tier 3] - validated only for acid house (21machines, June 2026).
+This reference requires per-genre validation experiments before promotion to [Tier 2]. Each genre family needs at least 3 controlled A/B tests comparing gear-name prompts vs sound-descriptor prompts. See `experiments/suno/TEMPLATE.yml` for the testing framework. Current status: [Tier 3] - reported only for acid house (21machines, June 2026; external community report, not reproduced in this repo). Promotion also requires re-testing on V6.
