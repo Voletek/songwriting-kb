@@ -1,12 +1,13 @@
 ---
 inclusion: auto
-description: Framework for managing concept album continuity — how to set up album blueprints, conditional steering, continuity hooks, and universal album rules.
+name: concept-album
+description: Concept album framework — setting up an album blueprint, album-specific conditional steering, continuity hooks, the album extension protocol, and universal album continuity rules. Use for album setup, continuity checks, track registries, and blueprint work.
 ---
 
 # Concept Album — Continuity System
 
-> Auto-loaded. Provides the framework for managing concept album continuity.
-> If you have an active album, add a conditional steering file for it (see examples/albums/).
+> Auto-included (`inclusion: auto`) when a request is about concept albums, continuity, or blueprints.
+> If you have an active album, add a conditional steering file for it (see `examples/albums/`).
 
 ---
 
@@ -14,31 +15,31 @@ description: Framework for managing concept album continuity — how to set up a
 
 When working on a concept album, you need three things:
 
-1. **Album Blueprint** (in `references/`) — The complete continuity document: track registry, hard rules, sonic palette, character voices, key relationships, motifs, callbacks.
-2. **Conditional Steering File** (in `.kiro/steering/`) — A summary of hard rules that auto-loads when you open album files. Uses `inclusion: fileMatch` so it only appears when relevant.
-3. **Continuity Hook** (in `.kiro/hooks/`) — Automated check that fires on file save and verifies rules aren't violated.
+1. **Album Blueprint** — The complete continuity document: track registry, hard rules, sonic palette, character voices, key relationships, motifs, callbacks. Your own blueprint lives in `references/YOUR_ALBUM_BLUEPRINT.md` (or `references/<ALBUM>_BLUEPRINT.md`). The bundled examples live in `examples/albums/fractured-shadows/BLUEPRINT.md` and `examples/albums/keeper-of-the-light/BLUEPRINT.md`.
+2. **Conditional Steering File** (in `.kiro/steering/`) — A summary of hard rules that loads only when matching album files are in context. Uses `inclusion: fileMatch`.
+3. **Continuity Hook** (optional, in `.kiro/hooks/`) — A Kiro v1 JSON hook that fires on agent-made saves of album song files and asks the agent to check the hard rules.
 
 ## Setting Up Your Album
 
 Follow **SOP 04** (Setting Up a Concept Album) for the full procedure. Quick version:
 
-1. Create your blueprint: `references/YOUR_ALBUM_BLUEPRINT.md`
-2. Create conditional steering: `.kiro/steering/your-album.md` with front-matter:
+1. Create your blueprint: `references/YOUR_ALBUM_BLUEPRINT.md` (template provided)
+2. Create conditional steering: `.kiro/steering/your-album.md` with front matter (must be the first bytes of the file):
    ```yaml
    ---
    inclusion: fileMatch
    fileMatchPattern: "songs/your_album_dir/**"
    ---
    ```
-3. Create continuity hook: `.kiro/hooks/your-album-continuity.json`
-4. Configure the album-continuity agent with YOUR rules
+3. (Optional) Create a continuity hook: copy `examples/albums/<album>/continuity-hook.json` to `.kiro/hooks/<album>-continuity.json` (Kiro v1 schema) and edit its matcher and prompt for your album
+4. Configure the album-continuity agent with YOUR blueprint and rules
 
 See `examples/albums/` for two complete reference implementations.
 
 ## ALBUM EXTENSION PROTOCOL
 
 **⚠️ STOP — Before writing ANY track outside your current registry:**
-1. Update your Album Blueprint with new track registry (including Persona assignment)
+1. Update your Album Blueprint with new track registry (including Persona/voice assignment)
 2. Extend the sonic palette evolution map
 3. Define which existing rules carry forward vs which are act-specific
 4. Get the blueprint update committed BEFORE writing new songs
@@ -59,5 +60,5 @@ These apply to ANY concept album regardless of genre:
 
 ## Reference
 
-When you have an active album blueprint, reference it here:
+When you have an active album blueprint, reference it here (replace the template path with yours):
 #[[file:references/YOUR_ALBUM_BLUEPRINT.md]]

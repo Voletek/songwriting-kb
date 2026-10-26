@@ -9,10 +9,8 @@ When activated, apply the full multi-layer critique framework to any song provid
 
 ## Methodology
 
-#[[file:core/methodology/critique.md]]
+Read `core/methodology/critique.md` before applying this skill (if not already in context).
 
 ## Reference Data
 
-#[[file:references/CRITIQUE_REFERENCE.md]]
-#[[file:references/CRITIQUE_REPORT_TEMPLATE.md]]
-#[[file:references/SUNO_STYLE_GENRE_REFERENCE.md]]
+Read `references/CRITIQUE_REFERENCE.md`, `references/CRITIQUE_REPORT_TEMPLATE.md`, `references/SUNO_STYLE_GENRE_REFERENCE.md` before applying this skill (if not already in context).
