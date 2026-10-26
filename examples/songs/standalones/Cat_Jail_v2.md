@@ -1,5 +1,7 @@
 # Cat Jail — Rewritten v2
 
+<!-- song-format: legacy (archived example that predates or sits outside the current format standard; see examples/songs/README.md) -->
+
 > Complete rewrite for stronger misdirect, tighter specificity, better hook mechanics,
 > and more personality. Original had the right concept but generic phrasing.
 > The key to this song: every line must GENUINELY sound romantic/suggestive until
@@ -9,7 +11,7 @@
 ---
 
 ## STYLE PROMPT:
-Playful indie pop, quirky bedroom pop, light funk groove, conversational male vocal, warm and cheeky delivery, 104 BPM, G major, bright Rhodes keys, fingerpicked nylon guitar, soft bouncy bass, light programmed drums with rim clicks, handclaps on chorus, minimal airy production, catchy and loopable, modern indie vibes, warm but not saccharine, Vulfpeck meets Rex Orange County
+Playful indie pop, quirky bedroom pop, light funk groove, conversational male vocal, warm and cheeky delivery, 104 BPM, G major, bright Rhodes keys, fingerpicked nylon guitar, soft bouncy bass, light programmed drums with rim clicks, handclaps on chorus, minimal airy production, warm but not saccharine
 
 Structure: short instrumental intro → talk-singing verse (suggestive misdirect) → bouncy pre-chorus → catchy repetitive chorus with la-di-da hook + punchline → verse 2 (deeper misdirect) → chorus → playful bridge (reveal energy) → final chorus (lean into humor) → soft tag outro
 
@@ -17,7 +19,7 @@ Vocal: relaxed male, slightly sarcastic, talk-singing, natural imperfections, co
 
 Production: simple pocket groove, space between notes, rhythmic bounce from bass and keys, handclaps enter on chorus, keep it breathing and human, focus on timing and hook repetition, slightly lo-fi warmth
 
-[Exclusions: ‑heavy autotune, ‑EDM drops, ‑aggressive energy, ‑dramatic vocals, ‑orchestral anything, ‑trap drums, ‑distortion, ‑dark atmosphere, ‑screaming, ‑beatboxing, ‑vocal hums]
+[Exclusions: heavy autotune, EDM drops, aggressive energy, dramatic vocals, orchestral anything, trap drums, distortion, dark atmosphere, screaming, beatboxing, vocal hums]
 
 ---
 
@@ -131,6 +133,8 @@ I'm in cat jail
 (spoken, quiet) Yeah I gotta pee so bad right now
 (spoken) But look at this face
 (spoken) I can't
+
+[end]
 
 ---
 

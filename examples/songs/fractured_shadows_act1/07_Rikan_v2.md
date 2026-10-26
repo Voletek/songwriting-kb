@@ -10,9 +10,9 @@
 ---
 
 ## STYLE PROMPT:
-Epic dark cinematic cyber-fantasy ballad, haunted identity awakening, male baritone A2-E4, key F minor shifting toward Ab major, 4/4, 84 BPM, wet cavern ambience, broken piano, low electrical hum fading into cave resonance, distant thunder memories, soft glitch textures, rising fantasy strings, buried war horns, emotional final choir
+Epic dark cinematic cyber-fantasy ballad, haunted identity awakening, male baritone A2-E4, key F minor shifting toward Ab major, 4/4, 84 BPM, wet cavern ambience, broken piano, low electrical hum fading into cave resonance, distant thunder memories, soft glitch textures, rising fantasy strings, buried war horns, emotional final choir, lyrics in parentheses are close breathy whispered intrusive thoughts panned with delay
 
-[Exclusions: ‑upbeat pop feel, ‑trap drums, ‑rap delivery, ‑EDM festival drop, ‑cheerful melody, ‑playful vocals, ‑comedic tone, ‑bright synth lead, ‑chipmunk vocals, ‑excessive autotune, ‑vocal chops, ‑beatboxing, ‑humming, ‑scat vocals, ‑random ad-libs, ‑spoken narrator except where directed]
+[Exclusions: upbeat pop feel, trap drums, rap delivery, EDM festival drop, cheerful melody, playful vocals, comedic tone, bright synth lead, chipmunk vocals, excessive autotune, vocal chops, beatboxing, humming, scat vocals, random ad-libs, spoken narrator except where directed]
 
 ---
 
@@ -20,17 +20,9 @@ Epic dark cinematic cyber-fantasy ballad, haunted identity awakening, male barit
 
 [Title: Rikan]
 
-[Production Direction:
-This begins immediately after Fracture Protocol. The transfer is complete. Draeven has crossed the veil and wakes in Eryndor. Start quiet, wet, cold, and terrified. Build from fear and body horror into haunted recognition. The final chorus should feel powerful but not fully victorious — he's found his name but not his peace.]
+[Production Direction: Right after Fracture Protocol. Wet, cold, terrified; body horror to haunted recognition. Choir subtle until a powerful, not victorious, final chorus: he has his name, not his peace. Cave and storm ambience as sound design.]
 
-[Vocal Direction:
-Close-mic male baritone, confused and breathless at first. Build through fear, memory loss, and identity fracture. Final vocal becomes stronger and more resolved, but still haunted.]
-
-[Whisper Rule:
-Lyrics in parentheses are whispered intrusive thoughts, close and breathy, panning left-to-right with delay.]
-
-[Exceptions:
-Whispered thoughts may be glitched and intimate. Choir stays subtle until the final chorus. Storm, cave, and Mark of Balance ambience may appear as sound design.]
+[Vocal Direction: Close-mic male baritone, breathless and confused, building through fear and identity fracture to a stronger, still-haunted end. Whispered thoughts may glitch.]
 
 [Intro - After the Transfer]
 [Wet cavern ambience] [Stone drips] [Low hum] [Distant broken piano]
@@ -294,6 +286,31 @@ Is the first real thing I feel
 
 Rikan...
 
+[end]
+
+---
+
+
+## ADVANCED BOX (overflow direction)
+
+> The Lyrics field must stay under 5000 characters, so the direction blocks above are condensed.
+> The full original direction is kept here. Paste it into Suno's More Options / Advanced box if your UI has one,
+> or use it as the reference when re-rendering.
+
+```
+[Production Direction:
+This begins immediately after Fracture Protocol. The transfer is complete. Draeven has crossed the veil and wakes in Eryndor. Start quiet, wet, cold, and terrified. Build from fear and body horror into haunted recognition. The final chorus should feel powerful but not fully victorious — he's found his name but not his peace.]
+
+[Vocal Direction:
+Close-mic male baritone, confused and breathless at first. Build through fear, memory loss, and identity fracture. Final vocal becomes stronger and more resolved, but still haunted.]
+
+[Whisper Rule:
+Lyrics in parentheses are whispered intrusive thoughts, close and breathy, panning left-to-right with delay.]
+
+[Exceptions:
+Whispered thoughts may be glitched and intimate. Choir stays subtle until the final chorus. Storm, cave, and Mark of Balance ambience may appear as sound design.]
+```
+
 ---
 
 ## PRODUCTION NOTES:
@@ -319,5 +336,5 @@ Rikan...
 1. **Pre-Chorus line 8:** "Keeps reaching for a name" → "Won't stop reaching for a name" (more urgent — "keeps" is passive, "won't stop" implies the burning is INSISTENT, almost aggressive)
 2. **Pre-Chorus 2 line 2:** "Like a star under the skin" → "Like a star caught under skin" ("caught" adds entrapment — the star didn't choose to be there, mirrors his situation)
 3. **Final Chorus trimmed:** Removed the final "Rikan / Rikan / I hear the name and turn / Rikan / Rikan / And somewhere in me / Something answers" — was one repetition too many. Now ends on "I hear the name and turn / And somewhere in me / Something answers" without the extra Rikan/Rikan before it. The answer is the ENDING, not another chant.
-4. **Added [Title:] and [Exclusions:] per format standard**
+4. **Added [Title:] and [Exclusions: ] per format standard**
 5. **All other lyrics untouched** — the intro body horror, V1, the bridge (best in the album), the breakdown, the outro — all perfect as written.

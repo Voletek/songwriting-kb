@@ -8,7 +8,7 @@
 ## STYLE PROMPT:
 Dark aggressive cinematic rock, primal combat energy, male baritone A2-E4, key B minor, 4/4, 96 BPM, heavy tribal percussion, distorted bass, cave reverb atmosphere, sharp staccato guitar riffs, industrial undertones fading into organic aggression, primal drums building through song, whispered paranoia verses into explosive choruses, fantasy combat intensity, visceral and physical, no clean polish
 
-[Exclusions: ‑bright synths, ‑pop vocals, ‑upbeat energy, ‑EDM drops, ‑cheerful melodies, ‑trap drums, ‑beatboxing, ‑vocal hums, ‑autotune, ‑clean production, ‑heroic triumphant feeling, ‑orchestral bombast]
+[Exclusions: bright synths, pop vocals, upbeat energy, EDM drops, cheerful melodies, trap drums, beatboxing, vocal hums, autotune, clean production, heroic triumphant feeling, orchestral bombast]
 
 ---
 
@@ -142,6 +142,8 @@ Something against my chest
 Is pulling me somewhere
 
 And I follow
+
+[end]
 
 ---
 

@@ -59,7 +59,7 @@
 
 - **Primary genre (70%):** Acoustic folk (warm, handmade, conversational)
 - **Texture genre (30%):** Sea-shanty inflection (rhythmic pulse from bodhran, community-song structure adapted for one voice)
-- **Fabbri's 5 rules check:**
+- **Fabbri genre-rule check (the five rule types):**
   - Formal: acoustic instrumentation, verse-chorus structure ✓
   - Semiotic: folk = authenticity, storytelling, connection to place ✓
   - Behavioral: intimate performance, close-mic'd ✓
@@ -208,7 +208,7 @@ Warm acoustic folk, 92 BPM, D Mixolydian, devotional and intimate, concertina le
 ### Step 21 — Exclusions
 
 ```
-[Exclusions: ‑distortion, ‑electric guitar, ‑synthesizers, ‑heavy reverb, ‑choir, ‑harmony vocals, ‑drum kit, ‑EDM drops, ‑industrial textures, ‑beatboxing, ‑vocal hums, ‑bright synths, ‑trap drums]
+[Exclusions: distortion, electric guitar, synthesizers, heavy reverb, choir, harmony vocals, drum kit, EDM drops, industrial textures, beatboxing, vocal hums, bright synths, trap drums]
 ```
 
 ### Step 22 — Global Meta-Tags
@@ -288,6 +288,8 @@ distortion, electric guitar, synthesizers, heavy reverb, choir, harmony vocals, 
 ### Lyrics Field (Paste Complete)
 
 ```
+[Title: The Keeper's Morning]
+
 [track: genre: warm acoustic folk, mood: devotional solitude, length: 225]
 [control: no-repeat, dynamic transitions]
 [sequence: intro, verse, pre-chorus, chorus, verse, pre-chorus, chorus, bridge, final chorus, outro]

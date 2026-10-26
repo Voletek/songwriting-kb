@@ -36,7 +36,7 @@ he will survive the night.
 ## 6. Genre Mapping
 - Primary genre (70%): dark trip-hop (90s Bristol lineage)
 - Texture genre (30%): cinematic strings / ambient electronic
-- Fabbri 5-rules check: honors formal/technical (sub-bass, breakbeat, Rhodes), semiotic (nocturnal paranoia), and behavioural (headphone late-night listening) rules of trip-hop. (Fabbri's 5 rules defined in `core/methodology/songwriting.md` Step 7.)
+- Fabbri genre-rule check (five rule types): honors formal/technical (sub-bass, breakbeat, Rhodes), semiotic (nocturnal paranoia), and behavioural (headphone late-night listening) rules of trip-hop. (Fabbri's 5 rules defined in `core/methodology/songwriting.md` Step 7.)
 - Instrument palette: deep sub-bass pulse, distant Rhodes piano, vinyl-crackle breakbeat barely there, cinematic strings, sparse electronic textures, reverb/delay as spatial instruments. (Palette selection: `references/SUNO_STYLE_GENRE_REFERENCE.md`.)
 
 ## 7. Key + BPM + Time Signature

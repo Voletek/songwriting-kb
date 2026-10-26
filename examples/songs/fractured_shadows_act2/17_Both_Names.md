@@ -8,7 +8,7 @@
 ## STYLE PROMPT:
 Epic cinematic resolution, atmospheric folk rock building to orchestral climax, male baritone A2-E4, key A minor shifting to C major final chorus, 4/4, 80 BPM, acoustic guitar foundation, piano, building strings, full orchestra final chorus, choir resolution, warm bass, live drums midway, dawn atmosphere, earned hope, integration anthem, emotional key lift
 
-[Exclusions: ‑dark oppressive atmosphere, ‑trap drums, ‑EDM drops, ‑beatboxing, ‑vocal hums, ‑autotune, ‑industrial textures, ‑glitch effects, ‑cold production, ‑aggressive metal, ‑trivial positivity]
+[Exclusions: dark oppressive atmosphere, trap drums, EDM drops, beatboxing, vocal hums, autotune, industrial textures, glitch effects, cold production, aggressive metal, trivial positivity]
 
 ---
 
@@ -131,6 +131,7 @@ The fire's gone cold — but the warmth stays
 Both names — one step — forward
 
 [Single guitar chord — sustained — not resolving — story continues]
+[end]
 
 ---
 

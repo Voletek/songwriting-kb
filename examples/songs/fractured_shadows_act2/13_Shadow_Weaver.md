@@ -8,7 +8,7 @@
 ## STYLE PROMPT:
 Dark cinematic thriller, psychological tension, cold orchestral suspense, male baritone A2-E4, key Eb minor, 4/4, 78 BPM, creeping bass line, sparse dissonant strings, cold piano single notes, subtle choir whispers, building dread, investigative noir, controlled cold intensity, suspense film energy
 
-[Exclusions: ‑bright energy, ‑pop vocals, ‑trap drums, ‑EDM drops, ‑beatboxing, ‑vocal hums, ‑cheerful melodies, ‑autotune, ‑aggressive metal, ‑war drums, ‑heroic orchestration, ‑warm production]
+[Exclusions: bright energy, pop vocals, trap drums, EDM drops, beatboxing, vocal hums, cheerful melodies, autotune, aggressive metal, war drums, heroic orchestration, warm production]
 
 ---
 
@@ -124,6 +124,8 @@ I've already killed in the dark
 And I'll do it again
 
 The hunt begins
+
+[end]
 
 ---
 

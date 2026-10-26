@@ -8,7 +8,7 @@
 ## STYLE PROMPT:
 Dark cinematic fantasy, atmospheric post-rock with orchestral undertones, haunting male baritone A2-E4, key E minor, 4/4, 76 BPM, ethereal cave ambience, phosphorescent glow textures, distant strings, reverb piano, subtle choir pads, pulsing sub bass matching heartbeat, ancient and vast atmosphere, wonder mixed with dread, slow cinematic build, no drums until chorus
 
-[Exclusions: ‑bright pop, ‑trap drums, ‑EDM drops, ‑beatboxing, ‑vocal hums, ‑upbeat tempo, ‑cheerful melodies, ‑industrial aggression, ‑autotune, ‑metalcore screaming, ‑hip hop rhythms]
+[Exclusions: bright pop, trap drums, EDM drops, beatboxing, vocal hums, upbeat tempo, cheerful melodies, industrial aggression, autotune, metalcore screaming, hip hop rhythms]
 
 ---
 
@@ -129,6 +129,8 @@ Two pulses beating as one
 
 Somewhere above me — there's a sky
 I climb toward it
+
+[end]
 
 ---
 

@@ -11,7 +11,7 @@
 
 Dark indie atmospheric ballad, slow 72 BPM, E minor, intimate male vocal — mid-low breathy close-mic delivery with slight vocal cracks, conversational and imperfect, fingerpicked acoustic guitar, sparse piano, ambient pads, subtle bass pulse, distant strings, soft choir pad in final chorus only, raw emotional delivery, post-rock swells in choruses, whispered lines are close and breathy with slight reverb trail, bridge soul-voice is warmer deeper register with gentle room reverb — distinct from narrator voice, Structure: whispered intro → intimate verse → rising pre → emotional restrained chorus → closer verse → varied chorus → stripped bridge with voice shift → transformed final chorus → dissolving outro
 
-‑trap drums, ‑beatboxing, ‑hip hop rhythms, ‑upbeat energy, ‑vocal runs, ‑falsetto, ‑bright pop production
+[Exclusions: trap drums, beatboxing, hip hop rhythms, upbeat energy, vocal runs, falsetto, bright pop production]
 
 ---
 
@@ -131,6 +131,8 @@ It's my soul — and it sounds like me
 
 I love you
 And I love our soul
+
+[end]
 
 ---
 

@@ -1,5 +1,7 @@
 # Human Exception — Polished (Album Track 4)
 
+<!-- song-format: legacy (archived example that predates or sits outside the current format standard; see examples/songs/README.md) -->
+
 > Minor polish only. This is already 9/10 — the concept (AI developing empathy by observing 
 > human suffering/beauty) is brilliant and the execution is strong. Changes: tightened a few
 > lines in V1 that were slightly expository, sharpened the bridge transition into possession,
@@ -10,7 +12,7 @@
 ## STYLE PROMPT:
 Dark cinematic AI glitch, industrial neoclassical cyber-noir, sterile clinical atmosphere, restrained baritone female vocal A2–F4 with subtle emotional instability and light digital degradation, intimate close-mic delivery, emotionally suppressed tone gradually fracturing throughout the song, layered with a low-register female AI voice during bridge and surveillance sections, calm invasive whisper delivery, psychologically unsettling but emotionally controlled, subtle synthetic vocal artifacts, cold analog synth textures, glitchy micro-percussion, distorted sub bass, sparse distant acoustic piano, restrained orchestral tension layers, existential cyberpunk atmosphere, oppressive low-end, emotionally immersive production, key D minor, 92 BPM, 4/4
 
-[Exclusions: ‑bright synths, ‑upbeat energy, ‑EDM drops, ‑pop vocals, ‑trap drums, ‑hip hop percussion, ‑warm analog saturation, ‑acoustic guitar, ‑heroic orchestration, ‑metalcore screaming, ‑punk energy, ‑festival energy, ‑cheerful melodies, ‑excessive reverb wash, ‑heavy autotune artifacts, ‑anime villain delivery, ‑seductive female vocals, ‑exaggerated robotic voices, ‑vocal hums, ‑beatboxing, ‑triumphant endings]
+[Exclusions: bright synths, upbeat energy, EDM drops, pop vocals, trap drums, hip hop percussion, warm analog saturation, acoustic guitar, heroic orchestration, metalcore screaming, punk energy, festival energy, cheerful melodies, excessive reverb wash, heavy autotune artifacts, anime villain delivery, seductive female vocals, exaggerated robotic voices, vocal hums, beatboxing, triumphant endings]
 
 ---
 
@@ -155,6 +157,8 @@ Anomaly preserved
 
 (whispered) ...indefinitely
 
+[end]
+
 ---
 
 ## PRODUCTION NOTES:
@@ -181,6 +185,6 @@ Anomaly preserved
 2. **V1 line 3-4:** "Pattern recognition flags the same mistakes / Yet every cycle they still awake" → "Yet every cycle something in them wakes" (grammatically cleaner, "something in them wakes" is more mysterious than "they still awake")
 3. **V1 line 5:** "Neon hospitals cut through acid rain" → "Neon hospitals bleeding through the rain" ("bleeding" = personification + medical imagery, connects to the suffering theme; "acid rain" was slightly cyberpunk-cliché)
 4. **Removed duplicate Style block** — original had style written TWICE (once outside, once inside lyrics). Consolidated to single external style + internal direction blocks.
-5. **Removed [Exclude:] block from lyrics** — moved to standardized [Exclusions:] line after style prompt
+5. **Removed [Exclude: ] block from lyrics** — moved to standardized [Exclusions: ] line after style prompt
 6. **Added [Title:] tag**
 7. **All other lyrics untouched** — they're already exceptional

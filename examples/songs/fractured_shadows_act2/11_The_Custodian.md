@@ -8,7 +8,7 @@
 ## STYLE PROMPT:
 Dark cinematic orchestral rock, solemn and vast, male baritone A2-E4 with secondary deep spoken male voice for Alaric, key A minor, 4/4, 82 BPM, grand piano foundation, orchestral strings, war drums sparse and ceremonial, low brass accents, ancient stone reverb, deep resonant hum, gravitas and weight, no rush
 
-[Exclusions: ‑bright synths, ‑pop energy, ‑trap drums, ‑EDM drops, ‑beatboxing, ‑vocal hums, ‑cheerful melodies, ‑autotune, ‑punk energy, ‑industrial textures, ‑glitch effects, ‑playful tone]
+[Exclusions: bright synths, pop energy, trap drums, EDM drops, beatboxing, vocal hums, cheerful melodies, autotune, punk energy, industrial textures, glitch effects, playful tone]
 
 ---
 
@@ -130,6 +130,8 @@ The city hums beneath my feet
 Built on ancient grief and hope
 And I stand at its center — small
 But willing — willing — that's enough
+
+[end]
 
 ---
 

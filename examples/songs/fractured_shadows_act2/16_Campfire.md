@@ -8,7 +8,7 @@
 ## STYLE PROMPT:
 Warm indie folk rock, intimate campfire atmosphere, male baritone A2-D4, key D major, 4/4, 84 BPM, fingerpicked acoustic guitar, warm bass, gentle brushed drums, soft mandolin accents, crackling fire ambience, low cello warmth, earned tenderness, bittersweet hope, the warmest song on the album
 
-[Exclusions: ‑dark atmosphere, ‑heavy distortion, ‑trap drums, ‑EDM drops, ‑beatboxing, ‑vocal hums, ‑industrial textures, ‑cold production, ‑aggressive energy, ‑autotune, ‑orchestral bombast, ‑fast tempo]
+[Exclusions: dark atmosphere, heavy distortion, trap drums, EDM drops, beatboxing, vocal hums, industrial textures, cold production, aggressive energy, autotune, orchestral bombast, fast tempo]
 
 ---
 
@@ -118,6 +118,8 @@ Not from fear — but gratitude
 
 Tomorrow we fight again
 But tonight — resting together — is enough
+
+[end]
 
 ---
 

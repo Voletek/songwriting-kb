@@ -1,5 +1,7 @@
 # From the Floor to the Fire — Standalone Duet (Comeback Anthem)
 
+<!-- song-format: legacy (archived example that predates or sits outside the current format standard; see examples/songs/README.md) -->
+
 > **Song Thesis:** *A man claws up from rock bottom on stubborn, unglamorous grit — and the higher he climbs the more he understands he was lifted by others, until the anthem turns from "I'm self-made" into "we rose, now take my hand."*
 
 ---
@@ -169,6 +171,8 @@ Still alive, still alive
 [Lead]
 The road remembers every mile
 And I can finally face it with a smile
+
+[end]
 
 ---
 

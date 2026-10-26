@@ -8,7 +8,7 @@
 ## STYLE PROMPT:
 Cinematic grief ballad, orchestral folk rock, deeply emotional, male baritone A2-E4, key G minor, 4/4, 68 BPM, solo piano opening, strings building to full orchestra, acoustic guitar midway, gentle war drums final chorus only, wind through ruins, eulogy energy, warmth beneath sorrow
 
-[Exclusions: ‑bright pop, ‑trap drums, ‑EDM drops, ‑beatboxing, ‑vocal hums, ‑cheerful melodies, ‑autotune, ‑industrial textures, ‑glitch effects, ‑aggressive guitar, ‑fast tempo]
+[Exclusions: bright pop, trap drums, EDM drops, beatboxing, vocal hums, cheerful melodies, autotune, industrial textures, glitch effects, aggressive guitar, fast tempo]
 
 ---
 
@@ -126,6 +126,8 @@ But because he asked me to
 
 Goodbye old man
 I'll make it count
+
+[end]
 
 ---
 

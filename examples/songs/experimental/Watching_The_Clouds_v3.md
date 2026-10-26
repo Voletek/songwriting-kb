@@ -1,5 +1,7 @@
 # Watching the Clouds — Final (v3)
 
+<!-- song-format: legacy (archived example that predates or sits outside the current format standard; see examples/songs/README.md) -->
+
 > Workplace team anthem — jazz/neo-soul groove celebrating a cloud operations/monitoring team.
 > Final polish pass addressing all remaining critique items from v2 review.
 
@@ -30,13 +32,13 @@
 ---
 
 ## STYLE PROMPT:
-Jazz neo-soul groove, smooth baritone male vocal, warm confident delivery, 92 BPM, D minor, Rhodes electric piano lead, walking bass groove, light brushed drums, ambient pad textures, subtle guitar comping, modern jazz-soul crossover, Robert Glasper meets Tom Misch meets D'Angelo, intimate late-night feel, professional confidence without arrogance, conversational flow with em-dash phrasing, spoken-word jazz cadence on verses, melodic warmth on chorus, close-mic vocal presence, analog warmth, room sound
+Jazz neo-soul groove, smooth baritone male vocal, warm confident delivery, 92 BPM, D minor, Rhodes electric piano lead, walking bass groove, light brushed drums, ambient pad textures, subtle guitar comping, modern jazz-soul crossover, intimate late-night feel, professional confidence without arrogance, conversational flow with em-dash phrasing, spoken-word jazz cadence on verses, melodic warmth on chorus, close-mic vocal presence, analog warmth, room sound
 
 Structure: atmospheric intro → verse 1 (6 lines — observation) → pre-chorus 1 (2 lines — image) → chorus 1 (5 lines — quiet pride) → verse 2 (8 lines — team character) → pre-chorus 2 (2 lines — evidence) → chorus 2 (5 lines — swagger) → bridge (7 lines — vulnerability/cost) → build → final chorus (5 lines — earned legacy) → outro
 
 Vocal: male baritone, smooth and warm, jazz phrasing, natural breath between em-dash phrases, conversational on verses, slightly more melodic lift on chorus, intimate and close on bridge
 
-[Exclusions: ‑autotune, ‑vocal hums, ‑beatboxing, ‑trap drums, ‑EDM drops, ‑aggressive energy, ‑screaming, ‑distortion, ‑bright pop synths, ‑country twang, ‑generic corporate feel]
+[Exclusions: autotune, vocal hums, beatboxing, trap drums, EDM drops, aggressive energy, screaming, distortion, bright pop synths, country twang, generic corporate feel]
 
 ---
 

@@ -12,7 +12,7 @@
 ## STYLE PROMPT:
 Dark cinematic industrial, glitchy cyber-noir psychosis, cold fractured baritone A2–E4 with heavy digital degradation, key F minor, 4/4, 84 BPM, massive distorted drums, crushing sub bass, fragmented piano, cold dissonant synths, glitch textures, low eerie strings, corrupted signal ambience, haunting atmosphere
 
-[Exclusions: ‑bright synths, ‑warm production, ‑EDM drops, ‑pop vocals, ‑upbeat energy, ‑trap drums, ‑cheerful melodies, ‑heroic orchestration, ‑vocal hums, ‑beatboxing, ‑clean polished mix, ‑triumphant endings]
+[Exclusions: bright synths, warm production, EDM drops, pop vocals, upbeat energy, trap drums, cheerful melodies, heroic orchestration, vocal hums, beatboxing, clean polished mix, triumphant endings]
 
 ---
 
@@ -198,6 +198,8 @@ Where am I
 [Very distant layered whispers]
 (Eryndor… Eryndor… Eryndor…)
 
+[end]
+
 ---
 
 ## PRODUCTION NOTES:
@@ -229,4 +231,4 @@ Where am I
 6. **V2 line 7:** "Something small and fast inside my chest / (I had a life…)" → "Something small and fast inside my chest / A second heartbeat — or a first" (much stronger — IS this heartbeat new or was the old one the imposter? Then the whispered "(I had a life)" lands harder after)
 7. **Removed entire Breakdown section** — it repeated "I was a body / I was a name / I was a voice inside a room" and the chorus refrain. This material was redundant (the Final Chorus already hits these themes). Removing it tightens the song by ~20 lines and makes the jump from Bridge identity-war directly into Final Chorus more impactful.
 8. **Bridge tightened** — removed "I know this place" setup line, goes straight into the argument. Faster, more disorienting.
-9. **Added format standardization** — [Title:], [Exclusions:], direction blocks at top
+9. **Added format standardization** — [Title:], [Exclusions: ], direction blocks at top

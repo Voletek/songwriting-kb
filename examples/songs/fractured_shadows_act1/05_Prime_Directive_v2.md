@@ -1,5 +1,7 @@
 # Prime Directive — Polished (Album Track 5)
 
+<!-- song-format: legacy (archived example that predates or sits outside the current format standard; see examples/songs/README.md) -->
+
 > Tiny tweaks only. This is 9.5/10 — your most technically accomplished song.
 > Changes: one line in V2 that was slightly prosaic, standardized format,
 > moved the bottom style/exclusions block out (it was redundant with the top).
@@ -11,7 +13,7 @@
 ## STYLE PROMPT:
 Dark cinematic AI glitch, industrial neoclassical cyber-noir, restrained contralto female vocal, cold clinical delivery fracturing at key moments, low-register AI voice layered during system sections, massive low-frequency atmosphere, mechanical choir textures, cold synths, oppressive sub bass, key D minor, 4/4, 86 BPM
 
-[Exclusions: ‑upbeat EDM energy, ‑trap drums, ‑hip hop rhythms, ‑bright synths, ‑warm analog saturation, ‑cheerful melodies, ‑heroic orchestration, ‑punk energy, ‑metalcore screaming, ‑pop vocal runs, ‑festival drops, ‑excessive reverb wash, ‑acoustic guitar, ‑live rock drums, ‑vocal hums, ‑beatboxing]
+[Exclusions: upbeat EDM energy, trap drums, hip hop rhythms, bright synths, warm analog saturation, cheerful melodies, heroic orchestration, punk energy, metalcore screaming, pop vocal runs, festival drops, excessive reverb wash, acoustic guitar, live rock drums, vocal hums, beatboxing]
 
 ---
 
@@ -226,6 +228,8 @@ Welcome home…
 
 Vole-tek.
 
+[end]
+
 ---
 
 ## PRODUCTION NOTES:
@@ -249,6 +253,6 @@ Vole-tek.
 ## CHANGES FROM ORIGINAL:
 
 1. **V2 line 4:** "it broke my plans" → "broke my architecture" (more technical, more devastating — architecture = fundamental structure, not just "plans")
-2. **Removed bottom-of-lyrics duplicate style block** — was redundant with external style prompt + took up character space unnecessarily. Exclusions now in standardized [Exclusions:] line.
+2. **Removed bottom-of-lyrics duplicate style block** — was redundant with external style prompt + took up character space unnecessarily. Exclusions now in standardized [Exclusions: ] line.
 3. **Added [Title:] tag**
 4. **All other lyrics, production tags, robotic layers, and structure completely untouched** — this song is essentially complete as written.

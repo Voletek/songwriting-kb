@@ -10,15 +10,15 @@
 ---
 
 ## STYLE PROMPT:
-Quirky dark indie pop, theatrical villain energy, playful sinister tone, bouncy dark groove, 102 BPM, E minor, mischievous male vocal with dramatic flair, eerie toy piano, plucked pizzicato strings, bouncy bass, light snappy drums, subtle eerie synth accents, Danny Elfman meets Arctic Monkeys, cinematic but fun, character-driven, catchy hook-first, under 3 minutes
+Quirky dark indie pop, theatrical villain energy, playful sinister tone, bouncy dark groove, 102 BPM, E minor, mischievous male vocal with dramatic flair, eerie toy piano, plucked pizzicato strings, bouncy bass, light snappy drums, subtle eerie synth accents, cinematic but fun, character-driven, catchy hook-first
 
 Structure: whispered hook intro → bouncy villain verse → tight pre-chorus → punchy chant chorus → verse 2 (escalation) → chorus → short theatrical bridge (the turn) → final chorus (simplest, singable) → comedic spoken outro
 
-Vocal: male, expressive, slightly theatrical, talk-singing in verses, melodic in chorus, sarcastic and self-aware, deadpan humor, NOT over-the-top — more Alex Turner villain than Disney villain
+Vocal: male, expressive, slightly theatrical, talk-singing in verses, melodic in chorus, sarcastic and self-aware, deadpan humor, NOT over-the-top — a deadpan indie-rock villain, not a cartoon one
 
 Production: bouncy pocket groove, pizzicato on verses (creeping), toy piano accents (eerie cute), snappy drums with ghost notes, bass drives the groove, chorus opens wider with layered backing ooh's, bridge goes staccato dramatic, keep it TIGHT — under 3:00
 
-[Exclusions: ‑heavy horror, ‑metal, ‑EDM drops, ‑overly serious tone, ‑screaming, ‑autotune, ‑trap drums, ‑beatboxing, ‑vocal hums, ‑orchestral bombast, ‑acoustic guitar strumming]
+[Exclusions: heavy horror, metal, EDM drops, overly serious tone, screaming, autotune, trap drums, beatboxing, vocal hums, orchestral bombast, acoustic guitar strumming]
 
 ---
 
@@ -128,6 +128,8 @@ Evil biscuits — that's my life
 (spoken) Let me keep my skin
 
 (distant, whispered) ...no promises
+
+[end]
 
 ---
 
