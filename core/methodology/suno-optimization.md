@@ -8,16 +8,40 @@
 > **⚡ V6 PARADIGM (current working model)** -- Suno V6 (v6 / v6-wild / v6-mini) is the current default and divides labor differently than v5.5:
 > **Style field = the WHAT** (genre, key, tempo, vocal identity, production aesthetic -- sets the world) and
 > **Lyrics field = the HOW** (section tags + `[Instrument: X In/Out]` + dynamics + delivery + transitions -- choreographs the performance).
-> `[Instrument: X In]` / `[Instrument: X Out]` are confirmed working V6 controls for instrument entrances/exits.
+> `[Instrument: X In]` / `[Instrument: X Out]` are the V6 controls for instrument entrances/exits (working model, Sept 2026, user-confirmed).
 > Do NOT include a `[Tag Vocabulary]` block in final output (planning aid only -- not sung).
-> The v5.5-era mechanics below (slider presets, tag-count limits, `[silence: sudden]`, Italian tempo preference) are Tier 3 and version-dependent -- re-validate against V6 where they conflict.
+> Use the **V6 Procedure (default)** below. The v5.5-era procedure and mechanics after it (global tags, pipe notation, slider presets, tag-count limits, `[silence: sudden]`, Italian tempo preference, era tags, Personas/Stems) are Tier 3, version-dependent, and **legacy -- re-validate on V6**.
 > V6 master tag list: `references/V6_TAG_REFERENCE.md`. How/why & division of labor: `references/V6_TAG_DISCOVERY.md`.
 
 ---
 
 ## Overview
 
-Suno optimization is the FINAL technical pass before rendering. It does NOT change creative content -- it adds technical formatting that ensures Suno produces the best possible output. If the song was written with the full songwriting procedure (which includes formatting), this SOP functions as a verification pass.
+Suno optimization is the FINAL technical pass before rendering. It does NOT change creative content -- it adds technical formatting that ensures Suno produces the best possible output. If the song was written with the full songwriting procedure (which includes formatting), this procedure functions as a verification pass.
+
+---
+
+## V6 Procedure (default)
+
+> Status: working model (Sept 2026, user-confirmed). Log render evidence in the `references/V6_TAG_DISCOVERY.md` results log.
+> Tag dictionary: `references/V6_TAG_REFERENCE.md`. Canonical grammar: `references/V6_TAG_DISCOVERY.md` → Canonical V6 Tag Grammar.
+
+1. **Split the song into three fields** -- Style / Exclude / Lyrics. In the song file: a Style Prompt section, an `## EXCLUSIONS:` section, and the Lyrics block.
+2. **Style = the WHAT** (sets the world): genre first, then key, tempo, vocal identity, production aesthetic (instrument palette, space). <=1000 characters. No artist names (convert them -- see Step 9 below). Describe instruments as sound descriptors, not gear model numbers (see Step 9b); generic category names such as Rhodes, Hammond organ, or Wurlitzer are fine.
+3. **Negatives go in the Exclude field** -- plain comma-separated text, no dash prefix (neither `-` nor `‑`), e.g. `trap drums, beatboxing, vocal hums, bright synths`. Put negatives in Exclude rather than Style, and never in Lyrics.
+4. **Lyrics = the HOW** (choreographs the performance):
+   - `[Title: ...]`, `[Production Direction: ...]`, `[Vocal Direction: ...]` at the top
+   - Section tags on their own lines (`[Intro]`, `[Verse 1]`, `[Pre-Chorus]`, `[Chorus]`, `[Bridge]`, `[Final Chorus]`, `[Outro]`)
+   - `[Instrument: X In]` / `[Instrument: X Out]` to choreograph entrances and exits
+   - `[Dynamic: ...]`, `[Vocal: ...]` (or the role form `[Male lead, tender then stronger]`), `[Transition: ...]`, `[Key Change: ...]` / `[Transition: Key Lift]`
+   - 2-4 tags per section (not per line)
+   - No compact pipe notation (`[Section | params]`), no v5.5 global tags (`[track:]` / `[control:]` / `[sequence:]`), no `[Tag Vocabulary]` block
+   - End with `[End]`
+   - <=5000 characters for the whole Lyrics field
+5. **Run the deterministic checks:** `python3 tools/validate-song.py <file>` (char counts, required elements, V6 tag checks, exclusions format) and `python3 tools/lyric-lint.py <file>` (syllables, stress, rhyme, section stability, clichés). Fix every FAIL; review every WARN.
+6. **Render 3-4 takes, keep the best**, and log which tags were honored in the `references/V6_TAG_DISCOVERY.md` results log (see also Render Strategy below).
+
+The rest of this file holds the **v5.5-era 13-step procedure (legacy)** plus shared reference material that also applies to V6: artist and gear conversion (Steps 9 and 9b), the 7-dimension Style formula, the 70/30 rule and genre-first principle, parenthetical layers, the Exclude-field format, and the render strategy. Anything labelled v5.5-era is legacy -- use it for v5.5 renders and treat it as a hypothesis to re-validate on V6, not as a current rule.
 
 ---
 
@@ -37,7 +61,9 @@ Unlabeled claims are general craft consensus or structural descriptions that do 
 
 ---
 
-## The Complete 13-Step Optimization Procedure
+## v5.5-era procedure (legacy): The 13-Step Optimization Procedure
+
+> Steps 1-13 plus Step 9b. Written for and tested on v5.x -- **v5.5-era (legacy) -- re-validate on V6.** For V6 renders use the V6 Procedure above.
 
 ### Step 1 -- Character Count Audit
 
@@ -68,7 +94,7 @@ If missing, add at the TOP of Lyrics field (before first section):
 [sequence: [list all sections in order]]
 ```
 
-**Length calculation:** (total lyric lines x 2.5) + intro/outro bars x (60/BPM x 4). Round to nearest 15 seconds.
+**Length calculation:** `runtime_s ~= (sung_lines x bars_per_line + instrumental_bars) x beats_per_bar x 60 / BPM`. At 92 BPM in 4/4 one bar ~= 2.6 s; a sung line usually takes 1-2 bars including the breath. Example: 32 sung lines x 1.5 bars + 16 instrumental bars = 64 bars ~= 2:47 (167 s). Round to nearest 15 seconds.
 
 **Sequence:** List EVERY section tag that appears, in order:
 ```
@@ -77,7 +103,7 @@ If missing, add at the TOP of Lyrics field (before first section):
 
 ### Step 3 -- Validate Control Parameters
 
-Only these `[control:]` values are confirmed valid (tested v4.5/v5.0):
+Only these `[control:]` values were observed to work (v5.x, legacy -- `[control:]` is not part of the V6 grammar):
 - `no-repeat` -- prevents auto-looping
 - `dynamic transitions` -- enables section contrast
 - `instrumental` -- removes vocals entirely
@@ -143,7 +169,7 @@ Use standalone tags for mid-section dynamic events. Use pipe parameters when the
 
 ### Step 7 -- Add Termination
 
-At the very bottom of lyrics:
+At the very bottom of lyrics (v5.5-era lowercase; V6 uses `[End]` -- the validator accepts both):
 ```
 [end]
 ```
@@ -189,7 +215,7 @@ If any artist or band name appears in the Style Prompt, Production Direction, or
 
 If any gear or model name appears in the Style Prompt, Production Direction, or Vocal Direction (e.g., "TB-303", "Juno-106", "Telecaster"), convert it to a sound descriptor. Suno does not recognize equipment model numbers -- it responds to timbre descriptions.
 
-**Conversion method:** Describe what the gear SOUNDS like using the compressed-level descriptors from `references/INSTRUMENT_SOUND_REFERENCE.md`. Optionally retain the gear name as a parenthetical suffix for future-proofing.
+**Conversion method:** Describe what the gear SOUNDS like using the compressed-level descriptors from `references/INSTRUMENT_SOUND_REFERENCE.md`. Optionally retain the gear name as a parenthetical suffix for future-proofing. Instrument names that became category names (Rhodes, Hammond organ, Wurlitzer) are acceptable as-is -- Rhodes is in the V6 canonical instrument list; convert brand-model gear (TB-303, TR-808, Juno-60, DX7, Prophet-5, Minimoog, Telecaster, Les Paul, Marshall stack, Vox AC30).
 
 | Gear Reference | Converted To |
 |---|---|
@@ -217,9 +243,9 @@ Final checklist:
 - [ ] Production Direction block present
 - [ ] Vocal Direction block present
 
-### Step 11 -- Set Creative Sliders
+### Step 11 -- Set Creative Sliders (optional)
 
-Recommend slider values based on song type (see Named Slider Presets for tested combinations):
+Only if your Suno UI exposes sliders; values are v5.5-era starting points (legacy -- re-validate on V6). Recommend slider values based on song type (see Named Slider Presets for tested combinations):
 
 | Song Type | Weirdness | Style Influence | Audio Influence (if Inspo) | Closest Preset |
 |---|---|---|---|---|
@@ -234,12 +260,12 @@ Recommend slider values based on song type (see Named Slider Presets for tested 
 
 ### Step 12 -- Prepare Exclude Field Content
 
-Format exclusions for the dedicated Exclude field:
+Format exclusions for the dedicated Exclude field (same format on V6):
 ```
-distortion, electric guitar, synthesizers, trap drums, beatboxing, vocal hums
+trap drums, beatboxing, vocal hums, bright synths
 ```
 
-**Format note:** In the dedicated Exclude field, list items as plain comma-separated text -- no dash prefix needed (the field implies exclusion). The dash-prefix format (`-item`) is only needed when placing exclusions WITHIN the Style Prompt field.
+**Format note:** Plain comma-separated text -- no dash prefix (neither `-` nor `‑`); the field itself implies exclusion. In song files use an `## EXCLUSIONS:` section (preferred); a legacy `[Exclusions: ...]` line inside the Style section is still parsed and never counted toward Style chars. Dash-prefixed negatives were a v5.5-era technique for negation INSIDE the Style field -- do not use them in the Exclude field.
 
 ### Step 13 -- Final Output
 
@@ -255,7 +281,7 @@ Document the optimized version:
 - Style: XXX/1000
 - Lyrics: XXXX/5000
 
-### Slider Recommendations:
+### Slider Recommendations (optional -- only if your Suno UI exposes sliders):
 - Weirdness: XX%
 - Style: XX%
 - Audio: XX% (if applicable)
@@ -279,7 +305,7 @@ Genre, BPM, Mood, Instruments, Vocal Style, Era/Production, Space/Direction
 | # | Dimension | Purpose | Example |
 |---|---|---|---|
 | 1 | Genre | Cultural container (MUST be first) [Tier 3] | "Progressive dark folk" |
-| 2 | BPM / Tempo | Tempo anchor (Italian markings preferred) | "Andante" or "92 BPM" |
+| 2 | BPM / Tempo | Tempo anchor (Italian markings were preferred on v5.5 -- legacy) | "92 BPM" or "Andante" |
 | 3 | Mood | Emotional direction | "melancholic, haunting" |
 | 4 | Instruments | Timbral palette | "acoustic guitar, cello, distant choir" |
 | 5 | Vocal Style | Delivery character | "deep male baritone, intimate" |
@@ -292,9 +318,9 @@ Genre, BPM, Mood, Instruments, Vocal Style, Era/Production, Space/Direction
 
 ---
 
-## Italian Tempo Markings (Confirmed Working)
+## Italian Tempo Markings (Tier 3, v5.5-era -- re-validate on V6)
 
-> [Tier 3: Confirmed — user-tested July 2026 on Suno v5.5]
+> [Tier 3: user-tested July 2026 on Suno v5.5 -- v5.5-era (legacy), re-validate on V6]
 > Credit: MasterofSFL (Suno community guide, 2026)
 
 Italian tempo markings produce MORE CONSISTENT tempo results than raw BPM numbers. Use them in the Style Prompt AND as a `[Tempo: Marking]` tag in the lyrics field for reinforcement.
@@ -322,11 +348,11 @@ Italian tempo markings produce MORE CONSISTENT tempo results than raw BPM number
 ## Genre Combination Rules
 
 - **Genre-First Principle:** Genre MUST be the first element -- it anchors everything else. [Tier 3: community practice, not official. v4.5+ allows conversational prompts.]
-- **5-8 Tag Sweet Spot:** Comma-separated descriptors. Past 10 tags, signals conflict and Suno defaults to generic. [Tier 3: Suno v4.5+ docs encourage more descriptive prompting. Test by version.]
+- **5-8 Tag Sweet Spot (v5.5-era, legacy):** Comma-separated descriptors. Past 10 tags, signals conflicted and Suno defaulted to generic. [Tier 3: Suno v4.5+ docs encourage more descriptive prompting. Re-validate on V6.]
 - **70/30 Rule:** One dominant genre (70%) + one flavor (30%). 50/50 splits confuse Suno. Can also use explicit percentage syntax in style: "Thrash Metal (80%), EDM (20%)"
 - **Anti-Pairs:** Certain genre combinations have near-zero compatibility -- Gregorian Chant+Trap, Classical Baroque+Lo-fi Bedroom Pop, Opera+Mumble Rap. These pairings pull vocal delivery or production aesthetic in directly opposing directions, producing averaged mush. Replace one genre or use a compatible alternative. (Note: shared modifiers like "dark cinematic rock" are compound genres, not anti-pairs.) [Tier 3: Community heuristic] Credit: Omnisona (Suno AI God Mode Manual v3.0, March 2026)
-- **Era Anchoring:** Time references ("early 2000s garage rock") outperform genre labels ("indie rock") because they give Suno a specific sonic PERIOD. [Tier 3: promising but not A/B tested.]
-- **The Separation Principle:** Era tags aggressively bias PRODUCTION style (recording technique, mix character). To get a retro instrument with modern production: "modern production, vintage 1970s guitar tone" -- separate the era from the mix
+- **Era Anchoring (v5.5-era, legacy):** Time references ("early 2000s garage rock") outperformed genre labels ("indie rock") because they give Suno a specific sonic PERIOD. [Tier 3: promising but not A/B tested; re-validate on V6.]
+- **The Separation Principle (v5.5-era, legacy):** Era tags aggressively biased PRODUCTION style (recording technique, mix character) on v5.5. To get a retro instrument with modern production: "modern production, vintage 1970s guitar tone" -- separate the era from the mix. [Tier 3]
 
 ---
 
@@ -350,33 +376,40 @@ Text in parentheses = secondary vocal layer. Suno treats it differently from mai
 - **Mode B:** Main + `()` response, declared in Style (efficient)
 - **Mode C:** Custom layers + stacked tags (theatrical)
 
-When using any `()` content, add `-vocal overlap confusion` to exclusions.
+When using any `()` content, add `vocal overlap confusion` to the Exclude field (plain text, no dash prefix).
 
 ---
 
 ## Compliance Checklist (Required Elements)
 
-Every Suno-ready song MUST have:
+Every Suno-ready song MUST have (V6 default -- `tools/validate-song.py` checks the deterministic items):
+
+- [ ] `[Title: Song Title]` -- title tag
+- [ ] `[Production Direction: ...]` -- tone/dynamics guidance
+- [ ] `[Vocal Direction: ...]` -- voice/delivery guidance
+- [ ] `[End]` -- termination signal (v5.5-era `[end]` also accepted)
+- [ ] Section tags on their own lines; 2-4 tags per section
+- [ ] No `[Tag Vocabulary]` block, no v5.5 global tags, no pipe notation (V6)
+- [ ] Genre first in Style Prompt
+- [ ] Style <=1000 characters
+- [ ] Lyrics <=5000 characters
+- [ ] No contradictory tags
+- [ ] Named `()` layers declared in Style Prompt
+- [ ] Exclusions in dedicated Exclude field (plain comma-separated, no dash prefix)
+
+**v5.5-era additions (legacy -- v5.5 renders only):**
 
 - [ ] `[track: genre: X, mood: X, length: XXX]` -- global control
 - [ ] `[control: no-repeat, dynamic transitions]` -- prevent loops
 - [ ] `[sequence: ...]` -- section order declaration
-- [ ] `[Title: Song Title]` -- title tag
-- [ ] `[Production Direction: ...]` -- tone/dynamics guidance
-- [ ] `[Vocal Direction: ...]` -- voice/delivery guidance
-- [ ] `[end]` -- termination signal
-- [ ] Section tags on their own lines
-- [ ] Genre first in Style Prompt
-- [ ] Style <=1000 characters
-- [ ] Lyrics <=5000 characters
-- [ ] Tag count 5-8 (never >10)
-- [ ] No contradictory tags
-- [ ] Named `()` layers declared in Style Prompt
-- [ ] Exclusions in dedicated Exclude field
+- [ ] Style descriptor count 5-8 (never >10)
 
 ---
 
 ## Common Suno Problems and Fixes
+
+> Fixes that use `[track:]` / `[control:]` / `[sequence:]`, pipe notation, Italian tempo tags, or `[silence: sudden]` are
+> v5.5-era (legacy -- re-validate on V6). On V6 prefer `[End]`, `[Instrument: X In/Out]`, `[Dynamic: ...]`, `[Transition: ...]`, `[Key Change: ...]`.
 
 | Problem | Likely Cause | Fix |
 |---|---|---|
@@ -384,9 +417,9 @@ Every Suno-ready song MUST have:
 | Sections out of order | Complex structure confuses parser | Add `[sequence: ...]` |
 | Lines get auto-repeated | Suno auto-loops | Add `[control: no-repeat]` |
 | Wrong voice gender | Unclear vocal assignment | Use `[Male Vocal]`/`[Female Vocal]` explicitly |
-| Song will not end | No termination signal | Add `[end]` after outro |
+| Song will not end | No termination signal | Add `[End]` after outro (v5.5-era: `[end]`) |
 | Bridge gets sung not spoken | No delivery tag | Add `[spoken word]` or `[narrator]` |
-| No dynamic contrast | All sections same energy | Add `[build]` and `[diminuendo]` (confirmed working) |
+| No dynamic contrast | All sections same energy | V6: `[Dynamic: Crescendo]` / `[Dynamic: Diminuendo]` + `[Instrument: X In/Out]`; v5.5-era: `[build]` and `[diminuendo]` (worked on v5.5) |
 | Genre drift mid-song | Conflicting style cues | Use `[track: genre: X]` globally + exclusions |
 | Over character limit | No audit before render | Run character count FIRST (Step 1) |
 | Parenthetical sung normally | Layer not declared | Declare named layers in Style Prompt |
@@ -399,9 +432,9 @@ Every Suno-ready song MUST have:
 
 ---
 
-## v5.5 Features (UI Controls)
+## v5.5 Features (UI Controls) (v5.5-era, legacy -- re-validate on V6)
 
-These are set in the Suno interface, not in text fields:
+These were set in the v5.5 Suno interface, not in text fields. Check whether your current Suno UI still offers them before relying on them:
 
 | Feature | What It Does | When to Use |
 |---|---|---|
@@ -413,18 +446,18 @@ These are set in the Suno interface, not in text fields:
 
 ## Exclusions Format
 
-The Exclude field in Suno's UI takes plain comma-separated items:
+The Exclude field in Suno's UI takes plain comma-separated items (V6 and v5.5 alike):
 ```
-distortion, electric guitar, synthesizers, trap drums, beatboxing
+trap drums, beatboxing, vocal hums, bright synths
 ```
 
-No dash prefix needed in the dedicated field. The dash-prefix format (`-item`) is only for exclusions placed WITHIN the Style Prompt field.
+No dash prefix (neither `-` nor `‑`). In song files, put them under an `## EXCLUSIONS:` section (preferred); a legacy `[Exclusions: ...]` line inside the Style section is still parsed and never counted toward Style chars. Dash-prefixed negatives were a v5.5-era technique for negation INSIDE the Style field -- do not use them in the Exclude field.
 
 ---
 
-## Tag Priority Order (Character Budget)
+## Tag Priority Order (Character Budget) (v5.5-era, legacy)
 
-When tight on character count, prioritize in this order:
+On V6, keep the direction blocks and the `[Instrument: X In/Out]` choreography first, then dynamics and vocal tags, and always `[End]`. The v5.5-era order was:
 
 1. `[control]` + `[length]` + `[sequence]` (structural)
 2. `[Tempo: Italian marking]` (confirmed — tempo control)
@@ -443,31 +476,32 @@ Section tags control how Suno interprets each part of the song. Strict formattin
 **Placement:**
 - Tags MUST be on their own line -- never on the same line as lyrics
 - Place section tags immediately before the lyrics they govern
-- Global control tags go at the TOP of the lyrics field
+- V6: event tags (`[Instrument: ...]`, `[Dynamic: ...]`, `[Vocal: ...]`) follow the section tag, 2-4 per section
+- v5.5-era (legacy): global control tags went at the TOP of the lyrics field
 
 **Line discipline:**
 - Each lyric line = one melodic phrase = one breath
-- Target 7-12 syllables per line
-- 4-8 lines per section maximum (sung/spoken sections)
+- [Tier 2] Target 7-12 syllables per line; 13-15 = review stress density and singability at tempo; 16+ = apply the Compression Test
+- Verses/choruses usually 4-8 lines (roughly 8-16 bars at ~2 bars per line); bridge 3-6 lines (up to 8 when the turn needs it)
 - Instrumental sections with only a tag and no lyrics are valid
 - No end punctuation on lyric lines (no periods, commas, semicolons, question marks)
 - Em-dashes are allowed for phrasing/breath
 - Apostrophes and hyphens are fine
 
-**Pipe notation syntax:**
+**Pipe notation syntax (v5.5-era, legacy -- not V6 canonical grammar):**
 ```
 [section-name | parameter1, parameter2, parameter3]
 ```
 
 Only adjectives and delivery descriptors go after the pipe. Instrument-specific instructions belong in Production Direction blocks or standalone tags.
 
-**Contrast principle:** Adjacent section tags should specify DIFFERENT qualities to prevent monotony. If your verse is `[verse | vulnerable, sparse, close-mic]`, your chorus should contrast: `[chorus | powerful, wide, full band]`.
+**Contrast principle:** Adjacent sections should specify DIFFERENT qualities to prevent monotony. V6: a sparse verse (`[Dynamic: Soft]`, `[Vocal: Breathy]`) should contrast with a full chorus (`[Instrument: Drums In]`, `[Dynamic: Full]`). v5.5-era: `[verse | vulnerable, sparse, close-mic]` vs `[chorus | powerful, wide, full band]`.
 
 ---
 
-## Inline Performance Notation (User-Tested)
+## Inline Performance Notation (User-Tested, v5.5-era -- re-validate on V6)
 
-> [Tier 3: Community heuristic -- user-tested July 2026 on Suno v5.5]
+> [Tier 3: Community heuristic -- user-tested July 2026 on Suno v5.5; legacy, re-validate on V6]
 
 Only ONE inline formatting symbol reliably affects vocal delivery:
 
@@ -483,9 +517,9 @@ Only ONE inline formatting symbol reliably affects vocal delivery:
 
 ---
 
-## Return Tags After Breaks/Solos (Confirmed Working)
+## Return Tags After Breaks/Solos (Tier 3, v5.5-era -- re-validate on V6)
 
-> [Tier 3: Confirmed — user-tested July 2026]
+> [Tier 3: user-tested July 2026 on v5.5 -- legacy, re-validate on V6]
 > Credit: MasterofSFL (Suno community guide, 2026)
 
 After instrumental breaks, solos, or interludes, use return tags to signal the transition back to the main song. Without these, Suno may drift in key, feel, or energy after a break.
@@ -514,6 +548,9 @@ After instrumental breaks, solos, or interludes, use return tags to signal the t
 ---
 
 ## Key Change / Modulation (Probabilistic)
+
+> **V6:** use `[Key Change: ...]` or `[Transition: Key Lift]` before the target section (working model -- log results in the
+> `references/V6_TAG_DISCOVERY.md` results log). The tags and success rates below are v5.5-era (legacy -- re-validate on V6).
 
 > [Tier 3: Community heuristic — multiple sources, probabilistic results]
 > Credit: Jack Righteous, Suno community, howtopromptsuno.com
@@ -558,9 +595,9 @@ Suno CAN produce key changes but it is **probabilistic (~40-60% success rate)**.
 
 ---
 
-## Creative Sliders -- Detailed Guidance
+## Creative Sliders -- Detailed Guidance (optional, v5.5-era -- re-validate on V6)
 
-The three creative sliders are set in the Suno UI, not in text fields. They interact with each other and with the Style Prompt.
+The three creative sliders are set in the Suno UI, not in text fields. Slider recommendations are OPTIONAL: use them only if your Suno UI exposes sliders; all values below are v5.5-era starting points. They interact with each other and with the Style Prompt.
 
 ### Weirdness (Default: 50%)
 
@@ -577,7 +614,7 @@ Controls how much creative latitude Suno takes. Higher values produce more unexp
 
 Controls how much the Style Prompt text steers the output. Higher = more prompt control.
 
-> **CONFIRMED:** Higher Style Influence (70-90%) produces more genre-accurate results than our previous 50-60% recommendation. Multiple sources and user testing confirm this.
+> **v5.5-era observation [Tier 3]:** Higher Style Influence (70-90%) produced more genre-accurate results than our previous 50-60% recommendation in community sources and user testing on v5.5. Re-validate on V6.
 
 | Range | Behavior | Best For |
 |---|---|---|
@@ -597,9 +634,9 @@ Controls how much a reference audio track affects the output.
 | 50-70% | Strong -- closely mirrors reference character | Recreating a specific sound, Persona reinforcement |
 | 70-80% | Dominant -- structure preserved, identity locked | Enhancing with structure preserved |
 
-### Named Slider Presets (Confirmed Working)
+### Named Slider Presets (Tier 3, v5.5-era -- re-validate on V6)
 
-> [Tier 3: Confirmed — user-tested July 2026. Credit: MasterofSFL + Jack Righteous]
+> [Tier 3: user-tested July 2026 on v5.5 -- legacy. Credit: MasterofSFL + Jack Righteous]
 
 | Preset Name | Weirdness | Style | Audio | Best For |
 |---|---|---|---|---|
@@ -625,16 +662,16 @@ Controls how much a reference audio track affects the output.
 ## Key Optimization Principles
 
 1. **Genre-Emotion Alignment (Fabbri):** The genre must SIGNIFY what the lyrics express. Dark lyrics in upbeat genre = semiotic violation.
-2. **Key is King (Eerola, Friberg & Bresin, 2013):** Mode is the #1 emotional cue. Wrong key = wrong emotion at the deepest level.
+2. **Mode is the strongest overall cue (Eerola, Friberg & Bresin, 2013):** In their study of PERCEIVED emotion with systematically manipulated cues, mode (major/minor) contributed most overall, followed by tempo, register, dynamics, articulation, and timbre; tempo mattered most for arousal. Wrong mode = wrong emotional colour at a basic level.
 
-   > **Tier split:** Mode effects on perceived valence = [Tier 1: confirmed by Eerola, Friberg & Bresin 2013 and multiple replications]. Specific key character associations (e.g., D minor = devotional, F# minor = mysterious) = [Tier 2: historical tradition (Schubart 1806, Mattheson), not cognitive science. Useful as creative prompts, not empirical claims.]
+   > **Tier split:** Mode effects on perceived emotion = [Tier 1: Eerola, Friberg & Bresin 2013, Frontiers in Psychology 4:487 -- the study manipulated MODE, not specific keys]. Specific key characters = [Tier 2 at most: historical aesthetics from Schubart's *Ideen zu einer Aesthetik der Tonkunst* (written 1784-85, published 1806), formed under unequal temperaments -- not cognitive science. Schubart heard D minor as melancholy womanliness and F# minor as gloomy resentment.] Listeners without absolute pitch cannot identify a key; real key effects come from vocal tessitura, instrument resonance (open strings), and mode. Use key characters as creative prompts, not empirical claims.
 3. **BPM Serves Two Masters:** Must satisfy genre convention AND emotional pacing simultaneously.
 4. **Instruments Carry Meaning (Tagg):** Every instrument signifies independently of melody. Piano != guitar != synth even playing the same notes.
-5. **Era Anchoring > Genre Labels:** Time references give Suno specific sonic periods. "1995 trip-hop" > "dark electronic." [Tier 3: promising but not A/B tested.]
+5. **Era Anchoring > Genre Labels (v5.5-era, legacy):** Time references gave Suno specific sonic periods. "1995 trip-hop" > "dark electronic." [Tier 3: promising but not A/B tested; re-validate on V6.]
 6. **The 70/30 Rule:** Genre combinations -- one dominant (70%) + one flavor (30%). 50/50 splits confuse Suno.
-7. **5-8 Tags Maximum:** Past 10, signals conflict and Suno defaults to generic. [Tier 3: Suno v4.5+ docs encourage more descriptive prompting. Test by version.]
+7. **5-8 Tags Maximum (v5.5-era, legacy):** Past 10, signals conflicted and Suno defaulted to generic. [Tier 3: Suno v4.5+ docs encourage more descriptive prompting. Re-validate on V6.]
 8. **Section Tags = Musemic Signification:** Per-section tags should carry correct connotation for THAT section's content (Tagg applied to Suno tags).
-9. **Separation Principle:** Separate era from instrumentation when you want retro sounds with modern production.
+9. **Separation Principle (v5.5-era, legacy):** Separate era from instrumentation when you want retro sounds with modern production.
 
 ---
 
@@ -651,10 +688,11 @@ Controls how much a reference audio track affects the output.
 | **Philip Tagg** | Musemic analysis -- applied to section tag signification |
 | **Franco Fabbri** | Genre theory -- validates genre selection |
 | **Patrik Juslin** | BRECVEMA emotional mechanisms |
-| **Eerola, Friberg & Bresin** (2013) | Cue hierarchy -- key/mode as #1 emotional driver |
+| **Eerola, Friberg & Bresin** (2013) | Cue hierarchy for perceived emotion -- mode contributed most overall; tempo most for arousal |
 | **Allan F. Moore** | Soundbox theory -- spatial tag design |
 | **Serge Lacasse** | Proxemic distance -- reverb/space as emotional signal |
-| **Suno community research** (2025-2026) | Era anchoring, genre-first, 5-8 sweet spot, slider behavior, v5 parsing rules |
+| **Suno community research** (2025-2026) | Era anchoring, genre-first, 5-8 sweet spot, slider behavior, v5 parsing rules (v5.5-era, legacy) |
+| **V6 working model** (Sept 2026, user-confirmed) | Style = WHAT / Lyrics = HOW, `[Instrument: X In/Out]`, canonical V6 tag grammar -- `references/V6_TAG_DISCOVERY.md` |
 | **MasterofSFL** (2026) | Italian tempo recognition, higher slider ranges, return tags, stress pattern awareness |
 
 ---
@@ -667,7 +705,7 @@ Controls how much a reference audio track affects the output.
 Suno is a probabilistic generation system. Tags and prompts shape probability distributions -- they do not guarantee specific outcomes. Key principles:
 
 1. **Tags shape probability, not certainty.** A well-crafted prompt increases the LIKELIHOOD of the desired output but cannot force it. Accept that some renders will miss the mark.
-2. **Generate 3-4 versions per song.** Multiple renders allow you to select the best interpretation. This is not failure -- it is the intended workflow for a probabilistic system.
+2. **Generate 3-4 versions per song.** Multiple renders allow you to select the best interpretation. This is not failure -- it is the intended workflow for a probabilistic system. For V6, log which tags were honored in the `references/V6_TAG_DISCOVERY.md` results log.
 3. **Treat Suno as collaborator, not vending machine.** The model contributes musical ideas you did not explicitly request. The best renders often include happy accidents that a rigid system would never produce.
 
 This framing reduces frustration and improves outcomes. Budget time for multiple renders in your production schedule.
@@ -676,5 +714,8 @@ This framing reduces frustration and improves outcomes. Budget time for multiple
 
 ## References
 
-- `references/SUNO_TAGS_REFERENCE.md` -- Complete tag catalog with all confirmed/obsolete tags, pipe notation rules, and formatting details
+- `references/V6_TAG_REFERENCE.md` -- V6 tag dictionary (default)
+- `references/V6_TAG_DISCOVERY.md` -- V6 division of labor, canonical grammar, technique inventory, results log
+- `references/SUNO_TAGS_REFERENCE.md` -- v5.x tag catalog (legacy) with confirmed/obsolete tags, pipe notation rules, and formatting details
 - `references/SUNO_STYLE_GENRE_REFERENCE.md` -- Full genre/key/BPM/instrument/emotion mapping tables for Style Prompt optimization
+- `references/INSTRUMENT_SOUND_REFERENCE.md` -- Sound descriptors for gear/instrument conversion

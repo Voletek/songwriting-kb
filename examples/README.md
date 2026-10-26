@@ -13,13 +13,13 @@ Two fully-realized concept album setups showing how every piece connects:
 
 | Album | Genre | Tracks | Shows You |
 |---|---|---|---|
-| **Fractured Shadows** | Industrial → Cinematic Rock | 17 | Large multi-act album, vocal evolution, sonic pivot, named layers, character voices |
+| **Fractured Shadows** | Industrial → Cinematic Rock | 18 (17 in Acts 1–2 + Act 3 in progress) | Large multi-act album, vocal evolution, sonic pivot, named layers, character voices, an in-progress extension (T18) |
 | **Keeper of the Light** | Folk-Horror / Sea-Shanty | 8 | Smaller focused album, non-vocal entity design, single Persona with delivery variants |
 
 Each album folder contains:
-- `steering.md` — The conditional steering file (copy to `.kiro/steering/` and configure `fileMatchPattern`)
-- `continuity-hook.json` — The continuity check hook (copy to `.kiro/hooks/`)
-- `BLUEPRINT.md` — The full album blueprint (copy to `references/`)
+- `BLUEPRINT.md` — The full album blueprint (the canonical copy; use it as a format reference or copy it to `references/` as your own starting point)
+- `steering.md` — The conditional steering file (copy to `.kiro/steering/<album>.md` and configure `fileMatchPattern`)
+- `continuity-hook.json` — The continuity check hook, Kiro v1 schema with an `agent` action (copy to `.kiro/hooks/<album>-continuity.json` and edit its matcher and prompt)
 
 ### `preferences/` — Format Preference Examples
 
@@ -35,11 +35,13 @@ Each album folder contains:
 2. Follow **SOP 04** (Setting Up a Concept Album) to create your own
 3. Copy the relevant files to their active locations:
    ```
-   examples/albums/your-ref/steering.md → .kiro/steering/your-album.md
-   examples/albums/your-ref/BLUEPRINT.md    → references/YOUR_ALBUM_BLUEPRINT.md
-   examples/albums/your-ref/hook.json   → .kiro/hooks/your-album-continuity.json
+   examples/albums/<album>/steering.md            → .kiro/steering/<your-album>.md
+   examples/albums/<album>/BLUEPRINT.md           → references/YOUR_ALBUM_BLUEPRINT.md
+   examples/albums/<album>/continuity-hook.json   → .kiro/hooks/<your-album>-continuity.json
    ```
-4. Update file paths and patterns in your copies
+4. Update file paths and patterns in your copies (the steering `fileMatchPattern`, the hook `matcher`, and the blueprint include at the end of the steering file)
+
+The continuity hook fires only for agent-made saves, in Kiro IDE 1.0+ / Kiro CLI V3 (Kiro Web doesn't run hooks).
 
 ### Customizing Preferences
 
@@ -52,3 +54,5 @@ Each album folder contains:
 ## Don't Edit These Directly
 
 These are reference copies. Edit the ACTIVE files in `.kiro/steering/`, `.kiro/hooks/`, and `references/` instead.
+
+Other example folders: `songs/` (example song files — see `songs/README.md`) and `analysis/` (example critique reports — see `analysis/README.md`).

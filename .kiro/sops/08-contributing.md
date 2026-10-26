@@ -13,18 +13,22 @@
 git clone https://github.com/Voletek/songwriting-kb.git
 ```
 
-The `.kiro/` directory auto-configures Kiro IDE with all agents, skills, hooks, and steering.
+The `.kiro/` directory configures Kiro with all agents, skills, hooks, and steering. (On Kiro Web, hooks don't run and project agents are available for sub-agent delegation only — run the `tools/` scripts manually there.)
 
 ### Step 2 — What You Get Immediately (Universal)
 
 These work for ANY songwriter with zero customization:
-- 4 agents (songwriter, critic, suno-optimizer, album-continuity)
-- 5 skills (critique, suno-tags, music-theory, character-voice, concept-album-blueprint)
-- 3 universal hooks (format-check, char-count, prosody-lint) + album-specific continuity hooks (one per example album)
-- 8 SOPs (writing, critiquing, optimizing, album setup, extending, character voice, full pipeline, contributing)
+- 6 agents (song-planner, songwriter, critic, suno-optimizer, album-continuity, builder)
+- 5 skills (song-critique, suno-meta-tags, music-theory, character-voice, concept-album-blueprint)
+- 2 hooks — Kiro v1 JSON in `.kiro/hooks/`: `song-validate.json` (runs `tools/validate-song.py` on create/save of song files under `songs/`) and `prosody-lint.json` (runs `tools/lyric-lint.py` on save)
+- 2 manual steering commands: `/quick-score` and `/full-pipeline` (`.kiro/steering/quick-score.md`, `.kiro/steering/full-pipeline.md`)
+- Example album continuity hooks in `examples/albums/*/continuity-hook.json` (copy into `.kiro/hooks/` to enable)
+- 9 SOPs (writing, critiquing, optimizing, album setup, extending, character voice, full pipeline, contributing, planning)
 - Full songwriting knowledge base (13 sections)
-- Full music production theory (12 disciplines + 23 frameworks)
-- Complete Suno tag reference (35 confirmed tags + v5.0)
+- Full music production theory (13 disciplines + 23-point framework + 18 advanced concepts)
+- Suno references: V6 tag dictionary + discovery/results log (`references/V6_TAG_REFERENCE.md`, `references/V6_TAG_DISCOVERY.md`) and the v5.x tag reference with 100+ tags (legacy, `references/SUNO_TAGS_REFERENCE.md`)
+- Rhyme & lyric craft reference (`references/RHYME_AND_LYRIC_CRAFT.md`)
+- Deterministic tools: `tools/validate-song.py`, `tools/lyric-lint.py`, `tools/check-repo.py`
 - Character voice design system
 
 ### Step 3 — What You Should Customize
@@ -34,12 +38,12 @@ These files contain templates — personalize them:
 | File | What to Do |
 |---|---|
 | `.kiro/steering/output-preferences.md` | Edit with YOUR output format preferences |
-| `.kiro/steering/concept-album.md` | Generic framework — add your album's conditional steering (see examples/) |
-| `.kiro/agents/album-continuity.md` | Configure with YOUR album's rules |
+| `.kiro/steering/concept-album.md` | Generic framework — leave as is; add your album's own conditional steering file (see `examples/albums/`) |
+| `.kiro/agents/album-continuity.md` | Point its `resources:` blueprint entry at YOUR blueprint and configure YOUR rules |
 | `references/YOUR_ALBUM_BLUEPRINT.md` | Replace with YOUR album blueprint (or delete if no album) |
-| `songs/` | Replace with YOUR songs |
+| `songs/` | Put YOUR songs here (ships empty apart from its README) |
 
-**Example albums** are in `examples/albums/` — study them for format reference, then copy patterns to your active files. The blueprints in `references/` (Fractured Shadows, Keeper of the Light) are kept as format references you can study.
+**Example albums** live only in `examples/albums/` (`fractured-shadows/` and `keeper-of-the-light/`, each with `BLUEPRINT.md`, `steering.md`, and `continuity-hook.json`) — study them for format reference, then copy patterns to your active files. There are no example blueprints in `references/`.
 
 ---
 
@@ -65,21 +69,25 @@ Customize:
 ### Step 5 — Follow SOP 04
 
 Use SOP 04 (Setting Up a Concept Album) to create:
-1. Your Album Blueprint in `references/[YOUR_ALBUM]_BLUEPRINT.md`
-2. Your steering file in `.kiro/steering/[your-album].md`
-3. Your continuity hook in `.kiro/hooks/[album]-continuity-check.md`
+1. Your Album Blueprint in `references/YOUR_ALBUM_BLUEPRINT.md` or `references/[YOUR_ALBUM]_BLUEPRINT.md`
+2. Your steering file in `.kiro/steering/[your-album].md` (`inclusion: fileMatch`)
+3. (Optional) Your continuity hook: copy `examples/albums/<album>/continuity-hook.json` to `.kiro/hooks/[your-album]-continuity.json` (Kiro v1 JSON) and edit its matcher and prompt
 
 ### Step 6 — Update the Concept Album Blueprint Skill
 
 Edit `.kiro/skills/concept-album-blueprint/SKILL.md`:
-- Change the `#[[file:...]]` reference to point at YOUR blueprint
+- Change the blueprint path in its "read …" instruction to YOUR blueprint (e.g. `references/YOUR_ALBUM_BLUEPRINT.md`)
 - Update the rule list to YOUR rules
 
-**Note:** The `#[[file:path]]` syntax is Kiro's file-reference system — it embeds the referenced file's content when the skill is activated. Replace the path with your blueprint's location (e.g., `#[[file:references/YOUR_ALBUM_BLUEPRINT.md]]`).
+**How files get loaded (by file type):**
+- **Steering files** (`.kiro/steering/*.md`) can embed another file with the include syntax `#[[file:path]]` — e.g. `#[[file:references/YOUR_ALBUM_BLUEPRINT.md]]`. That syntax is documented for steering only.
+- **Agents** (`.kiro/agents/*.md`) load files through `resources:` front matter, e.g. `resources: ["file://references/YOUR_ALBUM_BLUEPRINT.md"]`.
+- **Skills** reference files by plain path with an explicit "read X" instruction.
 
 ### Step 7 — Update the Album Continuity Agent
 
 Edit `.kiro/agents/album-continuity.md`:
+- Point the blueprint entry in its `resources:` front matter at YOUR blueprint
 - Replace specific rule checks with YOUR rules
 - Replace the key map with YOUR key map
 - Replace the emotional arc with YOUR arc
@@ -93,12 +101,12 @@ Edit `.kiro/agents/album-continuity.md`:
 | Type | Examples | Requirements | Target File |
 |---|---|---|---|
 | **Knowledge base additions** | New genre conventions, new Suno tag findings, new theory | Must be sourced, verified, and universal | `SONGWRITING_KNOWLEDGE_BASE.md` or `MUSIC_PRODUCTION_THEORY.md` |
-| **Suno tag findings** | New confirmed tags, updated tag behavior | Must be tested and verified | `references/SUNO_TAGS_REFERENCE.md` |
+| **Suno tag findings** | New confirmed tags, updated tag behavior | Must be tested and verified (log the experiment in `experiments/suno/`) | V6: `references/V6_TAG_DISCOVERY.md` results log; v5.x: `references/SUNO_TAGS_REFERENCE.md` |
 | **New skills** | Genre-specific skills (metal songwriting, hip-hop production) | Must follow SKILL.md format with reference doc | `.kiro/skills/[new-skill]/` |
-| **New hooks** | Additional quality checks | Must be useful to >1 person | `.kiro/hooks/` |
+| **New hooks** | Additional quality checks | Kiro v1 JSON (`.kiro/hooks/*.json`); must be useful to >1 person | `.kiro/hooks/` |
 | **Bug fixes** | Incorrect tag syntax, outdated Suno info | Must include evidence of the fix | Relevant file |
 | **SOPs** | New procedures for workflows not covered | Must follow SOP format | `.kiro/sops/` |
-| **Example albums** | YOUR completed album blueprint as a reference | Helps others see how a filled system looks | `references/` |
+| **Example albums** | YOUR completed album blueprint as a reference | Helps others see how a filled system looks | `examples/albums/<album>/` (`BLUEPRINT.md`, `steering.md`, `continuity-hook.json`) |
 
 ### What We Don't Accept
 
@@ -111,9 +119,10 @@ Edit `.kiro/agents/album-continuity.md`:
 
 1. Fork the repo
 2. Create a branch: `contribution/[your-addition]`
-3. Add your content following existing format
+3. Add your content following existing format (see also the root `CONTRIBUTING.md`)
 4. Verify: no personal references in universal files (search for your album name, character names, or personal details — these should only appear in personal files)
-5. Submit PR with description of what you're adding and why
+5. Run the checks: `python3 tools/check-repo.py` (include/resource paths, hook schema, steering front matter, JSON) and `python3 tools/validate-song.py songs/` if you touched songs
+6. Submit PR with description of what you're adding and why
 
 ---
 
@@ -123,9 +132,9 @@ Edit `.kiro/agents/album-continuity.md`:
 ```
 SONGWRITING_KNOWLEDGE_BASE.md
 MUSIC_PRODUCTION_THEORY.md
-references/CRITIQUE_REFERENCE.md
-references/SUNO_TAGS_REFERENCE.md
-references/CHARACTER_VOICE_REFERENCE.md
+references/*.md (except YOUR_ALBUM_BLUEPRINT.md / your own blueprints)
+core/methodology/*.md
+core/tenets.md
 .kiro/steering/songwriting.md
 .kiro/steering/suno-formatting.md
 .kiro/steering/output-preferences.md
@@ -133,17 +142,22 @@ references/CHARACTER_VOICE_REFERENCE.md
 .kiro/agents/songwriter.md
 .kiro/agents/critic.md
 .kiro/agents/suno-optimizer.md
+.kiro/agents/song-planner.md
+.kiro/agents/builder.md
+.kiro/steering/quick-score.md
+.kiro/steering/full-pipeline.md
 .kiro/skills/*/SKILL.md
-.kiro/hooks/song-format-check.json
-.kiro/hooks/suno-char-count.json
+.kiro/hooks/song-validate.json
 .kiro/hooks/prosody-lint.json
 .kiro/sops/*.md
+tools/*.py
 ```
 
 ### Personal Files (Customize These)
 ```
 .kiro/agents/album-continuity.md (configure YOUR rules)
-.kiro/hooks/[album]-continuity-check.json (create for YOUR album)
+.kiro/steering/[your-album].md (create for YOUR album)
+.kiro/hooks/[your-album]-continuity.json (optional — copy from examples/albums/<album>/continuity-hook.json)
 references/YOUR_ALBUM_BLUEPRINT.md (replace with YOUR blueprint)
 references/[YOUR_ALBUM]_BLUEPRINT.md
 songs/**/*
@@ -151,10 +165,10 @@ songs/**/*
 
 ### Example/Reference Files (Study, don't edit)
 ```
-examples/albums/*/
+examples/albums/*/          (BLUEPRINT.md, steering.md, continuity-hook.json per album)
+examples/songs/
+examples/analysis/
 examples/preferences/
-references/FRACTURED_SHADOWS_BLUEPRINT.md
-references/KEEPER_OF_THE_LIGHT_BLUEPRINT.md
 ```
 
 ---
@@ -170,16 +184,17 @@ cd songwriting-kb
 # See examples/preferences/voletek-preferences.md for a filled-in reference
 nano .kiro/steering/output-preferences.md
 
-# Optional: remove example album blueprints (or keep as format references)
-rm references/FRACTURED_SHADOWS_BLUEPRINT.md
-rm references/KEEPER_OF_THE_LIGHT_BLUEPRINT.md
-
-# Optional: remove example song files
-rm -rf songs/album_act2 songs/album_act3 songs/experimental songs/keeper_of_the_light
-rm songs/0*_*.md songs/Shadow* songs/Shapes* songs/What_If* songs/Evil* songs/Cat*
+# Optional: remove (or replace) the example albums and songs — they are all under examples/
+# (songs/ already ships empty, so there is nothing personal to delete there)
+rm -rf examples/albums/fractured-shadows examples/albums/keeper-of-the-light
+rm -rf examples/songs examples/analysis
 
 # Create your own album (follow SOP 04)
-# This creates your blueprint, steering, and hooks
+# Put your blueprint at references/YOUR_ALBUM_BLUEPRINT.md (or references/<ALBUM>_BLUEPRINT.md),
+# add .kiro/steering/<your-album>.md, and optionally .kiro/hooks/<your-album>-continuity.json
+
+# Check the repo still wires up correctly (flags any active .kiro/ file that still points at removed examples)
+python3 tools/check-repo.py
 
 # Start writing songs (follow SOP 01)
 # Use the full pipeline (SOP 07) for best results
@@ -193,10 +208,10 @@ rm songs/0*_*.md songs/Shadow* songs/Shapes* songs/What_If* songs/Evil* songs/Ca
 A: No. The songwriter agent, critic, suno-optimizer, and all knowledge base files work for standalone songs. The album continuity system is optional.
 
 **Q: Can I use this without Kiro IDE?**
-A: Yes. The knowledge base files, SOPs, and reference docs work with any AI assistant. The agents/skills/hooks/powers are Kiro-specific features but the CONTENT they contain is universal. SOPs (in `.kiro/sops/`) are tool-agnostic procedures — follow them with any AI assistant or manually.
+A: Yes. The knowledge base files, SOPs, and reference docs work with any AI assistant. The agents/skills/hooks/powers are Kiro-specific features but the CONTENT they contain is universal. SOPs (in `.kiro/sops/`) are tool-agnostic procedures — follow them with any AI assistant or manually. Run `python3 tools/validate-song.py` and `python3 tools/lyric-lint.py` yourself for the deterministic checks the hooks would otherwise run.
 
 **Q: Do I need to use Suno?**
-A: No. The songwriting methodology (9-step, 12-category rubric, Nashville method) works for any songwriting — human performance, other AI tools, or traditional recording. The Suno-specific sections (tags, formatting, sliders) are only relevant if using Suno.
+A: No. The songwriting methodology (9-step, 12-category rubric, Nashville method) works for any songwriting — human performance, other AI tools, or traditional recording. The Suno-specific sections (V6 tags, formatting, legacy v5.5 sliders/features) are only relevant if using Suno.
 
 **Q: Can I use this for genres not covered in the knowledge base?**
 A: Yes. The framework is genre-agnostic. The theory, prosody, and arrangement principles apply to any style. If you write metal, hip-hop, jazz, or country — the 9-step analysis still works. You'd just apply different genre conventions in Step 6.

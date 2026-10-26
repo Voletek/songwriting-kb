@@ -36,7 +36,7 @@ Work through each quickly (1-2 sentences each). This is your internal scaffoldin
 
 1. **Semantic** — What's it literally about?
 2. **Emotional** — Central affect? What should I feel?
-3. **Prosodic** — Count syllables on 3-4 lines. Any over 12? Stress alignment?
+3. **Prosodic** — Count syllables on 3-4 lines (or run `python3 tools/lyric-lint.py <file>`). Any 13-15 (review) or 16+ (Compression Test)? Stresses on the strong beats of the meter?
 4. **Narrative** — What's the arc? Where's the turn?
 5. **Voice** — Who's singing? Does the voice match the material?
 6. **Genre** — What genre is this? Does it honor conventions?
@@ -54,13 +54,13 @@ Score using the rubric definitions in `references/CRITIQUE_REFERENCE.md` — the
 |---|---|
 | 1. Hook | Can I remember it after one read? Does a hook signal arrive within 5-30s of first vocal? [Tier 2] |
 | 2. Lyrics | Is it physical/sensory? Show-don't-tell? Specific? |
-| 3. Prosody | Target 7-12 syllables? [Tier 2] Stresses on strong beats? Open vowels on holds? |
+| 3. Prosody | Target 7-12 syllables (13-15 review, 16+ compress)? [Tier 2] Stresses on the meter's strong beats? Open vowels on holds? |
 | 4. Arc | Does the song's INTERNAL arc move? Does V2 add new info? Does bridge TURN? |
 | 5. Structure | Right length? Negative space? Contrast? |
 | 6. Originality | Fresh angle? Or territory I've heard covered this way? |
 | 7. Singability | Can I hum it? Consistent phrase rhythm? Melody-ready? |
 | 8. Commercial | Right for its platform/context? Hook speed? Sync-ready? |
-| 9. Genre | Fabbri's 5 rules satisfied? |
+| 9. Genre | Does it honor the Fabbri rule types that matter most for this genre (formal/technical, semiotic, behavioural, social/ideological, economic/juridical)? |
 | 10. Arrangement | Dynamic range? Timbre choices signify? |
 | 11. Voice/Accent | Accent coherent? Cultural ecosystem aligned? |
 | 12. Emotional Intelligence | Authentic→Transcendent? Not exploitative? |
@@ -79,24 +79,25 @@ For each dimension, assess CORRECT / SUBOPTIMAL / WRONG:
 
 | # | Dimension | Check Against |
 |---|---|---|
-| 1 | Genre | Fabbri's 5 rules — does this genre SIGNIFY what the lyrics express? |
-| 2 | Key | Eerola, Friberg & Bresin (cue hierarchy) — mode is #1 emotional cue. Does key character match dominant emotion? |
+| 1 | Genre | Fabbri's genre-rule types (weight varies by genre; ironic juxtaposition is itself a convention) — does this genre SIGNIFY what the lyrics express? |
+| 2 | Key / Mode | Eerola, Friberg & Bresin (2013, perceived emotion) — mode contributed most overall, tempo most for arousal. Does the mode fit the dominant emotion, and does the key suit the vocal tessitura and instrument resonance? (Key "characters" à la Schubart are historical tradition, not psychology.) |
 | 3 | BPM | Genre convention table + BPM-Emotion mapping. Correct for BOTH? |
 | 4 | Instruments | Tagg musemes — does each instrument carry the correct cultural connotation? |
 | 5 | Vocal style | Moore persona + Fabbri behavioral — delivery matches genre AND lyric arc? |
-| 6 | Era/Production | Would era anchoring improve specificity? Is era separated from instrumentation? |
+| 6 | Era/Production | Is the production aesthetic specific? (v5.5-era, legacy: would era anchoring help; is era separated from instrumentation?) |
 | 7 | Space/Mood | Atmospheric descriptors aligned, non-contradictory, ≤3 total? |
 
 **5b. Section-Level Tag Check:**
-- Does each section's production cue tag signify correctly for THAT section's content? (Tagg applied)
-- Do tags contrast between adjacent sections?
-- Are tags ≤3 per section?
+- Does each section's tags signify correctly for THAT section's content? (Tagg applied)
+- Do tags contrast between adjacent sections? Is the `[Instrument: X In/Out]` choreography coherent (V6)?
+- 2-4 tags per section (V6)?
 
-**5c. Compliance Checklist:**
-- Required elements present? (`[Title:]`, `[Production Direction:]`, `[Vocal Direction:]`, `[end]`)
+**5c. Compliance Checklist** (deterministic part: `python3 tools/validate-song.py <file>`):
+- Required elements present? (`[Title:]`, `[Production Direction:]`, `[Vocal Direction:]`, `[End]` — v5.5-era `[end]` also accepted)
 - Character limits respected? (Style ≤1000, Lyrics ≤5000)
-- Genre first in Style Prompt? Tag count 5-8? No contradictions?
-- Named `()` layers declared? Exclusions in Exclude field?
+- Genre first in Style Prompt? No contradictions? (5-8 descriptor count = v5.5-era heuristic, legacy)
+- Named `()` layers declared? Exclusions in the Exclude field as plain comma-separated text (no dash prefix)?
+- V6: no `[Tag Vocabulary]` block, no v5.5 global tags, no pipe notation?
 
 **5d. Overall Verdict:**
 - **OPTIMAL** — All dimensions correct. No changes needed.
@@ -108,7 +109,7 @@ Provide 2 complete alternative Style Prompts (ready to paste into Suno) with:
 - Full rewritten prompt text
 - Reasoning (why this serves the emotional content better)
 - Expected improvement in render quality
-- Slider recommendation (Weirdness % / Style Influence % / Audio Influence %)
+- (Optional) Slider recommendation (Weirdness % / Style Influence % / Audio Influence %) — only if your Suno UI exposes sliders; values are v5.5-era starting points
 
 ### Step 6 — Identify Strongest Line
 
@@ -139,13 +140,15 @@ ALL identified issues, ordered by impact (biggest improvement first). Each recom
 
 Save the critique to `analysis/[song-filename]_critique.md`
 
-Naming convention:
-- Song: `songs/album_act2/08_First_Blood.md`
-- Report: `analysis/08_First_Blood_critique.md`
-- Song: `songs/experimental/The_Wound_Speaks.md`
+Naming convention (report filename = song filename + `_critique`):
+- Song: `examples/songs/fractured_shadows_act2/08_First_Blood.md`
+- Report: `analysis/FS_08_First_Blood_critique.md`
+- Song: `examples/songs/experimental/The_Wound_Speaks.md`
 - Report: `analysis/The_Wound_Speaks_critique.md`
-- Song: `songs/keeper_of_the_light/01_The_Keepers_Morning.md`
-- Report: `analysis/KOTL_01_The_Keepers_Morning_critique.md`
+- Song: `examples/songs/keeper_of_the_light/01_The_Keepers_Morning.md`
+- Report: `analysis/KOTL_01_The_Keepers_Morning_critique.md` (a finished example of this report ships at `examples/analysis/KOTL_01_The_Keepers_Morning_critique.md`)
+
+Your own songs live in `songs/` and your reports in `analysis/`; the bundled examples live under `examples/`.
 
 **Multi-album naming:** If your repo has multiple albums with potentially overlapping track numbers, prefix the filename with an album abbreviation (e.g., `FS_` for Fractured Shadows, `KOTL_` for Keeper of the Light).
 
@@ -153,9 +156,7 @@ Naming convention:
 
 ### Step 10 — Format Output
 
-**Use the standardized report template for ALL critique outputs:**
-
-#[[file:references/CRITIQUE_REPORT_TEMPLATE.md]]
+**Use the standardized report template for ALL critique outputs** — read `references/CRITIQUE_REPORT_TEMPLATE.md` before formatting the report.
 
 The template defines the exact structure, section ordering, conditional inclusion rules (when to include Album-Context, Revision Delta Table, Summary), and format guidelines. Follow it precisely — it is the single source of truth for critique report formatting.
 

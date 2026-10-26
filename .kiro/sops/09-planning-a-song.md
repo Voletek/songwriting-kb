@@ -5,7 +5,7 @@
 > **Note:** The canonical methodology for this workflow lives in `core/methodology/song-planning.md`.
 > This SOP is retained for Kiro-specific step formatting, but the methodology file is the
 > authoritative source. If content diverges, `core/methodology/` wins. Craft rules referenced here
-> (prosody thresholds, hook timing, V2-new-info, bridge turn, Fabbri's 5 rules, the 70/30 rule,
+> (prosody thresholds, hook timing, V2-new-info, bridge turn, Fabbri's genre-rule types, the 70/30 rule,
 > key-emotion mapping, BPM-emotion, Hit Formula F1/F2, the 12-category rubric) are defined in
 > `core/methodology/songwriting.md` and `core/methodology/critique.md` -- this SOP references them,
 > it does not restate them.
@@ -44,8 +44,8 @@ bridge reveals. Confirm. (Bridge-turn defined in `core/methodology/songwriting.m
 **Step 5 -- Voice / Accent.** Suggest register, dialect, and emotional state start vs end.
 Confirm. (Character-driven? See `core/methodology/character-voice.md`.)
 
-**Step 6 -- Genre Mapping.** Suggest primary genre, the 70/30 split (if fusion), a Fabbri 5-rules
-check, and the instrument palette. Confirm. (Rules defined in `core/methodology/songwriting.md`
+**Step 6 -- Genre Mapping.** Suggest primary genre, the 70/30 split (if fusion), which Fabbri
+genre-rule types carry the most weight for it, and the instrument palette. Confirm. (Rules defined in `core/methodology/songwriting.md`
 Step 7 and `references/SUNO_STYLE_GENRE_REFERENCE.md`.)
 
 **Step 7 -- Key + BPM + Time Signature.** Suggest each with one-line reasoning drawn from Key
@@ -56,9 +56,12 @@ Selection and BPM-Emotion frameworks. Confirm. (See `SONGWRITING_KNOWLEDGE_BASE.
 pairs, and where the hook lands. Confirm. (Hook timing defined in `core/methodology/songwriting.md`
 Step 8.)
 
-**Step 9 -- Structure Map + V6 Mode Label.** Suggest the section sequence and the mode label --
-**Default/Roots** or **MODE C (Cinematic/Theatrical/Concept)**. Confirm. (Cite
-`references/V6_TAG_DISCOVERY.md`.)
+**Step 9 -- Structure Map + V6 Mode Label.** Suggest the section sequence, a **rhyme & stability
+plan per section** (scheme + intended closure: stable/closed for choruses and resolutions,
+unstable/open for pre-choruses and bridges -- no universal default; ABCB/XAXA is one common
+conversational option), and the mode label -- **Default/Roots** or **MODE C
+(Cinematic/Theatrical/Concept)**. Confirm. (Cite `references/V6_TAG_DISCOVERY.md` and
+`references/RHYME_AND_LYRIC_CRAFT.md`.)
 
 **Step 10 -- Hook Approach.** Suggest the hook type and a candidate hook line (a target phrase, not
 finished lyrics). Confirm. (Hook types in `SONGWRITING_KNOWLEDGE_BASE.md`.)
@@ -73,8 +76,9 @@ unconfirmed, or deferred to writing.
 
 ### Candidate Style Prompt (optional, flexible template)
 
-Offer a Candidate Style Prompt as a per-value template -- genre + 70/30 split, BPM (with Italian
-tempo marking), key, vocal identity/range, production feel, mood, exclusions -- a suggested default
+Offer a Candidate Style Prompt as a per-value template -- genre + 70/30 split, BPM (Italian tempo
+marking optional -- a v5.5-era preference, re-validate on V6), key, vocal identity/range, production
+feel, mood, plus Exclude-field negatives (plain comma-separated, no dash prefix) -- a suggested default
 per value the user confirms or overrides. Output a filled-but-editable template, NOT a locked
 string. (Assembly rules: `core/methodology/songwriting.md` Step 20.)
 
@@ -122,7 +126,7 @@ Fill this skeleton. Keep it CONCEPTUAL -- no verse lyrics anywhere.
 ## 6. Genre Mapping
 - Primary genre (70%):
 - Texture genre (30%, if fusion):
-- Fabbri 5-rules check:
+- Fabbri genre-rule types that matter most:
 - Instrument palette:
 
 ## 7. Key + BPM + Time Signature
@@ -138,6 +142,7 @@ Fill this skeleton. Keep it CONCEPTUAL -- no verse lyrics anywhere.
 
 ## 9. Structure Map + V6 Mode Label
 - Section sequence:
+- Rhyme & stability plan per section (scheme + closed/open):
 - V6 mode label: [Default/Roots | MODE C (Cinematic/Theatrical/Concept)]
 
 ## 10. Hook Approach

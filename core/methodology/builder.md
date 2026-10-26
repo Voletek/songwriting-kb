@@ -38,14 +38,17 @@ Every workflow follows the same pattern:
 
 1. **Album Blueprint** -- `references/[ALBUM_NAME]_BLUEPRINT.md`
    - Use template from `references/YOUR_ALBUM_BLUEPRINT.md`
+   - Use `examples/albums/fractured-shadows/BLUEPRINT.md` / `examples/albums/keeper-of-the-light/BLUEPRINT.md` as format references (see `examples/README.md`)
    - Fill in what the user provided, mark unknowns as `[TBD]`
 
 2. **Steering File** -- `.kiro/steering/[album-name-kebab].md`
-   - Condensed blueprint for quick session reference
+   - Condensed blueprint for quick session reference; front matter (first bytes of the file): `inclusion: fileMatch` + `fileMatchPattern: "songs/[album_name]/**"`
    - Include: title, track count, hard rules, palette table, character voices
+   - Start from `examples/albums/<album>/steering.md`
 
-3. **Continuity Hook** -- `.kiro/hooks/[album-name]-continuity-check.md`
-   - Checkbox-format verification rules from the hard rules
+3. **Continuity Hook (optional)** -- `.kiro/hooks/[album-name]-continuity.json`
+   - Kiro v1 JSON hook: copy `examples/albums/<album>/continuity-hook.json`, set its `matcher` to the album's song folder, and list the hard rules in the `agent` action's prompt
+   - Fires only on agent-made saves, in Kiro IDE 1.0+ / Kiro CLI V3 (not Kiro Web)
 
 4. **Track Registry** -- included in the blueprint
    - Table: #, Working Title, Key, BPM, Core Emotion, Sonic Palette
@@ -99,9 +102,10 @@ Reference `core/methodology/character-voice.md` for full voice design theory.
 ### Do
 
 1. Open `.kiro/agents/album-continuity.md`
-2. Replace `#[[file:references/YOUR_ALBUM_BLUEPRINT.md]]` with user's actual blueprint path
-3. Confirm methodology load is still present
-4. Remind user the agent is read-only -- it verifies, does not create
+2. In its `resources:` front matter, replace the `file://references/YOUR_ALBUM_BLUEPRINT.md` entry with the user's actual blueprint path
+3. Confirm the methodology resource (`file://core/methodology/album-continuity.md`) is still present
+4. Do the same for the blueprint path in `.kiro/skills/concept-album-blueprint/SKILL.md` (plain-path "read" instruction)
+5. Remind user the agent is read-only -- it verifies, does not create
 
 ---
 
@@ -164,7 +168,7 @@ Remind: if experiment supports a methodology change, update `promoted_to` field.
 1. Open `.kiro/steering/output-preferences.md`
 2. Walk through each section with the user
 3. Customize to their preferences (add custom sections at bottom if needed)
-4. Remind: this file auto-loads (inclusion: auto) -- all agents respect it
+4. Remind: this file is always loaded (`inclusion: always`) -- all agents respect it
 
 ---
 
@@ -231,7 +235,7 @@ Confirm with user:
 |---|---|
 | Album Blueprint | `references/[ALBUM_NAME]_BLUEPRINT.md` |
 | Steering File | `.kiro/steering/[album-name-kebab].md` |
-| Continuity Hook | `.kiro/hooks/[album-name]-continuity-check.md` |
+| Continuity Hook | `.kiro/hooks/[album-name]-continuity.json` (copy of `examples/albums/<album>/continuity-hook.json`) |
 | Song Files | `songs/[album_name]/` |
 | Experiment Logs | `experiments/suno/YYYY-MM-DD-[name].yml` |
 | Output Preferences | `.kiro/steering/output-preferences.md` |
@@ -245,5 +249,6 @@ Confirm with user:
 - `core/methodology/album-continuity.md` -- Full album setup and extension methodology
 - `core/methodology/character-voice.md` -- Character voice design procedure
 - `references/YOUR_ALBUM_BLUEPRINT.md` -- Blueprint template
+- `examples/README.md` and `examples/albums/*/` -- Example blueprints, conditional steering, and continuity hooks
 - `experiments/suno/TEMPLATE.yml` -- Experiment log template
 - `.kiro/steering/output-preferences.md` -- Output format configuration

@@ -67,8 +67,8 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 1. Address Priority 1 recommendation first (highest impact)
 2. Fix all flagged issues using provided alternatives (or write better ones)
 3. Address Priority 2 and 3
-4. Re-check prosody (stress density and singability checked at tempo)
-5. Re-check structure (hook signal within 5-30s, V2 new info, bridge turn)
+4. Re-check prosody (stress density and singability checked at tempo; `python3 tools/lyric-lint.py <file>`)
+5. Re-check structure (hook signal within ~5-30 s of the first sung word, V2 new info, bridge turn)
 6. Update Production Notes if changes affect key/chords/dynamics
 
 **Output:** Revised draft (v2)
@@ -90,8 +90,8 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 
 **Agent:** Suno-Optimizer
 **Input:** Revised (or first draft if skipping revision)
-**Process:** Full SOP 03 (char count → global tags → validation → delivery tags → dynamics → termination)
-**Output:** Suno-ready version with all meta-tags applied
+**Process:** SOP 03 — the V6 Path by default (Style / Exclude / Lyrics split → V6 section, instrument, dynamic and vocal tags → `[End]` → char counts); the v5.5-era steps only for legacy renders
+**Output:** Suno-ready version with all tags applied
 
 **Note:** For songs written with SOP 01 (which includes Phase 4 Suno formatting), this stage functions primarily as VERIFICATION. Run all SOP 03 checks to confirm compliance and catch any formatting disrupted during revision (Stage 3). Expect minimal changes for well-formatted songs.
 
@@ -100,20 +100,32 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 **Exit criteria:**
 - [ ] Style ≤1000 chars
 - [ ] Lyrics ≤5000 chars
-- [ ] Global control tags present ([track], [control], [sequence])
-- [ ] [end] at bottom
-- [ ] All pipe params validated (adjectives only)
+- [ ] `[Title:]`, `[Production Direction:]`, `[Vocal Direction:]` present
+- [ ] V6 section tags + `[Instrument: X In/Out]` choreography, 2-4 tags per section
+- [ ] `[End]` at bottom (v5.5-era: `[end]`)
+- [ ] No `[Tag Vocabulary]` block, no v5.5 global tags, no pipe notation (V6)
 - [ ] No obsolete tags
-- [ ] Slider recommendations documented
-- [ ] Exclude field content prepared
+- [ ] Exclude field content prepared (plain comma-separated, no dash prefix)
+- [ ] (Optional) Slider recommendations — only if your Suno UI exposes sliders; v5.5-era starting points
 
 ---
 
-### Stage 5: VERIFY (Album tracks only)
+### Stage 5: VERIFY
+
+#### 5a — Deterministic checks (every song)
+
+Run:
+```bash
+python3 tools/validate-song.py songs/<album_or_category>/<song>.md   # char counts, required elements, V6 tag checks, exclusions format
+python3 tools/lyric-lint.py songs/<album_or_category>/<song>.md      # syllables, stress, rhyme type/scheme, section stability, clichés
+```
+Add `--strict` to make the validator fail on warnings. In Kiro IDE / CLI V3 the `song-validate` and `prosody-lint` hooks run these on agent-made saves; on Kiro Web, run them manually. FAIL → back to Stage 4 (format) or Stage 3 (prosody).
+
+#### 5b — Continuity (album tracks only)
 
 **Agent:** Album-Continuity
 **Input:** Optimized song + Album Blueprint
-**Authority:** All verification checks reference the Album Blueprint (`references/[ALBUM]_BLUEPRINT.md`) as the single source of truth.
+**Authority:** All verification checks reference the Album Blueprint (`references/[ALBUM]_BLUEPRINT.md`, or `examples/albums/<album>/BLUEPRINT.md` for the bundled examples) as the single source of truth.
 **Process:**
 1. Run all hard rules against the track
 2. Check sonic palette compliance
@@ -144,17 +156,17 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 
 **Human action** (not agent):
 1. Open Suno (Custom Mode)
-2. **Select Persona** (if using v5.5 Voices): Choose the character's vocal model for album consistency
+2. **Select Persona / Voice** (v5.5-era feature, legacy — use it if your Suno UI offers it): Choose the character's vocal model for album consistency
 3. Paste Style Prompt into "Style of Music" field
 4. Paste Exclusions into "Exclude" field
-5. Paste Lyrics (from `[track:]` through `[end]`) into "Lyrics" field
-6. Set Creative Sliders per recommendations
+5. Paste Lyrics (V6: from `[Title:]` through `[End]`; v5.5-era: from `[track:]` through `[end]`) into "Lyrics" field
+6. (Optional) Set creative sliders — only if your Suno UI exposes them; recommendations are v5.5-era starting points
 7. Generate 3-4 versions
 8. Evaluate renders against the Production Notes vision
-9. Select best render OR identify what to adjust and re-render
-10. **Extract Stems** (if using v5.5): Get 12-track stems from best render for DAW mixing/mastering
+9. Select best render OR identify what to adjust and re-render; log V6 tag behaviour in the `references/V6_TAG_DISCOVERY.md` results log
+10. **Extract Stems** (v5.5-era feature, legacy — if available in your Suno UI): Get stems from the best render for DAW mixing/mastering
 
-**Album consistency tip:** For concept albums, extract stems from all tracks and do final mixing/mastering in a DAW. This lets you level-match, apply consistent reverb, and ensure the album sounds cohesive even if individual Suno renders have different production characteristics.
+**Album consistency tip:** For concept albums, extract stems (where your Suno plan/UI offers them) from all tracks and do final mixing/mastering in a DAW. This lets you level-match, apply consistent reverb, and ensure the album sounds cohesive even if individual Suno renders have different production characteristics.
 
 ---
 
@@ -166,7 +178,7 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 | 2. Critique | Critic | 30-35 min | Score determines next step |
 | 3. Revise | Songwriter | 15-30 min | Skip if ≥8.5 |
 | 4. Optimize | Suno-Optimizer | 15-20 min | Always proceed |
-| 5. Verify | Album-Continuity | 10-15 min | Only for album tracks |
+| 5. Verify | Validators (5a) + Album-Continuity (5b) | 2 min + 10-15 min | 5a always; 5b only for album tracks |
 | 6. Render | Human | 10-20 min | Always proceed |
 | **TOTAL** | | **2-3 hours** | Per song |
 
@@ -176,10 +188,10 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 
 | Scenario | Skip |
 |---|---|
-| Standalone song (not album) | Skip Stage 5 |
+| Standalone song (not album) | Skip Stage 5b (still run 5a) |
 | Score ≥8.5 on first critique | Skip Stage 3 |
 | Song is experimental/non-Suno | Skip Stage 4 |
 | Quick draft / idea capture | Stop after Stage 1 |
 | Just need feedback | Stop after Stage 2 |
 | Song already Suno-formatted from SOP 01 | Stage 4 is verification only (still run, expect minimal changes) |
-| Album track but non-Suno | Skip Stage 4, keep Stage 5 |
+| Album track but non-Suno | Skip Stage 4, keep Stage 5b (lyric-lint from 5a still useful) |

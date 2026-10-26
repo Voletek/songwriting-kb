@@ -50,13 +50,13 @@ Keep per-section tags like `[Sparse piano, room ambience]` — these guide instr
 - **Named layers:** `(robotic layer: text)` / `(echo layer: text)` / `(whisper layer: text)` — creates a distinct secondary vocal identity. MUST be declared in Style Prompt.
 - **Whisper Rule pattern:** Declare at top of lyrics: `[Whisper Rule: Lyrics in parentheses are whispered intrusive thoughts, close and breathy.]`
 - **Echo/Layer treatment notation:** `[deep echo layer]` or `[distant burr echo]` after parenthetical lines to specify production treatment of those layers
-- Always include `‑vocal overlap confusion` in negatives when using layers
+- Always add `vocal overlap confusion` to the Exclude field when using layers
 
 ## Character Limit Strategy
 
 - Style 1000 chars → positives and core vocal rules FIRST
 - Lyrics 5000 chars → must fit within limit (trim if needed)
-- Exclude field = ONLY for negative prompts / exclusions (not overflow)
+- Exclude field = ONLY for negative prompts / exclusions (not overflow) — plain comma-separated text, no dash prefix (e.g. `trap drums, beatboxing, vocal hums, bright synths`)
 
 ## Hit Formula Awareness
 
