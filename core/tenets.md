@@ -30,7 +30,7 @@
 **Academic basis:**
 - **Pattison (Berklee):** Prosody is the "appropriate RELATIONSHIP between elements" — not rigid syllable enforcement. The relationship serves meaning.
 - **Juslin (BRECVEMA):** Musical emotion is induced through 8 mechanisms (contagion, expectancy, etc.) — none of which are "correct syllable count."
-- **Dodge et al. (2025):** "Authenticity" ranks alongside "Technical Prowess" as a universal evaluation criterion. A daring imperfect work outscores a safe polished one on Scope of Vision.
+- **Dodge et al. (2025) [Tier 2]:** "Authenticity" sits alongside "Technical Prowess" among the six criteria applied by expert raters. A daring imperfect work outscores a safe polished one on Scope of Vision. (Primary citation (journal/DOI) not yet recorded; see PR Newswire, Feb 2026.)
 
 ---
 
@@ -55,7 +55,7 @@
 **Academic basis:**
 - **Pattison:** "Sense-bound imagery" for engagement. BUT: his own teaching distinguishes verse (specific/narrative) from chorus (universal/thematic). Choruses CAN be more abstract.
 - **Nashville A&R:** The hook must be INSTANTLY understood. "I Will Always Love You," "Someone Like You," "I Can't Make You Love Me" — all direct statement. Imagery lives in verses.
-- **Dodge et al.:** "Beauty" as a criterion encompasses both vivid imagery AND devastating simplicity. Both are valid artistic modes.
+- **Dodge et al. (2025):** "Beauty" as a criterion encompasses both vivid imagery AND devastating simplicity. Both are valid artistic modes.
 
 ---
 
@@ -67,7 +67,7 @@
 > **Exception:** Compliance constraints are non-negotiable regardless of artistic intent.
 
 **Creative choices (artist can override):**
-- Rhyme scheme (AABB instead of ABCB default — if intentional)
+- Rhyme scheme (e.g., AABB where a verse would usually be ABCB, or no rhyme at all — there is no universal default; just make it intentional)
 - Song length (7 minutes instead of 3:30-4:30 — if the art needs it)
 - Structure (through-composed instead of verse-chorus — if intentional)
 - Genre fusion ratio (50/50 instead of 70/30 — if they want the tension)
@@ -76,9 +76,9 @@
 **Compliance constraints (NON-NEGOTIABLE):**
 - Character limits (Style ≤1000, Lyrics ≤5000) — Suno rejects these
 - Artist name conversion — legal/ethical requirement
-- Required format elements ([Title:], [Production Direction:], [Vocal Direction:]) — songs won't render without them
+- Required format elements ([Title:], [Production Direction:], [Vocal Direction:], [End]): this repo's format standard. Suno will still render without them, but the direction blocks are the consistency anchors between regenerations, and the validator fails songs that lack them
 - Section tags on own lines — Suno parsing requirement
-- [end] tag — prevents runaway generation
+- End tag (`[End]` on V6; legacy `[end]` also accepted) — prevents runaway generation
 
 **When to invoke:**
 - User insists on keeping something the methodology says to change
@@ -88,7 +88,7 @@
 **Academic basis:**
 - **Fabbri (genre theory):** Genres are cultural processes negotiated by communities, not laws imposed by academics. The artist PARTICIPATES in genre, doesn't submit to it.
 - **Moore:** "The analyst does not dictate to the music what it should mean." Music exists on its own terms.
-- **Dodge et al.:** "Innovation" is a universal criterion — deliberately breaking conventions IS valued when it serves artistic intent with awareness. (Innovation without craft awareness is ignorance, not art.)
+- **Dodge et al. (2025):** "Innovation" is one of the six criteria — deliberately breaking conventions IS valued when it serves artistic intent with awareness. (Innovation without craft awareness is ignorance, not art.)
 
 ---
 
@@ -104,7 +104,7 @@
 - `core/methodology/*.md` = the canonical method. If it says X, that's what X is.
 - `.kiro/agents/*.md` = thin loaders. They REFERENCE the method, never restate it differently.
 - `.kiro/steering/*.md` = quick-reference subsets. If a steering rule contradicts core/, core/ wins.
-- The same principle (e.g., "12-syllable max") may APPEAR in multiple methodology files (songwriting AND critique) because both need it in their own context — that's acceptable as long as the DEFINITION is consistent.
+- The same principle (e.g., the "12-syllable guideline") may APPEAR in multiple methodology files (songwriting AND critique) because both need it in their own context — that's acceptable as long as the DEFINITION is consistent.
 - When updating a rule: update the canonical source FIRST, then sync any summaries.
 
 **When to invoke:**
@@ -166,9 +166,9 @@
 - Balancing accessibility (new listener) with depth (dedicated fan)
 
 **Academic basis:**
-- **Pattison:** "Specificity creates universality" — his core teaching. "Everyone lost someone, but only YOU lost them at that specific diner at 2am on a Tuesday."
+- **Craft consensus (cf. Pattison's object writing and sense-bound imagery):** Specificity creates universality. Everyone has lost someone; a loss pinned to one specific diner at 2am on a Tuesday lets listeners feel their own. Concrete, sense-bound detail makes a line feel universal.
 - **Juslin (Episodic Memory):** One of the 8 BRECVEMA mechanisms — music triggers personal memories. This requires touching UNIVERSAL experiences. Plot doesn't trigger episodic memory; emotion does.
-- **Dodge et al. (Generosity of Spirit):** Does the song GIVE something to the listener? Can they find themselves in it without a prerequisite? Generosity = emotional accessibility without condescension.
+- **Dodge et al. (2025), Generosity of Spirit:** Does the song GIVE something to the listener? Can they find themselves in it without a prerequisite? Generosity = emotional accessibility without condescension.
 - **Concept album precedent:** Pink Floyd, Radiohead, Kendrick Lamar — all create albums that work as individual emotional experiences AND sequential narratives. Individual accessibility + sequential reward = the proven standard.
 
 ---

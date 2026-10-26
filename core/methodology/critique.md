@@ -2,7 +2,8 @@
 
 > **CANONICAL METHODOLOGY** -- This file is the single source of truth for song critique.
 > A non-Kiro user can read ONLY this file and execute the complete multi-layer critique model.
-> For the full scoring rubric tables, see `references/CRITIQUE_REFERENCE.md`.
+> This file holds the canonical rubric. The companion `references/CRITIQUE_REFERENCE.md` adds examples,
+> extended tables and calibration notes. It must not contradict this file, and this file wins on any conflict.
 > For the output template, see `references/CRITIQUE_REPORT_TEMPLATE.md`.
 
 ---
@@ -72,13 +73,15 @@ Work through each quickly (1-2 sentences each). This is internal scaffolding -- 
 |---|---|---|
 | 1 | **Semantic** | What is it literally about? (subject, characters, setting, actions) |
 | 2 | **Emotional** | Central affect? Which BRECVEMA mechanisms targeted? |
-| 3 | **Prosodic** | Stresses, breaths, rhymes, syllable counts, phrase lengths, singable vowels |
+| 3 | **Prosodic** | Stresses, breaths, rhymes (type and scheme), section stability, syllable counts, phrase lengths, singable vowels |
 | 4 | **Narrative** | Does it escalate, collapse, confess, transform? Where is the turn? |
 | 5 | **Voice** | Who is speaking? Vowel placement, rhythm, instrumentation match? |
-| 6 | **Genre** | Fabbri's 5 rules satisfied? Fusion balanced (70/30)? |
+| 6 | **Genre** | Which of Fabbri's genre rule types weigh most for this genre, and are they honoured? Fusion balanced (70/30)? |
 | 7 | **Arrangement** | Growth pattern, contrast pairs, negative space, repetition calibration |
 | 8 | **Production** | Timbre palette (Tagg musemes), harmonic choices, soundbox design, proxemic distance |
 | 9 | **Commercial** | Audience, platform, length, sync readiness, 7-second rule, skip test scan |
+
+**7-second rule** [Tier 3: platform heuristic, unverified]: the working assumption that a casual streaming listener decides to keep or skip a track within roughly its first 7 seconds. Treat that window as the first-impression and skip window. Does the opening (intro sound, first sung line, or an early hook signal) give a reason to keep listening? This is separate from hook timing (Category 1) and the Skip Test (A5), which scans the whole song.
 
 ### Step 3 -- Score Each Core Category (Layer 1: 1-10 Each)
 
@@ -90,7 +93,7 @@ Score using the rubric definitions below. For each category, write ONE sentence 
 
 ## The 12-Category Scoring Rubric
 
-### 1. Hook (Memorable? Singable? Hook signal within first 5-30s?)
+### 1. Hook (Memorable? Singable? Hook signal within ~5-30s of the first sung word?)
 
 | Score | Meaning |
 |---|---|
@@ -100,7 +103,9 @@ Score using the rubric definitions below. For each category, write ONE sentence 
 | 3-4 | Weak -- forgettable, buried, or unclear what the hook IS |
 | 1-2 | No identifiable hook |
 
-**Hook timing verification:** [Tier 2] At the song's BPM, count ~2-3 seconds per sung line with breath. (Total lines before hook x 2.5s) + intro seconds = time to hook. Aim for 5-30s from first sung vocal (genre-dependent).
+**Hook types:** Lyric/Title, Melodic, Rhythmic, Instrumental/Production. Name which one(s) the song relies on.
+
+**Hook timing verification:** [Tier 2] Time from the first sung word to the hook = sung lines before the hook x bars per line x bar length. At 92 BPM in 4/4 one bar ~= 2.6 s, and a sung line usually takes 1-2 bars including the breath (the runtime formula is in songwriting.md Step 8). Aim for a hook signal within ~5-30 s of the first SUNG word (genre-dependent: pop earlier, cinematic/progressive later). Full chorus arrival is a separate metric: add the intro to get track time. In pitch-ready commercial songs the full chorus typically arrives by ~45-60 s of track time (pop average ~39 s).
 
 ### 2. Lyrics (Imagery? Specificity? Visual/cinematic writing?)
 
@@ -122,7 +127,7 @@ Score using the rubric definitions below. For each category, write ONE sentence 
 | 3-4 | Many lines fight the meter, reversed stresses, breath-hostile |
 | 1-2 | Written as prose with no consideration for singing |
 
-**Prosody check method:** Count syllables per line (target 7-12). Identify stressed syllables -- do they land on beats 1 and 3? Check for open vowels on sustained/high notes. Verify em-dashes create actual breath points. Flag any line over 12 syllables. For flagged lines, apply the Compression Test (see songwriting.md) to determine whether to compress, keep as spoken, or rewrite.
+**Prosody check method:** Count syllables per line (target 7-12 [Tier 2]). Identify stressed syllables: do they land on the strong beats of the METER? In square 4/4 that usually means beats 1 and 3. Backbeat and syncopated styles push stresses onto anticipations or onto 2 and 4. In 3/4 and 6/8 it's the downbeat of each group. Pickups (anacrusis) carry unstressed syllables before the bar. Check for open vowels on sustained/high notes. Verify em-dashes create actual breath points. Flag lines of 13-15 syllables for review (stress density and singability at tempo). For lines of 16+, apply the Compression Test (see songwriting.md) to decide whether to compress, keep as spoken, or rewrite. Tenet 1 still lets a line that serves the emotion stay. Check rhyme type and section stability against the section's job (closed where it should resolve, open where it should push forward). Line-end function words are only a problem when unstressed on a held note, and enjambment is a deliberate tool, not an error. Optional deterministic aid: `python3 tools/lyric-lint.py <song>` (syllables, stress, rhyme type, rhyme scheme, section stability; details in `references/RHYME_AND_LYRIC_CRAFT.md`).
 
 ### 4. Arc (Transformation? Turn? V2 adds new info?)
 
@@ -180,13 +185,13 @@ Score using the rubric definitions below. For each category, write ONE sentence 
 
 | Score | Meaning |
 |---|---|
-| 9-10 | Perfectly serves genre expectations (Fabbri's 5 rules) while adding freshness |
+| 9-10 | Perfectly serves genre expectations (the Fabbri rule types that matter for this genre) while adding freshness |
 | 7-8 | Mostly aligned with one genre drift or missed convention |
 | 5-6 | General genre fit but does not fully commit or honor specific conventions |
 | 3-4 | Genre confused -- conflicting signals |
 | 1-2 | No discernible genre coherence |
 
-**Fabbri's 5 Rules:** formal and technical rules (structural conventions), semiotic rules (what the genre signifies), behaviour rules (performance conventions), social and ideological rules (community values), economical and juridical rules (marketplace expectations).
+**Fabbri's five types of genre rules** [Tier 1: Fabbri 1982, "A theory of musical genres: two applications"]: formal and technical (structural conventions), semiotic (what the genre signifies), behavioural (performance conventions), social and ideological (community values), economical and juridical (marketplace expectations). These are rule TYPES whose weight varies by genre. They are not a checklist where all five must be satisfied. Ironic lyric/genre juxtaposition is itself a recognised convention, so do not score it as a violation when it is deliberate.
 
 ### 10. Arrangement/Production (Dynamics? Timbre? Contrast?)
 
@@ -220,7 +225,7 @@ Score using the rubric definitions below. For each category, write ONE sentence 
 | 3-4 | Manipulative, glorifying, or dismissive of real pain |
 | 1-2 | Exploitative or harmful |
 
-**Generosity of spirit (Dodge):** Does the song GIVE something to the listener? Companionship in pain, beauty in darkness, recognition of experience?
+**Generosity of spirit (Dodge et al., 2025) [Tier 2]:** Does the song GIVE something to the listener? Companionship in pain, beauty in darkness, recognition of experience?
 
 ---
 
@@ -279,6 +284,8 @@ A museme = the smallest meaningful musical unit. It carries cultural connotation
 
 ### A4. Scope of Vision (Dodge et al.)
 
+From Dodge et al. (2025), a study in which expert raters used transparent criteria (innovation, beauty, scope of vision, technical prowess, generosity of spirit, authenticity). Primary citation (journal/DOI) not yet recorded; see PR Newswire, Feb 2026 ("Academic Study Proposes New Standards for Evaluating Popular Music"). Treat as [Tier 2] until the primary source is added.
+
 Measures artistic ambition -- not just craft execution but REACH.
 
 | Score | Meaning |
@@ -319,31 +326,33 @@ For each dimension, assess CORRECT / SUBOPTIMAL / WRONG:
 
 | # | Dimension | Framework | Check Against |
 |---|---|---|---|
-| 1 | **Genre** | Fabbri (5 rules) | Does this genre SIGNIFY what the lyrics express? |
-| 2 | **Key** | Eerola, Friberg & Bresin (cue hierarchy) | Mode is #1 emotional cue. Does key character match dominant emotion? |
-| 3 | **BPM** | Genre + emotion mapping | Correct for BOTH genre conventions AND emotional pacing? |
+| 1 | **Genre** | Fabbri (genre rule types, esp. semiotic) | Does this genre SIGNIFY what the lyrics express? (Deliberate ironic juxtaposition is a recognised convention, not an error) |
+| 2 | **Key / Mode** | Eerola, Friberg & Bresin (perceived-emotion cues) | Mode (major/minor) is the strongest cue for perceived emotion [Tier 1]. Does the MODE match the dominant emotion? Does the specific key suit the vocal range/tessitura and instrument resonance? (Key-character tables are Tier 2 historical associations: creative prompts only) |
+| 3 | **BPM** | Genre + emotion mapping | Correct for BOTH genre conventions AND emotional pacing? (Tempo is the main arousal cue) |
 | 4 | **Instruments** | Tagg (musemes) | Does each instrument carry the correct cultural connotation? Described as SOUNDS, not gear names? Character budget efficient? |
-| 5 | **Vocal style** | Moore (persona) + Fabbri (behavioral) | Delivery matches genre AND serves the lyric arc? |
-| 6 | **Era/Production** | Suno era-anchoring | Would a specific sonic period improve specificity? Era separated from instrumentation? |
+| 5 | **Vocal style** | Moore (persona) + Fabbri (behavioural rules) | Delivery matches genre AND serves the lyric arc? |
+| 6 | **Era/Production** | Suno era-anchoring (v5.5-era finding -- re-validate on V6) [Tier 3] | Would a specific sonic period improve specificity? Era separated from instrumentation? |
 | 7 | **Space/Mood** | Tagg + Lacasse | Atmospheric descriptors aligned, non-contradictory, <=3 total? |
 
 ### 5b. Section-Level Tag Evaluation
 
-- Does each section's production cue tag signify correctly for THAT section's content? (Tagg applied)
+- Does each section's tags signify correctly for THAT section's content? (Tagg applied)
 - Do tags contrast between adjacent sections?
-- Are tags <=3 per section?
+- V6: 2-4 tags per section (not per line)? (v5.5-era (legacy) pipe-notation guidance was <=3 production-cue descriptors per section)
 - Do tags support the proxemic arc? (Sparse = intimate, full = public)
 
 ### 5c. Compliance Checklist
 
-Binary pass/fail checks:
-- Required elements present? (`[Title:]`, `[Production Direction:]`, `[Vocal Direction:]`, `[end]`)
+Binary pass/fail checks (deterministic aid: `python3 tools/validate-song.py songs/`):
+- Required elements present? (`[Title:]`, `[Production Direction:]`, `[Vocal Direction:]`, `[End]` -- legacy `[end]` also accepted)
 - Character limits respected? (Style <=1000, Lyrics <=5000)
-- Genre first in Style Prompt? Tag count 5-8? No contradictions?
+- Section tags on their own lines?
+- Genre first in Style Prompt? No contradictions? Style tag count: v5.5-era (legacy) Tier 3 heuristic of 5-8, never >10 -- re-validate on V6
+- V6 format: no `[Tag Vocabulary]` block, no v5.5 global tags (`[track:]`/`[control:]`/`[sequence:]`), no pipe notation? (applies to V6 renders; a v5.5-era song is judged by v5.5-era conventions and should be flagged for migration, not failed)
 - Named `()` layers declared in Style Prompt?
-- Exclusions in dedicated Exclude field (not in Style or Lyrics)?
+- Exclusions in dedicated Exclude field (`## EXCLUSIONS:` section), plain comma-separated, no dash prefix?
 - No artist names present in Style Prompt or Production Direction? (converted to descriptive production language)
-- No gear/model names present in Style Prompt or Production Direction? (converted to sound descriptors) [Tier 3]
+- No gear/model names present in Style Prompt or Production Direction? (converted to sound descriptors; category names like Rhodes, Hammond organ and Wurlitzer are fine) [Tier 3]
 
 ### 5d. Overall Verdict
 
@@ -357,7 +366,7 @@ Provide 2 complete alternative Style Prompts (ready to paste into Suno) with:
 - Full rewritten prompt text
 - Reasoning (why this serves the emotional content better)
 - Expected improvement in render quality
-- Slider recommendation (Weirdness % / Style Influence % / Audio Influence %)
+- Optional: slider recommendation (Weirdness % / Style Influence % / Audio Influence %), only if the user's Suno UI exposes sliders. The values are v5.5-era starting points
 
 ---
 
@@ -438,21 +447,26 @@ The **core 12-category composite** drives the pipeline decision:
 
 | Pattern | What to Flag | Fix |
 |---|---|---|
-| Stuffed line | >12 syllables at tempo | Trim or split |
-| Reversed stress | Weak word on strong beat | Reorder words |
+| Stuffed line | 13+ syllables at tempo (13-15 = review stress density and singability; 16+ = compress) | 13-15: trim or split if crowded. 16+: run the Compression Test (songwriting.md) |
+| Reversed stress | Weak syllable or function word on a strong beat while the content word falls on a weak beat (TO-mor-ROW instead of to-MOR-row) | Reorder words or move the phrase against the beat |
 | Abstract where physical needed | "feeling sad" vs "hands won't stop shaking" | Replace with sensory |
-| Rhyme forcing | Meaning bent to serve rhyme | Use slant rhyme or restructure |
+| Rhyme forcing | Meaning or syntax bent to serve rhyme | Use a family/additive rhyme or restructure the line (`references/RHYME_AND_LYRIC_CRAFT.md`) |
+| Stability mismatch | A section's structure (line count/length/rhyme) feels closed where it should push forward, or open where it should resolve | Change line count, line length or rhyme closure to match the section's job (`references/RHYME_AND_LYRIC_CRAFT.md`) |
 | V2 repeats V1 | No new information in second verse | Add narrative progression |
 | Bridge restates | Bridge says what chorus already said | Find the TURN |
 | Over-explanation | Imagery + thesis statement of same idea | Trust the imagery, cut the thesis |
 | Generic hook | Could be in any song | Make specific to THIS song's world |
-| Prose bridge | 12+ lines of non-melodic content | Trim to 6-8, impose syllable discipline |
+| Prose bridge | 9+ lines of non-melodic content | Trim toward 3-6 lines, impose syllable discipline |
 | Soundbox static | Same spatial depth entire song | Vary proxemic distance per section |
 | Layer missing | No harmonic filler or bass presence | Add mid-range texture or bass foundation |
 | Musemic contradiction | Bright sounds on dark lyrics | Align timbral connotation to content |
 | Anti-pair genre combo | Genre A + Genre B in Style Prompt are known incompatible (Gregorian Chant+Trap, Classical Baroque+Lo-fi, Opera+Mumble Rap) [Tier 3: Omnisona] | Replace one genre or use compatible combination |
 | Dead zone | 15+ seconds with no new information | Add contrast, cut length, or introduce variation |
 | Proxemic mismatch | Intimate lyrics at public distance | Match reverb/mic treatment to emotional content |
+| Undeclared layer | Named `()` layer without Style Prompt declaration | Add declaration or remove layer |
+| Unearned temporal specificity | Time/date that does not anchor, ground, or hook -- just conveys information | Replace with culturally-loaded alternative OR cut |
+
+> **Note:** For full temporal specificity guidelines (6 functions, oddness effect, days-of-week loading, use/avoid criteria), see `core/methodology/songwriting.md` → "Temporal Specificity in Lyrics"
 
 ---
 
@@ -472,7 +486,7 @@ The **core 12-category composite** drives the pipeline decision:
 12. Production-lyric alignment failures create unease the listener cannot name
 13. Suno Optimization is NOT gate-blocking -- it does not prevent passing the 8.5 threshold, but determines render quality
 14. Genre-Emotion Alignment is the highest-impact Suno choice -- wrong genre = the entire sound fights the lyrics
-15. Key is the #1 emotional cue (Eerola, Friberg & Bresin, 2013) -- evaluate key choice with the same seriousness as lyric quality
+15. Mode (major/minor) is the strongest cue for perceived emotion (Eerola, Friberg & Bresin, 2013) -- evaluate mode choice with the same seriousness as lyric quality; judge the specific key mainly on vocal range/tessitura and instrument resonance
 
 ---
 
@@ -492,19 +506,20 @@ The template defines exact structure, section ordering, conditional inclusion ru
 | **Philip Tagg** (*Music's Meanings*, 2013) | Musemes (smallest meaningful musical units), semiotic signification |
 | **Serge Lacasse** | Vocal staging, proxemic distance (intimate to public). Part of a composite framework: Hall (proxemics theory) + Lacasse (vocal staging semiotics) + Moore (hermeneutics of recorded song). "Dissolved" is our extension. |
 | **William Moylan** | Recording analysis, timbral balance, spatial imaging |
-| **Pat Pattison** (Berklee) | Prosody as relationship between form and content |
-| **Franco Fabbri** | Genre theory (5 rules of genre membership) |
-| **Patrik Juslin** | BRECVEMA emotional mechanisms (8 pathways by which music induces emotion) |
-| **Eerola, Friberg & Bresin** (2013, *Frontiers in Psychology* 4:487) | Emotional cue hierarchy (mode > tempo > register > dynamics > articulation > timbre) |
-| **Christian Schubart** | Key characteristics and emotional associations |
-| **Dodge et al.** (2025) | 6 universal criteria: innovation, beauty, scope of vision, technical prowess, generosity of spirit, authenticity |
+| **Pat Pattison** (Berklee) | Prosody as relationship between form and content; rhyme-type ladder; stable/unstable section design (explained in `references/RHYME_AND_LYRIC_CRAFT.md`) |
+| **Franco Fabbri** (1982, "A theory of musical genres: two applications") | Genre theory -- five TYPES of genre rules (formal & technical; semiotic; behavioural; social & ideological; economical & juridical), whose weight varies by genre; not a pass/fail checklist |
+| **Patrik Juslin** (2013, *Physics of Life Reviews* 10(3)) | BRECVEMA -- 8 mechanisms by which music INDUCES (felt) emotion |
+| **Eerola, Friberg & Bresin** (2013, *Frontiers in Psychology* 4:487) | PERCEIVED emotion with systematically manipulated cues: mode contributed most overall, then tempo, register, dynamics, articulation, timbre; tempo matters most for arousal. Studied mode, not specific keys |
+| **Christian Schubart** (*Ideen zu einer Aesthetik der Tonkunst*, written 1784-85, publ. 1806; English in Steblin, *A History of Key Characteristics*, 1983/2002) | Historical key characteristics under unequal temperaments [Tier 2: historical tradition, not psychology] |
+| **Dodge et al.** (2025) | 6 criteria applied by expert raters: innovation, beauty, scope of vision, technical prowess, generosity of spirit, authenticity. Primary citation (journal/DOI) not yet recorded; see PR Newswire, Feb 2026. [Tier 2] until the primary source is added |
 | **Nashville A&R** | Melody memorability, "cut" potential, market fit, 7-second emotional truth, skip test |
-| **Suno community research** (2025-2026) | Prompt formula, era anchoring, genre-first principle, 5-8 tag sweet spot, slider behavior |
+| **Suno community research** (2025-2026) | Prompt formula, genre-first principle; v5.5-era (legacy) findings to re-validate on V6: era anchoring, 5-8 tag sweet spot, slider behaviour [Tier 3] |
 
 ---
 
 ## References
 
-- `references/CRITIQUE_REFERENCE.md` -- Full scoring rubric tables with detailed scale definitions and all assessment frameworks
+- `references/CRITIQUE_REFERENCE.md` -- Companion: the same rubric with examples, extended tables and calibration notes (this file wins on conflict)
+- `references/RHYME_AND_LYRIC_CRAFT.md` -- Rhyme types, schemes, section stability, meter, singability (for Prosody / Singability / Lyrics scoring)
 - `references/CRITIQUE_REPORT_TEMPLATE.md` -- Standardized output template for all critique reports
 - `references/SUNO_STYLE_GENRE_REFERENCE.md` -- Genre/key/BPM/instrument evaluation tables for Suno Optimization Assessment

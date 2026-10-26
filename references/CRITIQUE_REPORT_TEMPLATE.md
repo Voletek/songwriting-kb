@@ -3,6 +3,8 @@
 > Standard template for all professional critique reports.
 > Use this format consistently for every critique output.
 > Sections marked [CONDITIONAL] are included only when applicable.
+> Layer model, categories and mode table: `core/methodology/critique.md` (canonical). Which sections
+> appear in which mode: see "Quick Reference" at the end.
 
 ---
 
@@ -13,7 +15,7 @@
 
 **Date:** [Month Year]
 **Version analyzed:** [v1/v2/v3/final] ([brief context — e.g., "first draft," "post-revision," "Suno-ready"])
-**Analyzer:** Critic agent (SOP 02 — [variant: Full 3-Layer Model / Concise Re-Critique / Quick Feedback])
+**Analyzer:** Critic agent (SOP 02 — [variant: Full Multi-Layer Model / Concise Re-Critique / Quick Feedback / Suno Render Check])
 **Album context:** [Album Name — Track X of Y (Phase: description)] OR [Standalone — brief genre/context descriptor]
 **Previous scores:** [v1 Core X.X / Advanced X.X → v2 Core X.X / Advanced X.X] (omit for first critique)
 ```
@@ -29,15 +31,15 @@
 |---|---|---|
 | Hook | X/10 | [One substantive sentence: timing, memorability, singability, standalone vs context-dependent impact] |
 | Lyrics | X/10 | [One sentence: imagery quality, show-vs-tell ratio, specificity, any weak lines named] |
-| Prosody | X/10 | [One sentence: syllable counts, stress alignment, breath points, singable vowels, any violations] |
+| Prosody | X/10 | [One sentence: syllable counts (7-12 target; 13-15 flagged for review; 16+ Compression Test), stress alignment with the meter, rhyme/section stability, breath points, singable vowels, any violations] |
 | Arc | X/10 | [One sentence: transformation journey described, turn quality, V2 new info, final chorus earned?] |
 | Structure | X/10 | [One sentence: length, pacing, negative space, contrast, anything excess or missing] |
 | Originality | X/10 | [One sentence: fresh angles, unique phrasing, territory claimed, any cliches present] |
 | Singability | X/10 | [One sentence: phrase rhythm, vowel placement, consonant issues, a cappella viability] |
-| Commercial | X/10 | [One sentence: platform fit, hook timing, length, sync potential — scored relative to INTENDED context] |
-| Genre | X/10 | [One sentence: convention adherence, fusion balance, palette coherence, Fabbri satisfaction] |
-| Arrangement | X/10 | [One sentence: dynamic arc, contrast pairs, growth pattern, negative space, subtractive moments] |
-| Voice/Accent | X/10 | [One sentence: persona clarity, dialect coherence, cultural instrumentation match, Moore's layers] |
+| Commercial Viability | X/10 | [One sentence: platform fit, hook timing, length, sync potential — scored relative to INTENDED context] |
+| Genre Alignment | X/10 | [One sentence: convention adherence (the Fabbri rule types that matter for this genre), fusion balance, palette coherence] |
+| Arrangement/Production | X/10 | [One sentence: dynamic arc, contrast pairs, growth pattern, negative space, subtractive moments] |
+| Accent/Voice Coherence | X/10 | [One sentence: persona clarity, dialect coherence, cultural instrumentation match, Moore's layers] |
 | Emotional Intelligence | X/10 | [One sentence: authenticity, generosity, responsibility with darkness, transcendence achieved?] |
 
 ### COMPOSITE SCORE: X.X/10
@@ -57,7 +59,7 @@
 | Functional Layers (Moore) | X/10 | [One sentence: all 4 layers present? Balanced? Any missing/competing? Subtraction used?] |
 | Soundbox & Proxemics (Lacasse) | X/10 | [One sentence: proxemic arc described (intimate→social→public→dissolved), distance matches content?] |
 | Musemic Signification (Tagg) | X/10 | [One sentence: do timbres/musemes carry correct cultural connotation? Any contradictions?] |
-| Scope of Vision (Dodge) | X/10 | [One sentence: artistic ambition level, multi-layered meaning, structural innovation, daring?] |
+| Scope of Vision (Dodge et al.) | X/10 | [One sentence: artistic ambition level, multi-layered meaning, structural innovation, daring?] |
 | Skip Test (A&R) | X/10 | [One sentence: any dead zones identified? Every 15s window scanned, specific moments named] |
 
 ### ADVANCED COMPOSITE: X.X/10
@@ -65,7 +67,7 @@
 
 ---
 
-## Suno Optimization Assessment
+## Layer 2.5: Suno Optimization Assessment
 
 > Evaluates whether the Style Prompt, tags, and production choices are OPTIMAL for the song's
 > emotional content — not just technically compliant but creatively best-suited.
@@ -82,8 +84,8 @@
 
 | # | Dimension | Current Choice | Assessment | Notes |
 |---|---|---|---|---|
-| 1 | Genre | [what's specified] | CORRECT / SUBOPTIMAL / WRONG | [Does this genre serve the emotional content? Fabbri's 5 rules satisfied?] |
-| 2 | Key | [key specified] | CORRECT / SUBOPTIMAL / WRONG | [Does the key carry the correct emotional weight? Mode = #1 emotional cue] |
+| 1 | Genre | [what's specified] | CORRECT / SUBOPTIMAL / WRONG | [Does this genre SIGNIFY the emotional content? Are the Fabbri rule types that matter most for it honoured, or is the juxtaposition deliberate irony?] |
+| 2 | Key / Mode | [key specified] | CORRECT / SUBOPTIMAL / WRONG | [Does the MODE match the emotion (strongest perceived-emotion cue)? Does the key suit the vocal range/tessitura and instrument resonance?] |
 | 3 | BPM | [tempo specified] | CORRECT / SUBOPTIMAL / WRONG | [Is tempo in the right range for genre AND emotion?] |
 | 4 | Instruments | [main instruments] | CORRECT / SUBOPTIMAL / WRONG | [Do instruments signify correctly? (Tagg) Cultural connotation aligned?] |
 | 5 | Vocal Style | [vocal specified] | CORRECT / SUBOPTIMAL / WRONG | [Does delivery match genre expectations AND lyric content?] |
@@ -108,7 +110,7 @@
 ```
 Reasoning: [Why this genre/key/BPM combination serves the emotional content better]
 Expected improvement: [What changes in the Suno render — be specific]
-Slider recommendation: Weirdness X% / Style Influence X% / Audio Influence X%
+Slider recommendation (optional -- only if the Suno UI exposes sliders; v5.5-era starting points): Weirdness X% / Style Influence X% / Audio Influence X%
 
 **Option B:**
 ```
@@ -116,7 +118,7 @@ Slider recommendation: Weirdness X% / Style Influence X% / Audio Influence X%
 ```
 Reasoning: [What this prioritizes differently]
 Expected improvement: [What this optimizes for]
-Slider recommendation: Weirdness X% / Style Influence X% / Audio Influence X%
+Slider recommendation (optional): Weirdness X% / Style Influence X% / Audio Influence X%
 
 ### Compliance Checklist
 
@@ -127,17 +129,18 @@ Slider recommendation: Weirdness X% / Style Influence X% / Audio Influence X%
 | `[Vocal Direction:]` present | ✅/❌ | |
 | Style Prompt ≤1000 chars | ✅/❌ | [actual count if close/over] |
 | Lyrics ≤5000 chars (with tags) | ✅/❌ | [actual count if close/over] |
-| `[end]` at bottom | ✅/❌ | |
+| `[End]` at bottom (legacy `[end]` accepted) | ✅/❌ | |
 | Section tags on own lines | ✅/❌ | |
 | Named `()` layers declared in Style | ✅/❌ | [list any undeclared] |
-| Exclusions in Exclude field (not lyrics) | ✅/❌ | |
+| Exclusions in Exclude field (`## EXCLUSIONS:`), plain comma-separated, no dash prefix | ✅/❌ | |
+| V6 format: no `[Tag Vocabulary]` block, no v5.5 global tags, no pipe notation | ✅/❌ | [v5.5-era songs: flag for migration] |
 | Genre is FIRST in Style Prompt | ✅/❌ | |
-| Tag count 5-8 (not >10) | ✅/❌ | [actual count] |
+| Style tag count (v5.5-era Tier 3 heuristic: 5-8, not >10 -- re-validate on V6) | ✅/❌ | [actual count] |
 | No contradictory tags | ✅/❌ | [flag any conflicts] |
 | No artist names in Style/Production Direction | ✅/❌ | [list any unconverted references] |
-| No gear/model names (converted to sound descriptors) | ✅/❌ | [list any unconverted gear names] |
+| No gear/model names (converted to sound descriptors; Rhodes/Hammond organ/Wurlitzer are fine) | ✅/❌ | [list any unconverted gear names] |
 | BPM/tempo specified | ✅/❌ | |
-| Per-section tags ≤3 per section | ✅/❌ | [flag any over-tagged sections] |
+| V6: 2-4 tags per section (not per line) | ✅/❌ | [flag any over- or under-tagged sections] |
 ```
 
 **Optimization verdict meanings:**
@@ -216,7 +219,7 @@ Slider recommendation: Weirdness X% / Style Influence X% / Audio Influence X%
 3. ...
 ```
 
-**Issue ordering:** Highest impact first. Limit to 3-6 issues maximum. If more exist, group minor ones under a "Minor Notes" sub-section.
+**Issue ordering:** Report ALL issues (critique.md Step 6), highest impact first. Give the highest-impact issues full entries and group minor ones under a "Minor Notes" sub-section. Quick Feedback mode: top 2 flags only.
 
 ---
 
@@ -231,7 +234,7 @@ Slider recommendation: Weirdness X% / Style Influence X% / Audio Influence X%
 ```
 
 **Rules:**
-- Maximum 3-5 recommendations
+- Cover all identified issues, ordered by impact (critique.md Step 7). At least one lyrics/content and one structure/arrangement/production item where applicable, but impact order comes first
 - Each must be actionable (not vague)
 - Order by: (1) score impact, (2) ease of implementation, (3) cascade effect on other categories
 
@@ -267,10 +270,10 @@ Slider recommendation: Weirdness X% / Style Influence X% / Audio Influence X%
 | Structure | X | X | +X | [brief] |
 | Originality | X | X | +X | [brief] |
 | Singability | X | X | +X | [brief] |
-| Commercial | X | X | +X | [brief] |
-| Genre | X | X | +X | [brief] |
-| Arrangement | X | X | +X | [brief] |
-| Voice/Accent | X | X | +X | [brief] |
+| Commercial Viability | X | X | +X | [brief] |
+| Genre Alignment | X | X | +X | [brief] |
+| Arrangement/Production | X | X | +X | [brief] |
+| Accent/Voice Coherence | X | X | +X | [brief] |
 | Emotional Intelligence | X | X | +X | [brief] |
 | | | | | |
 | **CORE COMPOSITE** | **X.X** | **X.X** | **+X.X** | **[gate status]** |
@@ -285,6 +288,8 @@ Slider recommendation: Weirdness X% / Style Influence X% / Audio Influence X%
 ```
 
 For 3+ versions, extend columns: `| v1 | v2 | v3 | Δ(v1→v3) |`
+
+Include the Advanced rows only when Layer 2 was scored in both versions (the canonical re-critique minimum is Layer 1 + 2.5 + delta).
 
 ---
 
@@ -304,28 +309,30 @@ For 3+ versions, extend columns: `| v1 | v2 | v3 | Δ(v1→v3) |`
 
 1. **Be specific, never vague.** Every score note must name WHAT earns or costs the score — quote lines, name sections, cite timestamps.
 2. **One voice, consistent tone.** Professional but direct. No hedging ("maybe," "sort of," "a little bit"). State assessments with confidence.
-3. **Cite frameworks by name.** When a score is informed by a theoretical framework, name it parenthetically: (Tagg), (Moore), (Pattison), (Fabbri), (Lacasse), (Dodge).
+3. **Cite frameworks by name.** When a score is informed by a theoretical framework, name it parenthetically: (Tagg), (Moore), (Pattison), (Fabbri), (Lacasse), (Dodge et al.).
 4. **Fixes must be concrete.** Never "make it better" — always "change X to Y because Z." Provide actual replacement text where applicable.
 5. **Respect context.** A concept album track is scored against concept album standards. A fun novelty song is scored against novelty standards. State the context in the header and score within it.
 6. **Strongest Line must explain WHY.** Not just "this is good" — identify the specific craft mechanisms that make it work (prosody, multi-level meaning, imagery, surprise, etc.).
-7. **Decision Gate is mandatory.** Every critique must end with a clear next-action directive.
+7. **Decision Gate is mandatory whenever Layer 1 is scored.** Every such critique must end with a clear next-action directive. (A Suno render check has no composite; end it with the optimization verdict.)
 8. **No padding.** If a section isn't applicable, omit it entirely rather than writing "N/A" placeholders.
 
 ---
 
 ## Quick Reference: When to Include Each Section
 
-| Section | First Critique | Re-Critique | Final/Render-Ready |
-|---|---|---|---|
-| Header | Always | Always | Always |
-| Core 12 Scores | Always | Always | Always |
-| Advanced 5 Scores | Always | Always | Always |
-| Suno Optimization | Always | Always | Always |
-| Album-Context | If album track | If album track | If album track |
-| Calibration | Always | Always | Always |
-| Strongest Line | Always | Always | Always |
-| Flagged Issues | Always | If issues remain | Omit or "Minor Notes" only |
-| Priority Recommendations | Always | If revisions needed | Omit if gate cleared |
-| Decision Gate | Always | Always | Always |
-| Revision Delta Table | Never (no prior) | Always | Always |
-| Summary | Optional | Optional | Always |
+Columns follow the mode table in `core/methodology/critique.md` (Quick feedback = Layer 1 + Strongest Line + 2 flags; Re-critique = Layer 1 + 2.5 + delta minimum; Suno render check = Layer 2.5 only).
+
+| Section | First Critique | Re-Critique | Final/Render-Ready | Quick Feedback | Suno Render Check |
+|---|---|---|---|---|---|
+| Header | Always | Always | Always | Always | Always |
+| Core 12 Scores (Layer 1) | Always | Always | Always | Always | Omit |
+| Advanced 5 Scores (Layer 2) | Always | If run | Always | Omit | Omit |
+| Suno Optimization (Layer 2.5) | Always | Always | Always | Omit | Always |
+| Album-Context (Layer 3) | If album track | If album track | If album track | Omit | Omit |
+| Calibration | Always | Always | Always | Omit | Omit |
+| Strongest Line | Always | Always | Always | Always | Omit |
+| Flagged Issues | Always | If issues remain | Omit or "Minor Notes" only | Top 2 only | Omit |
+| Priority Recommendations | Always | If revisions needed | Omit if gate cleared | Omit | Omit |
+| Decision Gate | Always | Always | Always | Always | Omit (no scores) |
+| Revision Delta Table | Never (no prior) | Always | Always | Omit | Omit |
+| Summary | Optional | Optional | Always | Omit | Omit |

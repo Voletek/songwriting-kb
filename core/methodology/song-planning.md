@@ -7,7 +7,7 @@
 >
 > This file describes the PLANNING PROCEDURE and the DELIVERABLE. It does NOT restate craft
 > definitions. Every craft rule (prosody thresholds, hook timing, V2-new-info, bridge turn,
-> Fabbri's 5 rules, the 70/30 fusion rule, key-emotion mapping, BPM-emotion, Hit Formula F1/F2)
+> Fabbri's genre rule types, the 70/30 fusion rule, key-emotion mapping, BPM-emotion, Hit Formula F1/F2)
 > lives in its canonical source and is pulled in BY REFERENCE only. See
 > `core/methodology/songwriting.md`, `SONGWRITING_KNOWLEDGE_BASE.md`, and
 > `references/SUNO_STYLE_GENRE_REFERENCE.md`.
@@ -107,10 +107,10 @@ the song. If character-driven, point to the Character Voice Template in
 `core/methodology/character-voice.md`. See `core/methodology/songwriting.md` Step 6.
 
 ### (6) Genre Mapping
-Primary genre and, if fusion, the texture genre expressed as a **70/30 split**; a **Fabbri 5-rules**
-sanity check; and the instrument palette that "belongs" to the genre. The 70/30 fusion rule,
-Fabbri's 5 rules, and the Genre-Instrument palette are defined in `core/methodology/songwriting.md`
-Step 7 and `references/SUNO_STYLE_GENRE_REFERENCE.md` -- reference them, do not restate.
+Primary genre and, if fusion, the texture genre expressed as a **70/30 split**; a **Fabbri** sanity
+check (which genre rule types weigh most for this genre); and the instrument palette that "belongs" to
+the genre. The 70/30 fusion rule, Fabbri's genre rule types, and the Genre-Instrument palette are
+defined in `core/methodology/songwriting.md` Step 7 and `references/SUNO_STYLE_GENRE_REFERENCE.md` -- reference them, do not restate.
 
 ### (7) Key + BPM + Time Signature (with reasoning)
 The chosen key, BPM, and time signature, each with a one-line reason. Derive from the
@@ -120,9 +120,9 @@ Selection and BPM-Emotion frameworks in `SONGWRITING_KNOWLEDGE_BASE.md` and
 
 ### (8) Arrangement / Dynamics Sketch
 The growth pattern (additive / subtractive / explosive / bloom), where the **negative space** is,
-the contrast pairs, and where the **hook lands**. Hook-timing guidance (a hook signal within the
-first 5-30s of the first sung vocal, genre-dependent) is defined in `core/methodology/songwriting.md`
-Step 8 -- reference it, do not restate. This is a SKETCH; it is formalized as Production Notes
+the contrast pairs, and where the **hook lands**. Hook-timing guidance (a hook signal within
+~5-30s of the first sung word, genre-dependent; full chorus arrival is a separate metric) is
+defined in `core/methodology/songwriting.md` Step 8 -- reference it, do not restate. This is a SKETCH; it is formalized as Production Notes
 during writing.
 
 ### (9) Structure Map + V6 Mode Label
@@ -132,8 +132,12 @@ and the **V6 mode label**: either **Default/Roots** (folk, blues, mountain-gothi
 and its technique inventory are defined in `references/V6_TAG_DISCOVERY.md` (V6 Technique
 Inventory) -- cite that file; do not restate its technique list here.
 
+Also record the **Rhyme & stability plan per section** (e.g. V: XAXA open; C: AABB closed). The
+rules live in `core/methodology/songwriting.md` Step 4 and `references/RHYME_AND_LYRIC_CRAFT.md` --
+reference them, do not restate.
+
 ### (10) Hook Approach
-The hook TYPE (title / lyric / melodic / rhythmic / production) and a **candidate hook line** to
+The hook TYPE (Lyric/Title, Melodic, Rhythmic, or Instrumental/Production) and a **candidate hook line** to
 aim for. Hook types are defined in `SONGWRITING_KNOWLEDGE_BASE.md` and `core/methodology/songwriting.md`.
 A candidate line is a conceptual target, not finished chorus lyrics.
 
@@ -160,12 +164,13 @@ TO these; it never forks or restates their contents.
 | Framework | Feeds Brief Section | Canonical Source (reference only) |
 |---|---|---|
 | Genre-Emotion Alignment | (6) Genre mapping | `SONGWRITING_KNOWLEDGE_BASE.md`, `references/SUNO_STYLE_GENRE_REFERENCE.md` (used by the songwriter agent's AUTO-PILOT mode) |
-| Key Selection (mode = #1 emotional cue) | (7) Key | `SONGWRITING_KNOWLEDGE_BASE.md`, `references/SUNO_STYLE_GENRE_REFERENCE.md` |
+| Key Selection (mode is the strong emotional cue; key mainly for vocal range/resonance) | (7) Key | `references/SUNO_STYLE_GENRE_REFERENCE.md` §2.4 Key Selection Decision Framework |
 | BPM-Emotion Interaction | (7) BPM | `SONGWRITING_KNOWLEDGE_BASE.md`, `references/SUNO_STYLE_GENRE_REFERENCE.md` |
-| Fabbri's 5 Rules of genre membership | (6) Genre mapping | `core/methodology/songwriting.md` Step 7 |
+| Fabbri's five types of genre rules | (6) Genre mapping | `core/methodology/songwriting.md` Step 7 |
 | 70/30 fusion rule | (6) Genre mapping | `core/methodology/songwriting.md` Step 7 / Step 20 |
 | Hook timing (5-30s), hook types | (8), (10) | `core/methodology/songwriting.md` Step 8, `SONGWRITING_KNOWLEDGE_BASE.md` |
-| Prosody thresholds (7-12 syllables) | informs (7), (8) | `core/methodology/songwriting.md` Step 4 / Step 17 |
+| Prosody thresholds (7-12 syllable target; 13-15 review; 16+ Compression Test) | informs (7), (8) | `core/methodology/songwriting.md` Step 4 / Step 17 |
+| Rhyme scheme + section stability plan | (9) Structure map | `core/methodology/songwriting.md` Step 4, `references/RHYME_AND_LYRIC_CRAFT.md` |
 | Hit Formula F1 (Vulnerability) / F2 (Anthem) | (11) Production/commercial | `core/methodology/songwriting.md` "Hit Formula Awareness" |
 | V6 mode label + technique inventory | (9) Structure map | `references/V6_TAG_DISCOVERY.md` |
 | 12-category critique rubric (quality lens) | brief self-check | `core/methodology/critique.md` |
@@ -182,14 +187,14 @@ filled-but-editable style template that the writing/optimization phase finalizes
 Prompt for each of these values (suggest a default for each; user confirms/overrides):
 
 - Genre + the 70/30 split (if fusion)
-- BPM (with Italian tempo marking, per `core/methodology/songwriting.md` Step 20)
+- BPM (an Italian tempo marking is optional -- a v5.5-era preference; see `core/methodology/songwriting.md` Step 20)
 - Key
 - Vocal identity / range (register, accent, delivery)
 - Production feel / era anchor
 - Mood
-- Exclusions (what must NOT appear)
+- Exclusions (what must NOT appear; plain comma-separated, no dash prefix -- `core/methodology/songwriting.md` Step 21)
 
-The full Style Prompt assembly rules (7-dimension formula, 5-8 tags, artist-reference conversion,
+The full Style Prompt assembly rules (7-dimension formula, tag count, artist-reference conversion,
 instrument sound descriptors, character limits) are defined in `core/methodology/songwriting.md`
 Step 20 -- the planner references them and does not restate them.
 
@@ -262,6 +267,7 @@ Save the Song Brief in the SAME folder as the eventual song file, using the nami
 - `core/methodology/critique.md` -- the 12-category scoring rubric and advanced A1-A5 checks (quality lens for the brief)
 - `core/methodology/character-voice.md` -- Character Voice Template (brief section 5, if character-driven)
 - `core/methodology/album-continuity.md` -- full album continuity system (brief section 11, album tracks)
-- `SONGWRITING_KNOWLEDGE_BASE.md` -- Genre-Emotion Alignment, Key Selection, BPM-Emotion, hook types
+- `SONGWRITING_KNOWLEDGE_BASE.md` -- structure, hook types, rhyme & prosody summary
+- `references/SUNO_STYLE_GENRE_REFERENCE.md` -- Genre-Emotion Alignment, Key Selection (§2.4), BPM-Emotion (§3.2)
 - `references/SUNO_STYLE_GENRE_REFERENCE.md` -- genre / key / BPM / instrument reference tables
 - `references/V6_TAG_DISCOVERY.md` -- V6 Technique Inventory and the Default/Roots vs MODE C mode label
