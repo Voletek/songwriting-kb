@@ -69,9 +69,10 @@ Each `*.plugin.json` is one JSON object with these top-level keys:
 - `source` (`lang`, `metadata`, and a `code` string holding the embedded JavaScript DSP)
 - `ui` (a compact grid layout)
 
-Every plugin includes a bypass toggle, an input-gain and output-gain control, and ends with a
-soft-clip safety stage. Most include a dry/wet mix; the de-esser blends by band recombination
-instead, so it exposes a reduction amount rather than a mix.
+Every plugin includes a bypass toggle (true bypass: it passes the untouched input), an input-gain
+and output-gain control, and ends with a `g.clamp(-1, 1)` over-safety stage that is transparent
+below 0 dBFS. Most include a dry/wet mix; the de-esser blends by band recombination instead, so it
+exposes a depth (dB, soft knee) rather than a mix.
 
 For the full reverse-engineered schema, the confirmed primitive list, and authoring guidance for new
 plugins, see [AUTHORING.md](AUTHORING.md).
@@ -96,9 +97,11 @@ Each plugin exists to serve specific knowledge-base use-cases and song examples.
 | Backing Vocal Tucker | Band-limit, presence cut, tilt, static tuck attenuation | Apply to the backing vocals stem in Suno Studio: the () backup-vocal technique |
 | Texture Filter / Degrade | Band-limit highpass/lowpass, lo-fi tilt, reused 8-level quantizer | Apply to the FX stem in Suno Studio: room tone / FX-texture beds (FX / other) |
 
-## Tier 1 (built) vs Tier 2 (pending API confirmation)
+## Wave 1 (built) vs Wave 2 (pending API confirmation)
 
-**Tier 1 (built).** The 13 plugins in this folder, each using only confirmed `g.*` primitives. The
+> "Wave" here means build stage. It is unrelated to the repo's evidence tiers (Tier 1/2/3).
+
+**Wave 1 (built).** The 13 plugins in this folder, each using only confirmed `g.*` primitives. The
 first six target the vocals stem; the last seven are stem-targeted for the instrumental / non-lead
 stems:
 
@@ -116,7 +119,7 @@ stems:
 12. Backing Vocal Tucker (`backing-vocal-tucker`), backing vocals stem
 13. Texture Filter / Degrade (`texture-filter-degrade`), FX / other stem
 
-**Tier 2 (pending API confirmation).** Ideas that need primitives we have not confirmed exist in
+**Wave 2 (pending API confirmation).** Ideas that need primitives we have not confirmed exist in
 Suno Studio, so they are NOT built yet:
 
 - Reverb / delay / space effects (need delay-line or reverb primitives).
@@ -125,7 +128,7 @@ Suno Studio, so they are NOT built yet:
 - Anything else that depends on an LFO / oscillator or FFT.
 
 These are deferred until the corresponding `g.*` primitives are confirmed to exist in Suno Studio.
-If a new plugin idea needs an unconfirmed primitive, list it here under Tier 2 rather than building
+If a new plugin idea needs an unconfirmed primitive, list it here under Wave 2 rather than building
 it with an unverified call. See [AUTHORING.md](AUTHORING.md) for the confirmed primitive list.
 
 ## DSP primitives
