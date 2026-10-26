@@ -1,11 +1,13 @@
 # Fractured Shadows — Concept Album Blueprint
 
-> Complete continuity reference for the 17-track concept album spanning Act 1 (Tracks 1-7)
-> and Act 2 (Tracks 8-17). Based on the Suno concept album by Voletek and
-> the novel Fractured Shadows (Book 1) by the same author.
+> Complete continuity reference for the concept album: 17 tracks (Acts 1–2, complete) — Act 1
+> (Tracks 1-7) and Act 2 (Tracks 8-17) — plus Act 3 in progress (T18 registered; 18 tracks so far).
+> Based on the Suno concept album by Voletek and the novel Fractured Shadows (Book 1) by the same author.
 >
-> **System version:** Suno v5.5 (Personas, Stems, Era Tags, Parenthetical Layers)
-> **Last updated:** June 2026
+> **System version:** written for Suno v5.5 (Personas, Stems, Era Tags, Parenthetical Layers). V6 is now the
+> current default — the Persona/Stems, era-tag, and slider sections below are **v5.5-era (legacy) — re-validate on V6**.
+> The continuity rules, registry, motifs, and key map are version-independent.
+> **Last updated:** June 2026 (Act 3 / T18 registry entry added Oct 2026)
 
 ---
 
@@ -46,6 +48,16 @@ A game developer (Draeven Vole / "Vole-tek") burns out, dissolves into his own s
 | 16 | Campfire | **D major** | 84 | Found family, warmth | Acoustic folk, mandolin, warm | Rikan (Warm) |
 | 17 | Both Names | Am→**C major** | 80 | Integration, wholeness | Folk rock → full orchestra | Rikan (Integrated) |
 
+### ACT 3 — In Progress
+
+| # | Title | Key | BPM | Core Emotion | Sonic Palette | Persona |
+|---|---|---|---|---|---|---|
+| 18 | Edge of the Rift | Em | 92 | Resolute hope tempered by awe at scale | Cinematic folk-rock: driving fingerpicked acoustic, solo cello, orchestral strings, sparse grand piano, organic room-mic drums — no synths | Rikan (Weathered calm) |
+
+> Act 3 is open-ended: register each new track here BEFORE writing it (see ALBUM EXTENSION PROTOCOL).
+> T18 was checked against Rules 1-10 in its song file (`examples/songs/fractured_shadows_act3/18_Edge_of_the_Rift.md`);
+> it stays in Em with no modulation (Rule 7 preserved). Which rules are Act-1/2-specific vs carried into Act 3 is not yet formally decided.
+
 ---
 
 ## SONIC PALETTE EVOLUTION
@@ -66,6 +78,9 @@ Track 16:    WARM Indie Folk (first major key — D major)
              ERA FEEL: "Modern indie folk, warm analog recording" — closest to a real-world
              era sound. Could use "2010s indie folk warmth" if you want that specific texture.
 Track 17:    Folk Rock → Full Orchestra + Choir (KEY CHANGE Am→C major)
+Track 18:    Cinematic Folk-Rock (Act 3 opener) — pulls back from T17's full orchestra to a driving
+             acoustic foundation + solo cello + orchestral strings; subtle dissonant string harmonics
+             = the corrupted lands. Fully organic, no synths.
 ```
 
 **Rule:** Industrial elements FADE from Track 8 onward. By Track 10, the palette is fully organic. The electronic/glitch world is LEFT BEHIND — it represents the digital life Draeven lost.
@@ -92,6 +107,7 @@ Track 17:    Folk Rock → Full Orchestra + Choir (KEY CHANGE Am→C major)
 | T15 | Gm | Deepest grief — isolated key |
 | T16 | **D major** | FIRST major key. Earned warmth. |
 | T17 | Am→**C major** | Resolves T11's Am into its relative major = HOME |
+| T18 | Em | Act 3 opener — returns to the T3/T9 journey key, now purposeful; no modulation |
 
 **Rule:** The Am→C major lift in T17 must feel like the payoff of the ENTIRE album. Keep pre-key-change choruses on half cadences (ending on G, not C) so the FIRST full C major resolution only happens in the final chorus.
 
@@ -109,11 +125,15 @@ T12:    CRISIS (war, loss, Dawnwatch falls)
 T13-14: Reckoning (enemy revealed → self-confrontation)
 T15-16: Healing (grief → found family)
 T17:    Resolution (integration — both names)
+T18:    Threshold crossing (Act 3 opens — setting out, whole but alone)
 ```
 
 ---
 
-## v5.5 PRODUCTION STRATEGY
+## v5.5 PRODUCTION STRATEGY (v5.5-era, legacy — re-validate on V6)
+
+> Personas, Stems, and slider presets below are v5.5-era features/values. Keep the intent (one consistent voice, album-level
+> mixing); re-check the mechanics against the V6 UI before relying on them.
 
 ### Persona Configuration
 
@@ -128,6 +148,7 @@ T17:    Resolution (integration — both names)
 | **Rikan (Desperate)** | Same voice, maximum projection, raw power, no restraint | T12 | War-cry energy, strained at limits |
 | **Rikan (Furious)** | Same voice, controlled but seething, precise articulation | T13 | Cold anger — every word placed deliberately |
 | **Rikan (Integrated)** | Same voice, steady, warm, full range used freely, confident | T17 | The resolution — sounds like both Draeven and Rikan together |
+| **Rikan (Weathered calm)** | Same voice, measured, unhurried narrative delivery, close-mic, centered in chest voice | T18 | Integrated but road-worn — "integrated and walking" (horizontal) vs T17's "integrated and rising" |
 
 **Persona Rule:** All variants are the SAME singer. The Persona locks the vocal TIMBRE (baritone character, A2-E4 range). The Style Prompt controls DELIVERY per track. One Persona, many deliveries.
 
@@ -187,6 +208,7 @@ The transition from digital to organic is the album's most important sonic momen
   - T15: Grieving, restrained — holding together by a thread
   - T16: Warm, relaxed — the first time he sounds safe
   - T17: Steady, integrated, full — uses his complete range freely for the first time
+  - T18: Weathered calm — measured, unhurried, road-worn but resolved (Act 3 opener)
 - **Key Rule:** The voice IS the character arc. How it sounds = where he is emotionally.
 - **Production Treatment:** Slight digital artifacts T1-5 (subtle chorus/flange on vocal), completely clean/dry T7-8, gradually warmer reverb T9-16, full warm room reverb T17.
 
@@ -204,6 +226,7 @@ The transition from digital to organic is the album's most important sonic momen
 - T15: `male baritone, grieving restrained, held together barely, careful`
 - T16: `male baritone, warm relaxed, intimate, campfire storytelling, safe`
 - T17: `male baritone, steady confident, full range, building to powerful, integrated`
+- T18: `weathered male baritone, measured unhurried, close-mic verses, chest voice, calm conviction`
 
 ### Alaric Dawnwatcher (Secondary — T11, T15)
 
@@ -289,10 +312,11 @@ clinical and digital, beneath the main vocal. Not whispered — spoken cold and 
 
 ### Exclusions to Add When Using Layers
 
-For T4-5 (heavy layer usage):
+For T4-5 (heavy layer usage) — Exclude field, plain comma-separated:
 ```
-‑vocal overlap confusion, ‑hums, ‑beatboxing, ‑ad-libs, clear vocal separation
+vocal overlap confusion, hums, beatboxing, ad-libs
 ```
+Put the positive "clear vocal separation" in the Style Prompt, not the Exclude field.
 
 ---
 
@@ -385,7 +409,7 @@ NO crossfade. Hard cut. The silence between T7 and T8 IS the transfer.
 
 ## ALBUM EXTENSION PROTOCOL
 
-**⚠️ Before writing ANY track outside this registry (T1-17), you MUST:**
+**⚠️ Before writing ANY track outside this registry (T1-18), you MUST:**
 1. Add the new track(s) to this blueprint's Track Registry table (including Persona assignment)
 2. Extend the Sonic Palette Evolution map
 3. Define which rules carry forward and which are act-specific
@@ -394,7 +418,7 @@ NO crossfade. Hard cut. The silence between T7 and T8 IS the transfer.
 6. Consult SOP 05 (Extending an Album) for full procedure — supports sequels, prequels, and insertions
 
 **Numbering convention for extensions:**
-- Sequel tracks (Act 3): T18, T19, T20...
+- Sequel tracks (Act 3): T18 (registered), T19, T20...
 - Prequel tracks: P01, P02, P03... (avoids renumbering)
 - Inserted tracks: T3a, T3b... (or renumber with act headers)
 
@@ -404,7 +428,9 @@ NO crossfade. Hard cut. The silence between T7 and T8 IS the transfer.
 
 ## RENDER STRATEGY
 
-### Slider Presets by Track Group
+### Slider Presets by Track Group (optional — v5.5-era starting points, legacy)
+
+> Only if your Suno UI exposes sliders; re-validate on V6.
 
 | Track Group | Weirdness | Style Influence | Audio Influence | Notes |
 |---|---|---|---|---|
@@ -429,7 +455,7 @@ NO crossfade. Hard cut. The silence between T7 and T8 IS the transfer.
 ### Post-Production Workflow
 
 ```
-1. Render all 17 tracks (best render selected per track)
+1. Render all 17 Act 1–2 tracks (best render selected per track; add Act 3 tracks as they are written)
 2. Extract 12-track stems from each
 3. Verify The Pivot: T8 synth/effects stems = ZERO content
 4. Import all stems into DAW

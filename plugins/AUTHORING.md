@@ -93,7 +93,8 @@ parameter (`unit: "db"`), and a dry/wet mix (`unit: "percent"`) where mixing is 
 ```
 
 - `lang` is `"js"`.
-- `metadata` mirrors `displayName`, `kind`, and `description`, and adds:
+- `metadata` mirrors `displayName` and `kind`, carries a SHORT form of `description` (all 13 built
+  plugins use a ~100-170 character summary of the top-level description), and adds:
   - a `controls` map keyed by parameter name. Each entry has a `widget`
     (`{ "type": "knob" }` or `{ "type": "toggle" }`, with optional `"pan": true`), a `description`
     string, and mirrors `range` / `scale` / `unit` / `label` / `default` for knobs, or
@@ -122,11 +123,15 @@ function build(g, config) {
 - Write outputs via `g.output('audioOutL', <node>)` and `g.output('audioOutR', <node>)`.
 - Use `config.sampleRate` where a filter or envelope needs the sample rate.
 - START the code string with a header comment (`//` lines) explaining the full signal chain in order.
-- Implement `bypass` by selecting between the dry input and the processed signal with `g.lerp`
-  (or `g.compareLt`) on the bypass control. See the Assumptions section for how the `bypass` enum is
+- Implement `bypass` as a TRUE bypass: select between the processed signal and the untouched
+  channel input `x` (before input gain and before the safety stage) with `g.lerp(bypass, safe, x)`. See the Assumptions section for how the `bypass` enum is
   assumed to resolve to a `0` / `1` mask and how `g.lerp(mask, a, b)` is assumed to order its args.
 - Convert dB gains with `g.dbToLin`.
-- END every plugin with a `g.tanh` output-safety stage (soft-clip) before `g.output`.
+- END every plugin with an over-safety stage before the bypass select and `g.output`:
+  `var safe = g.clamp(out, g.constant(-1), g.constant(1)); return g.lerp(bypass, safe, x);`.
+  `g.clamp` is transparent below 0 dBFS. (The earlier always-on `g.tanh` safety coloured every
+  render: tanh(1.0) = 0.76, about -2.4 dB with odd harmonics near full scale. Use `g.tanh`
+  inside the chain only where saturation is the intended effect.)
 
 ### `ui.compact`
 
@@ -172,8 +177,7 @@ code and this reference agree rather than depending silently on undocumented beh
 
 - **`g.biquad` shelf / peaking gain (`gainDb`).** The confirmed signature is
   `g.biquad({ input, cutoff, resonance, mode })` with no gain field, yet a `peaking`, `lowshelf`, or
-  `highshelf` filter is meaningless without a gain amount. The `intimate-proximity`,
-  `vintage-lofi-voicer`, and `vocal-drive-edge` plugins therefore pass an extra `gainDb` field
+  `highshelf` filter is meaningless without a gain amount. The `backing-vocal-tucker`, `guitar-grit-warmth`, `intimate-proximity`, `string-air-size`, `sub-tightener`, `synth-cold-glitch`, `texture-filter-degrade`, `vintage-lofi-voicer`, `vocal-drive-edge`, `warm-keys-voicer` plugins (10 of 13) therefore pass an extra `gainDb` field
   (`g.biquad({ input, cutoff, resonance, mode: 'highshelf', gainDb: airDb })`) for those three modes.
   This `gainDb` field is an ASSUMPTION, not confirmed from the example. If Suno Studio names the gain
   field differently (or supplies gain another way), the shelf / peaking stages will need to change.
@@ -184,9 +188,9 @@ code and this reference agree rather than depending silently on undocumented beh
   this order in Suno Studio; if `g.lerp` is the reverse, swap the `a` / `b` arguments everywhere.
 - **`bypass` enum resolves to a numeric mask.** The `bypass` toggle has string `enumOptions`
   (`"off"` / `"on"`), and each plugin feeds the `bypass` value straight into `g.lerp` as the mask:
-  `g.lerp(bypass, out, trimmed)`. This ASSUMES the toggle resolves to a number where `"off"` -> `0`
+  `g.lerp(bypass, safe, x)`. This ASSUMES the toggle resolves to a number where `"off"` -> `0`
   and `"on"` -> `1`. Combined with the `g.lerp` order above, `bypass` off (`0`) selects the PROCESSED
-  signal (`out`) and `bypass` on (`1`) selects the DRY / trimmed signal, which is the intended
+  signal (`safe`) and `bypass` on (`1`) selects the untouched input `x`, which is the intended
   behavior. There is no string-comparison primitive in the confirmed set, so the enum cannot be
   mapped to `0` / `1` in code; if Suno Studio does not resolve `"off"` to `0`, either the enum
   `value`s must become numeric (`0` / `1`) or the `g.lerp` arguments must be swapped. Verify in Suno
@@ -195,9 +199,16 @@ code and this reference agree rather than depending silently on undocumented beh
   `audioIn` / `audioOut` of `kind: "audio"`, but the code reads `g.input('audioInL')` /
   `g.input('audioInR')` and writes `g.output('audioOutL', ...)` / `g.output('audioOutR', ...)`. This
   ASSUMES Suno Studio expands one stereo audio port into `L` / `R` channel rails addressed by the
-  `L` / `R` suffix. If instead the ports block must enumerate stereo channels explicitly, all six
-  plugins need the same ports change. It is consistent across all six, so it is right everywhere or
+  `L` / `R` suffix. If instead the ports block must enumerate stereo channels explicitly, all 13
+  plugins need the same ports change. It is consistent across all 13, so it is right everywhere or
   wrong everywhere.
+- **`g.biquad` `resonance` is a Q value.** The plugins pass Butterworth-style Q values (`0.707`, `0.9`)
+  as `resonance`. This ASSUMES `resonance` is filter Q, not a normalised 0-1 resonance amount. If it is
+  normalised, every filter's slope and peak will differ from the design and the constants need re-tuning.
+- **`g.asymmetricOnePole` coefficient convention.** Envelope followers compute
+  `coef = 1 - 1/(seconds * sampleRate)` (≈ `exp(-1/N)`), which ASSUMES a coefficient near `1` means a
+  SLOW response (`y = coef * y + (1 - coef) * x`). If the primitive uses the opposite convention
+  (`coef` = amount of the new sample), attack and release times will be inverted.
 
 ## Known DSP limitations of the built plugins
 
@@ -213,11 +224,12 @@ confirmed.
   fixed-depth quantizer staircase is now reused verbatim by the `synth-cold-glitch` and
   `texture-filter-degrade` stem plugins (blended by their `quantize` / `degrade` knobs); it is the
   one sanctioned degrade technique, so do not invent a new one.
-- **`de-esser` uses a hard gate, not a soft-knee compressor.** The sibilant duck is driven by a
-  binary `g.compareLt(threshLin, env)` mask (fully ducked or not at all) rather than a smooth
-  gain-reduction curve, because the confirmed set has no `exp` / log to build a proper gain computer.
-  This can produce zipper artifacts / audible switching on the sibilant band. Listen-test before
-  relying on it; a smoother reduction curve would need primitives not yet confirmed.
+- **`de-esser` uses a linear soft knee, not a log-domain gain computer.** The sibilant duck mask is
+  `clamp((env - thresh) / thresh, 0, 1)`: it ramps from 0 at the threshold to full depth at twice the
+  threshold (+6 dB), built only from `g.sub` / `g.div` / `g.clamp`. Depth is in dB
+  (`1 - mask * (1 - dbToLin(-depth))`). This replaced the earlier binary `g.compareLt` gate, which could
+  zipper. The knee is linear in amplitude rather than in dB (a true dB-domain knee would need a log
+  primitive). Listen-test short release settings on dense sibilance.
 
 ### This list is incomplete: derived from ONE example
 
@@ -232,22 +244,22 @@ and they MUST NOT be used until verified there:
 - FFT
 
 If a plugin idea needs any of these, do NOT invent a `g.*` call for it. Either approximate the effect
-with the confirmed set (and document the approximation), or list the idea under Tier 2 in
+with the confirmed set (and document the approximation), or list the idea under Wave 2 in
 [README.md](README.md) until the primitive is confirmed.
 
 ## Authoring guidance for new plugins
 
-- Keep the JSON valid and structurally parallel to the six existing plugins (same top-level keys,
+- Keep the JSON valid and structurally parallel to the 13 existing plugins (same top-level keys,
   same `source` / `ui` shapes).
-- Always include a `bypass` toggle, an input-gain and an output-gain control, and a `g.tanh`
-  output-safety stage. Include a dry/wet mix where mixing is sensible.
+- Always include a true-bypass `bypass` toggle, an input-gain and an output-gain control, and the
+  `g.clamp(-1, 1)` over-safety stage. Include a dry/wet mix where mixing is sensible.
 - Start `source.code` with a signal-chain header comment describing the chain in order.
 - Use only the confirmed `g.*` primitives. If an effect would need a primitive outside that set,
   approximate it with the confirmed primitives and document the approximation in the code header
   comment (as `digital-degrade` does for its fixed 8-level amplitude quantizer, since a variable
   bit-depth crush would need a runtime rounding primitive that is not confirmed).
 - If an idea genuinely needs an unconfirmed primitive and cannot be reasonably approximated, list it
-  under Tier 2 in [README.md](README.md) instead of building it.
+  under Wave 2 in [README.md](README.md) instead of building it.
 - Validate JSON before committing:
 
   ```

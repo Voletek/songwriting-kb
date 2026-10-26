@@ -1,13 +1,16 @@
 {
-  "name": "Album Continuity Check",
-  "version": "1.0.0",
-  "description": "Verifies album continuity rules when song files in the album directories are saved — checks sonic palette, key relationships, and forbidden elements",
-  "when": {
-    "type": "fileEdited",
-    "patterns": ["songs/album_act2/*.md", "songs/album_act3/*.md"]
-  },
-  "then": {
-    "type": "askAgent",
-    "prompt": "Run a continuity check on this saved file against the Fractured Shadows 12 hard rules. Check for: 1) Electronic/industrial elements after Track 8, 2) Major key usage outside T16/T17, 3) Key changes outside T17, 4) AI/robotic voice elements after Track 7, 5) Album title phrase outside T17. Report violations with 🚨 or pass with ✅."
-  }
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Fractured Shadows Continuity Check",
+      "description": "Example album hook. Copy to .kiro/hooks/fractured-shadows-continuity.json and adjust the matcher to your song folders. Fires when an agent saves a Fractured Shadows song file and checks it against the blueprint's 12 continuity rules.",
+      "trigger": "PostFileSave",
+      "matcher": ".*songs/fractured[-_]shadows[^/]*/.+\\.md$",
+      "action": {
+        "type": "agent",
+        "prompt": "A Fractured Shadows song file was just saved. Read examples/albums/fractured-shadows/BLUEPRINT.md (Track Registry and the 12 CONTINUITY RULES; use your own copy of the blueprint if you made one) and check the saved song against every rule. In particular: no electronic/industrial elements after Track 8; Alaric's voice production identical in T11 and T15; the shard pulse only in T7-T10; 'I won't let the line die here' in both T11 choruses and T15; first natural sound (birdsong) only at the T12 outro; the first major key only in T16; the only key change in T17; Rikan's vocal texture evolves per track; the album-title phrase only in the T17 final chorus; no two adjacent tracks share more than 70% of their palette; (robotic layer:) only in T4-5. For Act 3 tracks (T18+), say which rules the blueprint carries forward and flag anything undecided. Report a PASS/FAIL table with a fix for each FAIL."
+      },
+      "timeout": 60
+    }
+  ]
 }

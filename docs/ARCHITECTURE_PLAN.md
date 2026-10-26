@@ -1,8 +1,28 @@
 # Architecture Refactor Plan: Methodology as Source of Truth
 
 **Date:** June 2026
-**Status:** Phases 1-3 implemented (June 2026)
+**Status:** Phases 1-2 implemented (June 2026); Phase 3 partially implemented — see Status (Oct 2026) below
 **Triggered by:** multi-lang/songwriting-kb PR #3 review + internal discussion
+
+> **Status (Oct 2026)**
+>
+> **Exists:**
+> - `core/methodology/` — 7 methodology files (the 5 planned here + `song-planning.md` and `builder.md`) and `core/tenets.md`
+> - Thin `.kiro/agents/` (6 agents), which now load methodology via `resources:` front matter instead of `#[[file:]]` (that include syntax is used only in steering)
+> - `tools/validate-song.py` (the planned validator; supersedes `tools/count-suno-fields.py`), plus `tools/lyric-lint.py`, `tools/check-repo.py`, `tools/songfile.py`
+> - `experiments/suno/README.md` + `TEMPLATE.yml`
+> - Suno version status table — `references/SUNO_STYLE_GENRE_REFERENCE.md` §12
+> - README "Using Without Kiro" section (in place of separate context packets)
+> - Kiro v1 JSON hooks (`.kiro/hooks/song-validate.json`, `.kiro/hooks/prosody-lint.json`) that run the tools
+>
+> **Planned / not implemented:**
+> - `tools/count-suno-fields.py` — not added; superseded by `tools/validate-song.py`
+> - `README_PLATFORM_SUPPORT.md` — not added (content folded into the README)
+> - `RESEARCH_METHODOLOGY_REVIEW_AND_GENERALIZATION_PLAN.md` — not in this repo (external PR document)
+> - `docs/PLATFORM_GENERALIZATION_IMPLEMENTATION_PLAN.md` — not in this repo (rejected below)
+> - `core/claims/*` — not added (rejected below)
+> - `tools/analyze-render.py` — planned, not implemented
+> - `docs/context-packets/` — planned, not implemented (the README "Using Without Kiro" table covers it for now)
 
 ---
 
@@ -266,6 +286,11 @@ Detailed evaluation of each file from Brian's PR for adoption into our restructu
 | Era tags bias production | June 2026 | v5.5 | High | Dec 2026 |
 | Genre must be first | June 2026 | v5.5 | High | Dec 2026 |
 | 5-8 tags optimal | June 2026 | v5.5 | Medium | Sept 2026 |
+| Style = WHAT / Lyrics = HOW division of labor | Sept 2026 | V6 | Working model (user-confirmed) | Ongoing — V6_TAG_DISCOVERY results log |
+| `[Instrument: X In/Out]` controls entrances/exits | Sept 2026 | V6 | Working model (user-confirmed) | Ongoing — results log |
+| `[Tag Vocabulary]` block not needed | Sept 2026 | V6 | Working model (user-confirmed) | Ongoing — results log |
+| Style ≤1000 / Lyrics ≤5000 still apply | — | V6 | Open question | Next V6 render batch |
+| v5.5 rows above (pipe notation, `[control:]`, era tags, 5-8 tags) | — | V6 | Legacy — not assumed to carry over | Re-validate on V6 |
 ```
 
 10 lines instead of 90. Same purpose. No maintenance nightmare.

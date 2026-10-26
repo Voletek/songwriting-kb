@@ -8,7 +8,7 @@
 ## STYLE PROMPT:
 Epic cinematic dark folk rock, atmospheric journey song, male baritone A2-E4, key D minor, 4/4, 88 BPM, driving acoustic guitar foundation, cinematic percussion building, low cello drone, wide atmospheric pads, distant war drums on horizon, desert wind textures, Nordic folk undertones, progressive build from sparse to massive, landscape as character
 
-[Exclusions: ‑bright pop, ‑trap drums, ‑EDM drops, ‑beatboxing, ‑vocal hums, ‑cheerful melodies, ‑autotune, ‑industrial textures, ‑glitch effects, ‑electronic percussion, ‑hip hop rhythms]
+[Exclusions: bright pop, trap drums, EDM drops, beatboxing, vocal hums, cheerful melodies, autotune, industrial textures, glitch effects, electronic percussion, hip hop rhythms]
 
 ---
 
@@ -120,6 +120,8 @@ And the walking made me real
 The descent begins
 The city hums beneath me
 And I begin again
+
+[end]
 
 ---
 

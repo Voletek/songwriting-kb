@@ -6,6 +6,89 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Deep-review fixes (October 2026)
+
+**Added**
+- `references/RHYME_AND_LYRIC_CRAFT.md`, the lyric dictionary the KB's §4 title promised. It covers:
+  - Pattison's rhyme ladder (perfect > family > additive/subtractive > assonance > consonance) and the consonant-family chart (plosives / fricatives / nasals; partners vs companions)
+  - rhyme positions and compound rhymes; rhyme-scheme notation with the structural effect of each scheme
+  - section stability (line count, line length, rhyme closure, stresses), power positions and title placement
+  - poetic feet and musical meter (pickups, backbeat, syncopation, 3/4, 6/8, flow) and singability (vowel modification, diphthongs, consonants, sibilance)
+  - rhetorical devices and cliché flipping
+  - rhyming dictionaries and word tools: RhymeZone, B-Rhymes, MasterWriter, Datamuse, CMUdict, `pronouncing`, `prosodic`, and Hirjee & Brown's research
+- `tools/lyric-lint.py`: a deterministic lyric readout. Per line: syllables and stress. Per end-rhyme pair: its rhyme type on the ladder. Per section: rhyme scheme (X = unrhymed) and stability. Also flags function-word endings, end punctuation, clichés and cliché rhyme pairs (`tools/data/cliches.txt`), and Verse 1 vs Verse 2 syllable mismatches. Uses CMUdict via the optional `pronouncing` package (`tools/requirements-optional.txt`) and falls back to a heuristic without it.
+- `tools/check-repo.py`: repo integrity checks for `#[[file:]]` includes, relative links, agent `resources:`, Kiro v1 hook schema, steering front matter, skill names and JSON.
+- `tools/songfile.py`: shared song-file parser.
+- `tests/`: unittest suite with fixtures.
+- `.github/workflows/ci.yml`: CI that runs the tests, check-repo, the validator on `examples/songs/` and `songs/`, and a lint smoke test.
+- `.kiro/hooks/song-validate.json` and `.kiro/hooks/prosody-lint.json`: Kiro v1 hooks with `command` actions that run the deterministic tools.
+- `.kiro/steering/quick-score.md` and `.kiro/steering/full-pipeline.md`: manual steering commands (`/quick-score`, `/full-pipeline`). Kiro v1 has no manual hooks.
+- `examples/songs/standalones/I_Wear_It_Well_V6.md`: the first V6-format reference song, with a v5.5-to-V6 migration table.
+- Root `CONTRIBUTING.md`.
+
+**Changed**
+- `tools/validate-song.py` rewritten. It now:
+  - accepts heading variants and bare `STYLE PROMPT:` / `LYRICS:` labels
+  - counts only pasteable text: it ignores count notes, code fences and separators, and stops at `[End]`
+  - accepts `[End]` / `[end]` case-insensitively and `[Composition Direction]` as an alias for `[Production Direction]`
+  - parses the Exclude field and warns on dash prefixes and mixed hyphen characters
+  - matches genres on word boundaries
+  - accepts layer declarations by alias (e.g. "AI voice" declares a robotic layer)
+  - adds checks for V6 grammar, `[Tag Vocabulary]`, `[Instrument: X In/Out]`, mixed paradigms, obsolete tags, and production instructions inside `()` (which get sung)
+  - adds directory scanning that skips README and `*.brief.md`, plus `--strict`, `--hook`, UTF-8 BOM handling and non-UTF-8 errors
+  - downgrades missing blocks to WARN in archived songs marked `<!-- song-format: legacy -->`, and skips files marked `<!-- validate: skip -->`
+
+  The examples went from 27 FAIL / 4 ERROR to 0 FAIL.
+- Hooks moved from the legacy `when`/`then`/`askAgent` format to the Kiro v1 schema (`version`, `hooks[]`, `trigger`, `matcher`, `action`). The five `*.hook.json` files are replaced, and the album `continuity-hook.json` examples are converted and list all 12 blueprint rules.
+- Steering: `songwriting.md`, `suno-formatting.md` and `output-preferences.md` use `inclusion: always`, as the docs had claimed. `concept-album.md` uses `inclusion: auto` with `name`.
+- Agents load files with documented `resources:` front matter instead of `#[[file:]]` (documented for steering only). The songwriter preloads only tenets, songwriting, critique and the rhyme reference, and reads the KB and the theory file on demand.
+- Skills reference files by plain path.
+- The critic follows `critique.md`'s layer table.
+- Suno V6 is the default everywhere: steering, power, skills, agents, SOPs and README. The v5.5-era mechanics are labelled legacy (re-validate on V6): sliders, Personas/Stems, era tags, global tags, pipe notation, the 5-8 tag rule, Italian tempo and `[silence: sudden]`. `core/methodology/suno-optimization.md` gained a V6 Procedure.
+- One exclusions format: the Exclude field takes plain comma-separated text with no dash prefix. Applied across the docs and the example songs.
+- Canonical numbers reconciled across files:
+  - syllables: 7-12 target, 13-15 review, 16+ Compression Test
+  - hook timing: hook signal ~5-30 s of singing vs full chorus ~45-60 s of track time
+  - rhyme scheme: no "PRO DEFAULT"
+  - hook types: 4
+  - bridge: 3-6 lines (up to 8)
+  - runtime formula: corrected
+- Craft corrections:
+  - meter: the "spondaic" example is trochaic; dactyls are rolling rather than militaristic; corrected anapest example
+  - rhyme examples: mosaic and home/alone
+  - the reversed-stress example
+  - "beats 1 and 3" now depends on the meter
+  - 7 senses for object writing
+  - a quotation wrongly attributed to Pattison
+  - enjambment and function-word endings are no longer treated as errors
+- Citation corrections:
+  - Schubart key tables now give Schubart's actual characterisations alongside separate Tier 3 working associations
+  - Fabbri: five rule types, not an "all five" checklist
+  - Eerola et al.: perceived emotion; mode, not key
+  - Juslin 2013 cited
+  - Dodge et al. marked as having no primary citation yet
+  - unsourced claims in `MUSIC_PRODUCTION_THEORY.md` are tier-labelled; accent-table myths fixed
+- De-duplication:
+  - the byte-identical blueprint copies in `references/` are removed; `examples/albums/*/BLUEPRINT.md` is canonical
+  - KB §13 is condensed to a pointer, with its unique content moved into `SUNO_TAGS_REFERENCE.md` (now labelled legacy)
+  - character-voice content is split into method (`core/methodology/character-voice.md`) and data (`CHARACTER_VOICE_REFERENCE.md`)
+  - BPM tables now point to `SUNO_STYLE_GENRE_REFERENCE.md` §3.1
+  - `critique.md` and `CRITIQUE_REFERENCE.md` are re-synced
+- Counts fixed everywhere (6 agents, 9 SOPs, 7 methodology files, 6 steering files, 11 references, 13 disciplines, 18 Fractured Shadows tracks with T18 registered in the blueprint). Broken and stale paths fixed (builder include, SOP 02/04 paths, hook names, `docs/ARCHITECTURE_PLAN.md` status).
+- Example songs:
+  - `[end]` added where missing; missing `[Title:]` added
+  - dash-prefixed exclusions converted to plain text
+  - artist names replaced with descriptive language
+  - four over-limit Style prompts trimmed under 1000 characters
+  - Rikan and the Shapes duet brought under 5000 Lyrics characters (full direction kept in an Advanced Box section)
+  - I Wear It Well's sung `(instrumental …)` lines converted to tags
+- Plugins:
+  - true bypass (passes the untouched input)
+  - the always-on `g.tanh` safety stage (−2.4 dB and coloration at full scale) replaced with a transparent `g.clamp(-1, 1)` over-safety stage
+  - the de-esser now has a soft knee, depth in dB, and a 2.5 kHz frequency floor
+  - "Tier 1/2" renamed "Wave 1/2" to avoid clashing with the evidence tiers
+  - `AUTHORING.md` assumptions brought up to date
+
 ### Added
 - Suno Studio audio-effect plugins: new `plugins/` folder holding post-render audio processors applied to rendered audio inside Suno's in-app mixing environment. These are Suno Studio effects, NOT lyric tags, and are separate from the Style/Lyrics text-prompt pipeline. Delivered as single JSON files (`plugins/<name>/<name>.plugin.json`) carrying embedded JavaScript DSP.
 - Six Tier-1 plugins: Intimate Proximity, De-Esser, Vintage / Lo-Fi Voicer, Digital Degrade / Glitch, Telephone / Radio Band, and Vocal Drive / Edge. Built with a confirmed `g.*` primitive set only (effects needing an unconfirmed primitive, such as the digital-degrade amplitude quantizer, are approximated and documented in the code header). Status UNVERIFIED: not yet executed in Suno Studio, pending in-Suno testing.

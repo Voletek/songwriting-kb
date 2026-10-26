@@ -20,3 +20,5 @@ node_modules/
 drafts/
 scratch/
 tools/__pycache__/
+__pycache__/
+*.pyc

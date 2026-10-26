@@ -34,11 +34,13 @@
 │                         OUTPUT: songs/*.md                                  │
 │  (song-planner also writes SONGNAME.brief.md alongside the song)            │
 │                                                                             │
-│  Triggers hooks on save:                                                    │
-│  • prosody-lint.json ─── flags lines >12 syllables                          │
-│  • suno-char-count.json ─── checks Style ≤1000, Lyrics ≤5000                │
-│  • song-format-check.json ─── validates required sections (on create)       │
-│  • [album]-continuity.json ─── checks hard rules (if configured)            │
+│  Triggers hooks on agent-made create/save (Kiro IDE 1.0+ / Kiro CLI V3):    │
+│  • song-validate.json ─── tools/validate-song.py: char counts, required     │
+│      elements, V6 tag checks, exclusions format (create + save)             │
+│  • prosody-lint.json ─── tools/lyric-lint.py: syllables, stress, rhyme,     │
+│      section stability, clichés (save)                                      │
+│  • <album>-continuity.json ─── hard-rule check (if copied from examples/)   │
+│  (README.md and *.brief.md are skipped; Kiro Web: run the tools manually)   │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -129,20 +131,21 @@ PHASE 1: ANALYSIS (Steps 1-9)              PHASE 2: WRITING (Steps 10-16)
 PHASE 3: QUALITY CHECK (Steps 17-19)       PHASE 4: FORMATTING (Steps 20-26)
 ────────────────────────────────────       ──────────────────────────────────
 
- 17. Prosody Audit                          20. Assemble Style Prompt (≤1000)
-     □ Syllable density checked at tempo?   21. Write Exclusions
-     □ Stressed syllables on beats?         22. Add Global Meta-Tags
+ 17. Prosody Audit (+ lyric-lint.py)        20. Assemble Style Prompt (≤1000)
+     □ 7-12 syl target; 13-15 review?       21. Write Exclusions (Exclude field)
+     □ Stresses on meter's strong beats?    22. Add [Title:] (V6: no global tags)
      □ No stuffed phrases?                  23. Add Direction Blocks
-     □ No weak terminal words?              24. Format Lyrics with Section Tags
- 18. Structure Check                        25. Write Production Notes
-     □ Compelling hook signal in 5-30s?     26. Final Character Count
-     □ V2 adds new info?                  
+     □ Line-end function words stressed?    24. V6 section + [Instrument: X In/Out]
+ 18. Structure Check                            tags, end with [End]
+     □ Hook signal ~5-30s after 1st sung    25. Write Production Notes
+       word?                                26. Final Character Count
+     □ V2 adds new info?                        + validate-song.py
      □ Bridge turns?                       PHASE 5: ALBUM (Step 27)
  19. Quality Gates                         ──────────────────────────
      □ Every word earns its place?          27. Continuity Check
      □ Hook passes "text" test?                 □ Key fits harmonic map?
-     □ Near/slant rhymes?                       □ Palette matches range?
-                                                □ Motifs correct?
+     □ Rhyme strength fits the job?             □ Palette matches range?
+     □ Section stability matches plan?          □ Motifs correct?
                                                 □ >70% differentiation?
 ```
 
@@ -185,12 +188,17 @@ SESSION START
      │
      ▼
 ┌─────────────────────────────────────┐
-│ STEERING (auto-loads ~4k tokens)    │  ◀── EVERY session
-│                                     │
+│ STEERING                            │
+│ always (EVERY session):             │
 │ • songwriting.md (principles)       │
-│ • suno-formatting.md (rules)        │
+│ • suno-formatting.md (V6 rules)     │
 │ • output-preferences.md (format)    │
+│ auto (album-related requests):      │
 │ • concept-album.md (framework)      │
+│ manual (/quick-score, /full-pipe-   │
+│ line): quick-score.md,              │
+│ full-pipeline.md                    │
+│ fileMatch: <album>.md (if added)    │
 └──────────────────┬──────────────────┘
                    │
           User invokes an agent
@@ -199,7 +207,7 @@ SESSION START
      │             │             │
      ▼             ▼             ▼
 ┌─────────┐   ┌─────────┐  ┌─────────┐
-│Songwriter│  │ Critic  │  │Optimizer│     ◀── ON INVOKE (thin wrapper loads core/)
+│Songwriter│  │ Critic  │  │Optimizer│     ◀── ON INVOKE (thin wrapper loads core/ via resources:)
 │ loads:   │  │ loads:  │  │ loads:  │
 │ core/    │  │ core/   │  │ core/   │
 │ method-  │  │ method- │  │ method- │
@@ -216,7 +224,10 @@ SESSION START
 │                             │
 │ • CRITIQUE_REFERENCE (+15k) │
 │ • SUNO_STYLE_GENRE (+12k)   │
+│ • V6_TAG_REFERENCE/DISCOVERY│
 │ • SUNO_TAGS_REFERENCE (+10k)│
+│   (v5.x, legacy)            │
+│ • RHYME_AND_LYRIC_CRAFT     │
 │ • CHARACTER_VOICE (+5k)     │
 │ • MUSIC_PRODUCTION (+15k)   │
 │ • SONGWRITING_KB (+15k)     │
@@ -228,17 +239,21 @@ SESSION START
 ## Hook Triggers
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│ FILE EVENT                      │ HOOK                  │ TYPE  │
-├─────────────────────────────────┼───────────────────────┼───────┤
-│ New .md in songs/               │ song-format-check     │ auto  │
-│ Save .md in songs/              │ prosody-lint          │ auto  │
-│ Save .md in songs/              │ suno-char-count       │ auto  │
-│ Save .md in songs/album_*/      │ [album]-continuity    │ auto  │
-│ User clicks "Quick Score"       │ quick-score           │ manual│
-│ User clicks "Full Pipeline"     │ full-pipeline         │ manual│
-└─────────────────────────────────┴───────────────────────┴───────┘
+┌──────────────────────────────────┬──────────────────────────────┬───────────────┐
+│ EVENT                            │ HOOK / COMMAND               │ TYPE          │
+├──────────────────────────────────┼──────────────────────────────┼───────────────┤
+│ New .md in songs/                │ song-validate.json           │ hook (auto)   │
+│ Save .md in songs/               │ song-validate.json           │ hook (auto)   │
+│ Save .md in songs/               │ prosody-lint.json            │ hook (auto)   │
+│ Save .md in songs/<album>/       │ <album>-continuity.json      │ hook (opt-in) │
+│ User runs /quick-score           │ quick-score.md               │ manual steer. │
+│ User runs /full-pipeline         │ full-pipeline.md             │ manual steer. │
+└──────────────────────────────────┴──────────────────────────────┴───────────────┘
 ```
+
+- Hooks are Kiro v1 JSON (`.kiro/hooks/*.json`); file-event hooks fire only for agent-made changes and skip `README.md` / `*.brief.md`.
+- Hooks run in Kiro IDE 1.0+ and Kiro CLI V3; Kiro Web sessions don't run hooks — run `python3 tools/validate-song.py` / `python3 tools/lyric-lint.py` manually.
+- `<album>-continuity.json` = a copy of `examples/albums/<album>/continuity-hook.json` placed in `.kiro/hooks/`.
 
 ---
 
@@ -251,15 +266,15 @@ SESSION START
          │  Update HERE — everything downstream inherits
          │
          ▼
-     AGENT (thin wrapper — loads core/ via #[[file:]])
+     AGENT (thin wrapper — loads core/ via `resources:` front matter)
          │
          │  Defines persona + loads methodology
          │  Does NOT duplicate content
          │
          ▼
-     STEERING (always-on principles — derived subset)
+     STEERING (derived subset — always / auto / manual / fileMatch)
          │
-         │  Quick-reference rules for every session
+         │  Quick-reference rules (3 always-on files every session)
          │  Does NOT load large reference docs
          │
          ▼
@@ -277,11 +292,13 @@ SESSION START
          ▼
      TOOLS (deterministic validation)
          │
-         │  tools/validate-song.py — format + char checks
+         │  tools/validate-song.py — format, char, V6-tag, exclusions checks
+         │  tools/lyric-lint.py — syllables, stress, rhyme, stability, clichés
+         │  tools/check-repo.py — repo integrity
          │  No AI interpretation needed
          │
          ▼
      HOOKS (automated quality enforcement)
-              Fires on file events
-              Catches violations after the fact
+              Run the tools on agent-made file saves (Kiro IDE / CLI V3)
+              Catch violations after the fact
 ```

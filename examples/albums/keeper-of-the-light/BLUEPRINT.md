@@ -6,7 +6,9 @@
 > something ancient asleep at the bottom of the ocean. When the light fails during a storm,
 > the thing begins to wake.
 >
-> **System version:** Suno v5.5 (Personas, Stems, Era Tags, Parenthetical Layers)
+> **System version:** written for Suno v5.5 (Personas, Stems, Era Tags, Parenthetical Layers). V6 is now the
+> current default — the Persona/Stems, era-tag, and slider sections below are **v5.5-era (legacy) — re-validate on V6**.
+> The hard rules, registry, motifs, and key map are version-independent.
 > **Last updated:** June 2026
 
 ---
@@ -121,7 +123,10 @@ T8  D Mixolydian — RETURN to T1's key but transformed (underwater filter = sam
 
 ---
 
-## v5.5 PRODUCTION STRATEGY
+## v5.5 PRODUCTION STRATEGY (v5.5-era, legacy — re-validate on V6)
+
+> Personas, Stems, and slider values below are v5.5-era features/values. Keep the intent (one consistent voice, album-level
+> mixing); re-check the mechanics against the V6 UI before relying on them.
 
 ### Persona Configuration
 
@@ -366,6 +371,8 @@ T8:       Medium — same as T1, but the weight is different
 ```
 
 ### Render Strategy (Per Track)
+
+> Slider columns are optional — only if your Suno UI exposes sliders; values are v5.5-era starting points (legacy).
 
 | Track | Weirdness | Style Influence | Audio Influence | Renders to Generate |
 |---|---|---|---|---|

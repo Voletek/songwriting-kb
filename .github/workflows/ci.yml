@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install optional lyric-lint dictionary (CMUdict via pronouncing)
+        run: pip install -r tools/requirements-optional.txt
+
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Repository integrity (includes, links, agent resources, hooks, steering, skills, JSON)
+        run: python3 tools/check-repo.py
+
+      - name: Validate example songs (no FAIL allowed)
+        run: python3 tools/validate-song.py examples/songs/
+
+      - name: Validate user songs (no FAIL allowed)
+        run: python3 tools/validate-song.py songs/
+
+      - name: Lyric lint smoke test (advisory)
+        run: python3 tools/lyric-lint.py examples/songs/ > /dev/null

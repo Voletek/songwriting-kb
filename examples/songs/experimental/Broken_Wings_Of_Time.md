@@ -1,5 +1,7 @@
 # Broken Wings of Time
 
+<!-- validate: skip (intentional bad-example draft used to stress-test the critic) -->
+
 > A standalone experimental track. Written deliberately as a "first draft with common problems"
 > to stress-test the Critic agent's ability to identify and flag issues.
 

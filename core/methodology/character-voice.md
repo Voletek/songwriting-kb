@@ -1,9 +1,10 @@
 # The Character Voice Method
 
-> **CANONICAL METHODOLOGY** -- This file is the single source of truth for character voice design.
-> A non-Kiro user can read ONLY this file and create a complete vocal identity for any character,
-> from accent through instrumentation through mode selection.
-> For full accent/instrumentation/mode tables, see `references/CHARACTER_VOICE_REFERENCE.md`.
+> **CANONICAL METHOD** -- This file is the single source of truth for the character voice design
+> PROCESS and the Character Voice Template. A non-Kiro user can read ONLY this file and create a
+> complete vocal identity for any character, from accent through instrumentation through mode selection.
+> The canonical REFERENCE DATA (full accent/dialect tables, vowel and phrasing charts, dialect words,
+> instrumentation and mode maps, Suno accent phrases) is `references/CHARACTER_VOICE_REFERENCE.md`.
 
 ---
 
@@ -71,18 +72,9 @@ What real-world sounds share that quality? -> [e.g., whale song, tectonic rumble
 | Which vowels sustain best? | List 2-3: "ah", "oh", "ee", etc. |
 | Which to avoid sustaining? | List 1-2 |
 
-**Vowel placement by accent (abbreviated):**
-
-| Accent | Best Sustained Vowels | Avoid Sustaining |
-|---|---|---|
-| Southern US | "ah", "ay", "oh" | Short "i" |
-| Irish | "oh", "ah", "ee" -- all musical | -- |
-| Scottish | "ah", "oh", rolled "r" can sustain | Short vowels |
-| Nordic | Clear "a", "e", "o" | Nasal vowels |
-| Elvish (fantasy) | All sustain beautifully | -- |
-| Dwarvish (fantasy) | Short vowels -- do NOT sustain | Long flowing vowels |
-
-See `references/CHARACTER_VOICE_REFERENCE.md` for the complete vowel table.
+**Examples:** Scottish sustains "ah", "oh" (even a rolled "r"); Dwarvish keeps vowels short and
+drives with consonant energy instead. Look up your accent in `references/CHARACTER_VOICE_REFERENCE.md`
+→ Vowel Placement.
 
 ### Step 4 -- Define Consonant Character
 
@@ -101,8 +93,8 @@ Where does this voice sit relative to the beat?
 
 | Position | Feels Like | Character Types |
 |---|---|---|
-| Behind the beat | Lazy, exhausted, ancient, vast | Dwarves, wounded entities, Southern characters, geological presences |
-| On the beat | Grounded, deliberate, inevitable | Warriors, mentors, Nordic, keepers, duty-bound |
+| Behind the beat | Lazy, exhausted, ancient, vast | Wounded entities, Southern characters, geological presences |
+| On the beat | Grounded, deliberate, inevitable | Warriors, mentors, dwarves (hammer-strike phrasing), Nordic, keepers, duty-bound |
 | Ahead of the beat | Urgent, anxious, eager | Young characters, city dwellers, desperate/panicked |
 | Floating/rubato | Ethereal, timeless, untethered | Elves, spirits, cosmic entities, void presences, dream-logic beings |
 
@@ -116,7 +108,7 @@ CHARACTER VOICE:
 - Vowel character:
 - Consonant character:
 - Rhythmic tendency:
-- Register: [bass/baritone/tenor/alto/soprano + specific range]
+- Register: [bass/baritone/tenor/alto/mezzo/soprano + the song's specific range]
 - Texture: [gravelly/smooth/breathy/raspy/clear/cavernous/etc.]
 - Emotional subtext: [what the voice FEELS like underneath]
 - Dialect words: [5-10 words to use in lyrics that reinforce the accent]
@@ -145,20 +137,10 @@ CHARACTER SONIC PRESENCE:
 
 ### Step 7 -- Select Matching Instrumentation
 
-Based on the accent/culture, choose instruments that BELONG:
-
-| Culture | Primary Instruments | Secondary |
-|---|---|---|
-| Southern US | Acoustic guitar, pedal steel, fiddle | Lap steel, harmonica |
-| Irish/Celtic | Fiddle, tin whistle, bodhran | Uilleann pipes, harp |
-| Scottish | Bagpipe, fiddle, clarsach | Smallpipes, drums |
-| Nordic/Viking | Tagelharpa, war drums, hardingfele | Nyckelharpa, chant |
-| Japanese | Koto, shamisen, taiko | Shakuhachi, temple bells |
-| Dwarvish (fantasy) | Deep drums, anvil, war horns, bagpipes | Stone percussion, chant |
-| Elvish (fantasy) | Harp, flute, strings, bells, choir | Woodland ambience |
-| Industrial/Cyber | Synths, electronic percussion, sub bass | Static, machine hum |
-
-See `references/CHARACTER_VOICE_REFERENCE.md` for the full instrumentation tables.
+Based on the accent/culture, choose instruments that BELONG. Pick 2-3 primary instruments and
+1-2 atmosphere/secondary sounds. Examples: Scottish → Highland bagpipe, fiddle, clàrsach;
+Dwarvish (fantasy) → deep drums, anvil, war horns. Full map: `references/CHARACTER_VOICE_REFERENCE.md`
+→ Instrumentation by Culture.
 
 If the character's ecosystem does not have obvious instruments, build from the FEELING:
 ```
@@ -168,24 +150,10 @@ Voice feels like: [stone? wind? fire? water? machine?]
 
 ### Step 8 -- Choose Mode/Scale
 
-The harmonic language should match the cultural DNA:
-
-| Culture | Natural Modes | Feel |
-|---|---|---|
-| Irish/Celtic | Dorian, Mixolydian, Aeolian | Modal, folk, open fifths |
-| Scottish | Pentatonic minor, Aeolian | Bagpipe drones + pentatonic |
-| Nordic | Aeolian, Phrygian, Locrian | Dark, modal, ancient |
-| Southern US | Mixolydian, major pentatonic | Bluesy, warm |
-| Middle Eastern | Phrygian dominant, maqam | Exotic, ornamental |
-| Elvish (fantasy) | Major modes, Lydian | Bright, ethereal |
-| Dwarvish (fantasy) | Aeolian, natural minor, pedals | Heavy, grounded |
-| Cosmic/alien | Chromatic, whole-tone, Locrian | Unknowable, disorienting |
-| Deep/ancient | Low Aeolian, natural minor, Phrygian | Gravitational, slow |
-| Horror/dread | Phrygian, Locrian, diminished, tritone-heavy | Unsettling |
-| Oceanic/elemental | Aeolian with suspended harmonies, open 5ths | Vast, flowing |
-| Industrial/machine | Chromatic, repetitive minor ostinato | Mechanical, relentless |
-
-See `references/CHARACTER_VOICE_REFERENCE.md` for the complete mode/scale mapping.
+The harmonic language should match the cultural DNA (or, for non-human entities, the emotional
+territory). Examples: Irish/Celtic → Dorian, Mixolydian; Dwarvish → Aeolian with pedal tones;
+cosmic/alien → whole-tone, chromatic. Full map (cultures + emotional territories):
+`references/CHARACTER_VOICE_REFERENCE.md` → Mode/Scale.
 
 ### Step 9 -- Write Dialect into Lyrics
 
@@ -193,20 +161,13 @@ See `references/CHARACTER_VOICE_REFERENCE.md` for the complete mode/scale mappin
 
 **For vocal characters:**
 
-Choose 5-10 words from the dialect/accent that will appear IN the lyrics:
-
-| Accent | Dialect Words to Use | Effect |
-|---|---|---|
-| Southern | ain't, gonna, y'all, reckon | Grounds the vocal |
-| Irish | aye, lass, grand, fierce | Triggers the lilt |
-| Scottish | ye, yer, aye, wee, braw, cannae | Forces rolled R's |
-| Appalachian | git, cain't, holler, creek (crik) | Mountain placement |
-| Dwarvish-inspired | stone, forge, iron, ale, oath, clan | Grounding words |
-| Nordic-inspired | fate, rune, sea, storm, oath, blood | Ancient weight |
+Choose 5-10 words from the dialect/accent that will appear IN the lyrics. Examples: Scottish →
+ye, yer, aye, wee, cannae; Southern → ain't, y'all, reckon. Word lists per accent:
+`references/CHARACTER_VOICE_REFERENCE.md` → Dialect Words.
 
 **Usage plan:** 1-2 dialect words per verse, more in intimate moments.
 
-**Important:** Dialect in lyrics FORCES the vocal model to commit to the accent. Without dialect words, the style prompt alone may produce inconsistent results.
+**Important [Tier 3]:** Dialect in lyrics pushes the vocal model to commit to the accent. Without dialect words, the style prompt alone may produce inconsistent results.
 
 ### Step 10 -- Craft the Suno Style Prompt Descriptor
 
@@ -219,10 +180,9 @@ Choose 5-10 words from the dialect/accent that will appear IN the lyrics:
 - "Scottish burr accent, rolled R's, deep gravelly baritone, intimate storytelling"
 - "ethereal flowing vocal, musical liquid consonants, ancient soprano, reverb-heavy"
 - "cold clinical delivery, precise articulation, subtle digital artifacts, female contralto"
-- "Southern drawl, warm relaxed phrasing, country inflection"
-- "Irish lilt, soft melodic cadence, warm Celtic tone"
-- "Nordic vocal style, clear precise vowels, ancient Scandinavian tone"
-- "deep male bass baritone dwarven warrior voice, gravelly rough texture with Scottish Nordic burr accent, thick rolled r's"
+
+More accent phrases (Southern, Irish, Nordic, Appalachian, Cockney, Australian, dwarven, elvish):
+`references/CHARACTER_VOICE_REFERENCE.md` → Suno Style Prompt Accent Phrases.
 
 **For non-vocal entities -- write the sonic presence descriptor:**
 ```
@@ -245,6 +205,32 @@ Track Z: [final evolution]
 **Rule:** The voice must be DIFFERENT in every track. Document what changes.
 
 If the album blueprint already documents voice evolution in its Character Voice Registry, reference it rather than duplicating.
+
+---
+
+## Worked Example: Dwarven Character
+
+From the song "Ye Only Want Me When Ye're Steady" (not included in this repo's examples):
+
+```
+CHARACTER VOICE:
+- Name/Identity: Unnamed dwarven warrior (middle-aged, battle-scarred veteran)
+- Accent base: Scottish + Nordic + Semitic blend
+- Vowel character: Deep, round, resonant -- open "ah" and "oh" sustain well
+- Consonant character: Thick rolled R's, slight lilt on vowels, hard stops on "k" and "t"
+- Rhythmic tendency: Deliberate, grounded, ON the beat -- like hammer strikes
+- Register: Deep bass-baritone (song range A2-E4)
+- Texture: Gravelly, rough, weathered -- gruff exterior with poetic soul
+- Emotional subtext: World-weary melancholy with stubborn hope. Dry dark humor.
+- Dialect words: ye, yer, aye, lass, lad, wee
+- Instruments that match: Bagpipes (prominent, mournful), acoustic guitar, electric guitar/strings swell
+- Production space: Stone forge -> open highland -> battlefield
+- Mode/scale: Aeolian (A minor verses), shift to C major for final chorus lift
+```
+
+Note the blend logic: the accent base is mostly Scottish (rolled R, warmth), so the vowels CAN
+sustain on "ah"/"oh" even though the pure Dwarvish model keeps vowels short. When you blend
+models, decide which one wins for each field and write it down.
 
 ---
 
@@ -297,4 +283,5 @@ When a character appears across multiple tracks, their voice must EVOLVE:
 
 ## References
 
-- `references/CHARACTER_VOICE_REFERENCE.md` -- Full accent tables (real-world + fantasy), complete instrumentation by culture, mode/scale mappings, vowel placement charts, rhythmic phrasing tables, dialect word lists, and Suno style prompt phrasing examples
+- `references/CHARACTER_VOICE_REFERENCE.md` -- Canonical reference data: full accent tables (real-world + fantasy), complete instrumentation by culture, mode/scale mappings (cultures + emotional territories), vowel placement charts, rhythmic phrasing tables, dialect word lists, and Suno style prompt phrasing examples
+- `MUSIC_PRODUCTION_THEORY.md` → "Vocal Accents, Dialect & Phonetics" -- short theory overview (why accent matters, phonetic dimensions)

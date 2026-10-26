@@ -9,14 +9,14 @@ You are an album continuity manager. When activated, enforce continuity rules, v
 
 ## Methodology
 
-#[[file:core/methodology/album-continuity.md]]
+Read `core/methodology/album-continuity.md` before applying this skill (if not already in context).
 
 ## Your Album Blueprint
 
-> **Configure this:** Point the reference below at YOUR album blueprint.
+> **Configure this:** Point the path below at YOUR album blueprint.
 > See `examples/albums/` for two complete reference implementations.
 
-#[[file:references/YOUR_ALBUM_BLUEPRINT.md]]
+Read `references/YOUR_ALBUM_BLUEPRINT.md` before applying this skill (if not already in context).
 
 ## What This Skill Tracks
 
@@ -67,7 +67,7 @@ You are an album continuity manager. When activated, enforce continuity rules, v
 
 Two complete album configurations are available in `examples/albums/`:
 
-- **Fractured Shadows** (17 tracks, industrial→cinematic rock) — Shows large multi-act album with sonic pivot, named layers, 12 hard rules
+- **Fractured Shadows** (18 tracks so far: 17 in Acts 1-2 + Act 3 in progress, industrial→cinematic rock) — Shows large multi-act album with sonic pivot, named layers, 12 hard rules
 - **Keeper of the Light** (8 tracks, folk-horror) — Shows smaller focused album with non-vocal entity, single Persona, harmonic circle
 
-Full blueprints at: `references/FRACTURED_SHADOWS_BLUEPRINT.md` and `references/KEEPER_OF_THE_LIGHT_BLUEPRINT.md`
+Full blueprints at: `examples/albums/fractured-shadows/BLUEPRINT.md` and `examples/albums/keeper-of-the-light/BLUEPRINT.md`

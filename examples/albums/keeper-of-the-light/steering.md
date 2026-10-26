@@ -5,9 +5,10 @@ fileMatchPattern: "songs/keeper_of_the_light/**"
 
 # Keeper of the Light — Album Continuity Rules
 
-> Conditional steering — loads when working on files matching songs/keeper_of_the_light/**
-> Full blueprint: references/KEEPER_OF_THE_LIGHT_BLUEPRINT.md
-> System: Suno v5.5 (Personas, Stems, Era Tags, Layers)
+> Conditional steering — loads when working on files matching `songs/keeper_of_the_light/**`
+> (copy to `.kiro/steering/keeper-of-the-light.md` and adjust `fileMatchPattern` to your song folder).
+> Full blueprint: `examples/albums/keeper-of-the-light/BLUEPRINT.md`
+> Written for Suno v5.5 (Personas, Stems, Era Tags, Layers) — v5.5-era (legacy); V6 is the current default, re-validate v5.5 mechanics on V6.
 
 ---
 
@@ -19,7 +20,7 @@ Genre: Folk-horror / sea-shanty / dark ambient
 ## ALBUM EXTENSION PROTOCOL
 
 **⚠️ STOP — Before writing ANY track outside the current registry (T1-8):**
-1. Update `references/KEEPER_OF_THE_LIGHT_BLUEPRINT.md` with new track registry (including Persona assignment)
+1. Update `examples/albums/keeper-of-the-light/BLUEPRINT.md` (or your copy of it) with new track registry (including Persona assignment)
 2. Extend the sonic palette evolution map
 3. Define which existing rules carry forward vs which are act-specific
 4. Get the blueprint update committed BEFORE writing new songs
@@ -44,7 +45,7 @@ Genre: Folk-horror / sea-shanty / dark ambient
 
 ## Sonic Palette by Track Range
 
-| Tracks | Allowed Palette | Era Tag |
+| Tracks | Allowed Palette | Era Tag (v5.5-era, legacy) |
 |---|---|---|
 | 1-2 | Warm acoustic folk, concertina, bodhran, sea-wash, close-mic vocal | NO decade tags — use "handmade, analog warmth, organic" |
 | 3 | Darkened folk, fingerpicked guitar, bowed drone, whispered harmony | None |
@@ -69,4 +70,4 @@ Genre: Folk-horror / sea-shanty / dark ambient
 
 ## Reference
 
-#[[file:references/KEEPER_OF_THE_LIGHT_BLUEPRINT.md]]
+#[[file:examples/albums/keeper-of-the-light/BLUEPRINT.md]]

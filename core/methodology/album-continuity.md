@@ -205,7 +205,7 @@ Final Track resolves: [which earlier threads]
 
 #### Step 10 -- Assemble the Album Blueprint
 
-Create `references/[YOUR_ALBUM]_BLUEPRINT.md` containing:
+Create `references/[YOUR_ALBUM]_BLUEPRINT.md` (or fill in the template `references/YOUR_ALBUM_BLUEPRINT.md`) containing the sections below. Completed examples: `examples/albums/fractured-shadows/BLUEPRINT.md` and `examples/albums/keeper-of-the-light/BLUEPRINT.md`.
 
 1. Album Thesis
 2. Track Registry (full table)
@@ -221,7 +221,7 @@ Create `references/[YOUR_ALBUM]_BLUEPRINT.md` containing:
 
 #### Step 11 -- Create Your Steering File
 
-Create a condensed version of the blueprint for quick reference, containing:
+Create a condensed version of the blueprint for quick reference (Kiro: `.kiro/steering/<your-album>.md` with `inclusion: fileMatch` and a `fileMatchPattern` for your album's song folder; examples in `examples/albums/<album>/steering.md`), containing:
 - Album title + track count
 - Extension protocol reminder
 - Hard rules (all numbered, scannable)
@@ -231,10 +231,12 @@ Create a condensed version of the blueprint for quick reference, containing:
 
 #### Step 12 -- Configure Hooks (Optional)
 
-Create a checklist that defines what rules to verify when a song file is saved:
+Define what rules to verify when a song file is saved:
 - Sonic palette violations (forbidden instruments per track range)
 - Phrase protections (protected phrases and which tracks own them)
 - Key/structural rules (key reservations, BPM locks, voice restrictions)
+
+**Kiro:** hooks are v1 JSON files in `.kiro/hooks/`. Copy `examples/albums/<album>/continuity-hook.json` to `.kiro/hooks/<album>-continuity.json`, set its `matcher` (regex on the file path) to your album's song folder, and list your rules in the `agent` action's prompt. File-event hooks fire only for agent-made file changes and run in Kiro IDE 1.0+ / Kiro CLI V3 (not Kiro Web). **Without Kiro:** use the rule list as a manual review checklist.
 
 **Commit all documentation BEFORE writing any songs.** The documentation is the source of truth.
 
@@ -415,7 +417,7 @@ These apply to ANY concept album regardless of genre:
 
 ### Album Blueprint Sections
 
-The Album Blueprint (`references/[ALBUM]_BLUEPRINT.md`) contains these sections:
+The Album Blueprint (`references/[ALBUM]_BLUEPRINT.md`; bundled examples in `examples/albums/<album>/BLUEPRINT.md`) contains these sections:
 1. Album Thesis
 2. Track Registry (table)
 3. Sonic Palette Evolution
@@ -460,7 +462,8 @@ Save to: `analysis/[album-prefix]_[song-filename]_continuity.md`
 ## References
 
 - `references/YOUR_ALBUM_BLUEPRINT.md` -- Template for album blueprint structure
-- `references/FRACTURED_SHADOWS_BLUEPRINT.md` -- Complete example album blueprint
-- `references/KEEPER_OF_THE_LIGHT_BLUEPRINT.md` -- Complete example album blueprint
+- `examples/albums/fractured-shadows/BLUEPRINT.md` -- Complete example album blueprint (17 tracks in Acts 1-2 + Act 3 in progress)
+- `examples/albums/keeper-of-the-light/BLUEPRINT.md` -- Complete example album blueprint (8 tracks)
+- `examples/albums/<album>/steering.md` and `examples/albums/<album>/continuity-hook.json` -- Example conditional steering and continuity hook
 - `core/methodology/character-voice.md` -- Full character voice design procedure
 - `core/methodology/songwriting.md` -- Song creation procedure (use after album is documented)

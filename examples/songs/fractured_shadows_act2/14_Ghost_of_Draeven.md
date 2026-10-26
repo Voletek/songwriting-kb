@@ -8,7 +8,7 @@
 ## STYLE PROMPT:
 Dark psychological cinematic ballad, haunted introspective rock, male baritone A2-E4, key C minor, 4/4, 74 BPM, sparse piano, deep cello, mountain wind ambience, emotional strings building, minimal percussion until final chorus, intimate verses opening to vast choruses, confessional, raw emotional vulnerability
 
-[Exclusions: ‑bright synths, ‑pop energy, ‑trap drums, ‑EDM drops, ‑beatboxing, ‑vocal hums, ‑cheerful melodies, ‑autotune, ‑aggressive metal, ‑industrial textures, ‑fast tempo, ‑war drums]
+[Exclusions: bright synths, pop energy, trap drums, EDM drops, beatboxing, vocal hums, cheerful melodies, autotune, aggressive metal, industrial textures, fast tempo, war drums]
 
 ---
 
@@ -134,6 +134,8 @@ The weight is still here
 But it sits differently now
 Not on my shoulders
 But in my spine — holding me up
+
+[end]
 
 ---
 

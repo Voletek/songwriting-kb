@@ -10,7 +10,7 @@
 ## STYLE PROMPT:
 Dark cinematic alternative rock, emotional electronic rock hybrid, baritone male vocal, vocal range A2–E4, key D minor, atmospheric electric guitars, cinematic drums, ambient synth textures, emotional isolation themes, modern loneliness atmosphere, faded deep echoes, restrained vulnerable delivery, deep bass, soft glitch ambience, introspective cyber-noir tone, 80 BPM, 4/4, progressive signal decay arc, no autotune feel
 
-[Exclusions: ‑autotune, ‑rap, ‑scream vocals, ‑vocal hums, ‑beatboxing, ‑bright synths, ‑upbeat energy, ‑trap drums, ‑cheerful melodies]
+[Exclusions: autotune, rap, scream vocals, vocal hums, beatboxing, bright synths, upbeat energy, trap drums, cheerful melodies]
 
 ---
 
@@ -158,6 +158,8 @@ But barely here
 
 Vole-tek online
 Human offline
+
+[end]
 
 ---
 

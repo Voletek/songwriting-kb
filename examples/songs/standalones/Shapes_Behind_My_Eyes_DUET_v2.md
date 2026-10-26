@@ -15,12 +15,9 @@ Dark alternative rock, atmospheric post-rock, haunting emotional duet, deep male
 
 [Title: Shapes Behind My Eyes]
 
-[Vocal Direction
-Lead: Deep emotional male baritone — intimate and hollowed in verses, cracking under weight in pre-choruses, powerful and emotionally fractured in choruses.
-Second: Female contralto — ethereal, ancient, uncomfortably intimate, part memory part possession. She sounds like a thought you can't stop thinking. Whisper layers are intrusive fragments. Voices merge in final chorus until separation dissolves.]
+[Vocal Direction: Deep male baritone lead (hollow verses, cracking pre-choruses, fractured choruses); ethereal female contralto second voice, part memory, part possession; whispers are intrusive fragments. Voices merge in the final chorus.]
 
-[Composition Direction
-Start with fragile piano and low ambience. Verse 1 sparse and confessional. Ambient guitars and bass pressure build through verse 2. Pre-chorus introduces breath textures and vocal strain. Chorus expands with live drums and emotional guitar swells — weight not volume. Bridge strips to heartbeat and whisper only. Final chorus: intimate and overwhelming simultaneously, voices phasing into one.]
+[Composition Direction: Fragile piano start; guitars and bass build through Verse 2; choruses add live drums, weight not volume; bridge is heartbeat and whisper only; final chorus phases both voices into one.]
 
 [Intro]
 [Fragile piano, single repeated note] [Low ambience] [Heartbeat pulse]
@@ -184,7 +181,7 @@ Let me hold what's left
 There's nothing left to hold — we're the same hand now
 
 [Final Chorus]
-[Massive restrained swell] [Full drums] [Harmonies phasing together] [Voices merging]
+[Massive restrained swell] [Full drums] [Harmonies phasing together]
 
 [Male Vocal]
 Shapes behind my eyes
@@ -248,6 +245,26 @@ I don't know which of us is breathing
 
 [Female Vocal]
 We have always been one breath
+
+[end]
+
+---
+
+
+## ADVANCED BOX (overflow direction)
+
+> The Lyrics field must stay under 5000 characters, so the direction blocks above are condensed.
+> The full original direction is kept here. Paste it into Suno's More Options / Advanced box if your UI has one,
+> or use it as the reference when re-rendering.
+
+```
+[Vocal Direction
+Lead: Deep emotional male baritone — intimate and hollowed in verses, cracking under weight in pre-choruses, powerful and emotionally fractured in choruses.
+Second: Female contralto — ethereal, ancient, uncomfortably intimate, part memory part possession. She sounds like a thought you can't stop thinking. Whisper layers are intrusive fragments. Voices merge in final chorus until separation dissolves.]
+
+[Composition Direction
+Start with fragile piano and low ambience. Verse 1 sparse and confessional. Ambient guitars and bass pressure build through verse 2. Pre-chorus introduces breath textures and vocal strain. Chorus expands with live drums and emotional guitar swells — weight not volume. Bridge strips to heartbeat and whisper only. Final chorus: intimate and overwhelming simultaneously, voices phasing into one.]
+```
 
 ---
 

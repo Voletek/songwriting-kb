@@ -8,7 +8,7 @@
 ## STYLE PROMPT:
 Epic cinematic war rock, aggressive orchestral metal, male baritone A2-E4, key F minor, 4/4, 112 BPM, massive war drums, distorted orchestral strings, heavy bass, aggressive electric guitar, choir chants, fire textures, brass stabs, relentless intensity collapsing into desperate escape, dynamic extremes
 
-[Exclusions: ‑pop vocals, ‑bright synths, ‑trap drums, ‑beatboxing, ‑vocal hums, ‑cheerful melodies, ‑autotune, ‑EDM drops, ‑lo-fi production, ‑gentle acoustic, ‑playful tone]
+[Exclusions: pop vocals, bright synths, trap drums, beatboxing, vocal hums, cheerful melodies, autotune, EDM drops, lo-fi production, gentle acoustic, playful tone]
 
 ---
 
@@ -126,6 +126,8 @@ The purpose still burning on my chest
 
 The sun is rising
 And we have work to do
+
+[end]
 
 ---
 

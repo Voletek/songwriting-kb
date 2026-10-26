@@ -1,22 +1,28 @@
 # Shadow Behind My Eyes — Suno Ready (Solo Female Version) v2
 
+<!-- song-format: legacy (archived example that predates or sits outside the current format standard; see examples/songs/README.md) -->
+
 > Rewritten for stronger imagery, tighter prosody, and deeper emotional impact.
 > Preserves her core lines, questions, and the turn. Sharpens everything around them.
 
 ---
 
 ## STYLE PROMPT:
-Dark ethereal indie folk, haunting female alto vocal, intimate and vulnerable, breathy close-mic delivery with slight tremor, 72 BPM, A minor, sparse piano, ambient pads, soft fingerpicked acoustic guitar, subtle sub bass, atmospheric reverb, dreamy and unsettling, hypnagogic atmosphere, cinematic, restrained emotional build, whispered outro, no vocal hums, no beatboxing
+Dark ethereal indie folk, haunting female alto vocal, 72 BPM, A minor, sparse piano, ambient pads, soft fingerpicked acoustic guitar, subtle sub bass, atmospheric reverb, dreamy and unsettling, hypnagogic atmosphere, whispered outro
 
 Structure: whispered intro → fragile verse → rising pre-chorus → ethereal open chorus → deeper verse → chorus → stripped bridge with whispered turn → warm resolved final chorus → whispered fade
 
-Vocal: female alto, breathy, close-mic, fragile but present, slight vocal fry on low notes, intimate like talking to yourself in the dark, builds to open vulnerable warmth in final chorus, never belting — emotional power through restraint
+Vocal: female alto, breathy, close-mic, slight tremor, fragile but present, slight vocal fry on low notes, intimate like talking to yourself in the dark, builds to open vulnerable warmth in final chorus, never belting — emotional power through restraint
 
 Production: near-silence in verses — piano and breath only, ambient swells enter pre-chorus, chorus opens with layered pads and reverb guitar, bridge strips to single heartbeat and whisper, final chorus adds warmth not volume — gentle strings bloom underneath, soft choir pad final four lines only
+
+[Exclusions: vocal hums, beatboxing]
 
 ---
 
 ## LYRICS:
+
+[Title: Shadow Behind My Eyes]
 
 [Intro]
 [Sparse piano, single note, breath, darkness]
@@ -127,6 +133,8 @@ It's my soul — and it sounds like me
 
 I love you
 And I love our soul
+
+[end]
 
 ---
 

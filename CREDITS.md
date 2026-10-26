@@ -21,7 +21,8 @@ First community user to adopt the system. Provided direct feedback that led to t
 - **Identified the songs/analysis separation problem** — flagged that developer example songs mixed with user songs creates confusion during `git pull`
 - **Requested clean workspace directories** — directly led to moving all example content from `songs/` and `analysis/` into `examples/` so working directories are empty for users
 - **Validated the platform-neutral approach** — confirmed the system works with Kiro for users who understand markdown
-- **Conducted first Suno experiment proving timbre descriptors outperform gear model names** (acid house, June 2026). Evidence basis for the Instrument Sound Reference (`references/INSTRUMENT_SOUND_REFERENCE.md`).
+- **Conducted the first Suno experiment reporting that timbre descriptors outperform gear model names** (acid house, June 2026, Suno v5.5). Evidence basis for the Instrument Sound Reference (`references/INSTRUMENT_SOUND_REFERENCE.md`) [Tier 3: not yet reproduced in this repo or re-tested on V6].
+- **Logged the performance-notation-symbols experiment** (`experiments/suno/2026-07-02-performance-notation-symbols.yml`, v5.5).
 
 ---
 
@@ -43,7 +44,7 @@ Brian forked the repo, conducted a thorough methodology review, and submitted [P
 
 Author of the comprehensive Suno AI God Mode Manual. Six contributions integrated into the knowledge base:
 
-- **Performance Notation Symbols** -- 7 inline lyric formatting characters (~, -, ALL CAPS, ..., quotes, (), []) that affect vocal delivery
+- **Performance Notation Symbols** (v5.5-era, legacy) -- 7 inline lyric formatting characters (~, -, ALL CAPS, ..., quotes, (), []) that affect vocal delivery
 - **Anti-Pairs** -- genre combinations with near-zero compatibility (Gregorian Chant+Trap, Classical Baroque+Lo-fi Bedroom Pop, Opera+Mumble Rap)
 - **Groove/Time-Feel Descriptors** -- optional 8th dimension for rhythmic specificity (medium swing, four-on-the-floor, syncopated, etc.)
 - **Call-and-Response Instrument Technique** -- vocal/instrument conversational pattern using [instrumental break X] tags
@@ -61,22 +62,22 @@ All contributions labeled [Tier 3: Community heuristic].
 | **Allan F. Moore** (*Song Means*, 2012) | 4 functional texture layers, soundbox theory, persona analysis |
 | **Philip Tagg** (*Music's Meanings*, 2013) | Musemes, semiotic signification, cultural connotation of timbres |
 | **Serge Lacasse** (2000, 2010) | Vocal staging, proxemic interaction in recorded song (composite framework: Hall proxemics theory + Lacasse vocal staging + Moore recorded song hermeneutics) |
-| **William Moylan** (2014) | Recording analysis, timbral balance, spatial imaging |
-| **Pat Pattison** (Berklee) | Prosody, phrase weight, stable/unstable systems |
-| **Franco Fabbri** (1982) | Genre theory — 5 rules of genre membership |
-| **Patrik Juslin** (2013) | BRECVEMA emotional mechanisms (8 pathways by which music induces emotion) |
-| **Eerola, Friberg & Bresin** (2013, *Frontiers in Psychology* 4:487) | Emotional cue hierarchy (mode > tempo > register > dynamics > articulation > timbre) |
-| **Christian Schubart** (1806) | Key characteristics and emotional associations |
-| **Dodge et al.** (2025) | 6 universal evaluation criteria for popular music |
+| **William Moylan** (*Understanding and Crafting the Mix*, 3rd ed., 2014) | Recording analysis, timbral balance, spatial imaging |
+| **Pat Pattison** (Berklee) | Prosody, phrase weight, stable/unstable systems (books listed under Rhyme & Lyric Craft) |
+| **Franco Fabbri** (1982), "A Theory of Musical Genres: Two Applications" | Genre as musical events (real or possible) governed by socially accepted rules of five types: formal & technical, semiotic, behavioural, social & ideological, economical & juridical |
+| **Patrik N. Juslin** (2013), "From everyday emotions to aesthetic emotions: towards a unified theory of musical emotions", *Physics of Life Reviews* 10(3) | BRECVEMA: 8 mechanisms by which music induces (felt) emotion |
+| **Eerola, Friberg & Bresin** (2013), "Emotional expression in music: contribution, linearity, and additivity of primary musical cues", *Frontiers in Psychology* 4:487 | Perceived-emotion cue hierarchy (mode > tempo > register > dynamics > articulation > timbre; tempo strongest for arousal) |
+| **C. F. D. Schubart**, *Ideen zu einer Ästhetik der Tonkunst* (written 1784-85, publ. 1806); English in **Rita Steblin**, *A History of Key Characteristics in the Eighteenth and Early Nineteenth Centuries* (1983; 2nd ed. 2002) | Historical key characteristics (aesthetics under unequal temperaments, not psychology) |
+| **Dodge et al.** (2025) | Evaluation criteria for popular music from expert raters with transparent criteria (innovation, beauty, scope of vision, technical prowess, generosity of spirit, authenticity). Primary citation (journal/DOI) not yet recorded; see PR Newswire, Feb 2026, "Academic Study Proposes New Standards for Evaluating Popular Music". Treated as Tier 2 until the primary source is added |
 | **Gabrielsson & Lindstrom** (2010) | Emotional expression linearity in primary musical cues |
 | **Tim Murphey** (1989, 1992) | Pop lyric corpus analysis -- temporal vagueness and "appropriability" |
-| **Rebecca Wilson** (PhD, Queen's University Belfast, 2025) | 1291-song corpus stylistics, imaginative deixis in popular lyrics |
+| **Rebecca Wilson** (PhD, Queen's University Belfast, 2025; citation unverified) | 1291-song corpus stylistics, imaginative deixis in popular lyrics |
 | **SD Jenkins** (Research Master, 2018) | Form, content, craft -- verse/chorus as rearrangement of time/space |
 | **Kreyer & Mukherjee** (corpus linguistics) | Pop lyrics on boundary between speech and writing |
 | **Werner** (register analysis) | Pop lyrics as simulated immediacy -- planned performance of conversational register |
 | **Peter Stockwell** (*Cognitive Poetics*, 2002) | Temporal deixis, deictic shift theory, deictic centre |
 | **Joanna Gavins** (*Text World Theory: An Introduction*, 2007) | Temporal parameters as world-building elements |
-| **Voice & Whiteley** | Multimodal cognitive analysis of deixis in song |
+| **Matthew Voice & Sara Whiteley** (2019), "'Y'all don't wanna hear me, you just wanna dance': A cognitive approach to listener attention in OutKast's 'Hey Ya!'", *Language and Literature* 28(1) | Cognitive analysis of listener attention to lyrics and deixis in song |
 | **Janiszewski & Uy** (precision anchoring) | Precise numbers anchor more strongly due to finer-resolution scale |
 | **Mason, Lee, Wiley, Ames** | Precise offers perceived as more informed -- precision signals expertise |
 | **Jack Perricone** (*Great Songwriting Techniques*, 2018) | Scenario development -- time grounds scene, prosodic interaction |
@@ -84,10 +85,26 @@ All contributions labeled [Tier 3: Community heuristic].
 
 ---
 
+## Rhyme & Lyric Craft
+
+| Source | Contribution |
+|---|---|
+| **Pat Pattison**, *Writing Better Lyrics* (2nd ed., 2009) and *Songwriting: Essential Guide to Rhyming* (Berklee Press) | Rhyme ladder (perfect > family > additive/subtractive > assonance > consonance), consonant families, section stability, prosody |
+| **Andrea Stolpe** (Berklee) | Article on rhyme types and their relative strength |
+| **Sheila Davis**, *The Craft of Lyric Writing* (1985) | Lyric forms, rhetorical devices, cliche avoidance |
+| **Jimmy Webb**, *Tunesmith: Inside the Art of Songwriting* (1998) | The perfect-rhyme (standards/Broadway) school, contrasted with Pattison's family/slant approach |
+| **Julia Cameron**, *The Artist's Way* (1992) | Morning pages (daily free-writing) |
+| **CMU Pronouncing Dictionary** (Carnegie Mellon University, BSD-licensed) | Pronunciations and stress marks used for syllable/stress/rhyme checks in `tools/lyric-lint.py` |
+| **`pronouncing`** (Python library by Allison Parrish) | Simple interface to CMUdict (optional dependency of `tools/lyric-lint.py`) |
+| **Datamuse API** | Word-finding API (rhymes, near rhymes, sounds-like) recommended as a rhyme tool |
+| **Hussein Hirjee & Daniel G. Brown** (ISMIR 2009; *Empirical Musicology Review* 2010) | Rhyme Analyzer and automatic detection of internal and imperfect rhymes in rap lyrics |
+
+---
+
 ## Tools & Platforms
 
 - **[Kiro](https://kiro.dev)** — IDE automation layer (agents, skills, hooks, steering, powers)
-- **[Suno AI](https://suno.com)** — AI music generation platform (v4.5-v5.5)
+- **[Suno AI](https://suno.com)** — AI music generation platform (v4.5-v5.5 legacy; V6 model family v6 / v6-wild / v6-mini, the default since Sept 2026)
 - **Nashville/LA co-writing tradition** — structural methodology (chorus-first, quality gates)
 - **Berklee Online** — songwriting craft education
 

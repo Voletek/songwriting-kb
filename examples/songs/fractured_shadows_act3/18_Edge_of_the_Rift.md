@@ -15,7 +15,7 @@ Central affect: **Resolute hope tempered by awe at scale.** Not fear — he's pa
 BRECVEMA mechanisms:
 - **Expectancy** — building forward momentum (something is coming)
 - **Evaluative Conditioning** — callbacks to T17's resolution create warmth
-- **Musical Surprise** — the corrupted land should bleed sonically into the arrangement (dissonance beneath hope)
+- **Musical Expectancy** (violated expectation, i.e. surprise) — the corrupted land should bleed sonically into the arrangement (dissonance beneath hope)
 
 ### 3. PROSODIC
 - Target: 8-11 syllables per line (walking pace — literal journey)
@@ -104,7 +104,7 @@ Cinematic folk-rock, 92 BPM, E minor, weathered male baritone vocal, driving fin
 
 ### Exclude Field
 
-‑synths, ‑electronic elements, ‑industrial textures, ‑trap drums, ‑beatboxing, ‑vocal hums, ‑bright synths, ‑EDM drops, ‑autotune, ‑hip-hop beats, ‑glitch effects, ‑distorted vocals
+synths, electronic elements, industrial textures, trap drums, beatboxing, vocal hums, bright synths, EDM drops, autotune, hip-hop beats, glitch effects, distorted vocals
 
 ---
 
@@ -263,7 +263,7 @@ Outro:      ●●●→●○○○○○  (3→1/10 — layered fade to solo g
 - **Title hook ("Edge of the Rift")** — embedded in first chorus line
 - **Melodic hook:** "I will cross the edge of the rift" — ascending melody on "cross," sustained on "rift"
 - **Placement:** Hook arrives at Chorus 1 entry = approximately 0:45-0:55 into the song. With intro (0:00-0:12) + V1 (0:12-0:44) + Build (0:44-0:52), the hook lands within first 55 seconds of audio but within first 15 seconds of the chorus vocal. Given the atmospheric intro, this is acceptable for a concept album opener.
-- **Adjustment note:** For stricter 15-second rule, the intro could be shortened to 4 bars (8 seconds) pushing chorus hook closer to 0:45.
+- **Adjustment note:** For an earlier hook signal (pop-leaning timing), the intro could be shortened to 4 bars (8 seconds) pushing chorus hook closer to 0:45.
 
 ### Rhyme Scheme
 - **Verses:** ABAB CDCD (alternating — narrative folk convention)

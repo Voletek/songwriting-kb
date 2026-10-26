@@ -69,29 +69,36 @@ Answer: What should the listener FEEL?
 ### Step 4 -- Prosodic Planning
 
 Decide before writing:
-- Target syllables per line (7-12 at your tempo)
+- Target syllables per line: 7-12 at your tempo [Tier 2]. 13-15 = review (stress density, singability at tempo); 16+ = apply the Compression Test (Step 19)
 - Where will breath points fall?
 - Which vowels work for sustained notes in your key?
-- Default rhyme scheme (ABCB is often useful for a conversational feel; choose intentionally) [Tier 2]
+- Rhyme scheme per section [Tier 2] -- there is no universal default. ABCB (XAXA) is a common conversational option (the ballad-stanza pattern; only even lines rhyme, so it gives less closure). Choose the scheme per section for the stability you want: stable/closed for choruses and resolutions, unstable/open for pre-choruses and bridges.
+- Section stability plan: which sections should feel stable/closed (chorus, final resolution) vs unstable/open (pre-chorus, bridge) -- controlled by line count, line length, rhyme closure and stresses per line [Tier 2: Pattison]. Full detail: `references/RHYME_AND_LYRIC_CRAFT.md`
 
 #### Step 4b -- Rhythmic Design (Meter Awareness)
 
 > [Tier 3: Community heuristic — MasterofSFL, 2026]
 
-Consider the METER for each section as a production decision. The stress pattern of your lyrics may influence Suno's delivery — aggressive lyrics with heavy stress patterns (spondee) tend toward heavier musical delivery, while flowing unstressed patterns (pyrrhic/iambic) tend toward lighter delivery.
+Consider the METER for each section as a production decision. The stress pattern of your lyrics may influence Suno's delivery — lines where stresses hit often (trochaic lines, spondaic substitutions) tend toward heavier, more emphatic delivery, while lines with more unstressed syllables between stresses (iambic/anapestic lines, pyrrhic substitutions) tend toward lighter, quicker delivery.
+
+The tier label above covers the meter-to-section-energy matching idea. The foot definitions themselves are standard prosody.
 
 **Quick reference — meter for energy matching:**
 
-| Section Energy | Recommended Meter | Pattern | Feel |
+| Section Energy | Meter | Pattern | Feel |
 |---|---|---|---|
-| Intimate/conversational | Iambic | da-DUM da-DUM | Natural speech |
-| Building/driving | Anapestic | da-da-DUM da-da-DUM | Galloping forward |
-| Maximum power/stomping | Spondaic | DUM-DUM DUM-DUM | Heavy, emphatic |
-| Light/flowing/ambient | Pyrrhic/Trochaic | da-da / DUM-da | Airy, buoyant |
-| Formal/epic | Dactylic | DUM-da-da | Militaristic, grandiose |
-| Reflective/balanced | Amphibrach | da-DUM-da | Flowing, waltz-like |
+| Intimate/conversational | Iambic | da-DUM da-DUM | Rising, conversational -- closest to natural speech |
+| Building/driving | Anapestic | da-da-DUM da-da-DUM | Rising triple -- galloping, driving |
+| Hook/anthem/chant | Trochaic | DUM-da DUM-da | Falling, insistent, chant-like |
+| Maximum power/stomping | Trochaic lines with spondaic substitutions | DUM-da DUM-da ... DUM-DUM | Falling and insistent; the spondees add weight at the landing |
+| Rolling/lilting | Dactylic | DUM-da-da DUM-da-da | Falling triple -- rolling, lilting, waltz-like |
+| Reflective/flowing | Amphibrach | da-DUM-da da-DUM-da | Lilting triple -- flowing |
 
-**Practical use:** You don't need to write in strict meter. But being AWARE that "She's my BITCH, my KITCH-en WITCH" is naturally spondaic (stomping) while "In the dead of the night when the cold starts to bite" is naturally anapestic (galloping) helps you match lyric energy to intended section energy. If a verse feels wrong, check whether the stress pattern matches the intended delivery.
+**Substitution feet (not sustained meters):**
+- **Spondee** (DUM-DUM): two stresses side by side, dropped into a line for weight or emphasis ("DEAD STOP", "HOLD FAST"). A whole line of spondees is not a usable meter.
+- **Pyrrhic** (da-da): two unstressed syllables, used only as a substitution; it speeds a line up.
+
+**Practical use:** You don't need to write in strict meter. But being AWARE of it helps you match lyric energy to the energy you want in a section. "She's my BITCH, my KITCH-en WITCH" is trochaic: SHE'S-my BITCH-my KITCH-en WITCH = DUM-da DUM-da DUM-da DUM (trochaic tetrameter with the last unstressed syllable dropped, called catalectic). It stomps because every other syllable hits and the line ends on a stress. "In the dead of the night when the cold starts to bite" is anapestic (galloping). If a verse feels wrong, check whether the stress pattern matches the intended delivery.
 
 ### Step 5 -- Narrative Arc
 
@@ -114,7 +121,7 @@ Answer: Who is singing?
 
 Decide:
 - Primary genre (70%) and texture genre (30%) if fusion
-- Does this honor Fabbri's 5 rules? (formal and technical rules, semiotic rules, behaviour rules, social and ideological rules, economical and juridical rules)
+- Which of Fabbri's five types of genre rules carry the most weight in this genre? (formal and technical; semiotic; behavioural; social and ideological; economical and juridical) [Tier 1: Fabbri 1982]. These are rule types whose weight varies by genre, not a checklist where all five must be satisfied. Ironic lyric/genre juxtaposition is itself a recognised convention.
 - What instrumentation "belongs" in this genre?
 
 ### Step 8 -- Arrangement Design
@@ -123,20 +130,24 @@ Plan the dynamic arc:
 - Growth pattern (additive? subtractive? explosive? bloom?)
 - Where is negative space?
 - What contrast pairs exist? (quiet/loud, sparse/dense, human/machine)
-- Where does the hook land? [Tier 2] (Aim for a hook signal within the first 5-30s of singing; exact timing is genre-dependent)
+- Where does the hook land? [Tier 2] (Aim for a hook signal within ~5-30s of the first SUNG word; exact timing is genre-dependent)
 
-**Hook timing guidance:** Measured from the first SUNG word to the beginning of the hook phrase. An 8-second instrumental intro followed by a 12-second verse means the hook must land by second 12 of singing, not second 20 of the track. Pop tends toward earlier hooks; progressive and cinematic genres allow more setup.
+**Hook timing guidance:** [Tier 2] Two different metrics. Don't treat them as if they conflict:
+- **Hook signal:** within ~5-30 s of the first SUNG word, depending on genre (pop earlier; cinematic and progressive later). Measure from the first sung word to the start of the hook phrase. With an 8-second instrumental intro and a 12-second verse, the hook phrase arrives at second 12 of singing (second 20 of the track). Second 12 is the number to check.
+- **Full chorus arrival:** in pitch-ready commercial songs, the full chorus typically arrives by ~45-60 s of TRACK time (pop average ~39 s).
 
 **Runtime estimation formula:**
 ```
-(total lyric lines x 60/BPM x 2) + intro seconds + outro seconds
-At 92 BPM: each line ~ 2.5s with breath
-Typical: 24 lines + 8s intro + 8s outro ~ 3:15
+runtime_s ~= (sung_lines x bars_per_line + instrumental_bars) x beats_per_bar x 60 / BPM
+At 92 BPM in 4/4: one bar ~= 2.6 s; a sung line usually takes 1-2 bars including the breath
+Example: 32 sung lines x 1.5 bars + 16 instrumental bars = 64 bars ~= 2:47
 ```
 
 ### Step 9 -- Production & Commercial
 
 Decide: Key (with reasoning), BPM (with reasoning), target audience, target length, platform fit.
+
+Key reasoning: MODE (major/minor) is the strong emotional cue [Tier 1: Eerola, Friberg & Bresin 2013]. The specific key matters mostly for vocal range/tessitura and instrument resonance (open strings). Listeners without absolute pitch cannot identify a key. Historical key characters (Schubart) are creative prompts, not psychology [Tier 2].
 
 ---
 
@@ -148,10 +159,10 @@ Apply this to every songwriting task:
 |---|---|---|
 | 1 | Semantic | What is it literally about? |
 | 2 | Emotional | Central affect? BRECVEMA mechanisms? |
-| 3 | Prosodic | Stresses, breaths, syllable counts (7-12 per line) |
+| 3 | Prosodic | Stresses, breaths, syllable counts (7-12 per line target), rhyme and section stability |
 | 4 | Narrative | Arc type? Where is the turn? |
 | 5 | Voice | Who speaks? Accent? Register? |
-| 6 | Genre | Fabbri's 5 rules? Fusion ratio (70/30)? |
+| 6 | Genre | Which of Fabbri's rule types weigh most here? Fusion ratio (70/30)? |
 | 7 | Arrangement | Growth pattern? Contrast? Negative space? |
 | 8 | Production | Timbre palette? Harmonic choices? Space? |
 | 9 | Commercial | Audience? Platform? Length? Sync? |
@@ -178,9 +189,11 @@ V2 (new info) -> Bridge (the turn) -> Final Chorus (variation) -> Intro/Outro
 ### Step 10 -- Write the Chorus FIRST
 
 This is your destination. Write it before anything else.
-- Must contain the hook (identify type: lyric, melodic, rhythmic, or production)
+- Usually 4-8 lines (roughly 8-16 bars at ~2 bars per line) [Tier 2]
+- Must contain the hook (identify type: Lyric/Title, Melodic, Rhythmic, or Instrumental/Production)
 - Must be singable (test: can you hum it?)
-- Target 7-12 syllables per line [Tier 2]
+- Target 7-12 syllables per line [Tier 2] (13-15 = review; 16+ = Compression Test)
+- Usually the most stable section: closed rhyme (perfect/family rhyme on the title line), an even line count, matched line lengths
 - Check: would someone text this line to a friend?
 
 ### Step 11 -- Write the Pre-Chorus
@@ -188,19 +201,20 @@ This is your destination. Write it before anything else.
 2-4 lines that BUILD into the chorus.
 - Creates tension the chorus resolves
 - Rising energy
+- Usually unstable/open (an unresolved rhyme, an odd line count, or enjambment into the chorus)
 - Makes the listener LEAN FORWARD
 
 ### Step 12 -- Write Verse 1
 
-4-8 lines that SET UP the chorus.
+Usually 4-8 lines (roughly 8-16 bars at ~2 bars per line) that SET UP the chorus. [Tier 2]
 - Establish the situation/character/world
 - Show don't tell (imagery, physical, sensory)
-- Target 7-12 syllables per line [Tier 2]
+- Target 7-12 syllables per line [Tier 2] (13-15 = review; 16+ = Compression Test)
 - Use em-dashes for breath within lines
 
 ### Step 13 -- Write Verse 2
 
-4-8 lines that ADD NEW INFORMATION. [Tier 2]
+Usually 4-8 lines (roughly 8-16 bars) that ADD NEW INFORMATION. [Tier 2]
 - Usually should not restate V1 (unless reiteration is part of the form -- blues, hymnal, chant)
 - Deepens, complicates, or progresses the narrative
 - New images, new details, new perspective
@@ -208,8 +222,9 @@ This is your destination. Write it before anything else.
 
 ### Step 14 -- Write the Bridge (The Turn)
 
-3-6 lines that CREATE CONTRAST or CHANGE THE MEANING. [Tier 2]
+Write 3-6 lines (up to 8 when the turn needs it) that CREATE CONTRAST or CHANGE THE MEANING. [Tier 2]
 - Often works best when it reveals something new
+- Usually an unstable/open section (unresolved rhyme, changed line lengths) so the final chorus can resolve it
 - Can make the final chorus hit differently
 - Strip the production here (contrast)
 - The strongest single line often lives here
@@ -235,16 +250,21 @@ Same structure as Chorus 1 but:
 ### Step 17 -- Prosody Audit
 
 Go line by line:
-- [ ] Lines target 7-12 syllables? Any over ~12-15 checked for stress density and singability at tempo? [Tier 2]
-- [ ] Stressed syllables on strong beats?
+- [ ] Lines target 7-12 syllables? Lines of 13-15 checked for stress density and singability at tempo? Lines of 16+ put through the Compression Test? [Tier 2]
+- [ ] Stressed syllables on the strong beats of the METER? (In square 4/4 that usually means beats 1 and 3. Backbeat and syncopated styles push stresses onto anticipations or onto 2 and 4. In 3/4 and 6/8 it's the downbeat of each group. Pickups carry unstressed syllables before the bar.)
 - [ ] Open vowels on any sustained notes?
 - [ ] No stuffed phrases (3+ long words crammed)?
-- [ ] No weak terminal words (the, of, to, in)?
-- [ ] No reversed stresses (weak word on strong beat)?
+- [ ] Line-end function words (the, a, of, to, in, for, it, is, was) flagged ONLY when unstressed and on a held note? Sung stressed they are fine ("that's the way it IS")
+- [ ] Enjambment deliberate? It is a tool for forward motion/instability, not an error. Just keep real breath points
+- [ ] No reversed stresses (weak syllable or function word on a strong beat, content word on a weak one)?
+- [ ] Rhyme types and section stability match the plan from Step 4? (closed where it should resolve, open where it should push forward)
+
+**Deterministic aid (optional):** `python3 tools/lyric-lint.py songs/my_song.md` prints a per-line syllable / stress / rhyme-type / rhyme-scheme / section-stability readout. Run `pip install pronouncing` first for dictionary-accurate syllables and rhymes; without it a heuristic fallback runs. Rhyme detail: `references/RHYME_AND_LYRIC_CRAFT.md`.
 
 ### Step 18 -- Structure Check
 
-- [ ] Hook signal within first 5-30s of first vocal? [Tier 2]
+- [ ] Hook signal within ~5-30s of the first sung word (genre-dependent)? [Tier 2]
+- [ ] If commercial: full chorus by ~45-60s of track time? [Tier 2]
 - [ ] V2 adds new information or a new angle? [Tier 2]
 - [ ] Bridge creates contrast or a turn? [Tier 2]
 - [ ] Total lyrics estimatable under 5000 chars?
@@ -254,21 +274,21 @@ Go line by line:
 
 | Gate | Rule |
 |---|---|
-| Syllable check | [Tier 2] Target 7-12 syllables per line; lines exceeding ~12-15 should be checked for stress density and singability at tempo |
-| Hook timing | [Tier 2] Provide a compelling hook signal within the first 5-30 seconds of first sung vocal. Full chorus timing is genre-dependent. |
+| Syllable check | [Tier 2] Target 7-12 syllables per line; 13-15 = review (stress density and singability at tempo); 16+ = apply the Compression Test (or justify the line as intentional -- Tenet 1) |
 | V2 novelty | [Tier 2] V2 usually adds new information or a new angle (unless reiteration is part of the form's design -- blues, hymnal, chant) |
 | Bridge turn | [Tier 2] A bridge often works best when it creates contrast or a turn -- semantic, musical, textural, or energetic |
 | Hook memorability | Hook passes "would someone text this?" test |
 | Word economy | Every word earns its place -- no filler |
-| Rhyme scheme | [Tier 2] ABCB is often useful for a conversational feel -- one common option, not a universal default |
-| Rhyme quality | Near/slant rhymes preferred over forced perfect |
-| 15-second rule | [Tier 2] Hook signal arrives within first 5-30s of vocals (genre-dependent; pop avg 39s to full chorus, hip-hop 30s) |
+| Rhyme scheme | [Tier 2] No universal default. Chosen per section for the stability intended: stable/closed (e.g., AABB, ABAB) for choruses and resolutions, unstable/open for pre-choruses and bridges. ABCB (XAXA) is a common conversational option with less closure |
+| Rhyme quality | [Tier 2] Prefer the strongest rhyme that does not bend meaning or syntax. Use perfect/family rhymes for closure (title lines, chorus resolutions) and looser rhymes (assonance, consonance) for motion. Never force syntax for a rhyme. Schools differ here: perfect-rhyme purism (standards/Broadway tradition, argued by Jimmy Webb in *Tunesmith*) vs Pattison's family/slant ladder. See `references/RHYME_AND_LYRIC_CRAFT.md` |
+| Hook timing | [Tier 2] Hook signal within ~5-30s of the first SUNG word, genre-dependent (pop earlier; cinematic/progressive later) |
+| Chorus arrival | [Tier 2] Separate metric: in pitch-ready commercial songs the full chorus typically arrives by ~45-60s of track time (pop average ~39s) |
 
 ### The Compression Test [Tier 2: Professional heuristic]
 
-When a line exceeds normal singable density (triggered at >15 syllables):
+When a line exceeds normal singable density (triggered at 16+ syllables, i.e. >15; lines of 13-15 get a review first):
 
-1. Write a compressed version (<=12 syllables) attempting the same emotional impact
+1. Write a compressed version (inside the 7-12 target) attempting the same emotional impact
 2. Compare:
    - **COMPRESSED HITS HARDER** -> use it (discipline served emotion)
    - **COMPRESSED HITS EQUALLY** -> use it (same impact, better flow)
@@ -290,6 +310,12 @@ When a line exceeds normal singable density (triggered at >15 syllables):
 
 ## Phase 4: Formatting (Suno-Ready Output)
 
+> **Suno version:** V6 (v6 / v6-wild / v6-mini) is the current default. Anything labelled
+> "v5.5-era (legacy) -- re-validate on V6" is kept for older renders and archived examples. It is
+> not a current rule. V6 tag status: working model (Sept 2026, user-confirmed); log render evidence in
+> the `references/V6_TAG_DISCOVERY.md` results log. Tag dictionary: `references/V6_TAG_REFERENCE.md`.
+> Full platform procedure: `core/methodology/suno-optimization.md`.
+
 ### Step 20 -- Assemble Style Prompt
 
 Write comma-separated descriptors following the 7-Dimension Formula:
@@ -299,10 +325,10 @@ Genre, Tempo, Mood, Instruments, Vocal Style, Era/Production, Space/Direction
 
 Rules:
 - Genre MUST be first (anchors everything else)
-- 5-8 tags total (past 10, signals conflict)
+- Keep descriptors focused and non-contradictory. v5.5-era (legacy) -- re-validate on V6: 5-8 tags total, past 10 signals conflict [Tier 3]
 - Must be <=1000 characters
-- **Tempo:** Use Italian tempo marking ("Adagio", "Andante", "Allegro") instead of or alongside raw BPM — confirmed more reliable for Suno tempo control
-- Era anchoring ("early 2000s garage rock") outperforms genre labels ("indie rock")
+- **Tempo:** state the BPM. v5.5-era (legacy) -- re-validate on V6: Italian tempo markings ("Adagio", "Andante", "Allegro") were reported as more reliable than raw BPM for tempo control [Tier 3]. On V6 an explicit BPM is fine and the Italian marking is optional
+- v5.5-era (legacy) -- re-validate on V6: era anchoring ("early 2000s garage rock") was found to outperform bare genre labels ("indie rock") [Tier 3]
 - 70/30 genre combination rule for fusion (or explicit percentage: "Genre A (80%), Genre B (20%)")
 - **Artist Reference Conversion:** Any artist name used as creative shorthand (e.g., "in the style of Radiohead") must be converted to descriptive production language before writing the Style Prompt. Translate the artist's sound into genre + era + instruments + production characteristics + vocal style + structural habits. No artist names in final output.
 
@@ -319,25 +345,33 @@ Rules:
 - Use **minimum-level** (~20 chars each) when budget is tight
 - Budget: at compressed level, 3-4 instruments fit comfortably in a Style Prompt
 - Example: "squelching acid bass, warm analog pad, crisp electronic drums" instead of "TB-303, Juno-106, TR-909"
+- Instrument names that became category names (Rhodes, Hammond organ, Wurlitzer) are acceptable tags. Model numbers and brand-model gear (TB-303, TR-808, Juno-60, DX7, Prophet-5, Minimoog, Telecaster, Les Paul, Marshall stack, Vox AC30) should be translated to sound descriptors
 - Full vocabulary: `references/INSTRUMENT_SOUND_REFERENCE.md`
 
 ### Step 21 -- Write Exclusions
 
+In the song file, put exclusions in their own section:
 ```
-[Exclusions: -item, -item, -item]
+## EXCLUSIONS:
+trap drums, beatboxing, vocal hums, bright synths
 ```
-Place in dedicated Exclude field (NOT in Style or Lyrics).
+- Paste into Suno's dedicated **Exclude** field (NOT into Style or Lyrics)
+- Plain comma-separated text with NO dash prefix (neither ASCII "-" nor the non-breaking hyphen "‑")
+- Legacy: an `[Exclusions: ...]` line inside the Style section is still parsed and is never counted toward Style characters. Prefer the `## EXCLUSIONS:` section
+- Dash-prefixed negatives (`-item`) were a v5.5-era technique for negation INSIDE the Style field. Do not use them in the Exclude field
 
-### Step 22 -- Add Global Meta-Tags
+### Step 22 -- Global Meta-Tags (v5.5-era, legacy -- not used for V6)
 
-At top of Lyrics field:
+**V6: skip this step.** V6 lyrics carry no global tags. Arrangement goes in per-section tags (Step 24) and identity goes in the Style field.
+
+v5.5-era (legacy) -- re-validate on V6: older renders placed these at the top of the Lyrics field. They are not required for V6:
 ```
 [track: genre: X, mood: X, length: XXX]
 [control: no-repeat, dynamic transitions]
 [sequence: intro, verse, pre-chorus, chorus, ...]
 ```
 
-Length = runtime in seconds. Use the formula from Step 8.
+(Legacy `length` = runtime in seconds, from the Step 8 formula.)
 
 ### Step 23 -- Add Direction Blocks
 
@@ -351,12 +385,14 @@ These survive regenerations and keep Suno consistent across iterations.
 ### Step 24 -- Format Lyrics with Section Tags
 
 - Tags on their own line (never same line as lyrics)
-- Use pipe notation where appropriate: `[chorus | powerful, wide, choir swell]`
-- Add dynamics tags at key moments (`[build]`, `[silence]`, `[modulation]`)
-- Add `[end]` at bottom
+- Section tags: `[Intro]`, `[Verse 1]`, `[Pre-Chorus]`, `[Chorus]`, `[Bridge]`, `[Outro]`, ...
+- 2-4 V6 event tags per section (not per line): `[Instrument: X In]` / `[Instrument: X Out]`, `[Dynamic: ...]`, `[Vocal: ...]` or `[Male lead, inline adjective]`, `[Transition: ...]`, `[Key Change: ...]`
+- End with `[End]` (v5.5 used `[end]`; the validator accepts both)
+- No `[Tag Vocabulary]` block, no v5.5 global tags, no pipe notation
+- v5.5-era (legacy) -- re-validate on V6: compact pipe notation (`[chorus | powerful, wide, choir swell]`) and bare dynamics tags (`[build]`, `[silence]`, `[modulation]`). Use the V6 forms above instead
 - No end punctuation on lyric lines
 - Each line = one melodic phrase = one breath
-- 4-8 lines per section maximum
+- Section lengths [Tier 2]: verses/choruses usually 4-8 lines (roughly 8-16 bars at ~2 bars per line); pre-chorus 2-4; bridge 3-6 (up to 8 when the turn needs it)
 
 ### Step 25 -- Write Production Notes
 
@@ -365,7 +401,7 @@ Include ALL of the following:
 ```
 Production Notes:
 - Key: [Key] -- [reasoning]
-- Tempo: [X] BPM / [Italian marking] -- [justification]
+- Tempo: [X] BPM (Italian marking optional) -- [justification]
 - Groove/Time-Feel: [descriptor -- e.g., straight eighth notes, laid-back shuffle]
 - Time Signature: [4/4 or 3/4 or 6/8]
 - Chord Progression: [Nashville numbers] / [actual chords in key]
@@ -374,20 +410,21 @@ Production Notes:
 - Vocal: [Type + delivery description]
 - Instruments: [listed by prominence]
 - Dynamics: [section-by-section energy with arrows]
-- Hook Type: [Title/Melodic/Rhythmic/Instrumental + placement notes]
-- Rhyme Scheme: [per section with reasoning if unconventional]
+- Hook Type: [Lyric/Title, Melodic, Rhythmic, or Instrumental/Production + placement notes]
+- Rhyme Scheme: [per section, with the stability intent -- e.g. 'Chorus AABB (closed, stable)']
 - Emotional Arc: [one-sentence narrative journey]
 ```
 
 Chord notation shows BOTH Nashville numbers AND actual chords: `i - VI - III - iv (Em - C - G - Am)`
 
-Tempo notation shows BOTH BPM AND Italian marking: `92 BPM (Andante) -- swagger pace`
+Tempo notation shows the BPM. An Italian marking is optional (a v5.5-era preference): `92 BPM (Andante) -- swagger pace`
 
 ### Step 26 -- Final Character Count
 
 - Style Prompt: ___/1000
 - Lyrics field: ___/5000
 - If over: trim (there is no overflow box -- must fit)
+- Deterministic check: `python3 tools/validate-song.py songs/` (character counts, required elements, V6 tag checks, exclusions format; `--strict` makes WARN exit non-zero)
 
 ---
 
@@ -422,7 +459,10 @@ Every finished song file must contain:
 ## STYLE PROMPT:
 [Comma-separated: Genre, BPM, Mood, Instruments, Vocal, Production]
 
-[Exclusions: -item, -item]
+---
+
+## EXCLUSIONS:
+item, item, item
 
 ---
 
@@ -433,13 +473,20 @@ Every finished song file must contain:
 [Production Direction: ...]
 [Vocal Direction: ...]
 
-[track: genre: X, mood: X, length: XXX]
-[control: no-repeat, dynamic transitions]
-[sequence: ...]
+[Intro]
+[Instrument: X In]
 
-[section tags + lyrics with pipe notation]
+[Verse 1]
+[Vocal: Male Lead]
+lyric lines...
 
-[end]
+[Chorus]
+[Dynamic: Full]
+lyric lines...
+
+[section tags + 2-4 V6 tags per section + lyrics]
+
+[End]
 
 ---
 
@@ -458,12 +505,14 @@ Every finished song file must contain:
 
 ---
 
-## SLIDER RECOMMENDATIONS:
+## SLIDER RECOMMENDATIONS: (optional)
 
 - Weirdness: XX%
 - Style Influence: XX%
 - Audio Influence: XX% (if applicable)
 ```
+
+Slider recommendations are OPTIONAL. Include them only if your Suno UI exposes sliders. The values are v5.5-era starting points.
 
 ---
 
@@ -491,9 +540,10 @@ Two primary formulas to understand (do not mix their rules):
 | No thesis before writing | Cannot build without a destination |
 | V2 restates V1 | [Tier 2] Ask "what is NEW?" -- different angle, deeper, progression (unless reiteration is part of the form: blues, hymnal, chant) |
 | Bridge restates chorus | [Tier 2] The bridge often works best when it reveals something the chorus has not said |
-| Lines over 12 syllables | [Tier 2] Check stress density and singability at tempo -- split or trim if the line feels crowded |
-| Hook after 30s | Shorten intro or V1 |
-| Rhyme forcing meaning | Use slant rhyme or restructure |
+| Lines of 13+ syllables | [Tier 2] 13-15: check stress density and singability at tempo, then split or trim if the line feels crowded. 16+: run the Compression Test (Tenet 1 still lets a line that serves the emotion stay) |
+| No hook signal by ~30s of singing | [Tier 2] Shorten intro or V1, or plant an earlier hook signal (genre-dependent: cinematic/progressive can wait longer) |
+| Rhyme forcing meaning or syntax | Use a family/additive rhyme or restructure the line. Never bend syntax for a rhyme (`references/RHYME_AND_LYRIC_CRAFT.md`) |
+| Same stability everywhere | Close the chorus (stable rhyme and line lengths); leave the pre-chorus/bridge open |
 | Mixing hit formulas | Know which formula you are using and stay committed |
 | Generic hooks | Make specific to THIS song's world |
 | Prose crammed into melody | Impose syllable discipline, design breath points |
@@ -598,20 +648,23 @@ Irregular numbers (6:14 vs 6:00) signal authenticity because precise anchors sug
 
 | Scholar/System | Contribution |
 |---|---|
-| **Pat Pattison** (Berklee) | Prosody as relationship between form and content |
-| **Franco Fabbri** | Genre theory -- 5 rules of genre membership |
+| **Pat Pattison** (Berklee) | Prosody as relationship between form and content; rhyme-type ladder; stable/unstable section design (see `references/RHYME_AND_LYRIC_CRAFT.md`) |
+| **Franco Fabbri** (1982, "A theory of musical genres: two applications") | Genre theory -- five TYPES of genre rules (formal & technical; semiotic; behavioural; social & ideological; economical & juridical), whose weight varies by genre |
 | **Philip Tagg** | Musemic analysis -- every sound carries cultural meaning |
-| **Patrik Juslin** | BRECVEMA emotional mechanisms |
-| **Eerola, Friberg & Bresin** (2013) | Emotional cue hierarchy (mode > tempo > register > dynamics > articulation > timbre) |
+| **Patrik Juslin** (2013, *Physics of Life Reviews* 10(3)) | BRECVEMA -- 8 mechanisms of INDUCED (felt) musical emotion |
+| **Eerola, Friberg & Bresin** (2013, *Frontiers in Psychology* 4:487) | PERCEIVED emotion with systematically manipulated cues: mode contributed most overall, then tempo, register, dynamics, articulation, timbre; tempo matters most for arousal. Studied mode (major/minor), not specific keys |
 | **Allan F. Moore** | 4 functional texture layers, soundbox theory, persona |
 | **Nashville/LA tradition** | Chorus-first writing, hook discipline, co-writing craft |
-| **Suno community** (2025-2026) | Era anchoring, genre-first, 5-8 tag sweet spot, slider science |
-| **MasterofSFL** (2026) | Italian tempo markings, higher slider ranges, return tags, meter-as-steering awareness |
+| **Suno community** (2025-2026) | Genre-first; v5.5-era (legacy) findings to re-validate on V6: era anchoring, 5-8 tag sweet spot, slider behaviour [Tier 3] |
+| **MasterofSFL** (2026) | Meter-as-steering awareness; v5.5-era (legacy) findings to re-validate on V6: Italian tempo markings, higher slider ranges, return tags [Tier 3] |
 
 ---
 
 ## References
 
-- `references/SUNO_TAGS_REFERENCE.md` -- Complete tag catalog for Suno formatting
+- `references/RHYME_AND_LYRIC_CRAFT.md` -- Rhyme types, schemes, section stability, meter, singability (the lyric dictionary)
+- `references/V6_TAG_REFERENCE.md` -- V6 tag dictionary (current default)
+- `references/SUNO_TAGS_REFERENCE.md` -- v5.5-era tag catalog (legacy -- re-validate on V6)
 - `references/SUNO_STYLE_GENRE_REFERENCE.md` -- Genre/key/BPM/instrument reference tables
-- `references/CRITIQUE_REFERENCE.md` -- Scoring framework (for self-evaluation)
+- `core/methodology/critique.md` -- Canonical critique rubric (for self-evaluation); companion detail in `references/CRITIQUE_REFERENCE.md`
+- Tools: `python3 tools/validate-song.py songs/` (format, character counts, required elements) and `python3 tools/lyric-lint.py songs/my_song.md` (prosody/rhyme readout)

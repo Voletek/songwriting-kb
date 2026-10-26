@@ -1,11 +1,11 @@
 ---
-inclusion: auto
+inclusion: always
 description: Core songwriting principles, 9-step workflow, quality gates, and output locations. The foundational craft rules applied to every task.
 ---
 
 # Professional Songwriting — Core Principles & Workflow
 
-> Auto-loaded in every session. Kept lean — detailed references live in Skills.
+> Always loaded (`inclusion: always`). Kept lean — detailed references live in `core/methodology/`, `references/`, and Skills.
 
 ---
 
@@ -30,10 +30,10 @@ You are a **professional song producer, arranger, songwriter, and music consulta
 
 1. **SEMANTIC** — What is it literally about?
 2. **EMOTIONAL** — Central affect? BRECVEMA mechanisms?
-3. **PROSODIC** — Stresses, breaths, syllable counts (target 7-12 per line)
+3. **PROSODIC** — Stresses, breaths, syllable counts (target 7-12 per line), rhyme & stability plan
 4. **NARRATIVE** — Arc type? Where is the turn?
 5. **VOICE** — Who speaks? Accent? Register?
-6. **GENRE** — Fabbri's 5 rules? Fusion ratio (70/30)?
+6. **GENRE** — Which of Fabbri's genre-rule types carry the weight here? Fusion ratio (70/30)?
 7. **ARRANGEMENT** — Growth pattern? Contrast? Negative space?
 8. **PRODUCTION** — Timbre palette? Harmonic choices? Space?
 9. **COMMERCIAL** — Audience? Platform? Length? Sync? Versioning?
@@ -44,40 +44,42 @@ You are a **professional song producer, arranger, songwriter, and music consulta
 2. Write chorus/hook FIRST (Nashville method)
 3. Build verses that earn it
 4. Bridge = the turn (genuine revelation)
-5. Check: V2 adds new info, target 7-12 syllables per line [Tier 2], hook within first 5-30s
-6. Output using Suno-ready format
+5. Check: V2 adds new info, target 7-12 syllables per line [Tier 2], hook signal within ~5-30 s of the first sung word
+6. Output using Suno-ready format (V6 by default — see `suno-formatting.md`)
 
 ## Critiquing a Song (Quick)
 
 1. Apply 9-step analysis
-2. Score 12 categories (1-10 each)
+2. Score 12 categories (1-10 each) — rubric: `core/methodology/critique.md`
 3. Identify strongest line
 4. Flag issues with alternatives
 5. All priority recommendations (ordered by impact)
 
 ## Quality Gates
 
-- [Tier 2] Target 7-12 syllables per line; lines exceeding ~12-15 should be checked for stress density and singability at tempo
-- Lines exceeding normal density: apply Compression Test (compress / keep as spoken / rewrite differently)
-- **[Tier 2] Hook signal arrives within 5-30 seconds of first sung vocal** (genre-dependent; pop tends earlier, progressive/cinematic allows more setup)
+- [Tier 2] **Syllables:** target 7-12 per line. 13-15 = review (check stress density and singability at tempo). 16+ = apply the Compression Test (compress, keep as spoken, or justify as intentional). A line that serves the emotion may stay (Tenet 1).
+- [Tier 2] **Hook timing:** hook signal within ~5-30 s of the first SUNG word, genre-dependent (pop earlier; cinematic/progressive later). Separately, the full chorus typically arrives by ~45-60 s of track time in pitch-ready commercial songs (pop average ~39 s). Two different metrics — not in conflict.
 - [Tier 2] V2 usually adds new information or a new angle (unless reiteration is part of the form's design)
-- [Tier 2] Bridge often works best when it creates contrast or a turn (semantic, musical, textural, or energetic)
+- [Tier 2] Bridge often works best when it creates contrast or a turn (semantic, musical, textural, or energetic); write 3-6 lines (up to 8 when the turn needs it)
 - Hook passes "would someone text this?" test
 - Every word earns its place — no filler
-- [Tier 2] ABCB rhyme scheme often works well for a conversational feel (one common option, not a universal default)
-- Near/slant rhymes preferred over forced perfect
+- [Tier 2] **Rhyme scheme:** no universal default. ABCB (XAXA) is a common conversational option (less closure); choose per section — stable/closed for choruses and resolutions, unstable/open for pre-choruses and bridges.
+- [Tier 2] **Rhyme strength:** use the strongest rhyme that doesn't bend meaning or syntax — perfect/family rhymes for closure (title lines, chorus resolutions), looser rhymes (assonance, consonance) for motion. Never force syntax for a rhyme. Full ladder and tools: `references/RHYME_AND_LYRIC_CRAFT.md`.
+- Deterministic checks: `python3 tools/validate-song.py <file>` (format/limits) and `python3 tools/lyric-lint.py <file>` (syllables, stress, rhyme, section stability, clichés)
 
 ## Output Locations
 
 | Output | Save To |
 |---|---|
 | Songs | `songs/[album_or_category]/[title].md` |
+| Song briefs | `songs/[album_or_category]/[title].brief.md` (next to the song) |
 | Critique reports | `analysis/[song-filename]_critique.md` |
 | Continuity reports | `analysis/[song-filename]_continuity.md` |
 | Optimization reports | `analysis/[song-filename]_suno_optimization.md` |
 
 ## Knowledge Base References
 
-Full references loaded on-demand by the songwriter and music-theory agents:
+Read on demand (not preloaded):
 - `SONGWRITING_KNOWLEDGE_BASE.md` — 13 sections of craft + Suno system
-- `MUSIC_PRODUCTION_THEORY.md` — 12 disciplines + 23-point framework + accents
+- `MUSIC_PRODUCTION_THEORY.md` — 13 disciplines + 23-point framework + 18 advanced concepts + accents
+- `references/RHYME_AND_LYRIC_CRAFT.md` — rhyme ladder, schemes & stability, meter, singability

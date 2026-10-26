@@ -1,16 +1,18 @@
 # Ghost In The System — Polished (Album Track 1)
 
+<!-- song-format: legacy (archived example that predates or sits outside the current format standard; see examples/songs/README.md) -->
+
 > Minor tightening only. This song is already strong — it's your hit formula applied to
 > the concept album opener. Changes: sharpened a few lines that were slightly generic,
 > tightened the bridge (removed weaker middle lines), made the chorus progression
-> from C1→C2→FC more distinct, added [Title:] tag and [Exclusions:] line.
+> from C1→C2→FC more distinct, added [Title:] tag and [Exclusions: ] line.
 
 ---
 
 ## STYLE PROMPT:
 Dark cinematic cyber alternative, emotional baritone male vocal with tenor emotional lift, vocal range A2–B4, key F# minor, tempo 78 BPM, atmospheric synth textures, industrial percussion, cinematic electronic rock, deep sub bass, emotional burnout themes, cybersecurity imagery, progressive signal degradation arc, glitch effects increasing through each chorus, futuristic but human atmosphere, raw intimate delivery, cinematic emotional chorus, modern digital isolation aesthetic, no autotune feel
 
-[Exclusions: ‑autotune, ‑vocal hums, ‑beatboxing, ‑rap, ‑scream vocals, ‑bright synths, ‑upbeat energy, ‑trap drums, ‑cheerful melodies]
+[Exclusions: autotune, vocal hums, beatboxing, rap, scream vocals, bright synths, upbeat energy, trap drums, cheerful melodies]
 
 ---
 
@@ -186,6 +188,8 @@ Soul corrupted
 [Outro - Spoken Robotic Voice]
 Prime Directive Accepted
 
+[end]
+
 ---
 
 ## PRODUCTION NOTES:
@@ -213,4 +217,4 @@ Prime Directive Accepted
 3. **V2 line 5-6:** "Every conversation feels delayed / Every memory starts to fade" → "Every conversation lands a half-second late / Every memory loads then corrupts at the gate" (technical specificity — latency, corruption, gates)
 4. **V2 line 7-8:** "I hear my own voice like corrupted sound / Talking to people while I slowly drown" → "I hear my own voice like a signal bouncing wrong / Talking to people while I slowly come undone" (avoided "drown" cliché, "signal bouncing wrong" is more original and on-theme)
 5. **Bridge trimmed:** Removed "Vole-tek in the static / Fading in and out" — redundant with chorus. Kept the 4 strongest lines + the devastating closer.
-6. **Added [Title:] and [Exclusions:] per format standard**
+6. **Added [Title:] and [Exclusions: ] per format standard**

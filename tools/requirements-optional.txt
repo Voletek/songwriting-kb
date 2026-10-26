@@ -1,0 +1,3 @@
+# Optional: dictionary-accurate syllables, stresses and rhyme types for tools/lyric-lint.py
+# (CMU Pronouncing Dictionary, BSD-licensed). Every tool runs without it (heuristic fallback).
+pronouncing>=0.2

@@ -50,12 +50,14 @@ New track count: [X]
 
 ### Step 3 — Update the Track Registry
 
-Add new rows to the Album Blueprint's track table:
+Add new rows to the Album Blueprint's track table (include the Persona/voice column if your blueprint has one):
 ```
-| # | Working Title | Key | BPM | Core Emotion | Sonic Palette |
-|---|---|---|---|---|---|
-| [new] | [title] | [key] | [bpm] | [emotion] | [palette] |
+| # | Working Title | Key | BPM | Core Emotion | Sonic Palette | Persona |
+|---|---|---|---|---|---|---|
+| [new] | [title] | [key] | [bpm] | [emotion] | [palette] | [voice] |
 ```
+
+*Worked example:* the Fractured Shadows blueprint registers Act 3's first track (T18 Edge of the Rift) in an "ACT 3 — In Progress" table before any further Act 3 songs are written.
 
 **Verify:**
 - [ ] No key duplicates without intentional reason
@@ -145,7 +147,7 @@ Map the new keys against the existing harmonic architecture:
 
 ### Step 9 — Update the Album Blueprint
 
-Open `references/[ALBUM]_BLUEPRINT.md` and update:
+Open your blueprint — `references/[ALBUM]_BLUEPRINT.md` (or `references/YOUR_ALBUM_BLUEPRINT.md`); the bundled examples are `examples/albums/fractured-shadows/BLUEPRINT.md` and `examples/albums/keeper-of-the-light/BLUEPRINT.md` — and update:
 - [ ] Track Registry (new rows)
 - [ ] Sonic Palette Evolution (extended)
 - [ ] Key Relationships (new entries)
@@ -159,6 +161,7 @@ Open `references/[ALBUM]_BLUEPRINT.md` and update:
 
 Open `.kiro/steering/[album].md` and update:
 - [ ] Track count
+- [ ] `fileMatchPattern` (if the extension adds a new song folder, e.g. `songs/<album>_act3/`)
 - [ ] Rules (if changed)
 - [ ] Palette table (extended)
 - [ ] Character voices (if new ones)

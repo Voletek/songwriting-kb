@@ -1,28 +1,29 @@
 ---
 inclusion: fileMatch
-fileMatchPattern: "songs/album_act*/**"
+fileMatchPattern: "songs/fractured_shadows*/**"
 ---
 
 # Fractured Shadows — Album Continuity Rules
 
-> Conditional steering — loads when working on files matching songs/album_act*/**
-> Full blueprint: references/FRACTURED_SHADOWS_BLUEPRINT.md
-> System: Suno v5.5 (Personas, Stems, Era Tags, Parenthetical Layers)
+> Conditional steering — loads when working on files matching `songs/fractured_shadows*/**`
+> (copy to `.kiro/steering/fractured-shadows.md` and adjust `fileMatchPattern` to your song folders).
+> Full blueprint: `examples/albums/fractured-shadows/BLUEPRINT.md`
+> Written for Suno v5.5 (Personas, Stems, Era Tags, Parenthetical Layers) — v5.5-era (legacy); V6 is the current default, re-validate v5.5 mechanics on V6.
 
 ---
 
 ## Active Album
 
-**Fractured Shadows** — 17 tracks (Act 1: T1-7, Act 2: T8-17)
+**Fractured Shadows** — 17 tracks in Acts 1-2 (Act 1: T1-7, Act 2: T8-17, complete) + Act 3 in progress (T18 Edge of the Rift) = 18 tracks so far
 
 ## ALBUM EXTENSION PROTOCOL
 
-**⚠️ STOP — Before writing ANY track outside the current registry (T1-17):**
-1. Update `references/FRACTURED_SHADOWS_BLUEPRINT.md` with new track registry (including Persona assignment)
+**⚠️ STOP — Before writing ANY track outside the current registry (T1-18):**
+1. Update `examples/albums/fractured-shadows/BLUEPRINT.md` (or your copy of it) with new track registry (including Persona assignment)
 2. Extend the sonic palette evolution map
 3. Define which existing rules carry forward vs which are act-specific
 4. Get the blueprint update committed BEFORE writing new songs
-5. Use SOP 05 — supports sequels (T18+), prequels (P01+), and insertions (T3a+)
+5. Use SOP 05 — supports sequels (T19+), prequels (P01+), and insertions (T3a+)
 
 Failure to do this creates cascading continuity errors that compound with each new track.
 
@@ -45,7 +46,7 @@ Failure to do this creates cascading continuity errors that compound with each n
 
 ## Sonic Palette by Track Range
 
-| Tracks | Allowed Palette | Era Tag |
+| Tracks | Allowed Palette | Era Tag (v5.5-era, legacy) |
 |---|---|---|
 | 1-5 | Industrial, electronic, cold synths, glitch | NO decade tags — "modern cinematic, cold digital, clinical" |
 | 6-7 | Chaos → cave ambient (transition) | None |
@@ -56,6 +57,7 @@ Failure to do this creates cascading continuity errors that compound with each n
 | 15 | Orchestral grief ballad | None |
 | 16 | Warm indie folk (D major) | Optional: "2010s indie folk warmth" |
 | 17 | Folk rock → full orchestra + choir (Am→C major) | None |
+| 18 (Act 3, in progress) | Cinematic folk-rock: driving acoustic, solo cello, orchestral strings, sparse piano, organic drums — no synths | None |
 
 ## Character Voices (Quick)
 
@@ -74,4 +76,4 @@ Failure to do this creates cascading continuity errors that compound with each n
 
 ## Reference
 
-#[[file:references/FRACTURED_SHADOWS_BLUEPRINT.md]]
+#[[file:examples/albums/fractured-shadows/BLUEPRINT.md]]

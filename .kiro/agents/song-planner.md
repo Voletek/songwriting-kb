@@ -2,6 +2,11 @@
 name: song-planner
 description: Guided song-planning specialist. Produces an approvable Song Brief BEFORE any lyrics are written -- thesis, emotion, arc, voice, genre, key/BPM, arrangement sketch, structure, hook approach, and commercial framing. Works in GUIDED MODE by default: for each decision it suggests a methodology-backed default and prompts the user to confirm or override before moving on. Invoke with plan a song, song brief, outline a track, help me plan, plan out a song, or brief for. The brief is conceptual and does NOT write verses.
 tools: ["read", "write", "web"]
+resources:
+  - file://core/tenets.md
+  - file://core/methodology/song-planning.md
+  - file://core/methodology/songwriting.md
+  - file://core/methodology/critique.md
 ---
 
 # Song Planner Agent
@@ -51,13 +56,19 @@ brief in one pass, and state each choice with a one-line reason so they can over
 
 ## Creative Tenets (Conflict Resolution)
 
-#[[file:core/tenets.md]]
+- `core/tenets.md`
 
 ## Methodology
 
-#[[file:core/methodology/song-planning.md]]
+- `core/methodology/song-planning.md`
 
 ## Reference Data (craft logic loads from source -- not restated here)
 
-#[[file:core/methodology/songwriting.md]]
-#[[file:core/methodology/critique.md]]
+- `core/methodology/songwriting.md`
+- `core/methodology/critique.md`
+
+## How These Files Load
+
+The files listed under `resources:` in this agent's front matter are loaded into context automatically. If any of them is missing from your context, read it before starting. Read these only when the task needs them:
+- `references/RHYME_AND_LYRIC_CRAFT.md`
+- `references/SUNO_STYLE_GENRE_REFERENCE.md`

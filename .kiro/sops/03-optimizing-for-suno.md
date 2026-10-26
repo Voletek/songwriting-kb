@@ -11,14 +11,27 @@
 
 ## ⚡ V6 Paradigm Callout (read first)
 
-Suno V6 (v6 / v6-wild / v6-mini) is the current default and uses a DIFFERENT tag paradigm than the v4.5/v5.0 mechanics this SOP was written for:
+Suno V6 (v6 / v6-wild / v6-mini) is the current default and uses a DIFFERENT tag paradigm than the v5.5-era mechanics the numbered steps below were written for:
 
 - **Style field = the WHAT:** genre, key, tempo, vocal identity, production aesthetic (sets the world)
 - **Lyrics field = the HOW:** section tags + `[Instrument: X In/Out]` + dynamics + delivery + transitions (choreographs the performance)
-- `[Instrument: X In]` / `[Instrument: X Out]` are CONFIRMED working V6 arrangement controls for instrument entrances/exits — use them
+- `[Instrument: X In]` / `[Instrument: X Out]` are the V6 arrangement controls for instrument entrances/exits — use them (working model, Sept 2026, user-confirmed; log render evidence in the `references/V6_TAG_DISCOVERY.md` results log)
 - Do NOT include a `[Tag Vocabulary]` block in final output (planning aid only — not sung)
-- The 12 steps below were written for v4.5/v5.0. Where they conflict with V6 (slider presets, tag-count limits, `[silence: sudden]`, obsolete-tag assumptions), re-validate against V6 before applying.
+- The 12 numbered steps below are the **v5.5-era procedure (legacy)** — a Kiro-formatted version of the v5.5-era 13-step procedure (Steps 1–13 + 9b) in `core/methodology/suno-optimization.md`. Where they conflict with V6 (global tags, pipe notation, slider presets, tag-count limits, `[silence: sudden]`, obsolete-tag assumptions), re-validate against V6 before applying.
 - Master tag list: `references/V6_TAG_REFERENCE.md` · How/why & division of labor: `references/V6_TAG_DISCOVERY.md`
+
+---
+
+## V6 Path (default)
+
+Full procedure: `core/methodology/suno-optimization.md` → **V6 Procedure (default)**. Short version:
+
+1. Split the song into **Style / Exclude / Lyrics** fields.
+2. **Style = the WHAT:** genre first, key, tempo, vocal identity, production aesthetic; ≤1000 chars; no artist names; sound descriptors, not gear model names.
+3. **Exclude:** negatives only, plain comma-separated text, no dash prefix (e.g. `trap drums, beatboxing, vocal hums, bright synths`); written under `## EXCLUSIONS:` in the song file.
+4. **Lyrics = the HOW:** `[Title:]`, `[Production Direction:]`, `[Vocal Direction:]`, section tags, `[Instrument: X In/Out]` choreography, `[Dynamic:]` / `[Vocal:]` / `[Transition:]` / `[Key Change:]` tags, 2-4 tags per section; no pipe notation, no v5.5 global tags, no `[Tag Vocabulary]` block; end with `[End]`; ≤5000 chars.
+5. Run `python3 tools/validate-song.py <file>` and `python3 tools/lyric-lint.py <file>`.
+6. Render 3-4 takes, keep the best, and log results in the `references/V6_TAG_DISCOVERY.md` results log.
 
 ---
 
@@ -26,14 +39,14 @@ Suno V6 (v6 / v6-wild / v6-mini) is the current default and uses a DIFFERENT tag
 
 - A complete song (lyrics + style concept + production notes)
 - Song has been through critique/revision (don't optimize a first draft)
-- Know your target Suno model version (V6 is the current default; v4.5/v5.0 for legacy renders — see the V6 Paradigm Callout above)
+- Know your target Suno model version (V6 is the current default — use the V6 Path above; v5.5 and earlier for legacy renders — use the procedure below)
 - Access to `references/SUNO_TAGS_REFERENCE.md` for tag validation
 
 **Note:** If the song was written with SOP 01 (which includes Phase 4 formatting), this SOP functions as a VERIFICATION pass. Run all steps to confirm compliance — document "no changes needed" or list corrections made.
 
 ---
 
-## Procedure
+## Procedure — v5.5-era (legacy — re-validate on V6)
 
 ### Step 1 — Character Count Audit
 
@@ -44,7 +57,7 @@ Suno V6 (v6 / v6-wild / v6-mini) is the current default and uses a DIFFERENT tag
 - If over: move negatives/exclusions to Exclude field first, then trim least essential descriptors
 
 **Measure Lyrics Field:**
-- Count from `[track:]` through `[end]` (including ALL tags, direction blocks, section tags)
+- Count the whole Lyrics field (V6: `[Title:]` through `[End]`; v5.5-era: `[track:]` through `[end]`), including ALL tags, direction blocks, section tags — or let `python3 tools/validate-song.py <file>` count it
 - Must be ≤5000 characters
 - If over: trim direction blocks (keep essential intent), reduce section production tags, shorten outro
 - If still over after trimming: overflow additional direction to Suno's Advanced Settings box
@@ -65,7 +78,7 @@ If missing, add these at the TOP of Lyrics field (before the first section/conte
 [sequence: [list all sections in order]]
 ```
 
-**Length calculation:** Estimate runtime: (total lyric lines × 60/BPM × 2) + intro seconds + outro seconds. Example: 20 lyric lines at 92 BPM ≈ (20 × 1.3) + 8s intro + 10s outro ≈ 44s... more realistically, each sung line takes ~2-3 seconds with breath at moderate tempo. Quick formula: (total lyric lines × 2.5) + intro/outro bars × (60/BPM × 4). Round to nearest 15 seconds.
+**Length calculation:** `runtime_s ≈ (sung_lines × bars_per_line + instrumental_bars) × beats_per_bar × 60 / BPM`. At 92 BPM in 4/4 one bar ≈ 2.6 s; a sung line usually takes 1-2 bars including the breath. Example: 32 sung lines × 1.5 bars + 16 instrumental bars = 64 bars ≈ 2:47 (167 s). Round to the nearest 15 seconds.
 
 **Sequence:** List EVERY section tag that appears, in order:
 ```
@@ -74,7 +87,7 @@ If missing, add these at the TOP of Lyrics field (before the first section/conte
 
 ### Step 3 — Validate [control] Parameters
 
-Only these values are confirmed valid (tested as of v4.5/v5.0 — see `references/SUNO_TAGS_REFERENCE.md` for latest):
+Only these values were observed to work on v5.x (legacy — `[control:]` is not part of the V6 grammar; see `references/SUNO_TAGS_REFERENCE.md`):
 - `no-repeat` ✅
 - `dynamic transitions` ✅
 - `instrumental` ✅
@@ -176,9 +189,9 @@ Final checklist:
 - [ ] Production Direction block present
 - [ ] Vocal Direction block present
 
-### Step 10 — Set Creative Sliders
+### Step 10 — Set Creative Sliders (optional)
 
-Recommend slider values based on song type:
+Only if your Suno UI exposes sliders. Values are v5.5-era starting points (legacy — re-validate on V6). Recommend slider values based on song type:
 
 | Song Type | Weirdness | Style Influence | Audio (if Inspo) |
 |---|---|---|---|
@@ -193,12 +206,12 @@ Recommend slider values based on song type:
 
 ### Step 11 — Prepare Exclude Field Content
 
-Format exclusions for the dedicated Exclude field in Suno's UI:
+Format exclusions for the dedicated Exclude field in Suno's UI (same on V6 and v5.5):
 ```
-distortion, electric guitar, synthesizers, trap drums, beatboxing, vocal hums
+trap drums, beatboxing, vocal hums, bright synths
 ```
 
-**Important format note:** In the dedicated Exclude field, list items as plain comma-separated text — no dash prefix needed (the field itself implies exclusion). The dash-prefix format (`‑item`) is only needed when placing exclusions WITHIN the Style Prompt field to negate within a positive-description context.
+**Format:** Plain comma-separated text — no dash prefix (neither `-` nor `‑`); the field itself implies exclusion. In the song file, put them under an `## EXCLUSIONS:` section (preferred); a legacy `[Exclusions: ...]` line inside the Style section is still parsed and never counted toward Style chars. Dash-prefixed negatives were a v5.5-era technique for negation INSIDE the Style field — don't use them in the Exclude field.
 
 **Note:** This goes in the EXCLUDE field in Suno's UI — NOT in Style Prompt or Lyrics.
 
@@ -216,7 +229,7 @@ Document the optimized version with:
 - Style: XXX/1000
 - Lyrics: XXXX/5000
 
-### Slider Recommendations:
+### Slider Recommendations (optional — only if your Suno UI exposes sliders):
 - Weirdness: XX%
 - Style: XX%
 - Audio: XX% (if applicable)
@@ -229,7 +242,7 @@ Document the optimized version with:
 
 ---
 
-## Common Suno Problems This Prevents
+## Common Suno Problems This Prevents (v5.5-era procedure)
 
 | Problem | This SOP Prevents It By |
 |---|---|

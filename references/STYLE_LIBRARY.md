@@ -1,5 +1,9 @@
 # Style Prompt Library
 
+> **Personal style library:** these are the author's own tested Style prompts for this catalog, not universal
+> presets. Entries follow the artist-reference conversion rule (`references/SUNO_STYLE_GENRE_REFERENCE.md` §11): no artist names, only descriptive production language.
+> **Exclusions** are not part of these Style blocks: put them in Suno's Exclude field as plain comma-separated text with no dash prefix (e.g. `trap drums, beatboxing, vocal hums, bright synths`). Feel phrases such as "no autotune feel" describe a texture and can stay.
+>
 > A reusable catalog of every style prompt developed for this artist, pulled from the song files.
 > Copy any block directly into Suno's Style field, or adapt as a starting point.
 > See `references/V6_TAG_DISCOVERY.md` for the V6 lyric-tag format that pairs with these.
@@ -42,7 +46,7 @@ Southern gothic stomp-and-holler folk rock; raw male baritenor with Appalachian 
 
 ### Orchestral Post-Rock Ballad (Appalachian)
 ```
-orchestral post-rock ballad with Appalachian textures; male baritenor lead and female alto harmony; piano and cello intro blooming into tremolo-picked guitars, swelling strings and thunderous cinematic drums; quiet-loud dynamics, long builds, wall-of-sound final chorus with a key change lift; sweeping, devastating, hopeful; pristine wide mix, deep reverb, Sigur Ros meets mountain folk
+orchestral post-rock ballad with Appalachian textures; male baritenor lead and female alto harmony; piano and cello intro blooming into tremolo-picked guitars, swelling strings and thunderous cinematic drums; quiet-loud dynamics, long builds, wall-of-sound final chorus with a key change lift; sweeping, devastating, hopeful; pristine wide mix, deep reverb, glacial bowed-guitar post-rock swells meeting mountain folk
 ```
 
 ### Dark Folk-Electronic Hybrid
@@ -52,7 +56,7 @@ dark folk-electronic hybrid; brooding male baritenor with mountain inflection ov
 
 ### Arena Folk Anthem
 ```
-arena folk-rock anthem; commanding male baritenor and powerhouse female alto trading lines; banjo-driven momentum, stadium drums, distorted bass, soaring chamber strings and huge gang-vocal hooks; midtempo build to an explosive double-time final chorus with a key change; triumphant, communal, fist-in-the-air; polished radio-ready mix, Mumford-meets-cinematic scale
+arena folk-rock anthem; commanding male baritenor and powerhouse female alto trading lines; banjo-driven momentum, stadium drums, distorted bass, soaring chamber strings and huge gang-vocal hooks; midtempo build to an explosive double-time final chorus with a key change; triumphant, communal, fist-in-the-air; polished radio-ready mix, foot-stomping banjo-folk energy at cinematic scale
 ```
 
 ### Haunted Chamber-Folk
@@ -195,8 +199,9 @@ Epic cinematic resolution, atmospheric folk rock building to orchestral climax, 
 
 **18 — Edge of the Rift**
 ```
-Cinematic folk-rock, 92 BPM, E minor, weathered male baritone vocal, driving fingerpicked acoustic guitar, solo cello, orchestral strings, grand piano accents, organic room-mic drums, warm bass guitar, epic but intimate, walking-pace journey anthem, wide stereo choruses, close-mic verses, no synths, no electronic elements, fantasy adventure soundtrack energy
+Cinematic folk-rock, 92 BPM, E minor, weathered male baritone vocal, driving fingerpicked acoustic guitar, solo cello, orchestral strings, grand piano accents, organic room-mic drums, warm bass guitar, epic but intimate, walking-pace journey anthem, wide stereo choruses, close-mic verses, fantasy adventure soundtrack energy
 ```
+Exclude: `synths, electronic elements`
 
 ---
 
@@ -204,12 +209,12 @@ Cinematic folk-rock, 92 BPM, E minor, weathered male baritone vocal, driving fin
 
 **Cat Jail** *(comedy indie pop)*
 ```
-Playful indie pop, quirky bedroom pop, light funk groove, conversational male vocal, warm and cheeky delivery, 104 BPM, G major, bright Rhodes keys, fingerpicked nylon guitar, soft bouncy bass, light programmed drums with rim clicks, handclaps on chorus, minimal airy production, catchy and loopable, modern indie vibes, warm but not saccharine, Vulfpeck meets Rex Orange County
+Playful indie pop, quirky bedroom pop, light funk groove, conversational male vocal, warm and cheeky delivery, 104 BPM, G major, bright Rhodes keys, fingerpicked nylon guitar, soft bouncy bass, light programmed drums with rim clicks, handclaps on chorus, minimal airy production, catchy and loopable, modern indie vibes, warm but not saccharine, tight minimalist funk pocket meets soft bedroom-pop crooning
 ```
 
 **Evil Biscuits** *(theatrical villain comedy)*
 ```
-Quirky dark indie pop, theatrical villain energy, playful sinister tone, bouncy dark groove, 102 BPM, E minor, mischievous male vocal with dramatic flair, eerie toy piano, plucked pizzicato strings, bouncy bass, light snappy drums, subtle eerie synth accents, Danny Elfman meets Arctic Monkeys, cinematic but fun, character-driven, catchy hook-first, under 3 minutes
+Quirky dark indie pop, theatrical villain energy, playful sinister tone, bouncy dark groove, 102 BPM, E minor, mischievous male vocal with dramatic flair, eerie toy piano, plucked pizzicato strings, bouncy bass, light snappy drums, subtle eerie synth accents, quirky theatrical orchestral whimsy meets deadpan swaggering indie-rock groove, cinematic but fun, character-driven, catchy hook-first, under 3 minutes
 ```
 
 **Shapes Behind My Eyes** *(solo — dark indie atmospheric)*

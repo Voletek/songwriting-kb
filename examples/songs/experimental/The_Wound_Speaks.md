@@ -133,9 +133,9 @@ Negative space: THIS SONG IS 60% SILENCE. The gaps between phrases are the Rift'
 ---
 
 ## STYLE PROMPT:
-Dark sacred ambient drone, Icelandic post-classical, funeral processional, layered ethereal choir with deep sub-bass drone foundation, bowed metal textures, Tibetan singing bowls, lowest pipe organ register, processed cello harmonics, throat singing undertones, vast cathedral reverb, Bb Phrygian, 56 BPM, 4/4, Arvo Pärt meets Sunn O))) meets Sigur Rós, ancient and wounded atmosphere, extreme patience, non-human voice, cavernous and holy, no percussion until final movement, layered vocal harmonics splitting into overtones
+Dark sacred ambient drone, Icelandic post-classical, funeral processional, layered ethereal choir with deep sub-bass drone foundation, bowed metal textures, Tibetan singing bowls, lowest pipe organ register, processed cello harmonics, throat singing undertones, vast cathedral reverb, Bb Phrygian, 56 BPM, 4/4, slow sacred minimalism over glacial drone-doom weight and Icelandic post-rock shimmer, ancient and wounded atmosphere, extreme patience, non-human voice, cavernous and holy, no percussion until final movement, layered vocal harmonics splitting into overtones
 
-[Exclusions: ‑drums, ‑guitar, ‑bright synths, ‑upbeat energy, ‑trap beats, ‑beatboxing, ‑vocal hums, ‑pop structure, ‑cheerful melodies, ‑fast tempo, ‑rock aggression, ‑electronic percussion, ‑autotune, ‑clean pop vocal, ‑staccato rhythms]
+[Exclusions: drums, guitar, bright synths, upbeat energy, trap beats, beatboxing, vocal hums, pop structure, cheerful melodies, fast tempo, rock aggression, electronic percussion, autotune, clean pop vocal, staccato rhythms]
 
 ---
 
@@ -408,7 +408,7 @@ Why it works: Physical, visceral, specific. You can FEEL this. It transforms an 
 
 **Recommended generation approach:**
 - Generate 3-4 versions at Weirdness 65-70%
-- If too rhythmic: increase Weirdness to 75%, add "‑any percussion" to exclusions for first pass
+- If too rhythmic: increase Weirdness to 75%, add "any percussion" to exclusions for first pass
 - If voice too clean/human: emphasize "cavernous, ancient, layered harmonics" in vocal direction
 - The drone + singing bowl intro is critical — if Suno skips it, extend intro section notation
 

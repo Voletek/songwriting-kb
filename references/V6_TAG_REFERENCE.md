@@ -2,10 +2,12 @@
 
 > **The complete, de-duplicated V6 lyric-tag vocabulary.** Copy-paste dictionary for building
 > V6 songs. This is the tag catalog; for HOW to use it (division of labor, production template,
-> what's confirmed), see `references/V6_TAG_DISCOVERY.md`. For v5.5-era tags, see
+> what's in the working model), see `references/V6_TAG_DISCOVERY.md`. For v5.5-era (legacy) tags, see
 > `references/SUNO_TAGS_REFERENCE.md`.
 >
-> **Working model (Sept 2026):** treat all tags below as functional per Suno V6 system output.
+> **Status: working model (Sept 2026, user-confirmed); log render evidence in the V6_TAG_DISCOVERY
+> results log.** V6 (v6 / v6-wild / v6-mini) is the current default. The tags below are the operating
+> vocabulary for V6 songs; individual tags graduate as render evidence (date, model, render ID) is logged.
 
 ---
 
@@ -28,7 +30,7 @@
 Intro · Verse · Pre-Chorus · Chorus · Post-Chorus · Bridge · Breakdown · Build · Drop · Instrumental Solo · Interlude · Key Change · Outro · Transition · End
 ```
 
-## INSTRUMENTATION — each takes In / Out for entrance & exit control (CONFIRMED WORKING)
+## INSTRUMENTATION — each takes In / Out for entrance & exit control (working model, Sept 2026, user-confirmed; log render evidence)
 
 ```
 Piano · Felt Piano · Rhodes · Hammond Organ
@@ -158,5 +160,6 @@ section (not per line).
 
 ---
 
-*Living document. Note: v5.5-era tags and this V6 set coexist — use V6 tags for V6 renders.
+*Living document. Note: v5.5-era tags (`references/SUNO_TAGS_REFERENCE.md`) are legacy — re-validate on V6.
+Use this V6 set for V6 renders; do not mix in v5.5 global tags (`[track:]`, `[control:]`, `[sequence:]`) or pipe notation.
 Style prompts that pair with these tags are in `references/STYLE_LIBRARY.md`.*

@@ -10,7 +10,7 @@
 ## STYLE PROMPT:
 Industrial neoclassical cyber-noir, dark cinematic electronica, cold restrained baritone male vocal A2–F4, distant acoustic piano, mechanical industrial percussion, distorted sub bass, cold synth textures, analog static, glitch ambience, emotionally fragmented atmosphere, psychologically unstable and lonely, E minor, 82 BPM, 4/4, restrained production, heavy silence and emotional space, collapsing final chorus
 
-[Exclusions: ‑bright synths, ‑warm production, ‑EDM drops, ‑pop vocals, ‑upbeat energy, ‑trap drums, ‑hip hop percussion, ‑orchestral heroism, ‑live acoustic drums, ‑metalcore screaming, ‑punk energy, ‑cheerful melodies, ‑vocal hums, ‑beatboxing, ‑excessive layering early, ‑triumphant cinematic feeling]
+[Exclusions: bright synths, warm production, EDM drops, pop vocals, upbeat energy, trap drums, hip hop percussion, orchestral heroism, live acoustic drums, metalcore screaming, punk energy, cheerful melodies, vocal hums, beatboxing, excessive layering early, triumphant cinematic feeling]
 
 ---
 
@@ -164,6 +164,8 @@ who am I
 
 (whispered) I can't find the file
 But I remember what it felt like
+
+[end]
 
 ---
 

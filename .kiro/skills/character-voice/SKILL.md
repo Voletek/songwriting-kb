@@ -9,8 +9,8 @@ When activated, design complete vocal identities that determine not just how the
 
 ## Methodology
 
-#[[file:core/methodology/character-voice.md]]
+Read `core/methodology/character-voice.md` before applying this skill (if not already in context).
 
 ## Reference Data
 
-#[[file:references/CHARACTER_VOICE_REFERENCE.md]]
+Read `references/CHARACTER_VOICE_REFERENCE.md` before applying this skill (if not already in context).

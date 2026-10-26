@@ -1,11 +1,11 @@
 ---
-inclusion: auto
-description: Song output format conventions — Production Notes block, direction blocks, parenthetical layers, duet formatting, hit formulas, and song thesis requirement.
+inclusion: always
+description: Song output format conventions — Production Notes block, direction blocks, per-section tags, Exclude-field format, parenthetical layers, duet formatting, optional slider notes, hit formulas, and song thesis requirement.
 ---
 
 # Output & Format Preferences
 
-> Auto-loaded. Recommended output format for all song files.
+> Always loaded (`inclusion: always`). Recommended output format for all song files.
 > Customize this file for your own conventions — see examples/preferences/ for a filled-in reference.
 
 ---
@@ -23,8 +23,8 @@ Every song output MUST include a detailed Production Notes section:
 • Vocal: [Type + delivery description]
 • Instruments: [listed by prominence]
 • Dynamics: [section-by-section energy with arrows]
-• Hook Type: [Title/Melodic/Rhythmic/Instrumental + placement notes]
-• Rhyme Scheme: [per section with reasoning if unconventional]
+• Hook Type: [Lyric/Title, Melodic, Rhythmic, or Instrumental/Production + placement notes]
+• Rhyme Scheme: [per section, with the stability it creates (closed/open) and reasoning]
 • Emotional Arc: [one-sentence narrative journey]
 ```
 
@@ -44,7 +44,7 @@ Any artist name used as creative shorthand during writing (e.g., "in the style o
 
 ## Per-Section Production Tags
 
-Keep per-section tags like `[Sparse piano, room ambience]` — these guide instrument changes section-by-section. Limit to 2-3 tags per section for best Suno parsing.
+Keep per-section tags — they guide instrument changes section-by-section. On V6 (default) use `[Instrument: X In]` / `[Instrument: X Out]` plus `[Dynamic: ...]` / `[Vocal: ...]` tags, 2-4 tags per section. (v5.5-era free-text cues like `[Sparse piano, room ambience]` are legacy — re-validate on V6.)
 
 ## Duet Format Preferences
 
@@ -59,13 +59,20 @@ Keep per-section tags like `[Sparse piano, room ambience]` — these guide instr
 - **Named layers:** `(robotic layer: text)` / `(echo layer: text)` / `(whisper layer: text)` — creates a distinct secondary vocal identity. MUST be declared in Style Prompt.
 - **Whisper Rule pattern:** Declare at top of lyrics: `[Whisper Rule: Lyrics in parentheses are whispered intrusive thoughts, close and breathy.]`
 - **Echo/Layer treatment notation:** `[deep echo layer]` or `[distant burr echo]` after parenthetical lines to specify production treatment of those layers
-- Always include `‑vocal overlap confusion` in negatives when using layers
+- Always add `vocal overlap confusion` to the Exclude field when using layers
 
 ## Character Limit Strategy
 
 - Style 1000 chars → positives and core vocal rules FIRST
 - Lyrics 5000 chars → must fit within limit (trim if needed)
-- Exclude field = ONLY for negative prompts / exclusions (not overflow)
+- Exclude field = ONLY for negative prompts / exclusions (not overflow) — plain comma-separated text, no dash prefix, written under an `## EXCLUSIONS:` section in the song file:
+  ```
+  trap drums, beatboxing, vocal hums, bright synths
+  ```
+
+## Slider Recommendations (Optional)
+
+Include creative-slider recommendations only if your Suno UI exposes sliders. Values are v5.5-era starting points (legacy — re-validate on V6); see `suno-formatting.md` → Legacy v5.5-era mechanics.
 
 ## Hit Formula Awareness
 

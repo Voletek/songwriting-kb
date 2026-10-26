@@ -218,7 +218,7 @@ TITLE: What If
 STYLE PROMPT:
 Indie pop, acoustic pop, 100 BPM, warm hopeful, fingerpicked acoustic guitar, piano, brushed drums, male tenor vocals breathy and vulnerable for main sections, female mezzo-soprano vocals warm and grounding for response sections in parentheses, intimate close-mic production, organic warmth, building emotional arc, G major, clear vocal separation, no hums, no beatboxing, no vocal overlap
 
-[Exclusions: ‑trap drums, ‑beatboxing, ‑vocal hums, ‑heavy distortion, ‑dark ambient, ‑industrial sounds, ‑screaming, ‑rap, ‑EDM drops, ‑autotune]
+[Exclusions: trap drums, beatboxing, vocal hums, heavy distortion, dark ambient, industrial sounds, screaming, rap, EDM drops, autotune]
 
 ───────────────────────────────────────
 LYRICS:
@@ -292,6 +292,8 @@ What if — what if — what if we're okay
 [Outro]
 [Acoustic guitar alone, gentle]
 What if
+
+[end]
 
 ═══════════════════════════════════════
 PRODUCTION NOTES:

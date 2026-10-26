@@ -44,7 +44,7 @@ Alternative rock (70%), Victorian bluegrass-EDM hybrid (30%), Moderato, restrain
 
 [intro | restrained, sparse, plucked banjo, bowed cello]
 
-(instrumental — banjo and cello over soft pulsing synth, bass enters late)
+[Instrumental: banjo and cello over soft pulsing synth, bass enters late]
 
 [Verse 1 | composed formal diction, close-mic, elegant]
 
@@ -121,7 +121,7 @@ I wear it well — I'm not alright
 
 [outro | instrumental, fading, reverb tail]
 
-(instrumental — banjo and cello return, synth pulse dissolves, bass fades)
+[Instrumental: banjo and cello return, synth pulse dissolves, bass fades]
 
 [fade: layered]
 [end]
