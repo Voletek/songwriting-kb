@@ -55,6 +55,8 @@ Genre, Key, BPM, Mood, Instruments, Vocal Style, Era/Production, Space/Direction
 
 **Groove/Time-Feel (Optional 8th Dimension):** Add a groove descriptor (medium swing, four-on-the-floor, syncopated, etc.) for rhythmic specificity beyond BPM. [Tier 3]
 
+**Meter (non-4/4):** Suno tends to fall back to 4/4. For a 3/4 or 6/8 song, put the meter word right after the genre ("Nordic folk waltz, 6/8 lilting sway, …") and say it once more in other words ("one-two-three sway"); stating the meter only once, later in the prompt, held on 1 of 4 takes in testing. The most reliable route is to start from an instrumental already in that meter (suno.com add vocals, or a cover of the instrumental: SOP 10 Step 5d). Check the result with `audio-analysis` (`time_signature`). [Tier 3, one song]
+
 **Artist Reference Conversion:** Never include artist names in the Style Prompt. Convert "in the style of X" to descriptive production language (genre + era + instruments + production characteristics + vocal style + structural habits). No artist names in final output.
 
 **Instrument Naming:** Describe instruments by their SOUND, not their model name. 'Squelching acid bass' > 'Roland TB-303'. Generic category names (Rhodes, Hammond organ, Wurlitzer) are fine — Rhodes is in the V6 instrument list; brand-model gear (TB-303, TR-808, Juno-60, DX7, Telecaster, Marshall stack…) should be translated to sound descriptors. Use minimum descriptors (~20 chars each) for tight budgets or compressed (~35 chars each) as default. Full vocabulary: `references/INSTRUMENT_SOUND_REFERENCE.md`
@@ -108,6 +110,11 @@ Genre (first), key, BPM, mood, instruments as sound descriptors, vocal identity,
 
 ## EXCLUSIONS:
 trap drums, beatboxing, vocal hums, bright synths
+
+## RENDER SETTINGS:
+- voice: <ask the user before rendering; "none" = generated singer>
+- voice_id: <from voices-list>
+- model: v6
 
 ## LYRICS:
 [Title: Song Title]

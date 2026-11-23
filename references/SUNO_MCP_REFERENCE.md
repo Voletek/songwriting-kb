@@ -27,6 +27,7 @@ Mixing the modes returns `400`: `description` can't be sent with `style`, or wit
 
 | Song-file section | MCP field | Limit | Notes |
 |---|---|---|---|
+| `## RENDER SETTINGS:` | `voice_id`, `model`, `controls`, `duration` | — | Written by the renderer after asking the user (SOP 10 Step 1); exported by `suno-fields.py` |
 | `## STYLE PROMPT:` | `style` | 1000 chars | Same text as the UI's Style of Music box |
 | `## EXCLUSIONS:` | `negative_style` | 1000 chars | Plain comma-separated text, no dash prefix. Needs your own `style` (not valid with `description`). |
 | `## LYRICS:` from `[Title: …]` through `[End]` | `lyrics` | 5000 chars | Paste exactly what `validate-song.py` counts. Leave out the Production Notes. |
@@ -226,6 +227,10 @@ sheet; `audio-covers-create` regenerates the instrumental. Do these runs on suno
 Because the bed is fixed, its meter and arrangement survive: this is the reliable way to keep a non-4/4
 meter that text-only renders lose. Lyric tags that ask the instrumental to change do nothing there.
 
+**Through the MCP, the closest route is a cover of the instrumental** (`audio-covers-create` on the bed,
+with `lyrics`, `style`, `voice_id` and `controls.audio_influence` ~0.8). It regenerates the bed, so the key
+can move, but it kept a 3/4 meter on 4 of 4 takes in testing. See SOP 10, Step 5d.
+
 ### Not Studio
 
 The `sequence-*`, `image-create`, `video-create` and `visuals-*` tools make music videos and images,
@@ -237,7 +242,9 @@ not audio edits.
 |---|---|
 | One section didn't render as tagged (e.g. a missed key change) | `audio-create` edit on that song, describing the section and time range. Cheaper than a full re-render. |
 | A song ends too early, or needs to run past the 6:00 cap | `audio-extensions-create`, then `audio-full-song` |
-| Same song, different arrangement or genre | `audio-covers-create`, passing the lyrics again |
+| Same song, different arrangement or genre | `audio-covers-create`, passing the lyrics again and the `voice_id` |
+| Sing lyrics over an existing instrumental (keep its meter) | suno.com "add vocals", or `audio-covers-create` on the instrumental with lyrics and `voice_id` (SOP 10, Step 5d) |
+| Radio edit of a voiced take | Cut the take's audio in Studio or a DAW (keeps the voice), or a cover with shortened lyrics and `voice_id` |
 | Mixing, mastering, effects, or a pitch-shifted final section | Stems from `audio-stems-create`, then Suno Studio or a DAW |
 | Chart the arrangement or rebuild parts by hand | `audio-midi` |
 
@@ -251,6 +258,9 @@ not audio edits.
 | 2026-11-23 | The rejected generation was not charged: `credits_remaining` was unchanged after the error. | `account-usage` before and after |
 | 2026-11-23 | A broad `audio-listen` question reported a stripped bridge and a final spoken line as missing; `audio-lyrics-alignment` and narrow follow-up questions showed both present. Confirm misses before paying for fixes (SOP 10 Step 3). | Render test |
 | 2026-11-23 | A song made with suno.com "add vocals" over a 3/4 instrumental kept 3/4; text-only renders of the same lyrics came out 4/4 on 3 of 4 takes. | Render test |
+| 2026-11-23 | Covers of a 3/4 instrumental with lyrics (Audio Influence 0.8, Variety 1) kept 3/4 on 4 of 4 takes; the key moved (the bed is regenerated). | Render test |
+| 2026-11-23 | Applying a `voice_id` to a cover, Suno replaced the sent Style with its own rewrite (`metadata.style`). | Render test |
+| 2026-11-23 | A section edit (`reference_audio_ids`) asking for several timed cuts (a radio edit) re-sang the song: the singer changed, one extra section was cut, and the second take lost the meter. | Render test |
 | 2026-11-23 | One `audio-create` call returned 2 clip ids; both reached `streaming` within the first `audio-wait` call. | Render test |
 
 `tools/validate-song.py` checks a fixed list of artist names and does not yet catch genre-adjacent band

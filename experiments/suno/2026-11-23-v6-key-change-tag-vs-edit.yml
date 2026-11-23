@@ -1,0 +1,50 @@
+# Suno Experiment Log (IN PROGRESS: tag arm logged on one song)
+
+experiment_name: "v6-key-change-tag-vs-edit"
+date: "2026-11-23"
+experimenter: "community (contributor's song; render IDs withheld)"
+suno_version: "v6"
+model_variant: "v6"
+paradigm: "v6"
+
+claim_under_test: "[Key Change: ...] in the lyrics modulates on cue (V6_TAG_DISCOVERY tag-type summary)"
+lyric_tags_under_test: ["[Key Change: Relative major, F]", "[Key Change: Back to D minor]", "[Transition: Key Lift]"]
+hypothesis: >
+  A lyric [Key Change] tag modulates less reliably than an audio-create section edit
+  (reference_audio_ids + plain-language description) on the same take.
+
+settings:
+  style_prompt: "per song"
+  exclude: ""
+  weirdness: ""
+  style_influence: ""
+  audio_influence: ""
+  variety: ""
+  max_mode: false
+  duration: ""
+  voice_id: ""
+  vocal_gender: ""
+  custom_model: ""
+
+variable: "lyric [Key Change] tag vs a section edit of the same section"
+
+renders:
+  - render_id: "withheld"
+    song_used: "Test song A (dark folk waltz), tag arm, 2 takes"
+    timestamp: "2026-11-23"
+    measured: "whole-track key unchanged (audio-analysis); audio-listen: no established modulation"
+    observations: "a quiet section had 'brighter colours' on 1 take but no new key"
+    supports_claim: "no"
+    notes: "tag arm; also tests a named relative-major interval"
+  - render_id: ""
+    song_used: "edit arm, same takes"
+    timestamp: ""
+    measured: ""
+    observations: ""
+    supports_claim: ""
+    notes: "not run yet. Note: large edits re-sing the song (references/SUNO_MCP_REFERENCE.md, Observed behaviour); keep the edit to one section"
+
+conclusion: "Tag arm 0 of 2 on one song. Edit arm not run."
+confidence: "Low"
+retest_by: "2027-02-23"
+promoted_to: ""

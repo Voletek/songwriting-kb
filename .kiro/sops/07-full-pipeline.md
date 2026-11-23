@@ -157,7 +157,7 @@ Add `--strict` to make the validator fail on warnings. In Kiro IDE / CLI V3 the 
 **Agent:** Renderer (through the Suno MCP), or a human in the suno.com UI
 **Input:** Verified song file
 **Process:** SOP 10 (`.kiro/sops/10-rendering-through-the-suno-mcp.md`):
-1. Pre-flight: `validate-song.py --strict`, `lyric-lint.py`, `estimate-runtime.py`; check credits; confirm cost and settings (model, voice, sliders) with the user
+1. Pre-flight: `validate-song.py --strict`, `lyric-lint.py`, `estimate-runtime.py`; check credits; **ask which saved voice to use** and confirm cost and settings (model, sliders) with the user; record them under `## RENDER SETTINGS`
 2. Render: `python3 tools/suno-fields.py <file>` → `audio-create` (2 takes per call) → `audio-wait`. By hand: paste the same three fields into Custom Mode
 3. Verify: `audio-analysis` (BPM, meter, key, sections) and `audio-listen` (tag-specific questions) against the Production Notes
 4. Log: one row per take in the song file's `## RENDERS` section; tag results in the `references/V6_TAG_DISCOVERY.md` results log

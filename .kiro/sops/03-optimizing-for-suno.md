@@ -31,6 +31,7 @@ Full procedure: `core/methodology/suno-optimization.md` → **V6 Procedure (defa
 3. **Exclude:** negatives only, plain comma-separated text, no dash prefix (e.g. `trap drums, beatboxing, vocal hums, bright synths`); written under `## EXCLUSIONS:` in the song file.
 4. **Lyrics = the HOW:** `[Title:]`, `[Production Direction:]`, `[Vocal Direction:]`, section tags, `[Instrument: X In/Out]` choreography, `[Dynamic:]` / `[Vocal:]` / `[Transition:]` / `[Key Change:]` tags, 2-4 tags per section; no pipe notation, no v5.5 global tags, no `[Tag Vocabulary]` block; end with `[End]`; ≤5000 chars.
 5. Run `python3 tools/validate-song.py <file>` and `python3 tools/lyric-lint.py <file>`.
+5b. Add a `## RENDER SETTINGS` section (voice, model, controls). Leave the voice empty until the user picks one; the renderer asks before any render (SOP 10 Step 1).
 6. Render 3-4 takes, keep the best, and log results in the song's `## RENDERS` section and the `references/V6_TAG_DISCOVERY.md` results log. Rendering, measuring and fixing takes through the Suno MCP: SOP 10 (`.kiro/sops/10-rendering-through-the-suno-mcp.md`).
 
 ---
