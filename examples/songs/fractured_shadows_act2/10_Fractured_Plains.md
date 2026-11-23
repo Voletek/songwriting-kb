@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Fractured Plains — Album Track 10 (v4 — Universalized)
 
 > Song Thesis: *You learn what you're made of when there's no one to perform for —

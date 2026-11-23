@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Fall of Dawnwatch — Album Track 12 (v4 — Universalized)
 
 > Song Thesis: *You can train for years and still watch everything burn in a single night —

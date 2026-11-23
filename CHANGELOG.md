@@ -6,6 +6,21 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### November 2026 update (consolidates #20, #21, #22 and the repo review)
+
+**Added**
+- `## RENDER SETTINGS` song-file section (voice, voice_id, model, controls, duration, cover_of, bed_duration). `suno-fields.py` exports it (`voice_id`, `model`, `controls`, `duration` with `duration_strict: false`) and warns when no voice is chosen; `validate-song.py` reports INFO until a voice is recorded ("voice: none" counts as a choice); `estimate-runtime.py` uses `bed_duration` for songs sung over a fixed instrumental. 3 tests.
+- SOP 10 Step 5d: cover an instrumental with lyrics and `voice_id` (the MCP route to suno.com's "add vocals"); Step 2.5: check whether Suno rewrote the Style when a voice was applied; new troubleshooting rows.
+- Meter guidance for 3/4 and 6/8 in `.kiro/steering/suno-formatting.md` [Tier 3, one song].
+- Anonymised rows in the `V6_TAG_DISCOVERY.md` results log and two in-progress experiments (meter, key change by tag vs edit), with render IDs withheld.
+- `examples/songs/standalones/What_If_DUET_V6.md`: the first V6 duet example (Mode B).
+- CI smoke tests for `estimate-runtime.py` (with a length target) and `suno-fields.py`.
+
+**Changed**
+- SOP 03, SOP 07 Stage 6, `/full-pipeline` and the optimization method ask for the voice and record render settings before rendering.
+- `references/SUNO_MCP_REFERENCE.md`: cover-an-instrumental route, radio-edit route, `## RENDER SETTINGS` field mapping, three observed-behaviour rows.
+- The remaining pre-V6 example songs are marked `<!-- song-format: legacy -->`.
+
 ### Song length targets (November 2026)
 
 **Added**

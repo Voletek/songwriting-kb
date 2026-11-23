@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # The Shard — Album Track 9 (v4 — Universalized)
 
 > Song Thesis: *The universe didn't make a mistake putting you here — and that's

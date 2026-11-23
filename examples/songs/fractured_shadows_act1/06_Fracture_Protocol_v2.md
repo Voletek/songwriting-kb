@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Fracture Protocol — Polished (Album Track 6)
 
 > Structure tightening. This song is ambitious and largely effective — it's the most

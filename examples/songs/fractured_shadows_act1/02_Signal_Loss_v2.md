@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Signal Loss — Rewritten (Album Track 2)
 
 > Complete rewrite. Original was too generic — "scrolling through lives," "chasing likes and replies" 

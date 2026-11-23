@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Shadow Weaver — Album Track 13 (v4 — Universalized)
 
 > Song Thesis: *The most terrifying enemy isn't the one who overpowers you —

@@ -58,7 +58,7 @@ python3 tools/validate-song.py songs/            # format, limits, V6 tags, excl
 python3 tools/lyric-lint.py songs/my_song.md      # syllables, stress, rhyme, section stability, clichés
 python3 tools/check-repo.py                       # repo integrity
 python3 tools/estimate-runtime.py songs/my_song.md # length vs the song's Length Target (radio, streaming, short, sync...); --list-targets
-python3 tools/suno-fields.py songs/my_song.md     # title / style / negative_style / lyrics, ready for Suno
+python3 tools/suno-fields.py songs/my_song.md     # Suno fields + voice_id/model/controls from ## RENDER SETTINGS
 bash tools/kiro-web-setup.sh                      # Kiro Web only: link the repo's .kiro/ into the workspace root
 ```
 

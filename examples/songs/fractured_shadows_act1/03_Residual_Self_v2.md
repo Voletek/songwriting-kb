@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Residual Self — Rewritten (Album Track 3)
 
 > Moderate rewrite. The concept is strong (searching for identity, system diagnostics as metaphor

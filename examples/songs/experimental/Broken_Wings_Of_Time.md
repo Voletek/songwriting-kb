@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Broken Wings of Time
 
 <!-- validate: skip (intentional bad-example draft used to stress-test the critic) -->

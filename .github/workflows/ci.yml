@@ -32,3 +32,16 @@ jobs:
 
       - name: Lyric lint smoke test (advisory)
         run: python3 tools/lyric-lint.py examples/songs/ > /dev/null
+
+      - name: Runtime estimate and length targets smoke test (advisory)
+        run: |
+          python3 tools/estimate-runtime.py --list-targets > /dev/null
+          for f in examples/songs/standalones/*_V6.md examples/songs/*/*_V6.md; do
+            python3 tools/estimate-runtime.py "$f" --target album > /dev/null
+          done
+
+      - name: Suno field export smoke test
+        run: |
+          for f in examples/songs/standalones/*_V6.md examples/songs/*/*_V6.md; do
+            python3 tools/suno-fields.py "$f" --no-counts > /dev/null
+          done
