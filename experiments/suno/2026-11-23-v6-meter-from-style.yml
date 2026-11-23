@@ -1,0 +1,58 @@
+# Suno Experiment Log (IN PROGRESS: control arm and instrumental arm logged on one song)
+
+experiment_name: "v6-meter-from-style"
+date: "2026-11-23"
+experimenter: "community (contributor's song; render IDs withheld)"
+suno_version: "v6"
+model_variant: "v6"
+paradigm: "v6"
+
+claim_under_test: "V6 renders a 3/4 or 6/8 meter when the Style Prompt asks for it"
+lyric_tags_under_test: []
+hypothesis: >
+  Suno defaults to 4/4. Putting the meter word immediately after the genre ("6/8 lilting folk waltz")
+  holds the meter more often than "3/4 waltz at <BPM>" later in the prompt, and starting from an
+  instrumental already in 3/4 holds it most reliably.
+
+settings:
+  style_prompt: "varies per arm; meter phrase or source instrumental is the variable"
+  exclude: ""
+  weirdness: ""
+  style_influence: ""
+  audio_influence: ""
+  variety: ""
+  max_mode: false
+  duration: ""
+  voice_id: ""
+  vocal_gender: ""
+  custom_model: ""
+
+variable: "A: '3/4 waltz at <BPM>' as the third descriptor; B: '6/8 lilting folk waltz' right after the genre; C: cover of a 3/4 instrumental (audio_influence 0.8)"
+
+renders:
+  - render_id: "withheld"
+    song_used: "Test song A (dark folk waltz), arm A, 4 takes"
+    timestamp: "2026-11-23"
+    measured: "time_signature 4 on 3 takes, 3 on 1; tempo within 3 BPM of target on all 4"
+    observations: "audio-listen: march/anthem 4/4 feel on 3 of 4"
+    supports_claim: "no"
+    notes: "control arm"
+  - render_id: "withheld"
+    song_used: "Test song A, arm C, 4 takes (2 without a saved voice, 2 with)"
+    timestamp: "2026-11-23"
+    measured: "3/4 or 6/8 feel on 4 of 4; key moved from the instrumental's"
+    observations: "waltz melody and character kept; lyrics fully sung (word alignment)"
+    supports_claim: "yes (for arm C)"
+    notes: "instrumental arm"
+  - render_id: ""
+    song_used: "arm B, needs 3+ songs"
+    timestamp: ""
+    measured: ""
+    observations: ""
+    supports_claim: ""
+    notes: "not run yet"
+
+conclusion: "Arm A: not supported (1 of 4). Arm C: supported on one song. Arm B untested."
+confidence: "Low"
+retest_by: "2027-02-23"
+promoted_to: ".kiro/steering/suno-formatting.md (Meter note, Tier 3) and SOP 10 Step 5d"

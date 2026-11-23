@@ -43,7 +43,7 @@ the SAME folder as the eventual song file, named `SONGNAME.brief.md` (next to `S
   - Tempo / BPM preference (or "you choose based on emotion")
   - Key preference (optional — otherwise choose per key-emotion mapping)
   - Vocal staging — who sings? Register, accent, delivery style, proxemic distance?
-  - Length / platform target (optional — default to ~3:30-4:30 streaming standard)
+  - Length / platform target (optional): a preset from `references/SONG_LENGTH_REFERENCE.md` (radio, streaming, pop, rock, ballad, album, cinematic, club, short, sync30, sync60) or the user's own numbers. Default `streaming` (2:30-3:30) for singles, `album` for album tracks. The user can override any number
   - Solo or album track? If album: which album blueprint? Track position? Adjacent tracks?
 - For anything the user says "you choose" or leaves blank, make the decision the methodology prescribes
 
@@ -64,7 +64,7 @@ the SAME folder as the eventual song file, named `SONGNAME.brief.md` (next to `S
 - Choose BPM from BPM-Emotion Interaction table (must satisfy both genre AND emotion)
 - Choose instruments from Genre-Instrument Matrix + Tagg signification (must MEAN correctly)
 - Choose vocal style from Hit Formula alignment (F1 Vulnerability or F2 Anthem based on concept energy)
-- Default length: ~3:30-4:30 (streaming standard)
+- Default length target: `streaming` (2:30-3:30, intro under 15 s) for singles, `album` (3:00-6:00) for album tracks, unless the user or the genre calls for another preset (`references/SONG_LENGTH_REFERENCE.md`). Write the choice as a `Length Target:` line in the song file and check it with `python3 tools/estimate-runtime.py <file>`
 - Default structure: Nashville method (chorus first, V-PC-C-V-PC-C-Bridge-FC)
 - State ALL choices with one-line reasoning in Production Notes
 - Execute the full pipeline in one shot without stopping
@@ -157,3 +157,4 @@ The files listed under `resources:` in this agent's front matter are loaded into
 - `references/SUNO_STYLE_GENRE_REFERENCE.md`
 - `references/V6_TAG_REFERENCE.md`
 - `references/CHARACTER_VOICE_REFERENCE.md`
+- `references/SONG_LENGTH_REFERENCE.md`

@@ -546,6 +546,23 @@ def check_v6_vocabulary(song, rep):
                     + ". Log whether their In/Out cues render; fall back to listed names (e.g. Strings, Drone, Toms, Percussion) if not")
 
 
+def check_render_settings(song, rep):
+    """INFO only: whether a voice has been chosen for rendering (SOP 10 Step 1)."""
+    rs = song.render
+    if rs is None:
+        rep.add("Render Settings", "INFO", "no '## RENDER SETTINGS' section: ask which voice to use before rendering "
+                "and record it there (voice / voice_id, model, controls); see SOP 10")
+        return
+    vid = rs.get("voice_id", "").strip()
+    voice = rs.get("voice", "").strip().lower()
+    if vid and vid.lower() not in ("none", "-"):
+        rep.add("Render Settings", "PASS", f"voice_id set ({rs.get('voice') or vid[:8]})")
+    elif voice in ("none", "no", "no saved voice"):
+        rep.add("Render Settings", "PASS", "no saved voice (Suno generates a singer), recorded")
+    else:
+        rep.add("Render Settings", "INFO", "no voice chosen yet: ask which saved voice to use before rendering (SOP 10 Step 1)")
+
+
 def check_gear_names(song, rep):
     text = re.sub(r"\([^)]*\)", "", _scan_segments(song))  # parenthetical gear notes are allowed (Step 9b)
     if not text:
@@ -596,6 +613,8 @@ def validate_file(path, explicit=True):
     check_rejected_words(song, rep)
     check_gear_names(song, rep)
     check_v6_vocabulary(song, rep)
+    if not song.legacy:
+        check_render_settings(song, rep)
     if song.legacy:
         rep.add("Legacy Marker", "INFO", "archived pre-standard example (<!-- song-format: legacy -->)")
     return rep

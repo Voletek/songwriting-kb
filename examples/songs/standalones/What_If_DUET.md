@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # What If — Full Professional Analysis & Suno-Ready Song
 
 > Written from concept by the user's mother.

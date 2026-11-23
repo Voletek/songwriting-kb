@@ -29,12 +29,37 @@ python3 tools/estimate-runtime.py songs/<category>/<song>.md         # length an
 ```
 
 1. Fix every FAIL. A **Suno Rejected Words** FAIL means Suno will refuse the render: swap the word.
-2. If `estimate-runtime.py` warns that the song runs past 360 s, plan an extension (Step 5b) instead
+2. Check the length against the song's target (`Length Target:` line, or `--target <preset>`;
+   `references/SONG_LENGTH_REFERENCE.md`). Outside the target is INFO, not a blocker: confirm with the
+   user that the length is intended. If `estimate-runtime.py` warns that the song runs past 360 s, plan an extension (Step 5b) instead
    of trimming the song to fit.
 3. Run `account-usage`: note `credits_remaining` and `allowed_models`.
-4. Decide the settings with the user: model (`v6` unless they choose), `vocal_gender` if the voice
-   must be one gender, a `voice_id` for album characters, and any sliders. Sliders are optional;
+4. **Ask which voice to use. Every time, before every paid call** (render, cover, extension, section
+   edit), even if a voice was used earlier in the session. Run `voices-list` (both `own` and `loved`) and
+   offer the user's saved voices by name, or "no saved voice (Suno generates a singer)". Never default
+   silently: a call without `voice_id` gets a freshly generated singer. Record the answer, and pass it
+   as `voice_id` on that call and every later call for the same song. If a call type may not keep the voice
+   (section edits, see Step 5), say so before sending and let the user choose.
+5. Decide the other settings with the user: model (`v6` unless they choose), `vocal_gender` only when
+   no voice is used, and any sliders. Sliders are optional;
    record any non-default value.
+6. **Write the settings into the song file** under `## RENDER SETTINGS` (after `## EXCLUSIONS:`), so
+   they travel with the song and `suno-fields.py` sends them every time:
+
+   ```markdown
+   ## RENDER SETTINGS:
+
+   - voice: <saved voice name, or "none" for a generated singer>
+   - voice_id: <id from voices-list>
+   - model: v6
+   - controls: weirdness 0.3, style_influence 0.75, audio_influence 0.8, variety 1
+   - duration: 5:59            (optional; suno-fields adds duration_strict: false)
+   - cover_of: <clip id>       (only for a cover of an existing take or instrumental)
+   - bed_duration: 5:59        (only when sung over a fixed instrumental)
+   ```
+
+   `validate-song.py` reports INFO until a voice is recorded, and `suno-fields.py` warns. "voice: none"
+   counts as a choice.
 
 **Length:** if you send `duration`, also send `duration_strict: false`, or Suno cuts the song off at the
 target, even mid-outro. Leave `duration` out to let Suno choose.
@@ -44,10 +69,11 @@ target, even mid-outro. Leave `duration` out to let Suno choose.
 ## Step 2 — Render
 
 ```bash
-python3 tools/suno-fields.py songs/<category>/<song>.md --no-counts   # title, style, negative_style, lyrics
+python3 tools/suno-fields.py songs/<category>/<song>.md --no-counts   # fields + voice_id, model, controls, duration
 ```
 
-1. Call `audio-create` with those four fields plus the settings from Step 1 and a new
+1. Call `audio-create` (or `audio-covers-create` when the song has `cover_of`) with that output, after
+   confirming the voice with the user (Step 1.4), and a new
    `idempotency_key` (for example `<song>-<revision>-<yyyy-mm-dd>`). Change the key whenever the input changes.
 2. Call `audio-wait` once with **every** id in `clip_ids`.
 3. If a clip comes back `error`, read its `error` text:
@@ -57,6 +83,9 @@ python3 tools/suno-fields.py songs/<category>/<song>.md --no-counts   # title, s
    - Anything else: report it to the user with the clip id before retrying.
 4. Add one row per clip to the song file's `## RENDERS` section (format below) and give the user both
    links (`song_url`).
+5. **Check the stored style.** When a `voice_id` is applied (seen on covers), Suno may replace the Style
+   text with its own rewrite. Read `metadata.style` from `audio-wait` / `audio-retrieve`; if it differs,
+   note the stored version in the `## RENDERS` row so later renders know what was actually used.
 
 ---
 
@@ -86,6 +115,14 @@ Ears decide, but measure first so the conversation is about facts.
    > bridge_stripped, final_chorus_biggest, instruments, ending.
 
    Read the answer with `audio-listen-wait`.
+
+   **Confirm every "missed" before acting on it.** A broad question covering many elements can get
+   individual points wrong (observed: a stripped bridge and a final spoken line both reported missing,
+   both present). Before paying for a fix:
+   - `audio-lyrics-alignment` (free) gives the time of every sung word, so you can see whether a line
+     was sung and where each section actually falls;
+   - ask `audio-listen` one narrow question about that time range ("At 3:47–4:20, is the accompaniment
+     quieter than the choruses? Are drums present?").
 3. Mark each planned element as landed, partial or missed in the `## RENDERS` row.
 4. Log tag results in `references/V6_TAG_DISCOVERY.md` → Results Log: one row per render, with the tag
    tested and what happened. A finding needs 3+ different songs before it is promoted (see
@@ -98,6 +135,7 @@ Ears decide, but measure first so the conversation is about facts.
 
 | Situation | Next step |
 |---|---|
+| The song was made by adding vocals over an uploaded or existing instrumental | The bed is fixed: `[Instrument:]`, `[Transition:]`, `[Feel:]` and `[Key Change:]` tags can't change it. Check the bed's own arc with `audio-analysis` / `audio-listen` and place sections to match it. Keep only structure, vocal, role and dynamic tags. Re-runs of add vocals are done on suno.com (no MCP tool for it) |
 | One take is right | Step 6 (finish) |
 | Most of a take is right, one section missed (a key change, a bridge strip, a bad line) | Step 5a (section edit) |
 | The song needs to run longer than 6:00, or ends too early | Step 5b (extend) |
@@ -108,6 +146,14 @@ Ears decide, but measure first so the conversation is about facts.
 ---
 
 ## Step 5 — Fix without a full re-render
+
+> **Voice check before any Step 5 call.** Covers and extensions take `voice_id`: pass the song's voice.
+> Whether a section edit (`reference_audio_ids`) honours `voice_id` is **untested** (the schema doesn't
+> say). A large edit re-sings the song, so the voice can drift away from the saved one (observed: a multi-cut radio edit came back with a
+> different, alternating singer). For a radio edit or any multi-section cut of a take with a saved voice,
+> prefer cutting the take's own audio in Suno Studio or a DAW, or a cover with the shortened lyrics and
+> the `voice_id`. Tell the user which route keeps their voice before spending credits.
+> **Proofread every `description`** before sending: Suno acts on all of it, including half-finished thoughts.
 
 ### 5a. Section edit
 `audio-create` with `reference_audio_ids: [<the take>]` and a plain-language `description` naming
@@ -125,7 +171,17 @@ with `audio-full-song` on the last extension (free, up to 20 segments).
 
 ### 5c. Cover
 `audio-covers-create` with the take's `id` and a new `style`. Pass the lyrics again in `lyrics`, or the
-cover comes out instrumental. `controls.audio_influence` sets how close it stays to the source.
+cover comes out instrumental. `controls.audio_influence` sets how close it stays to the source. Pass the
+song's `voice_id`.
+
+### 5d. Cover an instrumental with lyrics (the MCP route to "add vocals")
+The MCP has no "add vocals to this song" tool, but a **cover of an instrumental** with `lyrics`, `style`,
+the song's `voice_id` and `controls.audio_influence` around 0.8 sings the lyrics over a regenerated version
+of that bed. It keeps the bed's character and, observed so far, its meter: covers of a 3/4 instrumental
+kept the waltz on 4 of 4 takes, where text-only renders of the same lyrics came out 4/4 on 3 of 4 [Tier 3,
+one song]. The key can move (the bed is regenerated). Record `cover_of:` and `bed_duration:` under
+`## RENDER SETTINGS`, and put bridge and ending cues in the Style as well as the tags, since the
+regenerated bed can follow them.
 
 Log every fix as its own `## RENDERS` row, with the parent clip id.
 
@@ -153,7 +209,7 @@ Only when the user is releasing the song. Ask before each public step.
 - [ ] Caption written (`audio-edit` `caption`, ≤500 characters); lyrics on suno.com match the file
       (`audio-edit` `lyrics` changes the text only, never the audio)
 - [ ] Word timings for a lyric video or captions (`audio-lyrics-alignment`, free)
-- [ ] Platform cut: a shorter edit if the full song runs long (extend or edit from the keeper)
+- [ ] Platform cuts: a radio edit (`radio`, 3:00-3:45), a short-form clip (`short`, 15-60 s) and sync cuts (`sync30`, `sync60`) if relevant; see `references/SONG_LENGTH_REFERENCE.md` → Versions for different uses
 - [ ] Versions: solo and duet versions if the song suits both (cover with a `voice_id`, or a duet rewrite via SOP 01)
 - [ ] Publish (`audio-settings` `visibility: public`) **only on the user's request**
 
@@ -188,4 +244,6 @@ after `[End]`). One row per clip, newest at the bottom:
 | 403 on `controls`, `negative_style` or `vocal_gender` | Plan lacks advanced controls | Drop the field; put exclusions in the Style as a last resort |
 | Outro cut off | `duration` sent with `duration_strict` left on | Resend with `duration_strict: false`, or extend the take |
 | Lyrics ignored in a cover | Covers don't carry lyrics over | Pass `lyrics` again |
-| Meter or key change ignored | Tags shape probability; Suno defaults to 4/4 | Render more takes; strengthen the Style (meter word early, e.g. "6/8 lilting folk waltz"); then a section edit |
+| Meter or key change ignored | Tags shape probability; Suno defaults to 4/4 | Start from an instrumental in the right meter (Step 5d, or suno.com add vocals); otherwise strengthen the Style (meter word early, e.g. "6/8 lilting folk waltz") and render more takes |
+| A different singer than expected | No `voice_id` was sent (or a section edit re-sang the song) | Step 1.4: ask, record it under `## RENDER SETTINGS`, resend with `voice_id` |
+| Stored Style differs from what you sent | Suno rewrote it when applying the voice | Step 2.5: log the stored version |

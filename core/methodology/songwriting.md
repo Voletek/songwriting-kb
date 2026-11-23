@@ -268,7 +268,7 @@ Go line by line:
 - [ ] V2 adds new information or a new angle? [Tier 2]
 - [ ] Bridge creates contrast or a turn? [Tier 2]
 - [ ] Total lyrics estimatable under 5000 chars?
-- [ ] Target runtime appropriate for platform?
+- [ ] Target runtime appropriate for platform? Set a `Length Target:` line (preset or your own numbers, `references/SONG_LENGTH_REFERENCE.md`) and check with `python3 tools/estimate-runtime.py <file>`. Going outside it is your call (Tenet 3); note why
 
 ### Step 19 -- Quality Gates
 

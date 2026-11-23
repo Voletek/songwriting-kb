@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Shapes Behind My Eyes — v2 (Revised)
 
 **Date:** June 2026

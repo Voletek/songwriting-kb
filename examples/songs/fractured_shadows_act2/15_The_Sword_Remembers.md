@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # The Sword Remembers — Album Track 15 (v4 — Universalized)
 
 > Song Thesis: *Grief isn't the weight of someone's absence — it's the weight of

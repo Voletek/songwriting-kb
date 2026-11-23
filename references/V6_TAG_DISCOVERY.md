@@ -417,7 +417,13 @@ before it changes a rating below.
 
 | Date | Model (v6/v6-wild/v6-mini) | Song / take | Tag(s) tested | Result (measured) | Render ID |
 |---|---|---|---|---|---|
-| | | | | | |
+| 2026-11-23 | v6 | Test song A (dark folk waltz), text-only, 4 takes | Meter in the Style ("3/4 waltz at 132 BPM", third descriptor) | ❌ 4/4 on 3 of 4 takes (`audio-analysis` + `audio-listen`); tempo and key held on 4 of 4 | withheld (contributor's song) |
+| 2026-11-23 | v6 | Test song A, 2 takes | `[Key Change: Relative major, F]` / `[Key Change: Back to D minor]` | ❌ 0 of 2 modulated | withheld |
+| 2026-11-23 | v6 | Test song A, 2 takes | Bridge `[Transition: Drums Out, Strings Out, Diminuendo]` + `[Instrument: Cello In]` | ⚠️ full strip on 1 of 2 | withheld |
+| 2026-11-23 | v6 | Test song A, 2 takes | Final chorus `[Dynamic: Full Impact]`; `[Vocal: Gang Vocal]`; outro `[Vocal: Whisper]` | ✅ 2 of 2 each | withheld |
+| 2026-11-23 | v6 | Test song A, 4 takes as covers of a 3/4 instrumental (Audio Influence 0.8, Variety 1) | Same lyrics; meter from the instrumental | ✅ 3/4 held on 4 of 4; key moved; bridge strip and whispered ending heard on 4 of 4 | withheld |
+
+These rows come from one song, so they don't change the ratings below on their own (3+ songs needed).
 
 ### Tag-type summary (update from the render rows above)
 
@@ -436,7 +442,7 @@ before it changes a rating below.
 | `[Spoken Word]` (speaks not sings) | ✅ working model (user-reported) | Spoken delivery |
 | `[Gang Vocal]` (group appears) | ✅ working model (user-reported) | Group/ensemble vocal |
 | Call/Response formatting | ✅ working model (user-reported) | Alternating lead/response |
-| `[Key Change]` / `[Key Lift]` | ✅ working model (user-reported) | Modulation on cue |
+| `[Key Change]` / `[Key Lift]` | ✅ working model (user-reported) | Modulation on cue. First logged song: 0 of 2 (see rows above); needs 2 more songs before the rating changes |
 | `[Half-Time]` / `[Double-Time]` feel shift | ✅ working model (user-reported) | Feel/tempo-perception shift |
 | `[Crescendo]`/`[Diminuendo]`/`[Swell]` dynamics | ✅ working model (user-reported) | Dynamic motion |
 | Compound transitions | ✅ working model (user-reported) | Bundled simultaneous events |
@@ -449,7 +455,7 @@ before it changes a rating below.
 | Panning / spatial cue | ? untested | Technique #14, stereo-field direction for a part/ad-lib |
 | Named key-change modulation | ? untested | Technique #15, does the specific interval read, or only the fact of a change? |
 | Em-dash breath within a line | ? untested |
-| Meter from the Style Prompt (e.g. `3/4 waltz`) | ? untested | Suno may default to 4/4 |
+| Meter from the Style Prompt (e.g. `3/4 waltz`) | ⚠️ 1 of 4 (one song) | Suno defaulted to 4/4 on 3 of 4; covering a 3/4 instrumental held 4 of 4. See `.kiro/steering/suno-formatting.md` → Meter |
 
 ---
 

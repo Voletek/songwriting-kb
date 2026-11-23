@@ -39,6 +39,7 @@ Suno optimization is the FINAL technical pass before rendering. It does NOT chan
    - End with `[End]`
    - <=5000 characters for the whole Lyrics field
 5. **Run the deterministic checks:** `python3 tools/validate-song.py <file>` (char counts, required elements, V6 tag checks, exclusions format) and `python3 tools/lyric-lint.py <file>` (syllables, stress, rhyme, section stability, clichés). Fix every FAIL; review every WARN.
+5b. **Record render settings** under `## RENDER SETTINGS` (voice after asking the user, model, any controls; SOP 10 Step 1). For a non-4/4 meter, see the Meter note in `.kiro/steering/suno-formatting.md`.
 6. **Render 3-4 takes, keep the best**, and log which tags were honored in the `references/V6_TAG_DISCOVERY.md` results log (see also Render Strategy below). To render from an agent through the Suno MCP (`audio-create`), follow `references/SUNO_MCP_REFERENCE.md`: it maps each song-file section to its field and covers length caps, sliders and rejected-word errors.
 
 The rest of this file holds the **v5.5-era 13-step procedure (legacy)** plus shared reference material that also applies to V6: artist and gear conversion (Steps 9 and 9b), the 7-dimension Style formula, the 70/30 rule and genre-first principle, parenthetical layers, the Exclude-field format, and the render strategy. Anything labelled v5.5-era is legacy -- use it for v5.5 renders and treat it as a hypothesis to re-validate on V6, not as a current rule.

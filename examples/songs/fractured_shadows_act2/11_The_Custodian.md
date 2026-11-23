@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # The Custodian — Album Track 11 (v4 — Universalized)
 
 > Song Thesis: *The heaviest burden isn't being told you might fail — it's being told

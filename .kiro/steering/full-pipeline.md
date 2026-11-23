@@ -23,8 +23,8 @@ with Stage 1 (write) using `core/methodology/songwriting.md`, or the song-planne
 4. **Verify.** If a shell is available, run `python3 tools/validate-song.py <file>` and
    `python3 tools/lyric-lint.py <file>`. Fix every FAIL and review every WARN. For album tracks,
    also run the album-continuity checks.
-5. **Render.** Follow SOP 10 (`.kiro/sops/10-rendering-through-the-suno-mcp.md`): confirm the credit
-   cost, send the fields from `python3 tools/suno-fields.py <file>` to `audio-create` (or paste them into
+5. **Render.** Follow SOP 10 (`.kiro/sops/10-rendering-through-the-suno-mcp.md`): ask which saved voice
+   to use (`voices-list`) and record it under `## RENDER SETTINGS`, confirm the credit cost, send the fields from `python3 tools/suno-fields.py <file>` to `audio-create` (or paste them into
    suno.com), measure each take with `audio-analysis` / `audio-listen`, log every take in the song's
    `## RENDERS` section and tag results in the `references/V6_TAG_DISCOVERY.md` results log.
 6. **Finish (optional).** Section edits, stems and Studio plugins, download: SOP 10 Steps 5-6.

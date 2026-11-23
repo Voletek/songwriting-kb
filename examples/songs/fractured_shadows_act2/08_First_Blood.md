@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # First Blood — Album Track 8 (v4 — Universalized)
 
 > Song Thesis: *The first time you discover what your new body can do, you realize

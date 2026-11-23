@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Shapes Behind My Eyes — Duet Version v2 (Mode A: Per-Line Tags)
 
 > Rewritten with [Male Vocal] / [Female Vocal] per-line tags for reliable vocal switching.

@@ -57,8 +57,8 @@ git clone https://github.com/Voletek/songwriting-kb.git
 python3 tools/validate-song.py songs/            # format, limits, V6 tags, exclusions
 python3 tools/lyric-lint.py songs/my_song.md      # syllables, stress, rhyme, section stability, clichés
 python3 tools/check-repo.py                       # repo integrity
-python3 tools/estimate-runtime.py songs/my_song.md # length and first-chorus timing (warns past the 6:00 MCP cap)
-python3 tools/suno-fields.py songs/my_song.md     # title / style / negative_style / lyrics, ready for Suno
+python3 tools/estimate-runtime.py songs/my_song.md # length vs the song's Length Target (radio, streaming, short, sync...); --list-targets
+python3 tools/suno-fields.py songs/my_song.md     # Suno fields + voice_id/model/controls from ## RENDER SETTINGS
 bash tools/kiro-web-setup.sh                      # Kiro Web only: link the repo's .kiro/ into the workspace root
 ```
 
@@ -91,7 +91,7 @@ songwriting-kb/
 ├── experiments/
 │   └── suno/                  Suno experiment logs (version-dated prompt tests)
 ├── docs/                      Architecture plans, implementation docs
-├── references/                12 companion docs (see below)
+├── references/                13 companion docs (see below)
 ├── examples/
 │   ├── songs/                 Developer's example songs (concept albums, standalones)
 │   ├── albums/                Album examples — BLUEPRINT.md, steering.md, continuity-hook.json per album
@@ -104,7 +104,7 @@ songwriting-kb/
 └── MUSIC_PRODUCTION_THEORY.md       Academic framework (13 disciplines)
 ```
 
-**`references/` (12 files):** `CHARACTER_VOICE_REFERENCE.md`, `CRITIQUE_REFERENCE.md`, `CRITIQUE_REPORT_TEMPLATE.md`, `INSTRUMENT_SOUND_REFERENCE.md`, `RHYME_AND_LYRIC_CRAFT.md`, `STYLE_LIBRARY.md`, `SUNO_MCP_REFERENCE.md`, `SUNO_STYLE_GENRE_REFERENCE.md`, `SUNO_TAGS_REFERENCE.md`, `V6_TAG_DISCOVERY.md`, `V6_TAG_REFERENCE.md`, `YOUR_ALBUM_BLUEPRINT.md` (template). The example album blueprints live in `examples/albums/*/BLUEPRINT.md`.
+**`references/` (13 files):** `CHARACTER_VOICE_REFERENCE.md`, `CRITIQUE_REFERENCE.md`, `CRITIQUE_REPORT_TEMPLATE.md`, `INSTRUMENT_SOUND_REFERENCE.md`, `RHYME_AND_LYRIC_CRAFT.md`, `SONG_LENGTH_REFERENCE.md`, `STYLE_LIBRARY.md`, `SUNO_MCP_REFERENCE.md`, `SUNO_STYLE_GENRE_REFERENCE.md`, `SUNO_TAGS_REFERENCE.md`, `V6_TAG_DISCOVERY.md`, `V6_TAG_REFERENCE.md`, `YOUR_ALBUM_BLUEPRINT.md` (template). The example album blueprints live in `examples/albums/*/BLUEPRINT.md`.
 
 ---
 

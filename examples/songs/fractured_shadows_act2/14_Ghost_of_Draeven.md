@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Ghost of Draeven — Album Track 14 (v4 — Universalized)
 
 > Song Thesis: *You can't fight the enemy outside until you face the one you used to be —

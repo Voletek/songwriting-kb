@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Evil Biscuits — v2.2 (Final Polish — 93/100 Target)
 
 > All v2.1 fixes preserved. Final 5 micro-fixes applied:

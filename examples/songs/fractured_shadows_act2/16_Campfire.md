@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Campfire — Album Track 16 (v4 — Universalized)
 
 > Song Thesis: *You don't choose your family by blood — you choose them by
