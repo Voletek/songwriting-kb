@@ -8,6 +8,7 @@ resources:
   - file://references/V6_TAG_DISCOVERY.md
   - file://references/SUNO_STYLE_GENRE_REFERENCE.md
   - file://references/STYLE_LIBRARY.md
+  - file://references/SUNO_MCP_REFERENCE.md
 ---
 
 # Suno Optimizer Agent
