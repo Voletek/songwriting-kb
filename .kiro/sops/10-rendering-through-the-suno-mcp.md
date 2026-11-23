@@ -86,6 +86,14 @@ Ears decide, but measure first so the conversation is about facts.
    > bridge_stripped, final_chorus_biggest, instruments, ending.
 
    Read the answer with `audio-listen-wait`.
+
+   **Confirm every "missed" before acting on it.** A broad question covering many elements can get
+   individual points wrong (observed: a stripped bridge and a final spoken line both reported missing,
+   both present). Before paying for a fix:
+   - `audio-lyrics-alignment` (free) gives the time of every sung word, so you can see whether a line
+     was sung and where each section actually falls;
+   - ask `audio-listen` one narrow question about that time range ("At 3:47–4:20, is the accompaniment
+     quieter than the choruses? Are drums present?").
 3. Mark each planned element as landed, partial or missed in the `## RENDERS` row.
 4. Log tag results in `references/V6_TAG_DISCOVERY.md` → Results Log: one row per render, with the tag
    tested and what happened. A finding needs 3+ different songs before it is promoted (see
@@ -98,6 +106,7 @@ Ears decide, but measure first so the conversation is about facts.
 
 | Situation | Next step |
 |---|---|
+| The song was made by adding vocals over an uploaded or existing instrumental | The bed is fixed: `[Instrument:]`, `[Transition:]`, `[Feel:]` and `[Key Change:]` tags can't change it. Check the bed's own arc with `audio-analysis` / `audio-listen` and place sections to match it. Keep only structure, vocal, role and dynamic tags. Re-runs of add vocals are done on suno.com (no MCP tool for it) |
 | One take is right | Step 6 (finish) |
 | Most of a take is right, one section missed (a key change, a bridge strip, a bad line) | Step 5a (section edit) |
 | The song needs to run longer than 6:00, or ends too early | Step 5b (extend) |

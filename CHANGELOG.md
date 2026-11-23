@@ -6,6 +6,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Render verification and fixed beds (November 2026)
+
+- SOP 10 Step 3: confirm any "missed" element with `audio-lyrics-alignment` and a narrow `audio-listen` question before paying for a fix. Step 4: what to do with songs sung over a fixed instrumental.
+- `references/SUNO_MCP_REFERENCE.md`: "Adding vocals to an existing instrumental" (suno.com only, keeps the bed's meter; instrument and transition tags can't change it) and two observed-behaviour rows.
+
 ### Knowledge-base review fixes (November 2026)
 
 Applies every finding in the 2026-11-23 knowledge-base review (problems hit while writing, critiquing and rendering a song through the Suno MCP).

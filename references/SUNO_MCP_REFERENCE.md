@@ -218,6 +218,14 @@ be split again, and the source can be at most 16 minutes.
 `audio-edit` changes a song's `title`, `lyrics` text or `caption` (≤500 chars) on suno.com. It does
 **not** change the audio: editing lyrics there won't re-sing anything, it only re-aligns the word timings.
 
+### Adding vocals to an existing instrumental
+
+suno.com's "add vocals/lyrics to this song" (sing a lyric sheet over an uploaded or existing instrumental,
+keeping the bed unchanged) has **no MCP equivalent**. `reference_audio_ids` is simple mode and takes no lyric
+sheet; `audio-covers-create` regenerates the instrumental. Do these runs on suno.com and log the clip.
+Because the bed is fixed, its meter and arrangement survive: this is the reliable way to keep a non-4/4
+meter that text-only renders lose. Lyric tags that ask the instrumental to change do nothing there.
+
 ### Not Studio
 
 The `sequence-*`, `image-create`, `video-create` and `visuals-*` tools make music videos and images,
@@ -241,6 +249,8 @@ not audio edits.
 |---|---|---|
 | 2026-11-23 | The style text "fireside-skald menace" was rejected on both clips: *"Your tags contain artist name skald"*. Suno's artist filter matches ordinary words that are also band names (Skáld is a Nordic folk band), lowercase included. Replacing the word fixed it. | Render test |
 | 2026-11-23 | The rejected generation was not charged: `credits_remaining` was unchanged after the error. | `account-usage` before and after |
+| 2026-11-23 | A broad `audio-listen` question reported a stripped bridge and a final spoken line as missing; `audio-lyrics-alignment` and narrow follow-up questions showed both present. Confirm misses before paying for fixes (SOP 10 Step 3). | Render test |
+| 2026-11-23 | A song made with suno.com "add vocals" over a 3/4 instrumental kept 3/4; text-only renders of the same lyrics came out 4/4 on 3 of 4 takes. | Render test |
 | 2026-11-23 | One `audio-create` call returned 2 clip ids; both reached `streaming` within the first `audio-wait` call. | Render test |
 
 `tools/validate-song.py` checks a fixed list of artist names and does not yet catch genre-adjacent band
