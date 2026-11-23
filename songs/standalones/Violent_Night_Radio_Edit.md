@@ -31,8 +31,8 @@ pop Christmas jingles, cartoon Santa vocals, children's choir, female vocals, me
 
 ## RENDER SETTINGS:
 
-- voice: (ask before rendering)
-- voice_id:
+- voice: Hans (chosen by the user, Nov 23, 2026)
+- voice_id: 301f54b2-5db4-405a-8d74-f60bd7ec8376
 - model: v6
 - controls: weirdness 0.3, style_influence 0.75, audio_influence 0.8, variety 1
 - duration: 3:40
@@ -177,3 +177,5 @@ Ho — ho — ho
 
 | Date | Model | Clip ID | Settings | Measured | Verdict |
 |---|---|---|---|---|---|
+| 2026-11-23 | v6, cover of `72ccb1ed`, voice **Hans** (`301f54b2…`) | [`da628702-dd41-4f3a-a598-a0b1c00bbea9`](https://suno.com/song/da628702-dd41-4f3a-a598-a0b1c00bbea9) | W 0.3 / SI 0.75 / AI 0.8 / Variety 1; duration 220 soft. Suno rewrote the Style when the voice was applied (stored version starts "Ancient Nordic folk waltz, 177 BPM lilting 3/4 sway; organic live acoustic recording…") | 173.2 BPM, **3/4**, C minor; **3:40**; intro 0:17; first chorus **0:44** (alignment) | **Take A: inside the radio target on all three measures.** ✅ waltz; ✅ one consistent deep, resonant, slightly gravelly voice; ✅ short transitions only; ✅ bridge (2:21) quiet and close; ✅ biggest final chorus with low male chant; ✅ both pre-choruses, all 73 lines sung, 0 failed words; ⚠️ "ho ho ho" (3:17) sung as a shouted chant, not whispered; ✅ natural ending; ⚠️ intro 17 s vs 15 s target. |
+| 2026-11-23 | same | [`74dc1c7d-9544-4214-8876-27298cdc1185`](https://suno.com/song/74dc1c7d-9544-4214-8876-27298cdc1185) | same | 175.8 BPM, heard as **4/4** (tracker 6/8), C minor; 3:41; intro 0:17; first chorus 0:58 | Take B. ❌ lost the waltz feel; ❌ first chorus 0:58, past the 0:50 target; ❌ no "ho ho ho" (not sung, last lyric clipped by the file end); ✅ consistent voice, quiet bridge, biggest final chorus. Reject. |
