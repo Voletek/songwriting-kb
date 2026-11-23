@@ -6,6 +6,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Song length targets (November 2026)
+
+**Added**
+- `references/SONG_LENGTH_REFERENCE.md`: typical lengths by use (Hot 100, streaming, radio edits, genres, the 30-second stream rule, intros, short-form clips, sync cuts) with sources and tiers, the tool presets, how to override them, and which versions to cut for which use.
+- `tools/data/length_targets.json`: presets `streaming`, `pop`, `radio`, `rock`, `ballad`, `album`, `cinematic`, `club`, `short`, `sync30`, `sync60` (length range, max intro, latest first chorus). An optional git-ignored `length_targets.local.json` is merged on top.
+- `estimate-runtime.py`: `--target`, `--min`, `--max`, `--max-intro`, `--max-hook`, `--list-targets`, and a per-song `Length Target:` line (preset, custom range, or `none`). Precedence: command line > song file > preset. Results outside the target are INFO, never failures (Tenet 3).
+- 3 tests.
+
+**Changed**
+- The songwriter's default length is now the `streaming` preset (2:30-3:30) for singles and `album` for album tracks, replacing "~3:30-4:30 streaming standard", which matched rock rather than current streaming singles.
+- Runtime checklists (songwriting method, SOP 01), Tenet 3, critique category 9 and SOP 10 (pre-flight and release checklist) point to the targets and say they can be overridden.
+
 ### Knowledge-base review fixes (November 2026)
 
 Applies every finding in the 2026-11-23 knowledge-base review (problems hit while writing, critiquing and rendering a song through the Suno MCP).

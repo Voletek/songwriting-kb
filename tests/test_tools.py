@@ -303,6 +303,47 @@ class ReviewFixes(unittest.TestCase):
         self.assertEqual(out["style"], song.style)
 
 
+class LengthTargets(unittest.TestCase):
+    def _song(self, extra):
+        with open(os.path.join(FIX, "v6_valid.md"), encoding="utf-8") as handle:
+            text = handle.read().replace("# Porch Light (test fixture, V6 format)", "# Porch Light\n\n" + extra, 1)
+        handle = tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8")
+        handle.write(text)
+        handle.close()
+        self.addCleanup(os.unlink, handle.name)
+        return handle.name
+
+    def test_presets_load_and_parse(self):
+        presets = runtime.load_targets()
+        for name in ("radio", "streaming", "short", "sync30", "cinematic"):
+            self.assertIn(name, presets)
+        t, err = runtime.parse_target_spec("cinematic, intro <= 40s", presets)
+        self.assertIsNone(err)
+        self.assertEqual(t["max_intro_s"], 40)
+        self.assertEqual(t["max_s"], presets["cinematic"]["max_s"])
+        t, err = runtime.parse_target_spec("5:30-6:30, hook <= 1:20", presets)
+        self.assertEqual((t["min_s"], t["max_s"], t["max_hook_s"]), (330, 390, 80))
+        self.assertEqual(runtime.parse_target_spec("none", presets), (None, None))
+        self.assertIsNotNone(runtime.parse_target_spec("radioo", presets)[1])
+
+    def test_song_file_target_and_precedence(self):
+        path = self._song("Length Target: radio")
+        res = runtime.estimate(path)
+        self.assertEqual(res["length_target"]["source"], "song file")
+        self.assertTrue(any("under the 'Radio edit' target" in f["message"] for f in res["findings"]))
+        res = runtime.estimate(path, target="1:00-2:00")
+        self.assertEqual(res["length_target"]["source"], "command line")
+        self.assertTrue(any(f["level"] == "PASS" for f in res["findings"]))
+        res = runtime.estimate(path, overrides={"min_s": 60, "max_s": 120})
+        self.assertIn("overrides", res["length_target"]["source"])
+
+    def test_target_none_and_findings_never_fail(self):
+        res = runtime.estimate(self._song("Length Target: none"))
+        self.assertEqual(res["length_target"], {"source": "song file (none)"})
+        res = runtime.estimate(os.path.join(FIX, "v6_valid.md"), target="sync30")
+        self.assertFalse(any(f["level"] in ("FAIL", "ERROR") for f in res["findings"]))
+
+
 class RepoIntegrity(unittest.TestCase):
     def test_repository_passes_check_repo(self):
         code, out = run_main(checkrepo.main, ["--root", ROOT])

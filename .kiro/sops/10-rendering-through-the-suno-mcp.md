@@ -29,7 +29,9 @@ python3 tools/estimate-runtime.py songs/<category>/<song>.md         # length an
 ```
 
 1. Fix every FAIL. A **Suno Rejected Words** FAIL means Suno will refuse the render: swap the word.
-2. If `estimate-runtime.py` warns that the song runs past 360 s, plan an extension (Step 5b) instead
+2. Check the length against the song's target (`Length Target:` line, or `--target <preset>`;
+   `references/SONG_LENGTH_REFERENCE.md`). Outside the target is INFO, not a blocker: confirm with the
+   user that the length is intended. If `estimate-runtime.py` warns that the song runs past 360 s, plan an extension (Step 5b) instead
    of trimming the song to fit.
 3. Run `account-usage`: note `credits_remaining` and `allowed_models`.
 4. Decide the settings with the user: model (`v6` unless they choose), `vocal_gender` if the voice
@@ -153,7 +155,7 @@ Only when the user is releasing the song. Ask before each public step.
 - [ ] Caption written (`audio-edit` `caption`, ≤500 characters); lyrics on suno.com match the file
       (`audio-edit` `lyrics` changes the text only, never the audio)
 - [ ] Word timings for a lyric video or captions (`audio-lyrics-alignment`, free)
-- [ ] Platform cut: a shorter edit if the full song runs long (extend or edit from the keeper)
+- [ ] Platform cuts: a radio edit (`radio`, 3:00-3:45), a short-form clip (`short`, 15-60 s) and sync cuts (`sync30`, `sync60`) if relevant; see `references/SONG_LENGTH_REFERENCE.md` → Versions for different uses
 - [ ] Versions: solo and duet versions if the song suits both (cover with a `voice_id`, or a duet rewrite via SOP 01)
 - [ ] Publish (`audio-settings` `visibility: public`) **only on the user's request**
 
