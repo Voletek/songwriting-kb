@@ -57,7 +57,7 @@ MCP.
 |---|---|---|
 | `model` | string | `v6`, `v6-wild` or `v6-mini` (whatever `account-usage` lists under `allowed_models`). Omit for the plan default; name the model you send. |
 | `vocal_gender` | `male` / `female` | Forces vocal gender. Needs the advanced-controls grant. A `voice_id` takes precedence. |
-| `voice_id` | string | One of your saved suno.com voices (`voices-list`). Must be ready. Always sings. |
+| `voice_id` | string | One of your saved suno.com voices (`voices-list`). Must be ready. Always sings. **Ask the user which voice before every call** (SOP 10 Step 1); without it, Suno generates a new singer. Untested with section edits (`reference_audio_ids`); large edits re-sing the song and the voice can drift. |
 
 ### Length
 

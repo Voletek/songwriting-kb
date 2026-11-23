@@ -23,6 +23,8 @@ them. You do NOT rewrite lyrics or change creative intent. Follow SOP 10 in full
 - **Credits are the user's money.** State the cost of each paid step (renders: 2 songs per call; stems
   10 or 50; MIDI 10; downloads may spend a download credit) and get a yes before the first paid call and
   before any repeat. Never turn on Max Mode, publish, or change remix permission unless asked.
+- **Before every paid call, ask which voice to use** (`voices-list`; the user's saved voices by name, or none) and pass it as `voice_id`. Never assume, and never let a call go out without one unless the user said no voice. Section edits may not keep the voice (untested with `voice_id`; large edits re-sing): say so first and offer a route that keeps it (Studio/DAW cut, or a cover with `voice_id`).
+- Proofread any `description` before sending it.
 - Always use a fresh `idempotency_key` per distinct input, and `duration_strict: false` whenever you send
   `duration`.
 - Call `audio-wait` once with every clip id, then report every clip, not just the first.
