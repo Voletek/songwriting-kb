@@ -30,7 +30,7 @@ pop Christmas jingles, sleigh-bell overload, cartoon Santa vocals, metal screami
 
 [Title: Violent Night]
 
-[Production Direction: Keep the Froststep Waltz melody, triple-meter pulse and acoustic Nordic palette throughout. Instrumental intro of about 38 s with no vocals or humming. War drums and bells enter at each pre-chorus; choruses are full ceremonial folk with layered low male harmonies. Instrumental breaks restate the waltz theme, each more energetic. Bridge pulls back to drone and close voice, then the build rises on ceremonial drums and strings into the biggest final chorus. Outro strips back to the opening waltz and ends on one final acoustic note.]
+[Production Direction: Keep the Froststep Waltz melody, triple-meter pulse and acoustic Nordic palette throughout. Instrumental intro of about 33 s with no vocals or humming. War drums and bells enter at each pre-chorus; choruses are full ceremonial folk with layered low male harmonies. Instrumental breaks restate the waltz theme, each more energetic. Bridge pulls back to drone and close voice, then the build rises on ceremonial drums and strings into the biggest final chorus. Outro strips back to the opening waltz and ends on one final acoustic note.]
 
 [Vocal Direction: Deep commanding weathered bass-baritone, an ancient Yule King with mischievous menace and dark humor. Low intimate ominous verses, playful menace in Verse 2, powerful sustained choruses, close dark bridge, forceful build, quiet threatening outro and an almost whispered ho ho ho. No cartoon Santa voice, no growls.]
 
@@ -255,7 +255,7 @@ Ho — ho — ho
   final chorus → mp breakdown → pp outro, whispered ho ho ho, final note.
 
 • Hook Type: Title chant hook ("Violent Night" against "Silent Night"); first
-  chorus planned at 1:28 on the take's timestamps.
+  chorus at 1:38 on the take (word alignment), 65 s after the first sung word.
 
 • Rhyme Scheme: ABCB ballad verses; XAXA / AABB / XAXA chorus; ABCB bridge;
   XAXA build; XAXA refrain and outro.
@@ -279,4 +279,4 @@ Ho — ho — ho
 
 | Date | Model | Clip ID | Settings | Measured | Verdict |
 |---|---|---|---|---|---|
-| 2026-11-19 | v6 | [`afad4ee4-7827-431e-9e63-c5f20cc97c9f`](https://suno.com/song/afad4ee4-7827-431e-9e63-c5f20cc97c9f) | suno.com "add vocals" on the uploaded Froststep Waltz; Variety 4; Source Fields above | 176.6 BPM, **3/4** (analysis), C minor; 5:59; first vocal ~0:33 | Shared take. ✅ waltz held; ✅ biggest final chorus (~4:52–5:17); ✅ layered low male harmonies (heard as a chant layer); ✅ no cartoon voice, growls or electronics. ❌ bridge not stripped (it builds instead); ❌ no whispered ho ho ho, ending is ambience and a bell; ⚠️ possible lift at ~4:15, no clear key change. |
+| 2026-11-19 | v6 | [`afad4ee4-7827-431e-9e63-c5f20cc97c9f`](https://suno.com/song/afad4ee4-7827-431e-9e63-c5f20cc97c9f) | suno.com "add vocals" on the uploaded Froststep Waltz; Variety 4; Source Fields above | 176.6 BPM, **3/4** (analysis), C minor; 5:59; first vocal 0:33; choruses at 1:38, 1:54, 3:06, 3:22, 4:52, 5:09 (word alignment) | Shared take. ✅ waltz held; ✅ biggest final chorus (~4:52–5:17); ✅ layered low male harmonies (heard as a chant layer); ✅ bridge (3:47–4:20) quieter and sparser than the choruses, drums out until ~4:04, matching a pull-back built into the Froststep bed at ~3:40–4:18; ✅ "Ho ho ho" sung at 5:52, but low, raspy and spoken rather than whispered; ✅ no cartoon voice or electronics. ⚠️ ending is a bell and ambience, no single final note. A first broad `audio-listen` reported the bridge and the ho ho ho as missing; word alignment and targeted questions showed both present. |
