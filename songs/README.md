@@ -21,9 +21,9 @@ songs/
 
 ## Branches
 
-Songs never go to `main`: `songs/` ships empty there. Commit each song (its versions, critiques in
-`analysis/` and render log) to its own branch, `song/<title-words>` (e.g. `song/violent-night`), and
-don't open a pull request into `main` for it. Knowledge-base changes go on separate branches.
+`main` is the community version: `songs/` ships empty there. Keep your own songs (their versions,
+critiques in `analysis/` and render logs) on your personal branch, and don't merge them into `main`.
+Knowledge-base improvements go on their own branches and are merged into `main` for everyone.
 
 ## File Naming
 
