@@ -2,7 +2,8 @@
 
 > How to send a finished song file to Suno through the Suno MCP server (`audio-create`), which song-file
 > section goes in which field, and what the server enforces.
-> Also lists the read tools (GET requests) and the values each one takes.
+> Also lists the read tools (GET requests) and the values each one takes, and the modification and
+> Studio-style tools (edits, extensions, covers, mashups, stems, MIDI) with their costs.
 > Field lists taken from the Suno MCP tool schemas (Nov 23, 2026). Behaviour notes are [Tier 3]:
 > observed in renders, version-dependent. Re-check the schema if a call is rejected.
 > Formatting rules for the fields themselves: `.kiro/steering/suno-formatting.md` and
@@ -171,6 +172,66 @@ change, section order) before logging results in `references/V6_TAG_DISCOVERY.md
   Sequence IDs come from `playlists-list`, `workspaces-list` and `sequence-list`.
 - `audio-settings` is a write tool (publish, unpublish, remix permission), not a read. Only use it when
   the user asks.
+
+---
+
+## Modification and Studio-style tools
+
+Taken from the tool schemas on 2026-11-23. The MCP can change a song's audio and do several Studio
+jobs (stems, MIDI, word timings), but it has **no access to Studio itself**: no editor, timeline,
+mixing, EQ, effects, mastering or pitch shifting, and it can't run the Studio audio-effect plugins in
+`plugins/`. Do those steps in Suno Studio or a DAW.
+
+### Changing a song's audio
+
+| Tool | What it does | Required | Cost |
+|---|---|---|---|
+| `audio-create` with `reference_audio_ids` | Edits a finished song: change a few words, redo a time range, add or cut a section, add or drop an instrument. Describe the change in `description`, naming the song by title (never an ID or link). The closest thing to Studio's Replace Section. | `description`, `reference_audio_ids` (the one song) | A normal generation (2 songs) |
+| `audio-extensions-create` | Continues a song from `continue_at` seconds. The new clip holds only the continuation. Takes the same `style`, `lyrics`, `negative_style`, `controls` and length fields as `audio-create`. | `id`, `continue_at` (≥0.4 s) | A normal generation |
+| `audio-full-song` | Joins an extension chain into one track (up to 20 segments: the source plus 19 extensions). Name only the last extension. | `id` | Free; retries return the same join |
+| `audio-covers-create` | Re-renders a song in a new style or voice. The source's lyrics are **not** carried over: pass them again in `lyrics` to keep the vocals, or the cover comes out instrumental. | `id` | A normal generation |
+| `audio-mashups-create` | Blends exactly two songs | `id`, `additional_audio_id` | A normal generation |
+
+All sources must be `complete`. A source can also be any suno.com song the user may remix (404 if they
+can't see it, 403 if they can't remix it, 503 while it is still finishing).
+
+**Edit rules (`reference_audio_ids`):** pass only the song being edited, and send no `duration`,
+`instrumental` or `vocal_gender`, which regenerate the whole song. A small edit keeps the rest of the
+original audio. Changing words in more than 5 places re-sings the whole song as a cover.
+
+**Slider meaning changes per tool:** in extensions, covers and mashups, `controls.audio_influence` sets
+how closely the result stays to the source audio (in `audio-create` it only applies to a `voice_id`).
+
+### Studio-style tools
+
+| Tool | What it does | Required | Cost |
+|---|---|---|---|
+| `audio-stems-create` | Splits a song into stems, two takes each, as suno.com's Get Stems does. `two`: vocals + instrumental (4 stems). `twelve`: vocals, backing vocals, drums, bass, guitar, keyboard, percussion, strings, synth, FX, brass, woodwinds (24 stems). Read the result with `audio-stems-retrieve`. | `id`, `mode` (`two` / `twelve`) | 10 credits for `two`, 50 for `twelve` |
+| `audio-midi` | Transcribes a song or stem to a multi-track `.mid` file, as Studio does. Needs a Premier plan. Call again with the same `id` until `status` is `ok`. | `id` | 10 credits; free if already transcribed, or for a Get Stems stem. Tell the user the cost first. |
+| `audio-lyrics-alignment` | The timing of each sung word, for karaoke or captions | `id` | Free |
+
+Stems are ordinary songs in the library, so every read tool works on a stem's `audio_id`. A stem can't
+be split again, and the source can be at most 16 minutes.
+
+### Metadata only
+
+`audio-edit` changes a song's `title`, `lyrics` text or `caption` (≤500 chars) on suno.com. It does
+**not** change the audio: editing lyrics there won't re-sing anything, it only re-aligns the word timings.
+
+### Not Studio
+
+The `sequence-*`, `image-create`, `video-create` and `visuals-*` tools make music videos and images,
+not audio edits.
+
+### When to use which
+
+| Goal | Tool |
+|---|---|
+| One section didn't render as tagged (e.g. a missed key change) | `audio-create` edit on that song, describing the section and time range. Cheaper than a full re-render. |
+| A song ends too early, or needs to run past the 6:00 cap | `audio-extensions-create`, then `audio-full-song` |
+| Same song, different arrangement or genre | `audio-covers-create`, passing the lyrics again |
+| Mixing, mastering, effects, or a pitch-shifted final section | Stems from `audio-stems-create`, then Suno Studio or a DAW |
+| Chart the arrangement or rebuild parts by hand | `audio-midi` |
 
 ---
 

@@ -585,7 +585,7 @@ Suno CAN produce key changes but it is **probabilistic (~40-60% success rate)**.
 
 **For multiple modulations (Queen/Bohemian Rhapsody style):**
 - One modulation per song is achievable with tags
-- Multiple modulations require the Extend/Replace Section workflow (render sections separately) or DAW post-production
+- Multiple modulations require the Extend/Replace Section workflow (render sections separately) or DAW post-production. Through the Suno MCP, use an `audio-create` edit with `reference_audio_ids` to redo one section, or `audio-extensions-create` + `audio-full-song` to render sections separately (see `references/SUNO_MCP_REFERENCE.md` → Modification and Studio-style tools)
 - The most reliable approach: render the full song, then pitch-shift specific sections in a DAW
 
 **When to use modulation:**

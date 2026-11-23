@@ -203,7 +203,7 @@ Two Kiro v1 JSON hook files in `.kiro/hooks/` plus two manual steering commands:
 Canonical V6 references:
 - [`references/V6_TAG_REFERENCE.md`](references/V6_TAG_REFERENCE.md): master de-duplicated V6 tag dictionary.
 - [`references/V6_TAG_DISCOVERY.md`](references/V6_TAG_DISCOVERY.md): how/why, division of labor, canonical grammar, results log.
-- [`references/SUNO_MCP_REFERENCE.md`](references/SUNO_MCP_REFERENCE.md): rendering through the Suno MCP: song-file-to-field mapping, every `audio-create` field, sliders, length caps, read tools and their values, observed errors.
+- [`references/SUNO_MCP_REFERENCE.md`](references/SUNO_MCP_REFERENCE.md): rendering through the Suno MCP: song-file-to-field mapping, every `audio-create` field, sliders, length caps, read tools and their values, modification and Studio-style tools (edits, extensions, covers, stems, MIDI) with costs, observed errors.
 
 ### Field Limits
 | Field | Limit | Notes |
