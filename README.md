@@ -88,7 +88,7 @@ songwriting-kb/
 ├── experiments/
 │   └── suno/                  Suno experiment logs (version-dated prompt tests)
 ├── docs/                      Architecture plans, implementation docs
-├── references/                11 companion docs (see below)
+├── references/                12 companion docs (see below)
 ├── examples/
 │   ├── songs/                 Developer's example songs (concept albums, standalones)
 │   ├── albums/                Album examples — BLUEPRINT.md, steering.md, continuity-hook.json per album
@@ -101,7 +101,7 @@ songwriting-kb/
 └── MUSIC_PRODUCTION_THEORY.md       Academic framework (13 disciplines)
 ```
 
-**`references/` (11 files):** `CHARACTER_VOICE_REFERENCE.md`, `CRITIQUE_REFERENCE.md`, `CRITIQUE_REPORT_TEMPLATE.md`, `INSTRUMENT_SOUND_REFERENCE.md`, `RHYME_AND_LYRIC_CRAFT.md`, `STYLE_LIBRARY.md`, `SUNO_STYLE_GENRE_REFERENCE.md`, `SUNO_TAGS_REFERENCE.md`, `V6_TAG_DISCOVERY.md`, `V6_TAG_REFERENCE.md`, `YOUR_ALBUM_BLUEPRINT.md` (template). The example album blueprints live in `examples/albums/*/BLUEPRINT.md`.
+**`references/` (12 files):** `CHARACTER_VOICE_REFERENCE.md`, `CRITIQUE_REFERENCE.md`, `CRITIQUE_REPORT_TEMPLATE.md`, `INSTRUMENT_SOUND_REFERENCE.md`, `RHYME_AND_LYRIC_CRAFT.md`, `STYLE_LIBRARY.md`, `SUNO_MCP_REFERENCE.md`, `SUNO_STYLE_GENRE_REFERENCE.md`, `SUNO_TAGS_REFERENCE.md`, `V6_TAG_DISCOVERY.md`, `V6_TAG_REFERENCE.md`, `YOUR_ALBUM_BLUEPRINT.md` (template). The example album blueprints live in `examples/albums/*/BLUEPRINT.md`.
 
 ---
 
@@ -203,6 +203,7 @@ Two Kiro v1 JSON hook files in `.kiro/hooks/` plus two manual steering commands:
 Canonical V6 references:
 - [`references/V6_TAG_REFERENCE.md`](references/V6_TAG_REFERENCE.md): master de-duplicated V6 tag dictionary.
 - [`references/V6_TAG_DISCOVERY.md`](references/V6_TAG_DISCOVERY.md): how/why, division of labor, canonical grammar, results log.
+- [`references/SUNO_MCP_REFERENCE.md`](references/SUNO_MCP_REFERENCE.md): rendering through the Suno MCP: song-file-to-field mapping, every `audio-create` field, sliders, length caps, observed errors.
 
 ### Field Limits
 | Field | Limit | Notes |

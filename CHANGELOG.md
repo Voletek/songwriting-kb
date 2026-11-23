@@ -6,6 +6,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Suno MCP reference (November 2026)
+
+**Added**
+- `references/SUNO_MCP_REFERENCE.md`: how to render a song file through the Suno MCP server. It maps each song-file section to its `audio-create` field (`style`, `negative_style`, `lyrics`, `title`), lists every field with its limits and defaults, converts the UI slider percentages to the `controls` object (0-1 fractions, `variety` 0-4), and flags that `duration_strict` is on by default and can truncate outros. Includes a render workflow and a Tier 3 log of observed behaviour (Suno's artist filter rejected "skald"; rejected generations were not charged).
+
+**Changed**
+- `.kiro/steering/suno-formatting.md`, `core/methodology/suno-optimization.md` (V6 step 6, Step 11) and `README.md` point to the new reference. The steering notes that the MCP enforces the same 1000/5000 limits on V6.
+- `.kiro/agents/suno-optimizer.md` loads the new reference.
+
 ### Deep-review fixes (October 2026)
 
 **Added**

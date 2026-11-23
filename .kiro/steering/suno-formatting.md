@@ -39,7 +39,7 @@ Suno V6 (v6 / v6-wild / v6-mini) is the current default. Status: working model (
 | Lyrics | 5000 chars | Trim (no overflow — must fit) |
 | Exclude | Dedicated field | Negative prompts / exclusions ONLY |
 
-Limits carried over from v5.x; whether V6 changed them is still an open question in `references/V6_TAG_DISCOVERY.md`.
+Limits carried over from v5.x. The Suno MCP enforces the same limits for V6 (`style` and `negative_style` ≤1000, `lyrics` ≤5000); whether the web UI changed them is still an open question in `references/V6_TAG_DISCOVERY.md`. Rendering through the MCP (field mapping, sliders, length caps): `references/SUNO_MCP_REFERENCE.md`.
 
 ## Style Prompt Formula (the WHAT)
 
@@ -186,7 +186,7 @@ V6 canonical grammar replaces this with separate namespaced tags (see `reference
 
 **`[silence: sudden]`** was unreliable on v5.5 — use a blank line or strip instrumentation instead. V6 dictionary has `[Dynamic: Silence]` / `[Transition: Hard Cut]` (log results).
 
-**Creative sliders (optional — only if your Suno UI exposes them; values are v5.5-era starting points):**
+**Creative sliders (optional — only if your Suno UI exposes them; values are v5.5-era starting points). Through the Suno MCP they are the `controls` object: send percentages as 0–1 fractions; see `references/SUNO_MCP_REFERENCE.md`:**
 
 | Slider | Default | Starting Point | Effect |
 |---|---|---|---|

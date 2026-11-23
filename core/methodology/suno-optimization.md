@@ -39,7 +39,7 @@ Suno optimization is the FINAL technical pass before rendering. It does NOT chan
    - End with `[End]`
    - <=5000 characters for the whole Lyrics field
 5. **Run the deterministic checks:** `python3 tools/validate-song.py <file>` (char counts, required elements, V6 tag checks, exclusions format) and `python3 tools/lyric-lint.py <file>` (syllables, stress, rhyme, section stability, clichés). Fix every FAIL; review every WARN.
-6. **Render 3-4 takes, keep the best**, and log which tags were honored in the `references/V6_TAG_DISCOVERY.md` results log (see also Render Strategy below).
+6. **Render 3-4 takes, keep the best**, and log which tags were honored in the `references/V6_TAG_DISCOVERY.md` results log (see also Render Strategy below). To render from an agent through the Suno MCP (`audio-create`), follow `references/SUNO_MCP_REFERENCE.md`: it maps each song-file section to its field and covers length caps, sliders and rejected-word errors.
 
 The rest of this file holds the **v5.5-era 13-step procedure (legacy)** plus shared reference material that also applies to V6: artist and gear conversion (Steps 9 and 9b), the 7-dimension Style formula, the 70/30 rule and genre-first principle, parenthetical layers, the Exclude-field format, and the render strategy. Anything labelled v5.5-era is legacy -- use it for v5.5 renders and treat it as a hypothesis to re-validate on V6, not as a current rule.
 
@@ -245,7 +245,7 @@ Final checklist:
 
 ### Step 11 -- Set Creative Sliders (optional)
 
-Only if your Suno UI exposes sliders; values are v5.5-era starting points (legacy -- re-validate on V6). Recommend slider values based on song type (see Named Slider Presets for tested combinations):
+Only if your Suno UI exposes sliders; values are v5.5-era starting points (legacy -- re-validate on V6). Through the Suno MCP, send them in the `controls` object as 0-1 fractions (60% = `0.6`); see `references/SUNO_MCP_REFERENCE.md`. Recommend slider values based on song type (see Named Slider Presets for tested combinations):
 
 | Song Type | Weirdness | Style Influence | Audio Influence (if Inspo) | Closest Preset |
 |---|---|---|---|---|
