@@ -6,6 +6,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Always ask which voice (November 2026)
+
+- SOP 10 Step 1: ask which saved voice to use before every paid Suno call (render, cover, extension, section edit), offer the user's voices by name from `voices-list`, and pass it as `voice_id`; never default silently. Step 5: warn before section edits, where the voice is untested and large edits re-sing; prefer a Studio/DAW cut or a cover with `voice_id` for radio edits. Proofread `description` text before sending.
+- `renderer` agent and `references/SUNO_MCP_REFERENCE.md` (`voice_id` row) updated to match.
+
 ### Render verification and fixed beds (November 2026)
 
 - SOP 10 Step 3: confirm any "missed" element with `audio-lyrics-alignment` and a narrow `audio-listen` question before paying for a fix. Step 4: what to do with songs sung over a fixed instrumental.

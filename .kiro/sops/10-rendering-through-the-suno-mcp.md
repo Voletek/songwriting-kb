@@ -32,8 +32,14 @@ python3 tools/estimate-runtime.py songs/<category>/<song>.md         # length an
 2. If `estimate-runtime.py` warns that the song runs past 360 s, plan an extension (Step 5b) instead
    of trimming the song to fit.
 3. Run `account-usage`: note `credits_remaining` and `allowed_models`.
-4. Decide the settings with the user: model (`v6` unless they choose), `vocal_gender` if the voice
-   must be one gender, a `voice_id` for album characters, and any sliders. Sliders are optional;
+4. **Ask which voice to use. Every time, before every paid call** (render, cover, extension, section
+   edit), even if a voice was used earlier in the session. Run `voices-list` (both `own` and `loved`) and
+   offer the user's saved voices by name, or "no saved voice (Suno generates a singer)". Never default
+   silently: a call without `voice_id` gets a freshly generated singer. Record the answer, and pass it
+   as `voice_id` on that call and every later call for the same song. If a call type may not keep the voice
+   (section edits, see Step 5), say so before sending and let the user choose.
+5. Decide the other settings with the user: model (`v6` unless they choose), `vocal_gender` only when
+   no voice is used, and any sliders. Sliders are optional;
    record any non-default value.
 
 **Length:** if you send `duration`, also send `duration_strict: false`, or Suno cuts the song off at the
@@ -117,6 +123,14 @@ Ears decide, but measure first so the conversation is about facts.
 ---
 
 ## Step 5 — Fix without a full re-render
+
+> **Voice check before any Step 5 call.** Covers and extensions take `voice_id`: pass the song's voice.
+> Whether a section edit (`reference_audio_ids`) honours `voice_id` is **untested** (the schema doesn't
+> say). A large edit re-sings the song, so the voice can drift away from the saved one (observed: a multi-cut radio edit came back with a
+> different, alternating singer). For a radio edit or any multi-section cut of a take with a saved voice,
+> prefer cutting the take's own audio in Suno Studio or a DAW, or a cover with the shortened lyrics and
+> the `voice_id`. Tell the user which route keeps their voice before spending credits.
+> **Proofread every `description`** before sending: Suno acts on all of it, including half-finished thoughts.
 
 ### 5a. Section edit
 `audio-create` with `reference_audio_ids: [<the take>]` and a plain-language `description` naming
