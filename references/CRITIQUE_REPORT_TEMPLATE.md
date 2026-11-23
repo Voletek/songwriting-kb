@@ -13,7 +13,7 @@
 ```markdown
 # [Song Title] — Professional Critique
 
-**Date:** [Month Year]
+**Date:** [today's date, e.g. November 23, 2026; never estimated]
 **Version analyzed:** [v1/v2/v3/final] ([brief context — e.g., "first draft," "post-revision," "Suno-ready"])
 **Analyzer:** Critic agent (SOP 02 — [variant: Full Multi-Layer Model / Concise Re-Critique / Quick Feedback / Suno Render Check])
 **Album context:** [Album Name — Track X of Y (Phase: description)] OR [Standalone — brief genre/context descriptor]

@@ -5,8 +5,8 @@
 > what's in the working model), see `references/V6_TAG_DISCOVERY.md`. For v5.5-era (legacy) tags, see
 > `references/SUNO_TAGS_REFERENCE.md`.
 >
-> **Status: working model (Sept 2026, user-confirmed); log render evidence in the V6_TAG_DISCOVERY
-> results log.** V6 (v6 / v6-wild / v6-mini) is the current default. The tags below are the operating
+> **Status: working model (user-reported Sept 2026; per-tag evidence in the `references/V6_TAG_DISCOVERY.md` results log).**
+> V6 (v6 / v6-wild / v6-mini) is the current default. The tags below are the operating
 > vocabulary for V6 songs; individual tags graduate as render evidence (date, model, render ID) is logged.
 
 ---
@@ -100,7 +100,9 @@ Analog Warmth · Digital Cold
 
 These follow the **Canonical V6 Tag Grammar** in `references/V6_TAG_DISCOVERY.md`. Use light-namespaced
 event tags, keep `[Role, inline-adjective]` as a first-class delivery form, and hold to 2-4 tags per
-section (not per line).
+section (not per line). A tag placed after the section's last lyric line (a closing `[Transition: Hit]`,
+`[Dynamic: Sustain]` or `[Dynamic: Fade Out]` before `[End]`) is an ending event: it is fine to exceed 4
+for that, but prefer bundling with a compound tag (`[Transition: Hit, Sustain]`) to keep the count down.
 
 | Form | Example | Status |
 |---|---|---|

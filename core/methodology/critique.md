@@ -423,7 +423,7 @@ ALL identified issues, ordered by impact (biggest improvement first). At least o
 
 ### Step 8 -- Save the Report
 
-Use the standardized report template from `references/CRITIQUE_REPORT_TEMPLATE.md`. Save to `analysis/[song-filename]_critique.md`.
+Use the standardized report template from `references/CRITIQUE_REPORT_TEMPLATE.md`. Save to `analysis/[song-filename]_critique.md` (a re-critique of `Song_v2.md` goes to `analysis/Song_v2_critique.md`; never overwrite an earlier report). Put today's date in the header: `[Month Year]` in the template is a placeholder, not a value to estimate. If the environment can't write files, return the full report as the response so the caller can save it.
 
 ---
 

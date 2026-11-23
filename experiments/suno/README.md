@@ -11,8 +11,8 @@ When you notice Suno behaving unexpectedly (a tag working differently, a slider 
 
 1. Copy `TEMPLATE.yml` to a new file: `YYYY-MM-DD-experiment-name.yml`
 2. Fill in your hypothesis and settings
-3. Generate 3+ renders across different songs with the same variable
-4. Record observations per render
+3. Generate 3+ renders across different songs with the same variable (through the Suno MCP: SOP 10)
+4. Record measurements (`audio-analysis`) and observations (`audio-listen`, your ears) per render
 5. Write your conclusion
 
 ## Promotion Rule
@@ -29,7 +29,9 @@ When you notice Suno behaving unexpectedly (a tag working differently, a slider 
 experiments/suno/
 ├── README.md                                    (this file)
 ├── TEMPLATE.yml                                 (copy this to start)
-└── 2026-07-02-performance-notation-symbols.yml  (logged experiment, v5.5-era)
+├── 2026-07-02-performance-notation-symbols.yml  (logged experiment, v5.5-era)
+├── 2026-11-23-v6-meter-from-style.yml            (V6, control arm logged)
+└── 2026-11-23-v6-key-change-tag-vs-edit.yml      (V6, tag arm logged)
 ```
 
 Planned (not yet run): `era-tag-interaction` (do era tags bias production more than instrumentation?)

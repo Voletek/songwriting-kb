@@ -430,7 +430,7 @@ NO crossfade. Hard cut. The silence between T7 and T8 IS the transfer.
 
 ### Slider Presets by Track Group (optional — v5.5-era starting points, legacy)
 
-> Only if your Suno UI exposes sliders; re-validate on V6.
+> Optional; v5.5-era values to re-validate on V6 (UI percentages, or 0–1 fractions in the Suno MCP `controls`).
 
 | Track Group | Weirdness | Style Influence | Audio Influence | Notes |
 |---|---|---|---|---|

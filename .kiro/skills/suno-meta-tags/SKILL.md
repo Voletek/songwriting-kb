@@ -34,7 +34,7 @@ Read the files you need before applying this skill (if they are not already in c
 5. **End** with `[End]`
 6. **Never** in V6 output: a `[Tag Vocabulary]` block, v5.5 global tags (`[track:]` / `[control:]` / `[sequence:]`), compact pipe notation `[Section | params]`
 7. **Verify:** `python3 tools/validate-song.py <file>` (and `python3 tools/lyric-lint.py <file>` for prosody/rhyme)
-8. **Render** 3-4 takes; log what V6 honoured in the `references/V6_TAG_DISCOVERY.md` results log
+8. **Render** 3-4 takes; log what V6 honoured in the `references/V6_TAG_DISCOVERY.md` results log. Through the Suno MCP: SOP 10 and `references/SUNO_MCP_REFERENCE.md`
 
 ## Common Suno Problems & Fixes
 

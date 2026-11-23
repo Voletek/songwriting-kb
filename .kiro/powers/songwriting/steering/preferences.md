@@ -32,7 +32,11 @@ Every song must include:
 - Plain comma-separated text, no dash prefix, under `## EXCLUSIONS:` in the song file: `trap drums, beatboxing, vocal hums, bright synths`
 
 ## Sliders
-- Optional — only if your Suno UI exposes them; values are v5.5-era starting points (legacy)
+- Optional. Sliders are V6 features (UI, or Suno MCP `controls` as 0–1 fractions); values are v5.5-era starting points to re-validate
+
+## Versions & Render Log
+- Revisions are new files (`_v2`, `_v3`); never overwrite a critiqued or rendered version
+- Every song file ends with a `## RENDERS` table: date, model, clip ID, settings, measured results, verdict (SOP 10)
 
 ## Song Thesis
 Every song starts with:

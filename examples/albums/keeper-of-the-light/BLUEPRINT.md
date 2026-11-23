@@ -372,7 +372,7 @@ T8:       Medium — same as T1, but the weight is different
 
 ### Render Strategy (Per Track)
 
-> Slider columns are optional — only if your Suno UI exposes sliders; values are v5.5-era starting points (legacy).
+> Slider columns are optional; values are v5.5-era starting points to re-validate on V6 (UI percentages, or 0–1 fractions in the Suno MCP `controls`).
 
 | Track | Weirdness | Style Influence | Audio Influence | Renders to Generate |
 |---|---|---|---|---|

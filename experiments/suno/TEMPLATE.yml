@@ -23,11 +23,17 @@ hypothesis: ""
 settings:
   style_prompt: ""
   exclude: ""             # plain comma-separated, no dash prefix (e.g. "trap drums, beatboxing")
-  weirdness: 50          # only if your Suno UI exposes sliders (v5.5-era control)
-  style_influence: 50    # only if your Suno UI exposes sliders (v5.5-era control)
-  audio_influence: 0
-  persona_or_voice: ""
-  custom_model: ""
+  # Sliders: suno.com UI percentages, or 0-1 fractions in the Suno MCP `controls` (50% = 0.5).
+  # Leave a value empty for "model default" (in the MCP, 0 is a real setting, not "unset").
+  weirdness: ""
+  style_influence: ""
+  audio_influence: ""        # with a voice_id, or in covers/extensions/mashups
+  variety: ""                # 0-4 (Off / Normal / High / Extra / Max)
+  max_mode: false            # only when the experiment is about Max Mode
+  duration: ""               # seconds, 15-360; with duration_strict false unless testing truncation
+  voice_id: ""               # formerly "Persona"
+  vocal_gender: ""           # male / female / empty
+  custom_model: ""           # v5.5-era UI feature; not in the MCP
 
 # Variable being changed (if A/B testing)
 variable: ""
@@ -38,7 +44,8 @@ renders:
   - render_id: ""
     song_used: ""
     timestamp: ""
-    observations: ""
+    measured: ""        # audio-analysis: bpm, time_signature, key, sections (SOP 10 Step 3)
+    observations: ""    # audio-listen answer and your own ears
     supports_claim: ""  # yes / no / partial
     notes: ""
   - render_id: ""

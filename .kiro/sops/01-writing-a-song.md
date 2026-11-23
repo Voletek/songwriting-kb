@@ -281,7 +281,7 @@ A complete file containing:
 3. Exclude field content
 4. Lyrics with all tags + direction blocks
 5. Production Notes (complete)
-6. (Optional) Creative slider recommendations — only if your Suno UI exposes sliders; values are v5.5-era starting points
+6. (Optional) Creative slider recommendations — sliders are in the suno.com UI and the Suno MCP `controls`; values are v5.5-era starting points to re-validate on V6
 
 ---
 

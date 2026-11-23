@@ -72,7 +72,7 @@ Keep per-section tags — they guide instrument changes section-by-section. On V
 
 ## Slider Recommendations (Optional)
 
-Include creative-slider recommendations only if your Suno UI exposes sliders. Values are v5.5-era starting points (legacy — re-validate on V6); see `suno-formatting.md` → Legacy v5.5-era mechanics.
+Slider recommendations are optional. Sliders are V6 features (suno.com UI, or the Suno MCP `controls` as 0–1 fractions); the values are v5.5-era starting points to re-validate. See `suno-formatting.md` → V6 Controls & Features.
 
 ## Hit Formula Awareness
 

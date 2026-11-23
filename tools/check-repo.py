@@ -141,7 +141,10 @@ def check_agents(root, res):
             resources = [resources]
         for r in resources:
             if r.startswith("file://"):
-                target = r[len("file://"):].lstrip("./")
+                target = r[len("file://"):]
+                while target.startswith("./"):
+                    target = target[2:]
+                target = target.lstrip("/")
                 matches = glob.glob(os.path.join(root, target))
                 if not matches:
                     res.error(rel, f"resource {r} does not exist")
@@ -199,6 +202,37 @@ def check_hooks(root, res):
                     res.error(where, f"matcher is not a valid regex: {exc}")
                 if re.search(r"\(\?<?[=!]", matcher):
                     res.warn(where, "matcher uses lookaround; the regex engine is not documented, avoid it")
+
+
+# Copies of the Suno rules that must keep pointing at the canonical sources (drift guard).
+SUNO_COPIES = {
+    ".kiro/powers/songwriting/steering/suno.md": [".kiro/steering/suno-formatting.md", "references/SUNO_MCP_REFERENCE.md"],
+    ".kiro/skills/suno-meta-tags/SKILL.md": ["references/V6_TAG_REFERENCE.md", "references/SUNO_MCP_REFERENCE.md"],
+}
+STALE_PHRASES = [
+    (r"only if your Suno UI exposes", "sliders are V6 features (UI and Suno MCP); drop 'only if your Suno UI exposes'"),
+]
+
+
+def check_suno_copies(root, res):
+    for rel, targets in SUNO_COPIES.items():
+        path = os.path.join(root, rel)
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding="utf-8") as fh:
+            text = fh.read()
+        for target in targets:
+            if target not in text:
+                res.warn(rel, f"summary copy of the Suno rules no longer points at {target}")
+    for path in iter_files(root, ".md"):
+        rel = os.path.relpath(path, root)
+        if rel.startswith(("CHANGELOG", "examples/songs", "examples/analysis")):
+            continue
+        with open(path, encoding="utf-8-sig") as fh:
+            text = fh.read()
+        for pat, msg in STALE_PHRASES:
+            if re.search(pat, text, re.I):
+                res.warn(rel, msg)
 
 
 def check_steering(root, res):
@@ -274,6 +308,7 @@ def main(argv=None):
     res = Results()
     check_includes_and_links(root, res)
     check_agents(root, res)
+    check_suno_copies(root, res)
     check_hooks(root, res)
     check_steering(root, res)
     check_skills(root, res)

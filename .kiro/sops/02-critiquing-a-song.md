@@ -109,7 +109,7 @@ Provide 2 complete alternative Style Prompts (ready to paste into Suno) with:
 - Full rewritten prompt text
 - Reasoning (why this serves the emotional content better)
 - Expected improvement in render quality
-- (Optional) Slider recommendation (Weirdness % / Style Influence % / Audio Influence %) — only if your Suno UI exposes sliders; values are v5.5-era starting points
+- (Optional) Slider recommendation (Weirdness % / Style Influence % / Audio Influence %) — sliders are in the suno.com UI and the Suno MCP `controls`; values are v5.5-era starting points to re-validate on V6
 
 ### Step 6 — Identify Strongest Line
 
