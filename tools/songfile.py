@@ -36,6 +36,7 @@ COUNT_NOTE_RE = re.compile(
 
 STYLE_LABELS = {"STYLE", "STYLE OF MUSIC", "STYLE FIELD", "STYLE BOX", "STYLE OF MUSIC FIELD"}
 LYRICS_LABELS = {"LYRICS", "LYRICS FIELD", "LYRICS BOX", "LYRIC FIELD", "FULL LYRICS", "FINAL LYRICS"}
+RENDER_LABELS = {"RENDER SETTINGS", "RENDER", "SUNO SETTINGS", "SUNO RENDER SETTINGS"}
 EXCLUSION_LABELS = {"EXCLUSIONS", "EXCLUSION", "EXCLUDE", "EXCLUDE FIELD", "EXCLUSIONS FIELD",
                     "EXCLUDE BOX", "NEGATIVE PROMPTS", "EXCLUDE STYLES"}
 EXCLUSIONS_LINE_RE = re.compile(r"^\s*\[\s*(Exclusions?|Exclude)\s*:(.*?)\]\s*$", re.IGNORECASE | re.DOTALL)
@@ -58,6 +59,8 @@ def classify_label(text):
         return "exclusions"
     if label in LYRICS_LABELS:
         return "lyrics"
+    if label in RENDER_LABELS:
+        return "render"
     return None
 
 
@@ -132,6 +135,42 @@ def _clean_block(lines, stop_at_end=False):
     return out, ended
 
 
+RENDER_LINE_RE = re.compile(r"^\s*[-*]?\s*`?([A-Za-z][A-Za-z _-]*?)`?\s*:\s*(.*?)\s*$")
+
+
+def parse_render_settings(lines):
+    """'key: value' lines -> dict. Keys are lower-cased with spaces/dashes as underscores.
+
+    Recognised keys (others are kept as-is): voice (name), voice_id, model, controls
+    ("weirdness 0.3, style_influence 0.75, variety 1"), duration, duration_strict, cover_of,
+    bed_duration (m:ss, for songs sung over a fixed instrumental), vocal_gender, notes.
+    """
+    out = {}
+    for line in lines:
+        if not line.strip() or line.strip().startswith(">"):
+            continue
+        m = RENDER_LINE_RE.match(line)
+        if not m:
+            continue
+        key = re.sub(r"[\s-]+", "_", m.group(1).strip().lower())
+        val = m.group(2).strip().strip("`")
+        val = re.sub(r"\s+\(.*\)\s*$", "", val) if key in ("voice_id", "model", "cover_of") else val
+        out[key] = val
+    return out
+
+
+def parse_controls(text):
+    """'weirdness 0.3, style_influence 0.75, variety 1' (or 'key=value') -> dict of numbers."""
+    out = {}
+    for part in re.split(r"[,;]", text or ""):
+        m = re.match(r"\s*([a-z_ ]+?)\s*[:= ]\s*(-?\d+(?:\.\d+)?)\s*$", part.strip().lower())
+        if m:
+            key = m.group(1).strip().replace(" ", "_")
+            num = float(m.group(2))
+            out[key] = int(num) if key == "variety" else num
+    return out
+
+
 def split_exclusion_items(raw):
     if not raw:
         return []
@@ -156,6 +195,7 @@ class SongFile:
         self.exclusions = []         # list of items
         self.exclusion_sources = []  # e.g. ["section", "style-bracket", "lyrics-bracket"]
         self.lyrics_inferred = False # True when the file had no headings and was read as raw lyrics
+        self.render = None           # dict from a ## RENDER SETTINGS section (keys lower-case), or None
         self._parse()
 
     @property
@@ -221,6 +261,11 @@ class SongFile:
             if joined:
                 exclusion_parts.append(joined)
                 self.exclusion_sources.append("section")
+
+        if "render" in chosen:
+            start, end = chosen["render"]
+            cleaned, _ = _clean_block(lines[start:end])
+            self.render = parse_render_settings(cleaned)
 
         if not blocks and "lyrics" not in chosen:
             self._infer_raw_lyrics(lines)

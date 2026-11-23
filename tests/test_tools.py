@@ -344,6 +344,49 @@ class LengthTargets(unittest.TestCase):
         self.assertFalse(any(f["level"] in ("FAIL", "ERROR") for f in res["findings"]))
 
 
+class RenderSettings(unittest.TestCase):
+    SETTINGS = "\n## RENDER SETTINGS:\n\n- voice: Loonry\n- voice_id: 1111-2222\n- model: v6\n- controls: weirdness 0.3, style_influence 0.75, variety 1\n- duration: 5:59\n"
+
+    def _song(self, settings):
+        with open(os.path.join(FIX, "v6_valid.md"), encoding="utf-8") as handle:
+            text = handle.read().replace("## LYRICS:", settings + "\n---\n\n## LYRICS:", 1)
+        handle = tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8")
+        handle.write(text)
+        handle.close()
+        self.addCleanup(os.unlink, handle.name)
+        return handle.name
+
+    def test_parse_and_export(self):
+        path = self._song(self.SETTINGS)
+        song = songfile.SongFile(path)
+        self.assertEqual(song.render["voice_id"], "1111-2222")
+        self.assertTrue(song.lyrics.startswith("[Title: Porch Light]"))
+        out, err = sunofields.fields(path)
+        self.assertIsNone(err)
+        self.assertEqual(out["voice_id"], "1111-2222")
+        self.assertEqual(out["model"], "v6")
+        self.assertEqual(out["controls"], {"weirdness": 0.3, "style_influence": 0.75, "variety": 1})
+        self.assertEqual((out["duration"], out["duration_strict"]), (359, False))
+        self.assertNotIn("_warnings", out)
+        self.assertEqual(statuses(validate.validate_file(path))["Render Settings"], "PASS")
+
+    def test_missing_voice_warns_but_none_is_a_choice(self):
+        out, _ = sunofields.fields(os.path.join(FIX, "v6_valid.md"))
+        self.assertIn("_warnings", out)
+        self.assertEqual(statuses(validate.validate_file(os.path.join(FIX, "v6_valid.md")))["Render Settings"], "INFO")
+        out, _ = sunofields.fields(self._song("\n## RENDER SETTINGS:\n\n- voice: none\n"))
+        self.assertNotIn("_warnings", out)
+        self.assertNotIn("voice_id", out)
+
+    def test_fixed_bed_uses_bed_length(self):
+        path = self._song("\n## RENDER SETTINGS:\n\n- voice: none\n- cover_of: abcd\n- bed_duration: 5:59\n")
+        res = runtime.estimate(path, target="radio")
+        self.assertTrue(res["fixed_bed"])
+        self.assertEqual(res["runtime_s"], 359)
+        self.assertIsNone(res["first_chorus_s"])
+        self.assertTrue(any("over the 'Radio edit' target" in f["message"] for f in res["findings"]))
+
+
 class RepoIntegrity(unittest.TestCase):
     def test_repository_passes_check_repo(self):
         code, out = run_main(checkrepo.main, ["--root", ROOT])

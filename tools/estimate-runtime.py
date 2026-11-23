@@ -153,6 +153,8 @@ def estimate(path, bpm=None, meter=None, bars_per_line=2.0, instrumental_bars=8,
     if meter is None:
         m = METER_RE.search(search)
         meter = f"{m.group(1)}/{m.group(2)}" if m else "4/4"
+    bed = (song.render or {}).get("bed_duration")
+    bed_s = parse_time(bed) if bed else None
     beats = int(meter.split("/")[0])
     bar_s = beats * 60.0 / bpm
     m = INTRO_BARS_RE.search(text)
@@ -192,6 +194,16 @@ def estimate(path, bpm=None, meter=None, bars_per_line=2.0, instrumental_bars=8,
         "hook_after_first_word_s": round(chorus_at - first_sung, 1) if chorus_at is not None and first_sung is not None else None,
         "timeline": timeline,
     })
+    if bed_s:
+        res["findings"].append({"level": "INFO", "message": f"sung over a fixed instrumental ({fmt_time(bed_s)}, RENDER SETTINGS bed_duration): "
+                                f"length and section timing come from the bed, not from line counts; the line-based estimate was {fmt_time(t)}. "
+                                "Measure intro and chorus times with audio-lyrics-alignment after rendering"})
+        res["line_estimate_s"] = round(t)
+        t = bed_s
+        res["runtime_s"], res["runtime"] = round(t), fmt_time(t)
+        res["fixed_bed"] = True
+        res["first_sung_s"] = res["first_chorus_s"] = res["hook_after_first_word_s"] = None
+        first_sung = chorus_at = None
     if t > MCP_CAP_S:
         res["findings"].append({"level": "WARN", "message": f"estimated {res['runtime']} is over the {MCP_CAP_S} s Suno MCP duration cap: "
                                 "render the first part, then use audio-extensions-create + audio-full-song (references/SUNO_MCP_REFERENCE.md)"})
