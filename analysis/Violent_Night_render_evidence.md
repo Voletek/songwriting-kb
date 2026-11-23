@@ -28,3 +28,24 @@
 | `[Vocal: Whisper]` | ✅ 2/2 | |
 | `[Transition: Hit]` final strike | ⚠️ 2/4 | |
 | Off-list instruments (Bowed Lyre, Tagelharpa, War/Frame Drums, Winter Bells) | ⚠️ | Lyre-like plucks in 3 of 4, bowed folk strings, war/frame drums and bells in 4 of 4; tagelharpa never identified. |
+
+
+## Revision 2 words as a cover of the Froststep bed (Nov 23, 2026)
+
+`audio-covers-create` on `72ccb1ed-1a21-4629-b06e-556b35ca6d64` (Audio Influence 0.8, Style Influence 0.75,
+Weirdness 0.3, Variety 1). Takes `6fd78c03…` and `4cc83650…`, measured with `audio-listen`, word alignment and
+`audio-analysis`.
+
+| Element | Result |
+|---|---|
+| Waltz / triple meter | ✅ 2/2 (heard as 6/8 and 3/4; ~168 BPM) |
+| Froststep melody and character | ✅ 2/2 |
+| Key | moved C minor → G minor (cover regenerates the bed) |
+| Bridge quieter, close vocal | ✅ 2/2 |
+| Biggest final chorus | ✅ 2/2 |
+| Low male chant harmonies (`[Vocal: Gang Vocal]`, with "choir" removed from Exclusions) | ✅ 2/2 |
+| Whispered final ho ho ho | ✅ 2/2 (breathy, spoken) |
+| All lyric lines sung | ✅ 2/2, 0 failed words |
+
+Compared with the text-only renders (waltz 1/4, whisper not reliable): covering a 3/4 bed at high
+Audio Influence carried the meter, and a cover could follow the bridge and ending cues written into the Style.

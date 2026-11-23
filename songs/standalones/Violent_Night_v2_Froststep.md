@@ -15,6 +15,11 @@ open the Froststep Waltz, choose "add vocals", paste the three fields below. Sug
 starting points; log them): Weirdness 30%, Style Influence 70%, Audio Influence 75%, Variety Normal (1),
 which is a deliberate change from the source take's Variety 4. Then send me the clip link to measure and log.
 
+**Rendered Nov 23, 2026 through the Suno MCP instead:** `audio-covers-create` on the Froststep Waltz
+(`72ccb1ed…`) with these lyrics and exclusions, the critique's cover Style (Option B, which states the meter
+twice and the bridge and ending in words), Weirdness 0.3, Style Influence 0.75, Audio Influence 0.8,
+Variety 1, duration 359 (soft). A cover regenerates the bed, so the key moved to G minor.
+
 ---
 
 ## STYLE PROMPT:
@@ -231,3 +236,5 @@ Ho — ho — ho
 
 | Date | Model | Clip ID | Settings | Measured | Verdict |
 |---|---|---|---|---|---|
+| 2026-11-23 | v6 (cover of `72ccb1ed`) | [`6fd78c03-7e00-4123-8f39-5c7b15d93875`](https://suno.com/song/6fd78c03-7e00-4123-8f39-5c7b15d93875) | cover; Option B style; W 0.3 / SI 0.75 / AI 0.8 / Variety 1; duration 359 soft | 167.2 BPM, 6/8 waltz feel, G minor; 5:29; first vocal 0:34; first chorus 1:13 (alignment) | Take A. ✅ waltz kept; ✅ Froststep melody/character kept; ✅ bridge 3:21–3:40 quieter, close low vocal; ✅ biggest final chorus; ✅ low male chant harmonies; ✅ breathy spoken/whispered ho ho ho (5:10–5:25); ✅ natural ending; ✅ all 93 lines sung, 0 failed words; no unwanted elements. |
+| 2026-11-23 | v6 (cover of `72ccb1ed`) | [`4cc83650-a3a5-470f-8039-c0ccd31206a6`](https://suno.com/song/4cc83650-a3a5-470f-8039-c0ccd31206a6) | same | 168.7 BPM, 3/4 waltz feel, G minor; 4:51; first vocal 0:17; first chorus 0:52 (alignment) | Take B. ✅ waltz kept; ✅ melody kept; ✅ bridge ~3:00 sparser with near-whispered vocal, then builds; ✅ biggest final chorus; ✅ low male chant harmonies; ✅ quiet near-whispered ho ho ho (4:41); ✅ natural ending; ✅ all lines sung, 0 failed words; no unwanted elements. Shortest intro and earliest hook of any take. |
