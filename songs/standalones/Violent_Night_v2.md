@@ -316,5 +316,12 @@ Ho — ho — ho
 
 | Date | Model | Clip ID | Settings | Measured | Verdict |
 |---|---|---|---|---|---|
-| 2026-11-23 | v6 | [`bd5c3106-7f23-44b6-bc1b-bf0ebbf52cbc`](https://suno.com/song/bd5c3106-7f23-44b6-bc1b-bf0ebbf52cbc) | male vocals, duration 359 (soft), default sliders | pending analysis | Take A. Not yet reviewed. |
-| 2026-11-23 | v6 | [`0578b38d-8eb2-4e71-9bc2-108f165fccfb`](https://suno.com/song/0578b38d-8eb2-4e71-9bc2-108f165fccfb) | same | pending analysis | Take B. Not yet reviewed. |
+| 2026-11-23 | v6 | [`bd5c3106-7f23-44b6-bc1b-bf0ebbf52cbc`](https://suno.com/song/bd5c3106-7f23-44b6-bc1b-bf0ebbf52cbc) | male vocals, duration 359 (soft), default sliders | 131 BPM, D minor, 4/4 (analysis); 5:59; intro ~26 s | Take A. 4/4, no key change despite `[Key Change: Relative major, F]`. Bridge only partly stripped (percussion stays). Biggest final chorus, gang vocals, whispered ending; no clear final drum hit. |
+| 2026-11-23 | v6 | [`0578b38d-8eb2-4e71-9bc2-108f165fccfb`](https://suno.com/song/0578b38d-8eb2-4e71-9bc2-108f165fccfb) | same | 133.2 BPM, D minor, 4/4 (analysis); 6:00; intro ~22 s | Take B. 4/4 march feel; only a hint of F major colour, no established key change. Bridge strip works (drums out, drone/cello and voice). Biggest final chorus, gang vocals, whisper; ending is ambience and bell, no single drum hit. |
+
+**Render findings (Nov 23, 2026, `audio-analysis` + `audio-listen`):** all four takes across revisions 1-2
+held the tempo (131-135 BPM) and D minor, and delivered the final-chorus lift, gang vocals and whispered
+ending. The 3/4 waltz was mostly lost (3 of 4 heard as 4/4) and the F major lift failed in both revision-2
+takes even with a `[Key Change:]` tag. Next options: redo the Breakdown with an `audio-create` section edit
+on the preferred take; for the meter, try "6/8 lilting folk waltz, one-two-three sway" in the Style Prompt
+and move "waltz" earlier; render 2 more takes before changing the lyrics again.

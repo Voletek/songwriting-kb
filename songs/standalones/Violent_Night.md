@@ -258,5 +258,5 @@ Ho — ho — ho
 | Date | Model | Clip ID | Settings | Measured | Verdict |
 |---|---|---|---|---|---|
 | 2026-11-23 | v6 | `457c3c47-6545-4694-b4f1-93bfc9120685`, `59d4560a-124e-4754-ac8e-4596e33b55b4` | male vocals, duration 359 (soft) | — | Rejected by Suno before generating: "fireside-skald menace" matched an artist name. Not charged. |
-| 2026-11-23 | v6 | [`20a1b845-3d54-41df-a0b9-d66afc5fc131`](https://suno.com/song/20a1b845-3d54-41df-a0b9-d66afc5fc131) | male vocals, duration 359 (soft), default sliders | pending analysis | Take A. Not yet reviewed. |
-| 2026-11-23 | v6 | [`7a519480-c3f5-4bc2-9375-4222b00d8c3e`](https://suno.com/song/7a519480-c3f5-4bc2-9375-4222b00d8c3e) | same | pending analysis | Take B. Not yet reviewed. |
+| 2026-11-23 | v6 | [`20a1b845-3d54-41df-a0b9-d66afc5fc131`](https://suno.com/song/20a1b845-3d54-41df-a0b9-d66afc5fc131) | male vocals, duration 359 (soft), default sliders | 134.9 BPM, D minor, 4/4 (analysis); 5:59; intro ~28 s | Take A. Heard as a 4/4 march, not a waltz. No key change. Bridge strip, biggest final chorus, gang vocals, whispered ending and final drum hit all present. |
+| 2026-11-23 | v6 | [`7a519480-c3f5-4bc2-9375-4222b00d8c3e`](https://suno.com/song/7a519480-c3f5-4bc2-9375-4222b00d8c3e) | same | 135.2 BPM, D minor, 3/4 (analysis; heard as ambiguous 3/4 vs 4/4); 5:59; intro ~16 s | Take B. The only take with a (brief) F major shift, ~4:55 to ~5:14, and back to D minor. Bridge strip, biggest final chorus, gang vocals, whisper and final drum hit present. No lyre heard. Closest to the plan. |
