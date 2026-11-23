@@ -68,7 +68,7 @@
 
 **Creative choices (artist can override):**
 - Rhyme scheme (e.g., AABB where a verse would usually be ABCB, or no rhyme at all — there is no universal default; just make it intentional)
-- Song length (7 minutes instead of 3:30-4:30 — if the art needs it)
+- Song length (7 minutes instead of a 2:30-3:30 streaming single — if the art needs it). Length targets in `references/SONG_LENGTH_REFERENCE.md` are defaults: override them with a `Length Target:` line and note the reason
 - Structure (through-composed instead of verse-chorus — if intentional)
 - Genre fusion ratio (50/50 instead of 70/30 — if they want the tension)
 - Key choice (against the emotion table — if they hear something different)

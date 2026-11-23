@@ -79,7 +79,7 @@ Work through each quickly (1-2 sentences each). This is internal scaffolding -- 
 | 6 | **Genre** | Which of Fabbri's genre rule types weigh most for this genre, and are they honoured? Fusion balanced (70/30)? |
 | 7 | **Arrangement** | Growth pattern, contrast pairs, negative space, repetition calibration |
 | 8 | **Production** | Timbre palette (Tagg musemes), harmonic choices, soundbox design, proxemic distance |
-| 9 | **Commercial** | Audience, platform, length, sync readiness, 7-second rule, skip test scan |
+| 9 | **Commercial** | Audience, platform, length (against the song's `Length Target:` or the closest preset in `references/SONG_LENGTH_REFERENCE.md`; an intended, documented departure is not a fault), sync readiness, 7-second rule, skip test scan |
 
 **7-second rule** [Tier 3: platform heuristic, unverified]: the working assumption that a casual streaming listener decides to keep or skip a track within roughly its first 7 seconds. Treat that window as the first-impression and skip window. Does the opening (intro sound, first sung line, or an early hook signal) give a reason to keep listening? This is separate from hook timing (Category 1) and the Skip Test (A5), which scans the whole song.
 

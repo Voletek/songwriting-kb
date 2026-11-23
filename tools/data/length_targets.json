@@ -1,0 +1,16 @@
+{
+  "_about": "Song-length presets for tools/estimate-runtime.py. Guidance, not rules (core/tenets.md Tenet 3: song length is the artist's call). Sources and tiers: references/SONG_LENGTH_REFERENCE.md. Override per song with a 'Length Target:' line in the song file, or per run with --target / --min / --max / --max-intro / --max-hook. To change a preset for your own repo, edit this file or add tools/data/length_targets.local.json with the same shape (it is merged on top and git-ignored).",
+  "presets": {
+    "streaming": {"label": "Streaming single (playlists)", "min_s": 150, "max_s": 210, "max_intro_s": 15, "max_hook_s": 45},
+    "pop":       {"label": "Pop / hip-hop / R&B", "min_s": 150, "max_s": 210, "max_intro_s": 15, "max_hook_s": 45},
+    "radio":     {"label": "Radio edit", "min_s": 180, "max_s": 225, "max_intro_s": 15, "max_hook_s": 50},
+    "rock":      {"label": "Rock / indie / alternative", "min_s": 210, "max_s": 270, "max_intro_s": 20, "max_hook_s": 60},
+    "ballad":    {"label": "Ballad / acoustic / slow", "min_s": 240, "max_s": 300, "max_intro_s": 20, "max_hook_s": 70},
+    "album":     {"label": "Album track / story song", "min_s": 180, "max_s": 360, "max_intro_s": 40, "max_hook_s": 90},
+    "cinematic": {"label": "Cinematic / folk epic / concept piece", "min_s": 240, "max_s": 420, "max_intro_s": 45, "max_hook_s": 100},
+    "club":      {"label": "Club / extended mix (DJ intro and outro)", "min_s": 240, "max_s": 360, "max_intro_s": 60, "max_hook_s": 90},
+    "short":     {"label": "Short-form clip (TikTok / Reels / Shorts)", "min_s": 15, "max_s": 60, "max_intro_s": 3, "max_hook_s": 5},
+    "sync30":    {"label": "Sync cut, 30 s (ads)", "min_s": 28, "max_s": 32, "max_intro_s": 3, "max_hook_s": 10},
+    "sync60":    {"label": "Sync cut, 60 s (ads, TV)", "min_s": 57, "max_s": 63, "max_intro_s": 5, "max_hook_s": 20}
+  }
+}
