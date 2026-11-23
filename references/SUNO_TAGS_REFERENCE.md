@@ -496,7 +496,7 @@ Our SOPs produce Precise-level prompts by design:
 
 ## CREATIVE SLIDERS (UI Settings)
 
-> **v5.5-era (legacy) — re-validate on V6.** Optional: use these only if your Suno UI exposes sliders; all values below are v5.5-era starting points, not tested V6 settings.
+> **v5.5-era (legacy) — re-validate on V6.** Optional: the sliders themselves are V6 features (suno.com UI and Suno MCP `controls`), but all values below are v5.5-era starting points, not tested V6 settings.
 
 Suno's v5.5 interface provides three sliders that affect generation behavior. These are NOT text fields — they're percentage-based controls in the UI.
 

@@ -511,7 +511,7 @@ Each section's production cue tags should:
 
 ## 8. CREATIVE SLIDER RECOMMENDATIONS — v5.5-era (legacy) - re-validate on V6
 
-> OPTIONAL. Use only if your Suno UI exposes these sliders; the values are v5.5-era starting points
+> OPTIONAL. The sliders are V6 features (suno.com UI, or the Suno MCP `controls` as 0–1 fractions); the values are v5.5-era starting points
 > [Tier 3], not V6-validated settings.
 
 ### 8.1 Slider-Genre Mapping

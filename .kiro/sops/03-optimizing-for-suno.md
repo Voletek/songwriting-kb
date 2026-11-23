@@ -31,7 +31,7 @@ Full procedure: `core/methodology/suno-optimization.md` → **V6 Procedure (defa
 3. **Exclude:** negatives only, plain comma-separated text, no dash prefix (e.g. `trap drums, beatboxing, vocal hums, bright synths`); written under `## EXCLUSIONS:` in the song file.
 4. **Lyrics = the HOW:** `[Title:]`, `[Production Direction:]`, `[Vocal Direction:]`, section tags, `[Instrument: X In/Out]` choreography, `[Dynamic:]` / `[Vocal:]` / `[Transition:]` / `[Key Change:]` tags, 2-4 tags per section; no pipe notation, no v5.5 global tags, no `[Tag Vocabulary]` block; end with `[End]`; ≤5000 chars.
 5. Run `python3 tools/validate-song.py <file>` and `python3 tools/lyric-lint.py <file>`.
-6. Render 3-4 takes, keep the best, and log results in the `references/V6_TAG_DISCOVERY.md` results log.
+6. Render 3-4 takes, keep the best, and log results in the song's `## RENDERS` section and the `references/V6_TAG_DISCOVERY.md` results log. Rendering, measuring and fixing takes through the Suno MCP: SOP 10 (`.kiro/sops/10-rendering-through-the-suno-mcp.md`).
 
 ---
 
@@ -191,7 +191,7 @@ Final checklist:
 
 ### Step 10 — Set Creative Sliders (optional)
 
-Only if your Suno UI exposes sliders. Values are v5.5-era starting points (legacy — re-validate on V6). Recommend slider values based on song type:
+Sliders are V6 features in the suno.com UI and the Suno MCP `controls` (send 60% as `0.6`). The values are v5.5-era starting points (re-validate on V6). Recommend slider values based on song type:
 
 | Song Type | Weirdness | Style Influence | Audio (if Inspo) |
 |---|---|---|---|
@@ -229,7 +229,7 @@ Document the optimized version with:
 - Style: XXX/1000
 - Lyrics: XXXX/5000
 
-### Slider Recommendations (optional — only if your Suno UI exposes sliders):
+### Slider Recommendations (optional; UI percentages, or 0–1 fractions in the MCP `controls`):
 - Weirdness: XX%
 - Style: XX%
 - Audio: XX% (if applicable)

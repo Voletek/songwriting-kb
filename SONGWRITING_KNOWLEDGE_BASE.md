@@ -316,7 +316,7 @@ Canonical rubric (plus the 5 advanced assessments and the Layer 2.5 Suno Optimiz
 ## 12. Suno AI — Formatting, Style Prompts & Production (V6 default)
 
 ### 12.0 Suno V6 — Current Default Model (read first)
-**Suno V6** (models `v6` / `v6-wild` / `v6-mini`) is the current default model and uses a different tag paradigm than v5.5. Status: working model (Sept 2026, user-confirmed); log render evidence in the RESULTS LOG of `references/V6_TAG_DISCOVERY.md`.
+**Suno V6** (models `v6` / `v6-wild` / `v6-mini`) is the current default model and uses a different tag paradigm than v5.5. Status: working model (user-reported Sept 2026; per-tag evidence in the `references/V6_TAG_DISCOVERY.md` results log).
 - **Style field = the WHAT**: genre, key, tempo, vocal identity, production aesthetic (sets the world).
 - **Lyrics field = the HOW**: section tags, instrument entrances/exits, dynamics, delivery, transitions (choreographs the performance).
 - **V6 lyric format:** section tags (`[Verse 1]`, `[Chorus]`…); `[Instrument: X In]` / `[Instrument: X Out]` (confirmed working for entrances/exits); `[Dynamic: ...]`; `[Vocal: ...]` or `[Male lead, inline adjective]`; `[Transition: ...]`; `[Key Change: ...]`; 2–4 tags per section (not per line); end with `[End]`.
@@ -394,7 +394,7 @@ In song files, put them in an `## EXCLUSIONS:` section (a legacy `[Exclusions: .
 ### 12.8 Limits: Style 1000 chars, Lyrics 5000 chars, Exclude field for negatives only
 
 ### 12.8.1 Creative Sliders (UI Settings) — v5.5-era (legacy), re-validate on V6
-**Optional** — only if your Suno UI exposes sliders; the values below are v5.5-era starting points.
+**Optional.** Sliders are V6 features in the suno.com UI and the Suno MCP `controls` (0–1 fractions); the values below are v5.5-era starting points to re-validate.
 
 **Weirdness** (Safe 0% ↔ Chaos 100%) — Default 50%. Controls creative latitude.
 - 35-45% = predictable/radio | 50-55% = balanced (our songs) | 60-75% = experimental | 75%+ = chaos

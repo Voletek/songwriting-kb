@@ -19,11 +19,18 @@ songs/
 └── README.md
 ```
 
+## Branches
+
+`main` is the community version: `songs/` ships empty there. Keep your own songs (their versions,
+critiques in `analysis/` and render logs) on your personal branch, and don't merge them into `main`.
+Knowledge-base improvements go on their own branches and are merged into `main` for everyone.
+
 ## File Naming
 
 - Album tracks: `##_Title_Words.md` (number prefix for ordering)
 - Standalones: `Title_Words.md`
-- Versions: append `_v2`, `_v3`, `_RAW`, `_SUNO_READY` (the highest version is canonical)
+- Versions: append `_v2`, `_v3`, `_RAW`, `_SUNO_READY` (the highest version is canonical). **Save each revision as a new file; never overwrite a version that has been critiqued or rendered**, because its critique and render log refer to it. Keep the writer's original as `_RAW.md` with `<!-- validate: skip -->` at the top
+- Render log: end every song file with a `## RENDERS` table (date, model, clip ID, settings, measured results, verdict). See SOP 10
 - Song briefs (SOP 09): `Title_Words.brief.md` next to the song
 
 ## What Triggers Hooks

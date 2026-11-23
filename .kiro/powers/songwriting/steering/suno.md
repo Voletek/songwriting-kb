@@ -1,7 +1,10 @@
 # Suno AI — Power Steering
 
+> Summary of the canonical rules in `.kiro/steering/suno-formatting.md`. If they disagree, the canonical file wins.
+> Rendering through the Suno MCP: SOP 10 (`.kiro/sops/10-rendering-through-the-suno-mcp.md`) and `references/SUNO_MCP_REFERENCE.md`.
+
 ## ⚡ V6 Paradigm (current default)
-V6 (v6 / v6-wild / v6-mini). Status: working model (Sept 2026, user-confirmed); log render evidence in the `references/V6_TAG_DISCOVERY.md` results log.
+V6 (v6 / v6-wild / v6-mini). Status: working model (user-reported Sept 2026; per-tag evidence in the `references/V6_TAG_DISCOVERY.md` results log).
 - **Style field = the WHAT:** genre (first), key, tempo, vocal identity, production aesthetic
 - **Lyrics field = the HOW:** section tags + `[Instrument: X In/Out]` + dynamics + delivery + transitions
 - `[Instrument: X In]` / `[Instrument: X Out]` control instrument entrances/exits — USE THEM
@@ -12,7 +15,12 @@ V6 (v6 / v6-wild / v6-mini). Status: working model (Sept 2026, user-confirmed); 
 - Deterministic check: `python3 tools/validate-song.py <file>`
 
 ## Limits
-- Style: 1000 chars | Lyrics: 5000 chars | Exclude field: negatives/exclusions ONLY
+- Style: 1000 chars | Lyrics: 5000 chars | Exclude field: 1000 chars, negatives/exclusions ONLY (the Suno MCP enforces the same limits on V6)
+
+## V6 Controls & Features
+- Sliders (Weirdness, Style Influence, Audio Influence, Variety 0-4), Max Mode (only on request), model `v6` / `v6-wild` / `v6-mini`
+- Voices (formerly Personas), stems (2 or 12 parts), section edits, extensions past 6:00
+- In the MCP, sliders are 0–1 fractions in `controls` (60% = `0.6`). Log non-default values in the song's `## RENDERS` section
 
 ## Section Rules
 - Tags on own line, never with lyrics
@@ -51,7 +59,7 @@ trap drums, beatboxing, vocal hums, bright synths
 - **Global tags (v5.5 only):** `[track: genre: X, mood: X, length: 270]` / `[control: no-repeat, dynamic transitions]` / `[sequence: ...]`; terminator `[end]` (validator accepts `[end]` and `[End]`)
 - **Pipe notation:** `[chorus | powerful, wide]` — v5.5 char-saver; not V6 canonical grammar
 - **v5.5 tags:** `[vulnerable vocals]`, `[whisper]` / `[whispering]`, `[build]`, `[modulation: ascending]`, `[chant]`; `[silence: sudden]` was unreliable even on v5.5 (unverified on V6)
-- **Creative sliders (optional — only if your Suno UI exposes them; v5.5-era starting points):** Weirdness 50-55%, Style Influence 50-60%, Audio Influence 45% if using Inspo
-- **v5.5 features (UI):** Personas (lock vocal identity per character), Stems (12-track splits for DAW mixing), Custom Models (Pro/Premier)
+- **Slider values** (v5.5-era starting points; the sliders themselves are V6 features, see below): Weirdness 50-55%, Style Influence 50-60%, Audio Influence 45%
+- **Custom Models / My Taste:** v5.5-era UI features, not exposed through the MCP
 - **Era tags:** decade tags ("1980s") biased production style on v5.5; separate era from mix: "modern production, vintage 1970s guitar tone"
 - **5-8 descriptor sweet spot**, Italian tempo preference, performance-notation symbols (only ALL CAPS was reliable) — v5.5-era Tier 3 heuristics

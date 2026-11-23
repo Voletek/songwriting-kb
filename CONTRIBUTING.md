@@ -19,7 +19,7 @@ personalise the repo, and how to add an album. This page is the short version.
 ## Workflow
 
 1. Branch from `main`: `contribution/<your-addition>` (external contributors) or a descriptive
-   `feature/…`, `fix/…`, `docs/…`, `song/…` branch.
+   `feature/…`, `fix/…`, `docs/…` branch. `main` is the community version: keep your own songs on your personal branch and don't merge them into `main` (see `songs/README.md`).
 2. Make your change and run the checks:
    ```bash
    python3 -m unittest discover -s tests       # tool tests

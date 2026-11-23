@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Three in the Morning -- Standalone
 
 > Song Thesis: *A man at rock bottom walks the 3am streets because he cannot face his empty apartment. He sees himself in every broken person on the gutter and confesses -- through desperate pleading -- that he doesn't know if he'll survive the night. This is not observation. This is a prayer from a man who is coming apart.*

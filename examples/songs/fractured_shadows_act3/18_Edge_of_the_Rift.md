@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Track 18 — Edge of the Rift
 
 > **Song Thesis:** The enormity of the task ahead is dwarfed only by the steadiness of a man who finally knows who he is.

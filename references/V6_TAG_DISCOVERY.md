@@ -1,6 +1,6 @@
 # Suno V6 Tag Discovery
 
-> **Status: working model (Sept 2026, user-confirmed); log render evidence in the results log below.**
+> **Status: working model (user-reported Sept 2026; per-tag evidence in the `references/V6_TAG_DISCOVERY.md` results log).**
 > This documents the V6 lyric-tag format. V6 (v6 / v6-wild / v6-mini) is the current default:
 > these findings are the operating assumption for V6 songwriting. `core/methodology/suno-optimization.md`
 > keeps its v5.5-era procedure as LEGACY (re-validate on V6) and carries the V6 workflow in
@@ -411,28 +411,36 @@ Rate: ✅ works / ⚠️ partial / ❌ ignored / ? untested.
 
 ### Render evidence (one row per render; add newest at the bottom)
 
-| Date | Model (v6/v6-wild/v6-mini) | Tag(s) tested | Render result/ID |
-|---|---|---|---|
-| | | | |
+Measure each render with `audio-analysis` (BPM, meter, key, sections) and `audio-listen` (tag-specific
+questions) before rating it; see SOP 10 Step 3. One song is one data point: a result needs 3+ songs
+before it changes a rating below.
 
-### Tag-type summary (working model, Sept 2026, user-confirmed; update from the render rows above)
+| Date | Model (v6/v6-wild/v6-mini) | Song / take | Tag(s) tested | Result (measured) | Render ID |
+|---|---|---|---|---|---|
+| | | | | | |
+
+### Tag-type summary (update from the render rows above)
+
+> **Evidence status:** ratings marked *user-reported* come from the user's own renders in Sept 2026 and
+> have **no logged render rows yet**. They are the working model, but they are Tier 3 claims until rows
+> above back them across 3+ songs (CONTRIBUTING.md). Change a rating only from logged rows.
 
 | Tag Type | Result | Notes |
 |---|---|---|
 | `[Tag Vocabulary]` block | ❌ not needed | Not sung, not necessary — drop from final output. Optional planning aid only. |
-| `[Instrument: X In]` (entrance on cue) | ✅ works | Instruments enter on cue |
-| `[Instrument: X Out]` (exit on cue) | ✅ works | Instruments exit on cue |
+| `[Instrument: X In]` (entrance on cue) | ✅ works (user-reported) | Instruments enter on cue |
+| `[Instrument: X Out]` (exit on cue) | ✅ works (user-reported) | Instruments exit on cue |
 | Style Prompt vs inline tags | ✅ complementary | Style = WHAT (identity), inline = HOW (arrangement). Used together. |
-| `[Male Lead]` / `[Female ...]` clean handoff | ✅ working model | Distinct-voice assignment |
-| `[Whisper]` vs `[Belt]` delivery change | ✅ working model | Vocal delivery shifts |
-| `[Spoken Word]` (speaks not sings) | ✅ working model | Spoken delivery |
-| `[Gang Vocal]` (group appears) | ✅ working model | Group/ensemble vocal |
-| Call/Response formatting | ✅ working model | Alternating lead/response |
-| `[Key Change]` / `[Key Lift]` | ✅ working model | Modulation on cue |
-| `[Half-Time]` / `[Double-Time]` feel shift | ✅ working model | Feel/tempo-perception shift |
-| `[Crescendo]`/`[Diminuendo]`/`[Swell]` dynamics | ✅ working model | Dynamic motion |
-| Compound transitions | ✅ working model | Bundled simultaneous events |
-| East Tennessee accent | ✅ working model | Carried by style prompt; reinforced by lyric dialect |
+| `[Male Lead]` / `[Female ...]` clean handoff | ✅ working model (user-reported) | Distinct-voice assignment |
+| `[Whisper]` vs `[Belt]` delivery change | ✅ working model (user-reported) | Vocal delivery shifts |
+| `[Spoken Word]` (speaks not sings) | ✅ working model (user-reported) | Spoken delivery |
+| `[Gang Vocal]` (group appears) | ✅ working model (user-reported) | Group/ensemble vocal |
+| Call/Response formatting | ✅ working model (user-reported) | Alternating lead/response |
+| `[Key Change]` / `[Key Lift]` | ✅ working model (user-reported) | Modulation on cue |
+| `[Half-Time]` / `[Double-Time]` feel shift | ✅ working model (user-reported) | Feel/tempo-perception shift |
+| `[Crescendo]`/`[Diminuendo]`/`[Swell]` dynamics | ✅ working model (user-reported) | Dynamic motion |
+| Compound transitions | ✅ working model (user-reported) | Bundled simultaneous events |
+| East Tennessee accent | ✅ working model (user-reported) | Carried by style prompt; reinforced by lyric dialect |
 | Voice-as-instrument muting (`[Vocal: Vocal Out]`) | ? untested | Technique #8, drop the lead on cue |
 | AI-voice-as-second-character | ? untested | Technique #10, MODE C narrative device; verify it reads as a distinct voice, not a harmony |
 | Progressive glitch degradation | ? untested | Technique #11, MODE C escalating curve; may need Production Notes rather than one tag |
@@ -440,7 +448,8 @@ Rate: ✅ works / ⚠️ partial / ❌ ignored / ? untested.
 | Numeric BPM change (`[Tempo: X to Y BPM]`) | ? untested | Technique #13, distinct from `[Feel: Half-Time]` |
 | Panning / spatial cue | ? untested | Technique #14, stereo-field direction for a part/ad-lib |
 | Named key-change modulation | ? untested | Technique #15, does the specific interval read, or only the fact of a change? |
-| Em-dash breath within a line | ? untested | Technique #16, does the in-line dash produce a phrasing pause? |
+| Em-dash breath within a line | ? untested |
+| Meter from the Style Prompt (e.g. `3/4 waltz`) | ? untested | Suno may default to 4/4 |
 
 ---
 
@@ -455,15 +464,16 @@ Rate: ✅ works / ⚠️ partial / ❌ ignored / ? untested.
 
 ## Still Open (refine as more renders accumulate)
 
-1. Character limits under v6 — still 1000 style / 5000 lyrics, or changed?
+1. ~~Character limits under v6~~ → **answered for the Suno MCP (Nov 2026): 1000 style, 1000 exclude, 5000 lyrics.** The web UI is assumed to match; note it if it doesn't.
 2. Does v6 favor plain-language section descriptions over bracket tags for some events?
-3. Is modulation even more reliable via the "edit one section in plain language" feature than via tags?
+3. Is modulation more reliable via the "edit one section in plain language" feature than via tags? The feature exists in the MCP (`audio-create` with `reference_audio_ids`). Testable now.
 4. Does end punctuation (! ? .) cause issues, or does v6 handle it cleanly? (test renders used it freely)
-5. v6 flagship vs v6-wild vs v6-mini: do they differ in how strictly they honor these tags?
+5. v6 flagship vs v6-wild vs v6-mini: do they differ in how strictly they honor these tags? Now cheap to test: same file, one call per model, measure with `audio-analysis`.
 6. Do the MODE C devices (AI second voice #10, glitch degradation #11, surveillance interlude #12) read as intended, or collapse into harmony/FX?
 7. Does a named key-change interval (#15) actually modulate to that interval, or just "change key"?
 8. Is progressive glitch degradation (#11) better expressed as one escalating tag or as Production-Notes automation?
 9. Does the in-line em-dash (#16) survive rendering as a breath, or get normalized away?
+10. Does V6 honour a non-4/4 meter from the Style Prompt (3/4, 6/8), and does its position in the prompt matter?
 
 ---
 

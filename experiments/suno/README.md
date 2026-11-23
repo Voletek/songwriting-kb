@@ -11,8 +11,8 @@ When you notice Suno behaving unexpectedly (a tag working differently, a slider 
 
 1. Copy `TEMPLATE.yml` to a new file: `YYYY-MM-DD-experiment-name.yml`
 2. Fill in your hypothesis and settings
-3. Generate 3+ renders across different songs with the same variable
-4. Record observations per render
+3. Generate 3+ renders across different songs with the same variable (through the Suno MCP: SOP 10)
+4. Record measurements (`audio-analysis`) and observations (`audio-listen`, your ears) per render
 5. Write your conclusion
 
 ## Promotion Rule
@@ -34,7 +34,7 @@ experiments/suno/
 
 Planned (not yet run): `era-tag-interaction` (do era tags bias production more than instrumentation?)
 and `whisper-layer-reliability` (do whispered `()` layers render reliably?). Both should now be run
-on V6 (`suno_version: "v6"`, with `model_variant` recorded).
+on V6 (`suno_version: "v6"`, with `model_variant` recorded), along with `v6-meter-from-style` (does a 3/4 or 6/8 meter in the Style Prompt hold?) and `v6-key-change-tag-vs-edit` (lyric `[Key Change]` tag vs a section edit).
 
 ## Where Findings Go
 

@@ -512,7 +512,7 @@ lyric lines...
 - Audio Influence: XX% (if applicable)
 ```
 
-Slider recommendations are OPTIONAL. Include them only if your Suno UI exposes sliders. The values are v5.5-era starting points.
+Slider recommendations are OPTIONAL. Sliders are V6 features (suno.com UI, or the Suno MCP `controls` as 0-1 fractions); the values are v5.5-era starting points to re-validate.
 
 ---
 

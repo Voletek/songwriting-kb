@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Rikan — Polished (Album Track 7 / Finale)
 
 > Minor adjustments only. This is 9/10 — the emotional payoff of the entire album.

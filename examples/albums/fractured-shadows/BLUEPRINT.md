@@ -57,6 +57,9 @@ A game developer (Draeven Vole / "Vole-tek") burns out, dissolves into his own s
 > Act 3 is open-ended: register each new track here BEFORE writing it (see ALBUM EXTENSION PROTOCOL).
 > T18 was checked against Rules 1-10 in its song file (`examples/songs/fractured_shadows_act3/18_Edge_of_the_Rift.md`);
 > it stays in Em with no modulation (Rule 7 preserved). Which rules are Act-1/2-specific vs carried into Act 3 is not yet formally decided.
+> V6-format versions of T7, T17 and T18 (same words, keys, modulations and instrument entry points; not yet rendered on V6):
+> `examples/songs/fractured_shadows_act1/07_Rikan_V6.md`, `examples/songs/fractured_shadows_act2/17_Both_Names_V6.md`,
+> `examples/songs/fractured_shadows_act3/18_Edge_of_the_Rift_V6.md`. The originals are kept as v5.5-era archives.
 
 ---
 
@@ -430,7 +433,7 @@ NO crossfade. Hard cut. The silence between T7 and T8 IS the transfer.
 
 ### Slider Presets by Track Group (optional — v5.5-era starting points, legacy)
 
-> Only if your Suno UI exposes sliders; re-validate on V6.
+> Optional; v5.5-era values to re-validate on V6 (UI percentages, or 0–1 fractions in the Suno MCP `controls`).
 
 | Track Group | Weirdness | Style Influence | Audio Influence | Notes |
 |---|---|---|---|---|

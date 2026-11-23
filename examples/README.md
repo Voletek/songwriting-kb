@@ -13,8 +13,8 @@ Two fully-realized concept album setups showing how every piece connects:
 
 | Album | Genre | Tracks | Shows You |
 |---|---|---|---|
-| **Fractured Shadows** | Industrial → Cinematic Rock | 18 (17 in Acts 1–2 + Act 3 in progress) | Large multi-act album, vocal evolution, sonic pivot, named layers, character voices, an in-progress extension (T18) |
-| **Keeper of the Light** | Folk-Horror / Sea-Shanty | 8 | Smaller focused album, non-vocal entity design, single Persona with delivery variants |
+| **Fractured Shadows** | Industrial → Cinematic Rock | 18 (17 in Acts 1–2 + Act 3 in progress) | Large multi-act album, vocal evolution, sonic pivot, named layers, character voices, an in-progress extension (T18). V6-format versions of T7, T17 and T18 are in `songs/` (`_V6` suffix) |
+| **Keeper of the Light** | Folk-Horror / Sea-Shanty | 8 | Smaller focused album, non-vocal entity design, single Persona with delivery variants. Example track: `songs/keeper_of_the_light/01_The_Keepers_Morning_V6.md` (V6 format) |
 
 Each album folder contains:
 - `BLUEPRINT.md` — The full album blueprint (the canonical copy; use it as a format reference or copy it to `references/` as your own starting point)

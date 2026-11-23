@@ -239,5 +239,5 @@ I wear it well — I'm not alright
 
 ## SLIDER RECOMMENDATIONS (optional)
 
-Only if your Suno UI exposes sliders. These are v5.5-era starting points (see the original file):
+Optional. These are v5.5-era starting points to re-validate on V6 (in the Suno MCP: 0.6 / 0.9 / 0.3):
 Weirdness 60% · Style Influence 90% · Audio Influence 30% (only with an inspiration track).

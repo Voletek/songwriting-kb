@@ -15,7 +15,7 @@ description: "Suno V6 formatting rules (default) — Style field = WHAT, Lyrics 
 
 ## ⚡ V6 Paradigm (default)
 
-Suno V6 (v6 / v6-wild / v6-mini) is the current default. Status: working model (Sept 2026, user-confirmed); log render evidence in the `references/V6_TAG_DISCOVERY.md` results log.
+Suno V6 (v6 / v6-wild / v6-mini) is the current default. Status: working model (user-reported Sept 2026; per-tag evidence in the `references/V6_TAG_DISCOVERY.md` results log).
 
 - **Style field = the WHAT:** genre, key, tempo, vocal identity, production aesthetic (sets the world)
 - **Lyrics field = the HOW:** section tags + `[Instrument: X In]` / `[Instrument: X Out]` + dynamics + delivery + transitions (choreographs the performance)
@@ -158,6 +158,29 @@ The Critic agent's Suno Optimization Assessment evaluates all of this. Full meth
 
 ---
 
+## V6 Controls & Features (suno.com UI and Suno MCP)
+
+These are current V6 features, in the suno.com UI and through the Suno MCP (field names and costs:
+`references/SUNO_MCP_REFERENCE.md`). Slider *values* are v5.5-era starting points [Tier 3]; re-validate on V6.
+
+| Control | MCP field | What it does | Starting point |
+|---|---|---|---|
+| Weirdness | `controls.weirdness` (0–1) | Creative latitude (safe ↔ chaos) | 0.50–0.55 |
+| Style Influence | `controls.style_influence` (0–1) | How strictly the Style Prompt steers | 0.50–0.60 (later v5.5 tests favoured 0.70–0.90) |
+| Audio Influence | `controls.audio_influence` (0–1) | With a voice: closeness to that voice. In covers, extensions and mashups: closeness to the source audio | 0.45 |
+| Variety | `controls.variety` (0–4) | How far the style tags are reinterpreted: Off / Normal / High / Extra / Max | Untested: leave at the default |
+| Max Mode | `max_mode` | More compute for consistency, at a multiple of the credits | Only when the user asks for it |
+| Model | `model` | `v6`, `v6-wild`, `v6-mini` | `v6`; name the model you use in the render log |
+
+UI percentages map to MCP fractions: 60% = `0.6`. Record every non-default value in the song's `## RENDERS` log.
+
+- **Voices** (v5.5 called them Personas): lock a vocal identity across generations (`voice_id`, from `voices-list`). One voice per album character.
+- **Stems:** `two` (vocals + instrumental) or `twelve` parts, for Studio or DAW mixing and the stem-targeted plugins in `plugins/`.
+- **Section edits and extensions:** redo one section of a finished song, or continue past the 6:00 cap. See SOP 10 (`.kiro/sops/10-rendering-through-the-suno-mcp.md`).
+- **Custom Models / My Taste:** v5.5-era UI features, not exposed through the MCP. Check the UI before relying on them.
+
+---
+
 ## Legacy v5.5-era mechanics (re-validate on V6)
 
 > Everything in this section is **v5.5-era (legacy) — re-validate on V6**. Use it for v5.5 renders, or as starting points to test on V6. Do not present it as a current rule.
@@ -185,18 +208,5 @@ V6 canonical grammar replaces this with separate namespaced tags (see `reference
 **Italian tempo markings** (`Adagio`, `[Tempo: Andante]`) were preferred over raw BPM on v5.5. [Tier 3]
 
 **`[silence: sudden]`** was unreliable on v5.5 — use a blank line or strip instrumentation instead. V6 dictionary has `[Dynamic: Silence]` / `[Transition: Hard Cut]` (log results).
-
-**Creative sliders (optional — only if your Suno UI exposes them; values are v5.5-era starting points). Through the Suno MCP they are the `controls` object: send percentages as 0–1 fractions; see `references/SUNO_MCP_REFERENCE.md`:**
-
-| Slider | Default | Starting Point | Effect |
-|---|---|---|---|
-| Weirdness | 50% | 50-55% | Creative latitude (Safe↔Chaos) |
-| Style Influence | 50% | 50-60% (later v5.5 tests favoured 70-90%) | How much Style Prompt steers output |
-| Audio Influence | ~45% | 45% (if Inspo) | How much reference track affects output |
-
-**v5.5 features (UI — not text tags):**
-- **Personas/Voices:** Lock a consistent vocal identity across generations. One Persona per album character.
-- **Stems:** Extract up to 12 individual tracks (vocals, drums, bass, etc.) for DAW mixing/mastering and album consistency.
-- **Custom Models:** Train Suno on your completed tracks to learn your sound. Pro/Premier only.
 
 **Performance notation:** On v5.5, only ALL CAPS reliably changed inline delivery (louder/more forceful); `~`, mid-word `-`, quotes, and ellipsis were unreliable. See `references/SUNO_TAGS_REFERENCE.md` → Performance Notation Symbols. On V6, use `[Vocal: ...]` / `[Dynamic: ...]` tags for delivery changes.

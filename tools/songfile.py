@@ -155,6 +155,7 @@ class SongFile:
         self.exclusions_raw = None   # joined raw exclusion text (all sources)
         self.exclusions = []         # list of items
         self.exclusion_sources = []  # e.g. ["section", "style-bracket", "lyrics-bracket"]
+        self.lyrics_inferred = False # True when the file had no headings and was read as raw lyrics
         self._parse()
 
     @property
@@ -221,6 +222,9 @@ class SongFile:
                 exclusion_parts.append(joined)
                 self.exclusion_sources.append("section")
 
+        if not blocks and "lyrics" not in chosen:
+            self._infer_raw_lyrics(lines)
+
         if exclusion_parts:
             self.exclusions_raw = ", ".join(p.strip() for p in exclusion_parts if p.strip())
             seen = []
@@ -229,6 +233,22 @@ class SongFile:
                 if key not in [s.lstrip("-\u2011\u2010\u2013 ").lower() for s in seen]:
                     seen.append(item)
             self.exclusions = seen
+
+
+    def _infer_raw_lyrics(self, lines):
+        """Read a file with no recognised headings as raw lyrics (e.g. lyrics pasted as-is).
+
+        Starts at the first [Title:] or section tag; needs at least two section tags so ordinary
+        Markdown documents are not mistaken for songs.
+        """
+        tag_lines = [i for i, line in enumerate(lines)
+                     if SECTION_TAG_RE.match(line.strip()) or re.match(r"^\s*\[\s*Title\s*:", line, re.I)]
+        if len([i for i in tag_lines if SECTION_TAG_RE.match(lines[i].strip())]) < 2:
+            return
+        cleaned, ended = _clean_block(lines[tag_lines[0]:], stop_at_end=True)
+        self.lyrics = "\n".join(cleaned).strip()
+        self.lyrics_has_end = ended
+        self.lyrics_inferred = True
 
 
 # ---------------------------------------------------------------------------
@@ -240,8 +260,15 @@ SECTION_KEYWORDS = (
     "final chorus", "hook", "refrain", "bridge", "breakdown", "build", "drop", "interlude",
     "instrumental", "solo", "break", "outro", "tag", "coda", "movement", "the plea", "final movement",
 )
+# Descriptive words that may precede the section keyword, e.g. "[Final Refrain ...]",
+# "[Extended Instrumental Intro ...]", "[Closing Outro]".
+SECTION_MODIFIERS = (
+    "final", "extended", "closing", "opening", "last", "first", "second", "third", "short", "long",
+    "reprise", "double", "half", "slow", "quiet", "big", "epic", "soft",
+)
 SECTION_TAG_RE = re.compile(
-    r"^\[\s*(" + "|".join(re.escape(k) for k in sorted(SECTION_KEYWORDS, key=len, reverse=True)) + r")\b[^\]]*\]",
+    r"^\[\s*(?:(?:" + "|".join(SECTION_MODIFIERS) + r")\s+)*("
+    + "|".join(re.escape(k) for k in sorted(SECTION_KEYWORDS, key=len, reverse=True)) + r")\b[^\]]*\]",
     re.IGNORECASE,
 )
 V6_DIRECTIVE_RE = re.compile(r"^\[\s*(Instrument|Dynamic|Transition|Feel|Tempo|Key Change)\s*:", re.IGNORECASE)

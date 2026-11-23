@@ -8,7 +8,7 @@
 ## Overview
 
 ```
-WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
+WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER → FINISH
   ↑                                          |
   └──────── (if fails verification) ─────────┘
 ```
@@ -71,7 +71,7 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 5. Re-check structure (hook signal within ~5-30 s of the first sung word, V2 new info, bridge turn)
 6. Update Production Notes if changes affect key/chords/dynamics
 
-**Output:** Revised draft (v2)
+**Output:** Revised draft saved as a NEW file (`<Title>_v2.md`, `_v3`, ...) next to the original. Never overwrite a version that has been critiqued or rendered: its critique and `## RENDERS` log refer to it. The highest version is canonical (`songs/README.md`).
 **Time:** 15-30 min
 
 **Exit criteria:**
@@ -80,7 +80,7 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 - [ ] Hook signal timing still works
 - [ ] Character count still within limits
 
-**Optional:** Run through Critique again (Stage 2) for a revised score. Target: +0.5-1.0 improvement. Recommended for songs targeting ≥8.5 or when revisions were structural. Optional for polish-only fixes where the original score was already 8.0-8.4.
+**Re-critique** (Stage 2, Layer 1 + 2.5 + delta) is **required** after structural revisions (sections cut, added or reordered) and optional for polish-only fixes where the original score was already 8.0-8.4. It is also recommended for songs targeting ≥8.5. Target: +0.5-1.0 improvement.
 
 **Note:** Revision is defined here (not as a standalone SOP) because it always requires critique output as input. The critique report IS the revision brief.
 
@@ -106,7 +106,7 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 - [ ] No `[Tag Vocabulary]` block, no v5.5 global tags, no pipe notation (V6)
 - [ ] No obsolete tags
 - [ ] Exclude field content prepared (plain comma-separated, no dash prefix)
-- [ ] (Optional) Slider recommendations — only if your Suno UI exposes sliders; v5.5-era starting points
+- [ ] (Optional) Slider recommendations — UI or Suno MCP `controls`; v5.5-era starting points to re-validate
 
 ---
 
@@ -152,21 +152,37 @@ Add `--strict` to make the validator fail on warnings. In Kiro IDE / CLI V3 the 
 
 ---
 
-### Stage 6: RENDER
+### Stage 6: RENDER (SOP 10)
 
-**Human action** (not agent):
-1. Open Suno (Custom Mode)
-2. **Select Persona / Voice** (v5.5-era feature, legacy — use it if your Suno UI offers it): Choose the character's vocal model for album consistency
-3. Paste Style Prompt into "Style of Music" field
-4. Paste Exclusions into "Exclude" field
-5. Paste Lyrics (V6: from `[Title:]` through `[End]`; v5.5-era: from `[track:]` through `[end]`) into "Lyrics" field
-6. (Optional) Set creative sliders — only if your Suno UI exposes them; recommendations are v5.5-era starting points
-7. Generate 3-4 versions
-8. Evaluate renders against the Production Notes vision
-9. Select best render OR identify what to adjust and re-render; log V6 tag behaviour in the `references/V6_TAG_DISCOVERY.md` results log
-10. **Extract Stems** (v5.5-era feature, legacy — if available in your Suno UI): Get stems from the best render for DAW mixing/mastering
+**Agent:** Renderer (through the Suno MCP), or a human in the suno.com UI
+**Input:** Verified song file
+**Process:** SOP 10 (`.kiro/sops/10-rendering-through-the-suno-mcp.md`):
+1. Pre-flight: `validate-song.py --strict`, `lyric-lint.py`, `estimate-runtime.py`; check credits; confirm cost and settings (model, voice, sliders) with the user
+2. Render: `python3 tools/suno-fields.py <file>` → `audio-create` (2 takes per call) → `audio-wait`. By hand: paste the same three fields into Custom Mode
+3. Verify: `audio-analysis` (BPM, meter, key, sections) and `audio-listen` (tag-specific questions) against the Production Notes
+4. Log: one row per take in the song file's `## RENDERS` section; tag results in the `references/V6_TAG_DISCOVERY.md` results log
+5. Decide: keeper, section edit, extension, cover, more takes, or back to Stage 3
 
-**Album consistency tip:** For concept albums, extract stems (where your Suno plan/UI offers them) from all tracks and do final mixing/mastering in a DAW. This lets you level-match, apply consistent reverb, and ensure the album sounds cohesive even if individual Suno renders have different production characteristics.
+**Output:** Takes logged in `## RENDERS`, a keeper (or a decision on what to change)
+**Time:** 10-20 min (plus Suno generation time)
+
+**Exit criteria:**
+- [ ] Every take logged with its measurements
+- [ ] Planned elements marked landed / partial / missed
+- [ ] Keeper chosen by the user, or the next change decided
+
+---
+
+### Stage 7: FINISH (SOP 10, Steps 6-7)
+
+**Agent:** Renderer, then the user in Suno Studio or a DAW
+**Process:**
+1. Fix missed sections without a full re-render: section edit (`audio-create` with `reference_audio_ids`), extension + `audio-full-song`, or cover
+2. Stems (`audio-stems-create`, 10 or 50 credits, ask first) → apply the stem-matched plugins in `plugins/` in Suno Studio, or mix in a DAW. Pitch-shifting one section is a DAW job
+3. Optional MIDI (`audio-midi`, 10 credits) and download (`audio-download`; ask before spending a download credit)
+4. Optional release checklist (SOP 10 Step 7): caption, word timings, shorter edit, solo/duet versions, publish only on request
+
+**Album consistency tip:** For concept albums, take stems from every track's keeper and do final mixing/mastering in one place (Suno Studio or a DAW). That lets you level-match, apply consistent reverb and the same plugin chain, and keep the album cohesive even when individual renders differ.
 
 ---
 
@@ -179,7 +195,8 @@ Add `--strict` to make the validator fail on warnings. In Kiro IDE / CLI V3 the 
 | 3. Revise | Songwriter | 15-30 min | Skip if ≥8.5 |
 | 4. Optimize | Suno-Optimizer | 15-20 min | Always proceed |
 | 5. Verify | Validators (5a) + Album-Continuity (5b) | 2 min + 10-15 min | 5a always; 5b only for album tracks |
-| 6. Render | Human | 10-20 min | Always proceed |
+| 6. Render | Renderer (or human) | 10-20 min | Always proceed |
+| 7. Finish | Renderer + user (Studio/DAW) | varies | Optional |
 | **TOTAL** | | **2-3 hours** | Per song |
 
 ---

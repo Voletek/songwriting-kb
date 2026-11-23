@@ -23,7 +23,7 @@ Suno optimization is the FINAL technical pass before rendering. It does NOT chan
 
 ## V6 Procedure (default)
 
-> Status: working model (Sept 2026, user-confirmed). Log render evidence in the `references/V6_TAG_DISCOVERY.md` results log.
+> Status: working model (user-reported Sept 2026; per-tag evidence in the `references/V6_TAG_DISCOVERY.md` results log).
 > Tag dictionary: `references/V6_TAG_REFERENCE.md`. Canonical grammar: `references/V6_TAG_DISCOVERY.md` → Canonical V6 Tag Grammar.
 
 1. **Split the song into three fields** -- Style / Exclude / Lyrics. In the song file: a Style Prompt section, an `## EXCLUSIONS:` section, and the Lyrics block.
@@ -245,7 +245,7 @@ Final checklist:
 
 ### Step 11 -- Set Creative Sliders (optional)
 
-Only if your Suno UI exposes sliders; values are v5.5-era starting points (legacy -- re-validate on V6). Through the Suno MCP, send them in the `controls` object as 0-1 fractions (60% = `0.6`); see `references/SUNO_MCP_REFERENCE.md`. Recommend slider values based on song type (see Named Slider Presets for tested combinations):
+Sliders are V6 features in the suno.com UI and the Suno MCP; the values are v5.5-era starting points (re-validate on V6). Through the Suno MCP, send them in the `controls` object as 0-1 fractions (60% = `0.6`); see `references/SUNO_MCP_REFERENCE.md`. Recommend slider values based on song type (see Named Slider Presets for tested combinations):
 
 | Song Type | Weirdness | Style Influence | Audio Influence (if Inspo) | Closest Preset |
 |---|---|---|---|---|
@@ -281,7 +281,7 @@ Document the optimized version:
 - Style: XXX/1000
 - Lyrics: XXXX/5000
 
-### Slider Recommendations (optional -- only if your Suno UI exposes sliders):
+### Slider Recommendations (optional; UI percentages, or 0-1 fractions in the MCP `controls`):
 - Weirdness: XX%
 - Style: XX%
 - Audio: XX% (if applicable)
@@ -597,7 +597,7 @@ Suno CAN produce key changes but it is **probabilistic (~40-60% success rate)**.
 
 ## Creative Sliders -- Detailed Guidance (optional, v5.5-era -- re-validate on V6)
 
-The three creative sliders are set in the Suno UI, not in text fields. Slider recommendations are OPTIONAL: use them only if your Suno UI exposes sliders; all values below are v5.5-era starting points. They interact with each other and with the Style Prompt.
+The three creative sliders are set in the Suno UI, not in text fields. Slider recommendations are OPTIONAL. The sliders are V6 features (suno.com UI, or the Suno MCP `controls` as 0-1 fractions, plus `variety` 0-4); all values below are v5.5-era starting points. They interact with each other and with the Style Prompt.
 
 ### Weirdness (Default: 50%)
 

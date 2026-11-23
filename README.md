@@ -57,6 +57,9 @@ git clone https://github.com/Voletek/songwriting-kb.git
 python3 tools/validate-song.py songs/            # format, limits, V6 tags, exclusions
 python3 tools/lyric-lint.py songs/my_song.md      # syllables, stress, rhyme, section stability, clichés
 python3 tools/check-repo.py                       # repo integrity
+python3 tools/estimate-runtime.py songs/my_song.md # length and first-chorus timing (warns past the 6:00 MCP cap)
+python3 tools/suno-fields.py songs/my_song.md     # title / style / negative_style / lyrics, ready for Suno
+bash tools/kiro-web-setup.sh                      # Kiro Web only: link the repo's .kiro/ into the workspace root
 ```
 
 ---
@@ -70,11 +73,11 @@ songwriting-kb/
 │   └── tenets.md              7 creative decision-making principles (conflict resolution)
 ├── .kiro/
 │   ├── steering/              6 files — 3 always, 1 auto (concept-album), 2 manual (/quick-score, /full-pipeline)
-│   ├── agents/                6 thin agents — load core/methodology/ via `resources:` front matter
+│   ├── agents/                7 thin agents — load core/methodology/ or an SOP via `resources:` front matter
 │   ├── skills/                5 skills — reference core/methodology/ + references/
 │   ├── hooks/                 2 v1 JSON hooks — song-validate.json, prosody-lint.json
 │   ├── powers/songwriting/    1 power — activatable master bundle
-│   └── sops/                  9 SOPs — step-by-step procedures (point to core/)
+│   └── sops/                  10 SOPs — step-by-step procedures (point to core/)
 ├── tools/
 │   ├── validate-song.py       Deterministic song validator (char counts, required elements, V6 tags, exclusions)
 │   ├── lyric-lint.py          Deterministic lyric lint (syllables, stress, rhyme type/scheme, section stability, clichés)
@@ -117,21 +120,22 @@ The procedural layer — step-by-step HOW for every workflow:
 | **04** | [Setting Up a Concept Album](/.kiro/sops/04-setting-up-concept-album.md) | 12 steps: concept → registry → rules → motifs → documentation | 2.5-3.5 hrs |
 | **05** | [Extending an Album](/.kiro/sops/05-extending-an-album.md) | 12 steps: evaluate → scope → update blueprint → verify → write | 1-2 hrs |
 | **06** | [Character Voice Design](/.kiro/sops/06-character-voice-design.md) | 11 steps: identify → accent → template → instruments → mode | 15-25 min |
-| **07** | [Full Pipeline](/.kiro/sops/07-full-pipeline.md) | 6 stages: Write → Critique → Revise → Optimize → Verify → Render | 2-3 hrs |
+| **07** | [Full Pipeline](/.kiro/sops/07-full-pipeline.md) | 7 stages: Write → Critique → Revise → Optimize → Verify → Render → Finish | 2-3 hrs |
 | **08** | [Contributing](/.kiro/sops/08-contributing.md) | Community guide: setup → customize → add albums → submit | Variable |
 | **09** | [Planning a Song](/.kiro/sops/09-planning-a-song.md) | Guided brief creation before writing — step through the 12-section Song Brief, save `SONGNAME.brief.md` alongside the song | 15-30 min |
+| **10** | [Rendering Through the Suno MCP](/.kiro/sops/10-rendering-through-the-suno-mcp.md) | Pre-flight → render → measure takes (`audio-analysis`, `audio-listen`) → log in `## RENDERS` → fix sections (edit, extend, cover) → finish (stems, plugins, download) | 10-30 min |
 
 ### The Full Pipeline (SOP 07):
 
 ```
-WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
+WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER → FINISH
   ↑         (score ≥8.5? skip revise)         |
-  └──────── (if fails verification) ──────────┘
+  └──────── (if fails verification or render) ┘
 ```
 
 ---
 
-## Agents (6 Roles)
+## Agents (7 Roles)
 
 | Agent | What It Does | Invoke With |
 |---|---|---|
@@ -140,6 +144,7 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER
 | **critic** | Multi-layer evaluation (12 craft + 5 advanced + Suno optimization + album-context). Runs full critique in one pass, reports scores and decision gate. Loads `core/methodology/critique.md` | "Critique this", "score", "rate", "review", "is this good?", "feedback", "what's wrong?" |
 | **suno-optimizer** | Adds meta-tags, checks char counts, validates formatting. Reports counts, flags artist names for conversion. Loads `core/methodology/suno-optimization.md` | "Make this Suno-ready", "format for Suno", "check my char count", "will this render?" |
 | **album-continuity** | Runs all continuity checks in one pass. PASS/FAIL table with fixes. Loads `core/methodology/album-continuity.md` | "Check continuity", "does this fit?", "album rules", "sonic palette check" |
+| **renderer** | Renders validated songs through the Suno MCP (asks before spending credits), measures each take against the Production Notes, logs it in the song's `## RENDERS` section and the V6 results log, fixes missed sections with edits/extensions/covers, and finishes songs (stems, MIDI, downloads). Loads SOP 10 + `references/SUNO_MCP_REFERENCE.md` | "Render this", "send to Suno", "did the tags work?", "redo the bridge", "stems" |
 | **builder** | Setup/configuration specialist. Walks through album blueprints, character voices, project structure, preferences interactively. Loads `core/methodology/builder.md` | "Set up a new album", "new project", "add a character", "configure", "help me get started" |
 
 ---
@@ -192,7 +197,7 @@ Two Kiro v1 JSON hook files in `.kiro/hooks/` plus two manual steering commands:
 
 ### Suno V6 (current default)
 
-**Suno V6** (models: `v6` / `v6-wild` / `v6-mini`) is the current default model, and it uses a different tag paradigm than v5.5. Status: working model (Sept 2026, user-confirmed); render evidence is logged in the `references/V6_TAG_DISCOVERY.md` results log.
+**Suno V6** (models: `v6` / `v6-wild` / `v6-mini`) is the current default model, and it uses a different tag paradigm than v5.5. Status: working model (user-reported Sept 2026; per-tag evidence in the `references/V6_TAG_DISCOVERY.md` results log).
 
 - **Style field = the WHAT**: genre (first), key, tempo, vocal identity, production aesthetic (sets the world).
 - **Lyrics field = the HOW**: section tags, `[Instrument: X In]` / `[Instrument: X Out]`, `[Dynamic: ...]`, `[Vocal: ...]` (or `[Male lead, inline adjective]`), `[Transition: ...]`, `[Key Change: ...]` — 2-4 tags per section, ending with `[End]` (choreographs the performance).
@@ -251,22 +256,10 @@ Full reference: `references/SUNO_STYLE_GENRE_REFERENCE.md` (600+ lines covering 
 
 Everything in this subsection is **v5.5-era (legacy) — re-validate on V6**. It is kept for v5.5 renders and as hypotheses to test on V6, not as current rules.
 
-**Creative sliders** (optional — only if your Suno UI exposes them; values are v5.5-era starting points):
-
-| Slider | Default | Starting Point | Effect |
-|---|---|---|---|
-| Weirdness | 50% | 50-55% | Safe (0%) ↔ Chaos (100%) — creative latitude |
-| Style Influence | 50% | 50-60% (later v5.5 tests favoured 70-90%) | How much Style Prompt steers output |
-| Audio Influence | ~45% | 45% | Reference track weight (Inspo only) |
-
-**v5.5 features (UI — not text tags):**
-
-| Feature | What It Does | Album Use |
-|---|---|---|
-| **Personas/Voices** | Lock vocal identity from your own sample | Same voice across all character tracks |
-| **Stems (12-track)** | Extract vocals, drums, bass, guitar, keys, strings, synth, brass, perc, backing, FX, other | DAW mixing for album consistency |
-| **Custom Models** | Train Suno on your completed tracks | Learn your sound for future songs |
-| **My Taste** | AI learns your preferences over time | Better defaults on quick sessions |
+**Sliders, voices and stems are V6 features now,** in the suno.com UI and through the Suno MCP. See
+`.kiro/steering/suno-formatting.md` → V6 Controls & Features and `references/SUNO_MCP_REFERENCE.md`.
+The v5.5-era slider values (Weirdness 50-55%, Style Influence 50-60%, Audio Influence 45%) remain
+starting points to re-validate. Custom Models and My Taste are v5.5-era UI features not exposed through the MCP.
 
 **Era tags (production modifiers):** On v5.5, decade tags in the Style Prompt aggressively biased production style:
 - `"1980s"` → gated reverb drums, synth textures, bright digital
@@ -400,7 +393,7 @@ Seven priority-ordered principles for resolving creative conflicts. Full details
 
 **Sonic Evolution:** Industrial/Glitch → Tribal/Primal → Cinematic Orchestral → Folk Rock → Full Orchestra + Key Change → (Act 3) Cinematic Folk-Rock
 
-Blueprint: `examples/albums/fractured-shadows/BLUEPRINT.md`
+Blueprint: `examples/albums/fractured-shadows/BLUEPRINT.md` (V6-format versions of T7 Rikan, T17 Both Names and T18 Edge of the Rift sit next to their v5.5-era originals in `examples/songs/`, with a `_V6` suffix)
 
 ---
 
@@ -423,7 +416,7 @@ Blueprint: `examples/albums/fractured-shadows/BLUEPRINT.md`
 
 **Unique features:** Non-vocal entity character design, harmonic circle (starts/ends in D Mixolydian), the sea as ever-present instrument evolving across 8 tracks.
 
-Blueprint: `examples/albums/keeper-of-the-light/BLUEPRINT.md` (one example track: `examples/songs/keeper_of_the_light/01_The_Keepers_Morning.md`)
+Blueprint: `examples/albums/keeper-of-the-light/BLUEPRINT.md` (one example track: `examples/songs/keeper_of_the_light/01_The_Keepers_Morning_V6.md`, V6 format; `01_The_Keepers_Morning.md` is the v5.5-era original)
 
 ---
 

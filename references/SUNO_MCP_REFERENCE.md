@@ -239,9 +239,9 @@ not audio edits.
 
 | Date | Observation | Source |
 |---|---|---|
-| 2026-11-23 | The style text "fireside-skald menace" was rejected on both clips: *"Your tags contain artist name skald"*. Suno's artist filter matches ordinary words that are also band names (Skáld is a Nordic folk band), lowercase included. Replacing the word fixed it. | Violent Night, rev 1 |
+| 2026-11-23 | The style text "fireside-skald menace" was rejected on both clips: *"Your tags contain artist name skald"*. Suno's artist filter matches ordinary words that are also band names (Skáld is a Nordic folk band), lowercase included. Replacing the word fixed it. | Render test |
 | 2026-11-23 | The rejected generation was not charged: `credits_remaining` was unchanged after the error. | `account-usage` before and after |
-| 2026-11-23 | One `audio-create` call returned 2 clip ids; both reached `streaming` within the first `audio-wait` call. | Violent Night, rev 1 and rev 2 |
+| 2026-11-23 | One `audio-create` call returned 2 clip ids; both reached `streaming` within the first `audio-wait` call. | Render test |
 
 `tools/validate-song.py` checks a fixed list of artist names and does not yet catch genre-adjacent band
 names like "skald". When Suno rejects a word, add it here and swap it for a plain descriptor

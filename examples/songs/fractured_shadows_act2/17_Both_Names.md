@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Both Names — Album Track 17 / Finale (v4 — Universalized)
 
 > Song Thesis: *You don't become whole by choosing one self over another —

@@ -54,7 +54,7 @@ Front matter must be the very first bytes of a steering file (no blank line befo
 
 ---
 
-## Agents (6 Thin Wrappers)
+## Agents (7 Thin Wrappers)
 
 Each agent defines WHO it is and loads the methodology from `core/methodology/` via `resources:` front matter:
 
@@ -65,6 +65,7 @@ Each agent defines WHO it is and loads the methodology from `core/methodology/` 
 | `critic` | "Critique this" / "Score this" | `core/methodology/critique.md` |
 | `suno-optimizer` | "Make this Suno-ready" | `core/methodology/suno-optimization.md` |
 | `album-continuity` | "Check continuity" | `core/methodology/album-continuity.md` (**configure for YOUR album**) |
+| `renderer` | "Render this" / "Did the tags work?" | `.kiro/sops/10-rendering-through-the-suno-mcp.md` + `references/SUNO_MCP_REFERENCE.md` (needs the Suno MCP) |
 | `builder` | "Set up a new album" / "Help me get started" | `core/methodology/builder.md` |
 
 On Kiro Web, project agents are available for sub-agent delegation only.
@@ -90,7 +91,9 @@ Hooks use the Kiro v1 schema (`.kiro/hooks/*.json`: `version`, `hooks[]` with `n
 ```bash
 python3 tools/validate-song.py songs/        # files or directories (recursive); --json, --strict
 python3 tools/lyric-lint.py songs/my_song.md # --json; pip install pronouncing for dictionary accuracy
-python3 tools/check-repo.py                  # repo integrity: include/resource paths, hooks, steering, JSON
+python3 tools/check-repo.py                  # repo integrity: include/resource paths, hooks, steering, JSON, Suno-rule drift
+python3 tools/estimate-runtime.py <file>     # runtime and first-chorus estimate; --bpm --meter --bars-per-line
+python3 tools/suno-fields.py <file>          # the Suno fields as JSON (matches the MCP audio-create keys)
 ```
 
 ---
@@ -109,7 +112,7 @@ Skills reference files by plain path with explicit "read X" instructions.
 
 ---
 
-## SOPs (9 Procedures)
+## SOPs (10 Procedures)
 
 Step-by-step workflows that work with ANY AI assistant or manually:
 
@@ -121,15 +124,34 @@ Step-by-step workflows that work with ANY AI assistant or manually:
 | 04 | Setting Up a Concept Album | Building your album blueprint, steering, and hooks |
 | 05 | Extending an Album | Adding tracks to an existing album |
 | 06 | Character Voice Design | Creating a voice for a specific character/accent |
-| 07 | Full Pipeline | Complete write→critique→revise→optimize→verify flow |
+| 07 | Full Pipeline | Complete write→critique→revise→optimize→verify→render→finish flow |
 | 08 | Contributing | Community setup guide and contribution rules |
 | 09 | Planning a Song | Guided Song Brief before any lyrics are written |
+| 10 | Rendering Through the Suno MCP | Render, measure, log, fix and finish songs from an agent |
+
+---
+
+## Using This Repo in Kiro Web
+
+Kiro Web clones a repository into a folder below the workspace root (`<workspace>/songwriting-kb/`), but
+Kiro reads steering, agents, skills and hooks from `<workspace>/.kiro/`, and the agents and steering refer
+to repo-relative paths (`core/…`, `references/…`, `tools/…`). Run once per new sandbox:
+
+```bash
+bash songwriting-kb/tools/kiro-web-setup.sh
+```
+
+It symlinks the repo's `.kiro/` folders and top-level folders into the workspace root (idempotent; it
+never overwrites real files and leaves `.kiro/settings/` alone). Steering loads right away; start a new
+session for agents and skills. Hooks don't run in Kiro Web, so run `validate-song.py` and `lyric-lint.py`
+yourself, and if `pip install pronouncing` is blocked, `lyric-lint.py` falls back to heuristic syllables
+and rhyme labels (treat its rhyme types as rough).
 
 ---
 
 ## For Kiro CLI Users
 
-Steering, agents, and skills work in Kiro CLI. Hooks fire on file events in Kiro CLI V3 (agent-made changes only); in other environments run the `tools/` scripts yourself. Suno UI settings (V6 model choice, and the legacy v5.5-era sliders and Personas if your Suno UI still offers them) are set manually when rendering.
+Steering, agents, and skills work in Kiro CLI. Hooks fire on file events in Kiro CLI V3 (agent-made changes only); in other environments run the `tools/` scripts yourself. Suno settings (model, sliders, voices) are set in the suno.com UI, or sent with the render through the Suno MCP (SOP 10, `references/SUNO_MCP_REFERENCE.md`).
 
 ---
 
