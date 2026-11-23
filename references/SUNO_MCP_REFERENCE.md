@@ -2,7 +2,8 @@
 
 > How to send a finished song file to Suno through the Suno MCP server (`audio-create`), which song-file
 > section goes in which field, and what the server enforces.
-> Field list taken from the `audio-create` tool schema (Nov 23, 2026). Behaviour notes are [Tier 3]:
+> Also lists the read tools (GET requests) and the values each one takes.
+> Field lists taken from the Suno MCP tool schemas (Nov 23, 2026). Behaviour notes are [Tier 3]:
 > observed in renders, version-dependent. Re-check the schema if a call is rejected.
 > Formatting rules for the fields themselves: `.kiro/steering/suno-formatting.md` and
 > `core/methodology/suno-optimization.md` → V6 Procedure.
@@ -109,6 +110,67 @@ and treat them as starting points to re-validate on V6.
 Related tools: `audio-listen` / `audio-analysis` (hear or analyse a finished render),
 `audio-extensions-create`, `audio-covers-create`, `audio-edit`, `audio-stems-create`,
 `library-search` / `library-list`.
+
+---
+
+## Read tools (GET requests)
+
+The MCP exposes tools, not raw HTTP requests. These are the ones that read data; the schemas map
+several of them to API GET routes (`GET /v0/audio/{id}`, `GET /v0/library`, `GET /v0/account/usage`).
+Taken from the tool schemas on 2026-11-23. Most need no values; only the first group requires any.
+
+### Read tools that require a value
+
+| Tool | Required | Optional |
+|---|---|---|
+| `audio-retrieve` | `id` (song ID) | — |
+| `audio-stems-retrieve` | `id` (song ID), `group_id` (from `audio-stems-create`) | — |
+| `playlists-list-clips` | `id` (playlist ID, from `playlists-list`) | `cursor`, `limit` (1–50, default 10) |
+| `sequence-get` | `id` (Sequence ID, from `sequence-list`) | `view`: `full` (default) or `summary` |
+
+### Read tools with only optional values
+
+| Tool | Optional values |
+|---|---|
+| `library-list` | `limit` (1–50, default 10), `cursor`, `liked`, `downloaded`, `visibility` (`public` / `private`), `origin` (`upload` / `cover` / `extension` / `remaster`), `workspace_id` |
+| `library-search` | Same as `library-list`, plus `query` (1–200 chars, matched against title or style) |
+| `library-liked` | `limit` (1–50, default 10), `cursor` |
+| `playlists-list` | `limit` (1–50, default 25), `cursor`, `query` |
+| `workspaces-list` | `cursor`, `query` |
+| `voices-list` | `collection` (`own`, default, or `loved`), `limit` (1–100, default 20), `cursor`, `query` (name, or a voice ID) |
+| `sequence-list` | `limit` (1–20, default 20), `cursor`, `query` |
+| `visuals-library` | `limit` (1–50, default 20), `cursor`, `liked`, `media_type` (`image` / `video`), `sequence_id`, `song_id` (can't be combined with `media_type`, `liked` or `sequence_id`) |
+| `characters-list` | `presets` |
+| `visuals-show` | `ids` (up to 10, comma-separated), `at` (up to 4 frame times for one video) |
+
+### Read tools that take no values
+
+`account-me`, `account-usage`, `visuals-models`.
+
+### Checking a finished render
+
+| Tool | Required | Optional | Notes |
+|---|---|---|---|
+| `audio-wait` | `id` or `ids` (up to 12) | `until`: `playable` (default) or `complete` | Waits about 50 s per call; call again if still pending |
+| `audio-analysis` | `id` | — | Beats, BPM, meter, key, sections and a description of the audio. Free. Poll until `status` leaves `processing`. |
+| `audio-listen` | `id`, `question` (≤2000 chars) | — | Suno's music agent answers a question about the song. Free, but it starts a job: read the answer with `audio-listen-wait`. Limits: 5 open questions, 200 a day. |
+| `audio-download` | `id` | `format` (`mp3` default, or `wav`), `confirm` | Can spend a download credit. Call without `confirm`; if it answers `requires_credit`, ask the user before calling again with `confirm: true`. |
+
+Use `audio-analysis` and `audio-listen` to check whether a render followed the tags (tempo, meter, key
+change, section order) before logging results in `references/V6_TAG_DISCOVERY.md`.
+
+### Common rules
+
+- **Paging:** list tools return `next_cursor`; pass it back as `cursor`. With a `query`, send the same
+  `query` on each page. Filtered pages can be short or empty and still have a cursor.
+- **Lyrics:** library, liked and playlist results leave out `metadata.lyrics`. Only `audio-retrieve`
+  returns lyrics, and only for the user's own songs.
+- **Access:** library tools need a suno.com sign-in with library permissions; an API key gets 403.
+  Visuals and Sequence tools return 404 without visuals access.
+- **IDs:** song IDs come from a creation's `clip_ids` or a library listing. Playlist, workspace and
+  Sequence IDs come from `playlists-list`, `workspaces-list` and `sequence-list`.
+- `audio-settings` is a write tool (publish, unpublish, remix permission), not a read. Only use it when
+  the user asks.
 
 ---
 
