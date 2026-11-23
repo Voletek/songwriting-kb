@@ -345,7 +345,7 @@ class LengthTargets(unittest.TestCase):
 
 
 class RenderSettings(unittest.TestCase):
-    SETTINGS = "\n## RENDER SETTINGS:\n\n- voice: Loonry\n- voice_id: 1111-2222\n- model: v6\n- controls: weirdness 0.3, style_influence 0.75, variety 1\n- duration: 5:59\n"
+    SETTINGS = "\n## RENDER SETTINGS:\n\n- voice: Test Voice\n- voice_id: 1111-2222\n- model: v6\n- controls: weirdness 0.3, style_influence 0.75, variety 1\n- duration: 5:59\n"
 
     def _song(self, settings):
         with open(os.path.join(FIX, "v6_valid.md"), encoding="utf-8") as handle:
