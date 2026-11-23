@@ -31,6 +31,8 @@ songfile = load("songfile", "songfile.py")
 validate = load("validate_song", "validate-song.py")
 lint = load("lyric_lint", "lyric-lint.py")
 checkrepo = load("check_repo", "check-repo.py")
+runtime = load("estimate_runtime", "estimate-runtime.py")
+sunofields = load("suno_fields", "suno-fields.py")
 
 
 def statuses(report):
@@ -224,6 +226,81 @@ class LyricLint(unittest.TestCase):
         code, out = run_main(lint.main, ["--hook", os.path.join(FIX, "v6_valid.md")])
         self.assertEqual(code, 0)
         self.assertIn("LYRIC LINT", out)
+
+
+class ReviewFixes(unittest.TestCase):
+    """Parser, validator and lint fixes from the 2026-11-23 knowledge-base review."""
+
+    def _write(self, text):
+        handle = tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8")
+        handle.write(text)
+        handle.close()
+        self.addCleanup(os.unlink, handle.name)
+        return handle.name
+
+    def test_section_tags_allow_leading_modifiers(self):
+        for tag in ("[Final Refrain \u2014 Warm]", "[Extended Instrumental Intro \u2014 Lyre]", "[Closing Outro]"):
+            self.assertTrue(songfile.SECTION_TAG_RE.match(tag), tag)
+        for tag in ("[Low Baritone \u2014 Almost Whispered]", "[Deep Drum Strike]"):
+            self.assertFalse(songfile.SECTION_TAG_RE.match(tag), tag)
+
+    def test_raw_lyrics_without_headings_are_read(self):
+        song = songfile.SongFile(os.path.join(FIX, "raw_lyrics.md"))
+        self.assertTrue(song.lyrics_inferred)
+        self.assertTrue(song.lyrics_has_end)
+        self.assertIsNone(song.style)
+        rep = validate.validate_file(os.path.join(FIX, "raw_lyrics.md"))
+        self.assertEqual(statuses(rep)["Format"], "WARN")
+        res = lint.lint_song(os.path.join(FIX, "raw_lyrics.md"))
+        self.assertIsNone(res["error"])
+        self.assertIn("Final Refrain \u2014 Warm", [s["name"] for s in res["sections"]])
+
+    def test_plain_markdown_is_not_mistaken_for_lyrics(self):
+        path = self._write("# Notes\n\nSome prose about [Verse 1] in passing.\n")
+        self.assertFalse(songfile.SongFile(path).lyrics_inferred)
+
+    def test_rejected_word_fails(self):
+        with open(os.path.join(FIX, "v6_valid.md"), encoding="utf-8") as handle:
+            text = handle.read().replace("unhurried and hopeful", "fireside-skald menace", 1)
+        rep = validate.validate_file(self._write(text))
+        self.assertEqual(statuses(rep)["Suno Rejected Words"], "FAIL")
+        rep = validate.validate_file(os.path.join(FIX, "v6_valid.md"))
+        self.assertEqual(statuses(rep)["Suno Rejected Words"], "PASS")
+
+    def test_v6_vocabulary_info(self):
+        with open(os.path.join(FIX, "v6_valid.md"), encoding="utf-8") as handle:
+            text = handle.read().replace("[Bridge]", "[Refrain]", 1).replace("Cello In]", "Tagelharpa In]", 1)
+        st = statuses(validate.validate_file(self._write(text)))
+        self.assertEqual(st["V6: Structure Tags"], "INFO")
+        self.assertEqual(st["V6: Instrument Names"], "INFO")
+        st = statuses(validate.validate_file(os.path.join(FIX, "v6_valid.md")))
+        self.assertNotIn("V6: Structure Tags", st)
+        self.assertNotIn("V6: Instrument Names", st)
+
+    def test_scheme_is_per_stanza(self):
+        lines = [lint.Line(1, "the road was long", stanza=0), lint.Line(2, "I sang a song", stanza=0),
+                 lint.Line(3, "the road was long", stanza=1), lint.Line(4, "the night was cold", stanza=1)]
+        scheme, _ = lint.scheme_for(lines)
+        self.assertEqual(len(scheme.split(" ")), 2)
+
+    def test_runtime_estimate(self):
+        res = runtime.estimate(os.path.join(FIX, "v6_valid.md"))
+        self.assertIsNone(res["error"])
+        self.assertEqual(res["bpm"], 84)
+        self.assertEqual(res["meter"], "4/4")
+        self.assertGreater(res["runtime_s"], 0)
+        self.assertIsNotNone(res["first_chorus_s"])
+        long_song = runtime.estimate(os.path.join(FIX, "v6_valid.md"), bars_per_line=40)
+        self.assertIn("WARN", [f["level"] for f in long_song["findings"]])
+
+    def test_suno_fields_match_validator_counts(self):
+        out, err = sunofields.fields(os.path.join(FIX, "v6_valid.md"))
+        self.assertIsNone(err)
+        self.assertEqual(out["title"], "Porch Light")
+        self.assertTrue(out["lyrics"].endswith("[End]"))
+        self.assertEqual(out["negative_style"], "trap drums, autotune, EDM drops, gang vocals")
+        song = songfile.SongFile(os.path.join(FIX, "v6_valid.md"))
+        self.assertEqual(out["style"], song.style)
 
 
 class RepoIntegrity(unittest.TestCase):

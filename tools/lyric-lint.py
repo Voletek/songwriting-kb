@@ -242,8 +242,9 @@ def load_cliches():
 # --------------------------------------------------------------------------- song level
 
 class Line:
-    def __init__(self, no, text, spoken=False):
+    def __init__(self, no, text, spoken=False, stanza=0):
         self.no = no
+        self.stanza = stanza  # blank-line-separated group within the section
         self.text = text.strip()
         self.spoken = spoken
         self.words = words_of(text)
@@ -258,7 +259,12 @@ def split_sections(lyrics):
     sections = []
     current = {"name": "(before first section tag)", "lines": []}
     spoken_mode = False
+    stanza = 0
     for no, kind, text in songfile.iter_lyric_lines(lyrics):
+        if kind == "blank":
+            if current["lines"] and current["lines"][-1].stanza == stanza:
+                stanza += 1
+            continue
         if kind == "tag":
             groups = songfile.BRACKET_GROUP_RE.findall(text.strip())
             if groups and songfile.SECTION_TAG_RE.match(groups[0]):
@@ -266,6 +272,7 @@ def split_sections(lyrics):
                     sections.append(current)
                 label = groups[0].strip("[] ").split("|")[0].strip()
                 current = {"name": label, "lines": []}
+                stanza = 0
                 spoken_mode = bool(re.search(r"(?<!un)spoken|talk-?sing|narrat", groups[0], re.I))
             for g in groups:
                 if re.match(r"\[\s*(vocal\b|male|female|lead|spoken|whisper|sung)", g, re.I):
@@ -278,7 +285,7 @@ def split_sections(lyrics):
             bool(re.match(r"^\[\s*(spoken|vocal\s*:\s*spoken)", s, re.I))
         s_clean = re.sub(r"^(\[[^\]]*\]\s*)+", "", s)
         s_clean = re.sub(r"^\([^)]*\)\s*", "", s_clean) if spoken else s_clean
-        line = Line(no, s_clean, spoken=spoken or spoken_mode)
+        line = Line(no, s_clean, spoken=spoken or spoken_mode, stanza=stanza)
         if line.words:
             current["lines"].append(line)
     if current["lines"]:
@@ -287,6 +294,25 @@ def split_sections(lyrics):
 
 
 def scheme_for(lines):
+    """Rhyme scheme per stanza (blank-line group), joined with spaces, e.g. "XAXA XAXA".
+
+    Stanzas are lettered independently so rhymes across a stanza break don't create false pairs.
+    """
+    groups = []
+    for ln in lines:
+        if groups and groups[-1][-1].stanza == ln.stanza:
+            groups[-1].append(ln)
+        else:
+            groups.append([ln])
+    schemes, pairs = [], []
+    for group in groups:
+        sch, pt = _scheme_for_stanza(group)
+        schemes.append(sch)
+        pairs.extend(pt)
+    return " ".join(schemes), pairs
+
+
+def _scheme_for_stanza(lines):
     letters = []
     reps = []  # (letter, end_word)
     next_letter = 0
@@ -386,7 +412,7 @@ def lint_song(path):
                         "spoken": l.spoken, "flags": l.flags, "notes": l.minor} for l in lines],
         }
         bn = base_name(sec["name"])
-        if bn in ("chorus", "final chorus", "hook", "refrain") and overall == "unstable":
+        if bn in ("chorus", "final chorus", "hook", "refrain", "final refrain") and overall == "unstable":
             findings.append({"level": "INFO", "section": sec["name"], "line": None,
                              "message": "chorus reads open/unstable - intended? (choruses usually resolve)"})
         if bn in ("pre-chorus", "prechorus", "pre chorus", "bridge") and overall == "stable":

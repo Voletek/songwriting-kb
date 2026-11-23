@@ -450,6 +450,102 @@ def check_artist_references(song, rep):
         rep.add("Artist References", "PASS", "none detected")
 
 
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REJECTED_WORDS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "suno_rejected_words.txt")
+V6_REFERENCE_PATH = os.path.join(REPO_ROOT, "references", "V6_TAG_REFERENCE.md")
+
+
+def load_rejected_words(path=REJECTED_WORDS_PATH):
+    try:
+        with open(path, encoding="utf-8") as handle:
+            return [l.strip() for l in handle if l.strip() and not l.lstrip().startswith("#")]
+    except OSError:
+        return []
+
+
+def check_rejected_words(song, rep):
+    """FAIL on words Suno has refused as artist names (tools/data/suno_rejected_words.txt)."""
+    text = songfile.strip_accents(_scan_segments(song))
+    if not text:
+        return
+    found = []
+    for word in load_rejected_words():
+        if re.search(r"(?<![A-Za-z])" + re.escape(word) + r"(?![A-Za-z])", text, re.I) and word not in found:
+            found.append(word)
+    if found:
+        rep.add("Suno Rejected Words", "FAIL",
+                "Suno refuses these as artist names: " + ", ".join(found) + " (replace with a plain descriptor)")
+    else:
+        rep.add("Suno Rejected Words", "PASS", "none of the known rejected words")
+
+
+def _v6_list(heading_prefix, path=V6_REFERENCE_PATH):
+    """Read one ``` block of '·'-separated names under a '## <heading_prefix>' heading."""
+    try:
+        with open(path, encoding="utf-8") as handle:
+            text = handle.read()
+    except OSError:
+        return None
+    m = re.search(r"^##\s+" + re.escape(heading_prefix) + r"[^\n]*\n+```\n(.*?)```", text, re.M | re.S)
+    if not m:
+        return None
+    names = set()
+    for part in re.split(r"[\u00b7\n]", m.group(1)):
+        part = part.strip()
+        if not part:
+            continue
+        names.add(part.lower())
+        base = re.sub(r"\s*\(.*?\)", "", part).strip().lower()   # "Double-Time (Lift)" -> "double-time"
+        names.add(base)
+        for alt in re.findall(r"\(([^)]*)\)", part):              # aliases in parentheses
+            for a in alt.split("/"):
+                names.add(a.strip().lower())
+        for a in part.split("/"):                                  # "FX / Texture"
+            names.add(a.strip().lower())
+    return names
+
+
+SECTION_NUMBER_RE = re.compile(r"\s+\d+$")
+
+
+def check_v6_vocabulary(song, rep):
+    """INFO when V6 songs use structure tags or instruments outside references/V6_TAG_REFERENCE.md."""
+    lyr = song.lyrics or ""
+    if not re.search(r"\[\s*(Instrument|Dynamic|Vocal|Transition|Feel|Key Change)\s*:", lyr, re.I):
+        return
+    structures = _v6_list("STRUCTURE")
+    instruments = _v6_list("INSTRUMENTATION")
+    if structures:
+        odd = []
+        for _no, kind, text in songfile.iter_lyric_lines(lyr):
+            if kind != "tag":
+                continue
+            for g in songfile.BRACKET_GROUP_RE.findall(text):
+                m = songfile.SECTION_TAG_RE.match(g)
+                if not m:
+                    continue
+                name = re.split(r"\s*[\u2014\u2013|:]\s*|\s+-\s+", g.strip("[] "))[0]
+                name = SECTION_NUMBER_RE.sub("", name).strip()
+                bare = re.sub(r"^(final|extended|closing|opening|last|first|second|third|short|long|reprise)\s+",
+                              "", name, flags=re.I).strip().lower()
+                if bare not in structures and name.lower() not in structures and name not in odd:
+                    odd.append(name)
+        if odd:
+            rep.add("V6: Structure Tags", "INFO",
+                    "not among the V6 structure tags (V6_TAG_REFERENCE.md): " + ", ".join(odd[:6])
+                    + ". Suno may still follow them; log the result")
+    if instruments:
+        unknown = []
+        for m in re.finditer(r"\[\s*Instrument\s*:\s*([^\]]+?)\s+(?:In|Out)\s*\]", lyr, re.I):
+            inst = m.group(1).strip()
+            if inst.lower() not in instruments and inst not in unknown:
+                unknown.append(inst)
+        if unknown:
+            rep.add("V6: Instrument Names", "INFO",
+                    "not in the V6 instrument list: " + ", ".join(unknown[:8])
+                    + ". Log whether their In/Out cues render; fall back to listed names (e.g. Strings, Drone, Toms, Percussion) if not")
+
+
 def check_gear_names(song, rep):
     text = re.sub(r"\([^)]*\)", "", _scan_segments(song))  # parenthetical gear notes are allowed (Step 9b)
     if not text:
@@ -484,6 +580,9 @@ def validate_file(path, explicit=True):
         else:
             rep.skipped = "not a Suno-ready song file (no Style/Lyrics sections)"
         return rep
+    if song.lyrics_inferred:
+        rep.add("Format", "WARN", "no '## LYRICS:' heading: read the whole file as raw lyrics. "
+                "Add '## STYLE PROMPT:', '## EXCLUSIONS:' and '## LYRICS:' sections")
     check_char_counts(song, rep)
     check_required_elements(song, rep)
     check_exclusions(song, rep)
@@ -494,7 +593,9 @@ def validate_file(path, explicit=True):
     check_parenthetical_instructions(song, rep)
     check_v6_grammar(song, rep)
     check_artist_references(song, rep)
+    check_rejected_words(song, rep)
     check_gear_names(song, rep)
+    check_v6_vocabulary(song, rep)
     if song.legacy:
         rep.add("Legacy Marker", "INFO", "archived pre-standard example (<!-- song-format: legacy -->)")
     return rep
