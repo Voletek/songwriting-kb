@@ -1,0 +1,14 @@
+{
+  "task_id": "task-architecture-refactor",
+  "task_description": "Implement Phase 1-3 of the architecture refactor: create 5 fat methodology files in core/methodology/ as single source of truth, rewire .kiro/ agents to be thin wrappers, and add cherry-picked tools/experiments/README updates.",
+  "status": "completed",
+  "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003"],
+  "blocked_reason": null,
+  "verification": {
+    "build": "pass",
+    "tests": "pass",
+    "test_quality": "pass",
+    "docker_build": "skipped",
+    "summary": "All 5 methodology files created (466+300+492+465+451 lines). All 5 agent files thinned to under 25 lines each with #[[file:]] references. tools/validate-song.py runs correctly (valid Python, --help works, correctly detects failures in test files, exits with code 1 on failure). experiments/suno/ directory created with README and TEMPLATE.yml. Suno Version Status table added to references/SUNO_STYLE_GENRE_REFERENCE.md. README.md updated with 'Using Without Kiro' section."
+  }
+}

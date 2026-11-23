@@ -1,0 +1,73 @@
+# Suno Experiment Log
+# Copy this file and rename: YYYY-MM-DD-experiment-name.yml
+
+experiment_name: ""
+date: "YYYY-MM-DD"
+experimenter: ""
+suno_version: "v6"            # v6 is the default; use "v5.5" only for legacy re-checks
+model_variant: "v6"           # v6 | v6-wild | v6-mini
+paradigm: "v6"                # v6 | v5.5-legacy
+
+# What are you testing?
+claim_under_test: ""
+# Example: "Era tags in Style Prompt bias production style more than instrumentation"
+
+# V6 lyric tags under test (if any), in canonical grammar
+lyric_tags_under_test: []
+# Example: ["[Instrument: Banjo In]", "[Dynamic: Crescendo]", "[Vocal: Whisper]"]
+
+hypothesis: ""
+# What do you expect to happen?
+
+# Settings used for all renders in this experiment
+settings:
+  style_prompt: ""
+  exclude: ""             # plain comma-separated, no dash prefix (e.g. "trap drums, beatboxing")
+  # Sliders: suno.com UI percentages, or 0-1 fractions in the Suno MCP `controls` (50% = 0.5).
+  # Leave a value empty for "model default" (in the MCP, 0 is a real setting, not "unset").
+  weirdness: ""
+  style_influence: ""
+  audio_influence: ""        # with a voice_id, or in covers/extensions/mashups
+  variety: ""                # 0-4 (Off / Normal / High / Extra / Max)
+  max_mode: false            # only when the experiment is about Max Mode
+  duration: ""               # seconds, 15-360; with duration_strict false unless testing truncation
+  voice_id: ""               # formerly "Persona"
+  vocal_gender: ""           # male / female / empty
+  custom_model: ""           # v5.5-era UI feature; not in the MCP
+
+# Variable being changed (if A/B testing)
+variable: ""
+# Example: "Style Prompt with '1980s' vs without"
+
+# Record each render
+renders:
+  - render_id: ""
+    song_used: ""
+    timestamp: ""
+    measured: ""        # audio-analysis: bpm, time_signature, key, sections (SOP 10 Step 3)
+    observations: ""    # audio-listen answer and your own ears
+    supports_claim: ""  # yes / no / partial
+    notes: ""
+  - render_id: ""
+    song_used: ""
+    timestamp: ""
+    observations: ""
+    supports_claim: ""
+    notes: ""
+  - render_id: ""
+    song_used: ""
+    timestamp: ""
+    observations: ""
+    supports_claim: ""
+    notes: ""
+
+# Your conclusion after all renders
+conclusion: ""
+# Supported / Not Supported / Partially Supported / Inconclusive
+
+confidence: ""  # High / Medium / Low
+retest_by: ""   # YYYY-MM-DD (Suno updates frequently)
+
+# If promoted to methodology, note where:
+promoted_to: ""
+# Example: "core/methodology/suno-optimization.md, section 'Era Anchoring'"

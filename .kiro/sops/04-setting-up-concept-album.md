@@ -3,6 +3,10 @@
 > Step-by-step procedure for planning a multi-track concept album from scratch.
 > Creates all documentation needed BEFORE writing any songs.
 
+> **Note:** The canonical methodology for this workflow now lives in `core/methodology/album-continuity.md`.
+> This SOP is retained for Kiro-specific step formatting but the methodology file is the authoritative source.
+> If content diverges, `core/methodology/` wins.
+
 ---
 
 ## Prerequisites
@@ -193,11 +197,11 @@ Final Track resolves: [which earlier threads]
 
 ### PHASE 5: Documentation
 
-**Step 10 — Assemble the Album Bible**
+**Step 10 — Assemble the Album Blueprint**
 
-Create `references/[YOUR_ALBUM]_BIBLE.md` containing all sections below.
+Create `references/[YOUR_ALBUM]_BLUEPRINT.md` (or fill in the template `references/YOUR_ALBUM_BLUEPRINT.md`) containing all sections below.
 
-**See `references/FRACTURED_SHADOWS_BIBLE.md` for a completed example** — use it as your format reference for section structure, detail level, and table formats.
+**See `examples/albums/fractured-shadows/BLUEPRINT.md` for a completed example** (and `examples/albums/keeper-of-the-light/BLUEPRINT.md` for a smaller one) — use them as your format reference for section structure, detail level, and table formats.
 
 Sections to include:
 
@@ -211,34 +215,46 @@ Sections to include:
 8. Callbacks/Transitions plan
 9. Emotional Arc (full album)
 10. Versioning Opportunities per track — *Alternative mixes/edits for each track (acoustic version, instrumental for sync, extended for streaming, clip for social media). Not every track needs one — identify the 3-5 with strongest standalone potential.*
-11. Extension Protocol — *A 4-6 line safety checklist for anyone who wants to add tracks later. Include: (a) update bible first, (b) extend palette map, (c) review which rules carry forward, (d) commit documentation before writing, (e) verify sonic differentiation. See SOP 05 Steps 2-3 for full detail.*
+11. Extension Protocol — *A 4-6 line safety checklist for anyone who wants to add tracks later. Include: (a) update blueprint first, (b) extend palette map, (c) review which rules carry forward, (d) commit documentation before writing, (e) verify sonic differentiation. See SOP 05 Steps 2-3 for full detail.*
 
 **Step 11 — Create Your Steering File**
 
-Create `.kiro/steering/[your-album-in-kebab-case].md` (e.g., `keeper-of-the-light.md`).
+Create `.kiro/steering/[your-album-in-kebab-case].md` (e.g., `keeper-of-the-light.md`). Start from an example: `examples/albums/<album>/steering.md`.
 
-This is a CONDENSED version of the bible — loaded into every session for quick reference. Contains:
+This is a CONDENSED version of the blueprint. With `inclusion: fileMatch` it loads only when files matching its pattern are in context — not in every session. The front matter must be the very first bytes of the file:
+
+```yaml
+---
+inclusion: fileMatch
+fileMatchPattern: "songs/your_album_dir/**"
+---
+```
+
+Contents:
 - Album title + track count
 - Extension protocol reminder (4-line safety warning)
-- Hard rules (all of them, numbered — same as bible but more scannable)
+- Hard rules (all of them, numbered — same as blueprint but more scannable)
 - Sonic palette by track range (table format)
 - Character voices (quick reference — 1-2 lines each)
 - Key motifs to track (name + which tracks)
+- Optionally, an include of your blueprint at the end: `#[[file:references/YOUR_ALBUM_BLUEPRINT.md]]` (the `#[[file:]]` include syntax works in steering files)
 
-**Multi-album repos:** Your steering file coexists alongside others. If the repo has `concept-album.md` (for another album), just create yours with your album's name. Both load, both apply to their respective songs.
+**Multi-album repos:** Each album gets its own fileMatch steering file; they coexist and each loads only for its own song folder. `.kiro/steering/concept-album.md` is the universal album framework (auto-included on album-related requests) — it is not another album's steering, so don't edit it for your album.
 
-**Step 12 — Configure Hooks (Optional)**
+**Step 12 — Configure a Continuity Hook (Optional)**
 
-Hooks are checklist files that define what rules to verify when a song file is saved. In Kiro IDE, they can fire automatically. Without Kiro, they serve as manual review checklists.
+Hooks are Kiro v1 JSON files in `.kiro/hooks/`. To add one for your album:
 
-If using Kiro, create `.kiro/hooks/[album]-continuity-check.md` with:
-- What sonic palette violations to catch (list forbidden instruments per track range)
-- What phrase protections to enforce (list protected phrases and which tracks own them)
-- What key/structural rules to verify on save (key reservations, BPM locks, voice restrictions)
+1. Copy `examples/albums/<album>/continuity-hook.json` to `.kiro/hooks/<album>-continuity.json`
+2. Edit its `matcher` (a regex on the file path) so it targets your album's song folder, e.g. `songs/your_album_dir/.*\.md$`
+3. Edit the `agent` action's prompt to list YOUR hard rules to verify on save:
+   - Sonic palette violations (forbidden instruments per track range)
+   - Phrase protections (protected phrases and which tracks own them)
+   - Key/structural rules (key reservations, BPM locks, voice restrictions)
 
-**Format:** Use checkbox lists (`- [ ]`) with specific, scannable rules. See `.kiro/hooks/continuity-check.md` for the existing example.
+File-event hooks fire only for agent-made file changes, and run in Kiro IDE 1.0+ and Kiro CLI V3 (Kiro Web sessions don't run hooks). Without hooks, ask the album-continuity agent to check the track, or use the rule list as a manual review checklist.
 
-**Multi-album note:** If the repo already has another album's hook, create yours alongside it. They don't conflict — each watches its own `songs/[album_name]/` directory.
+**Multi-album note:** If the repo already has another album's hook, create yours alongside it. They don't conflict — each matcher watches its own `songs/<album>/` directory.
 
 ---
 
@@ -255,7 +271,7 @@ After completing this SOP, you should have:
 - [ ] Character Voice Registry (per character)
 - [ ] Motif plan (with first appearance + evolution)
 - [ ] Callbacks/transitions documented
-- [ ] Album Bible file created
+- [ ] Album Blueprint file created
 - [ ] Steering file created
 - [ ] (Optional) Hook configured
 
@@ -265,7 +281,7 @@ After completing this SOP, you should have:
 
 | Don't | Do Instead |
 |---|---|
-| Start writing songs before the bible exists | Complete Steps 1-12 first |
+| Start writing songs before the blueprint exists | Complete Steps 1-12 first |
 | Define all 15 tracks in detail immediately | Start with rough emotional arc, refine as you write |
 | Make rules you'll want to break | Make rules that SERVE the story |
 | Plan rigid key for every track upfront | Plan relationships, let specific keys emerge during writing |

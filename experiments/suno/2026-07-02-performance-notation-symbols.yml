@@ -1,0 +1,180 @@
+# Suno Experiment Log
+# Performance Notation Symbols -- User Testing
+
+experiment_name: "Performance Notation Symbols (Inline Lyric Formatting)"
+date: "2026-07-02"
+experimenter: "21machines"
+suno_version: "v5.5"
+
+# What are you testing?
+claim_under_test: "Omnisona God Mode Manual v3.0 claims 5 inline symbols affect vocal delivery: tilde (~) = vibrato, dash (-) = syllable stretch/melisma, ALL CAPS = emphasis/louder, quotes (\"\") = different vocal color, ellipsis (...) = trailing off/fade"
+
+hypothesis: "All 5 symbols produce their claimed effects on Suno v5.5 renders"
+
+# Settings used for all renders in this experiment
+settings:
+  style_prompt: "Dark cinematic hip hop, 80 BPM, D minor, haunted, heavy 808s, orchestral strings, male vocal, raspy delivery, modern production"
+  exclude: "-beatboxing, -vocal hums, -bright synths"
+  weirdness: 50
+  style_influence: 55
+  audio_influence: 0
+  persona_or_voice: ""
+  custom_model: ""
+
+# Song used for testing
+test_song: "The One Who Stays"
+test_context: "Dark cinematic hip hop, 80 BPM, D minor. All symbol positions tested (beginning, middle, end of lines) for each symbol across multiple renders."
+
+# Variable being changed
+variable: "Inline performance notation symbol applied to lyrics (each symbol tested independently)"
+
+# Record each render
+renders:
+  # --- TILDE (~) TESTING ---
+  - render_id: "tilde-test-01"
+    song_used: "The One Who Stays"
+    timestamp: "2026-07-02"
+    symbol_tested: "~"
+    placement: "End of line: 'I'm still waiting~'"
+    observations: "No clear vibrato effect on this render. Vocal delivered normally."
+    supports_claim: "no"
+    notes: "80 BPM material, faster delivery section"
+
+  - render_id: "tilde-test-02"
+    song_used: "The One Who Stays"
+    timestamp: "2026-07-02"
+    symbol_tested: "~"
+    placement: "End of sustained line in slower section"
+    observations: "Slight wavering detected -- but inconsistent. May be Suno's natural variation rather than the tilde causing it."
+    supports_claim: "partial"
+    notes: "Only worked on slower material. Cannot distinguish from natural vocal variation."
+
+  - render_id: "tilde-test-03"
+    song_used: "The One Who Stays"
+    timestamp: "2026-07-02"
+    symbol_tested: "~"
+    placement: "Multiple lines with tilde"
+    observations: "Inconsistent across lines within the same render. Some lines show slight effect, others nothing."
+    supports_claim: "no"
+    notes: "Unreliable. Cannot depend on this in production."
+
+  # --- QUOTES ("") TESTING ---
+  - render_id: "quotes-test-01"
+    song_used: "The One Who Stays"
+    timestamp: "2026-07-02"
+    symbol_tested: "\" \""
+    placement: "Quoted dialogue: She said \"don't look back\""
+    observations: "No noticeable delivery change. Vocal color identical to unquoted lines."
+    supports_claim: "no"
+    notes: "Tested across 3 renders. No effect detected in any."
+
+  - render_id: "quotes-test-02"
+    song_used: "The One Who Stays"
+    timestamp: "2026-07-02"
+    symbol_tested: "\" \""
+    placement: "Full line in quotes"
+    observations: "No delivery change. Suno appears to ignore quotation marks entirely for vocal delivery purposes."
+    supports_claim: "no"
+    notes: "Confirmed non-functional"
+
+  # --- DASH (-) TESTING ---
+  - render_id: "dash-test-01"
+    song_used: "The One Who Stays"
+    timestamp: "2026-07-02"
+    symbol_tested: "-"
+    placement: "Mid-word: 'Fa-a-all from grace'"
+    observations: "Suno treats each hyphenated segment as a SEPARATE WORD. Does not stretch or create melisma. Produces choppy word separation instead."
+    supports_claim: "no"
+    notes: "Opposite of claimed effect. Dash = word boundary, not syllable extension."
+
+  - render_id: "dash-test-02"
+    song_used: "The One Who Stays"
+    timestamp: "2026-07-02"
+    symbol_tested: "-"
+    placement: "Various mid-word positions"
+    observations: "Consistent behavior: hyphen creates word separation. 'Ne-ver' sung as two separate words, not one stretched word."
+    supports_claim: "no"
+    notes: "Confirmed: dash is a word separator, not a syllable stretcher. God Mode Manual claim is incorrect."
+
+  # --- ELLIPSIS (...) TESTING ---
+  - render_id: "ellipsis-test-01"
+    song_used: "The One Who Stays"
+    timestamp: "2026-07-02"
+    symbol_tested: "..."
+    placement: "End of line: 'Maybe I should just...'"
+    observations: "Slight sustain at end of line -- but this is a position where Suno would naturally sustain (end of phrase before a section break)."
+    supports_claim: "partial"
+    notes: "Cannot determine if ellipsis caused the sustain or if it would happen anyway."
+
+  - render_id: "ellipsis-test-02"
+    song_used: "The One Who Stays"
+    timestamp: "2026-07-02"
+    symbol_tested: "..."
+    placement: "Mid-section line ending"
+    observations: "No noticeable trailing off when used mid-section where Suno would not naturally sustain."
+    supports_claim: "no"
+    notes: "Only 'works' where natural phrasing already creates sustain. Not an active control."
+
+  - render_id: "ellipsis-test-03"
+    song_used: "The One Who Stays"
+    timestamp: "2026-07-02"
+    symbol_tested: "..."
+    placement: "Multiple positions compared with and without"
+    observations: "Marginal at best. Reinforces existing behavior rather than creating new behavior."
+    supports_claim: "partial"
+    notes: "Conclusion: marginal reinforcement of natural Suno phrasing, not an active performance control."
+
+  # --- ALL CAPS TESTING ---
+  - render_id: "caps-test-01"
+    song_used: "The One Who Stays"
+    timestamp: "2026-07-02"
+    symbol_tested: "ALL CAPS"
+    placement: "Single word emphasis: 'I said NEVER again'"
+    observations: "Clear louder/more forceful delivery on the capitalized word. Noticeable dynamic increase."
+    supports_claim: "yes"
+    notes: "Works reliably. Distinct from surrounding delivery."
+
+  - render_id: "caps-test-02"
+    song_used: "The One Who Stays"
+    timestamp: "2026-07-02"
+    symbol_tested: "ALL CAPS"
+    placement: "Multiple words: 'THIS IS THE END'"
+    observations: "Entire capitalized phrase delivered with more intensity/volume. Consistent across renders."
+    supports_claim: "yes"
+    notes: "Works for both single words and full phrases."
+
+  - render_id: "caps-test-03"
+    song_used: "The One Who Stays"
+    timestamp: "2026-07-02"
+    symbol_tested: "ALL CAPS"
+    placement: "Various positions in different sections"
+    observations: "Consistent effect across verse, chorus, and bridge positions. Louder/more forceful delivery confirmed."
+    supports_claim: "yes"
+    notes: "Most reliable inline notation tested. Works in all positions and section types."
+
+# Conclusions per symbol
+conclusions_by_symbol:
+  tilde:
+    status: "NOT RECOMMENDED"
+    detail: "Inconsistent. Sometimes shows slight effect on slower material but unreliable. Cannot distinguish from natural vocal variation. Do not use in production."
+  quotes:
+    status: "DOES NOT WORK"
+    detail: "No noticeable delivery change observed across multiple renders and positions. Suno ignores quotation marks for vocal delivery."
+  dash:
+    status: "WORD SEPARATOR ONLY"
+    detail: "Does NOT create melisma or syllable stretch. Treats each hyphenated section as a new word -- creates choppy separation. God Mode Manual claim is incorrect."
+  ellipsis:
+    status: "MARGINAL"
+    detail: "Sustains only where Suno would already sustain naturally. Not an active performance control -- merely reinforces existing phrasing behavior."
+  all_caps:
+    status: "CONFIRMED WORKING"
+    detail: "Louder/more forceful delivery confirmed across all positions and section types. The only reliable inline performance notation symbol."
+
+# Overall conclusion
+conclusion: "Of 5 inline performance notation symbols claimed by the God Mode Manual, only ALL CAPS reliably works. Tilde is unreliable. Quotes have no effect. Dash does the opposite of what is claimed (separates words instead of stretching syllables). Ellipsis is marginal at best. Recommendation: use ALL CAPS for emphasis; use section tags and pipe notation for all other delivery changes."
+
+confidence: "High"
+retest_by: "2026-10-01"  # Retest after next major Suno version update
+
+# Promoted findings
+promoted_to: "references/SUNO_TAGS_REFERENCE.md (Performance Notation section), SONGWRITING_KNOWLEDGE_BASE.md (12.5.2), core/methodology/suno-optimization.md (Inline Performance Notation), .kiro/steering/suno-formatting.md"

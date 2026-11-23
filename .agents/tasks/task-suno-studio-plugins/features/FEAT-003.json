@@ -1,0 +1,28 @@
+{
+  "id": "FEAT-003",
+  "type": "docs",
+  "description": "Update the four existing docs to register the new plugins/ folder and its Suno Studio / post-render framing: README.md, CHANGELOG.md, core/README.md, .kiro/README.md. Do NOT alter songwriting methodology, agents, SOPs, or song files. Depends on FEAT-001 and FEAT-002.",
+  "status": "completed",
+  "steps": [
+    "README.md — in the 'Repository Structure' code block tree, add a `plugins/` entry (with a one-line note like 'Suno Studio audio-effect plugins (post-render) + README/AUTHORING'). Place it sensibly in the tree (e.g. near tools/ or docs/).",
+    "README.md — add a short 'Suno Studio Plugins' subsection (a new ### under a sensible location, e.g. within or after the Suno AI Integration section). It must explain these are POST-RENDER audio effects for Suno Studio, distinct from the prompt/lyric pipeline (Style/Lyrics fields), and link to plugins/README.md with a markdown link: [plugins/README.md](plugins/README.md). Keep it brief (a short paragraph plus optionally a one-line list of the 6 plugin names).",
+    "CHANGELOG.md — under '## [Unreleased]' / '### Added', add dash-bullet entries matching the existing style: (a) a bullet introducing the new plugins/ folder of Suno Studio audio-effect plugins (post-render audio processors used in Suno Studio, NOT lyric tags / not part of the Style-Lyrics text-prompt pipeline); (b) a bullet naming the 6 Tier-1 plugins (Intimate Proximity, De-Esser, Vintage / Lo-Fi Voicer, Digital Degrade / Glitch, Telephone / Radio Band, Vocal Drive / Edge), noting they use only confirmed g.* primitives and are UNVERIFIED pending in-Suno testing; (c) a bullet for the new plugins/README.md and plugins/AUTHORING.md docs. Ensure the Suno Studio / post-render / not-lyric-tags framing appears in the CHANGELOG text.",
+    "core/README.md — add ONE row to the 'Relationship to Other Directories' table: | `plugins/` | Suno Studio audio-effect plugins (post-render audio processors), a separate concern from the methodology; not consumed by core/ |. Keep the table format identical.",
+    ".kiro/README.md — add ONE row to the 'Directory Overview' table (or a clearly appropriate structure table): | `plugins/` | Suno Studio audio-effect plugins (post-render, applied to rendered audio in Suno Studio); not part of the Kiro agent/skill pipeline | ... | with a sensible 'Loads When' value like 'Manually in Suno Studio (not by Kiro)'. Match the existing column count/format.",
+    "Do NOT use em dashes in any added text. Do NOT modify any methodology, agent, SOP, skill, hook, or song file."
+  ],
+  "acceptance_criteria": [
+    "README.md 'Repository Structure' block includes a plugins/ entry, and README.md has a 'Suno Studio Plugins' subsection linking to plugins/README.md and describing them as post-render, distinct from the prompt/lyric pipeline.",
+    "CHANGELOG.md [Unreleased]/Added contains entries for the plugins/ folder, the 6 named Tier-1 plugins, and the plugins README/AUTHORING docs, with Suno Studio / post-render / not-lyric-tags framing, matching existing bullet style.",
+    "core/README.md and .kiro/README.md each have exactly one new table row referencing plugins/ as Suno Studio post-render audio effects.",
+    "No em dashes appear in the added text; no methodology/agent/SOP/song files were modified."
+  ],
+  "verification": [
+    "grep -n 'plugins/' README.md core/README.md .kiro/README.md (entries present)",
+    "grep -ni 'Suno Studio Plugins' README.md (subsection present)",
+    "grep -ni 'plugins' CHANGELOG.md (changelog entries present)",
+    "git diff --name-only main -- core/ .kiro/agents .kiro/sops .kiro/skills .kiro/hooks examples songs | grep -v 'README' (should be empty — no methodology/song files touched besides READMEs)"
+  ],
+  "blocked_reason": null,
+  "findings": "Updated the four target docs. README.md: added a plugins/ line to the Repository Structure tree (near tools/) and a new '### Suno Studio Plugins' subsection at the end of the '## Suno AI Integration' section, framing them as post-render audio effects distinct from the Style/Lyrics prompt pipeline, naming the 6 plugins, marking them UNVERIFIED, and linking [plugins/README.md](plugins/README.md) and [plugins/AUTHORING.md](plugins/AUTHORING.md). CHANGELOG.md: replaced the pre-existing single plugins entry that contained an em dash with three em-dash-free dash bullets covering (a) the plugins/ folder + Suno Studio/post-render/not-lyric-tags framing, (b) the 6 named Tier-1 plugins noting confirmed g.* primitives only and UNVERIFIED pending in-Suno testing, and (c) both plugins/README.md AND plugins/AUTHORING.md docs (AUTHORING.md coverage was previously missing). core/README.md: added one row to 'Relationship to Other Directories'. .kiro/README.md: added one row to 'Directory Overview' (3-column) with 'Loads When' = 'Manually in Suno Studio (not by Kiro)'. Verified none of my additions contain em dashes. Note: unrelated pre-existing entries elsewhere in CHANGELOG.md and the [2.0.0]/[1.x] history still contain em dashes; those are outside this feature's scope (methodology/history entries not touched by this task) and were left unchanged. No methodology, agent, SOP, skill, hook, or song files were modified. No build/test applies (docs-only change)."
+}

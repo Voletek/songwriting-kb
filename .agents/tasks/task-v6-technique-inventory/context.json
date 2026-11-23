@@ -1,0 +1,20 @@
+{
+  "project_type": "Documentation / knowledge-base repo for a Suno AI songwriting system. All content is Markdown; no code to build or test.",
+  "language": "Markdown (English prose + bracketed Suno lyric-tag notation).",
+  "build_system": "None. No package manager, no build. Git is the only tooling.",
+  "test_framework": "None applicable to doc edits. A tools/validate-song.py exists but enforces v5.5 song rules and false-fails on V6 tags; DO NOT run it for this task.",
+  "build_command": "n/a (Markdown docs)",
+  "test_command": "n/a (Markdown docs)",
+  "verification_instructions": "Manual review of Markdown: (1) confirm all 16 named techniques appear in the new Technique Inventory section of V6_TAG_DISCOVERY.md; (2) confirm canonical grammar section + 6-dialect migration table present; (3) confirm labeled modes (default/roots + concept-album/cinematic 'MODE C') present with common-spine cross-reference; (4) confirm V6_TAG_REFERENCE.md reconciled to canonical grammar; (5) confirm the [Tag Vocabulary] internal contradiction resolved to 'drop it'; (6) confirm existing 'working model', RESULTS LOG, and 'Still Open' sections preserved. Do NOT run validate-song.py.",
+  "snapshot_or_generated_files": "None.",
+  "setup_instructions": "None. Work directly in /projects/sandbox/songwriting-kb on branch docs/v6-technique-inventory-and-canonical-grammar (already created off main).",
+  "environment_constraints": "Doc-only task. Do NOT run tools/validate-song.py (v5.5 rules, false-fails V6 tags). Do NOT push or open a PR (orchestrator publishes). Work stays on the new branch.",
+  "contribution_requirements": "Preserve existing framing: 'working model' status, RESULTS LOG, 'Still Open' sections in V6_TAG_DISCOVERY.md must be extended, not gutted. Keep division-of-labor rule (Style field = WHAT/identity, inline tags = HOW/arrangement). Link to STYLE_LIBRARY.md for prose style prompts rather than duplicating them.",
+  "key_patterns": "V6_TAG_DISCOVERY.md is the how/why doc (primary file to extend). V6_TAG_REFERENCE.md is the master de-duplicated tag dictionary (the WHAT catalog; reconcile to canonical grammar). STYLE_LIBRARY.md holds prose style prompts (complete; link, do not duplicate). Existing tag-example style uses bracket notation like [Instrument: Banjo In], [Vocal: Belt], [Male Lead: Whisper, dry close vocal], [Transition: Crescendo, Snare In, Synth Riser].",
+  "relevant_files": [
+    "references/V6_TAG_DISCOVERY.md",
+    "references/V6_TAG_REFERENCE.md",
+    "references/STYLE_LIBRARY.md"
+  ],
+  "directory_structure": "references/ holds all reference docs. core/methodology/ holds the v5.5 methodology (suno-optimization.md). examples/ holds songs and analyses. The three files touched by this task are all under references/."
+}

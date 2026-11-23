@@ -19,3 +19,9 @@ node_modules/
 # Personal working files (don't commit drafts)
 drafts/
 scratch/
+tools/__pycache__/
+__pycache__/
+*.pyc
+
+# Personal song-length presets (tools/data/length_targets.local.json overrides the community defaults)
+tools/data/length_targets.local.json

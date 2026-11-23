@@ -62,3 +62,7 @@ conclusion: "Inconclusive (control arm only: 1 of 4 takes partly 3/4). Next: tes
 confidence: "Low"
 retest_by: "2027-02-23"
 promoted_to: ""
+
+# Instrumental arm (covers of the Froststep Waltz, 3/4 held on 4 of 4 takes): see
+# analysis/Violent_Night_render_evidence.md and songs/standalones/Violent_Night_v2_Froststep.md.
+# The anonymised community version of this log is on main.

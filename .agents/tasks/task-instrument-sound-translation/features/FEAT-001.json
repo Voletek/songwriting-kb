@@ -1,0 +1,36 @@
+{
+  "id": "FEAT-001",
+  "type": "feat",
+  "description": "Create the main INSTRUMENT_SOUND_REFERENCE.md reference document (400-500 lines) organized by genre family with full/compressed/minimum descriptors including character counts, inline tag examples, Tier 3 labeling, character budget guidance, three-tier compression system, and 21machines credit.",
+  "status": "completed",
+  "steps": [
+    "Create references/INSTRUMENT_SOUND_REFERENCE.md with 400-500 lines",
+    "Add header with Tier 3 label, design principle ('Suno responds to SOUND DESCRIPTIONS, not equipment names'), character budget guidance section, three-tier compression system explanation, and credit to 21machines' acid house experiment",
+    "Add Electronic/Dance section: TB-303, TR-909, TR-808, Korg M1, Juno-106, DX7, Minimoog, Prophet-5, Arp, Oberheim, vocoder, Fairlight. Each with: gear name, full descriptor (with char count), compressed descriptor (with char count), minimum viable descriptor (with char count), inline tag example",
+    "Add Rock/Blues/Country section: Telecaster, Stratocaster, Les Paul, SG, Marshall amp, Fender amp, Vox AC30, slide guitar, pedal steel, Hammond B3, Wurlitzer, Rhodes, Dobro. Same format.",
+    "Add Orchestral/Cinematic section: solo violin, violin section, solo cello, cello section, double bass, French horn, trumpet, trombone, oboe, clarinet, flute, timpani, harp, pipe organ, harpsichord. Same format.",
+    "Add Folk/World/Celtic section: tin whistle, uilleann pipes, Highland bagpipes, bodhran, Irish fiddle, concertina, mandolin, banjo, sitar, tabla, djembe, taiko, koto, didgeridoo. Same format.",
+    "Add Synthesizer Specific Sounds section: supersaw, Moog bass, Juno pad, DX7 bass, Reese bass, amen break. Same format.",
+    "Add Piano Variations section: concert grand, upright, honky-tonk, prepared, toy piano, celesta. Same format.",
+    "Add Drums/Percussion Acoustic section: jazz kit brushes, rock kit studio, rock kit live room, Motown kit, Bonham-style, cajon. Same format.",
+    "Add footer with cross-references to SUNO_STYLE_GENRE_REFERENCE.md and experiment framework, and note about promotion criteria (needs per-genre testing)"
+  ],
+  "acceptance_criteria": [
+    "File exists at references/INSTRUMENT_SOUND_REFERENCE.md",
+    "File is between 400-500 lines",
+    "Every instrument entry has full descriptor with char count, compressed descriptor with char count, minimum descriptor with char count, and inline tag example",
+    "Tier 3 label present at top",
+    "21machines credit present",
+    "All seven genre families present",
+    "Character budget guidance section present",
+    "Three-tier compression system explained"
+  ],
+  "verification": [
+    "Count lines in references/INSTRUMENT_SOUND_REFERENCE.md (should be 400-500)",
+    "Grep for 'Tier 3' in the file",
+    "Grep for '21machines' in the file",
+    "Grep for 'chars' or 'char' to confirm character counts present"
+  ],
+  "blocked_reason": null,
+  "findings": "File generated at exactly 500 lines using definition-list format (not table format shown in example) to fit within line budget while including all 71 instruments from all 7 genre families. All 216 character counts verified programmatically. Validator still runs successfully on existing songs."
+}

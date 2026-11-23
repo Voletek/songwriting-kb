@@ -3,6 +3,10 @@
 > Step-by-step procedure for creating a complete vocal identity for a character,
 > from accent through instrumentation through mode selection.
 
+> **Note:** The canonical methodology for this workflow now lives in `core/methodology/character-voice.md`.
+> This SOP is retained for Kiro-specific step formatting but the methodology file is the authoritative source.
+> If content diverges, `core/methodology/` wins.
+
 ---
 
 ## Prerequisites
@@ -191,7 +195,7 @@ Track Z: [final evolution]
 
 **Rule 8:** The voice must be DIFFERENT in every track. Document what changes.
 
-**Note:** If the album bible already documents voice evolution in its Character Voice Registry, reference it rather than duplicating. This step ensures the design is PLANNED; the bible is where it's DOCUMENTED in full.
+**Note:** If the album blueprint already documents voice evolution in its Character Voice Registry, reference it rather than duplicating. This step ensures the design is PLANNED; the blueprint is where it's DOCUMENTED in full.
 
 ---
 

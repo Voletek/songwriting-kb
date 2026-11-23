@@ -1,42 +1,41 @@
 # Suno AI — Power Steering
 
+> Summary of the canonical rules in `.kiro/steering/suno-formatting.md`. If they disagree, the canonical file wins.
+> Rendering through the Suno MCP: SOP 10 (`.kiro/sops/10-rendering-through-the-suno-mcp.md`) and `references/SUNO_MCP_REFERENCE.md`.
+
+## ⚡ V6 Paradigm (current default)
+V6 (v6 / v6-wild / v6-mini). Status: working model (user-reported Sept 2026; per-tag evidence in the `references/V6_TAG_DISCOVERY.md` results log).
+- **Style field = the WHAT:** genre (first), key, tempo, vocal identity, production aesthetic
+- **Lyrics field = the HOW:** section tags + `[Instrument: X In/Out]` + dynamics + delivery + transitions
+- `[Instrument: X In]` / `[Instrument: X Out]` control instrument entrances/exits — USE THEM
+- Other event tags: `[Dynamic: ...]`, `[Vocal: ...]` (or `[Male lead, inline adjective]`), `[Transition: ...]`, `[Key Change: ...]`
+- 2-4 tags per section; end with `[End]`
+- Do NOT use: a `[Tag Vocabulary]` block (planning aid only, not sung), v5.5 global tags (`[track:]`/`[control:]`/`[sequence:]`), pipe notation `[Section | params]`
+- Master tag list: `references/V6_TAG_REFERENCE.md` · How/why: `references/V6_TAG_DISCOVERY.md`
+- Deterministic check: `python3 tools/validate-song.py <file>`
+
 ## Limits
-- Style: 1000 chars | Lyrics: 5000 chars | Exclude field: negatives/exclusions ONLY
+- Style: 1000 chars | Lyrics: 5000 chars | Exclude field: 1000 chars, negatives/exclusions ONLY (the Suno MCP enforces the same limits on V6)
 
-## Creative Sliders (UI Settings)
-- **Weirdness:** 50-55% for our songs (Safe↔Chaos, default 50%)
-- **Style Influence:** 50-60% for our songs (how much Style Prompt steers)
-- **Audio Influence:** 45% if using Inspo (how much reference affects output)
-
-## v5.5 Features (UI, not text tags)
-- **Personas:** Lock vocal identity per character. Select before generating.
-- **Stems:** Extract 12-track splits for DAW mixing. Use for album consistency.
-- **Custom Models:** Train on your tracks to learn your style (Pro/Premier).
-
-## Era Tags (Style Prompt)
-Decade tags ("1980s") aggressively bias production style. To get vintage instruments with modern production: "modern production, vintage 1970s guitar tone" — separate era from mix.
-
-## Always Include
-```
-[track: genre: X, mood: X, length: 270]
-[control: no-repeat, dynamic transitions]
-[sequence: intro, verse, pre-chorus, chorus, ...]
-```
+## V6 Controls & Features
+- Sliders (Weirdness, Style Influence, Audio Influence, Variety 0-4), Max Mode (only on request), model `v6` / `v6-wild` / `v6-mini`
+- Voices (formerly Personas), stems (2 or 12 parts), section edits, extensions past 6:00
+- In the MCP, sliders are 0–1 fractions in `controls` (60% = `0.6`). Log non-default values in the song's `## RENDERS` section
 
 ## Section Rules
 - Tags on own line, never with lyrics
-- 4-8 lines per section
+- Verses/choruses usually 4-8 lines; bridge 3-6 (up to 8 when the turn needs it)
 - No end punctuation
-- Each line = one phrase = one breath
+- Each line = one phrase = one breath; target 7-12 syllables [Tier 2]
 
-## Key Tags
-- `[vulnerable vocals]` — confessional sections
-- `[whisper]` — lead whispered / `[whispering]` — background layer
-- `[build]` — pre-chorus ramp
-- `[silence: sudden]` — dramatic pause
-- `[modulation: ascending]` — key change
-- `[chant]` — repeated hook/mantra
-- `[end]` — always at bottom
+## Key V6 Tags
+- `[Vocal: Whisper]` / `[Vocal: Breathy]` — confessional sections
+- `[Vocal: Belt]` / `[Vocal: Gang Vocal]` — chorus lift
+- `[Dynamic: Crescendo]` — pre-chorus ramp
+- `[Instrument: Drums Out]` + `[Dynamic: Diminuendo]` — bridge strip
+- `[Transition: Key Lift]` / `[Key Change: ...]` — key change
+- `[Dynamic: Fade Out]` — outro
+- `[End]` — always at bottom
 
 ## Parenthetical Layers — `()` in Lyrics
 - `(whispered) text` — delivery cue (works alone)
@@ -45,9 +44,22 @@ Decade tags ("1980s") aggressively bias production style. To get vintage instrum
 - `(echo layer: text)` — echo treatment (**Style must declare**)
 - `(whisper layer: text)` — whisper texture (**Style must declare**)
 - `(response text)` — backup vocal / duet response (best with Style declaration)
-- Always add `‑vocal overlap confusion` to exclusions when using layers
+- Always add `vocal overlap confusion` to the Exclude field when using layers
 
-## Exclusions
+## Exclusions (Exclude field)
+Plain comma-separated text, no dash prefix — under `## EXCLUSIONS:` in the song file:
 ```
-[Exclusions: ‑beatboxing, ‑vocal hums, ‑trap drums, ...]
+trap drums, beatboxing, vocal hums, bright synths
 ```
+
+---
+
+## Legacy v5.5-era mechanics (re-validate on V6)
+
+- **Global tags (v5.5 only):** `[track: genre: X, mood: X, length: 270]` / `[control: no-repeat, dynamic transitions]` / `[sequence: ...]`; terminator `[end]` (validator accepts `[end]` and `[End]`)
+- **Pipe notation:** `[chorus | powerful, wide]` — v5.5 char-saver; not V6 canonical grammar
+- **v5.5 tags:** `[vulnerable vocals]`, `[whisper]` / `[whispering]`, `[build]`, `[modulation: ascending]`, `[chant]`; `[silence: sudden]` was unreliable even on v5.5 (unverified on V6)
+- **Slider values** (v5.5-era starting points; the sliders themselves are V6 features, see below): Weirdness 50-55%, Style Influence 50-60%, Audio Influence 45%
+- **Custom Models / My Taste:** v5.5-era UI features, not exposed through the MCP
+- **Era tags:** decade tags ("1980s") biased production style on v5.5; separate era from mix: "modern production, vintage 1970s guitar tone"
+- **5-8 descriptor sweet spot**, Italian tempo preference, performance-notation symbols (only ALL CAPS was reliable) — v5.5-era Tier 3 heuristics

@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Prosody Lint",
+      "description": "Deterministic lyric readout when an agent saves a song file under songs/: syllables per line (13-15 review, 16+ Compression Test), rhyme type on Pattison's ladder, rhyme scheme and section stability, cliches. Advisory only (Tenet 1: emotion over mechanics). Install 'pronouncing' for dictionary accuracy.",
+      "trigger": "PostFileSave",
+      "matcher": ".*songs/.+\\.md$",
+      "action": {
+        "type": "command",
+        "command": "python3 tools/lyric-lint.py --hook {{filePath}}"
+      },
+      "timeout": 30
+    }
+  ]
+}

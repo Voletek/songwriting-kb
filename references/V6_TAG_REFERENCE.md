@@ -1,0 +1,167 @@
+# Suno V6 Tag Reference — Master Tag Dictionary
+
+> **The complete, de-duplicated V6 lyric-tag vocabulary.** Copy-paste dictionary for building
+> V6 songs. This is the tag catalog; for HOW to use it (division of labor, production template,
+> what's in the working model), see `references/V6_TAG_DISCOVERY.md`. For v5.5-era (legacy) tags, see
+> `references/SUNO_TAGS_REFERENCE.md`.
+>
+> **Status: working model (user-reported Sept 2026; per-tag evidence in the `references/V6_TAG_DISCOVERY.md` results log).**
+> V6 (v6 / v6-wild / v6-mini) is the current default. The tags below are the operating
+> vocabulary for V6 songs; individual tags graduate as render evidence (date, model, render ID) is logged.
+
+---
+
+## How V6 Tags Divide (the core rule)
+
+- **Style field = the WHAT (identity):** genre, key, tempo, vocal identity, production aesthetic. Sets the world.
+- **Lyrics field = the HOW (arrangement):** section tags, instrument In/Out, dynamics, delivery, transitions. Choreographs the performance.
+- **DO NOT include a `[Tag Vocabulary]` block in final output** — it does not get sung and is not needed. It is optional planning scaffolding only.
+
+> **See also:** the **V6 Technique Inventory** (every observed technique, common + rare) and the
+> **Canonical V6 Tag Grammar** (the one recommended notation, with a six-dialect migration table)
+> in `references/V6_TAG_DISCOVERY.md`. The syntax guidance in this dictionary follows that canonical
+> grammar.
+
+---
+
+## STRUCTURE (15)
+
+```
+Intro · Verse · Pre-Chorus · Chorus · Post-Chorus · Bridge · Breakdown · Build · Drop · Instrumental Solo · Interlude · Key Change · Outro · Transition · End
+```
+
+## INSTRUMENTATION — each takes In / Out for entrance & exit control (working model, Sept 2026, user-confirmed; log render evidence)
+
+```
+Piano · Felt Piano · Rhodes · Hammond Organ
+Cello · Bowed Cello · Strings · Chamber Strings · Fiddle · Harmonica
+Banjo · Acoustic Guitar · Electric Guitar · Slide Guitar · Muted Guitar
+Upright Bass · Bass · Distorted Bass · Sub-Bass
+Drums · Kick · Snare · Toms · Floor Tom · Cymbals · Percussion · Brushes
+Boot Stomp · Hand Claps · Tambourine
+Synth Pad · Synth Lead · Analog Synth · Arp
+Room Tone · Drone · Vocal Chop · FX / Texture
+```
+
+Usage: `[Instrument: Banjo In]` ... `[Instrument: Banjo Out]`
+
+## DYNAMICS (classical + named)
+
+```
+pp · p · mp · mf · f · ff · fff
+Whisper (Hush) · Soft · Full · Fortissimo
+Crescendo · Diminuendo · Swell · Drop · Full Impact
+Fade In · Fade Out · Silence · Rest · Accent · Staccato · Sustain
+```
+
+## FEEL / TEMPO
+
+```
+Free Time · Rubato · Straight · Steady Stomp · Shuffle
+Half-Time · Double-Time (Lift) · Bar Extension
+Ritardando · Accelerando · Push · Hold
+```
+Plus explicit BPM and Italian markings (Adagio, Andante, Moderato, Allegro, etc.)
+
+## VOCALS
+
+```
+Male Lead · Female Lead · Female Counter (Counterline / Counter-Voice)
+Baritone · Tenor Lift · Falsetto
+Whisper · Breathy · Dry / Close-Mic · Spoken Word · Half-Spoken
+Raspy · Growl · Belt · Full Voice
+Harmony · Unison · Layered Double · Gang Vocal
+Call · Response · Ad-Lib
+Reverb Tail · Vocal Out · Laugh · Breath
+```
+
+## TRANSITIONS
+
+```
+Entrance · Exit · Pickup · Turnaround
+Riser · Drum Fill · Reverse Cymbal · Cymbal Rise
+Stop-Time · Breath · Hit · Cut · Hard Cut
+Key Change Up (Key Lift) · Filter Open · Filter Close · Glitch Cut
+```
+Compound transitions bundle simultaneous events: `[Transition: Crescendo, Snare In, Synth Riser]`
+
+## PRODUCTION / FX
+
+```
+Vinyl Crackle · Tape Hiss · Room Tone
+Filtered · Saturated · Detuned · Distorted
+Stereo Widening · Delay · Reverb
+Analog Warmth · Digital Cold
+```
+
+---
+
+## Tag Syntax Forms (canonical)
+
+These follow the **Canonical V6 Tag Grammar** in `references/V6_TAG_DISCOVERY.md`. Use light-namespaced
+event tags, keep `[Role, inline-adjective]` as a first-class delivery form, and hold to 2-4 tags per
+section (not per line). A tag placed after the section's last lyric line (a closing `[Transition: Hit]`,
+`[Dynamic: Sustain]` or `[Dynamic: Fade Out]` before `[End]`) is an ending event: it is fine to exceed 4
+for that, but prefer bundling with a compound tag (`[Transition: Hit, Sustain]`) to keep the count down.
+
+| Form | Example | Status |
+|---|---|---|
+| Light-namespaced event tag | `[Instrument: Banjo In]`, `[Vocal: Belt]`, `[Dynamic: Crescendo]` | **Canonical** |
+| `[Role, inline-adjective]` delivery | `[Female response, rising]`, `[Male lead, tender then stronger]` | **Canonical (first-class)** |
+| Inline delivery detail (namespaced) | `[Male Lead: Whisper, dry close vocal]`, `[Female Lead: Call, lifted alto]` | Canonical |
+| Compound (bundled) transition | `[Transition: Crescendo, Snare In, Synth Riser]` | Canonical |
+| Call/response on own lines | `[Call] Higher!` then `[Response] Higher!` | Canonical |
+| Bare / ALL-CAPS / per-line-prefixed / compact-pipe vocabulary | `[Banjo In]`, `[STRUCTURE:VERSE]`, `[VERSE 1][GUITAR:ENTER]`, `[VOCABULARY:VOCALS=whisper\|belt\|...]` | **Not recommended**: migrate to the canonical forms (see the grammar migration table in `V6_TAG_DISCOVERY.md`) |
+
+---
+
+## Minimal V6 Song Skeleton (production-ready)
+
+```
+[Intro]
+[Instrument: Piano In]
+[Instrument: Cello In]
+[Vocal: Whisper]
+...lyric...
+
+[Verse 1]
+[Instrument: Drums In]
+[Instrument: Bass In]
+[Vocal: Male Lead]
+...lyric...
+
+[Pre-Chorus]
+[Dynamic: Crescendo]
+[Instrument: Banjo In]
+...lyric...
+
+[Chorus]
+[Dynamic: Full]
+[Vocal: Belt]
+[Vocal: Gang Vocal]
+...lyric...
+
+[Bridge]
+[Instrument: Drums Out]
+[Dynamic: Diminuendo]
+[Vocal: Spoken Word]
+...lyric...
+
+[Final Chorus]
+[Transition: Key Lift]
+[Dynamic: Fortissimo]
+...lyric...
+
+[Outro]
+[Dynamic: Fade Out]
+[Instrument: Piano Out]
+[End]
+```
+
+(No `[Tag Vocabulary]` block. Style/identity lives in the Style field.)
+
+---
+
+*Living document. Note: v5.5-era tags (`references/SUNO_TAGS_REFERENCE.md`) are legacy — re-validate on V6.
+Use this V6 set for V6 renders; do not mix in v5.5 global tags (`[track:]`, `[control:]`, `[sequence:]`) or pipe notation.
+Style prompts that pair with these tags are in `references/STYLE_LIBRARY.md`.*

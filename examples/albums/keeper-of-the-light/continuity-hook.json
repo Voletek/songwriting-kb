@@ -1,13 +1,16 @@
 {
-  "name": "Keeper Continuity Check",
-  "version": "1.0.0",
-  "description": "Verifies Keeper of the Light album continuity rules when song files are saved — checks sonic palette, phrase protections, key rules, and character voice constraints",
-  "when": {
-    "type": "fileEdited",
-    "patterns": ["songs/keeper_of_the_light/*.md"]
-  },
-  "then": {
-    "type": "askAgent",
-    "prompt": "Run a continuity check on this saved file against the Keeper of the Light 12 hard rules. Check for: 1) Electronic/distortion in T1-T2, 2) Concertina outside T1/T2/T8, 3) Missing sea/ocean sound, 4) 'The light keeps' outside T1/T3/T5/T8, 5) Creature being named, 6) D Mixolydian outside T1/T8, 7) Fm outside T7, 8) Harmony vocals before T7, 9) T6 being loud, 10) Sub-bass before T4. Report violations with 🚨 or pass with ✅."
-  }
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Keeper of the Light Continuity Check",
+      "description": "Example album hook. Copy to .kiro/hooks/keeper-of-the-light-continuity.json and adjust the matcher to your song folders. Fires when an agent saves a Keeper of the Light song file and checks it against the blueprint's 12 hard rules.",
+      "trigger": "PostFileSave",
+      "matcher": ".*songs/keeper[-_]of[-_]the[-_]light/.+\\.md$",
+      "action": {
+        "type": "agent",
+        "prompt": "A Keeper of the Light song file was just saved. Read examples/albums/keeper-of-the-light/BLUEPRINT.md (Track Registry and the 12 HARD RULES; use your own copy of the blueprint if you made one) and check the saved song against every rule. In particular: the sea is audible in every track; D Mixolydian only in T1 and T8; F minor only in T7; no distortion/effects before T3; 'the light keeps' only in T1, T3, T5 and T8, with a different meaning each time; the creature is never named; no harmony vocals before T7; T6 is the quietest track; concertina only in T1, T2 and T8; T8 tempo matches T1 (92 BPM); no two adjacent tracks share more than 70% of their palette; nothing after T5 is louder than the storm. Report a PASS/FAIL table with a fix for each FAIL."
+      },
+      "timeout": 60
+    }
+  ]
 }

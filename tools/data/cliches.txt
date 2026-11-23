@@ -1,0 +1,177 @@
+# Cliche phrases and cliche rhyme pairs used by tools/lyric-lint.py
+# One lowercase phrase per line (matched on word boundaries, punctuation ignored).
+# "pair: a/b" lines are end-rhyme pairs worn out by overuse.
+# A hit is a prompt to flip the phrase or anchor it in a concrete image, not an automatic error:
+# a cliche used knowingly (subverted, literalised, put in a character's mouth) can be the point.
+# See references/RHYME_AND_LYRIC_CRAFT.md -> "Cliche flipping".
+
+# --- stock similes and images
+cold as ice
+cuts like a knife
+like a knife
+heart of stone
+heart of gold
+tears like rain
+tears fall like rain
+like a moth to a flame
+moth to a flame
+like a bird in a cage
+like a candle in the wind
+like a rolling stone
+broken wings
+set me free
+set my soul on fire
+my heart is on fire
+burning desire
+burning like a fire
+playing with fire
+shattered heart
+broken heart
+heart is breaking
+pieces of my heart
+my heart bleeds
+torn apart
+falling apart
+fall apart
+lost without you
+nothing without you
+can't live without you
+you complete me
+you are my everything
+my everything
+meant to be
+written in the stars
+stars in your eyes
+lost in your eyes
+drowning in your eyes
+take my breath away
+end of the road
+light at the end of the tunnel
+rise from the ashes
+from the ashes
+phoenix from the flames
+calm before the storm
+weather the storm
+chasing the dream
+chase my dreams
+follow your dreams
+reach for the stars
+touch the sky
+spread my wings
+on top of the world
+against all odds
+stand the test of time
+till the end of time
+until the end of time
+forever and ever
+forever and always
+now or never
+one more chance
+second chance
+walk away
+down on my knees
+on my knees
+crying in the rain
+dancing in the rain
+dance in the rain
+under the moonlight
+in the dead of night
+middle of the night
+the darkness inside
+demons inside
+fight my demons
+my inner demons
+the voices in my head
+lost my way
+find my way
+find my way home
+long way home
+the road ahead
+long and winding road
+time heals
+hurts so bad
+feel so alone
+all alone
+so alone
+empty inside
+hollow inside
+numb inside
+dead inside
+shadow of myself
+ghost of myself
+echoes in my mind
+scars that never heal
+open wounds
+behind these walls
+break down these walls
+tear down the walls
+mask i wear
+wear a mask
+behind the mask
+hold on tight
+never let go
+never let you go
+won't let go
+let it go
+let it all go
+breathe again
+come alive
+feel alive
+heart beats
+beat of my heart
+heartbeat away
+skin and bones
+blood sweat and tears
+you light up my world
+light up the night
+burn so bright
+shine so bright
+like a diamond
+diamond in the rough
+cold cold heart
+cold dark night
+dark and stormy night
+the rain keeps falling
+storm inside
+fire inside
+fire in my soul
+fire in your eyes
+
+# --- worn-out rhyme pairs (end words)
+pair: fire/desire
+pair: heart/apart
+pair: heart/start
+pair: love/above
+pair: love/of
+pair: pain/rain
+pair: pain/again
+pair: cry/goodbye
+pair: cry/why
+pair: night/light
+pair: night/tonight
+pair: tonight/light
+pair: soul/whole
+pair: soul/control
+pair: eyes/lies
+pair: eyes/skies
+pair: dreams/seems
+pair: forever/together
+pair: kiss/miss
+pair: you/true
+pair: me/free
+pair: day/away
+pair: alone/home
+pair: alone/own
+pair: home/roam
+pair: fly/sky
+pair: fly/high
+pair: high/sky
+pair: tears/fears
+pair: tears/years
+pair: inside/hide
+pair: inside/cried
+pair: door/more
+pair: arms/harm
+pair: face/place
+pair: mind/find
+pair: mind/behind

@@ -1,0 +1,31 @@
+{
+  "id": "FEAT-002",
+  "type": "feat",
+  "description": "Add the Compression Test section to songwriting methodology, reference it in critique.md and steering/songwriting.md, then update CHANGELOG and CREDITS.",
+  "status": "completed",
+  "steps": [
+    "Step 1 - Add 'The Compression Test' section to core/methodology/songwriting.md in the Phase 3: Quality Check area (after Step 19 Quality Gates, before Phase 4: Formatting). The section contains: trigger condition (line exceeds ~15 syllables of normal singable density), 3-step comparison process (write compressed version <=12 syllables, compare outcomes: COMPRESSED HITS HARDER -> use it, COMPRESSED HITS EQUALLY -> use it, COMPRESSED IS WEAKER -> keep long version IF performable as spoken/recitative), the fourth path (REWRITE DIFFERENTLY: different metaphor/angle/structure), and the decision tree (Passes emotion AND flow -> keep; Passes emotion fails flow compression weakens -> keep as spoken + production support; Passes emotion fails flow compression equals -> compress; Passes emotion fails flow compression weakens could be rewritten -> rewrite differently; Fails emotion -> rewrite regardless). Mark the entire compression test as [Tier 2: Professional heuristic].",
+    "Step 2 - Add a brief reference to the Compression Test in core/methodology/critique.md in the prosody scoring area (Category 3 Prosody, around line ~111 after 'Flag any line over 12 syllables'). Something like: 'For flagged lines, apply the Compression Test (see songwriting.md) to determine whether to compress, keep as spoken, or rewrite.'",
+    "Step 3 - Add a brief reference to the Compression Test in .kiro/steering/songwriting.md in the Quality Gates section. Something like: '- Lines exceeding normal density: apply Compression Test (compress / keep as spoken / rewrite differently)'.",
+    "Step 4 - Update CHANGELOG.md [Unreleased] section. Add under '### Added': 'Three-Tier Evidence Labeling System ([Tier 1: Scholarship-backed], [Tier 2: Professional heuristic], [Tier 3: Community/platform heuristic]) applied across all methodology files', 'The Compression Test -- decision framework for handling lines exceeding singable density (songwriting.md Phase 3)', 'Eerola, Friberg & Bresin (2013) properly attributed for emotional cue hierarchy'. Add under '### Changed': 'Emotional cue hierarchy attribution corrected from Juslin/Gabrielsson to Eerola, Friberg & Bresin (2013, Frontiers in Psychology 4, Article 487)', 'Fabbri rule labels corrected to exact terminology (formal and technical rules, semiotic rules, behaviour rules, social and ideological rules, economical and juridical rules)', 'Lacasse proxemics -- noted \"dissolved\" as system adaptation; credited composite framework (Hall + Lacasse + Moore)', 'Moore 4 layers -- added caveat: generalized descriptions, not prescriptive rules', 'Tagg musemes -- corrected to interobjective comparison methodology', 'Quality gate language softened from absolute rules to professional heuristic checks [Tier 2]: syllable limits, hook timing, V2 novelty, bridge turn, ABCB scheme', 'Suno-specific claims labeled [Tier 3] with version notes: 5-8 tags, genre-first, era anchoring', 'Key-emotion mapping split: mode effects [Tier 1], specific key character [Tier 2 historical tradition]'.",
+    "Step 5 - Update CREDITS.md. In the Academic Sources table: (a) Change the 'Patrik Juslin (2013)' row -- keep BRECVEMA attribution but REMOVE 'cue hierarchy' from that row. (b) Add a new row: '| **Eerola, Friberg & Bresin** (2013, *Frontiers in Psychology* 4:487) | Emotional cue hierarchy: mode > tempo > register > dynamics > articulation > timbre |'. (c) Update the Lacasse entry to note composite framework. (d) Verify Schubart entry exists (it does)."
+  ],
+  "acceptance_criteria": [
+    "Compression Test section exists in core/methodology/songwriting.md in the quality check area",
+    "Compression Test is referenced in critique.md prosody section",
+    "Compression Test is referenced in .kiro/steering/songwriting.md quality gates",
+    "CHANGELOG [Unreleased] documents all changes from this task",
+    "CREDITS.md has Eerola, Friberg & Bresin entry with correct citation",
+    "CREDITS.md Juslin entry no longer claims cue hierarchy",
+    "CREDITS.md Lacasse entry notes composite framework"
+  ],
+  "verification": [
+    "grep -n 'Compression Test' /projects/sandbox/songwriting-kb/core/methodology/songwriting.md",
+    "grep -n 'Compression Test' /projects/sandbox/songwriting-kb/core/methodology/critique.md",
+    "grep -n 'Compression Test' /projects/sandbox/songwriting-kb/.kiro/steering/songwriting.md",
+    "grep -n 'Eerola' /projects/sandbox/songwriting-kb/CREDITS.md",
+    "grep -n 'Tier' /projects/sandbox/songwriting-kb/CHANGELOG.md"
+  ],
+  "blocked_reason": null,
+  "findings": "All 5 steps implemented successfully. Compression Test section added to songwriting.md after Quality Gates (line 240). Referenced in critique.md prosody check (line 125) and steering/songwriting.md quality gates (line 61). CHANGELOG [Unreleased] updated with 3 Added and 8 Changed entries covering both FEAT-001 and FEAT-002. CREDITS.md already had correct Juslin (BRECVEMA only, no cue hierarchy) and Eerola entries from FEAT-001; Lacasse entry updated with composite framework note."
+}

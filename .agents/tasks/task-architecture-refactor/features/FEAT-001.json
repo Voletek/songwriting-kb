@@ -1,0 +1,30 @@
+{
+  "id": "FEAT-001",
+  "type": "feat",
+  "description": "Phase 1: Write 5 fat methodology files in core/methodology/ that become the SINGLE SOURCE OF TRUTH. Each file must be complete enough to follow without any other file, self-contained for non-Kiro users, and reference references/ files for deep data tables without duplicating them.",
+  "status": "completed",
+  "steps": [
+    "Create directory core/methodology/",
+    "Write core/methodology/critique.md (400-600 lines) - THE critique method. Synthesize from: .kiro/sops/02-critiquing-a-song.md, .kiro/agents/critic.md, .kiro/skills/song-critique/SKILL.md, .kiro/steering/suno-formatting.md, references/CRITIQUE_REFERENCE.md. Must include: complete multi-layer critique model explanation, full 9-step analysis workflow, all 12 core category scoring rubrics with 1-10 scale meanings, 5 advanced assessments with full explanations, Suno Optimization Assessment (7-point check, section tags, compliance, alternatives), Album-context module (6 checks), Calibration and technical audit, output format specification, decision gate rules, all theoretical sources cited, quality principles.",
+    "Write core/methodology/songwriting.md (400-600 lines) - THE writing method. Synthesize from: .kiro/sops/01-writing-a-song.md, .kiro/agents/songwriter.md, .kiro/steering/songwriting.md, .kiro/steering/output-preferences.md, SONGWRITING_KNOWLEDGE_BASE.md. Must include: complete 5-phase procedure (Analysis, Writing Nashville method, Quality Check, Suno Formatting, Album Integration), the 9-step workflow in full, hook principles, quality gates, output format specification, common mistakes.",
+    "Write core/methodology/suno-optimization.md (400-600 lines) - THE Suno optimization method. Synthesize from: .kiro/sops/03-optimizing-for-suno.md, .kiro/agents/suno-optimizer.md, .kiro/skills/suno-meta-tags/SKILL.md, .kiro/steering/suno-formatting.md, references/SUNO_TAGS_REFERENCE.md. Must include: complete 12-step optimization procedure, character count audit, global control tags, section tag optimization, pipe notation rules, vocal delivery tags, dynamics tags, creative sliders, era anchoring rules, the 7-dimension prompt formula, compliance checklist, parenthetical layers system, common Suno problems and fixes.",
+    "Write core/methodology/album-continuity.md (400-600 lines) - THE continuity method. Synthesize from: .kiro/sops/04-setting-up-concept-album.md, .kiro/sops/05-extending-an-album.md, .kiro/agents/album-continuity.md, .kiro/steering/concept-album.md. Must include: complete album setup procedure (5 phases: Concept, Track Registry, Rules/Constraints, Motifs/Continuity, Documentation), the extension protocol (12 steps), continuity verification workflow (8 checks), universal album rules, output formats for bibles and continuity reports.",
+    "Write core/methodology/character-voice.md (300-500 lines) - THE character voice method. Synthesize from: .kiro/sops/06-character-voice-design.md, .kiro/skills/character-voice/SKILL.md, references/CHARACTER_VOICE_REFERENCE.md. Must include: complete 11-step voice design procedure, Character Voice Template (vocal + non-vocal variants), accent reference tables, vowel/consonant character decisions, rhythmic tendency framework, mode/scale by culture, instrumentation by culture, Suno style prompt descriptors, voice evolution for albums."
+  ],
+  "acceptance_criteria": [
+    "core/methodology/critique.md exists and is 400-600 lines, self-contained, includes all 12 scoring rubrics with scale meanings",
+    "core/methodology/songwriting.md exists and is 400-600 lines, self-contained, includes full Nashville method procedure",
+    "core/methodology/suno-optimization.md exists and is 400-600 lines, self-contained, includes all tag reference and optimization steps",
+    "core/methodology/album-continuity.md exists and is 400-600 lines, self-contained, includes both album setup and extension",
+    "core/methodology/character-voice.md exists and is 300-500 lines, self-contained, includes voice design template and reference tables",
+    "Each file references references/ files for deep data but does NOT duplicate full reference tables",
+    "Each file is readable by a non-Kiro user as a standalone methodology guide"
+  ],
+  "verification": [
+    "Run: wc -l core/methodology/*.md and verify line counts are in range",
+    "Run: grep -l 'references/' core/methodology/*.md and verify each file references the appropriate reference docs",
+    "Verify no file duplicates the full scoring rubric tables from references/CRITIQUE_REFERENCE.md (should reference, not copy)"
+  ],
+  "blocked_reason": null,
+  "findings": "All 5 methodology files created successfully within line count targets. critique.md=492, songwriting.md=465, suno-optimization.md=451, album-continuity.md=466, character-voice.md=300. All files reference external docs in references/ without duplicating full tables. No Kiro-specific syntax (#[[file:]]) used. All files are platform-independent and self-contained."
+}

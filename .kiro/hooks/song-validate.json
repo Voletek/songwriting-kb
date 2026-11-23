@@ -1,0 +1,27 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Song Validate (new file)",
+      "description": "Deterministic Suno format check when a song file is created under songs/: Style/Lyrics character limits, required elements ([Title:], direction blocks, [End]), Exclude-field format, V6 tag grammar, artist and gear names. README.md and *.brief.md are skipped by the script.",
+      "trigger": "PostFileCreate",
+      "matcher": ".*songs/.+\\.md$",
+      "action": {
+        "type": "command",
+        "command": "python3 tools/validate-song.py --hook {{filePath}}"
+      },
+      "timeout": 30
+    },
+    {
+      "name": "Song Validate (save)",
+      "description": "Re-runs the deterministic Suno format check every time an agent saves a song file under songs/. Report any FAIL to the user with the fix.",
+      "trigger": "PostFileSave",
+      "matcher": ".*songs/.+\\.md$",
+      "action": {
+        "type": "command",
+        "command": "python3 tools/validate-song.py --hook {{filePath}}"
+      },
+      "timeout": 30
+    }
+  ]
+}

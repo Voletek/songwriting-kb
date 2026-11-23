@@ -1,0 +1,14 @@
+{
+  "task_id": "task-suno-studio-plugins",
+  "task_description": "Add a plugins/ folder containing SIX Tier-1 Suno Studio audio-effect plugins (JSON with embedded JS DSP, using only confirmed g.* primitives) and create/update documentation so that everywhere it is clear these are Suno Studio post-render audio effects applied to rendered audio, NOT lyric tags and NOT part of the text-prompt/Style-Lyrics pipeline. Create plugins/README.md and plugins/AUTHORING.md; update README.md, CHANGELOG.md, core/README.md, .kiro/README.md. Work on a new branch off main; commit locally; do not push or open a PR.",
+  "status": "completed",
+  "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003"],
+  "blocked_reason": null,
+  "verification": {
+    "build": "pass",
+    "tests": "pass",
+    "test_quality": "pass",
+    "docker_build": "skipped",
+    "summary": "No build system in this repo. All 6 plugins/**/*.plugin.json parse as valid JSON and are structurally parallel (id/kind/displayName/description/ports/parameters/source{lang,metadata,code}/ui). Primitive audit: every g.* call is in the confirmed set; no delay/reverb/noise/oscillator/lfo/fft keywords appear. Suno Studio / post-render / not-lyric-tags framing present in plugins/README.md, README.md, and CHANGELOG.md. Tier 1 vs Tier 2 deferred items documented in plugins/README.md. Each plugin mapped to a KB use-case in the README table. No em dashes remain in any authored content (plugin code headers, plugins/README.md, plugins/AUTHORING.md, and the added README/CHANGELOG/core/kiro lines). Plugins are UNVERIFIED (cannot run in sandbox; no Node/Suno Studio). tools/validate-song.py intentionally NOT run (validates lyrics, not plugins)."
+  }
+}

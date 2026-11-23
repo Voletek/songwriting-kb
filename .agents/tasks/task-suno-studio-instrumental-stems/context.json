@@ -1,0 +1,26 @@
+{
+  "project_type": "Songwriting knowledge-base repository (Markdown docs + methodology + Suno Studio plugin JSON). Not a compiled software project.",
+  "language": "Markdown and JSON; plugins embed JavaScript DSP as a string inside source.code.",
+  "build_system": "None. No package manager, no compiler. Python 3.9 is available on the host; Node is NOT installed.",
+  "test_framework": "None for plugins. The only script is tools/validate-song.py which validates LYRICS and is irrelevant here (do NOT run it). Validation of plugins is JSON-parse + primitive audit only.",
+  "build_command": "None. Validate plugin JSON with: python3 -c \"import json,glob; [json.load(open(f)) for f in glob.glob('plugins/**/*.plugin.json', recursive=True)]\"",
+  "test_command": "None. Plugins are UNVERIFIED (cannot execute: no Node runtime, no Suno Studio). Verification = valid JSON + confirmed-primitive audit + structural parallelism check.",
+  "verification_instructions": "1) Every plugins/**/*.plugin.json parses as valid JSON. 2) Every g.* call in source.code is within the confirmed set (g.input, g.output, g.zero, g.constant, g.mul, g.add, g.sub, g.div, g.abs, g.max, g.min, g.clamp, g.lerp, g.compareLt, g.dbToLin, g.tanh, g.biquad, g.asymmetricOnePole) plus config.sampleRate; NO delay/reverb/noise/oscillator/lfo/fft/osc/FFT. 3) Each new plugin is structurally parallel to the six existing ones (id/kind/displayName/description/ports/parameters/source{lang,metadata{controls,ui.compact},code}/ui.compact). 4) Each has a bypass toggle (default off), input gain + output gain (unit db), dry/wet mix where meaningful, a signal-chain header comment, and a terminal g.tanh safety stage. 5) No em dashes in any authored content.",
+  "snapshot_or_generated_files": null,
+  "setup_instructions": "None. Repo is already cloned at /projects/sandbox/songwriting-kb and the working branch feature/suno-studio-plugins is already checked out.",
+  "environment_constraints": "No Node runtime and no Suno Studio in the sandbox, so plugins cannot be executed or tested here; they ship UNVERIFIED (honest labeling required). Network mode does not matter: no packages to install, no build. Do NOT run tools/validate-song.py.",
+  "contribution_requirements": "Follow plugins/AUTHORING.md EXACTLY (reverse-engineered schema + confirmed g.* primitive list + documented assumptions). Match the JSON structure of the six existing plugins precisely: header-comment style, terminal tanh, bypass via g.lerp(bypass,out,trimmed), dry/wet via g.lerp(mix,dry,processed), shelf/peaking biquads pass an assumed gainDb field, envelope via g.asymmetricOnePole with the coef = clamp(1 - 1/(seconds*sr),0,0.9999) approximation used in de-esser. NO em dashes in authored content (repo convention for this batch). Commit onto EXISTING branch feature/suno-studio-plugins; do NOT push, do NOT open/modify PR.",
+  "key_patterns": "Each plugin file: top-level id/kind('effect')/displayName/description/ports/parameters[]/source/ui. ports = {audioIn,audioOut,extraInputs:[],extraOutputs:[]}. parameters[] entries are knobs ({name,label,range{min,max,step},scale,default,unit}) or the bypass toggle ({name,label,enumOptions:[{off},{on}],default:off}). source.metadata mirrors displayName/kind/description + a controls map (widget knob/toggle + description + mirrored range/scale/unit/label/default) + ui.compact. source.code is a JS function string starting with a // signal-chain header comment; reads audio via g.input('audioInL'/'audioInR'), params via g.input('<name>'), writes g.output('audioOutL'/'audioOutR'); a per-channel chain(x) closure; ends each channel with g.tanh. ui.compact is a 12-col x 4-row grid of {type,paramName,x,y,w,h} boxes, mirrored in source.metadata.ui.compact. The digital-degrade 8-level amplitude quantizer (staircase via sum of 7 g.compareLt comparators over [-1,1]) is the ONLY sanctioned degrade technique; reuse it for the synth plugin, do not invent a new one.",
+  "relevant_files": [
+    "plugins/AUTHORING.md",
+    "plugins/README.md",
+    "plugins/intimate-proximity/intimate-proximity.plugin.json",
+    "plugins/de-esser/de-esser.plugin.json",
+    "plugins/vintage-lofi-voicer/vintage-lofi-voicer.plugin.json",
+    "plugins/digital-degrade/digital-degrade.plugin.json",
+    "plugins/telephone-radio-band/telephone-radio-band.plugin.json",
+    "plugins/vocal-drive-edge/vocal-drive-edge.plugin.json",
+    "CHANGELOG.md"
+  ],
+  "directory_structure": "plugins/ holds one subfolder per plugin (<name>/<name>.plugin.json) plus README.md and AUTHORING.md. Six vocal-oriented plugins already exist. New instrumental stem plugins each get their own subfolder. CHANGELOG.md at repo root has an [Unreleased]/Added section already listing the six-plugin batch; a new bullet for the instrumental set goes there."
+}
