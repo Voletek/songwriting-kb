@@ -19,6 +19,12 @@ songs/
 └── README.md
 ```
 
+## Branches
+
+Songs never go to `main`: `songs/` ships empty there. Commit each song (its versions, critiques in
+`analysis/` and render log) to its own branch, `song/<title-words>` (e.g. `song/violent-night`), and
+don't open a pull request into `main` for it. Knowledge-base changes go on separate branches.
+
 ## File Naming
 
 - Album tracks: `##_Title_Words.md` (number prefix for ordering)
