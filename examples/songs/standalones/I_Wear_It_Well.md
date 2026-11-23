@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # I Wear It Well — Standalone Single (A Gentleman's Collapse)
 
 > **Song Thesis:** *A mountain man performs borrowed Victorian composure like a period-drama role to hide modern burnout, and the more commanding the mask, the more his East Tennessee roots — and his collapse — slip through the cracks.*

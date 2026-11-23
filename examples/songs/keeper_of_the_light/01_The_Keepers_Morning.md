@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # Track 01: The Keeper's Morning
 
 > Album: Keeper of the Light

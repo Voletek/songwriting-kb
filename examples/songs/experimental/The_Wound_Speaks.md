@@ -1,3 +1,4 @@
+<!-- song-format: legacy -->
 # The Wound Speaks — Experimental Track (Villain Reframe)
 
 > **Song Thesis:** The thing we feared most was never our enemy — it was screaming for the same thing we were: to be whole again.

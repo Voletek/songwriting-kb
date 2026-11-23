@@ -70,6 +70,9 @@ Track 8:     Return of Track 1's folk palette — but TRANSFORMED: played in rev
 | 07 | It Remembers the Sun | Fm | 72 | Ancient sorrow, terrible beauty | Massive choir + orchestral, the creature's lament | Maren + Ancient Thing |
 | 08 | Lullaby for Leviathan | D Mixolydian (underwater) | 92 | Acceptance, transformation, eternal duty | Track 1 palette reversed/submerged, glass harmonica, final peace | Maren (transformed) |
 
+> Example song file for T1: `examples/songs/keeper_of_the_light/01_The_Keepers_Morning_V6.md` (V6 format, not yet rendered on V6).
+> `01_The_Keepers_Morning.md` is the v5.5-era original, kept as an archive with the full SOP 01 working.
+
 ---
 
 ## KEY RELATIONSHIPS & HARMONIC MAP

@@ -393,7 +393,7 @@ Seven priority-ordered principles for resolving creative conflicts. Full details
 
 **Sonic Evolution:** Industrial/Glitch → Tribal/Primal → Cinematic Orchestral → Folk Rock → Full Orchestra + Key Change → (Act 3) Cinematic Folk-Rock
 
-Blueprint: `examples/albums/fractured-shadows/BLUEPRINT.md`
+Blueprint: `examples/albums/fractured-shadows/BLUEPRINT.md` (V6-format versions of T7 Rikan, T17 Both Names and T18 Edge of the Rift sit next to their v5.5-era originals in `examples/songs/`, with a `_V6` suffix)
 
 ---
 
@@ -416,7 +416,7 @@ Blueprint: `examples/albums/fractured-shadows/BLUEPRINT.md`
 
 **Unique features:** Non-vocal entity character design, harmonic circle (starts/ends in D Mixolydian), the sea as ever-present instrument evolving across 8 tracks.
 
-Blueprint: `examples/albums/keeper-of-the-light/BLUEPRINT.md` (one example track: `examples/songs/keeper_of_the_light/01_The_Keepers_Morning.md`)
+Blueprint: `examples/albums/keeper-of-the-light/BLUEPRINT.md` (one example track: `examples/songs/keeper_of_the_light/01_The_Keepers_Morning_V6.md`, V6 format; `01_The_Keepers_Morning.md` is the v5.5-era original)
 
 ---
 
