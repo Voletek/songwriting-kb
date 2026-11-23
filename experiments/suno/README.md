@@ -29,14 +29,12 @@ When you notice Suno behaving unexpectedly (a tag working differently, a slider 
 experiments/suno/
 ├── README.md                                    (this file)
 ├── TEMPLATE.yml                                 (copy this to start)
-├── 2026-07-02-performance-notation-symbols.yml  (logged experiment, v5.5-era)
-├── 2026-11-23-v6-meter-from-style.yml            (V6, control arm logged)
-└── 2026-11-23-v6-key-change-tag-vs-edit.yml      (V6, tag arm logged)
+└── 2026-07-02-performance-notation-symbols.yml  (logged experiment, v5.5-era)
 ```
 
 Planned (not yet run): `era-tag-interaction` (do era tags bias production more than instrumentation?)
 and `whisper-layer-reliability` (do whispered `()` layers render reliably?). Both should now be run
-on V6 (`suno_version: "v6"`, with `model_variant` recorded).
+on V6 (`suno_version: "v6"`, with `model_variant` recorded), along with `v6-meter-from-style` (does a 3/4 or 6/8 meter in the Style Prompt hold?) and `v6-key-change-tag-vs-edit` (lyric `[Key Change]` tag vs a section edit).
 
 ## Where Findings Go
 

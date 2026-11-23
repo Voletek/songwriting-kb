@@ -4,5 +4,5 @@
 # Add a word here (with the date and song) whenever Suno returns
 # "Your tags contain artist name X". See references/SUNO_MCP_REFERENCE.md -> Observed behaviour.
 #
-# 2026-11-23, Violent Night: "fireside-skald menace" rejected ("artist name skald"; Skald is a Nordic folk band)
+# 2026-11-23: "fireside-skald menace" rejected ("artist name skald"; Skald is a Nordic folk band)
 skald

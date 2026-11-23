@@ -111,7 +111,7 @@ Ears decide, but measure first so the conversation is about facts.
 
 ### 5a. Section edit
 `audio-create` with `reference_audio_ids: [<the take>]` and a plain-language `description` naming
-the song by title and the time range or section, e.g. *"In Violent Night, redo 4:55–5:15 as a quiet
+the song by title and the time range or section, e.g. *"In Lantern Road, redo 4:55–5:15 as a quiet
 warm passage in F major, then return to D minor for the outro."*
 - Send only that song, and no `style`, `lyrics`, `duration`, `instrumental` or `vocal_gender`
   (those regenerate the whole song).

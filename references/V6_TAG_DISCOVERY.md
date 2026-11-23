@@ -417,11 +417,7 @@ before it changes a rating below.
 
 | Date | Model (v6/v6-wild/v6-mini) | Song / take | Tag(s) tested | Result (measured) | Render ID |
 |---|---|---|---|---|---|
-| 2026-11-23 | v6 | Violent Night rev 1, take A | Style "3/4 waltz at 132 BPM" | ❌ 4/4 (analysis), heard as a march; 134.9 BPM, D minor ✅ | `20a1b845-3d54-41df-a0b9-d66afc5fc131` |
-| 2026-11-23 | v6 | Violent Night rev 1, take B | Style "3/4 waltz"; Style "D minor shifting to F major for the final refrain" (no lyric key tag) | ⚠️ 3/4 by beat tracker, 4/4 by ear; ✅ brief F major ~4:55-5:14 and back | `7a519480-c3f5-4bc2-9375-4222b00d8c3e` |
-| 2026-11-23 | v6 | Violent Night rev 2, take A | `[Key Change: Relative major, F]`, `[Key Change: Back to D minor]`; `[Transition: Drums Out, Strings Out, Diminuendo]` + `[Instrument: Cello In]`; `[Dynamic: Full Impact]`; `[Vocal: Gang Vocal]`; `[Vocal: Whisper]`; `[Transition: Hit]` | ❌ no key change; ⚠️ bridge partly stripped (percussion stayed); ✅ biggest final chorus; ✅ gang vocals; ✅ whisper; ❌ no clear final hit; 4/4, 131 BPM | `bd5c3106-7f23-44b6-bc1b-bf0ebbf52cbc` |
-| 2026-11-23 | v6 | Violent Night rev 2, take B | same as rev 2 take A | ❌ no key change (only "relative-major colour"); ✅ bridge strip (drums out, drone/cello + voice); ✅ final chorus; ✅ gang vocals; ✅ whisper; ❌ no final hit; 4/4, 133.2 BPM | `0578b38d-8eb2-4e71-9bc2-108f165fccfb` |
-| 2026-11-23 | v6 | Violent Night, all 4 takes | Instruments outside the V6 list: `Bowed Lyre`, `Tagelharpa`, `Winter Bells`, `War Drums`, `Frame Drums` | ⚠️ lyre-like plucks heard in 3 of 4, "bowed folk strings" in 4, war/frame drums in 4, bells in 4; tagelharpa not identified as such | (above) |
+| | | | | | |
 
 ### Tag-type summary (update from the render rows above)
 
@@ -433,28 +429,27 @@ before it changes a rating below.
 |---|---|---|
 | `[Tag Vocabulary]` block | ❌ not needed | Not sung, not necessary — drop from final output. Optional planning aid only. |
 | `[Instrument: X In]` (entrance on cue) | ✅ works (user-reported) | Instruments enter on cue |
-| `[Instrument: X Out]` (exit on cue) | ✅ works (user-reported) | Instruments exit on cue. 2026-11-23: a bridge `Drums Out` stripped fully on 1 of 2 takes |
+| `[Instrument: X Out]` (exit on cue) | ✅ works (user-reported) | Instruments exit on cue |
 | Style Prompt vs inline tags | ✅ complementary | Style = WHAT (identity), inline = HOW (arrangement). Used together. |
 | `[Male Lead]` / `[Female ...]` clean handoff | ✅ working model (user-reported) | Distinct-voice assignment |
-| `[Whisper]` vs `[Belt]` delivery change | ✅ working model (user-reported; `[Vocal: Whisper]` 2/2 takes on 1 logged song) | Vocal delivery shifts |
+| `[Whisper]` vs `[Belt]` delivery change | ✅ working model (user-reported) | Vocal delivery shifts |
 | `[Spoken Word]` (speaks not sings) | ✅ working model (user-reported) | Spoken delivery |
-| `[Gang Vocal]` (group appears) | ✅ working model (user-reported; 1 logged song, 2/2 takes) | Group/ensemble vocal |
+| `[Gang Vocal]` (group appears) | ✅ working model (user-reported) | Group/ensemble vocal |
 | Call/Response formatting | ✅ working model (user-reported) | Alternating lead/response |
-| `[Key Change]` / `[Key Lift]` | ⚠️ in question (user-reported ✅; 1 logged song ❌ 0/2 takes) | `[Key Change: Relative major, F]` was ignored on both takes of Violent Night rev 2. A take with no key tag drifted to F briefly from the Style Prompt alone. Needs more songs; try a section edit for reliable modulation |
+| `[Key Change]` / `[Key Lift]` | ✅ working model (user-reported) | Modulation on cue |
 | `[Half-Time]` / `[Double-Time]` feel shift | ✅ working model (user-reported) | Feel/tempo-perception shift |
-| `[Crescendo]`/`[Diminuendo]`/`[Swell]` dynamics | ✅ working model (user-reported) | Dynamic motion. `[Dynamic: Full Impact]` on a final chorus: biggest section on 2/2 takes (1 song) |
+| `[Crescendo]`/`[Diminuendo]`/`[Swell]` dynamics | ✅ working model (user-reported) | Dynamic motion |
 | Compound transitions | ✅ working model (user-reported) | Bundled simultaneous events |
 | East Tennessee accent | ✅ working model (user-reported) | Carried by style prompt; reinforced by lyric dialect |
-| Voice-as-instrument muting (`[Vocal: Vocal Out]`) | ? untested (used on Violent Night rev 2 interludes; not measured) | Technique #8, drop the lead on cue |
+| Voice-as-instrument muting (`[Vocal: Vocal Out]`) | ? untested | Technique #8, drop the lead on cue |
 | AI-voice-as-second-character | ? untested | Technique #10, MODE C narrative device; verify it reads as a distinct voice, not a harmony |
 | Progressive glitch degradation | ? untested | Technique #11, MODE C escalating curve; may need Production Notes rather than one tag |
 | Spoken-word surveillance interlude | ? untested | Technique #12, MODE C; telephone-filtered calm-invasive whisper |
 | Numeric BPM change (`[Tempo: X to Y BPM]`) | ? untested | Technique #13, distinct from `[Feel: Half-Time]` |
 | Panning / spatial cue | ? untested | Technique #14, stereo-field direction for a part/ad-lib |
-| Named key-change modulation | ❌ 0/2 on 1 song | Technique #15, does the specific interval read, or only the fact of a change? |
+| Named key-change modulation | ? untested | Technique #15, does the specific interval read, or only the fact of a change? |
 | Em-dash breath within a line | ? untested |
-| Meter from the Style Prompt (`3/4 waltz`) | ⚠️ 1/4 takes (1 song) | 3 of 4 Violent Night takes came out 4/4. Next test: "6/8 lilting folk waltz" as the first descriptor after the genre |
-| `[Transition: Hit]` final strike | ⚠️ 2/4 takes (1 song) | | Technique #16, does the in-line dash produce a phrasing pause? |
+| Meter from the Style Prompt (e.g. `3/4 waltz`) | ? untested | Suno may default to 4/4 |
 
 ---
 
@@ -471,14 +466,14 @@ before it changes a rating below.
 
 1. ~~Character limits under v6~~ → **answered for the Suno MCP (Nov 2026): 1000 style, 1000 exclude, 5000 lyrics.** The web UI is assumed to match; note it if it doesn't.
 2. Does v6 favor plain-language section descriptions over bracket tags for some events?
-3. Is modulation more reliable via the "edit one section in plain language" feature than via tags? The feature exists in the MCP (`audio-create` with `reference_audio_ids`). With `[Key Change:]` at 0/2 on Violent Night, this is the next test.
+3. Is modulation more reliable via the "edit one section in plain language" feature than via tags? The feature exists in the MCP (`audio-create` with `reference_audio_ids`). Testable now.
 4. Does end punctuation (! ? .) cause issues, or does v6 handle it cleanly? (test renders used it freely)
 5. v6 flagship vs v6-wild vs v6-mini: do they differ in how strictly they honor these tags? Now cheap to test: same file, one call per model, measure with `audio-analysis`.
 6. Do the MODE C devices (AI second voice #10, glitch degradation #11, surveillance interlude #12) read as intended, or collapse into harmony/FX?
-7. Does a named key-change interval (#15) actually modulate to that interval, or just "change key"? First data point: a named relative-major change didn't modulate at all (0/2).
+7. Does a named key-change interval (#15) actually modulate to that interval, or just "change key"?
 8. Is progressive glitch degradation (#11) better expressed as one escalating tag or as Production-Notes automation?
 9. Does the in-line em-dash (#16) survive rendering as a breath, or get normalized away?
-10. Does V6 honour meter from the Style Prompt? Suno defaulted to 4/4 on 3 of 4 waltz takes.
+10. Does V6 honour a non-4/4 meter from the Style Prompt (3/4, 6/8), and does its position in the prompt matter?
 
 ---
 

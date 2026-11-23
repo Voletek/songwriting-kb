@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Knowledge-base review fixes (November 2026)
 
-Applies every finding in the 2026-11-23 knowledge-base review (problems hit while writing, critiquing and rendering *Violent Night* through the Suno MCP).
+Applies every finding in the 2026-11-23 knowledge-base review (problems hit while writing, critiquing and rendering a song through the Suno MCP).
 
 **Added**
 - `.kiro/sops/10-rendering-through-the-suno-mcp.md` (SOP 10): pre-flight → render → measure each take with `audio-analysis` / `audio-listen` → log → fix sections (edit, extend, cover) → finish (stems, Studio plugins, MIDI, download) → optional release checklist. Defines the `## RENDERS` song-file section.
@@ -18,7 +18,6 @@ Applies every finding in the 2026-11-23 knowledge-base review (problems hit whil
 - `tools/kiro-web-setup.sh`: links the repo's `.kiro/` and top-level folders into a Kiro Web workspace root.
 - `tools/data/suno_rejected_words.txt` and a validator FAIL for words Suno refuses as artist names (seeded with "skald").
 - Validator INFO for V6 structure tags and instruments outside `V6_TAG_REFERENCE.md`; WARN for files with no headings (read as raw lyrics).
-- `experiments/suno/2026-11-23-v6-meter-from-style.yml` and `…-key-change-tag-vs-edit.yml`, with today's renders as the first data points.
 - `check-repo.py`: drift guard for the summary copies of the Suno rules, and a stale-phrase check.
 - 8 tests and the `raw_lyrics.md` fixture.
 
@@ -26,7 +25,7 @@ Applies every finding in the 2026-11-23 knowledge-base review (problems hit whil
 - Section tags may start with modifiers (`[Final Refrain …]`, `[Extended Instrumental Intro …]`); files without `## LYRICS:` are read as raw lyrics.
 - `lyric-lint.py` computes rhyme schemes per stanza (`XAXA XAXA`), so rhymes across stanza breaks no longer create false pairs.
 - Sliders, voices (formerly Personas) and stems are documented as current V6 features (new **V6 Controls & Features** section in `suno-formatting.md`), including Variety and Max Mode; "only if your Suno UI exposes sliders" removed everywhere. Slider values remain v5.5-era starting points.
-- `V6_TAG_DISCOVERY.md`: the results log has its first rows (4 Violent Night takes, measured). Unlogged ✅ ratings are marked *user-reported*; `[Key Change]` is now ⚠️ (0/2 on one song). Open questions updated (limits answered for the MCP; section edits, model comparison and meter now testable).
+- `V6_TAG_DISCOVERY.md`: unlogged ✅ ratings are marked *user-reported* until rows in the results log back them; the log has `audio-analysis` / `audio-listen` guidance. Open questions updated (limits answered for the MCP; section edits, model comparison and meter now testable).
 - The "working model (Sept 2026, user-confirmed)" line in 7 files now points to the results log instead of restating the claim.
 - SOP 07: Stage 6 (Render) follows SOP 10; new Stage 7 (Finish: stems → plugins); revisions are saved as new files; re-critique is required after structural revisions.
 - `critic` and `album-continuity` agents can write their reports (`critic` can also run the lint); `suno-optimizer` runs the validator and runtime estimate and hands off to `renderer`. Critique reports use today's date.
