@@ -4,6 +4,8 @@
 **Status:** Phases 1-2 implemented (June 2026); Phase 3 partially implemented — see Status (Oct 2026) below
 **Triggered by:** multi-lang/songwriting-kb PR #3 review + internal discussion
 
+> **Status (Nov 2026):** historical plan. The repo now has 7 agents (adds `renderer`), 11 SOPs (adds SOP 10 rendering and SOP 11 pulling songs from Suno), 13 references and more tools; see `README.md` and `CHANGELOG.md` for the current layout.
+>
 > **Status (Oct 2026)**
 >
 > **Exists:**

@@ -30,6 +30,8 @@ Knowledge-base improvements go on their own branches and are merged into `main` 
 - Album tracks: `##_Title_Words.md` (number prefix for ordering)
 - Standalones: `Title_Words.md`
 - Versions: append `_v2`, `_v3`, `_RAW`, `_SUNO_READY` (the highest version is canonical). **Save each revision as a new file; never overwrite a version that has been critiqued or rendered**, because its critique and render log refer to it. Keep the writer's original as `_RAW.md` with `<!-- validate: skip -->` at the top
+- Render settings: a `## RENDER SETTINGS` section (voice, voice_id, model, controls, workspace); leave the voice and workspace as "ask before rendering" until you choose (SOP 10, SOP 11)
+- Length: a `Length Target:` line (preset, custom range or `none`; `references/SONG_LENGTH_REFERENCE.md`), checked by `tools/estimate-runtime.py`
 - Render log: end every song file with a `## RENDERS` table (date, model, clip ID, settings, measured results, verdict). See SOP 10
 - Song briefs (SOP 09): `Title_Words.brief.md` next to the song
 

@@ -80,6 +80,24 @@ Slider recommendations are optional. Sliders are V6 features (suno.com UI, or th
 - **Formula 2 (Anthem):** 90-110 BPM, minor→major lift, maximum production, chant hook, universal lyrics.
 - Know which formula a song is using and don't mix their rules.
 
+## Render Settings, Length Target and Render Log
+
+Every song file also carries:
+
+- A `Length Target:` line near the top: a preset from `references/SONG_LENGTH_REFERENCE.md` (`streaming` for
+  singles, `album` for album tracks by default), a custom range, or `none`. It's a default you can override;
+  note why when a song goes outside it.
+- A `## RENDER SETTINGS:` section after `## EXCLUSIONS:`, with the voice and workspace left as
+  "ask before rendering" until the user chooses (SOP 10 Step 1, SOP 11 Step 1):
+  ```
+  ## RENDER SETTINGS:
+  - voice: (ask before rendering)
+  - voice_id:
+  - model: v6
+  - workspace: (ask before rendering)
+  ```
+- A `## RENDERS` table at the end, one row per take (SOP 10).
+
 ## Song Thesis
 
 Every song should have a one-sentence thesis stated at the top of the file:

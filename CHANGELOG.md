@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 
 **Changed**
 - SOP 10 Step 1 asks which workspace new takes go into. SOP 07 points to SOP 11 for songs that start on Suno.
+- Package review: the Power's Quick Start adds Pull from Suno and Render, its Full Pipeline adds Render and Finish, and its Knowledge Base list adds the MCP and length references and the new tools; `output-preferences.md` and the Power's preferences add `## RENDER SETTINGS` and `Length Target:` to the song format; the critic loads `SONG_LENGTH_REFERENCE.md`; the song planner offers a length preset and asks about a planned voice; the album blueprint template, builder agent and SOP 04 record each character's saved Suno voice and the album workspace; `WORKFLOW_DIAGRAM.md` shows Render, Finish and Pull; `songs/README.md`, the `suno-meta-tags` skill, `CREDITS.md` (song-length sources) and `docs/ARCHITECTURE_PLAN.md` (status note) updated.
 - Package: the `renderer` agent loads SOP 11 and asks about workspaces; the Power lists 11 SOPs, describes the renderer's pulling role and adds workspace/library keywords; READMEs and SOP 08 updated.
 
 ### November 2026 update (consolidates #20, #21, #22 and the repo review)

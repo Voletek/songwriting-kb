@@ -83,13 +83,25 @@ For quick feedback, ask: "Quick score this" or run `/quick-score` → Core 12 on
 ```
 → Suno-optimizer agent activates. Splits Style / Exclude / Lyrics, applies V6 tags (`[Instrument: X In/Out]`, `[Dynamic:]`, `[Vocal:]`, `[End]`), checks char counts. Does NOT change creative content.
 
+### Pull a Song from Suno
+```
+"Pull this song: https://suno.com/s/…" / "What's in my Nordic workspace?"
+```
+→ Renderer agent, SOP 11. Asks which workspace to pull from and file into, finds and retrieves the take, makes a song file, and measures it (free).
+
+### Render on Suno
+```
+"Render this" / "Send it to Suno" / "Make a radio edit"
+```
+→ Renderer agent, SOP 10. Asks which saved voice and which workspace, confirms the credit cost, renders, then measures and logs every take in the song's `## RENDERS` section.
+
 ### Check Album Continuity
 ```
 "Does this fit the album?" / "Check continuity for Track X"
 ```
 → Album-continuity agent activates. Checks the blueprint's hard rules (12 per bundled example blueprint), verifies sonic palette, motifs, character voices, key relationships.
 
-### Full Pipeline (Write → Critique → Revise → Optimize → Verify)
+### Full Pipeline (Write → Critique → Revise → Optimize → Verify → Render → Finish)
 ```
 "Write a song about [X], run it through the full pipeline"   (or /full-pipeline on an existing song)
 ```
@@ -98,6 +110,8 @@ For quick feedback, ask: "Quick score this" or run `/quick-score` → Core 12 on
 3. Songwriter revises (fix flagged issues)
 4. Suno-optimizer formats it, then `python3 tools/validate-song.py <file>` and `python3 tools/lyric-lint.py <file>`
 5. Album-continuity verifies it (if album track)
+6. Renderer renders it (SOP 10): asks which voice and workspace, renders, measures and logs the takes
+7. Finish (optional): section fixes, stems and Studio plugins, radio edit, download
 
 ---
 
@@ -162,6 +176,11 @@ This power draws from:
 - `references/CHARACTER_VOICE_REFERENCE.md` — Voice design system
 - `tools/validate-song.py` — Deterministic format/char/V6-tag validation
 - `tools/lyric-lint.py` — Deterministic syllable/stress/rhyme/section-stability/cliché lint
+- `references/SUNO_MCP_REFERENCE.md` — Suno MCP fields, read tools, workspaces, modification tools, observed behaviour
+- `references/SONG_LENGTH_REFERENCE.md` — Length targets by use (radio, streaming, genres, short-form, sync), overridable
+- `tools/estimate-runtime.py` — Runtime and first-chorus estimate against the song's `Length Target:`
+- `tools/suno-fields.py` — Exports the Suno fields plus `## RENDER SETTINGS` (voice, model, controls, workspace)
+- `tools/kiro-web-setup.sh` — Links the repo's `.kiro/` into a Kiro Web workspace root
 
 ---
 

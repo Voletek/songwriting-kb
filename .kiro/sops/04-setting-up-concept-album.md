@@ -136,6 +136,8 @@ Write each rule clearly:
 
 **Step 7 — Define the Character Voice Registry**
 
+> **Suno voices and workspace:** for each character, record the saved suno.com voice to render with (`voices-list`: name and `voice_id`), and pick or create an album workspace (`workspaces-list` / `workspaces-create`, with the user's yes). Both go in the blueprint (SUNO SETUP, CHARACTER VOICE REGISTRY) so every track renders with the right voice and is filed in one place (SOP 10, SOP 11).
+
 For each speaking/singing character (include characters defined by ABSENCE — document what they DON'T do):
 
 **For non-vocal presences** (ambient entities, environmental forces, cosmic beings): adapt the template below to describe sonic MANIFESTATION rather than vocal performance. What instruments/textures represent them? What registers? What delivery mode replaces "singing"?
@@ -268,7 +270,8 @@ After completing this SOP, you should have:
 - [ ] Track Registry (complete table)
 - [ ] Key Relationship map
 - [ ] 8-12 Hard Rules (written and reasoned)
-- [ ] Character Voice Registry (per character)
+- [ ] Character Voice Registry (per character, with the Suno voice to render with)
+- [ ] SUNO SETUP: album workspace and default model
 - [ ] Motif plan (with first appearance + evolution)
 - [ ] Callbacks/transitions documented
 - [ ] Album Blueprint file created

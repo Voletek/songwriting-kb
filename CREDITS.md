@@ -101,6 +101,18 @@ All contributions labeled [Tier 3: Community heuristic].
 
 ---
 
+## Song Length Data
+
+Used in `references/SONG_LENGTH_REFERENCE.md` (paraphrased; Tier 2-3, re-check yearly):
+
+- **[Major Mixing](https://majormixing.com/how-long-should-my-song-be-and-why-it-matters-more-than-you-think/)** — genre length ranges, intro guidance, 2025 Hot 100 average/median (citing a 6,618-song Billboard Year-End analysis)
+- **[Northeastern University, "Skip to the chorus"](https://www.khoury.northeastern.edu/home/rachlin/somai/stories/skip-to-the-chorus/index.html)** — #1 hit lengths 1958-2024 (Billboard Hot 100 Number Ones Database, Chris Dalla Riva)
+- **[Chartmetric](https://hmc.chartmetric.com/shorter-songs-trend-streaming-history/)** — Spotify charting song lengths, 2019-2024
+- **[Wikipedia: Radio edit](https://en.wikipedia.org/wiki/Radio_edit)**, **[Plugg Supply](https://plugg-supply.net/articles/how-to-make-dj-friendly-extended-mix)** — radio edit conventions
+- **[Spotify Community](https://community.spotify.com/t5/Other-Podcasts-Partners-etc/30-second-songs/td-p/4841226)** — the 30-second stream rule
+- **[VideoCreek](https://www.videocreek.com/blog/how-to-promote-a-new-song-with-short-form-video-a-plan-for-independent-artists/)**, **[Soundstripe](https://www.soundstripe.com/blogs/how-long-can-a-song-be-before-copyright-tiktok)** — short-form clip lengths
+- **[That Pitch](https://thatpitch.com/blog/15-30-and-60-second-cuts)**, **[Foxi Music](https://www.foximusic.com/blog/short-promo-music-video-guide-licensing/)** — sync cut lengths
+
 ## Tools & Platforms
 
 - **[Kiro](https://kiro.dev)** — IDE automation layer (agents, skills, hooks, steering, powers)

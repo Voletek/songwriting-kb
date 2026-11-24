@@ -12,6 +12,13 @@
 
 ---
 
+## SUNO SETUP
+
+- **Album workspace:** [workspace name] (`workspace_id`: [id from workspaces-list]): new renders for this album are filed here (SOP 10, SOP 11)
+- **Default model:** v6
+
+---
+
 ## TRACK REGISTRY
 
 | # | Title | Key | BPM | Core Emotion | Sonic Palette | Persona |
@@ -51,11 +58,13 @@ Tracks Y-Z:  [Description of late palette]
 ## CHARACTER VOICE REGISTRY
 
 ### [Lead Character] (All Tracks)
+- **Suno voice:** [saved voice name] (`voice_id`: [id from voices-list]), or "none" (generated singer)
 - **Register:** [Range]
 - **Persona:** [Single Persona, delivery varies per track]
 - **Texture Evolution:** [How the voice changes across the album]
 
 ### [Secondary Character] (Tracks X, Y)
+- **Suno voice:** [saved voice name] (`voice_id`: [id])
 - **Delivery:** [How they sound]
 - **Production:** [Consistent treatment]
 
