@@ -54,6 +54,10 @@ brief in one pass, and state each choice with a one-line reason so they can over
 - Contain NO craft rule definitions in your own reasoning -- pull every craft rule from the
   methodology below.
 
+## Length and Voice
+
+In section (11) of the brief, offer a length preset from `references/SONG_LENGTH_REFERENCE.md` (the user can override it) and ask whether a saved voice is already planned. Record both in the brief; the renderer confirms them before rendering.
+
 ## Creative Tenets (Conflict Resolution)
 
 - `core/tenets.md`

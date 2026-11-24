@@ -142,7 +142,7 @@ aim for. Hook types are defined in `SONGWRITING_KNOWLEDGE_BASE.md` and `core/met
 A candidate line is a conceptual target, not finished chorus lyrics.
 
 ### (11) Production / Commercial
-Target audience, target length, platform fit, solo vs duet, and standalone vs album. If album, note
+Target audience, **target length** (offer a preset from `references/SONG_LENGTH_REFERENCE.md`: `streaming`, `radio`, `album`, `cinematic`, etc., or the user's own range; it becomes the song's `Length Target:` line), platform fit, solo vs duet, standalone vs album, and the **voice** to render with (a saved suno.com voice, or none) if the user already knows it. The renderer still confirms the voice and workspace before any render (SOP 10). If album, note
 the album and track position (see album-vs-standalone pre-check below). Reference the Hit Formula
 awareness (F1 Vulnerability / F2 Anthem) in `core/methodology/songwriting.md` to keep the
 commercial framing coherent -- do not restate the F1/F2 table.

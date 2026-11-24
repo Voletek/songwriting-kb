@@ -8,7 +8,7 @@ Outputs exactly what tools/validate-song.py counts:
   lyrics          the Lyrics section from the top through [End]
 
 With a `## RENDER SETTINGS` section in the song file (SOP 10), it also outputs `voice_id`, `model`,
-`controls`, `duration` (+ `duration_strict: false`) and `vocal_gender`, so settings aren't retyped or
+`controls`, `duration` (+ `duration_strict: false`), `vocal_gender` and `workspace_id`, so settings aren't retyped or
 forgotten. It warns on stderr when no voice has been chosen ("voice: none" records "no saved voice").
 
 The JSON keys match the Suno MCP `audio-create` fields (references/SUNO_MCP_REFERENCE.md), so the
@@ -58,6 +58,9 @@ def fields(path):
                             "then add 'voice_id:' under ## RENDER SETTINGS, or 'voice: none' for a generated singer"]
     if rs.get("model"):
         out["model"] = rs["model"]
+    ws = rs.get("workspace_id", "").strip()
+    if ws and ws.lower() not in ("none", "-"):
+        out["workspace_id"] = ws
     ctrl = songfile.parse_controls(rs.get("controls", ""))
     if ctrl:
         out["controls"] = ctrl

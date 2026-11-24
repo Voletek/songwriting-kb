@@ -20,6 +20,7 @@ V6 (v6 / v6-wild / v6-mini). Status: working model (user-reported Sept 2026; per
 ## V6 Controls & Features
 - Sliders (Weirdness, Style Influence, Audio Influence, Variety 0-4), Max Mode (only on request), model `v6` / `v6-wild` / `v6-mini`
 - Voices (formerly Personas), stems (2 or 12 parts), section edits, extensions past 6:00
+- Workspaces: ask which workspace to pull from and file into (SOP 11); `library-list` with `workspace_id` lists a workspace's songs
 - In the MCP, sliders are 0–1 fractions in `controls` (60% = `0.6`). Log non-default values in the song's `## RENDERS` section
 
 ## Section Rules

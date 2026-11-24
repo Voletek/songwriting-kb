@@ -370,6 +370,10 @@ class RenderSettings(unittest.TestCase):
         self.assertNotIn("_warnings", out)
         self.assertEqual(statuses(validate.validate_file(path))["Render Settings"], "PASS")
 
+    def test_workspace_exported(self):
+        out, _ = sunofields.fields(self._song("\n## RENDER SETTINGS:\n\n- voice: none\n- workspace: Test WS\n- workspace_id: ws-123 (Test WS)\n"))
+        self.assertEqual(out["workspace_id"], "ws-123")
+
     def test_missing_voice_warns_but_none_is_a_choice(self):
         out, _ = sunofields.fields(os.path.join(FIX, "v6_valid.md"))
         self.assertIn("_warnings", out)

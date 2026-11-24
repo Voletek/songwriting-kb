@@ -23,7 +23,7 @@ These work for ANY songwriter with zero customization:
 - 2 hooks — Kiro v1 JSON in `.kiro/hooks/`: `song-validate.json` (runs `tools/validate-song.py` on create/save of song files under `songs/`) and `prosody-lint.json` (runs `tools/lyric-lint.py` on save)
 - 2 manual steering commands: `/quick-score` and `/full-pipeline` (`.kiro/steering/quick-score.md`, `.kiro/steering/full-pipeline.md`)
 - Example album continuity hooks in `examples/albums/*/continuity-hook.json` (copy into `.kiro/hooks/` to enable)
-- 10 SOPs (writing, critiquing, optimizing, album setup, extending, character voice, full pipeline, contributing, planning, rendering through the Suno MCP)
+- 11 SOPs (writing, critiquing, optimizing, album setup, extending, character voice, full pipeline, contributing, planning, rendering through the Suno MCP, pulling songs from Suno)
 - Full songwriting knowledge base (13 sections)
 - Full music production theory (13 disciplines + 23-point framework + 18 advanced concepts)
 - Suno references: V6 tag dictionary + discovery/results log (`references/V6_TAG_REFERENCE.md`, `references/V6_TAG_DISCOVERY.md`) and the v5.x tag reference with 100+ tags (legacy, `references/SUNO_TAGS_REFERENCE.md`)

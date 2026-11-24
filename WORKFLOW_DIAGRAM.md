@@ -65,6 +65,13 @@
               │                 │
               │  Album FAIL ────▶ REVISE regardless of score
               └─────────────────┘
+
+  VERIFY ──▶ RENDER (SOP 10, renderer agent) ──▶ FINISH (SOP 10 Steps 5-7)
+             ask voice + workspace → render 2 takes    section fix / extend / cover
+             → measure (analysis, alignment, listen)   stems → Studio plugins
+             → log in ## RENDERS                       radio edit, download, release
+
+  Song already on Suno?  PULL (SOP 11) ──▶ song file ──▶ join at CRITIQUE or OPTIMIZE
 ```
 
 ---
@@ -295,6 +302,8 @@ SESSION START
          │  tools/validate-song.py — format, char, V6-tag, exclusions checks
          │  tools/lyric-lint.py — syllables, stress, rhyme, stability, clichés
          │  tools/check-repo.py — repo integrity
+         │  tools/estimate-runtime.py — runtime vs Length Target
+         │  tools/suno-fields.py — Suno payload incl. RENDER SETTINGS
          │  No AI interpretation needed
          │
          ▼

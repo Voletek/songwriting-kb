@@ -27,7 +27,7 @@ Mixing the modes returns `400`: `description` can't be sent with `style`, or wit
 
 | Song-file section | MCP field | Limit | Notes |
 |---|---|---|---|
-| `## RENDER SETTINGS:` | `voice_id`, `model`, `controls`, `duration` | — | Written by the renderer after asking the user (SOP 10 Step 1); exported by `suno-fields.py` |
+| `## RENDER SETTINGS:` | `voice_id`, `model`, `controls`, `duration`, `workspace_id` | — | Written by the renderer after asking the user (SOP 10 Step 1); exported by `suno-fields.py` |
 | `## STYLE PROMPT:` | `style` | 1000 chars | Same text as the UI's Style of Music box |
 | `## EXCLUSIONS:` | `negative_style` | 1000 chars | Plain comma-separated text, no dash prefix. Needs your own `style` (not valid with `description`). |
 | `## LYRICS:` from `[Title: …]` through `[End]` | `lyrics` | 5000 chars | Paste exactly what `validate-song.py` counts. Leave out the Production Notes. |
@@ -175,6 +175,70 @@ change, section order) before logging results in `references/V6_TAG_DISCOVERY.md
   the user asks.
 
 ---
+
+## Workspaces
+
+Workspaces are suno.com's folders for songs (a song is in **at most one**). The MCP can list them, read
+the songs in one, file new renders into one, and move songs between them. How to use this in practice:
+SOP 11 (`.kiro/sops/11-pulling-songs-from-suno.md`). Field lists from the tool schemas, Nov 23, 2026.
+
+### Finding a workspace
+
+| Call | Inputs | Returns |
+|---|---|---|
+| `workspaces-list` | `query` (name contains, ignoring case), `cursor` (both optional) | `workspaces[]`: `id`, `name`, `description`, `clip_count`; `next_cursor` when there's another page |
+
+A suno.com link like `https://suno.com/create?wid=<id>` carries the workspace id in `wid`.
+
+### Listing the songs in a workspace: `library-list`
+
+```json
+{ "workspace_id": "<id>", "limit": 50 }
+```
+
+**Inputs** (all optional):
+
+| Field | Type | Default | What it does |
+|---|---|---|---|
+| `workspace_id` | string (UUID) | — | Only your songs filed in this workspace |
+| `limit` | integer 1–50 | 10 | Songs per page |
+| `cursor` | string | — | `next_cursor` from the previous page (send the same filters) |
+| `liked` | boolean | false | Only your own songs you've liked |
+| `visibility` | `public` / `private` | — | Only public or only private songs |
+| `downloaded` | boolean | false | Only songs downloaded or exported from Studio |
+| `origin` | `upload` / `cover` / `extension` / `remaster` | — | Only songs made that way |
+
+`library-search` takes the same fields plus `query` (1–200 chars, matched against title or style).
+
+**Output:** `{ "items": [...], "next_cursor": "..." }` (`next_cursor` only when there's another page).
+Each item:
+
+| Field | What it is |
+|---|---|
+| `id` | Song id (for `audio-retrieve`, covers, stems, analysis) |
+| `title`, `song_url`, `status`, `created_at`, `visibility`, `liked`, `handle`, `error` | Song basics |
+| `cover_image_url`, `cover_image_large_url` | Cover art |
+| `metadata.duration` | Length in seconds |
+| `metadata.model`, `metadata.type` | e.g. `v6`, `generate` |
+| `metadata.style` | Style as stored (may be Suno's rewrite) |
+| `metadata.negative_style` | Exclusions, when set |
+| `metadata.description` | Simple-mode / add-vocals prompt, when used |
+| `metadata.controls` | Slider values, e.g. `{"variety": 4}` |
+| `metadata.voice_id` | Saved voice, when one was used |
+| `metadata.cover_audio_id` | Source clip, for covers |
+
+Fields appear only when they apply. List results **leave out `metadata.lyrics`**: `audio-retrieve` the
+chosen song for them. In a shared workspace, collaborators' songs aren't listed.
+
+### Filing songs
+
+| Call | Inputs | Notes |
+|---|---|---|
+| Any creation tool (`audio-create`, `audio-covers-create`, `audio-extensions-create`, `audio-mashups-create`) | `workspace_id` | Files the new songs there. 403 if the user may not add to it |
+| `workspaces-update-clips` | `id` (workspace, required), `add`, `remove` (up to 50 song ids each) | Adding moves a song out of its current workspace. Check `skipped` for songs that couldn't move |
+| `workspaces-create` | `name` (1–100 chars, required), `description` (≤2000) | Names pass suno.com's content check (400 if disallowed, 503 retry later) |
+
+Filing changes the user's library: ask before moving songs (SOP 11, Step 6).
 
 ## Modification and Studio-style tools
 

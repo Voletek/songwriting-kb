@@ -34,6 +34,10 @@ Every song must include:
 ## Sliders
 - Optional. Sliders are V6 features (UI, or Suno MCP `controls` as 0–1 fractions); values are v5.5-era starting points to re-validate
 
+## Render Settings & Length
+- A `## RENDER SETTINGS` section after Exclusions: voice (ask the user; "none" = generated singer), voice_id, model, controls, workspace (ask the user). See SOP 10 / SOP 11
+- A `Length Target:` line (preset from `references/SONG_LENGTH_REFERENCE.md`, custom range, or `none`); overridable
+
 ## Versions & Render Log
 - Revisions are new files (`_v2`, `_v3`); never overwrite a critiqued or rendered version
 - Every song file ends with a `## RENDERS` table: date, model, clip ID, settings, measured results, verdict (SOP 10)
