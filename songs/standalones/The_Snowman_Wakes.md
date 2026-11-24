@@ -5,6 +5,7 @@
 
 Length Target: radio, intro <= 35s, hook <= 1:15
 
+**Version:** v1.1, with the five edits from `analysis/The_Snowman_Wakes_critique.md` (Nov 23, 2026).
 **Brief:** `The_Snowman_Wakes.brief.md` (approved with the user's answers, Nov 23, 2026).
 **Bed:** Storms of the North, take A (`790fd603-c25f-45c9-9e42-fdc0cf2e741a`, 3:07, ~145 BPM, C minor),
 from the "Nordic Folk(Instumentals)" workspace. Rendered as a cover of the bed with lyrics and a voice (SOP 10, Step 5d).
@@ -48,11 +49,13 @@ children's choir, children's vocals, female vocals, pop Christmas jingles, sleig
 
 [Production Direction: Keep the Storms of the North melody and palette, pushed into a heavy 6/8 stomp. Creeping sparse intro of wind and distant stomps. Verse light and sing-song but cold. Pre-chorus tightens. Chorus is a stomping low male chant. Bridge drops to drones and a close whisper over the lull. Final chorus is the biggest moment. Outro thins out and fades into wind. No children's voices, no sleigh bells.]
 
-[Vocal Direction: One huge deep bass-baritone storyteller with a slight Scandinavian weight. Verse 1 sung like a sinister nursery rhyme, light on top and cold underneath. Chorus a commanding chant with layered low male voices. Bridge is the giant himself, close and almost tender, near-whispered. Outro low and quiet, the last couplet whispered.]
+[Vocal Direction: One huge deep bass-baritone storyteller with a slight Scandinavian weight. The storyteller is the frost giant all along, telling the children's story back to them; the bridge is where he stops pretending. A whispered thump thump thump teases the chorus at the end of the intro. Verse 1 sung like a sinister nursery rhyme, light on top and cold underneath. Chorus a commanding chant with layered low male voices. Bridge is the giant himself, close and almost tender, near-whispered. Outro low and quiet, the last couplet whispered.]
 
 [Intro]
 [Instrument: Drone In]
 [Dynamic: pp]
+[Vocal: Whisper]
+Thump — thump — thump
 
 [Verse 1]
 [Male lead, sing-song nursery rhyme, cold underneath]
@@ -71,7 +74,7 @@ And something opened its eyes on the hill
 [Dynamic: Crescendo]
 [Male lead, tighter, holding back]
 A crack like a branch in the frozen wood
-A breath that was colder than the night
+A sigh that frosted the lantern light
 Then one great foot pulled free of the drift
 And the children stopped their singing
 
@@ -85,7 +88,7 @@ The pine trees bow and the fjord ice breaks
 Run, little ones — the snowman wakes
 
 THUMP — THUMP — THUMP THROUGH THE FALLING WHITE
-Every door is barred tonight
+Every latch is frozen tight
 The candles gutter and the roof beam shakes
 Run, little ones — the snowman wakes
 
@@ -116,7 +119,7 @@ Run, little ones — the snowman wakes
 [Dynamic: Diminuendo]
 [Male lead, low and quiet]
 The morning came and the drift lay low
-A hat, a scarf, and a trail through snow
+Just a stolen hat and a trail through snow
 
 [Vocal: Whisper]
 [Dynamic: Fade Out]
@@ -140,14 +143,14 @@ I'll hear you singing — and I'll come when you call
   - Bridge: VI – III – iv – V (Ab – Eb – Fm – G) over the lull, drones only
   - Final Chorus: i – VII – VI – V (Cm – Bb – Ab – G) over a i pedal in the drones
   - Outro: i – iv – i (Cm – Fm – Cm), ending on the Cm drone into wind
-- **Vocal:** Hans, one deep bass-baritone voice throughout: sing-song cold verse, tight pre-chorus, low male chant choruses, the giant's own near-whisper in the bridge and on the last couplet.
+- **Vocal:** Hans, one deep bass-baritone voice throughout. The storyteller is the giant himself, revealed in the bridge: sing-song cold verse, tight pre-chorus, low male chant choruses, the giant's own near-whisper in the bridge and on the last couplet.
 - **Instruments:** tagelharpa drones, deep frame drums, wooden stomps, nyckelharpa, bowed lyre, Nordic wooden flutes, bone rattles, wind.
 - **Dynamics:** Intro pp (wind, distant stomps) → Verse 1 p (light, cold) → Pre-Chorus crescendo → Chorus f (stomps in) → Bridge pp (stomps out, whisper) → Final Chorus ff (rampage) → Outro diminuendo → fade into wind.
-- **Hook Type:** Rhythmic and title hook. "THUMP — THUMP — THUMP" is the three-beat stomp motif that opens every chorus half; "the snowman wakes" closes every chorus half. First lands around 1:08, inside the 1:15 hook limit set for this song (the creeping intro is intended).
+- **Hook Type:** Rhythmic and title hook. "THUMP — THUMP — THUMP" is the three-beat stomp motif that opens every chorus half; "the snowman wakes" closes every chorus half. A whispered "Thump — thump — thump" teases it at the end of the intro (~0:12). The full chorus first lands around 1:08, inside the 1:15 hook limit set for this song (the creeping intro is intended).
 - **Rhyme Scheme:**
   - Verse 1: AABB couplets with perfect rhymes (day/lay, bone/own, name/came, still/hill). Closed and sweet on purpose: a nursery rhyme.
-  - Pre-Chorus: unrhymed (wood / night / drift / singing). Open; the ground gives way.
-  - Chorus: AABB, each half closing on "breaks / wakes" and "shakes / wakes". Fully closed chant.
+  - Pre-Chorus: unrhymed (wood / light / drift / singing). Open; the ground gives way.
+  - Chorus: AABB (ground/town, breaks/wakes, white/tight, shakes/wakes). Fully closed chant.
   - Bridge: ABCB (grew / through). Loose and intimate; the voice turns.
   - Final Chorus: AABB, with the second half rewritten after the bridge (white/light, makes/wakes).
   - Outro: two closed couplets (low/snow, falls/call), the last one the promise.
