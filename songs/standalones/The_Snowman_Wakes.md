@@ -5,12 +5,12 @@
 
 Length Target: radio, intro <= 35s, hook <= 1:15
 
-**Version:** v1.1, with the five edits from `analysis/The_Snowman_Wakes_critique.md` (Nov 23, 2026).
+**Version:** v1.2 (Nov 24, 2026). v1.1 had the five critique edits; v1.2 follows the first render: no saved voice (Hans read too tenor for the giant), a loud legendary intro instead of a soft one, "lake ice" for "fjord ice" (sung as "ford"), the unsung intro whisper dropped, audio influence 0.7 and a 3:20 target.
 **Brief:** `The_Snowman_Wakes.brief.md` (approved with the user's answers, Nov 23, 2026).
 **Bed:** Storms of the North, take A (`790fd603-c25f-45c9-9e42-fdc0cf2e741a`, 3:07, ~145 BPM, C minor),
 from the "Nordic Folk(Instumentals)" workspace. Rendered as a cover of the bed with lyrics and a voice (SOP 10, Step 5d).
 
-**Decisions:** Hans sings everything; no children's voices (the song is too dark for them). The 6/8 stomp is
+**Decisions:** One deep generated voice sings everything (Hans was used for v1.1); no children's voices (the song is too dark for them). The 6/8 stomp is
 pushed in the Style. Frost giant, working title, and no Verse 2 (the defaults in the brief, since those
 questions weren't answered). Lyrics are original; the only nods to "Frosty the Snowman" are the hat, the stomp
 and the promise to come back.
@@ -19,22 +19,22 @@ and the promise to come back.
 
 ## STYLE PROMPT:
 
-Dark Nordic battle folk, 6/8 stomping one-two-three one-two-three giant's gait at 145 BPM, C minor, creeping sparse intro of howling wind and distant stomps; huge deep weathered male bass-baritone with a slight Scandinavian weight and rolled r's, verse sung like a sinister nursery rhyme, chorus a heavy chant with layered low male unison voices; nyckelharpa, bowed lyre, Nordic wooden flutes, tagelharpa drones, deep hide frame drums, wooden floor stomps, bone rattles; organic live acoustic recording in a cold wide hall; quiet close near-whispered bridge, thunderous final chorus, eerie thinning outro that fades into wind; gleeful dread, ancient menace
+Dark Nordic battle folk, 6/8 stomping one-two-three one-two-three giant's gait at 145 BPM, C minor; legendary ice-giant intro at full power: booming ancient war horn calls, thunderous deep frame drum hits like giant footsteps, howling blizzard and cracking ice, a huge low wordless male chant; cavernous very deep male bass voice, dark and enormous, weathered, slight Scandinavian weight and rolled r's, verse sung like a sinister nursery rhyme, chorus a heavy stomping chant with layered low male unison voices; nyckelharpa, bowed lyre, Nordic wooden flutes, tagelharpa drones, wooden floor stomps, bone rattles; organic live acoustic recording in a vast cold hall; quiet close near-whispered bridge, thunderous final chorus, eerie outro fading into wind; ancient legendary menace
 
 ---
 
 ## EXCLUSIONS:
 
-children's choir, children's vocals, female vocals, pop Christmas jingles, sleigh bells, cartoon vocals, metal screaming, death growls, distorted guitar, EDM, electronic effects, orchestral brass, autotune
+children's choir, children's vocals, female vocals, tenor vocals, high male vocals, soft ambient intro, pop Christmas jingles, sleigh bells, cartoon vocals, metal screaming, death growls, distorted guitar, EDM, electronic effects, cinematic trailer orchestra, autotune
 
 ---
 
 ## RENDER SETTINGS:
 
-- voice: Hans (chosen by the user, Nov 23, 2026)
-- voice_id: 301f54b2-5db4-405a-8d74-f60bd7ec8376
+- voice: none
 - model: v6
-- controls: weirdness 0.3, style_influence 0.75, audio_influence 0.8, variety 1
+- controls: weirdness 0.3, style_influence 0.75, audio_influence 0.7, variety 1
+- duration: 3:20
 - cover_of: 790fd603-c25f-45c9-9e42-fdc0cf2e741a
 - bed_duration: 3:07
 - source_workspace: Nordic Folk(Instumentals) (eaf91716-42b3-4055-95de-4563d41e5b01)
@@ -47,19 +47,19 @@ children's choir, children's vocals, female vocals, pop Christmas jingles, sleig
 
 [Title: The Snowman Wakes]
 
-[Production Direction: Keep the Storms of the North melody and palette, pushed into a heavy 6/8 stomp. Creeping sparse intro of wind and distant stomps. Verse light and sing-song but cold. Pre-chorus tightens. Chorus is a stomping low male chant. Bridge drops to drones and a close whisper over the lull. Final chorus is the biggest moment. Outro thins out and fades into wind. No children's voices, no sleigh bells.]
+[Production Direction: Keep the Storms of the North melody and palette, pushed into a heavy 6/8 stomp. Legendary intro at full power: war horns, thunderous drum hits like giant footsteps, blizzard wind, a huge low wordless chant. Then drop back for the verse, light and sing-song but cold. Pre-chorus tightens. Chorus is a stomping low male chant. Bridge drops to drones and a close whisper over the lull. Final chorus is the biggest moment. Outro thins out and fades into wind. No children's voices, no sleigh bells.]
 
-[Vocal Direction: One huge deep bass-baritone storyteller with a slight Scandinavian weight. The storyteller is the frost giant all along, telling the children's story back to them; the bridge is where he stops pretending. A whispered thump thump thump teases the chorus at the end of the intro. Verse 1 sung like a sinister nursery rhyme, light on top and cold underneath. Chorus a commanding chant with layered low male voices. Bridge is the giant himself, close and almost tender, near-whispered. Outro low and quiet, the last couplet whispered.]
+[Vocal Direction: One cavernous, very deep male bass storyteller, enormous and dark, with a slight Scandinavian weight. No tenor. The storyteller is the frost giant all along, telling the children's story back to them; the bridge is where he stops pretending. Verse 1 sung like a sinister nursery rhyme, light on top and cold underneath. Chorus a commanding chant with layered low male voices. Bridge is the giant himself, close and almost tender, near-whispered. Outro low and quiet, the last couplet whispered.]
 
 [Intro]
-[Instrument: Drone In]
-[Dynamic: pp]
-[Vocal: Whisper]
-Thump — thump — thump
+[Instrument: Drums In]
+[Instrument: Boot Stomp In]
+[Dynamic: ff]
 
 [Verse 1]
-[Male lead, sing-song nursery rhyme, cold underneath]
-[Instrument: Toms In]
+[Male lead, deep bass, sing-song nursery rhyme, cold underneath]
+[Instrument: Boot Stomp Out]
+[Dynamic: p]
 Three small children on a winter's day
 Rolled the snow where the old stones lay
 One gave coal and one gave bone
@@ -84,7 +84,7 @@ And the children stopped their singing
 [Dynamic: f]
 THUMP — THUMP — THUMP ON THE FROZEN GROUND
 The hill stands up and it walks to town
-The pine trees bow and the fjord ice breaks
+The pine trees bow and the lake ice breaks
 Run, little ones — the snowman wakes
 
 THUMP — THUMP — THUMP THROUGH THE FALLING WHITE
@@ -107,7 +107,7 @@ You only woke me — and now I'm walking through
 [Dynamic: ff]
 THUMP — THUMP — THUMP ON THE FROZEN GROUND
 The hill stands up and it walks to town
-The pine trees bow and the fjord ice breaks
+The pine trees bow and the lake ice breaks
 Run, little ones — the snowman wakes
 
 THUMP — THUMP — THUMP THROUGH THE FALLING WHITE
@@ -143,10 +143,10 @@ I'll hear you singing — and I'll come when you call
   - Bridge: VI – III – iv – V (Ab – Eb – Fm – G) over the lull, drones only
   - Final Chorus: i – VII – VI – V (Cm – Bb – Ab – G) over a i pedal in the drones
   - Outro: i – iv – i (Cm – Fm – Cm), ending on the Cm drone into wind
-- **Vocal:** Hans, one deep bass-baritone voice throughout. The storyteller is the giant himself, revealed in the bridge: sing-song cold verse, tight pre-chorus, low male chant choruses, the giant's own near-whisper in the bridge and on the last couplet.
-- **Instruments:** tagelharpa drones, deep frame drums, wooden stomps, nyckelharpa, bowed lyre, Nordic wooden flutes, bone rattles, wind.
-- **Dynamics:** Intro pp (wind, distant stomps) → Verse 1 p (light, cold) → Pre-Chorus crescendo → Chorus f (stomps in) → Bridge pp (stomps out, whisper) → Final Chorus ff (rampage) → Outro diminuendo → fade into wind.
-- **Hook Type:** Rhythmic and title hook. "THUMP — THUMP — THUMP" is the three-beat stomp motif that opens every chorus half; "the snowman wakes" closes every chorus half. A whispered "Thump — thump — thump" teases it at the end of the intro (~0:12). The full chorus first lands around 1:08, inside the 1:15 hook limit set for this song (the creeping intro is intended).
+- **Vocal:** one cavernous deep male bass (generated singer, no saved voice) throughout. The storyteller is the giant himself, revealed in the bridge: sing-song cold verse, tight pre-chorus, low male chant choruses, the giant's own near-whisper in the bridge and on the last couplet.
+- **Instruments:** ancient war horns (intro), tagelharpa drones, deep frame drums, wooden stomps, nyckelharpa, bowed lyre, Nordic wooden flutes, bone rattles, wind.
+- **Dynamics:** Intro ff (war horns, drum hits, blizzard, wordless chant) → Verse 1 p (light, cold) → Pre-Chorus crescendo → Chorus f (stomps in) → Bridge pp (stomps out, whisper) → Final Chorus ff (rampage) → Outro diminuendo → fade into wind.
+- **Hook Type:** Rhythmic and title hook. "THUMP — THUMP — THUMP" is the three-beat stomp motif that opens every chorus half; "the snowman wakes" closes every chorus half. The first chorus lands around 1:00-1:10, inside the 1:15 hook limit set for this song (the creeping intro is intended).
 - **Rhyme Scheme:**
   - Verse 1: AABB couplets with perfect rhymes (day/lay, bone/own, name/came, still/hill). Closed and sweet on purpose: a nursery rhyme.
   - Pre-Chorus: unrhymed (wood / light / drift / singing). Open; the ground gives way.
