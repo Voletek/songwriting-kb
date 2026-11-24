@@ -1,8 +1,8 @@
 # The Snowman Wakes -- Song Brief
 
-> Status: Draft  |  Target: Standalone (seasonal single, companion to Violent Night)
+> Status: Approved (Nov 23, 2026)  |  Target: Standalone (seasonal single, companion to Violent Night)
 > Working title; alternatives in section 12. Bed: **Storms of the North, take A** (`790fd603-c25f-45c9-9e42-fdc0cf2e741a`,
-> workspace "Nordic Folk(Instumentals)"), measured Nov 24, 2026.
+> workspace "Nordic Folk(Instumentals)"), measured Nov 23, 2026.
 
 ## 1. Song Thesis
 The children thought they built a snowman; they woke what was sleeping in the snow.
@@ -83,3 +83,10 @@ The children thought they built a snowman; they woke what was sleeping in the sn
 - [ ] Meter: keep the bed's feel (4/4 or 6/8), or push the 6/8 stomp in the Style?
 - [ ] Workspace for the renders (asked again before rendering).
 - [ ] Lyrics must be original (Frosty the Snowman is under copyright): nods through the hat, the stomp and the "coming back" idea only.
+
+### Answers (Nov 23, 2026)
+- Voice: **Hans** (`301f54b2-5db4-405a-8d74-f60bd7ec8376`).
+- Children's voices: **none**. The song is too dark for them; Hans sings everything and `children's vocals` is excluded.
+- Meter: **push the 6/8 stomp** in the Style.
+- Render workspace: **Test** (`41f60463-2be0-4150-838a-fbbe6c3444fb`).
+- Not answered, defaults kept: title "The Snowman Wakes", frost giant, no Verse 2.
