@@ -198,3 +198,7 @@ Wants to play
 
 | Date | Model | Clip ID | Settings | Measured | Verdict |
 |---|---|---|---|---|---|
+| 2026-11-24 (UTC) | v6, cover of `790fd603`, no saved voice, workspace Test | [`662fc33a-2314-42b5-b47c-781bc825ca20`](https://suno.com/song/662fc33a-2314-42b5-b47c-781bc825ca20) | W 0.3 / SI 0.75 / AI 0.7 / Variety 1; duration 225 soft. 10 credits | 148.8 BPM, C minor, **heard as straight 4/4**; **3:44**; chant 0:10; Verse 1 0:44; first chorus **1:38**; bridge 2:13; final chorus 2:46; outro 3:05; last word 3:28; ends on a hit | **Take E.** ✅ loud epic intro; ✅ one deep bass-baritone; ✅ quiet bridge (spoken more than whispered); ✅ biggest final chorus; ✅ every line sung, 0 failed words; ✅ no female or children's voices. ❌ lost the 6/8; ❌ first chorus 1:38 (limit 1:30). |
+| 2026-11-24 (UTC) | same | [`dbf9ab63-7b22-41f3-bfca-df61a28371ae`](https://suno.com/song/dbf9ab63-7b22-41f3-bfca-df61a28371ae) | same | 149.5 BPM, C minor, heard as a rolling triple stomp; **3:44**; chant 0:03; Verse 1 **0:55**; first chorus **2:03**; bridge 2:22; final chorus 2:54; outro 3:13; last word 3:33 | **Take F.** ✅ triple stomp; ✅ deep bass-baritone; ✅ every line sung. ❌ soft intro; ❌ first chorus 2:03; ❌ final chorus not clearly the biggest. Reject. |
+
+**Why the radio chorus is late:** the 12-line Verse 1 and the 8-line pre-chorus take about 55 s at this tempo, so the chorus can't land before ~1:35 behind a 40 s intro. To fix it, cut one Verse 1 stanza and half the pre-chorus (the epic keeps them).
