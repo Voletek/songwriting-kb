@@ -17,6 +17,8 @@ WRITE → CRITIQUE → REVISE → OPTIMIZE → VERIFY → RENDER → FINISH
 
 ## Procedure
 
+> **Starting from a song already on Suno?** Pull it into a song file first with SOP 11, then join at Stage 2 (critique) or Stage 4 (optimize).
+
 ### Stage 1: WRITE (SOP 01)
 
 **Agent:** Songwriter

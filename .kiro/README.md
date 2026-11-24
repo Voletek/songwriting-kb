@@ -112,7 +112,7 @@ Skills reference files by plain path with explicit "read X" instructions.
 
 ---
 
-## SOPs (10 Procedures)
+## SOPs (11 Procedures)
 
 Step-by-step workflows that work with ANY AI assistant or manually:
 
@@ -128,6 +128,7 @@ Step-by-step workflows that work with ANY AI assistant or manually:
 | 08 | Contributing | Community setup guide and contribution rules |
 | 09 | Planning a Song | Guided Song Brief before any lyrics are written |
 | 10 | Rendering Through the Suno MCP | Render, measure, log, fix and finish songs from an agent |
+| 11 | Pulling Songs from Suno | Find songs in the library, a workspace or a share link, turn a take into a song file, choose workspaces |
 
 ---
 

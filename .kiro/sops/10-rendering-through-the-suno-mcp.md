@@ -2,6 +2,7 @@
 
 > Step-by-step procedure for turning a validated song file into Suno renders from an agent, checking the
 > renders against the plan, fixing what didn't land without starting over, and finishing the song.
+> To pull an existing song from the user's library or a workspace first, see SOP 11.
 > Agent: **renderer** (`.kiro/agents/renderer.md`). Field and tool reference:
 > `references/SUNO_MCP_REFERENCE.md`. Formatting rules: `.kiro/steering/suno-formatting.md`.
 > Without the Suno MCP, follow the same steps by hand in the suno.com UI (paste the three fields from
@@ -40,7 +41,9 @@ python3 tools/estimate-runtime.py songs/<category>/<song>.md         # length an
    silently: a call without `voice_id` gets a freshly generated singer. Record the answer, and pass it
    as `voice_id` on that call and every later call for the same song. If a call type may not keep the voice
    (section edits, see Step 5), say so before sending and let the user choose.
-5. Decide the other settings with the user: model (`v6` unless they choose), `vocal_gender` only when
+5. **Ask which workspace the new takes go into** (`workspaces-list`, by name), or "none". Record it as
+   `workspace:` and `workspace_id:` and pass `workspace_id` on the call (SOP 11, Step 6).
+5b. Decide the other settings with the user: model (`v6` unless they choose), `vocal_gender` only when
    no voice is used, and any sliders. Sliders are optional;
    record any non-default value.
 6. **Write the settings into the song file** under `## RENDER SETTINGS` (after `## EXCLUSIONS:`), so
@@ -54,6 +57,7 @@ python3 tools/estimate-runtime.py songs/<category>/<song>.md         # length an
    - model: v6
    - controls: weirdness 0.3, style_influence 0.75, audio_influence 0.8, variety 1
    - duration: 5:59            (optional; suno-fields adds duration_strict: false)
+   - workspace: <name>  /  workspace_id: <id>   (where new takes are filed; ask the user)
    - cover_of: <clip id>       (only for a cover of an existing take or instrumental)
    - bed_duration: 5:59        (only when sung over a fixed instrumental)
    ```

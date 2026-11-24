@@ -1,7 +1,7 @@
 ---
 name: songwriting
-description: Professional songwriting power — activates the full song production system including craft methodology, Suno AI formatting, music theory, character voice design, and concept album continuity. Packages 7 agents, 5 skills, 10 SOPs, steering, hooks, and the complete knowledge base into one activatable bundle. Suno V6 is the default format.
-keywords: ["song", "songwriting", "write a song", "Suno", "lyrics", "music", "album", "track", "chorus", "verse", "hook", "melody", "chord", "production", "arrangement", "critique", "score", "write", "compose", "create", "make", "draft", "brainstorm", "song about", "track about", "bridge", "idea for a song", "let's make", "give me", "need a track", "help me write", "something about", "banger", "ballad", "anthem", "duet", "concept", "rate", "review", "evaluate", "assess", "analyze", "feedback", "thoughts on", "is this good", "what's wrong", "how to improve", "strengths", "weaknesses", "grade", "judge", "opinion", "does this work", "any issues", "what do you think", "fix this", "render", "format", "optimize", "tags", "char count", "character count", "ready to render", "will this work", "style prompt", "fix formatting", "prepare", "Suno-ready", "field check", "limits", "too long", "missing tags", "continuity", "consistent", "fits the album", "album rules", "blueprint", "check against", "matches", "sonic palette", "motifs", "callbacks", "track position", "differentiation", "does this break", "violations", "set up", "configure", "create blueprint", "new album", "new project", "add character", "build", "template", "initialize", "start fresh", "preferences", "log experiment", "add track", "get started", "onboarding", "help me set up", "first time", "new here"]
+description: Professional songwriting power — activates the full song production system including craft methodology, Suno AI formatting, music theory, character voice design, and concept album continuity. Packages 7 agents, 5 skills, 11 SOPs, steering, hooks, and the complete knowledge base into one activatable bundle. Suno V6 is the default format.
+keywords: ["song", "songwriting", "write a song", "Suno", "lyrics", "music", "album", "track", "chorus", "verse", "hook", "melody", "chord", "production", "arrangement", "critique", "score", "write", "compose", "create", "make", "draft", "brainstorm", "song about", "track about", "bridge", "idea for a song", "let's make", "give me", "need a track", "help me write", "something about", "banger", "ballad", "anthem", "duet", "concept", "rate", "review", "evaluate", "assess", "analyze", "feedback", "thoughts on", "is this good", "what's wrong", "how to improve", "strengths", "weaknesses", "grade", "judge", "opinion", "does this work", "any issues", "what do you think", "fix this", "render", "format", "optimize", "tags", "char count", "character count", "ready to render", "will this work", "style prompt", "fix formatting", "prepare", "Suno-ready", "field check", "limits", "too long", "missing tags", "continuity", "consistent", "fits the album", "album rules", "blueprint", "check against", "matches", "sonic palette", "motifs", "callbacks", "track position", "differentiation", "does this break", "violations", "set up", "configure", "create blueprint", "new album", "new project", "add character", "build", "template", "initialize", "start fresh", "preferences", "log experiment", "add track", "get started", "onboarding", "help me set up", "first time", "new here", "workspace", "library", "pull from suno", "import song", "share link"]
 ---
 
 # 🎵 Songwriting Power
@@ -18,7 +18,7 @@ A professional song production system combining Nashville/LA co-writing craft wi
 | **critic** | Multi-layer evaluation (12-cat craft + 5 advanced + Suno optimization + album-context) | `core/methodology/critique.md` | "Critique this song" / "Score this" |
 | **suno-optimizer** | Post-processes for Suno rendering (V6 default; v5.5-era procedure kept as legacy) | `core/methodology/suno-optimization.md` | "Make this Suno-ready" / "Optimize for Suno" |
 | **album-continuity** | Verifies concept album rules | `core/methodology/album-continuity.md` | "Check continuity" / "Does this fit the album?" |
-| **renderer** | Renders validated songs through the Suno MCP, measures and logs takes, fixes sections, finishes songs | SOP 10 + `references/SUNO_MCP_REFERENCE.md` | "Render this" / "Did the tags work?" |
+| **renderer** | Pulls songs from the Suno library and workspaces (SOP 11), renders validated songs through the Suno MCP, measures and logs takes, fixes sections, finishes songs | SOP 10 + `references/SUNO_MCP_REFERENCE.md` | "Render this" / "Did the tags work?" |
 | **builder** | Interactive setup: albums, blueprints, character voices, preferences, experiment logs | `core/methodology/builder.md` | "Set up a new album" / "Help me get started" |
 
 ### Skills (5 on-demand knowledge sets)
@@ -30,8 +30,8 @@ A professional song production system combining Nashville/LA co-writing craft wi
 | **character-voice** | References `core/methodology/character-voice.md` + accent/dialect data | Writing for characters |
 | **concept-album-blueprint** | Track registry, motifs, continuity rules — configure with YOUR album | Album work |
 
-### SOPs (10 step-by-step procedures, `.kiro/sops/`)
-01 Writing · 02 Critiquing · 03 Optimizing for Suno · 04 Album setup · 05 Extending an album · 06 Character voice · 07 Full pipeline · 08 Contributing · 09 Planning a song · 10 Rendering through the Suno MCP
+### SOPs (11 step-by-step procedures, `.kiro/sops/`)
+01 Writing · 02 Critiquing · 03 Optimizing for Suno · 04 Album setup · 05 Extending an album · 06 Character voice · 07 Full pipeline · 08 Contributing · 09 Planning a song · 10 Rendering through the Suno MCP · 11 Pulling songs from Suno (library, workspaces, share links)
 
 ### Steering
 - Core songwriting principles + 9-step workflow (always)

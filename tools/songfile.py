@@ -143,7 +143,8 @@ def parse_render_settings(lines):
 
     Recognised keys (others are kept as-is): voice (name), voice_id, model, controls
     ("weirdness 0.3, style_influence 0.75, variety 1"), duration, duration_strict, cover_of,
-    bed_duration (m:ss, for songs sung over a fixed instrumental), vocal_gender, notes.
+    bed_duration (m:ss, for songs sung over a fixed instrumental), vocal_gender, workspace,
+    workspace_id, source_workspace, notes.
     """
     out = {}
     for line in lines:
@@ -154,7 +155,7 @@ def parse_render_settings(lines):
             continue
         key = re.sub(r"[\s-]+", "_", m.group(1).strip().lower())
         val = m.group(2).strip().strip("`")
-        val = re.sub(r"\s+\(.*\)\s*$", "", val) if key in ("voice_id", "model", "cover_of") else val
+        val = re.sub(r"\s+\(.*\)\s*$", "", val) if key in ("voice_id", "model", "cover_of", "workspace_id") else val
         out[key] = val
     return out
 

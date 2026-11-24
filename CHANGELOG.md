@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Suno workspaces and pulling songs (November 2026)
+
+**Added**
+- `.kiro/sops/11-pulling-songs-from-suno.md` (SOP 11): ask which workspace to pull from and file into → find the song (workspace, search, song link, share link) → retrieve → song file with Source Fields → measure → hand off to SOP 02/03/10; filing and moving songs between workspaces (ask first).
+- `references/SUNO_MCP_REFERENCE.md` → Workspaces: `workspaces-list`, `library-list` / `library-search` input and output fields, `workspace_id` on creation tools, `workspaces-update-clips`, `workspaces-create`.
+- `## RENDER SETTINGS` accepts `workspace`, `workspace_id`, `source_workspace`; `suno-fields.py` exports `workspace_id`. 1 test.
+
+**Changed**
+- SOP 10 Step 1 asks which workspace new takes go into. SOP 07 points to SOP 11 for songs that start on Suno.
+- Package: the `renderer` agent loads SOP 11 and asks about workspaces; the Power lists 11 SOPs, describes the renderer's pulling role and adds workspace/library keywords; READMEs and SOP 08 updated.
+
 ### November 2026 update (consolidates #20, #21, #22 and the repo review)
 
 **Added**

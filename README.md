@@ -77,7 +77,7 @@ songwriting-kb/
 │   ├── skills/                5 skills — reference core/methodology/ + references/
 │   ├── hooks/                 2 v1 JSON hooks — song-validate.json, prosody-lint.json
 │   ├── powers/songwriting/    1 power — activatable master bundle
-│   └── sops/                  10 SOPs — step-by-step procedures (point to core/)
+│   └── sops/                  11 SOPs — step-by-step procedures (point to core/)
 ├── tools/
 │   ├── validate-song.py       Deterministic song validator (char counts, required elements, V6 tags, exclusions)
 │   ├── lyric-lint.py          Deterministic lyric lint (syllables, stress, rhyme type/scheme, section stability, clichés)
@@ -123,6 +123,7 @@ The procedural layer — step-by-step HOW for every workflow:
 | **07** | [Full Pipeline](/.kiro/sops/07-full-pipeline.md) | 7 stages: Write → Critique → Revise → Optimize → Verify → Render → Finish | 2-3 hrs |
 | **08** | [Contributing](/.kiro/sops/08-contributing.md) | Community guide: setup → customize → add albums → submit | Variable |
 | **09** | [Planning a Song](/.kiro/sops/09-planning-a-song.md) | Guided brief creation before writing — step through the 12-section Song Brief, save `SONGNAME.brief.md` alongside the song | 15-30 min |
+| **11** | [Pulling Songs from Suno](/.kiro/sops/11-pulling-songs-from-suno.md) | Ask which workspace → find the song (workspace, search, song or share link) → retrieve → song file → measure → hand to SOP 02/03/10; filing into workspaces | 5-15 min |
 | **10** | [Rendering Through the Suno MCP](/.kiro/sops/10-rendering-through-the-suno-mcp.md) | Pre-flight → render → measure takes (`audio-analysis`, `audio-listen`) → log in `## RENDERS` → fix sections (edit, extend, cover) → finish (stems, plugins, download) | 10-30 min |
 
 ### The Full Pipeline (SOP 07):
